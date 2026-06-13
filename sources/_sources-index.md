@@ -86,6 +86,24 @@ _Populated as sources are ingested. Group by domain; show reliability tier._
 - [[src-dig-adherence-tech-evidence]] (A) — adherence apps, reminder packaging, monitoring, DTx evidence.
 
 ### Global benchmarks
+- USA — [[src-gbl-ftc-pbm-report]] (A) — FTC PBM reports: ~80% of scripts via 3 vertically-integrated PBMs.
+- USA — [[src-gbl-amazon-pharmacy]] (B) — Amazon Pharmacy RxPass, same-day delivery, PillPack dose-packaging.
+- USA — [[src-gbl-costplus-drugs]] (B) — Mark Cuban Cost Plus: cost + 15% + fees transparency (not always cheapest).
+- USA — [[src-gbl-walgreens-capsule]] (B) — Walgreens med-sync + go-private; Capsule courier model retrenchment.
+- USA — [[src-gbl-us-surescripts-eprescribing]] (B) — Surescripts network + EPCS 2FA for controlled substances.
+- UK — [[src-gbl-nhs-eps]] (A) — NHS Electronic Prescription Service + nomination model; >95% electronic.
+- UK — [[src-gbl-nhs-app-prescriptions]] (A) — NHS App repeat orders + "Amazon-style" tracking; >39m users.
+- UK — [[src-gbl-pharmacy2u-lloydsdirect]] (B) — distance-selling on EPS nomination; 2015 ICO data-selling fine.
+- UK — [[src-gbl-pharmacy-first]] (A) — pharmacist supply for 7 conditions under PGDs (Jan 2024).
+- Europe — [[src-gbl-docmorris-redcare]] (B) — EU mail-order pharmacy + CardLink e-Rx redemption.
+- Europe — [[src-gbl-germany-erezept]] (A) — Germany E-Rezept rollout + its difficulties (the cautionary tale).
+- India — [[src-gbl-india-epharmacy]] (B) — PharmEasy/Apollo/Tata 1mg/Netmeds + e-pharmacy grey-zone.
+- India — [[src-gbl-apollo-247-results]] (A) — Apollo 24|7 listed-disclosure scale (omnichannel works).
+- China — [[src-gbl-china-internet-hospitals]] (B) — Ping An/AliHealth/JD Health super-app loop.
+- China — [[src-gbl-china-eprescription-policy]] (B) — internet-hospital rules, prescription outflow, AI guardrails.
+- Australia — [[src-gbl-australia-escript]] (A) — eScript token + Active Script List (best fit for SA).
+- Australia — [[src-gbl-medadvisor]] (B) — medication-management app: wallet, pre-order, reminders, carer mode.
+
 ### UX & service design
 ### Consumer context
 - [[src-con-icasa-ict-2025]] (A) — ICASA State of ICT 2025: smartphone/data penetration, coverage, broadband, prepaid.
