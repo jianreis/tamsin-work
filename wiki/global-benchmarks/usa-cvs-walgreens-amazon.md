@@ -111,12 +111,16 @@ delivery are hard — a real SA constraint given last-mile cost.
 ## E-prescribing rail (context)
 
 US e-prescribing runs over the **Surescripts** network connecting prescribers,
-pharmacies, PBMs and EHRs; **EPCS** is the DEA-regulated, 2FA-protected subset for
-controlled substances. Surescripts reported ~2.5bn electronic prescriptions in
-2023 (self-reported). Unlike the UK/Australia, the US has no single
-government-run patient-facing e-script token — fulfilment UX is owned by private
-players, which is why the feature innovation is intense but the system is
-fragmented.
+pharmacies, PBMs and EHRs; **EPCS** is the DEA-regulated, **2FA-protected** subset
+for controlled substances (identity-proofing + two-factor auth — an opioid-crisis
+response) [[src-gbl-us-surescripts-eprescribing]]. Surescripts reported ~2.5bn
+electronic prescriptions in 2023 (self-reported); end-2023 ~83% of prescribers
+were also EPCS-enabled [[src-gbl-us-surescripts-eprescribing]]. Unlike the
+UK/Australia, the US has **no single government-run patient-facing e-script
+token** — fulfilment UX is owned by private players, which is why the feature
+innovation is intense but the system is fragmented. (The 2FA/identity-proofing
+model for scheduled drugs is itself a borrowable safety pattern for SA's
+Schedule 5+ scripts [[wiki/sa-regulatory/_index]].)
 
 ## What to borrow for SA
 
