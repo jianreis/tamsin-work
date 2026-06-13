@@ -1,0 +1,10 @@
+# Obsidian local/workspace state (keep the vault content, ignore per-machine cruft)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
+.DS_Store
+
+# OS / editor
+Thumbs.db
+*.tmp
