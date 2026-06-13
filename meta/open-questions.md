@@ -35,6 +35,15 @@ and update the relevant wiki page + this list.
 | open | Mopani national store count; Alpha Pharm membership; Pick n Pay pharmacy count; MedXpress/Scriptpharm models | [[competitive-landscape-sa-pharmacy]], [[src-retail-pharmacy-competitors]] | ⚠️ UNVERIFIED in retrieved sources. |
 | open | Dis-Chem stock-out / mis-delivery / dispensing-error rates (only D-tier anecdotes) | [[dischem-rx-current-journey]], [[as-is-prescription-journey]] | Triangulate HelloPeter/app signals with B-tier audit/scheme complaint data. |
 | open | Current active Better Rewards membership post-migration (9m was pre-migration Benefit base) | [[dischem-company-overview]], [[src-dc-better-rewards]] | Confirm from FY2026 disclosures. |
+| open | Verbatim §22A subsection wording (exact prescriber list per schedule S2–S6) | [[medicines-act-scheduling]] | All legislation PDFs (SAHPRA/SAFLII/gov.za/faolex) returned HTTP 403 to fetch 2026-06-13; triangulated from search extracts. Confirm vs gazetted Act. |
+| open | Exact Reg-33 wording for *original* prescription validity period (vs the 6-month repeat ceiling) | [[prescription-requirements-repeats]] | ⚠️ UNVERIFIED; 6-month is the repeat ceiling — first-dispensing validity wording needs primary confirmation. |
+| open | Whether SAPC accepts ECTA AES-signed e-scripts for S5/S6 or requires extra controls | [[prescription-requirements-repeats]], [[e-prescription-telehealth-popia]] | S5/S6 fax/email flagged contentious by SAPC/SAPJ; confirm any schedule-specific e-Rx limit. |
+| open | Exact current dispensing-fee band thresholds + very-high-SEP cap (overlaps schemes note) | [[sep-dispensing-fee]], [[src-reg-sep-pricing-regulations]] | ⚠️ UNVERIFIED; confirm vs latest Government Gazette. Cross-ref [[src-sch-sep-dispensing-fee]]. |
+| open | Existence of a dedicated SAHPRA/SAPC courier-pharmacy or e-pharmacy standard (vs general GPP+licensing) | [[courier-online-pharmacy-rules]], [[sahpra-overview]] | ⚠️ UNVERIFIED; no standalone code surfaced. Page confidence set to medium. |
+| open | Chain-of-custody rules for third-party last-mile couriers physically holding S5/S6 in transit | [[courier-online-pharmacy-rules]] | ⚠️ UNVERIFIED; key for last-mile design of controlled meds. |
+| open | Whether SAPC permits remote pharmacist supervision of dispensing (tele-pharmacy / central fill) | [[pharmacy-act-sapc-gpp]] | ⚠️ UNVERIFIED; central to "central fill + local counselling" models. |
+| open | Status/scope of new 2026 POPIA health-information regulations | [[e-prescription-telehealth-popia]] | In flux; Fasken flagged April 2026. Monitor Information Regulator. |
+| open | Whether independent nurse-prescriber scope has expanded under recent NDoH PHC policy | [[medicines-act-scheduling]] | Affects who may originate S4 scripts in a digital flow. |
 
 ## Conventions
 - When a wiki page can't source a claim, it marks it `⚠️ UNVERIFIED` and adds a
