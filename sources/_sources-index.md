@@ -69,6 +69,22 @@ _Populated as sources are ingested. Group by domain; show reliability tier._
 
 ### Dispensing practice
 ### Digital transformation
+- [[src-dig-ncpdp-script-cms]] (A) — NCPDP SCRIPT standard & CMS 2024 final rule (v2023011).
+- [[src-dig-fhir-medication-resources]] (A) — HL7 FHIR `MedicationRequest`/`MedicationDispense` & MPD IG.
+- [[src-dig-sa-eprescribing-reg33]] (B) — SA Reg 33, AES/ECTA, SAPC e-script guidance (digital-domain view).
+- [[src-dig-sa-digital-health-strategy-hnsf]] (A) — SA National Digital Health Strategy 2019–2024 & HNSF standards.
+- [[src-dig-eprescribing-safety-scoping]] (A) — e-Rx benefits, alert fatigue, automation bias, new error types.
+- [[src-dig-pharmacy-automation-evidence]] (B) — robotic/central-fill throughput & accuracy evidence.
+- [[src-dig-adc-lockers-market]] (B) — ADCs, smart lockers, vision verification; market sizing (directional).
+- [[src-dig-sa-automation-adoption]] (B) — SA pharmacy automation adoption (Mach4 PDUs etc.).
+- [[src-dig-ai-clinical-pharmacy]] (A) — AI CDS, interaction prediction, demand sensing/inventory.
+- [[src-dig-agentic-ai-governance]] (B) — agentic AI in healthcare: scope, risks, governance.
+- [[src-dig-cv-pill-triage]] (B) — computer-vision pill verification & conversational triage performance.
+- [[src-dig-telepharmacy-models]] (B) — telepharmacy/remote verification models & rural quality evidence.
+- [[src-dig-fhir-identity-matching]] (A) — FHIR FAST Identity/Consent; patient matching (EMPI).
+- [[src-dig-sa-hprs-records]] (B) — SA HPRS, record fragmentation, NHI digital ambitions.
+- [[src-dig-adherence-tech-evidence]] (A) — adherence apps, reminder packaging, monitoring, DTx evidence.
+
 ### Global benchmarks
 ### UX & service design
 ### Consumer context
