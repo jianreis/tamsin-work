@@ -16,6 +16,9 @@ synthesise and point — they do not duplicate domain detail. Each ends with
 
 ## Pages
 
+### Foundational
+- [[wiki/concepts/dual-journey|The dual journey (two-economy design)]] — the insured ~16% vs cash/uninsured ~84% split; one spine, two first-class funded paths. The most load-bearing design variable.
+
 ### Journey concepts
 - [[wiki/concepts/moment-of-truth|Moment of truth]] — the make-or-break interactions in the Rx journey (first submit, funding result, fulfilment hand-over, first dose).
 - [[wiki/concepts/medication-adherence|Medication adherence]] — the core outcome; non-adherence as system friction + stigma, not apathy.

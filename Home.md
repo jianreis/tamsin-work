@@ -18,10 +18,12 @@ The single navigable index for this ground-truth vault. **New here? Read
 
 ## 🧭 Start with the design kit (the actionable layer)
 - [[design-kit/_design-kit-index|Design Kit — index]]
-- [[design-kit/templates/service-blueprint-template|Service Blueprint template]]
-- [[design-kit/templates/journey-map-template|Journey Map template]]
-- [[design-kit/journeys/as-is-prescription-journey|As-is prescription journey]]
-- Personas → [[design-kit/personas/_personas-index|Personas index]]
+- **Worked future-state exemplars** (proof-of-concept, built from this vault):
+  - 💠 [[design-kit/journeys/to-be-blueprint-chronic-insured|To-be blueprint — the self-running repeat (Nomvula, insured chronic)]]
+  - 💠 [[design-kit/journeys/to-be-journey-cash-acute|To-be journey — fast & transparent (Thabo, cash-pay acute)]]
+- Current state → [[design-kit/journeys/as-is-prescription-journey|As-is prescription journey]]
+- Templates → [[design-kit/templates/service-blueprint-template|Service Blueprint]] · [[design-kit/templates/journey-map-template|Journey Map]] · [[design-kit/templates/jtbd-library|JTBD library]] · [[design-kit/templates/future-state-principles|13 future-state principles]]
+- Personas → [[design-kit/personas/_personas-index|Personas index]] (8 research-backed)
 
 ## 📚 The wiki (synthesised knowledge)
 - [[wiki/_wiki-index|Wiki — index]]

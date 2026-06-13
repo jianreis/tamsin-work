@@ -29,3 +29,6 @@ Append-only log of what's been ingested and built. One line per meaningful step.
 | 2026-06-13 | build | Lint tooling added (meta/lint.py) + ran LINT: 0 orphan pages; fixed 1 dead source link + 1 pipe-in-alias; catalogued 62 ⚠️ UNVERIFIED / 39 🔮 requires-reform markers. |
 | 2026-06-13 | build | Populated glossary across all sections + cross-links; consolidated open-questions with systemic HTTP-403 caveat & re-verification priorities. |
 | 2026-06-13 | build | Wave 3 dispatched: 8 research-backed personas + 10 cross-cutting concept pages. |
+| 2026-06-13 | build | Added 11th concept `dual-journey` (two-economy hub) + wired into index. |
+| 2026-06-13 | build | Wrote 2 worked future-state exemplars: to-be blueprint (chronic insured, Nomvula) + to-be journey (cash acute, Thabo). Surfaced in Home + design-kit index. |
+| 2026-06-13 | build | Final LINT clean: 227 files, 0 dead links / 0 orphans / 0 stubs; 63 ⚠️ UNVERIFIED + 48 🔮 requires-reform flags tracked. Vault build v1 complete. |

@@ -19,7 +19,7 @@ may want to steer. Nothing here is blocking the build.
 | 5 | **Personas** | Building 6–8 research-backed personas spanning insured/uninsured, urban/peri-urban, chronic/acute, caregiver, elderly, low-data. | Real Bigly persona set to align to? |
 | 6 | **"Futuristic" horizon** | Designing for ~2026–2030 (operable-soon), flagging anything needing regulatory reform as `🔮 requires-reform`. | Different horizon? |
 | 7 | **NHI assumptions** | Treating NHI as a known unknown — documenting status + scenarios, not betting the design on a timeline. | — |
-| 8 | **Output artifacts** | Vault = knowledge. Templates for blueprints/journeys included, but actual blueprint *production* is the next phase Tamsin/agents drive. | Want me to also draft a first full future-state blueprint as a worked example? |
+| 8 | **Output artifacts** | ✅ **Done** — two worked exemplars built: [[to-be-blueprint-chronic-insured]] (insured chronic) + [[to-be-journey-cash-acute]] (cash acute), demonstrating the [[wiki/concepts/dual-journey]]. Further blueprint/journey *production* is the next phase Tamsin/agents drive. | — |
 
 ## Questions I'd genuinely like answered later
 - Who are the **priority customer segments** for the future-state pilot
