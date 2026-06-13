@@ -8,3 +8,4 @@
 # OS / editor
 Thumbs.db
 *.tmp
+.gstack/
