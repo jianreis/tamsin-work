@@ -5,7 +5,7 @@ domain: global-benchmarks
 status: draft
 confidence: medium
 tags: [domain/global, region/global, journey/refill, journey/deliver, journey/pay, topic/adherence, topic/last-mile, topic/trust-safety, topic/e-prescription]
-sources: [src-gbl-ftc-pbm-report, src-gbl-amazon-pharmacy, src-gbl-costplus-drugs]
+sources: [src-gbl-ftc-pbm-report, src-gbl-amazon-pharmacy, src-gbl-costplus-drugs, src-gbl-walgreens-capsule, src-gbl-us-surescripts-eprescribing]
 created: "2026-06-13"
 updated: "2026-06-13"
 ---
@@ -56,12 +56,13 @@ therapy — directly relevant to SA chronic/CDL repeat dispensing.
 Walgreens' app lets patients **scan the barcode** on a prescription label to
 refill, and its **"Save a Trip Refills"** aligns all eligible maintenance meds to
 a single pickup/delivery date (medication synchronisation) — a proven adherence
-and convenience pattern. But Walgreens is also a cautionary tale of retail
-overreach: it announced ~1,200 store closures (Oct 2024), posted a large FY2024
-loss driven by a VillageMD goodwill impairment, and **went private via Sycamore
-Partners** in a ~$10bn deal (announced March 2025, closed ~August 2025), ending
-roughly a century as a public company. Scale and discounting alone do not
-guarantee a durable pharmacy business.
+and convenience pattern [[src-gbl-walgreens-capsule]]. But Walgreens is also a
+cautionary tale of retail overreach: it announced ~1,200 store closures (Oct
+2024), posted a large FY2024 loss driven by a VillageMD goodwill impairment, and
+**went private via Sycamore Partners** in a ~$10bn deal (announced March 2025,
+closed ~August 2025), ending roughly a century as a public company
+[[src-gbl-walgreens-capsule]]. Scale and discounting alone do not guarantee a
+durable pharmacy business.
 
 ## Amazon Pharmacy + PillPack — subscription generics and logistics
 
@@ -103,9 +104,9 @@ Capsule (NYC, 2016) pioneered a phone-first pharmacy: e-prescribed → filled �
 **same-day free hand-delivery by courier**, with **text-based pharmacist chat**
 and insurance handled in the background. It is also a cautionary tale: it cut
 ~13% of staff in October 2023 amid retrenchment from aggressive multi-city
-expansion. The UX (courier same-day + chat-with-pharmacist) is excellent; the
-unit economics of free dedicated courier delivery are hard — a real SA constraint
-given last-mile cost.
+expansion [[src-gbl-walgreens-capsule]]. The UX (courier same-day +
+chat-with-pharmacist) is excellent; the unit economics of free dedicated courier
+delivery are hard — a real SA constraint given last-mile cost.
 
 ## E-prescribing rail (context)
 

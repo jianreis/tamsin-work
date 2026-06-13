@@ -88,3 +88,21 @@ _Populated as sources are ingested. Group by domain; show reliability tier._
 ### Global benchmarks
 ### UX & service design
 ### Consumer context
+- [[src-con-icasa-ict-2025]] (A) — ICASA State of ICT 2025: smartphone/data penetration, coverage, broadband, prepaid.
+- [[src-con-datareportal-digital-2024]] (B) — Digital 2024 SA: internet penetration 74.7%, WhatsApp #1 channel.
+- [[src-con-ramp-data-prices]] (B) — Research ICT Africa RAMP: cost of mobile data, small-bundle premium.
+- [[src-con-zero-rating-ussd]] (C) — ICASA zero-rating obligation (Jan 2024); USSD low-end access.
+- [[src-con-inequality-gini]] (B) — Gini ~0.63–0.67; income distribution; most unequal economy.
+- [[src-con-finscope-inclusion]] (B) — FinScope: financial inclusion, unbanked, affordability stress.
+- [[src-con-spaza-township]] (C) — Spaza/township economy size, cash dominance, proximity.
+- [[src-con-stokvels]] (B) — Stokvels: ~11.5m members, ~R45bn, save-for-predictable-cost behaviour.
+- [[src-con-languages-census2022]] (A) — Census 2022 home languages; 12 official languages; English ~8.7%.
+- [[src-con-health-seeking-traditional]] (B) — Public-first health-seeking; traditional-healer myth debunked.
+- [[src-con-ccmdd-ndoh]] (A) — CCMDD: >4.9m enrolled, >3,000 pick-up points, decentralised chronic collection.
+- [[src-con-pelebox]] (B) — Pelebox smart lockers: SMS+PIN, no-app, sub-minute collection.
+- [[src-con-pargo-pudo-lastmile]] (C) — Pickup/locker networks; addressing gap (informal/rural).
+- [[src-con-loadshedding]] (B) — Load-shedding scale; impact on networks & cold chain.
+- [[src-con-chronic-disease-burden]] (B) — HIV (~7.9m), TB, hypertension, diabetes, multi-morbidity.
+- [[src-con-adherence-stigma]] (B) — Adherence barriers (system/stigma); mental-health 75% treatment gap.
+- [[src-con-adjacent-digital-benchmarks]] (B) — Sixty60, Takealot, Capitec/TymeBank, loyalty expectations.
+- [[src-con-oop-health-spend]] (B) — Out-of-pocket health spend; medicines the top paid service.
