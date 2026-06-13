@@ -12,10 +12,10 @@
 | 1 | `_shared/blueprint-kit.html` + `index.html` | kit | ✅ done — QA passed (self-contained, node --check OK, all 8 components) |
 | 1 | `01-research-report.html` + `_shared/pillars.md` | report | ✅ done — QA passed (clean, 2955w ≈ 5pp) |
 | — | **Review gate 1** | orchestrator | ✅ PASSED — pillars S1–S5 + U1–U7 locked |
-| 2 | `02-asis-blueprint-journey.html` | as-is | ⏳ dispatched |
-| — | **Review gate 2**: as-is grounded + gaps flagged | orchestrator | pending |
-| 3 | `03-tobe-close-the-gap.html` | close-the-gap | blocked on gate 2 |
-| 3 | `04-tobe-aspirational.html` | aspirational | blocked on gate 2 |
+| 2 | `02-asis-blueprint-journey.html` | as-is | ✅ done — gate 2 passed (25 cites resolve, both economies × 9 stages) |
+| — | **Review gate 2** | orchestrator | ✅ PASSED |
+| 3 | `03-tobe-close-the-gap.html` | close-the-gap | ⏳ dispatched |
+| 3 | `04-tobe-aspirational.html` | aspirational | ⏳ dispatched |
 | — | **Final QA**: self-containment grep + `node --check` + cite-resolve + lint; SendUserFile all 4 | orchestrator | pending |
 
 ## Resume protocol
@@ -27,3 +27,4 @@
 ## Log
 - 2026-06-13 22:5x — scaffold + DESIGN-SPEC written; Wave 1 dispatched (kit, report).
 - 2026-06-13 23:0x — Wave 1 ✅ (kit, index, report, pillars committed); gate 1 passed, pillars locked; Wave 2 (as-is) dispatched.
+- 2026-06-13 23:1x — Wave 2 ✅ (as-is committed); gate 2 passed; qa.py added; Wave 3 (close-the-gap + aspirational) dispatched in parallel.
