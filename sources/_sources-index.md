@@ -105,6 +105,29 @@ _Populated as sources are ingested. Group by domain; show reliability tier._
 - Australia — [[src-gbl-medadvisor]] (B) — medication-management app: wallet, pre-order, reminders, carer mode.
 
 ### UX & service design
+_Method/health-UX source notes prefixed `src-ux-`. Consultancy & design-firm POV
+notes prefixed `src-consult-` (see [[wiki/ux-service-design/consultancy-pharmacy-research]]):_
+- [[src-consult-mckinsey-retail-pharmacy-future]] (B) — McKinsey "US retail pharmacy of the future"; convenience + personalisation; 4 pharmacy types.
+- [[src-consult-mckinsey-pharmacy-home]] (B) — McKinsey "Pharmacy's new era — in the home"; med-sync + delivery as adherence play.
+- [[src-consult-mckinsey-pharmacy-reinvention]] (B) — McKinsey cost-based reimbursement / automation / top-of-licence cluster.
+- [[src-consult-mhi-employee-health]] (B) — McKinsey Health Institute; holistic/employee health (NOT pharmacy — scope note).
+- [[src-consult-bain-beyond-the-pill]] (B) — Bain "Beyond the Pill"; CX discipline around the medicine; adherence.
+- [[src-consult-bain-front-line-healthcare]] (B) — Bain Front Line of Healthcare; 65% use pharmacy as primary care; convenience expectations.
+- [[src-consult-bcg-digital-ai-healthcare]] (B) — BCG digital/AI in health + personalisation (no pharmacy-scripting piece — honest gap).
+- [[src-consult-deloitte-future-of-pharmacy]] (B) — Deloitte "Future of Pharmacy / pharmacist"; consolidated health destination, clinical pharmacist.
+- [[src-consult-deloitte-beyond-the-pill]] (B) — Deloitte "Moving beyond the pill"; relationship > single fill.
+- [[src-consult-accenture-fjord-health-experience]] (C) — Accenture Song/Fjord health-experience; equitable & empathetic; caregiver as user.
+- [[src-consult-accenture-ccs-adherence]] (B) — Accenture CCS AI predictive adherence (~50% lift, vendor-reported); Life Trends 2025.
+- [[src-consult-oliver-wyman-pharmacy]] (B) — Oliver Wyman brick-and-mortar pharmacy / "10 Ways" / new front door; pharmacy as strategic asset.
+- [[src-consult-ey-pharmacy-innovation]] (B) — EY UK pharmacy innovation; only ~1 in 10 manage repeats digitally; workforce fragility.
+- [[src-consult-pwc-health-economy]] (B) — PwC HRI New Health Economy / Medical Cost Trend (macro; no scripting piece; "Pharmacy Next" ≠ PwC).
+- [[src-consult-kpmg-retail-health]] (C) — KPMG: no dedicated pharmacy-scripting report found (honest gap).
+- [[src-consult-ideo-walgreens-pharmacy]] (B) — IDEO "Bringing Back the Neighborhood Pharmacy"; Walgreens Well Experience; pharmacist forward.
+- [[src-consult-frog-pharma-experience]] (C) — frog "Efficacy→Effectiveness = Experience"; adherence as design; CX Playbook.
+- [[src-consult-madpow-behavior-change]] (C) — Mad\*Pow Behavior Change Design; COM-B/EAST in practice; adherence.
+- [[src-consult-cvs-scriptpath-adler]] (B) — CVS ScriptPath (Deborah Adler); the script/label/schedule as a design surface.
+- [[src-consult-designit-ustwo-smartdesign]] (C) — Designit/ustwo/Smart Design: no firm-specific pharmacy-scripting case found (honest gap); inclusive-design method.
+
 ### Consumer context
 - [[src-con-icasa-ict-2025]] (A) — ICASA State of ICT 2025: smartphone/data penetration, coverage, broadband, prepaid.
 - [[src-con-datareportal-digital-2024]] (B) — Digital 2024 SA: internet penetration 74.7%, WhatsApp #1 channel.

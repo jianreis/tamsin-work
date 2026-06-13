@@ -47,4 +47,13 @@ reference** the design-kit blueprint/journey templates cite — see
   **error states** (claim rejected, out-of-stock, invalid script, delivery
   failed).
 
-_Source notes for this domain: `sources/src-ux-*`._
+### Industry & consultancy POV
+- [[consultancy-pharmacy-research]] — what tier-1 strategy firms (McKinsey, Bain,
+  Deloitte, Oliver Wyman, EY; honest gaps for BCG/PwC/KPMG) and design/innovation
+  firms (IDEO, frog, Fjord/Accenture Song, Mad\*Pow; CVS ScriptPath exemplar) have
+  published on pharmacy, scripting, medication adherence & pharmacy experience design;
+  borrowable frameworks ("efficacy→effectiveness", pharmacy-as-front-door,
+  top-of-licence pharmacist, the script as a design surface) and what does **not**
+  transfer to a regulated, multi-funder, low-bandwidth SA context.
+
+_Source notes for this domain: `sources/src-ux-*` and `sources/src-consult-*`._
