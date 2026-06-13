@@ -14,9 +14,11 @@
 | — | **Review gate 1** | orchestrator | ✅ PASSED — pillars S1–S5 + U1–U7 locked |
 | 2 | `02-asis-blueprint-journey.html` | as-is | ✅ done — gate 2 passed (25 cites resolve, both economies × 9 stages) |
 | — | **Review gate 2** | orchestrator | ✅ PASSED |
-| 3 | `03-tobe-close-the-gap.html` | close-the-gap | ⏳ dispatched |
-| 3 | `04-tobe-aspirational.html` | aspirational | ⏳ dispatched |
-| — | **Final QA**: self-containment grep + `node --check` + cite-resolve + lint; SendUserFile all 4 | orchestrator | pending |
+| 3 | `03-tobe-close-the-gap.html` | close-the-gap | ✅ done — gate passed (legal-today, 0 reform flags, 23 cites) |
+| 3 | `04-tobe-aspirational.html` | aspirational | ✅ done — gate passed (12 🔮 reform flags, 34 cites) |
+| — | **Final QA** | orchestrator | ✅ PASSED — all 4 self-contained, JS-valid, all cites resolve; vault lint 0 dead links; files sent to Jian + Tamsin |
+
+**BUILD COMPLETE (2026-06-13).** All five HTML artifacts in `deliverables/` gate-passed and delivered. Heartbeat monitor stopped.
 
 ## Resume protocol
 1. `ls deliverables/*.html deliverables/_shared/*` to see what exists.
@@ -28,3 +30,4 @@
 - 2026-06-13 22:5x — scaffold + DESIGN-SPEC written; Wave 1 dispatched (kit, report).
 - 2026-06-13 23:0x — Wave 1 ✅ (kit, index, report, pillars committed); gate 1 passed, pillars locked; Wave 2 (as-is) dispatched.
 - 2026-06-13 23:1x — Wave 2 ✅ (as-is committed); gate 2 passed; qa.py added; Wave 3 (close-the-gap + aspirational) dispatched in parallel.
+- 2026-06-13 23:3x — Wave 3 ✅ both to-be journeys gate-passed (#3 legal-today/0 reform; #4 aspirational/12 🔮 reform). Final QA green across all 4 + index. Files sent. BUILD COMPLETE.
