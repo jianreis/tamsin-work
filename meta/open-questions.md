@@ -11,6 +11,22 @@ Tracks factual gaps, `⚠️ UNVERIFIED` claims, and contradictions between sour
 Resolve by finding a higher-reliability source (see [[source-reliability-guide]])
 and update the relevant wiki page + this list.
 
+> **⚠️ Systemic caveat (2026-06-13 build):** during the initial research run, the
+> `WebFetch` tool returned **HTTP 403** on most regulator / government / company
+> PDF hosts (SAHPRA, SAFLII, gov.za, CMS, dischem.co.za, SENS, even Wikipedia for
+> some agents). Load-bearing **regulatory, pricing and company figures were
+> therefore triangulated from multiple search-engine extracts of the primary
+> texts plus Tier-B commentary, not read off the source PDF directly.** They are
+> flagged per-claim below and in each source note. **Top priority for re-verification
+> against primary PDFs** (ideally via an authenticated/browser fetch or Tamsin's
+> internal access): the dispensing-fee bands, CMS coverage split, exact Reg-33 &
+> §22A wording, and the Dis-Chem FY2026 figures.
+>
+> This table holds **cross-cutting / contradiction-level** questions. Each wiki
+> page also carries its own `## Open questions` section for domain-specific gaps
+> (the Wave-2/3 domains — dispensing, digital, global, UX, consumer — keep theirs
+> in-page by design).
+
 | Status | Question / claim | Where it appears | Notes |
 |---|---|---|---|
 | open | CMS 2024/25 exact figures (beneficiaries, 16/55 split, ages) need confirming vs primary PDF | [[cms-medical-schemes-overview]], [[src-sch-cms-industry-report-2024]] | CMS site + PMG PDF returned HTTP 403 to automated fetch 2026-06-13; figures from CMS-sourced search extracts. |
