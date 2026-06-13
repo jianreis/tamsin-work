@@ -23,7 +23,7 @@ For the behind-the-scenes view, pair with the [[service-blueprint-template]].
 4. Cite the vault for every claim about how things work or what users feel.
 
 ## Header
-- **Persona:** [[design-kit/personas/…]]
+- **Persona:** `[[design-kit/personas/<name>]]` (see [[design-kit/personas/_personas-index|personas]])
 - **Scenario:** (e.g. "first-time acute script, cash-pay, peri-urban, low data")
 - **JTBD:** "When ___, I want to ___, so I can ___."
 - **Type:** as-is | to-be

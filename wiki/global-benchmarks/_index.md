@@ -25,7 +25,7 @@ payer or an insurance/PBM middle layer.
 
 - [[wiki/global-benchmarks/patterns-to-borrow-and-cautions|🔑 Synthesis — patterns to borrow & cautions]]
 - [[wiki/global-benchmarks/australia-chemist-warehouse-escript|🇦🇺 Australia — eScript token + Active Script List, MedAdvisor, Chemist Warehouse]] _(best fit for SA)_
-- [[wiki/global-benchmarks/india-pharmeasy-apollo-tata1mg|🇮🇳 India — PharmEasy, Apollo 24|7, Tata 1mg, Netmeds]]
+- [[wiki/global-benchmarks/india-pharmeasy-apollo-tata1mg|🇮🇳 India — PharmEasy, Apollo 247, Tata 1mg, Netmeds]]
 - [[wiki/global-benchmarks/china-pingan-alibaba-jdhealth|🇨🇳 China — Ping An Health, Alibaba Health, JD Health & internet hospitals]]
 - [[wiki/global-benchmarks/uk-boots-pharmacy2u-nhs-eps|🇬🇧 UK — NHS EPS, NHS App, Pharmacy2U/LloydsDirect, Boots, Pharmacy First]]
 - [[wiki/global-benchmarks/europe-docmorris-redcare-erezept|🇪🇺 Europe — DocMorris, Redcare & Germany's E-Rezept (and its lessons)]]

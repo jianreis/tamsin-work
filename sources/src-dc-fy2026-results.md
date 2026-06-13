@@ -19,7 +19,7 @@ revenue mix, store/pharmacy footprint and dividend. Headline earnings fell
 year-on-year because of heavy investment in the "healthcare ecosystem"
 (insurance, loyalty revamp), but underlying retail performance and market share
 improved. Figures corroborated by FY2026 trade-press coverage
-([[src-dc-fy2026-supermarket]], [[src-dc-tlc-500-franchise]]).
+([[src-dc-tlc-500-franchise]]).
 
 > Note: the SENS body itself returned HTTP 403 to automated fetch on
 > 2026-06-13; figures below are taken from the indexed SENS summary and
