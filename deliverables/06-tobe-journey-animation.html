@@ -922,7 +922,7 @@ window.MOCKUPS = (function(){
         ]));
       });
       // reveal each step as its own beat
-      arr(ul.children).forEach(li=> beat(b++, li));
+      Array.prototype.slice.call(ul.children).forEach(li=> beat(b++, li));
       root.appendChild(ul);
     }
     if(has(p.statusLine)){
