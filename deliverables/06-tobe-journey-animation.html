@@ -265,6 +265,96 @@ button:focus-visible,[tabindex]:focus-visible,a:focus-visible{outline:3px solid 
 .fbs-lane.back .fbs-chip{ border-color:#d9c2e4; background:#f7f2fb; color:var(--ink-soft); }
 .lov{ display:flex; align-items:center; gap:10px; margin:13px 0; color:var(--muted); font-size:.64rem; letter-spacing:.18em; text-transform:uppercase; font-weight:800; }
 .lov::before, .lov::after{ content:""; flex:1 1 auto; border-top:2px dashed var(--ink); opacity:.4; }
+
+/* ---- WhatsApp-first chat surface skin (Fix 2) ---------------------------- */
+/* The device screen reads as a WhatsApp-style chat: green header + chat tint.
+   Applied to all customer-facing scenes; m1 already used .wa internally. */
+.device.wa-surface .screen{ background:#dfe9e2; }
+.wa-header{
+  display:flex; align-items:center; gap:9px; padding:9px 12px 9px;
+  background:var(--brand-dark); color:#fff;
+}
+.wa-header .wa-back{font-size:1rem; opacity:.85; line-height:1}
+.wa-header .wa-av{
+  width:32px; height:32px; flex:0 0 auto; border-radius:50%;
+  background:rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center;
+  font-weight:800; font-size:1.05rem;
+}
+.wa-header .wa-id{flex:1 1 auto; min-width:0}
+.wa-header .wa-name{font-weight:800; font-size:.9rem; line-height:1.1; display:flex; align-items:center; gap:5px}
+.wa-header .wa-name .verified{font-size:.7rem}
+.wa-header .wa-status{font-size:.66rem; opacity:.85; display:flex; align-items:center; gap:4px}
+.wa-header .wa-status .dot{width:6px; height:6px; border-radius:50%; background:#7be39a; display:inline-block}
+.wa-header .wa-actions{display:flex; gap:12px; font-size:.92rem; opacity:.85}
+/* the in-chat rich card the customer receives (cabinet/cost/track presented as a message card) */
+.wa-card{
+  background:#fff; border-radius:12px; border-top-left-radius:4px;
+  box-shadow:0 1px 2px rgba(0,0,0,.08); padding:8px 9px; margin:8px 0 4px;
+  max-width:96%;
+}
+.wa-card .wa-card-tag{
+  font-size:.6rem; text-transform:uppercase; letter-spacing:.08em; font-weight:800;
+  color:var(--brand-dark); display:flex; align-items:center; gap:5px; margin:0 2px 6px;
+}
+/* persistent channel chip near the phone */
+.channel-chip{
+  margin:10px auto 0; max-width:300px; text-align:center;
+  font-size:.66rem; color:var(--muted); line-height:1.4;
+}
+.channel-chip .cc-pills{display:flex; flex-wrap:wrap; gap:5px; justify-content:center; margin-bottom:3px}
+.channel-chip .cc-pill{
+  border:1px solid var(--mint-deep); background:#f0f8f3; color:var(--brand-dark);
+  border-radius:99px; padding:2px 8px; font-weight:700; font-size:.64rem;
+}
+.channel-chip .cc-pill.lead{background:var(--brand); color:#fff; border-color:var(--brand)}
+.channel-chip .cc-note{color:var(--muted2)}
+
+/* ---- WhatsApp status card (Fix 1 — derived customer-facing status) ------- */
+.wastat .surf-h{margin-bottom:8px}
+.wastat .ws-steps{list-style:none; margin:0; padding:0;}
+.wastat .ws-steps li{
+  display:flex; align-items:flex-start; gap:9px; padding:6px 0; font-size:.84rem; color:var(--ink-soft);
+}
+.wastat .ws-steps li .wsdot{
+  flex:0 0 auto; width:18px; height:18px; border-radius:50%; margin-top:1px;
+  display:flex; align-items:center; justify-content:center; font-size:.7rem; font-weight:800;
+  background:var(--line); color:var(--muted);
+}
+.wastat .ws-steps li.done .wsdot{background:var(--brand); color:#fff}
+.wastat .ws-steps li.active .wsdot{background:var(--warn); color:#fff}
+.wastat .ws-steps li.active{font-weight:700; color:var(--ink)}
+.wastat .ws-line{font-size:.74rem; color:var(--muted); margin-top:6px; display:flex; gap:6px; align-items:baseline}
+.wastat .ws-photo{
+  margin-top:9px; border-radius:10px; border:1px solid var(--line); overflow:hidden; background:#f3f7f4;
+}
+.wastat .ws-photo svg{display:block; width:100%; height:auto}
+.wastat .chat-prompt{
+  margin-top:9px; border:1.5px solid var(--brand); background:#fff; color:var(--brand-dark);
+  border-radius:99px; padding:6px 12px; font-size:.8rem; font-weight:700; display:inline-flex; gap:6px; align-items:center;
+}
+
+/* ---- Behind-the-line panel (Fix 1 — NOT a customer screen) --------------- */
+.behindline{
+  background:#f7f3fb; border:1.5px dashed var(--purple); border-radius:14px;
+  padding:0 0 14px; margin:0 0 16px; overflow:hidden;
+}
+.behindline .bl-head{
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  background:#efe6f5; border-bottom:1.5px dashed var(--purple);
+  padding:8px 14px; color:var(--purple); font-weight:800; font-size:.74rem;
+  text-transform:uppercase; letter-spacing:.05em;
+}
+.behindline .bl-head .bl-line{
+  font-size:.6rem; letter-spacing:.16em; color:var(--purple); opacity:.85; font-weight:800;
+}
+.behindline .bl-head .bl-sub{
+  flex:1 1 100%; font-size:.66rem; font-weight:600; letter-spacing:0; text-transform:none; color:var(--grey); margin-top:1px;
+}
+.behindline .bl-body{ padding:12px 14px 0; }
+/* re-tint the relocated rich mocks toward the ops/system (grey-purple) motif */
+.behindline .surf{ border-color:#d9c2e4; background:#fdfbff; }
+.behindline .surf-h{ color:var(--purple); }
+@media (max-width:760px){ .behindline{margin-top:8px} }
 /* =============================================================================
    <<<<<<<<<<<<<<<<  END COMPONENT LIBRARY CSS  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
    ============================================================================= */
@@ -431,6 +521,7 @@ footer{margin:30px 24px 0; border-top:1px solid var(--line); padding-top:14px; c
     <div class="ribbon" role="note">
       <span>⚠ Concept for review — not an official Dis-Chem artefact</span>
       <span class="gen">generated 2026-06-14 from the Bigly ground-truth vault</span>
+      <span class="gen">Screens are indicative representations of a future experience (channel-agnostic, WhatsApp-first). Some panels illustrate behind-the-line activity — not literal customer screens.</span>
     </div>
   </header>
 
@@ -470,6 +561,7 @@ footer{margin:30px 24px 0; border-top:1px solid var(--line); padding-top:14px; c
         <div class="stage-cols">
           <div id="phone-mount"></div>
           <div class="lanes-wrap">
+            <div id="behindline-mount"></div>
             <div id="frontstage-lane"></div>
             <div id="backstage-lane"></div>
           </div>
@@ -603,23 +695,135 @@ window.MOCKUPS = (function(){
   }
 
   /* =========================================================================
-     phoneFrame(innerNode) — clean device-frame wrapper. (innerNode optional.)
+     phoneFrame(innerNode, ctx, opts) — WhatsApp-first chat surface wrapper.
+     The base customer channel is WhatsApp (brief Pillar U1), so the device
+     reads as a WhatsApp chat: green chat header (contact + verified + online)
+     over a chat-tint screen, with a persistent channel chip beneath it noting
+     the app/USSD/in-store variants. opts:{ contact?, sub?, chat?:true }.
+     Pass opts.chat===false for a neutral (non-chat) device if ever needed.
      ========================================================================= */
-  function phoneFrame(innerNode, ctx){
+  function phoneFrame(innerNode, ctx, opts){
+    opts = opts || {};
+    const chat = opts.chat !== false;   // chat surface by default
     const screenBody = el("div", {class:"screen-body"});
     if(innerNode) screenBody.appendChild(innerNode);
-    const dev = el("div", {class:"device"}, [
-      el("div", {class:"notch", "aria-hidden":"true"}),
-      el("div", {class:"screen"}, [
-        el("div", {class:"statusbar", "aria-hidden":"true"}, [
-          el("span", {}, ["9:41"]),
-          el("span", {class:"sb-r"}, ["●●●  ", "📶  ", "🔋"])
-        ]),
-        screenBody
+    const screenKids = [
+      el("div", {class:"statusbar", "aria-hidden":"true"}, [
+        el("span", {}, ["9:41"]),
+        el("span", {class:"sb-r"}, ["●●●  ", "📶  ", "🔋"])
       ])
+    ];
+    if(chat) screenKids.push(waHeader(opts.contact, opts.sub));
+    screenKids.push(screenBody);
+    const dev = el("div", {class:"device" + (chat?" wa-surface":"")}, [
+      el("div", {class:"notch", "aria-hidden":"true"}),
+      el("div", {class:"screen"}, screenKids)
     ]);
     if(ctx && ctx.reduceMotion) dev.classList.add("reduce-motion");
-    return dev;
+    if(!chat) return dev;
+    // wrap with the persistent channel chip beneath the phone
+    return el("div", {class:"phone-with-channel"}, [ dev, channelChip() ]);
+  }
+
+  // WhatsApp-style chat header used on every customer-facing surface
+  function waHeader(contact, sub){
+    const name = el("div", {class:"wa-name"}, [ has(contact)?String(contact):"Dis-Chem Pharmacy" ]);
+    name.appendChild(el("span", {class:"verified", "aria-label":"verified business", title:"Verified business"}, ["✔️"]));
+    return el("div", {class:"wa-header", "aria-hidden":"true"}, [
+      el("span", {class:"wa-back"}, ["‹"]),
+      el("div", {class:"wa-av"}, ["+"]),
+      el("div", {class:"wa-id"}, [
+        name,
+        el("div", {class:"wa-status"}, [
+          el("span", {class:"dot"}), document.createTextNode(has(sub)?String(sub):"online")
+        ])
+      ]),
+      el("div", {class:"wa-actions"}, ["📞", "⋮"])
+    ]);
+  }
+
+  // persistent channel-agnostic note: WhatsApp-first, also app / USSD / in-store
+  function channelChip(){
+    return el("div", {class:"channel-chip", "aria-label":"Channel: WhatsApp-first, also app, USSD and in-store"}, [
+      el("div", {class:"cc-pills"}, [
+        el("span", {class:"cc-pill lead"}, ["WhatsApp-first"]),
+        el("span", {class:"cc-pill"}, ["also in the app"]),
+        el("span", {class:"cc-pill"}, ["USSD"]),
+        el("span", {class:"cc-pill"}, ["in-store"])
+      ]),
+      el("div", {class:"cc-note"}, ["One channel-agnostic experience · data-frugal · USSD fallback on zero data"])
+    ]);
+  }
+
+  /* =========================================================================
+     waStatusCard(payload, ctx) — Fix 1: a DERIVED, customer-facing WhatsApp
+     status card for the backstage moments (m4/m5). It shows ONLY what the
+     customer would really see — a status thread + (optional) pack photo +
+     a status line + an "ask the pharmacist" affordance. It deliberately does
+     NOT show the internal checks list, AI note, robot or system names.
+     payload: { steps:[{label,state:"done|active|todo"}], line?, photo?:bool,
+                prompt?:"Ask Naledi a question", title? }
+     beats: 0 header · then one beat per step · then line · photo · prompt
+     ========================================================================= */
+  function waStatusCard(p, ctx){
+    p = p || {};
+    const root = mock("wastat", ctx);
+    let b = 0;
+    const card = el("div", {class:"wa-card"});
+    root.appendChild(card);
+    card.appendChild(beat(b++, el("div", {class:"surf-h"}, [ has(p.title)?p.title:"Order status" ])));
+    const ul = el("ul", {class:"ws-steps"});
+    card.appendChild(ul);
+    arr(p.steps).forEach(s=>{
+      s = s || {};
+      const state = (s.state==="done"||s.state==="active") ? s.state : "todo";
+      const li = el("li", {class:state}, [
+        el("span", {class:"wsdot", "aria-hidden":"true"}, [ state==="done"?"✓":(state==="active"?"…":"") ]),
+        el("span", {}, [ has(s.label)?String(s.label):"" ])
+      ]);
+      beat(b++, li); ul.appendChild(li);
+    });
+    if(has(p.line)){
+      card.appendChild(beat(b++, el("div", {class:"ws-line"}, [
+        el("span", {"aria-hidden":"true"}, ["👁"]), document.createTextNode(String(p.line))
+      ])));
+    }
+    if(p.photo){
+      const ph = el("div", {class:"ws-photo"});
+      const svg = svgEl("svg", {viewBox:"0 0 280 96", role:"img", "aria-label":"Sealed dose-pack ready"});
+      svg.appendChild(svgEl("rect", {x:0,y:0,width:280,height:96,fill:"#eef3ef"}));
+      svg.appendChild(svgEl("rect", {x:60,y:18,width:160,height:60,rx:8,fill:"#1a9b4a",stroke:"#b5d334","stroke-width":3}));
+      svg.appendChild(svgEl("line", {x1:60,y1:48,x2:220,y2:48,stroke:"#b5d334","stroke-width":2}));
+      svg.appendChild(svgEl("circle", {cx:140,cy:33,r:7,fill:"#fff",opacity:".25"}));
+      svg.appendChild(svgEl("text", {x:140,y:90,"text-anchor":"middle","font-size":9,fill:"#5d6b62","font-family":"sans-serif"}, [document.createTextNode("Sealed & ready")]));
+      ph.appendChild(svg);
+      card.appendChild(beat(b++, ph));
+    }
+    if(has(p.prompt)){
+      root.appendChild(beat(b++, el("div", {class:"chat-prompt"}, [
+        el("span", {"aria-hidden":"true"}, ["💬"]), document.createTextNode(String(p.prompt))
+      ])));
+    }
+    return root;
+  }
+
+  /* =========================================================================
+     behindLine(richNode, opts) — Fix 1: an honest "behind the line" container
+     for the detailed backstage MECHANISM (pharmacist review / ROWA etc.).
+     NOT phone-framed; distinct ops/system (grey-purple) treatment with a
+     dashed "line of visibility" header that says it is NOT a customer screen.
+     opts:{ title?, sub? }
+     ========================================================================= */
+  function behindLine(richNode, opts){
+    opts = opts || {};
+    const head = el("div", {class:"bl-head"}, [
+      el("span", {class:"bl-line"}, ["— — — line of visibility — — —"]),
+      el("span", {}, [ has(opts.title)?String(opts.title):"Behind the line — what Dis-Chem does" ]),
+      el("span", {class:"bl-sub"}, [ has(opts.sub)?String(opts.sub):"Illustrative — not a literal customer screen." ])
+    ]);
+    const body = el("div", {class:"bl-body"});
+    if(richNode) body.appendChild(richNode);
+    return el("div", {class:"behindline"}, [ head, body ]);
   }
 
   // shared: a WhatsApp-style app bar
@@ -642,7 +846,8 @@ window.MOCKUPS = (function(){
     p = p || {};
     const root = mock("wa-mock", ctx);
     let b = 0;
-    root.appendChild(beat(b++, appbar(p.contact, p.verified, "online")));
+    // NB: the WhatsApp chat header now lives in phoneFrame (single source);
+    // this renderer supplies only the in-chat thread + footnote.
     const wa = el("div", {class:"wa"});
     const thread = el("div", {class:"wa-thread"});
     const typingIdx = num(p.typingBeforeIndex, -1);
@@ -1113,7 +1318,7 @@ window.MOCKUPS = (function(){
     p = p || {};
     const root = mock("rn-mock", ctx);
     let b = 0;
-    root.appendChild(beat(b++, appbar("Dis-Chem Pharmacy", true, "renewal")));
+    // WhatsApp chat header now lives in phoneFrame (single source) — thread only here.
     const wa = el("div", {class:"wa"});
     const thread = el("div", {class:"wa-thread"});
     arr(p.messages).forEach(m=>{
@@ -1194,7 +1399,7 @@ window.MOCKUPS = (function(){
     phoneFrame, pillSVG, avatarSVG,
     whatsappNudge, cabinet, costCover, pharmacist, dispenseRowa,
     deliveryTrack, adherencePack, curveball, renewal,
-    frontBackStage
+    frontBackStage, waStatusCard, behindLine
   };
 })();
 
@@ -1589,7 +1794,7 @@ const ANIM = {
     /* 4 — named pharmacist has my back — pharmacist ------------------------ */
     {
       id:"m4", n:4, title:"A named pharmacist has my back",
-      spineStage:"VALIDATE / CLINICAL-CHECK", mockup:"pharmacist",
+      spineStage:"VALIDATE / CLINICAL-CHECK", mockup:"pharmacist", surfaceKind:"backstage",
       pillars:["S5","U4","U2","U5"], flags:["momentOfTruth","reform"],
       byEconomy:{
         insured:{
@@ -1661,7 +1866,7 @@ const ANIM = {
     /* 5 — picked, checked, packed (ROWA hero) — dispenseRowa --------------- */
     {
       id:"m5", n:5, title:"It's picked, checked and packed — and I can watch it happen",
-      spineStage:"DISPENSE", mockup:"dispenseRowa",
+      spineStage:"DISPENSE", mockup:"dispenseRowa", surfaceKind:"backstage",
       pillars:["S5","U2","U7","U4"], flags:["momentOfTruth"],
       byEconomy:{
         insured:{
@@ -1675,7 +1880,15 @@ const ANIM = {
               {label:"Sealed into one dated, by-time dose-pack", icon:"\u{1F4E6}"}
             ],
             robot:true, scanVerify:true, packPhoto:true,
-            statusLine:"You can watch each step — picked → checked → packed" },
+            statusLine:"You can watch each step — picked → checked → packed",
+            // customer-facing status the person actually sees in WhatsApp (no system names)
+            waStatus:{ title:"Your order", line:"You can watch each step", photo:true,
+              steps:[
+                {label:"Being prepared", state:"done"},
+                {label:"Picked ✓", state:"done"},
+                {label:"Safety-checked ✓", state:"active"},
+                {label:"Sealed & ready ✓", state:"todo"}
+              ] } },
           frontstage:["Live status (picked/checked/packed)","'What's in this pack' itemised handover view"],
           backstage:["ROWA automated picker dispenses eligible stock; meds shoot to the checking bench, labels print at point","Deep-learning vision verification flags look-alike / wrong-product before handover","Pharmacist single sign-off remains the gate; assistant packs into a date/time adherence pack","Dashboard E2E workflow manager tracks every member's order"],
           support:["ROWA automated picker","Scan / vision verification","Dashboard (E2E workflow manager)","Adherence-packaging line"],
@@ -1706,7 +1919,15 @@ const ANIM = {
               {label:"Packed for near-home collection", icon:"\u{1F4E6}"}
             ],
             robot:true, scanVerify:true, packPhoto:false,
-            statusLine:"Low-data status: Ready soon → Ready now" },
+            statusLine:"Low-data status: Ready soon → Ready now",
+            // customer-facing low-data status (no system names)
+            waStatus:{ title:"Your order", line:"Low-data status — same care as anyone's", photo:false,
+              steps:[
+                {label:"Being prepared", state:"done"},
+                {label:"Picked ✓", state:"done"},
+                {label:"Safety-checked ✓", state:"active"},
+                {label:"Ready for collection soon", state:"todo"}
+              ] } },
           frontstage:["Low-data status messages","Neutral, discreet parcel"],
           backstage:["Same ROWA pick + vision verification + pharmacist sign-off as the insured lane","Order staged in secure storage marked ready for near-home collection","Dashboard tracks the cash order on the same spine"],
           support:["ROWA automated picker","Scan / vision verification","Dashboard (E2E workflow manager)","Order storage"],
@@ -2285,22 +2506,72 @@ const ANIM = {
     }
   }
 
+  // derive a customer-facing WhatsApp status payload for a backstage scene from
+  // its mock (m4: statusSteps + chatPrompt; m5: explicit waStatus). Never shows
+  // internal checks / AI notes / system names — only what the person really sees.
+  function deriveWaStatus(s, mock){
+    mock = mock || {};
+    if(mock.waStatus) return mock.waStatus;            // m5 supplies its own
+    if(Array.isArray(mock.statusSteps)){               // m4: reuse statusSteps verbatim
+      return {
+        title:"Order status",
+        steps:mock.statusSteps,
+        prompt:mock.chatPrompt,
+        photo:false
+      };
+    }
+    return { title:"Order status", steps:[] };
+  }
+
+  // a short "online" sub-line for the WhatsApp header, per scene
+  function waSub(s, e){
+    if(s && s.surfaceKind==="backstage"){
+      var nm = e && e.mock && e.mock.name;
+      return nm ? ("with " + String(nm).split(" ")[0] + " · online") : "online";
+    }
+    return "online";
+  }
+
   function renderMockAndLanes(){
     var s = curScene(), e = curEco(), c = ctx();
     var phoneMount = $("#phone-mount");
+    var behindMount = $("#behindline-mount");
     clear(phoneMount);
+    if(behindMount) clear(behindMount);
 
     var type = s.mockup;
     var renderer = (MOCKUPS && typeof MOCKUPS[type]==="function") ? MOCKUPS[type] : null;
-    var inner = null;
-    if(renderer){
+    var isBackstage = (s.surfaceKind === "backstage");
+
+    // ---- the customer phone surface --------------------------------------
+    var inner;
+    if(isBackstage){
+      // phone shows ONLY a derived, customer-facing WhatsApp status card
+      var statusPayload = deriveWaStatus(s, e.mock);
+      inner = safeFn(function(){ return MOCKUPS.waStatusCard(statusPayload, c); });
+    } else if(renderer){
       inner = safeFn(function(){ return renderer(e.mock || {}, c); });
     }
     if(!inner){
-      inner = el("div", {class:"surf tiny"}, ["This moment's mockup could not be rendered."]);
+      inner = el("div", {class:"surf tiny mock"}, ["This moment's mockup could not be rendered."]);
     }
-    var framed = safeFn(function(){ return MOCKUPS.phoneFrame(inner, c); }) || inner;
+    var framed = safeFn(function(){ return MOCKUPS.phoneFrame(inner, c, { sub:waSub(s,e) }); }) || inner;
     phoneMount.appendChild(framed);
+
+    // ---- behind-the-line panel (mechanism) for backstage scenes ----------
+    if(isBackstage && behindMount && renderer){
+      var rich = safeFn(function(){ return renderer(e.mock || {}, c); });
+      if(rich){
+        var title = (type==="dispenseRowa")
+          ? "Behind the line — how Dis-Chem picks, checks & packs"
+          : "Behind the line — the pharmacist's clinical review";
+        var sub = (type==="dispenseRowa")
+          ? "ROWA pick → independent scan-verify → sealed dose-pack. Illustrative ops view — not a customer screen."
+          : "Whole-regimen safety checks (AI-assisted, human-gated 🔮). Illustrative ops view — not a customer screen.";
+        var panel = safeFn(function(){ return MOCKUPS.behindLine(rich, { title:title, sub:sub }); });
+        if(panel) behindMount.appendChild(panel);
+      }
+    }
 
     // lanes — single frontBackStage component spanning both mount points (front + back lanes)
     var frontMount = $("#frontstage-lane"), backMount = $("#backstage-lane");
