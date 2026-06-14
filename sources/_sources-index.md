@@ -40,6 +40,7 @@ _Populated as sources are ingested. Group by domain; show reliability tier._
 - [[src-dc-store-future-interviews-2026]] (B) — Store-of-the-Future future-state dispensary interviews (n=12, Jan 2026): predictability>speed, ticketing 11/12, conditional digital, forgiving recovery.
 - [[src-dc-social-media-research-2025]] (C) — social-media listening (1,270 coded comments, Dec 2025): 65% negative pharmacy sentiment, Patient Trust Journey, defection to local pharmacies.
 - [[src-dc-omnichannel-scripting-roadmap]] (B) — internal "Script Re-imagined" Virtual Order Operational Flow board; future-state scripting tech roadmap (ROWA picker robot, AI capture/route, BRIX auto-dispense, Dashboard E2E, VC/PICCUP delivery) — planned, not yet live.
+- [[src-vn-cape-point-11]] (B) — Jian × Tamsin voice note: the SHAPE of the future-state scripting deliverable (experience-definition journey map, aspirational ~5-yr, unconstrained by current tech; OCR + ROWA signed off). Authoritative brief for deliverable #05.
 
 ### SA regulatory
 - [[src-reg-medicines-act-101-1965]] (A) — Medicines & Related Substances Act 101 of 1965; §22A/22C/22F/22G.
