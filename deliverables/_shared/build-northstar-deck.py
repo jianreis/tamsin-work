@@ -499,10 +499,13 @@ def slide_approach(prs):
         chev = add_rect(slide, x, top, aw, ah, fill=col, shape=MSO_SHAPE.CHEVRON,
                         shadow=is_last)
         lab_color = WHITE if is_last else INK
-        # Horizontal, centred label in its own textbox covering the chevron's
-        # straight body (inset from the pointed ends so text stays contained).
-        lab_x = x + Inches(0.26)
-        lab_w = aw - Inches(0.52)
+        # Horizontal, centred label in its own textbox. The CHEVRON has a concave
+        # left notch (depth ~min(w,h)/2 = 0.75") that, at vertical mid-height,
+        # cuts into the shape — so the label must sit to the RIGHT of that notch
+        # to stay fully on the fill (otherwise the first letters render over the
+        # void). Inset the box past the notch; centre text in the solid body.
+        lab_x = x + Inches(0.78)
+        lab_w = Inches(0.9)
         add_text(slide, lab_x, top, lab_w, ah,
                  [[(ln, {"size": 10.5, "bold": True, "color": lab_color})]
                   for ln in label_lines],
@@ -882,15 +885,18 @@ def slide_personas(prs):
         initials = "".join(w[0] for w in name.split()[:2])
         shape_text(av, [[(initials, {"size": 16, "bold": True, "color": WHITE})]],
                    align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, margins=0.02)
-        add_text(slide, x + Inches(1.1), top + Inches(0.28), cw - Inches(1.3), Inches(0.4),
-                 [[(name, {"size": 13.5, "bold": True, "color": INK})]])
-        add_text(slide, x + Inches(1.1), top + Inches(0.66), cw - Inches(1.3), Inches(0.3),
+        # Name sits on the avatar row and gets the full width right of the avatar;
+        # the PROTAGONIST badge is moved to its own line (under the role) so it can
+        # never overlap the end of long names like "Nomvula Khumalo".
+        add_text(slide, x + Inches(1.1), top + Inches(0.24), cw - Inches(1.3), Inches(0.4),
+                 [[(name, {"size": 13, "bold": True, "color": INK})]])
+        add_text(slide, x + Inches(1.1), top + Inches(0.62), cw - Inches(1.3), Inches(0.3),
                  [[(role, {"size": 9.5, "bold": True, "color": GREEN_DK})]])
-        add_text(slide, x + Inches(0.28), top + Inches(1.18), cw - Inches(0.56), Inches(1.25),
+        add_text(slide, x + Inches(0.28), top + Inches(1.3), cw - Inches(0.56), Inches(1.2),
                  [[(desc, {"size": 10, "color": SLATE})]], line_spacing=1.02)
-        # spotlight tab
-        tab = add_rect(slide, x + cw - Inches(1.35), top + Inches(0.1), Inches(1.2),
-                       Inches(0.3), fill=LIME, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+        # spotlight tab — on its own line, left-aligned under the avatar/name block
+        tab = add_rect(slide, x + Inches(1.1), top + Inches(0.94), Inches(1.25),
+                       Inches(0.28), fill=LIME, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
         shape_text(tab, [[("★ PROTAGONIST", {"size": 7.5, "bold": True, "color": INK})]],
                    align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, margins=0.02)
     # the other five as a slim strip
