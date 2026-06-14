@@ -1,0 +1,16 @@
+=== CHECK 1: LOAD ===
+title: "Script Re-imagined — the journey, in motion (#06 interactive animation)"
+#stage exists: true
+rail button count: 9 (expect 9)
+load-phase errors: 0 []
+
+=== CHECK 2+3: per-scene settle/beats/mockup ===
+m1: settled=true beats=13/13 explore=true phone=true svgs=0 front(fs=true,bs=true) midBuild=true err=0
+m2: settled=true beats=24/24 explore=true phone=true svgs=10 front(fs=true,bs=true) midBuild=true err=0
+m3: settled=true beats=14/14 explore=true phone=true svgs=0 front(fs=true,bs=true) midBuild=true err=0
+m4: settled=true beats=11/11 explore=true phone=true svgs=1 front(fs=true,bs=true) midBuild=true err=0
+m5: settled=true beats=7/7 explore=true phone=true svgs=0 front(fs=true,bs=true) midBuild=true err=0
+m6: settled=true beats=11/11 explore=true phone=true svgs=0 front(fs=true,bs=true) midBuild=true err=0
+m7: settled=true beats=12/12 explore=true phone=true svgs=21 front(fs=true,bs=true) midBuild=true err=0
+m8: settled=true beats=10/10 explore=true phone=true svgs=0 front(fs=true,bs=true) midBuild=true err=0
+m9: settled=true beats=14/14 explore=true phone=true svgs=0 front(fs=true,bs=true) midBuild=true err=0
