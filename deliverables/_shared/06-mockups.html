@@ -296,6 +296,30 @@ button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--brand-dark
 .channel-chip .cc-pill.lead{background:var(--brand); color:#fff; border-color:var(--brand)}
 .channel-chip .cc-note{color:var(--muted2)}
 
+/* ---- per-surface channel badge (every moment) ---------------------------- */
+.channel-badge{ display:inline-flex; align-items:center; gap:5px; margin:0 auto 8px; border-radius:99px; padding:3px 11px; font-size:.68rem; font-weight:800; letter-spacing:.01em; white-space:nowrap; }
+.channel-badge .cb-ico{font-size:.82rem; line-height:1}
+.channel-badge.wa{ background:var(--brand); color:#fff; border:1px solid var(--brand-dark); }
+.channel-badge.app{ background:#efe9f3; color:var(--purple); border:1px solid #d9c2e4; }
+.phone-with-channel{display:flex; flex-direction:column; align-items:center;}
+
+/* ---- APP / portal surface skin (Pillar U1 — native app for power features) */
+.device.app-surface .screen{ background:var(--bg); }
+.app-header{ display:flex; align-items:center; gap:9px; padding:9px 12px; background:var(--card); color:var(--ink); border-bottom:1px solid var(--line); }
+.app-header .app-back{font-size:1.15rem; color:var(--muted); line-height:1; font-weight:700;}
+.app-header .app-id{flex:1 1 auto; min-width:0; display:flex; flex-direction:column; gap:1px}
+.app-header .app-wordmark{display:flex; align-items:baseline; gap:2px; font-weight:800; font-size:.84rem; letter-spacing:-.01em; color:var(--brand-dark);}
+.app-header .app-wordmark .plus{color:var(--lime); font-size:1rem; line-height:0;}
+.app-header .app-title{font-size:.72rem; font-weight:700; color:var(--ink); line-height:1.1;}
+.app-header .app-profile{ width:28px; height:28px; flex:0 0 auto; border-radius:50%; background:var(--mint); border:1px solid var(--mint-deep); display:flex; align-items:center; justify-content:center; font-size:.78rem; }
+.app-cue{ display:flex; align-items:center; gap:7px; margin:8px 0 2px; background:#f0f8f3; border:1px solid var(--mint-deep); border-radius:10px; padding:6px 10px; font-size:.72rem; color:var(--ink-soft); font-weight:600; }
+.app-cue .ac-ico{flex:0 0 auto; font-size:.92rem; line-height:1;}
+.app-cue b{font-weight:800; color:var(--brand-dark);}
+.app-tabbar{ display:flex; align-items:stretch; justify-content:space-around; background:var(--card); border-top:1px solid var(--line); padding:6px 4px 7px; }
+.app-tabbar .at-tab{ display:flex; flex-direction:column; align-items:center; gap:2px; font-size:.56rem; font-weight:700; color:var(--muted2); flex:1 1 0; }
+.app-tabbar .at-tab .at-ico{font-size:1rem; line-height:1;}
+.app-tabbar .at-tab.on{color:var(--brand-dark);}
+
 /* ---- WhatsApp status card (derived customer-facing status) --------------- */
 .wastat .surf-h{margin-bottom:8px}
 .wastat .ws-steps{list-style:none; margin:0; padding:0;}
@@ -317,6 +341,102 @@ button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--brand-dark
 .behindline .bl-body{ padding:12px 14px 0; }
 .behindline .surf{ border-color:#d9c2e4; background:#fdfbff; }
 .behindline .surf-h{ color:var(--purple); }
+.behindline .bl-title{ flex:1 1 auto; font-size:.78rem; }
+.behindline .bl-head .bl-line{ flex:1 1 100%; margin-top:3px; }
+.behindline .bl-pill{
+  order:-1; margin-left:auto; flex:0 0 auto;
+  font-size:.56rem; font-weight:800; letter-spacing:.04em; text-transform:none;
+  color:var(--purple); background:#fff; border:1px solid #d9c2e4; border-radius:99px; padding:2px 9px;
+}
+.behindline .ops-list{ margin:0; padding-left:18px; font-size:.82rem; color:var(--ink-soft); }
+.behindline .ops-list li{ margin:0 0 5px; }
+.sr-only{
+  position:absolute !important; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
+
+/* ---- cabinet & dose-pack as a WhatsApp rich card -------------------------- */
+.cabinet-wacard{ max-width:100%; }
+.cabinet-wacard .wacard-lead{ margin:2px 2px 8px; }
+.wacard-eyebrow{ font-weight:800; font-size:.84rem; color:var(--brand-dark); line-height:1.2; }
+.wacard-asof{ font-size:.7rem; color:var(--muted); font-weight:700; margin-top:2px; }
+.cabinet-wacard .member{ margin-bottom:8px; }
+.cabinet-wacard .member:last-child{ margin-bottom:0; }
+.wacard-foot{ font-size:.66rem; color:var(--muted2); margin:8px 2px 0; font-style:italic; }
+.cab-list{ max-height:430px; overflow:auto; -webkit-overflow-scrolling:touch;
+  border-radius:12px; mask-image:linear-gradient(to bottom, #000 92%, transparent);
+  -webkit-mask-image:linear-gradient(to bottom, #000 92%, transparent); }
+.reduce-motion .cab-list{ mask-image:none; -webkit-mask-image:none; }
+.cab-viewall{ margin-top:8px; text-align:center; font-size:.74rem; font-weight:800;
+  color:var(--brand-dark); background:#f0f8f3; border:1px solid var(--mint-deep);
+  border-radius:99px; padding:7px 12px; }
+
+/* ---- delivery fulfilment badge, cold-chain, custody, mode motif ----------- */
+.dt-fulfil{ display:inline-flex; gap:5px; align-items:center; margin-left:7px; margin-bottom:8px;
+  font-size:.72rem; font-weight:800; border-radius:99px; padding:3px 10px; }
+.dt-fulfil.locker{ background:#eef3ff; color:#2b4ea0; border:1px solid #cdd9f5; }
+.dt-fulfil.courier{ background:#e7f6ec; color:var(--brand-dark); border:1px solid #bfe3cf; }
+.dt-motif{ margin:2px 0 10px; border-radius:10px; overflow:hidden; border:1px solid var(--line); }
+.dt-motif svg{ display:block; width:100%; height:auto; }
+.dt-cold{ margin-top:9px; font-size:.74rem; color:#2b4ea0; background:#eef3ff; border:1px solid #cdd9f5;
+  border-radius:8px; padding:6px 10px; font-weight:700; }
+.dt-custody{ margin-top:7px; font-size:.72rem; color:var(--ink-soft); background:#f7f2fb;
+  border:1px dashed var(--reform); border-radius:8px; padding:6px 10px; }
+
+/* ---- teleconsult video surface (unmistakably NOT WhatsApp) ---------------- */
+.device.tele-surface .screen{ background:#10131a; color:#e7ebf2; }
+.tele-header{ display:flex; align-items:center; gap:9px; padding:9px 12px;
+  background:#1a2030; color:#eef1f7; border-bottom:1px solid #2a3550; }
+.tele-header .tele-live{ display:inline-flex; align-items:center; gap:5px; font-size:.6rem; font-weight:800;
+  letter-spacing:.08em; color:#fff; background:#c0392b; border-radius:99px; padding:2px 8px; }
+.tele-header .tele-live .tl-dot{ width:6px; height:6px; border-radius:50%; background:#fff; display:inline-block; }
+.tele-header .tele-id{ flex:1 1 auto; min-width:0; }
+.tele-header .tele-who{ font-weight:800; font-size:.86rem; line-height:1.1; }
+.tele-header .tele-role{ font-size:.64rem; opacity:.8; }
+.tele-header .tele-secs{ font-family:var(--mono); font-size:.74rem; opacity:.8; }
+.tele-surface .screen-body{ background:#10131a; }
+.tele-stage{ position:relative; border-radius:12px; overflow:hidden; margin:4px 0 10px;
+  background:linear-gradient(160deg,#222a3d,#141a28); min-height:150px; }
+.tele-tile{ display:flex; align-items:center; justify-content:center; }
+.tele-tile.main{ height:150px; font-size:3.4rem; }
+.tele-tile.pip{ position:absolute; right:10px; bottom:10px; width:54px; height:48px; border-radius:8px;
+  background:#2d3650; border:2px solid #455079; font-size:1.4rem; }
+.tele-cap{ position:absolute; left:8px; bottom:8px; right:70px; font-size:.6rem; color:#c4ccdc;
+  background:rgba(0,0,0,.35); border-radius:6px; padding:3px 7px; }
+.tele-controls{ display:flex; justify-content:center; gap:14px; padding:10px;
+  background:#1a2030; border-top:1px solid #2a3550; }
+.tele-controls .tc-btn{ width:38px; height:38px; border-radius:50%; background:#2d3650; color:#fff;
+  display:flex; align-items:center; justify-content:center; font-size:.9rem; }
+.tele-controls .tc-btn.end{ width:auto; border-radius:99px; padding:0 14px; background:#c0392b; font-weight:800; font-size:.74rem; }
+.tele-surface .rn-tele, .tele-surface .rn-token, .tele-surface .rn-loop, .tele-surface .wa,
+.tele-surface .cv-card, .tele-surface .cv-line{ color:#e7ebf2; }
+.tele-surface .rn-tele{ background:#1c2336; border-color:#455079; }
+.tele-surface .rn-token{ background:#221a30; }
+.tele-surface .cv-card{ background:#1a2030; border-color:#2a3550; }
+.tele-surface .cv-prob-txt, .tele-surface .cv-rec-txt{ color:#c4ccdc; }
+.tele-surface .bubble.them{ background:#222a3d; color:#e7ebf2; }
+.tele-surface .bubble.me{ background:#2a5a3a; color:#eafaf0; }
+.tele-surface .wa{ background:transparent; }
+.tele-surface .btime{ color:#9aa6c0; }
+.channel-badge.tele{ background:#1a2030; color:#cdd6ea; border:1px solid #2a3550; }
+
+/* ---- USSD low-/zero-data surface ------------------------------------------ */
+.device.ussd-surface .screen{ background:#0a0d0a; color:#cfeccf; }
+.ussd-header{ display:flex; align-items:center; justify-content:space-between; padding:9px 12px;
+  background:#11160f; color:#9fd29f; border-bottom:1px solid #25351f; font-family:var(--mono); font-size:.72rem; }
+.ussd-header .ussd-dial{ font-weight:700; }
+.ussd-header .ussd-net{ font-size:.62rem; opacity:.7; }
+.ussd-surface .screen-body{ background:#0a0d0a; }
+.ussd-card{ font-family:var(--mono); color:#d7f0d7; padding:6px 4px; line-height:1.7; }
+.ussd-title{ font-weight:700; font-size:.92rem; color:#eafaea; margin-bottom:8px; }
+.ussd-list{ list-style:none; margin:0; padding:0; }
+.ussd-item{ font-size:.86rem; padding:3px 0; color:#cfeccf; }
+.ussd-foot{ margin-top:10px; font-size:.74rem; color:#88b888; border-top:1px dashed #25351f; padding-top:8px; }
+.ussd-reply{ margin-top:12px; font-family:var(--mono); }
+.ussd-reply .ussd-sent{ font-size:.82rem; color:#eafaea; }
+.ussd-reply .ussd-result{ font-size:.78rem; color:#9fd29f; margin-top:5px; border:1px solid #25351f; border-radius:6px; padding:7px 9px; }
+.channel-badge.ussd{ background:#11160f; color:#9fd29f; border:1px solid #25351f; }
+.channel-chip.cash .cc-pill.lead{ background:#f0f8f3; color:var(--brand-dark); border-color:var(--mint-deep); }
 
 /* =============================================================================
    <<<<<<<<<<<<<<<<  END COMPONENT LIBRARY CSS  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -497,32 +617,137 @@ window.MOCKUPS = (function(){
   }
 
   /* =========================================================================
-     phoneFrame(innerNode, ctx, opts) — WhatsApp-first chat surface wrapper.
-     Renders a WhatsApp chat header (contact + verified + online) over a
-     chat-tint screen, with a persistent channel chip beneath the phone noting
-     app / USSD / in-store variants. opts:{ contact?, sub?, chat?:true }.
+     phoneFrame(innerNode, ctx, opts) — channel-aware device surface wrapper.
+     Two channels (Pillar U1 channel ladder):
+       • "whatsapp"/"chat" (DEFAULT): WhatsApp chat header over a chat-tint
+         screen — the entry/nudge/status channel.
+       • "app": a DISTINCT native app/portal surface for rich, persistent power
+         views (My Medicine Cabinet, My Dose-Pack): light header w/ Dis-Chem
+         wordmark + screen title + back chevron + profile dot, app-surface bg,
+         low-key bottom tab-bar, and a "opened from your WhatsApp reminder" cue.
+     Every surface shows a per-moment channel badge above the phone, plus the
+     persistent channel-agnostic chip beneath it.
+     opts:{ contact?, sub?, chat?:true, channel?:"whatsapp"|"app", appTitle? }.
      Pass opts.chat===false for a neutral (non-chat) device.
      ========================================================================= */
   function phoneFrame(innerNode, ctx, opts){
     opts = opts || {};
     const chat = opts.chat !== false;
+    const kind = chat ? (opts.channel || "whatsapp") : "neutral";
+    const app  = kind === "app";
+    const tele = kind === "teleconsult";
+    const ussd = kind === "ussd";
+    const econ = (ctx && ctx.econ) || "insured";
     const screenBody = el("div", {class:"screen-body"});
+    if(app) screenBody.appendChild(appCue());
+    if(tele) screenBody.appendChild(teleCue());
     if(innerNode) screenBody.appendChild(innerNode);
     const screenKids = [
       el("div", {class:"statusbar", "aria-hidden":"true"}, [
         el("span", {}, ["9:41"]),
-        el("span", {class:"sb-r"}, ["●●●  ", "📶  ", "🔋"])
+        el("span", {class:"sb-r"}, [ ussd ? "●○○  " : "●●●  ", "📶  ", "🔋"])
       ])
     ];
-    if(chat) screenKids.push(waHeader(opts.contact, opts.sub));
+    if(chat){
+      if(app) screenKids.push(appHeader(opts.appTitle));
+      else if(tele) screenKids.push(teleHeader(opts.contact));
+      else if(ussd) screenKids.push(ussdHeader());
+      else screenKids.push(waHeader(opts.contact, opts.sub));
+    }
     screenKids.push(screenBody);
-    const dev = el("div", {class:"device" + (chat?" wa-surface":"")}, [
+    if(app) screenKids.push(appTabbar());
+    if(tele) screenKids.push(teleControls());
+    const surfCls = app ? " app-surface" : tele ? " tele-surface" : ussd ? " ussd-surface"
+      : (chat ? " wa-surface" : "");
+    const dev = el("div", {class:"device" + surfCls}, [
       el("div", {class:"notch", "aria-hidden":"true"}),
       el("div", {class:"screen"}, screenKids)
     ]);
     if(ctx && ctx.reduceMotion) dev.classList.add("reduce-motion");
     if(!chat) return dev;
-    return el("div", {class:"phone-with-channel"}, [ dev, channelChip() ]);
+    return el("div", {class:"phone-with-channel"}, [ channelBadge(kind, opts), dev, channelChip(econ) ]);
+  }
+
+  // teleconsult video surface — unmistakably NOT WhatsApp
+  function teleHeader(contact){
+    const who = has(contact) ? String(contact) : "Kena";
+    return el("div", {class:"tele-header", "aria-hidden":"true"}, [
+      el("span", {class:"tele-live"}, [ el("span",{class:"tl-dot"}), "LIVE" ]),
+      el("div", {class:"tele-id"}, [
+        el("div", {class:"tele-who"}, [ "In consultation with " + who ]),
+        el("div", {class:"tele-role"}, [ "Pharmacist · video / voice" ])
+      ]),
+      el("div", {class:"tele-secs"}, ["02:14"])
+    ]);
+  }
+  function teleCue(){
+    return el("div", {class:"tele-stage", "aria-label":"Live teleconsult video"}, [
+      el("div", {class:"tele-tile main"}, [ el("span", {class:"tele-face", "aria-hidden":"true"}, ["🧑🏾‍⚕️"]) ]),
+      el("div", {class:"tele-tile pip"}, [ el("span", {"aria-hidden":"true"}, ["🙂"]) ]),
+      el("div", {class:"tele-cap"}, ["📹 Encrypted video consult · low-data fallback to voice"])
+    ]);
+  }
+  function teleControls(){
+    return el("div", {class:"tele-controls", "aria-hidden":"true"}, [
+      el("span", {class:"tc-btn"}, ["🎤"]),
+      el("span", {class:"tc-btn"}, ["📷"]),
+      el("span", {class:"tc-btn end"}, ["📞 End"])
+    ]);
+  }
+  // USSD low-/zero-data surface header
+  function ussdHeader(){
+    return el("div", {class:"ussd-header", "aria-hidden":"true"}, [
+      el("span", {class:"ussd-dial"}, ["*120*3437#"]),
+      el("span", {class:"ussd-net"}, ["USSD session"])
+    ]);
+  }
+
+  // app/portal header — clearly an APP, not WhatsApp
+  function appHeader(title){
+    return el("div", {class:"app-header", "aria-hidden":"true"}, [
+      el("span", {class:"app-back"}, ["‹"]),
+      el("div", {class:"app-id"}, [
+        el("div", {class:"app-wordmark"}, [ "Dis-Chem", el("span", {class:"plus"}, ["+"]) ]),
+        el("div", {class:"app-title"}, [ has(title)?String(title):"My health" ])
+      ]),
+      el("div", {class:"app-profile"}, ["👤"])
+    ]);
+  }
+  function appTabbar(){
+    const tab = (ico, label, on)=> el("div", {class:"at-tab"+(on?" on":"")}, [
+      el("span", {class:"at-ico", "aria-hidden":"true"}, [ico]), el("span", {}, [label])
+    ]);
+    return el("div", {class:"app-tabbar", "aria-hidden":"true"}, [
+      tab("🏠","Home",false), tab("💊","Cabinet",true), tab("📦","Orders",false), tab("⋯","More",false)
+    ]);
+  }
+  function appCue(){
+    return el("div", {class:"app-cue"}, [
+      el("span", {class:"ac-ico", "aria-hidden":"true"}, ["💬"]),
+      el("span", {}, [ el("b", {}, ["Opened from your WhatsApp reminder"]), document.createTextNode(" — the full view lives in the app") ])
+    ]);
+  }
+  function channelBadge(kind, opts){
+    opts = opts || {};
+    if(kind === "app"){
+      return el("div", {class:"channel-badge app", "aria-label":"This moment: in the app / portal"}, [
+        el("span", {class:"cb-ico", "aria-hidden":"true"}, ["📱"]), document.createTextNode("App · portal")
+      ]);
+    }
+    if(kind === "teleconsult"){
+      const who = has(opts.contact) ? String(opts.contact) : "Kena";
+      return el("div", {class:"channel-badge tele", "aria-label":"This moment: Teleconsult"}, [
+        el("span", {class:"cb-ico", "aria-hidden":"true"}, ["📹"]), document.createTextNode("Teleconsult · " + who)
+      ]);
+    }
+    if(kind === "ussd"){
+      return el("div", {class:"channel-badge ussd", "aria-label":"This moment: USSD, works on zero data"}, [
+        el("span", {class:"cb-ico", "aria-hidden":"true"}, ["📟"]), document.createTextNode("USSD · works on zero data")
+      ]);
+    }
+    return el("div", {class:"channel-badge wa", "aria-label":"This moment: WhatsApp"}, [
+      el("span", {class:"cb-ico", "aria-hidden":"true"}, ["💬"]), document.createTextNode("WhatsApp")
+    ]);
   }
 
   // WhatsApp-style chat header used on every customer-facing surface
@@ -542,8 +767,19 @@ window.MOCKUPS = (function(){
     ]);
   }
 
-  // persistent channel-agnostic note: WhatsApp-first, also app / USSD / in-store
-  function channelChip(){
+  // persistent channel note — ECONOMY-AWARE (Fix I).
+  function channelChip(econ){
+    if(econ === "cash"){
+      return el("div", {class:"channel-chip cash", "aria-label":"Channel: WhatsApp-first, USSD/SMS fallback, collect near home, no app needed"}, [
+        el("div", {class:"cc-pills"}, [
+          el("span", {class:"cc-pill lead"}, ["WhatsApp-first"]),
+          el("span", {class:"cc-pill"}, ["USSD / SMS fallback"]),
+          el("span", {class:"cc-pill"}, ["collect near home"]),
+          el("span", {class:"cc-pill"}, ["no app needed"])
+        ]),
+        el("div", {class:"cc-note"}, ["WhatsApp is the entry point; USSD/SMS keep working on zero data · data-frugal, resumable · no download, no app install"])
+      ]);
+    }
     return el("div", {class:"channel-chip", "aria-label":"Channel: WhatsApp-first, also app, USSD and in-store"}, [
       el("div", {class:"cc-pills"}, [
         el("span", {class:"cc-pill lead"}, ["WhatsApp-first"]),
@@ -551,7 +787,7 @@ window.MOCKUPS = (function(){
         el("span", {class:"cc-pill"}, ["USSD"]),
         el("span", {class:"cc-pill"}, ["in-store"])
       ]),
-      el("div", {class:"cc-note"}, ["One channel-agnostic experience · data-frugal · USSD fallback on zero data"])
+      el("div", {class:"cc-note"}, ["WhatsApp is the entry point; rich management views open in the app · data-frugal · USSD fallback on zero data"])
     ]);
   }
 
@@ -613,9 +849,14 @@ window.MOCKUPS = (function(){
      ========================================================================= */
   function behindLine(richNode, opts){
     opts = opts || {};
+    // the "not a customer screen" caveat is the FIRST readable element for SRs;
+    // worded title sits ABOVE the dashed motif; a back-of-house pill top-right.
+    const srCaveat = el("span", {class:"sr-only"}, ["Back of house — not a customer screen. "]);
     const head = el("div", {class:"bl-head"}, [
-      el("span", {class:"bl-line"}, ["— — — line of visibility — — —"]),
-      el("span", {}, [ has(opts.title)?String(opts.title):"Behind the line — what Dis-Chem does" ]),
+      srCaveat,
+      el("span", {class:"bl-pill"}, ["BACK OF HOUSE · not a customer screen"]),
+      el("span", {class:"bl-title"}, [ has(opts.title)?String(opts.title):"Behind the line — what Dis-Chem does" ]),
+      el("span", {class:"bl-line", "aria-hidden":"true"}, ["— — — line of visibility — — —"]),
       el("span", {class:"bl-sub"}, [ has(opts.sub)?String(opts.sub):"Illustrative — not a literal customer screen." ])
     ]);
     const body = el("div", {class:"bl-body"});
@@ -745,10 +986,33 @@ window.MOCKUPS = (function(){
     const hh = (ctx.household && (ctx.household[ctx.econ] || ctx.household.insured)) || {};
     const members = arr(hh.members);
     const econ = ctx.econ || "insured";
+    // off-app (cash) → render as a WhatsApp-delivered rich card, no app chrome.
+    const waMode = (ctx.channel && ctx.channel !== "app");
 
     // running beat counter (closure)
     let _b = 0;
     const beatRef = { next: ()=> _b++ };
+
+    if(waMode){
+      const card = el("div", {class:"wa-card cabinet-wacard"});
+      card.appendChild(el("div", {class:"wa-card-tag"}, [
+        el("span", {"aria-hidden":"true"}, ["💬"]), document.createTextNode("Dis-Chem · your household")
+      ]));
+      const lead = el("div", {class:"wacard-lead"}, [
+        el("div", {class:"wacard-eyebrow"}, ["Everyone's medicine, one WhatsApp number"]),
+        has(hh.asOf) ? el("div", {class:"wacard-asof"}, [hh.asOf]) : null
+      ]);
+      beat(beatRef.next(), card);
+      root.appendChild(card);
+      card.appendChild(lead);
+      if(!members.length){
+        card.appendChild(el("div", {class:"surf tiny"}, ["No household members to show."]));
+        return root;
+      }
+      members.forEach(m=>{ const c=memberCard(m, econ, beatRef); if(c) card.appendChild(c); });
+      card.appendChild(el("div", {class:"wacard-foot"}, [ "Reply with a member's name to act · no app, no download" ]));
+      return root;
+    }
 
     const top = el("div", {class:"cab-top"}, [
       el("div", {class:"cab-eyebrow"}, ["My medicine cabinet"]),
@@ -763,7 +1027,14 @@ window.MOCKUPS = (function(){
       root.appendChild(el("div", {class:"surf tiny"}, ["No household members to show."]));
       return root;
     }
-    members.forEach(m=>{ const c=memberCard(m, econ, beatRef); if(c) root.appendChild(c); });
+    // cap the visible list height + a "view all in app" affordance
+    const list = el("div", {class:"cab-list"});
+    root.appendChild(list);
+    members.forEach(m=>{ const c=memberCard(m, econ, beatRef); if(c) list.appendChild(c); });
+    root.appendChild(beat(beatRef.next(), el("div", {class:"cab-viewall"}, [
+      el("span", {"aria-hidden":"true"}, ["⌄ "]),
+      document.createTextNode("View all members & history in the app")
+    ])));
     return root;
   }
 
@@ -961,11 +1232,16 @@ window.MOCKUPS = (function(){
     });
     route.appendChild(stops);
 
+    const fb = p.fulfilBadge || null;
     const head = el("div", {}, [
       el("span", {class:"dt-mode"}, [ modeLabel[mode] ]),
+      (fb && has(fb.text)) ? el("span", {class:"dt-fulfil " + (fb.kind==="locker"?"locker":"courier")}, [
+        el("span", {"aria-hidden":"true"}, [ fb.kind==="locker"?"🔒":"🚚" ]), document.createTextNode(fb.text)
+      ]) : null,
       route
     ]);
     surf.appendChild(beat(b++, head));
+    surf.appendChild(beat(b++, modeMotif(mode)));
     // animate the fill once its beat is revealed
     head.setAttribute("data-fill", String(Math.round(fillFrac*100)));
     // (engine reveal triggers; we also set on a microtask so the gallery shows it)
@@ -992,6 +1268,16 @@ window.MOCKUPS = (function(){
         el("span", {"aria-hidden":"true"}, ["✓ "]), document.createTextNode(p.pod)
       ])));
     }
+    if(has(p.coldChain)){
+      surf.appendChild(beat(b++, el("div", {class:"dt-cold"}, [
+        el("span", {"aria-hidden":"true"}, ["❄ "]), document.createTextNode(p.coldChain)
+      ])));
+    }
+    if(has(p.custody)){
+      surf.appendChild(beat(b++, el("div", {class:"dt-custody"}, [
+        el("span", {"aria-hidden":"true"}, ["🔗 "]), document.createTextNode(p.custody)
+      ])));
+    }
     const alts = arr(p.altModes).filter(has);
     if(alts.length){
       const aw = el("div", {class:"dt-alts"});
@@ -1001,6 +1287,31 @@ window.MOCKUPS = (function(){
     return root;
   }
 
+  // a small inline motif that visually distinguishes the collection MODE.
+  function modeMotif(mode){
+    const wrap = el("div", {class:"dt-motif " + (mode==="locker"?"locker":"courier")});
+    const svg = svgEl("svg", {viewBox:"0 0 280 70", role:"img",
+      "aria-label": mode==="locker" ? "Near-home locker with PIN pad" : "Courier route to your home"});
+    svg.appendChild(svgEl("rect", {x:0,y:0,width:280,height:70,rx:8,fill:"#f3f7f4"}));
+    if(mode==="locker"){
+      for(let i=0;i<3;i++) svg.appendChild(svgEl("rect",{x:14+i*34,y:12,width:28,height:46,rx:3,fill:"#fff",stroke:"#9bcfb0","stroke-width":2}));
+      svg.appendChild(svgEl("rect",{x:14,y:12,width:28,height:46,rx:3,fill:"#e7f6ec",stroke:"#1a9b4a","stroke-width":2}));
+      for(let i=0;i<3;i++) svg.appendChild(svgEl("circle",{cx:28+i*34,cy:35,r:2.2,fill:"#5d6b62"}));
+      svg.appendChild(svgEl("rect",{x:188,y:12,width:78,height:46,rx:6,fill:"#16201b"}));
+      for(let r=0;r<3;r++) for(let cI=0;cI<3;cI++)
+        svg.appendChild(svgEl("rect",{x:196+cI*22,y:18+r*13,width:14,height:9,rx:2,fill:"#33453b"}));
+      svg.appendChild(svgEl("text",{x:227,y:66,"text-anchor":"middle","font-size":8,fill:"#5d6b62","font-family":"sans-serif"},[document.createTextNode("Enter PIN")]));
+    } else {
+      svg.appendChild(svgEl("path",{d:"M18 50 q60 -42 120 -10 q60 32 124 -16",fill:"none",stroke:"#9bcfb0","stroke-width":3,"stroke-dasharray":"5 5"}));
+      svg.appendChild(svgEl("rect",{x:8,y:40,width:20,height:18,rx:2,fill:"#1a9b4a"}));
+      svg.appendChild(svgEl("circle",{cx:262,cy:24,r:9,fill:"#c0392b"}));
+      svg.appendChild(svgEl("path",{d:"M262 33 l-6 -10 h12 Z",fill:"#c0392b"}));
+      svg.appendChild(svgEl("text",{x:262,y:54,"text-anchor":"middle","font-size":8,fill:"#5d6b62","font-family":"sans-serif"},[document.createTextNode("Home")]));
+    }
+    wrap.appendChild(svg);
+    return wrap;
+  }
+
   /* =========================================================================
      7  adherencePack
      payload: { days:[{label, slots:[{time, pills:[tone,...]}]}], reminder?, print?, forMember? }
@@ -1008,10 +1319,18 @@ window.MOCKUPS = (function(){
      ========================================================================= */
   function adherencePack(p, ctx){
     p = p || {};
+    ctx = ctx || {};
     const root = mock("ap-mock", ctx);
     let b = 0;
-    const surf = el("div", {class:"surf"});
+    // m7 dose-pack is a WhatsApp/printable rich card off-app (both economies).
+    const waMode = (ctx.channel && ctx.channel !== "app");
+    const surf = el("div", {class: waMode ? "wa-card" : "surf"});
     root.appendChild(surf);
+    if(waMode){
+      surf.appendChild(el("div", {class:"wa-card-tag"}, [
+        el("span", {"aria-hidden":"true"}, ["💬"]), document.createTextNode("Dis-Chem · your dose-pack")
+      ]));
+    }
     surf.appendChild(beat(b++, el("div", {class:"surf-h"}, [
       has(p.forMember) ? ("Dose-pack · "+p.forMember) : "Your dose-pack"
     ])));
@@ -1146,6 +1465,37 @@ window.MOCKUPS = (function(){
   }
 
   /* =========================================================================
+     ussdMenu(payload, ctx) — a USSD-styled numbered menu surface for the
+     zero-data fallback rung. NO images, plain monospace, limited colour.
+     payload: { title, items:[string], footer?, response?:{ choice, result } }
+     ========================================================================= */
+  function ussdMenu(p, ctx){
+    p = p || {};
+    const root = mock("ussd-mock", ctx);
+    let b = 0;
+    const card = el("div", {class:"ussd-card"});
+    root.appendChild(card);
+    card.appendChild(beat(b++, el("div", {class:"ussd-title"}, [ has(p.title)?String(p.title):"Dis-Chem Meds" ])));
+    const ul = el("ul", {class:"ussd-list"});
+    card.appendChild(ul);
+    arr(p.items).filter(has).forEach(it=>{
+      const li = el("li", {class:"ussd-item"}, [ String(it) ]);
+      beat(b++, li); ul.appendChild(li);
+    });
+    if(has(p.footer)){
+      card.appendChild(beat(b++, el("div", {class:"ussd-foot"}, [ String(p.footer) ])));
+    }
+    const r = p.response || {};
+    if(has(r.choice) || has(r.result)){
+      const reply = el("div", {class:"ussd-reply"});
+      if(has(r.choice)) reply.appendChild(el("div", {class:"ussd-sent"}, [ "Reply: " + String(r.choice) ]));
+      if(has(r.result)) reply.appendChild(el("div", {class:"ussd-result"}, [ String(r.result) ]));
+      root.appendChild(beat(b++, reply));
+    }
+    return root;
+  }
+
+  /* =========================================================================
      frontBackStage({frontstage:[], backstage:[]})  — the two-lane stage visual.
      beats: each frontstage chip (in order) · line-of-visibility · each backstage chip
      ========================================================================= */
@@ -1184,7 +1534,7 @@ window.MOCKUPS = (function(){
   return {
     phoneFrame, pillSVG, avatarSVG,
     whatsappNudge, cabinet, costCover, pharmacist, dispenseRowa,
-    deliveryTrack, adherencePack, curveball, renewal,
+    deliveryTrack, adherencePack, curveball, renewal, ussdMenu,
     frontBackStage, waStatusCard, behindLine
   };
 })();
