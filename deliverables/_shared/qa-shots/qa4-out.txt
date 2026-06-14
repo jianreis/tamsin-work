@@ -1,0 +1,21 @@
+=== CHECK 4: Explore ===
+m1: expanded=true visible=true panels=6 blockquotes=1 cites=3 techchips=3 reformChips=0 hasWikiCite=true err=0 
+m2: expanded=true visible=true panels=6 blockquotes=1 cites=3 techchips=3 reformChips=0 hasWikiCite=true err=0 
+m5: expanded=true visible=true panels=6 blockquotes=1 cites=3 techchips=4 reformChips=0 hasWikiCite=true err=0 
+Across scenes(insured): ROWA in explore=true reform 🔮=true
+
+=== CHECK 7: Dual economy ===
+persona insured="NomvulaPatient · household manager" cash="SiphoPatient · household manager"
+members insured=["Nomvula","Gogo","Lethabo"]
+members cash=["Sipho","Mama","Little one"]
+econ toggle errors=0 
+members back-to-insured=["Nomvula","Gogo","Lethabo"] restored=true
+
+=== CHECK 9: m9 loop ===
+m9 phone mentions loop/renew/token=true loopAffordances=[]
+after key 1 from m9: scene-count="Scene 1 / 9"
+
+=== CHECK 8: m8 curveball ===
+m8 phone text snippet: "9:41●●●  📶  🔋🔴Stock-outYour statin is out of stock at the fulfilment node.↓✓Funded generic, pharmacist-approvedTwo taps to swap to a funded generic — R0, checked, no wasted trip.U4S3🔴Claim rejecte"
+
+Total residual errors this run (last scene):0

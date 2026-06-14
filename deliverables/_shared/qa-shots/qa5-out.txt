@@ -1,0 +1,19 @@
+=== CHECK 8a: reduce-motion toggle ===
+rm-toggle aria-pressed=true
+m1: settled=true beats=13/13 instantOK=true
+m2: settled=true beats=24/24 instantOK=true
+m3: settled=true beats=14/14 instantOK=true
+m4: settled=true beats=11/11 instantOK=true
+m5: settled=true beats=7/7 instantOK=true
+m6: settled=true beats=11/11 instantOK=true
+m7: settled=true beats=12/12 instantOK=true
+m8: settled=true beats=10/10 instantOK=true
+m9: settled=true beats=14/14 instantOK=true
+reduce-motion all-instant=true errors=0
+
+=== CHECK 8b: prefers-reduced-motion:reduce at load ===
+on load w/ prefers-reduced-motion: settled=true beats=13/13 rm-toggle aria=true errors=0
+
+=== CHECK 10: Responsive ===
+700x900: scrollW=700 innerW=700 overflow=0px (tol<=2) stage=true phone=true explore=true err=0
+375x800: scrollW=375 innerW=375 overflow=0px (tol<=2) stage=true phone=true explore=true err=0
