@@ -1099,7 +1099,127 @@ const DATA = {
       }
     }
 
-  ]
+  ],
+
+  /* ---------------------------------------------------------------------------
+     HOUSEHOLD — the hero "My medicine cabinet" view. Keyed by economy → members[]
+     → medicines[]. ILLUSTRATIVE / indicative data, consistent with the personas
+     (no citations: these are example regimens, not sourced facts). The renderer
+     reads this; nothing is hard-coded in the view. Medicine "shape" drives the
+     inline-SVG pill icon (tablet | caplet | capsule | bottle); "tone"/"tone2"
+     set its colours. Funding: insured → covered/copay; cash → cash price, with
+     the elderly public line shown as CCMDD · R0 (free public chronic supply).
+  --------------------------------------------------------------------------- */
+  household:{
+    insured:{
+      frame:"Three people, one account. Nomvula's chronic meds, Gogo's chronic repeat and Lethabo's short acute course — every dose, every status and every rand of cover, in one calm place. Discovery is applied automatically; any co-pay is shown here, never at the till.",
+      asOf:"Cycle ready · next collection in 4 days",
+      members:[
+        {
+          role:"Me", name:"Nomvula", you:true,
+          sub:"54 · HR manager · HTN + type-2 diabetes on the CDL",
+          avatar:"adult-f",
+          medicines:[
+            {name:"Amlodipine", strength:"5 mg", shape:"tablet", tone:"#f0a23b", tone2:"#d9821b",
+             forText:"Lowers blood pressure (calcium-channel blocker)",
+             dose:"1 in the morning", supply:"30 days left", status:"ok",
+             fund:{kind:"covered", text:"Covered · R0", sub:"Discovery · CDL"}},
+            {name:"Hydrochlorothiazide", strength:"12.5 mg", shape:"tablet", tone:"#e9e2d2", tone2:"#c9bfa6",
+             forText:"Water tablet — helps control blood pressure",
+             dose:"1 in the morning", supply:"30 days left", status:"ok",
+             fund:{kind:"covered", text:"Covered · R0", sub:"Discovery · CDL"}},
+            {name:"Metformin", strength:"850 mg", shape:"caplet", tone:"#ffffff", tone2:"#d4dbd6",
+             forText:"Controls blood sugar in type-2 diabetes",
+             dose:"1 morning · 1 night", supply:"6 days left", status:"due",
+             fund:{kind:"covered", text:"Covered · R0", sub:"Discovery · CDL"}},
+            {name:"Atorvastatin", strength:"20 mg", shape:"tablet", tone:"#d96b8a", tone2:"#b84a6b",
+             forText:"Lowers cholesterol to protect heart & vessels",
+             dose:"1 at night", supply:"12 days left", status:"way",
+             fund:{kind:"copay", text:"Co-pay R42", sub:"non-formulary brand"},
+             note:"A fully-funded generic is one tap away — switch to pay R0."}
+          ]
+        },
+        {
+          role:"Gogo (mother)", name:"Gogo", proxy:true,
+          sub:"79 · lives with the family · elderly chronic regimen",
+          avatar:"elder-f",
+          medicines:[
+            {name:"Enalapril", strength:"10 mg", shape:"tablet", tone:"#7fb3e0", tone2:"#4f8fc4",
+             forText:"Blood-pressure tablet (ACE inhibitor)",
+             dose:"1 in the morning", supply:"18 days left", status:"ok",
+             fund:{kind:"covered", text:"Covered · R0", sub:"Discovery · CDL"}},
+            {name:"Warfarin", strength:"5 mg", shape:"tablet", tone:"#8e6fc4", tone2:"#6c4aa0",
+             forText:"Thins the blood to prevent clots",
+             dose:"1 at night · INR-monitored", supply:"On the way", status:"way",
+             fund:{kind:"covered", text:"Covered · R0", sub:"Discovery · CDL"},
+             note:"High-alert: dose set by the latest INR; pharmacist reviews each repeat."}
+          ]
+        },
+        {
+          role:"Child", name:"Lethabo", proxy:true,
+          sub:"7 · short acute course (chest infection)",
+          avatar:"child",
+          medicines:[
+            {name:"Amoxicillin suspension", strength:"250 mg/5 mL", shape:"bottle", tone:"#f2c84b", tone2:"#e0a91f",
+             forText:"Antibiotic for a chest infection — finish the full course",
+             dose:"5 mL three times a day · 7 days", supply:"Acute · 7-day course", status:"ok",
+             fund:{kind:"copay", text:"Co-pay R28", sub:"acute · paid from savings"},
+             note:"Checked against Gogo's & Nomvula's meds in the house — safe to use."}
+          ]
+        }
+      ]
+    },
+    cash:{
+      frame:"One WhatsApp number, the whole family. Sipho's BP tablets, his mother's free public repeat and his child's acute antibiotic — each with a clear Rand price up front, collected near home. The cash price is shown before he travels; nothing is a black box at the till.",
+      asOf:"Ready for collection near home · PIN sent by SMS",
+      members:[
+        {
+          role:"Me", name:"Sipho", you:true,
+          sub:"45 · peri-urban Durban · hypertensive · pays cash",
+          avatar:"adult-m",
+          medicines:[
+            {name:"Amlodipine", strength:"5 mg", shape:"tablet", tone:"#f0a23b", tone2:"#d9821b",
+             forText:"Lowers blood pressure (calcium-channel blocker)",
+             dose:"1 in the morning", supply:"28 days left", status:"ok",
+             fund:{kind:"cash", text:"R91", sub:"tablets R57 + fee R34"},
+             note:"Generic option shown up front: R61 instead of R91."},
+            {name:"Hydrochlorothiazide", strength:"12.5 mg", shape:"tablet", tone:"#e9e2d2", tone2:"#c9bfa6",
+             forText:"Water tablet — helps control blood pressure",
+             dose:"1 in the morning", supply:"9 days left", status:"due",
+             fund:{kind:"cash", text:"R74", sub:"tablets R40 + fee R34"}}
+          ]
+        },
+        {
+          role:"Gogo (mother)", name:"Mama", proxy:true,
+          sub:"71 · public-sector chronic · CCMDD",
+          avatar:"elder-f",
+          medicines:[
+            {name:"Enalapril", strength:"10 mg", shape:"tablet", tone:"#7fb3e0", tone2:"#4f8fc4",
+             forText:"Blood-pressure tablet (ACE inhibitor)",
+             dose:"1 in the morning", supply:"On the way", status:"way",
+             fund:{kind:"free", text:"CCMDD · R0", sub:"free public supply"},
+             note:"Free public repeat, bridged onto the same near-home locker rail."},
+            {name:"Hydrochlorothiazide", strength:"12.5 mg", shape:"tablet", tone:"#e9e2d2", tone2:"#c9bfa6",
+             forText:"Water tablet for blood pressure",
+             dose:"1 in the morning", supply:"On the way", status:"way",
+             fund:{kind:"free", text:"CCMDD · R0", sub:"free public supply"}}
+          ]
+        },
+        {
+          role:"Child", name:"Little one", proxy:true,
+          sub:"6 · short acute course (chest infection)",
+          avatar:"child",
+          medicines:[
+            {name:"Amoxicillin suspension", strength:"250 mg/5 mL", shape:"bottle", tone:"#f2c84b", tone2:"#e0a91f",
+             forText:"Antibiotic for a chest infection — finish the full course",
+             dose:"5 mL three times a day · 7 days", supply:"Acute · 7-day course", status:"ok",
+             fund:{kind:"cash", text:"R64", sub:"medicine R30 + fee R34"},
+             note:"Priced & checked by a pharmacist before he travels."}
+          ]
+        }
+      ]
+    }
+  }
 };
 
 /* =============================================================================
@@ -1117,6 +1237,7 @@ const DATA = {
   const ECON = arr(D.economies);
   const MOMENTS = arr(D.moments);
   const PHIL = D.philosophy || {};
+  const HOUSEHOLD = (D.household && typeof D.household==="object") ? D.household : {};
 
   const FLAGS = {
     momentOfTruth:{glyph:"⭐", label:"moment of truth"},
@@ -1149,6 +1270,7 @@ const DATA = {
 
   // ---- state ----------------------------------------------------------------
   const state = {
+    view: "journey",         // "journey" | "cabinet"
     econ: (ECON[0] && ECON[0].id) || "insured",
     expanded: new Set(),
     tab: {},                 // momentId -> "story" | "lanes"
@@ -1660,9 +1782,239 @@ const DATA = {
   }
 
   // ===========================================================================
+  // TOP-LEVEL VIEW SWITCH (Journey ⇄ My medicine cabinet)
+  // ===========================================================================
+  function renderViewSwitch(){
+    const mount = $("#viewswitch-mount");
+    if(!mount) return;
+    mount.innerHTML = "";
+    const wrap = el("div", {class:"viewswitch"});
+    wrap.appendChild(el("span", {class:"vlabel"}, ["View"]));
+    const seg = el("div", {class:"vseg", role:"group", "aria-label":"Switch view: the journey, or my medicine cabinet"});
+    const views = [
+      {id:"journey", ico:"🧭", label:"Journey"},
+      {id:"cabinet", ico:"💊", label:"My medicine cabinet"}
+    ];
+    views.forEach(v=>{
+      seg.appendChild(el("button", {
+        type:"button", "aria-pressed":String(state.view===v.id), "data-view":v.id,
+        onclick:()=>setView(v.id)
+      }, [el("span", {class:"vico", "aria-hidden":"true"}, [v.ico]), document.createTextNode(v.label)]));
+    });
+    wrap.appendChild(seg);
+    mount.appendChild(wrap);
+  }
+
+  function applyView(){
+    const j = $("#view-journey"), c = $("#view-cabinet");
+    if(j){ if(state.view==="journey") j.removeAttribute("hidden"); else j.setAttribute("hidden",""); }
+    if(c){ if(state.view==="cabinet") c.removeAttribute("hidden"); else c.setAttribute("hidden",""); }
+    document.querySelectorAll('.vseg [data-view]').forEach(b=>
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-view")===state.view)));
+  }
+
+  // ===========================================================================
+  // MY MEDICINE CABINET — the hero "view & manage all my medications" showpiece
+  // ===========================================================================
+
+  // inline-SVG pill / tablet / capsule / bottle icon (varies by shape & colour).
+  // INLINE SVG ONLY — never an external image.
+  function pillSVG(med){
+    const ns="http://www.w3.org/2000/svg";
+    const svg=document.createElementNS(ns,"svg");
+    svg.setAttribute("viewBox","0 0 48 48");
+    svg.setAttribute("role","img"); svg.setAttribute("aria-hidden","true");
+    const mk=(t,a)=>{ const e=document.createElementNS(ns,t); for(const k in a) e.setAttribute(k,a[k]); return e; };
+    const tone = (med && med.tone) || "#1a9b4a";
+    const tone2 = (med && med.tone2) || "#157a3b";
+    const shape = (med && med.shape) || "tablet";
+    const stroke = "rgba(0,0,0,.18)";
+
+    if(shape==="capsule"){
+      // two-tone capsule (oblong, split colour)
+      svg.appendChild(mk("rect",{x:8,y:17,width:32,height:14,rx:7,ry:7,fill:tone2}));
+      svg.appendChild(mk("path",{d:"M15 17 H24 V31 H15 a7 7 0 0 1 0 -14 Z",fill:tone}));
+      svg.appendChild(mk("rect",{x:8,y:17,width:32,height:14,rx:7,ry:7,fill:"none",stroke:stroke,"stroke-width":1.2}));
+      svg.appendChild(mk("ellipse",{cx:16,cy:21,rx:4,ry:2,fill:"rgba(255,255,255,.35)"}));
+    } else if(shape==="caplet"){
+      // oblong caplet with a score line
+      svg.appendChild(mk("rect",{x:7,y:18,width:34,height:12,rx:6,ry:6,fill:tone,stroke:stroke,"stroke-width":1.2}));
+      svg.appendChild(mk("line",{x1:24,y1:19,x2:24,y2:29,stroke:stroke,"stroke-width":1.4}));
+      svg.appendChild(mk("ellipse",{cx:14,cy:22,rx:5,ry:2,fill:"rgba(255,255,255,.4)"}));
+    } else if(shape==="bottle"){
+      // liquid medicine bottle (suspension)
+      svg.appendChild(mk("rect",{x:18,y:7,width:12,height:6,rx:1.5,fill:tone2}));               // cap
+      svg.appendChild(mk("rect",{x:21,y:12,width:6,height:5,fill:tone2}));                       // neck
+      svg.appendChild(mk("rect",{x:13,y:16,width:22,height:25,rx:4,fill:"#eef3ef",stroke:stroke,"stroke-width":1.2})); // bottle
+      svg.appendChild(mk("path",{d:"M13 27 h22 v10 a4 4 0 0 1 -4 4 H17 a4 4 0 0 1 -4 -4 Z",fill:tone})); // liquid
+      svg.appendChild(mk("rect",{x:16,y:20,width:16,height:5,rx:1,fill:"#fff",stroke:stroke,"stroke-width":.8})); // label
+    } else {
+      // round tablet (default) with score line
+      svg.appendChild(mk("circle",{cx:24,cy:24,r:15,fill:tone,stroke:stroke,"stroke-width":1.2}));
+      svg.appendChild(mk("line",{x1:24,y1:10,x2:24,y2:38,stroke:stroke,"stroke-width":1.2}));
+      svg.appendChild(mk("ellipse",{cx:19,cy:18,rx:5,ry:2.5,fill:"rgba(255,255,255,.4)"}));
+    }
+    return svg;
+  }
+
+  // member avatar — small inline SVG, varies by type & economy ring
+  function memberAvatarSVG(kind, econId){
+    const ns="http://www.w3.org/2000/svg";
+    const svg=document.createElementNS(ns,"svg");
+    svg.setAttribute("viewBox","0 0 48 48");
+    svg.setAttribute("role","img"); svg.setAttribute("aria-hidden","true");
+    const mk=(t,a)=>{ const e=document.createElementNS(ns,t); for(const k in a) e.setAttribute(k,a[k]); return e; };
+    const ring = econId==="cash" ? "#b5d334" : "#1a9b4a";
+    const skin = "#cfe6d8";
+    svg.appendChild(mk("circle",{cx:24,cy:24,r:23,fill:"#1f2b24",stroke:ring,"stroke-width":2}));
+    if(kind==="child"){
+      svg.appendChild(mk("circle",{cx:24,cy:21,r:7,fill:skin}));
+      svg.appendChild(mk("path",{d:"M13 42 a11 10 0 0 1 22 0 Z",fill:skin}));
+    } else if(kind==="elder-f"){
+      svg.appendChild(mk("path",{d:"M14 20 a10 10 0 0 1 20 0 v3 h-20 Z",fill:"#e8eef0"})); // grey hair
+      svg.appendChild(mk("circle",{cx:24,cy:20,r:8,fill:skin}));
+      svg.appendChild(mk("path",{d:"M9 44 a15 14 0 0 1 30 0 Z",fill:skin}));
+    } else {
+      // adult m/f generic
+      svg.appendChild(mk("circle",{cx:24,cy:19,r:8,fill:skin}));
+      svg.appendChild(mk("path",{d:"M9 44 a15 14 0 0 1 30 0 Z",fill:skin}));
+    }
+    return svg;
+  }
+
+  const STATUS = {
+    ok:{cls:"ok", glyph:"✓", label:"In stock"},
+    way:{cls:"way", glyph:"🚚", label:"On the way"},
+    due:{cls:"due", glyph:"⏰", label:"Due soon"}
+  };
+
+  function medRow(med){
+    if(!med) return null;
+    const li = el("li", {class:"med"});
+
+    // pill icon
+    const pic = el("div", {class:"med-pill"});
+    pic.appendChild(pillSVG(med));
+    li.appendChild(pic);
+
+    // main column
+    const main = el("div", {class:"med-main"});
+    const nm = el("div", {class:"med-name"}, [has(med.name)?med.name:"Medicine"]);
+    if(has(med.strength)) nm.appendChild(el("span", {class:"strength"}, [med.strength]));
+    main.appendChild(nm);
+    if(has(med.forText)) main.appendChild(el("div", {class:"med-for"}, [med.forText]));
+
+    const meta = el("div", {class:"med-meta"});
+    if(has(med.dose)){
+      meta.appendChild(el("span", {class:"mm"}, [el("span", {class:"mmk"}, ["Dose"]), document.createTextNode(med.dose)]));
+    }
+    if(has(med.supply)){
+      meta.appendChild(el("span", {class:"mm"}, [el("span", {class:"mmk"}, ["Supply"]), document.createTextNode(med.supply)]));
+    }
+    main.appendChild(meta);
+    li.appendChild(main);
+
+    // side column: status chip + funding
+    const side = el("div", {class:"med-side"});
+    const st = STATUS[med.status] || STATUS.ok;
+    side.appendChild(el("span", {class:"status-chip "+st.cls},
+      [el("span", {"aria-hidden":"true"}, [st.glyph]), document.createTextNode(st.label)]));
+    const f = med.fund || {};
+    if(has(f.text)){
+      const fk = (f.kind==="covered"||f.kind==="cash"||f.kind==="copay"||f.kind==="free") ? f.kind : "cash";
+      side.appendChild(el("span", {class:"fund-chip "+fk}, [f.text]));
+    }
+    if(has(f.sub)) side.appendChild(el("span", {class:"fund-sub"}, [f.sub]));
+    li.appendChild(side);
+
+    if(has(med.note)) li.appendChild(el("div", {class:"med-note"}, ["ℹ "+med.note]));
+    return li;
+  }
+
+  function memberCard(member, econId){
+    if(!member) return null;
+    const card = el("div", {class:"member"});
+    const head = el("div", {class:"mem-head"});
+    const av = el("div", {class:"mem-avatar"});
+    av.appendChild(memberAvatarSVG(member.avatar||"adult", econId));
+    head.appendChild(av);
+    const idc = el("div", {class:"mem-id"});
+    idc.appendChild(el("div", {class:"mem-role"}, [member.role||(member.you?"Me":"Member")]));
+    idc.appendChild(el("div", {class:"mem-name"}, [has(member.name)?member.name:"—"]));
+    if(has(member.sub)) idc.appendChild(el("div", {class:"mem-sub"}, [member.sub]));
+    head.appendChild(idc);
+    if(member.proxy){
+      head.appendChild(el("span", {class:"proxy-badge", title:"You manage this member's medicine via a recorded, POPIA-grade proxy consent."},
+        [el("span", {class:"pico", "aria-hidden":"true"}, ["👥"]), document.createTextNode("Managing for")]));
+    }
+    card.appendChild(head);
+
+    const ul = el("ul", {class:"meds"});
+    arr(member.medicines).forEach(m=>{ const r=medRow(m); if(r) ul.appendChild(r); });
+    card.appendChild(ul);
+    return card;
+  }
+
+  function renderCabinet(){
+    const mount = $("#cabinet-mount");
+    if(!mount) return;
+    mount.innerHTML = "";
+    const hh = HOUSEHOLD[state.econ] || HOUSEHOLD[(ECON[0]||{}).id] || {};
+    const members = arr(hh.members);
+    const e = econObj();
+    const who = (e.persona && e.persona.name) || e.label || state.econ;
+
+    // hero
+    const hero = el("div", {class:"cab-hero"});
+    hero.appendChild(el("div", {class:"cab-eyebrow"}, ["My medicine cabinet"]));
+    hero.appendChild(el("h2", {}, ["Everyone's medicine, in one calm place"]));
+    if(has(hh.frame)) hero.appendChild(el("div", {class:"cab-frame"}, [hh.frame]));
+    const verbs = el("div", {class:"cab-verbs", "aria-label":"What you can do here"});
+    ["👁 View","🛠 Manage","🚚 Track","✅ Use"].forEach(v=> verbs.appendChild(el("span", {class:"cab-verb"}, [v])));
+    hero.appendChild(verbs);
+    const forln = el("div", {class:"cab-for"});
+    forln.appendChild(document.createTextNode("Household of "));
+    forln.appendChild(el("b", {}, [who]));
+    if(has(hh.asOf)){ forln.appendChild(document.createTextNode(" · ")); forln.appendChild(el("span", {}, [hh.asOf])); }
+    hero.appendChild(forln);
+    mount.appendChild(hero);
+
+    // summary stats (computed from the data — defensive)
+    let medCount=0, dueCount=0, coveredCount=0;
+    members.forEach(m=> arr(m.medicines).forEach(md=>{
+      medCount++;
+      if(md && md.status==="due") dueCount++;
+      const k = md && md.fund && md.fund.kind;
+      if(k==="covered"||k==="free") coveredCount++;
+    }));
+    const sum = el("div", {class:"cab-summary"});
+    const stat = (n,l)=> el("div", {class:"cab-stat"}, [el("div", {class:"cs-n"}, [String(n)]), el("div", {class:"cs-l"}, [l])]);
+    sum.appendChild(stat(members.length, "household members"));
+    sum.appendChild(stat(medCount, "medicines tracked"));
+    sum.appendChild(stat(coveredCount, state.econ==="insured" ? "fully covered · R0" : "free / public · R0"));
+    sum.appendChild(stat(dueCount, "due soon — auto-ordering"));
+    mount.appendChild(sum);
+
+    // member cards
+    const list = el("div", {class:"cab-members"});
+    if(members.length){
+      members.forEach(m=>{ const c=memberCard(m, state.econ); if(c) list.appendChild(c); });
+    } else {
+      list.appendChild(el("div", {class:"gap-box"}, ["⚠️ No household data for this economy."]));
+    }
+    mount.appendChild(list);
+
+    mount.appendChild(el("div", {class:"cab-foot"}, [
+      "Illustrative household & regimen — indicative, not a real patient record. Each pill icon is inline SVG; a registered pharmacist signs off every dispense, and proxy access for dependents is governed by recorded POPIA-grade consent."
+    ]));
+  }
+
+  // ===========================================================================
   // INTERACTIONS
   // ===========================================================================
   function setEcon(id){ if(state.econ===id) return; state.econ=id; renderAll(); }
+
+  function setView(id){ if(state.view===id) return; state.view=id; renderViewSwitch(); applyView(); }
 
   function toggleMoment(id, scroll){
     if(state.expanded.has(id)) state.expanded.delete(id); else state.expanded.add(id);
@@ -1751,10 +2103,13 @@ const DATA = {
   // ===========================================================================
   function renderAll(){
     renderIntro();
+    renderViewSwitch();
     renderToolbar();
     renderPersona();
     renderLegends();
     renderBoard();
+    renderCabinet();
+    applyView();
   }
 
   // boot (defensive: never throw)
