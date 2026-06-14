@@ -2,7 +2,7 @@
 type: index
 title: "Dispensing best practice — index"
 domain: dispensing-practice
-updated: "2026-06-13"
+updated: "2026-06-14"
 tags: [index, domain/dispensing]
 status: draft
 ---
@@ -35,6 +35,9 @@ Pharmacy Practice and SA's SAPC GPP rules.
   serialisation (GS1, NAPPI).
 - [[counselling-and-health-literacy]] — patient counselling best practice,
   teach-back, label comprehension, health-literacy & multilingual considerations.
+- [[after-hours-emergency-acute-access]] — the off-spine **complex use case**:
+  after-hours / emergency / out-patient acute medication access, its pains, and how
+  it converges with the chronic spine (drawn from a cross-sector CX precedent).
 
 ## Key sources (prefix `src-disp-`)
 FIP/WHO GPP [[src-disp-fipwho-gpp]] · MSH dispensing cycle
