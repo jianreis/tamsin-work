@@ -1,0 +1,2575 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Script Re-imagined — the journey, in motion (#06 interactive animation)</title>
+<style>
+/* =============================================================================
+   DELIVERABLE #06 — INTERACTIVE CLICK-THROUGH JOURNEY ANIMATION
+   Single self-contained file. ALL CSS here, ALL JS in one vanilla script.
+   No external requests of any kind. Inline SVG / emoji only.
+   Tokens + COMPONENT LIBRARY CSS + MOCKUPS lib copied from
+   deliverables/_shared/06-mockups.html ; data inlined from 06-anim-data.js.
+   Palette tokens are VERBATIM from #05 so the two deliverables are siblings.
+   ============================================================================= */
+:root{
+  /* board palette — VERBATIM from #05 (brief §5) */
+  --brand:#1a9b4a; --brand-dark:#157a3b;
+  --lime:#b5d334; --mint:#bfe3cf; --mint-deep:#9bcfb0;
+  --ink:#1d1d1d; --ink-soft:#2b2b2b; --bg:#f6f8f6; --card:#ffffff;
+  --muted:#5d6b62; --muted2:#8a958d; --line:#d8e2db;
+  --purple:#5b2a6b; --grey:#5a5a5a;
+  --pain:#c0392b; --warn:#b9770b; --good:#1a9b4a; --reform:#7c3aed;
+  --interactive:#1a9b4a;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --sp:8px; --radius:12px; --maxw:1280px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg); color:var(--ink); font-family:var(--font); line-height:1.5; font-size:15px; -webkit-text-size-adjust:100%;}
+h1,h2,h3,h4{margin:0}
+.tiny{font-size:.78rem; color:var(--muted)}
+.mono{font-family:var(--mono); font-size:.82em}
+button{font:inherit; cursor:pointer}
+button:focus-visible,[tabindex]:focus-visible,a:focus-visible{outline:3px solid var(--brand-dark); outline-offset:2px}
+
+/* =============================================================================
+   >>>>>>>>>>>>>>>>  COMPONENT LIBRARY CSS — copied from 06-mockups.html  <<<<<<<
+   ============================================================================= */
+
+/* ---- staged-build mechanism (brief §7) ----------------------------------- */
+.mock [data-beat]{ opacity:0; transform:translateY(10px); transition:opacity .42s ease-out, transform .42s ease-out; }
+.mock [data-beat].reveal, .mock [data-beat].is-shown{ opacity:1; transform:none; }
+.mock.reduce-motion [data-beat],
+.reduce-motion .mock [data-beat]{ opacity:1 !important; transform:none !important; transition:none !important; }
+@media (prefers-reduced-motion:reduce){
+  .mock [data-beat]{ opacity:1 !important; transform:none !important; transition:none !important; }
+}
+@media print{
+  .mock [data-beat]{ opacity:1 !important; transform:none !important; transition:none !important; }
+}
+
+/* ---- phone device frame --------------------------------------------------- */
+.device{
+  width:300px; max-width:100%; margin:0 auto;
+  background:#0e1512; border-radius:34px; padding:12px;
+  box-shadow:0 18px 44px rgba(20,40,28,.28), inset 0 0 0 2px #243029;
+  position:relative;
+}
+.device .notch{
+  position:absolute; top:14px; left:50%; transform:translateX(-50%);
+  width:96px; height:18px; background:#0e1512; border-radius:0 0 12px 12px; z-index:3;
+}
+.device .screen{
+  background:var(--bg); border-radius:24px; overflow:hidden; min-height:480px;
+  display:flex; flex-direction:column;
+}
+.device .statusbar{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:9px 18px 4px; font-size:.7rem; font-weight:700; color:var(--ink-soft);
+}
+.device .statusbar .sb-r{display:flex; gap:5px; align-items:center}
+.device .screen-body{flex:1 1 auto; min-height:0; overflow:auto; padding:6px 12px 16px;}
+
+/* ---- generic mock surface card ------------------------------------------- */
+.surf{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin:8px 0;}
+.surf-h{font-size:.7rem; text-transform:uppercase; letter-spacing:.09em; color:var(--muted); font-weight:800;}
+.appbar{
+  display:flex; align-items:center; gap:9px; padding:10px 12px;
+  background:var(--brand); color:#fff; border-radius:12px; margin:4px 0 8px;
+}
+.appbar .ab-av{width:30px; height:30px; border-radius:50%; background:rgba(255,255,255,.2); display:flex; align-items:center; justify-content:center; font-weight:800;}
+.appbar .ab-name{font-weight:800; font-size:.92rem; line-height:1.1; display:flex; align-items:center; gap:5px;}
+.appbar .ab-sub{font-size:.66rem; opacity:.9;}
+.verified{font-size:.72rem;}
+
+/* ---- 1 whatsappNudge ------------------------------------------------------ */
+.wa{background:#e7efe9; border-radius:12px; padding:10px; }
+.bubble{ max-width:84%; border-radius:14px; padding:8px 11px; margin:7px 0; font-size:.86rem; position:relative; box-shadow:0 1px 2px rgba(0,0,0,.06); }
+.bubble.them{ background:#fff; border-top-left-radius:4px; align-self:flex-start; }
+.bubble.me{ background:#d6f3c8; border-top-right-radius:4px; margin-left:auto; }
+.wa-thread{display:flex; flex-direction:column;}
+.bubble .btime{display:block; text-align:right; font-size:.62rem; color:var(--muted2); margin-top:3px;}
+.quicks{display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;}
+.quick{ border:1.5px solid var(--brand); background:#fff; color:var(--brand-dark); border-radius:99px; padding:4px 11px; font-size:.78rem; font-weight:700; }
+.typing{ display:inline-flex; gap:3px; align-items:center; padding:8px 11px; background:#fff; border-radius:14px; border-top-left-radius:4px; }
+.typing i{ width:6px; height:6px; border-radius:50%; background:var(--muted2); display:inline-block; animation:tdot 1.1s infinite ease-in-out; }
+.typing i:nth-child(2){animation-delay:.18s} .typing i:nth-child(3){animation-delay:.36s}
+@keyframes tdot{0%,60%,100%{opacity:.3; transform:translateY(0)} 30%{opacity:1; transform:translateY(-3px)}}
+.reduce-motion .typing i{animation:none; opacity:.6}
+.wa-foot{font-size:.72rem; color:var(--muted); margin-top:8px; display:flex; gap:6px; align-items:baseline;}
+
+/* ---- 2 cabinet (HERO) — ported from #05 (.member/.med/chips) -------------- */
+.cabm .cab-top{
+  background:linear-gradient(150deg,#157a3b 0%,#1a9b4a 60%,#46b56a 100%); color:#fff;
+  border-radius:14px; padding:12px 14px; margin:4px 0 10px; position:relative; overflow:hidden;
+}
+.cabm .cab-top .cab-eyebrow{font-size:.62rem; text-transform:uppercase; letter-spacing:.15em; font-weight:800; color:#d9f0e1;}
+.cabm .cab-top h3{font-size:1.05rem; font-weight:800; line-height:1.12; margin-top:3px;}
+.cabm .cab-top .cab-frame{margin-top:6px; font-size:.74rem; color:#eafaf0;}
+.cabm .cab-top .cab-asof{margin-top:8px; font-size:.7rem; color:#d9f0e1; font-weight:700;}
+.member{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius); margin-bottom:10px; overflow:hidden; break-inside:avoid; }
+.member .mem-head{ display:flex; align-items:center; gap:10px; padding:9px 12px; background:var(--mint); border-bottom:1px solid var(--mint-deep); }
+.member .mem-avatar{flex:0 0 auto}
+.member .mem-avatar svg{display:block; width:38px; height:38px}
+.member .mem-id{flex:1 1 auto; min-width:0}
+.member .mem-role{font-size:.6rem; text-transform:uppercase; letter-spacing:.1em; color:var(--brand-dark); font-weight:800}
+.member .mem-name{font-size:1rem; font-weight:800; color:var(--ink); line-height:1.1; margin-top:1px}
+.member .mem-sub{font-size:.7rem; color:var(--muted); margin-top:1px}
+.proxy-badge{ flex:0 0 auto; align-self:flex-start; font-size:.6rem; font-weight:700; color:#5b2a6b; background:#f1e8f5; border:1px solid #d9c2e4; border-radius:99px; padding:2px 8px; white-space:nowrap; }
+.proxy-badge .pico{margin-right:3px}
+.meds{list-style:none; margin:0; padding:0}
+.med{ display:grid; grid-template-columns:42px 1fr; gap:10px; align-items:start; padding:10px 12px; border-bottom:1px solid var(--line); }
+.med:last-child{border-bottom:0}
+.med-pill{flex:0 0 auto; align-self:center}
+.med-pill svg{display:block; width:40px; height:40px}
+.med-main{min-width:0}
+.med-name{font-weight:800; font-size:.9rem; color:var(--ink); line-height:1.2}
+.med-name .strength{font-weight:600; color:var(--muted); font-size:.78rem; margin-left:4px}
+.med-for{color:var(--ink-soft); font-size:.76rem; margin-top:2px}
+.med-meta{display:flex; flex-wrap:wrap; gap:4px 12px; margin-top:6px; font-size:.74rem}
+.med-meta .mm{display:inline-flex; align-items:center; gap:4px; color:var(--ink-soft)}
+.med-meta .mm .mmk{font-size:.58rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted2); font-weight:700}
+.med-side{grid-column:1 / -1; display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:7px; padding-left:52px;}
+.status-chip{ display:inline-flex; align-items:center; gap:4px; font-size:.66rem; font-weight:700; border-radius:99px; padding:2px 9px; white-space:nowrap; border:1px solid transparent; }
+.status-chip.ok{background:#e7f6ec; color:#157a3b; border-color:#bfe3cf}
+.status-chip.way{background:#eef3ff; color:#2b4ea0; border-color:#cdd9f5}
+.status-chip.due{background:#fff4e0; color:#9a6a00; border-color:#f0dca8}
+.fund-chip{ display:inline-flex; align-items:center; gap:4px; font-size:.72rem; font-weight:800; white-space:nowrap; border-radius:8px; padding:3px 9px; }
+.fund-chip.covered{background:#e7f6ec; color:#157a3b}
+.fund-chip.copay{background:#fdf1e3; color:#9a6a00}
+.fund-chip.cash{background:#eef3ef; color:var(--ink)}
+.fund-chip.free{background:#f0f8f3; color:var(--brand-dark); border:1px dashed var(--mint-deep)}
+.fund-sub{font-size:.6rem; color:var(--muted2); font-weight:600}
+.med-note{grid-column:1 / -1; font-size:.68rem; color:var(--muted); margin-top:5px; font-style:italic}
+
+/* ---- 3 costCover ---------------------------------------------------------- */
+.cost-item{display:flex; justify-content:space-between; gap:8px; padding:7px 0; border-bottom:1px solid var(--line); font-size:.82rem;}
+.cost-item:last-of-type{border-bottom:0}
+.cost-item .ci-name{font-weight:700; color:var(--ink)}
+.cost-item .ci-line{color:var(--muted); font-size:.72rem; display:block; margin-top:1px}
+.cost-item .ci-amt{font-weight:800; white-space:nowrap; color:var(--ink)}
+.cost-total{display:flex; justify-content:space-between; gap:8px; padding:9px 0 4px; font-weight:800; border-top:2px solid var(--ink); margin-top:4px;}
+.verdict{ border-radius:10px; padding:9px 12px; font-weight:800; font-size:.9rem; margin-top:10px; display:flex; align-items:center; gap:7px; }
+.verdict.good{background:#e7f6ec; color:#157a3b}
+.verdict.warn{background:#fdf1e3; color:#9a6a00}
+.cost-explain{font-size:.74rem; color:var(--muted); margin-top:7px}
+.cost-alt{ margin-top:8px; border:1.5px dashed var(--brand); background:#f0f8f3; border-radius:10px; padding:8px 11px; font-size:.78rem; color:var(--ink-soft); }
+.cost-alt .save{font-weight:800; color:var(--brand-dark)}
+
+/* ---- 4 pharmacist --------------------------------------------------------- */
+.pharm-head{display:flex; align-items:center; gap:11px; padding:4px 0 10px;}
+.pharm-av{flex:0 0 auto}
+.pharm-av svg{display:block; width:54px; height:54px}
+.pharm-id .ph-title{font-size:.66rem; text-transform:uppercase; letter-spacing:.09em; color:var(--muted); font-weight:800}
+.pharm-id .ph-name{font-size:1.2rem; font-weight:800; line-height:1.05}
+.pharm-id .ph-reg{font-size:.72rem; color:var(--brand-dark); font-weight:700; margin-top:1px}
+.steps{list-style:none; margin:8px 0 0; padding:0;}
+.step{display:flex; gap:10px; align-items:flex-start; padding:5px 0;}
+.step .dot{flex:0 0 auto; width:18px; height:18px; border-radius:50%; border:2px solid var(--line); background:#fff; margin-top:1px; display:flex; align-items:center; justify-content:center; font-size:.62rem; font-weight:800; color:#fff;}
+.step.done .dot{background:var(--brand); border-color:var(--brand);}
+.step.active .dot{border-color:var(--brand); box-shadow:0 0 0 4px rgba(26,155,74,.16);}
+.step .slabel{font-size:.82rem; color:var(--ink-soft)}
+.step.active .slabel{font-weight:800; color:var(--ink)}
+.step.todo .slabel{color:var(--muted)}
+.checks{list-style:none; margin:10px 0 0; padding:0; }
+.checks li{font-size:.78rem; color:var(--ink-soft); padding:3px 0 3px 20px; position:relative;}
+.checks li::before{content:"✓"; position:absolute; left:0; color:var(--brand-dark); font-weight:800;}
+.ai-note{ margin-top:9px; border-left:3px solid var(--reform); background:#f7f2fb; border-radius:0 8px 8px 0; padding:7px 10px; font-size:.74rem; color:var(--ink-soft); }
+.chat-prompt{ margin-top:9px; border:1.5px solid var(--line); border-radius:99px; padding:8px 13px; font-size:.8rem; color:var(--muted); display:flex; align-items:center; gap:7px; }
+
+/* ---- 5 dispenseRowa ------------------------------------------------------- */
+.rowa-stage{ background:#0e1512; border-radius:12px; padding:14px 12px; margin:4px 0 10px; position:relative; overflow:hidden; }
+.rowa-stage svg{display:block; width:100%; height:auto}
+.rowa-arm{ transition:transform .55s cubic-bezier(.45,.05,.3,1); transform:translateX(0); }
+.mock .rowa-stage[data-beat].reveal .rowa-arm,
+.mock .rowa-stage[data-beat].is-shown .rowa-arm{ transform:translateX(78px); }
+.reduce-motion .rowa-arm{transition:none}
+.rowa-tick{ opacity:0; transition:opacity .4s ease-out .15s; }
+.mock .rowa-stage[data-beat].reveal .rowa-tick,
+.mock .rowa-stage[data-beat].is-shown .rowa-tick{ opacity:1; }
+.reduce-motion .rowa-tick{transition:none; opacity:1}
+.rowa-steps{list-style:none; margin:0; padding:0;}
+.rowa-step{display:flex; gap:9px; align-items:center; padding:5px 0; font-size:.8rem; color:var(--ink-soft);}
+.rowa-step .ri{flex:0 0 auto; width:24px; height:24px; border-radius:7px; background:#f0f8f3; border:1px solid var(--mint-deep); display:flex; align-items:center; justify-content:center; font-size:.85rem;}
+.rowa-status{font-size:.74rem; color:var(--muted); margin-top:8px; text-align:center; font-weight:700;}
+
+/* ---- 6 deliveryTrack ------------------------------------------------------ */
+.dt-mode{display:inline-flex; gap:5px; align-items:center; font-size:.72rem; font-weight:800; color:var(--brand-dark); background:#e7f6ec; border-radius:99px; padding:3px 10px; margin-bottom:8px;}
+.dt-route{position:relative; margin:14px 6px 12px; height:46px;}
+.dt-line{position:absolute; left:6px; right:6px; top:11px; height:4px; background:var(--line); border-radius:99px;}
+.dt-fill{position:absolute; left:6px; top:11px; height:4px; background:var(--brand); border-radius:99px; width:0; transition:width .6s ease-out;}
+.dt-stops{position:absolute; left:0; right:0; top:0; display:flex; justify-content:space-between;}
+.dt-stop{display:flex; flex-direction:column; align-items:center; width:25%; text-align:center;}
+.dt-stop .dnode{width:22px; height:22px; border-radius:50%; background:#fff; border:3px solid var(--line); display:flex; align-items:center; justify-content:center; font-size:.6rem; color:#fff; font-weight:800;}
+.dt-stop.done .dnode{background:var(--brand); border-color:var(--brand);}
+.dt-stop.active .dnode{border-color:var(--brand); box-shadow:0 0 0 4px rgba(26,155,74,.18);}
+.dt-stop .dlabel{font-size:.6rem; color:var(--muted); margin-top:4px; line-height:1.15;}
+.dt-stop.done .dlabel, .dt-stop.active .dlabel{color:var(--ink-soft); font-weight:700;}
+.dt-eta{ font-size:.85rem; font-weight:800; color:var(--ink); display:flex; align-items:center; gap:7px; }
+.dt-window{font-size:.74rem; color:var(--muted); margin-top:5px;}
+.dt-driver{font-size:.76rem; color:var(--ink-soft); margin-top:6px; display:flex; align-items:center; gap:6px;}
+.dt-pod{ margin-top:9px; background:#e7f6ec; color:#157a3b; border-radius:8px; padding:6px 10px; font-size:.76rem; font-weight:700; }
+.dt-alts{display:flex; flex-wrap:wrap; gap:6px; margin-top:9px;}
+.dt-alt{font-size:.72rem; border:1.5px solid var(--line); border-radius:99px; padding:3px 10px; color:var(--muted); display:inline-flex; gap:5px; align-items:center;}
+
+/* ---- 7 adherencePack ------------------------------------------------------ */
+.ap-grid{display:grid; gap:6px;}
+.ap-row{display:grid; grid-template-columns:42px 1fr 1fr; gap:6px; align-items:stretch;}
+.ap-daylabel{font-size:.66rem; font-weight:800; color:var(--muted); display:flex; align-items:center; letter-spacing:.05em;}
+.ap-slot{ background:#fbfdfb; border:1px solid var(--line); border-radius:9px; padding:5px 6px; min-height:34px; }
+.ap-slot .ap-time{font-size:.56rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted2); font-weight:800;}
+.ap-pills{display:flex; flex-wrap:wrap; gap:2px; margin-top:2px;}
+.ap-pills svg{width:18px; height:18px; display:block;}
+.ap-reminder{ margin-top:10px; border:1.5px solid var(--brand); background:#f0f8f3; border-radius:10px; padding:8px 11px; font-size:.78rem; color:var(--ink-soft); display:flex; gap:7px; align-items:baseline; }
+.ap-reminder .bell{flex:0 0 auto}
+.ap-foot{font-size:.72rem; color:var(--muted); margin-top:8px; display:flex; flex-direction:column; gap:3px;}
+
+/* ---- 8 curveball ---------------------------------------------------------- */
+.cv-card{ border:1px solid var(--line); border-radius:12px; padding:10px 12px; margin:8px 0; background:var(--card); }
+.cv-prob{display:flex; align-items:center; gap:7px; font-weight:800; font-size:.86rem; color:var(--pain);}
+.cv-prob-txt{font-size:.76rem; color:var(--muted); margin:3px 0 0;}
+.cv-arrow{ text-align:center; color:var(--muted2); font-size:.9rem; margin:6px 0; }
+.cv-rec{display:flex; align-items:center; gap:7px; font-weight:800; font-size:.84rem; color:var(--brand-dark);}
+.cv-rec .rico{flex:0 0 auto}
+.cv-rec-txt{font-size:.76rem; color:var(--ink-soft); margin:3px 0 0;}
+.cv-pillars{margin-top:5px}
+.cv-line{ font-style:italic; color:var(--ink-soft); font-size:.82rem; margin-top:10px; border-left:3px solid var(--mint-deep); padding-left:11px; }
+.ptag{ display:inline-block; font-family:var(--mono); font-size:.62rem; font-weight:700; border:1px solid var(--line); border-radius:99px; padding:1px 7px; margin:0 3px 0 0; color:var(--muted); background:#fff; }
+.ptag.s{color:var(--brand-dark)} .ptag.u{color:var(--purple)}
+
+/* ---- 9 renewal ------------------------------------------------------------ */
+.rn-tele{ margin-top:8px; border:1.5px solid var(--brand); background:#f0f8f3; border-radius:10px; padding:9px 11px; font-size:.8rem; display:flex; align-items:center; gap:9px; }
+.rn-tele .tele-ico{flex:0 0 auto; font-size:1.2rem;}
+.rn-tele .tele-prov{font-weight:800; color:var(--brand-dark);}
+.rn-tele .lowdata{font-size:.68rem; color:var(--muted); font-weight:700; display:inline-flex; gap:4px; align-items:center;}
+.rn-token{ margin-top:9px; border:1.5px dashed var(--reform); background:#f7f2fb; border-radius:10px; padding:10px 12px; text-align:center; }
+.rn-token .tk-label{font-weight:800; color:var(--reform); font-size:.86rem; display:flex; align-items:center; justify-content:center; gap:6px;}
+.rn-token .tk-reform{font-size:.66rem; color:var(--reform); font-weight:700; margin-top:3px;}
+.rn-loop{ margin-top:10px; text-align:center; font-size:.8rem; color:var(--brand-dark); font-weight:700; display:flex; align-items:center; justify-content:center; gap:7px; }
+.rn-loop .loop-ico{font-size:1.1rem; animation:spin 6s linear infinite;}
+.reduce-motion .rn-loop .loop-ico{animation:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---- frontBackStage (two-lane stage visual) ------------------------------- */
+.fbs{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:14px 16px; }
+.fbs-lane{margin:6px 0;}
+.fbs-lane .lname{font-size:.66rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:7px;}
+.fbs-lane.front .lname{color:var(--brand-dark);}
+.fbs-lane.back .lname{color:var(--purple);}
+.fbs-chips{display:flex; flex-wrap:wrap; gap:7px;}
+.fbs-chip{ display:inline-flex; align-items:center; gap:6px; border-radius:10px; padding:6px 11px; font-size:.8rem; font-weight:700; border:1.5px solid; }
+.fbs-lane.front .fbs-chip{ border-color:var(--mint-deep); background:#f0f8f3; color:var(--ink-soft); }
+.fbs-lane.back .fbs-chip{ border-color:#d9c2e4; background:#f7f2fb; color:var(--ink-soft); }
+.lov{ display:flex; align-items:center; gap:10px; margin:13px 0; color:var(--muted); font-size:.64rem; letter-spacing:.18em; text-transform:uppercase; font-weight:800; }
+.lov::before, .lov::after{ content:""; flex:1 1 auto; border-top:2px dashed var(--ink); opacity:.4; }
+/* =============================================================================
+   <<<<<<<<<<<<<<<<  END COMPONENT LIBRARY CSS  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   ============================================================================= */
+
+/* =============================================================================
+   ENGINE / SHELL CSS (build agent) — brand band, ribbon, stage, transport, rail
+   ============================================================================= */
+.wrap{max-width:var(--maxw); margin:0 auto;}
+
+/* header / brand band — sibling of #05 */
+.brandband{ background:var(--brand); color:#fff; padding:18px 24px; display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; justify-content:space-between; }
+.wordmark{display:flex; align-items:baseline; gap:6px; font-weight:800; font-size:1.35rem; letter-spacing:-.01em}
+.wordmark .plus{color:var(--lime); font-size:1.6rem; line-height:0}
+.brandband .kicker{font-weight:800; font-size:1.02rem}
+.brandband .co{font-size:.8rem; opacity:.92; font-weight:600; letter-spacing:.04em}
+.brandband .maptag{font-size:.7rem; text-transform:uppercase; letter-spacing:.12em; font-weight:700; border:1.5px solid rgba(255,255,255,.6); border-radius:99px; padding:4px 12px;}
+.ribbon{ display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; background:#fff7e6; color:#8a5a00; border-bottom:1px solid #f0dca8; padding:8px 24px; font-size:.82rem; font-weight:600; }
+.ribbon .gen{color:#9a7a30; font-weight:500}
+
+/* sub-header: title + economy toggle + persona + philosophy motif */
+.subhead{ padding:16px 24px 6px; display:flex; flex-wrap:wrap; gap:14px 22px; align-items:flex-end; justify-content:space-between; }
+.subhead .titlebox{max-width:62ch}
+.subhead h1{font-size:1.5rem; font-weight:800; letter-spacing:-.015em; line-height:1.1}
+.subhead .subtitle{color:var(--muted); font-size:.9rem; margin-top:5px;}
+.controls-row{ display:flex; flex-wrap:wrap; gap:10px 16px; align-items:center; padding:4px 24px 14px; border-bottom:1px solid var(--line); }
+.ctl-label{font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); font-weight:700}
+.seg{display:inline-flex; border:1.5px solid var(--brand); border-radius:99px; overflow:hidden; background:#fff}
+.seg button{border:0; background:#fff; color:var(--brand-dark); padding:6px 16px; font-weight:700; font-size:.85rem}
+.seg button + button{border-left:1.5px solid var(--brand)}
+.seg button[aria-pressed="true"]{background:var(--brand); color:#fff}
+.persona-chip{ display:inline-flex; align-items:center; gap:9px; background:#fff; border:1.5px solid var(--line); border-radius:99px; padding:5px 14px 5px 6px; }
+.persona-chip .pc-av{width:30px; height:30px; flex:0 0 auto}
+.persona-chip .pc-av svg{width:30px; height:30px; display:block}
+.persona-chip .pc-name{font-weight:800; font-size:.86rem; line-height:1.05}
+.persona-chip .pc-bio{font-size:.66rem; color:var(--muted); max-width:42ch}
+.philmotif{ display:inline-flex; align-items:center; gap:6px; font-size:.74rem; font-weight:700; color:var(--ink-soft); background:#f0f8f3; border:1px solid var(--mint-deep); border-radius:99px; padding:5px 13px; }
+.philmotif b{color:var(--brand-dark)} .philmotif .gt{color:var(--muted2); font-weight:800}
+
+/* layout: rail + main */
+.layout{ display:grid; grid-template-columns:230px 1fr; gap:0; align-items:start; }
+@media (max-width:880px){ .layout{grid-template-columns:1fr} }
+
+/* scene rail */
+.rail{ border-right:1px solid var(--line); padding:14px 12px 40px; position:sticky; top:0; align-self:start; max-height:100vh; overflow:auto; }
+@media (max-width:880px){ .rail{position:static; max-height:none; border-right:0; border-bottom:1px solid var(--line); display:flex; gap:8px; overflow-x:auto; padding:12px} }
+.rail h2{font-size:.66rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); font-weight:800; margin-bottom:10px; padding:0 6px}
+@media (max-width:880px){ .rail h2{display:none} }
+.chapter{ display:block; width:100%; text-align:left; border:1px solid transparent; background:none; border-radius:10px; padding:8px 10px; margin-bottom:3px; color:var(--ink-soft); }
+@media (max-width:880px){ .chapter{flex:0 0 auto; width:220px; white-space:normal} }
+.chapter:hover{background:#eef3ef}
+.chapter[aria-current="true"]{ background:var(--mint); border-color:var(--mint-deep); }
+.chapter .ch-n{font-size:.62rem; font-weight:800; color:var(--brand-dark); letter-spacing:.06em; display:flex; align-items:center; gap:5px}
+.chapter .ch-title{font-style:italic; font-size:.82rem; line-height:1.2; margin-top:2px; color:var(--ink)}
+.chapter[aria-current="true"] .ch-title{font-weight:700}
+.chapter .star{color:#d9a521}
+
+/* main column */
+.main{ padding:18px 24px 60px; min-width:0; }
+
+/* stage */
+#stage{ background:linear-gradient(180deg,#ffffff,#f1f6f2); border:1px solid var(--line); border-radius:18px; padding:18px 20px 22px; position:relative; box-shadow:0 10px 30px rgba(20,40,28,.06); }
+.scene-head{ display:flex; flex-wrap:wrap; gap:6px 14px; align-items:baseline; justify-content:space-between; margin-bottom:4px; }
+.scene-head .sh-stage{font-size:.64rem; text-transform:uppercase; letter-spacing:.1em; color:var(--brand-dark); font-weight:800;}
+.scene-head .sh-title{font-size:1.18rem; font-weight:800; line-height:1.18; flex:1 1 100%; font-style:italic; margin-top:2px;}
+.scene-head .sh-reads{display:flex; gap:8px; flex-wrap:wrap; align-items:center}
+.read-chip{font-size:.66rem; font-weight:700; border-radius:99px; padding:3px 10px; border:1px solid var(--line); background:#fff; color:var(--ink-soft); display:inline-flex; gap:5px; align-items:center}
+.read-chip.star{background:#fff7e6; border-color:#f0dca8; color:#8a5a00}
+.read-chip .emo{letter-spacing:1px}
+.narration{ font-size:1rem; color:var(--ink-soft); margin:8px 0 14px; line-height:1.45; min-height:2.6em; border-left:3px solid var(--mint-deep); padding-left:12px; }
+
+.stage-cols{ display:grid; grid-template-columns:minmax(0,320px) 1fr; gap:22px; align-items:start; }
+@media (max-width:760px){ .stage-cols{grid-template-columns:1fr} }
+#phone-mount{display:flex; justify-content:center}
+.lanes-wrap{min-width:0}
+
+/* per-scene build progress + settle affordance */
+.buildbar{ height:5px; background:var(--line); border-radius:99px; overflow:hidden; margin:14px 0 0; }
+.buildbar > i{ display:block; height:100%; width:0; background:linear-gradient(90deg,var(--brand),var(--lime)); border-radius:99px; transition:width .4s ease-out; }
+.reduce-motion .buildbar > i{transition:none}
+.settle-aff{ margin-top:14px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; opacity:0; transform:translateY(6px); transition:opacity .4s ease, transform .4s ease; pointer-events:none; }
+#stage.is-settled .settle-aff{opacity:1; transform:none; pointer-events:auto;}
+.reduce-motion .settle-aff{transition:none}
+.explore-toggle{ border:1.5px solid var(--brand); background:var(--brand); color:#fff; border-radius:99px; padding:8px 18px; font-weight:800; font-size:.88rem; }
+.explore-toggle[aria-expanded="true"]{background:#fff; color:var(--brand-dark)}
+.settle-note{font-size:.74rem; color:var(--muted)}
+
+/* explore region */
+#explore-mount{ margin-top:6px; }
+#explore-mount[hidden]{display:none}
+.exp-panel{ border:1px solid var(--line); border-radius:12px; margin-top:10px; background:var(--card); overflow:hidden; }
+.exp-head{ width:100%; text-align:left; border:0; background:#f6faf7; padding:11px 14px; font-weight:800; font-size:.9rem; display:flex; align-items:center; gap:9px; color:var(--ink); }
+.exp-head .ehi{flex:0 0 auto}
+.exp-head .echev{margin-left:auto; transition:transform .25s ease; color:var(--muted)}
+.exp-head[aria-expanded="true"] .echev{transform:rotate(90deg)}
+.reduce-motion .exp-head .echev{transition:none}
+.exp-body{ padding:12px 14px 14px; border-top:1px solid var(--line); }
+.exp-body[hidden]{display:none}
+.exp-body p{margin:0 0 8px}
+.pain-card{ border-left:3px solid var(--pain); background:#fdece9; border-radius:0 8px 8px 0; padding:9px 12px; margin-bottom:10px; }
+.pain-card .pl-k{font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:var(--pain)}
+.pain-card blockquote{ margin:6px 0 4px; font-style:italic; color:var(--ink-soft); font-size:.86rem; }
+.asis{ font-size:.82rem; color:var(--ink-soft); }
+.asis .asis-k{font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; font-weight:800; color:var(--muted); display:block; margin-bottom:3px}
+.opp{ border-left:3px solid var(--brand); background:#f0f8f3; border-radius:0 8px 8px 0; padding:8px 11px; margin-bottom:8px; font-size:.84rem; color:var(--ink-soft); }
+.cite{ display:inline-flex; align-items:center; gap:4px; font-family:var(--mono); font-size:.66rem; color:var(--muted2); margin-top:4px; }
+.cite::before{content:"🔗"}
+.chiprow{display:flex; flex-wrap:wrap; gap:7px;}
+.techchip{ border:1.5px solid var(--mint-deep); background:#f0f8f3; border-radius:10px; padding:7px 11px; font-size:.8rem; color:var(--ink-soft); max-width:100%; }
+.techchip.reform{ border-style:dashed; border-color:var(--reform); background:#f7f2fb; }
+.techchip .tc-name{font-weight:800; color:var(--ink); display:flex; align-items:center; gap:5px}
+.techchip .tc-what{font-size:.74rem; color:var(--muted); margin-top:2px}
+.techchip .tc-cite{font-family:var(--mono); font-size:.62rem; color:var(--muted2); margin-top:3px; display:block}
+.detail-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+@media (max-width:680px){ .detail-grid{grid-template-columns:1fr} }
+.detail-col h4{font-size:.64rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); font-weight:800; margin-bottom:5px}
+.detail-col ul{margin:0 0 10px; padding-left:18px; font-size:.8rem; color:var(--ink-soft)}
+.detail-col li{margin-bottom:3px}
+.metric-list{display:flex; flex-wrap:wrap; gap:7px}
+.metric{ font-size:.76rem; font-weight:700; border:1px solid var(--line); border-radius:99px; padding:4px 11px; background:#fff; color:var(--ink-soft); }
+.pill-tags{display:flex; flex-wrap:wrap; gap:6px}
+.pill-tag{ font-family:var(--mono); font-size:.7rem; font-weight:700; border-radius:99px; padding:3px 10px; border:1px solid var(--line); background:#fff; }
+.pill-tag.s{color:var(--brand-dark); border-color:#bfe3cf; background:#f0f8f3}
+.pill-tag.u{color:var(--purple); border-color:#d9c2e4; background:#f7f2fb}
+.pill-tag .pt-name{color:var(--muted); font-weight:600; font-family:var(--font)}
+
+/* transport */
+#transport{ display:flex; flex-wrap:wrap; gap:8px 12px; align-items:center; margin-top:18px; padding:12px 14px; background:#fff; border:1px solid var(--line); border-radius:14px; position:sticky; bottom:10px; box-shadow:0 6px 20px rgba(20,40,28,.08); }
+.tbtn{ border:1.5px solid var(--line); background:#fff; color:var(--ink-soft); border-radius:99px; padding:7px 14px; font-size:.84rem; font-weight:700; display:inline-flex; align-items:center; gap:6px; }
+.tbtn:hover{border-color:var(--brand); color:var(--brand-dark)}
+.tbtn.primary{ background:var(--brand); color:#fff; border-color:var(--brand); }
+.tbtn[aria-pressed="true"]{ background:var(--ink); color:#fff; border-color:var(--ink); }
+.tbtn:disabled{opacity:.4; cursor:default}
+.transport-spacer{flex:1 1 auto}
+.scene-count{font-size:.82rem; font-weight:800; color:var(--ink); white-space:nowrap}
+.scene-count .sc-of{color:var(--muted); font-weight:600}
+.overall{ flex:1 1 160px; min-width:120px; height:6px; background:var(--line); border-radius:99px; overflow:hidden; }
+.overall > i{display:block; height:100%; background:var(--brand-dark); border-radius:99px; width:0; transition:width .3s ease}
+.reduce-motion .overall > i{transition:none}
+.kbd-hint{font-size:.68rem; color:var(--muted2); flex-basis:100%; margin-top:2px}
+.kbd{font-family:var(--mono); font-size:.85em; background:#f0f3f0; border:1px solid var(--line); border-radius:4px; padding:0 4px}
+
+footer{margin:30px 24px 0; border-top:1px solid var(--line); padding-top:14px; color:var(--muted); font-size:.8rem}
+
+@media print{
+  #transport, .rail, .settle-aff, .controls-row .seg, #rm-toggle, #autoplay-toggle{display:none!important}
+  #explore-mount{display:block!important}
+  #explore-mount[hidden]{display:block!important}
+  .exp-body[hidden]{display:block!important}
+  .layout{grid-template-columns:1fr}
+  .buildbar{display:none}
+}
+@media (prefers-reduced-motion:reduce){ *{scroll-behavior:auto!important} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brandband">
+      <span class="wordmark">Dis-Chem<span class="plus">+</span></span>
+      <span class="kicker">Script Re-imagined — the journey, in motion</span>
+      <span class="maptag">#06 Interactive Journey Animation</span>
+      <span class="co">bigly labs</span>
+    </div>
+    <div class="ribbon" role="note">
+      <span>⚠ Concept for review — not an official Dis-Chem artefact</span>
+      <span class="gen">generated 2026-06-14 from the Bigly ground-truth vault</span>
+    </div>
+  </header>
+
+  <div class="subhead">
+    <div class="titlebox">
+      <h1 id="anim-title">Script Re-imagined — the journey, in motion</h1>
+      <p class="subtitle" id="anim-subtitle"></p>
+    </div>
+    <div class="philmotif" title="Design philosophy: predictability beats speed.">
+      <b>Trust</b> <span class="gt">&gt;</span> Convenience <span class="gt">&gt;</span> Speed
+    </div>
+  </div>
+
+  <div class="controls-row">
+    <span class="ctl-label">Economy</span>
+    <div class="seg" id="econ-seg" role="group" aria-label="Choose economy">
+      <button type="button" data-econ="insured" aria-pressed="true">Insured · Nomvula</button>
+      <button type="button" data-econ="cash" aria-pressed="false">Cash · Sipho</button>
+    </div>
+    <span id="persona-chip" class="persona-chip" aria-live="polite"></span>
+  </div>
+
+  <div class="layout">
+    <nav class="rail" id="scene-rail" aria-label="Journey chapters"></nav>
+
+    <main class="main">
+      <section id="stage" aria-live="polite">
+        <div class="scene-head">
+          <div style="flex:1 1 100%; display:flex; flex-wrap:wrap; gap:6px 14px; align-items:baseline; justify-content:space-between">
+            <span class="sh-stage" id="sh-stage"></span>
+            <span class="sh-reads" id="sh-reads"></span>
+          </div>
+          <h2 class="sh-title" id="sh-title"></h2>
+        </div>
+        <p class="narration" id="narration" aria-live="polite"></p>
+
+        <div class="stage-cols">
+          <div id="phone-mount"></div>
+          <div class="lanes-wrap">
+            <div id="frontstage-lane"></div>
+            <div id="backstage-lane"></div>
+          </div>
+        </div>
+
+        <div class="buildbar" aria-hidden="true"><i id="buildbar-fill"></i></div>
+
+        <div class="settle-aff">
+          <button type="button" class="explore-toggle" id="explore-toggle" aria-expanded="false" aria-controls="explore-mount">Explore this moment ▾</button>
+          <span class="settle-note">The scene has settled — open to read today's pain, the opportunities and the capabilities behind the line.</span>
+        </div>
+
+        <div id="explore-mount" hidden></div>
+      </section>
+
+      <div id="transport" role="group" aria-label="Playback controls">
+        <button type="button" class="tbtn" id="btn-prev" title="Previous (←)">◀ Prev</button>
+        <button type="button" class="tbtn primary" id="btn-play" title="Play / Pause (Space)">▶ Play</button>
+        <button type="button" class="tbtn" id="btn-next" title="Next (→)">Next ▶</button>
+        <button type="button" class="tbtn" id="btn-replay" title="Replay scene (R)">↺ Replay</button>
+        <button type="button" class="tbtn" id="autoplay-toggle" aria-pressed="false" title="Autoplay">Autoplay: off</button>
+        <button type="button" class="tbtn" id="rm-toggle" aria-pressed="false" title="Reduce motion / skip animation">Reduce motion: off</button>
+        <span class="transport-spacer"></span>
+        <span class="overall" aria-hidden="true"><i id="overall-fill"></i></span>
+        <span class="scene-count" id="scene-count">Scene 1 <span class="sc-of">/ 9</span></span>
+        <span class="kbd-hint"><span class="kbd">←</span> <span class="kbd">→</span> prev/next · <span class="kbd">Space</span> play/pause · <span class="kbd">R</span> replay · <span class="kbd">1</span>–<span class="kbd">9</span> jump</span>
+      </div>
+
+      <footer>
+        <p>Inline SVG / emoji only · no external requests · vanilla JS. Renderers are defensive — a missing optional field degrades gracefully, never throws. Each scene step is defensible from a Bigly vault page (see the 🔗 citations in Explore). Motion companion to <span class="mono">deliverables/05-tobe-future-state-journey.html</span>.</p>
+      </footer>
+    </main>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* ---- MOCKUPS component library (copied verbatim from _shared/06-mockups.html) ---- */
+window.MOCKUPS = (function(){
+
+  // ---- tiny shared helpers (el ported from #05) ---------------------------
+  const arr = v => Array.isArray(v) ? v : (v==null ? [] : [v]);
+  const has = v => v!=null && v!=="";
+  const num = (v,d)=>{ const n=Number(v); return isFinite(n)?n:d; };
+
+  // defensive DOM builder — VERBATIM port from #05
+  function el(tag, attrs, kids){
+    const n = document.createElement(tag);
+    if(attrs) for(const k in attrs){
+      const v = attrs[k];
+      if(v==null) continue;
+      if(k==="class") n.className = v;
+      else if(k.slice(0,2)==="on" && typeof v==="function") n.addEventListener(k.slice(2), v);
+      else if(v===false) continue;
+      else n.setAttribute(k, v===true ? "" : v);
+    }
+    arr(kids).forEach(c=>{ if(c==null) return; n.appendChild(typeof c==="string" ? document.createTextNode(c) : c); });
+    return n;
+  }
+  // SVG element builder
+  const NS = "http://www.w3.org/2000/svg";
+  function svgEl(tag, attrs, kids){
+    const n = document.createElementNS(NS, tag);
+    if(attrs) for(const k in attrs){ if(attrs[k]==null) continue; n.setAttribute(k, attrs[k]); }
+    arr(kids).forEach(c=>{ if(c!=null) n.appendChild(c); });
+    return n;
+  }
+  // wrap a root node as a defensive .mock component; tag reduce-motion from ctx
+  function mock(cls, ctx, kids){
+    const n = el("div", {class:"mock "+cls}, kids);
+    if(ctx && ctx.reduceMotion) n.classList.add("reduce-motion");
+    return n;
+  }
+  // a beat-tagged wrapper (so the build engine can reveal it)
+  const beat = (i, node) => { if(node) node.setAttribute("data-beat", String(i)); return node; };
+
+  /* =========================================================================
+     pillSVG(med) — VERBATIM port from #05. shapes: tablet|caplet|capsule|bottle.
+     ========================================================================= */
+  function pillSVG(med){
+    const svg = svgEl("svg", {viewBox:"0 0 48 48", role:"img", "aria-hidden":"true"});
+    const mk = (t,a)=>svgEl(t,a);
+    const tone  = (med && med.tone)  || "#1a9b4a";
+    const tone2 = (med && med.tone2) || "#157a3b";
+    const shape = (med && med.shape) || "tablet";
+    const stroke = "rgba(0,0,0,.18)";
+    if(shape==="capsule"){
+      svg.appendChild(mk("rect",{x:8,y:17,width:32,height:14,rx:7,ry:7,fill:tone2}));
+      svg.appendChild(mk("path",{d:"M15 17 H24 V31 H15 a7 7 0 0 1 0 -14 Z",fill:tone}));
+      svg.appendChild(mk("rect",{x:8,y:17,width:32,height:14,rx:7,ry:7,fill:"none",stroke:stroke,"stroke-width":1.2}));
+      svg.appendChild(mk("ellipse",{cx:16,cy:21,rx:4,ry:2,fill:"rgba(255,255,255,.35)"}));
+    } else if(shape==="caplet"){
+      svg.appendChild(mk("rect",{x:7,y:18,width:34,height:12,rx:6,ry:6,fill:tone,stroke:stroke,"stroke-width":1.2}));
+      svg.appendChild(mk("line",{x1:24,y1:19,x2:24,y2:29,stroke:stroke,"stroke-width":1.4}));
+      svg.appendChild(mk("ellipse",{cx:14,cy:22,rx:5,ry:2,fill:"rgba(255,255,255,.4)"}));
+    } else if(shape==="bottle"){
+      svg.appendChild(mk("rect",{x:18,y:7,width:12,height:6,rx:1.5,fill:tone2}));
+      svg.appendChild(mk("rect",{x:21,y:12,width:6,height:5,fill:tone2}));
+      svg.appendChild(mk("rect",{x:13,y:16,width:22,height:25,rx:4,fill:"#eef3ef",stroke:stroke,"stroke-width":1.2}));
+      svg.appendChild(mk("path",{d:"M13 27 h22 v10 a4 4 0 0 1 -4 4 H17 a4 4 0 0 1 -4 -4 Z",fill:tone}));
+      svg.appendChild(mk("rect",{x:16,y:20,width:16,height:5,rx:1,fill:"#fff",stroke:stroke,"stroke-width":.8}));
+    } else {
+      svg.appendChild(mk("circle",{cx:24,cy:24,r:15,fill:tone,stroke:stroke,"stroke-width":1.2}));
+      svg.appendChild(mk("line",{x1:24,y1:10,x2:24,y2:38,stroke:stroke,"stroke-width":1.2}));
+      svg.appendChild(mk("ellipse",{cx:19,cy:18,rx:5,ry:2.5,fill:"rgba(255,255,255,.4)"}));
+    }
+    return svg;
+  }
+
+  /* =========================================================================
+     avatarSVG(kind, econ) — VERBATIM port of #05 memberAvatarSVG(kind, econId).
+     ========================================================================= */
+  function avatarSVG(kind, econ){
+    const svg = svgEl("svg", {viewBox:"0 0 48 48", role:"img", "aria-hidden":"true"});
+    const mk = (t,a)=>svgEl(t,a);
+    const ring = econ==="cash" ? "#b5d334" : "#1a9b4a";
+    const skin = "#cfe6d8";
+    svg.appendChild(mk("circle",{cx:24,cy:24,r:23,fill:"#1f2b24",stroke:ring,"stroke-width":2}));
+    if(kind==="child"){
+      svg.appendChild(mk("circle",{cx:24,cy:21,r:7,fill:skin}));
+      svg.appendChild(mk("path",{d:"M13 42 a11 10 0 0 1 22 0 Z",fill:skin}));
+    } else if(kind==="elder-f"){
+      svg.appendChild(mk("path",{d:"M14 20 a10 10 0 0 1 20 0 v3 h-20 Z",fill:"#e8eef0"}));
+      svg.appendChild(mk("circle",{cx:24,cy:20,r:8,fill:skin}));
+      svg.appendChild(mk("path",{d:"M9 44 a15 14 0 0 1 30 0 Z",fill:skin}));
+    } else {
+      svg.appendChild(mk("circle",{cx:24,cy:19,r:8,fill:skin}));
+      svg.appendChild(mk("path",{d:"M9 44 a15 14 0 0 1 30 0 Z",fill:skin}));
+    }
+    return svg;
+  }
+
+  /* =========================================================================
+     phoneFrame(innerNode) — clean device-frame wrapper. (innerNode optional.)
+     ========================================================================= */
+  function phoneFrame(innerNode, ctx){
+    const screenBody = el("div", {class:"screen-body"});
+    if(innerNode) screenBody.appendChild(innerNode);
+    const dev = el("div", {class:"device"}, [
+      el("div", {class:"notch", "aria-hidden":"true"}),
+      el("div", {class:"screen"}, [
+        el("div", {class:"statusbar", "aria-hidden":"true"}, [
+          el("span", {}, ["9:41"]),
+          el("span", {class:"sb-r"}, ["●●●  ", "📶  ", "🔋"])
+        ]),
+        screenBody
+      ])
+    ]);
+    if(ctx && ctx.reduceMotion) dev.classList.add("reduce-motion");
+    return dev;
+  }
+
+  // shared: a WhatsApp-style app bar
+  function appbar(contact, verified, sub){
+    const name = el("div", {class:"ab-name"}, [ has(contact)?String(contact):"Pharmacy" ]);
+    if(verified) name.appendChild(el("span", {class:"verified", "aria-label":"verified", title:"Verified business"}, ["✔️"]));
+    return el("div", {class:"appbar"}, [
+      el("div", {class:"ab-av", "aria-hidden":"true"}, ["+"]),
+      el("div", {}, [ name, has(sub)?el("div",{class:"ab-sub"},[sub]):null ])
+    ]);
+  }
+
+  /* =========================================================================
+     1  whatsappNudge
+     payload: { contact, verified, messages:[{from:"them"|"me",text,time,quick?:[]}],
+                typingBeforeIndex?, footnote? }
+     beats: 0 = app bar; then one beat per message (in order); footnote = last beat.
+     ========================================================================= */
+  function whatsappNudge(p, ctx){
+    p = p || {};
+    const root = mock("wa-mock", ctx);
+    let b = 0;
+    root.appendChild(beat(b++, appbar(p.contact, p.verified, "online")));
+    const wa = el("div", {class:"wa"});
+    const thread = el("div", {class:"wa-thread"});
+    const typingIdx = num(p.typingBeforeIndex, -1);
+    arr(p.messages).forEach((m, i)=>{
+      m = m || {};
+      if(i===typingIdx){
+        const tw = el("div", {class:"bubble them", style:"background:transparent;box-shadow:none;padding:0"}, [
+          el("div", {class:"typing", "aria-label":"typing"}, [ el("i"), el("i"), el("i") ])
+        ]);
+        beat(b++, tw); thread.appendChild(tw);
+      }
+      const side = (m.from==="me") ? "me" : "them";
+      const bub = el("div", {class:"bubble "+side});
+      bub.appendChild(el("div", {}, [ has(m.text)?String(m.text):"" ]));
+      if(has(m.time)) bub.appendChild(el("span", {class:"btime"}, [String(m.time)]));
+      const qs = arr(m.quick).filter(has);
+      if(qs.length){
+        const qwrap = el("div", {class:"quicks"});
+        qs.forEach(q=> qwrap.appendChild(el("button", {class:"quick", type:"button"}, [String(q)])));
+        bub.appendChild(qwrap);
+      }
+      beat(b++, bub); thread.appendChild(bub);
+    });
+    wa.appendChild(thread);
+    root.appendChild(wa);
+    if(has(p.footnote)){
+      root.appendChild(beat(b++, el("div", {class:"wa-foot"}, [
+        el("span", {"aria-hidden":"true"}, ["📶"]), el("span", {}, [String(p.footnote)])
+      ])));
+    }
+    return root;
+  }
+
+  /* =========================================================================
+     2  cabinet (HERO) — reads ctx.household[ctx.econ] directly. payload {useHousehold:true}
+     beats: 0 = hero header; then each MEMBER card head reveals (sliding in),
+            then each MED row, then status/funding chips pop (handled inside row).
+     Convention: member cards = ascending beats; each med row = next beat;
+     within a row the side-chip group is the final beat of that row.
+     ========================================================================= */
+  const STATUS = {
+    ok:{cls:"ok", glyph:"✓", label:"In stock"},
+    way:{cls:"way", glyph:"🚚", label:"On the way"},
+    due:{cls:"due", glyph:"⏰", label:"Due soon"}
+  };
+
+  // medRow ported from #05 — but with staged-build beats for pill-drop + chip-pop.
+  function medRow(med, beatRef){
+    if(!med) return null;
+    const li = el("li", {class:"med"});
+    const pic = el("div", {class:"med-pill"});
+    pic.appendChild(pillSVG(med));
+    beat(beatRef.next(), pic);        // pill "drops" in
+    li.appendChild(pic);
+
+    const main = el("div", {class:"med-main"});
+    const nm = el("div", {class:"med-name"}, [ has(med.name)?med.name:"Medicine" ]);
+    if(has(med.strength)) nm.appendChild(el("span", {class:"strength"}, [med.strength]));
+    main.appendChild(nm);
+    if(has(med.forText)) main.appendChild(el("div", {class:"med-for"}, [med.forText]));
+    const meta = el("div", {class:"med-meta"});
+    if(has(med.dose))   meta.appendChild(el("span", {class:"mm"}, [el("span",{class:"mmk"},["Dose"]), document.createTextNode(med.dose)]));
+    if(has(med.supply)) meta.appendChild(el("span", {class:"mm"}, [el("span",{class:"mmk"},["Supply"]), document.createTextNode(med.supply)]));
+    main.appendChild(meta);
+    li.appendChild(main);
+
+    // status + funding chips "pop" together as a beat
+    const side = el("div", {class:"med-side"});
+    const st = STATUS[med.status] || STATUS.ok;
+    side.appendChild(el("span", {class:"status-chip "+st.cls}, [ el("span",{"aria-hidden":"true"},[st.glyph]), document.createTextNode(st.label) ]));
+    const f = med.fund || {};
+    if(has(f.text)){
+      const fk = (f.kind==="covered"||f.kind==="cash"||f.kind==="copay"||f.kind==="free") ? f.kind : "cash";
+      side.appendChild(el("span", {class:"fund-chip "+fk}, [f.text]));
+    }
+    if(has(f.sub)) side.appendChild(el("span", {class:"fund-sub"}, [f.sub]));
+    beat(beatRef.next(), side);
+    li.appendChild(side);
+
+    if(has(med.note)) li.appendChild(el("div", {class:"med-note"}, ["ℹ "+med.note]));
+    return li;
+  }
+
+  function memberCard(member, econ, beatRef){
+    if(!member) return null;
+    const card = el("div", {class:"member"});
+    const head = el("div", {class:"mem-head"});
+    head.appendChild(el("div", {class:"mem-avatar"}, [ avatarSVG(member.avatar||"adult", econ) ]));
+    const idc = el("div", {class:"mem-id"});
+    idc.appendChild(el("div", {class:"mem-role"}, [ member.role || (member.you?"Me":"Member") ]));
+    idc.appendChild(el("div", {class:"mem-name"}, [ has(member.name)?member.name:"—" ]));
+    if(has(member.sub)) idc.appendChild(el("div", {class:"mem-sub"}, [member.sub]));
+    head.appendChild(idc);
+    if(member.proxy){
+      head.appendChild(el("span", {class:"proxy-badge", title:"Managed via recorded, POPIA-grade proxy consent."},
+        [ el("span",{class:"pico","aria-hidden":"true"},["👥"]), document.createTextNode("Managing for") ]));
+    }
+    beat(beatRef.next(), head);       // member slides/fades in
+    card.appendChild(head);
+    const ul = el("ul", {class:"meds"});
+    arr(member.medicines).forEach(m=>{ const r=medRow(m, beatRef); if(r) ul.appendChild(r); });
+    card.appendChild(ul);
+    return card;
+  }
+
+  function cabinet(p, ctx){
+    ctx = ctx || {};
+    const root = mock("cabm", ctx);
+    const hh = (ctx.household && (ctx.household[ctx.econ] || ctx.household.insured)) || {};
+    const members = arr(hh.members);
+    const econ = ctx.econ || "insured";
+
+    // running beat counter (closure)
+    let _b = 0;
+    const beatRef = { next: ()=> _b++ };
+
+    const top = el("div", {class:"cab-top"}, [
+      el("div", {class:"cab-eyebrow"}, ["My medicine cabinet"]),
+      el("h3", {}, ["Everyone's medicine, in one calm place"]),
+      has(hh.frame) ? el("div", {class:"cab-frame"}, [hh.frame]) : null,
+      has(hh.asOf)  ? el("div", {class:"cab-asof"}, [hh.asOf]) : null
+    ]);
+    beat(beatRef.next(), top);        // beat 0 = hero header
+    root.appendChild(top);
+
+    if(!members.length){
+      root.appendChild(el("div", {class:"surf tiny"}, ["No household members to show."]));
+      return root;
+    }
+    members.forEach(m=>{ const c=memberCard(m, econ, beatRef); if(c) root.appendChild(c); });
+    return root;
+  }
+
+  /* =========================================================================
+     3  costCover
+     payload: { heading, items:[{name,line,amount}], total:{label,amount},
+                verdict:{tone:"good|warn",text}, explain?, alt?:{text,saving}, cash? }
+     beats: 0 heading · 1..n items · total · verdict · explain · alt
+     ========================================================================= */
+  function costCover(p, ctx){
+    p = p || {};
+    const root = mock("cost-mock", ctx);
+    let b = 0;
+    const surf = el("div", {class:"surf"});
+    root.appendChild(surf);
+    surf.appendChild(beat(b++, el("div", {class:"surf-h"}, [ has(p.heading)?p.heading:(p.cash?"Your cash price":"Your cover") ])));
+    arr(p.items).forEach(it=>{
+      it = it || {};
+      const row = el("div", {class:"cost-item"}, [
+        el("div", {}, [
+          el("span", {class:"ci-name"}, [ has(it.name)?it.name:"Item" ]),
+          has(it.line) ? el("span", {class:"ci-line"}, [it.line]) : null
+        ]),
+        el("div", {class:"ci-amt"}, [ has(it.amount)?String(it.amount):"" ])
+      ]);
+      surf.appendChild(beat(b++, row));
+    });
+    const t = p.total || {};
+    if(has(t.label) || has(t.amount)){
+      surf.appendChild(beat(b++, el("div", {class:"cost-total"}, [
+        el("span", {}, [ has(t.label)?t.label:"Total" ]),
+        el("span", {}, [ has(t.amount)?String(t.amount):"" ])
+      ])));
+    }
+    const v = p.verdict || {};
+    if(has(v.text)){
+      const vtone = v.tone==="warn" ? "warn" : "good";
+      surf.appendChild(beat(b++, el("div", {class:"verdict "+vtone}, [
+        el("span", {"aria-hidden":"true"}, [vtone==="good"?"✓":"⚠"]), document.createTextNode(v.text)
+      ])));
+    }
+    if(has(p.explain)) surf.appendChild(beat(b++, el("div", {class:"cost-explain"}, [p.explain])));
+    if(p.alt && has(p.alt.text)){
+      const alt = el("div", {class:"cost-alt"}, [ document.createTextNode(p.alt.text) ]);
+      if(has(p.alt.saving)) alt.appendChild(el("span", {class:"save"}, [" — save "+p.alt.saving]));
+      surf.appendChild(beat(b++, alt));
+    }
+    return root;
+  }
+
+  /* =========================================================================
+     4  pharmacist
+     payload: { name, title, reg?, statusSteps:[{label,state:"done|active|todo"}],
+                checks:[...], chatPrompt?, aiNote? }
+     beats: 0 head · 1 steps · 2 checks · 3 chatPrompt · 4 aiNote
+     ========================================================================= */
+  function pharmacist(p, ctx){
+    p = p || {};
+    const root = mock("pharm-mock", ctx);
+    let b = 0;
+    const surf = el("div", {class:"surf"});
+    root.appendChild(surf);
+    const head = el("div", {class:"pharm-head"}, [
+      el("div", {class:"pharm-av"}, [ avatarSVG("adult", (ctx&&ctx.econ)||"insured") ]),
+      el("div", {class:"pharm-id"}, [
+        el("div", {class:"ph-title"}, [ has(p.title)?p.title:"Your pharmacist" ]),
+        el("div", {class:"ph-name"}, [ has(p.name)?p.name:"Pharmacist" ]),
+        has(p.reg) ? el("div", {class:"ph-reg"}, ["● "+p.reg]) : null
+      ])
+    ]);
+    surf.appendChild(beat(b++, head));
+    const steps = arr(p.statusSteps);
+    if(steps.length){
+      const ul = el("ul", {class:"steps"});
+      steps.forEach(s=>{
+        s = s || {};
+        const state = (s.state==="done"||s.state==="active"||s.state==="todo") ? s.state : "todo";
+        ul.appendChild(el("li", {class:"step "+state}, [
+          el("span", {class:"dot", "aria-hidden":"true"}, [ state==="done"?"✓":"" ]),
+          el("span", {class:"slabel"}, [ has(s.label)?s.label:"" ])
+        ]));
+      });
+      surf.appendChild(beat(b++, ul));
+    }
+    const checks = arr(p.checks).filter(has);
+    if(checks.length){
+      const cl = el("ul", {class:"checks"});
+      checks.forEach(c=> cl.appendChild(el("li", {}, [String(c)])));
+      surf.appendChild(beat(b++, cl));
+    }
+    if(has(p.chatPrompt)){
+      surf.appendChild(beat(b++, el("div", {class:"chat-prompt"}, [
+        el("span", {"aria-hidden":"true"}, ["💬"]), document.createTextNode(p.chatPrompt)
+      ])));
+    }
+    if(has(p.aiNote)){
+      surf.appendChild(beat(b++, el("div", {class:"ai-note"}, [String(p.aiNote)])));
+    }
+    return root;
+  }
+
+  /* =========================================================================
+     5  dispenseRowa
+     payload: { steps:[{label,icon}], robot?, scanVerify?, packPhoto?, statusLine? }
+     beats: 0 = robot/conveyor stage (arm slides, tick appears) · then one per step
+            · then statusLine.  Pack-photo is part of the stage SVG.
+     ========================================================================= */
+  function dispenseRowa(p, ctx){
+    p = p || {};
+    const root = mock("rowa-mock", ctx);
+    let b = 0;
+
+    // automated picker stage: conveyor + arm that slides a pack, scan-verify tick,
+    // and a sealed dated dose-pack. Tasteful inline SVG, not literal.
+    const stage = el("div", {class:"rowa-stage"});
+    const svg = svgEl("svg", {viewBox:"0 0 280 120", role:"img", "aria-label":"Automated dispensing"});
+    // conveyor
+    svg.appendChild(svgEl("rect", {x:0,y:92,width:280,height:8,rx:4,fill:"#243029"}));
+    for(let x=10;x<280;x+=26) svg.appendChild(svgEl("circle",{cx:x,cy:104,r:5,fill:"#1a2620",stroke:"#33453b","stroke-width":1.5}));
+    // ROWA cabinet (shelves) on the left
+    svg.appendChild(svgEl("rect", {x:8,y:14,width:70,height:74,rx:6,fill:"#16201b",stroke:"#33453b","stroke-width":1.5}));
+    [26,44,62].forEach(yy=> svg.appendChild(svgEl("line",{x1:14,y1:yy,x2:72,y2:yy,stroke:"#33453b","stroke-width":1.2})));
+    // picker arm group (slides right on reveal)
+    const arm = svgEl("g", {class:"rowa-arm"});
+    arm.appendChild(svgEl("rect", {x:78,y:18,width:6,height:34,fill:"#9bcfb0"}));      // vertical rail
+    arm.appendChild(svgEl("rect", {x:78,y:48,width:34,height:6,fill:"#9bcfb0"}));      // horizontal reach
+    arm.appendChild(svgEl("rect", {x:96,y:54,width:22,height:18,rx:3,fill:"#b5d334",stroke:"#157a3b","stroke-width":1.5})); // gripped pack
+    stage.appendChild(svg);   // (svg first so arm appended into it below)
+    svg.appendChild(arm);
+    // sealed dose-pack target on the right + scan-verify tick
+    svg.appendChild(svgEl("rect", {x:212,y:50,width:46,height:34,rx:4,fill:"#1a9b4a",stroke:"#b5d334","stroke-width":2}));
+    svg.appendChild(svgEl("line", {x1:212,y1:67,x2:258,y2:67,stroke:"#b5d334","stroke-width":1.5}));
+    const tick = svgEl("g", {class:"rowa-tick"});
+    tick.appendChild(svgEl("circle", {cx:235,cy:30,r:13,fill:"#157a3b"}));
+    tick.appendChild(svgEl("path", {d:"M229 30 l4 4 l8 -9", fill:"none", stroke:"#fff", "stroke-width":3, "stroke-linecap":"round", "stroke-linejoin":"round"}));
+    svg.appendChild(tick);
+    root.appendChild(beat(b++, stage));   // beat 0: arm slides + tick pops (CSS-driven)
+
+    const steps = arr(p.steps);
+    if(steps.length){
+      const ul = el("ul", {class:"rowa-steps"});
+      steps.forEach(s=>{
+        s = s || {};
+        ul.appendChild(el("li", {class:"rowa-step"}, [
+          el("span", {class:"ri", "aria-hidden":"true"}, [ has(s.icon)?String(s.icon):"●" ]),
+          el("span", {}, [ has(s.label)?s.label:"" ])
+        ]));
+      });
+      // reveal each step as its own beat
+      arr(ul.children).forEach(li=> beat(b++, li));
+      root.appendChild(ul);
+    }
+    if(has(p.statusLine)){
+      root.appendChild(beat(b++, el("div", {class:"rowa-status"}, [
+        el("span", {"aria-hidden":"true"}, ["👁 "]), document.createTextNode(p.statusLine)
+      ])));
+    }
+    return root;
+  }
+
+  /* =========================================================================
+     6  deliveryTrack
+     payload: { mode:"home|locker|collect", steps:[{label,state:"done|active|todo"}],
+                driver?:{name,eta}, pod?, altModes?:[], realisticWindow? }
+     beats: 0 mode+route · 1 eta/window · 2 driver · 3 pod · 4 alt modes
+     ========================================================================= */
+  function deliveryTrack(p, ctx){
+    p = p || {};
+    const root = mock("dt-mock", ctx);
+    let b = 0;
+    const surf = el("div", {class:"surf"});
+    root.appendChild(surf);
+
+    const modeLabel = { home:"🏠 Home delivery", locker:"🔒 Locker (PUDO)", collect:"🏪 Click & collect" };
+    const mode = (p.mode==="home"||p.mode==="locker"||p.mode==="collect") ? p.mode : "home";
+
+    const steps = arr(p.steps);
+    const total = steps.length || 1;
+    const doneCount = steps.filter(s=> s && s.state==="done").length;
+    const activeIdx = steps.findIndex(s=> s && s.state==="active");
+    const fillFrac = total<=1 ? 1 : (Math.max(doneCount-1,0) + (activeIdx>=0?0.5:0)) / (total-1);
+
+    const route = el("div", {class:"dt-route"});
+    route.appendChild(el("div", {class:"dt-line", "aria-hidden":"true"}));
+    const fill = el("div", {class:"dt-fill", "aria-hidden":"true"});
+    route.appendChild(fill);
+    const stops = el("div", {class:"dt-stops"});
+    steps.forEach(s=>{
+      s = s || {};
+      const state = (s.state==="done"||s.state==="active") ? s.state : "todo";
+      stops.appendChild(el("div", {class:"dt-stop "+state}, [
+        el("div", {class:"dnode", "aria-hidden":"true"}, [ state==="done"?"✓":"" ]),
+        el("div", {class:"dlabel"}, [ has(s.label)?s.label:"" ])
+      ]));
+    });
+    route.appendChild(stops);
+
+    const head = el("div", {}, [
+      el("span", {class:"dt-mode"}, [ modeLabel[mode] ]),
+      route
+    ]);
+    surf.appendChild(beat(b++, head));
+    // animate the fill once its beat is revealed
+    head.setAttribute("data-fill", String(Math.round(fillFrac*100)));
+    // (engine reveal triggers; we also set on a microtask so the gallery shows it)
+    setTimeout(()=>{ try{ fill.style.width = (Math.round(fillFrac*100))+"%"; }catch(e){} }, 30);
+
+    // eta + window
+    const etaStep = steps.find(s=> s && s.state==="active") || {};
+    const etaTxt = has(etaStep.label) ? etaStep.label : (has(p.realisticWindow)?p.realisticWindow:"");
+    if(has(etaTxt) || has(p.realisticWindow)){
+      const etaWrap = el("div", {}, [
+        has(etaTxt) ? el("div", {class:"dt-eta"}, [ el("span",{"aria-hidden":"true"},["⏱"]), document.createTextNode(etaTxt) ]) : null,
+        has(p.realisticWindow) ? el("div", {class:"dt-window"}, [p.realisticWindow]) : null
+      ]);
+      surf.appendChild(beat(b++, etaWrap));
+    }
+    if(p.driver && (has(p.driver.name)||has(p.driver.eta))){
+      const dtxt = [p.driver.name, p.driver.eta].filter(has).join(" · ");
+      surf.appendChild(beat(b++, el("div", {class:"dt-driver"}, [
+        el("span", {"aria-hidden":"true"}, ["🧑‍✈️"]), document.createTextNode(dtxt)
+      ])));
+    }
+    if(has(p.pod)){
+      surf.appendChild(beat(b++, el("div", {class:"dt-pod"}, [
+        el("span", {"aria-hidden":"true"}, ["✓ "]), document.createTextNode(p.pod)
+      ])));
+    }
+    const alts = arr(p.altModes).filter(has);
+    if(alts.length){
+      const aw = el("div", {class:"dt-alts"});
+      alts.forEach(a=> aw.appendChild(el("span", {class:"dt-alt"}, [ el("span",{"aria-hidden":"true"},["↔"]), document.createTextNode(a) ])));
+      surf.appendChild(beat(b++, aw));
+    }
+    return root;
+  }
+
+  /* =========================================================================
+     7  adherencePack
+     payload: { days:[{label, slots:[{time, pills:[tone,...]}]}], reminder?, print?, forMember? }
+     beats: 0 grid header(forMember) · then one beat per DAY row · reminder · foot
+     ========================================================================= */
+  function adherencePack(p, ctx){
+    p = p || {};
+    const root = mock("ap-mock", ctx);
+    let b = 0;
+    const surf = el("div", {class:"surf"});
+    root.appendChild(surf);
+    surf.appendChild(beat(b++, el("div", {class:"surf-h"}, [
+      has(p.forMember) ? ("Dose-pack · "+p.forMember) : "Your dose-pack"
+    ])));
+    const grid = el("div", {class:"ap-grid"});
+    arr(p.days).forEach(day=>{
+      day = day || {};
+      const slots = arr(day.slots);
+      const row = el("div", {class:"ap-row"});
+      row.appendChild(el("div", {class:"ap-daylabel"}, [ has(day.label)?day.label:"" ]));
+      // up to two slots (AM/PM); pad if missing so the grid stays aligned
+      for(let i=0;i<2;i++){
+        const s = slots[i] || null;
+        const cell = el("div", {class:"ap-slot"});
+        if(s){
+          cell.appendChild(el("div", {class:"ap-time"}, [ has(s.time)?s.time:"" ]));
+          const pw = el("div", {class:"ap-pills"});
+          arr(s.pills).forEach(tone=> pw.appendChild(pillSVG({shape:"tablet", tone:tone, tone2:tone})));
+          cell.appendChild(pw);
+        } else {
+          cell.style.visibility = "hidden";
+        }
+        row.appendChild(cell);
+      }
+      grid.appendChild(beat(b++, row));
+    });
+    surf.appendChild(grid);
+    if(has(p.reminder)){
+      surf.appendChild(beat(b++, el("div", {class:"ap-reminder"}, [
+        el("span", {class:"bell", "aria-hidden":"true"}, ["🔔"]), document.createTextNode(p.reminder)
+      ])));
+    }
+    const foot = el("div", {class:"ap-foot"});
+    if(p.print) foot.appendChild(el("span", {}, ["🖨 Printed instructions included with the pack"]));
+    if(foot.childNodes.length) surf.appendChild(beat(b++, foot));
+    return root;
+  }
+
+  /* =========================================================================
+     8  curveball
+     payload: { scenarios:[{problem,problemIcon?,problemText,recovery,recoveryText,pillar?:[]}], line? }
+     beats: one per scenario card (in order) · then the closing line
+     ========================================================================= */
+  function curveball(p, ctx){
+    p = p || {};
+    const root = mock("cv-mock", ctx);
+    let b = 0;
+    arr(p.scenarios).forEach(sc=>{
+      sc = sc || {};
+      const card = el("div", {class:"cv-card"}, [
+        el("div", {class:"cv-prob"}, [
+          el("span", {"aria-hidden":"true"}, [ has(sc.problemIcon)?sc.problemIcon:"🔴" ]),
+          document.createTextNode(has(sc.problem)?sc.problem:"Problem")
+        ]),
+        has(sc.problemText) ? el("div", {class:"cv-prob-txt"}, [sc.problemText]) : null,
+        el("div", {class:"cv-arrow", "aria-hidden":"true"}, ["↓"]),
+        el("div", {class:"cv-rec"}, [
+          el("span", {class:"rico", "aria-hidden":"true"}, ["✓"]),
+          document.createTextNode(has(sc.recovery)?sc.recovery:"Recovery")
+        ]),
+        has(sc.recoveryText) ? el("div", {class:"cv-rec-txt"}, [sc.recoveryText]) : null,
+        pillarTags(sc.pillar)
+      ]);
+      root.appendChild(beat(b++, card));
+    });
+    if(has(p.line)){
+      root.appendChild(beat(b++, el("div", {class:"cv-line"}, [String(p.line)])));
+    }
+    return root;
+  }
+
+  // small pillar-tag row (S/U colour) — defensive
+  function pillarTags(ids){
+    ids = arr(ids).filter(has);
+    if(!ids.length) return null;
+    const wrap = el("div", {class:"cv-pillars"});
+    ids.forEach(id=>{
+      const cls = "ptag " + (/^U/i.test(String(id)) ? "u" : "s");
+      wrap.appendChild(el("span", {class:cls}, [String(id)]));
+    });
+    return wrap;
+  }
+
+  /* =========================================================================
+     9  renewal
+     payload: { messages:[{from,text,time}], teleconsult:{provider,lowData?},
+                token:{label,reform?}, loopBackTo?, loopNote? }
+     beats: app bar · messages (each) · teleconsult · token · loop note
+     ========================================================================= */
+  function renewal(p, ctx){
+    p = p || {};
+    const root = mock("rn-mock", ctx);
+    let b = 0;
+    root.appendChild(beat(b++, appbar("Dis-Chem Pharmacy", true, "renewal")));
+    const wa = el("div", {class:"wa"});
+    const thread = el("div", {class:"wa-thread"});
+    arr(p.messages).forEach(m=>{
+      m = m || {};
+      const side = (m.from==="me") ? "me" : "them";
+      const bub = el("div", {class:"bubble "+side}, [ el("div", {}, [ has(m.text)?String(m.text):"" ]) ]);
+      if(has(m.time)) bub.appendChild(el("span", {class:"btime"}, [String(m.time)]));
+      beat(b++, bub); thread.appendChild(bub);
+    });
+    wa.appendChild(thread);
+    root.appendChild(wa);
+
+    const tc = p.teleconsult || {};
+    if(has(tc.provider)){
+      const tele = el("div", {class:"rn-tele"}, [
+        el("span", {class:"tele-ico", "aria-hidden":"true"}, ["📹"]),
+        el("div", {}, [
+          el("div", {}, [ el("span",{class:"tele-prov"},[tc.provider]), document.createTextNode(" teleconsult") ]),
+          tc.lowData ? el("div", {class:"lowdata"}, [ el("span",{"aria-hidden":"true"},["📶"]), document.createTextNode("low-data video / voice") ]) : null
+        ])
+      ]);
+      root.appendChild(beat(b++, tele));
+    }
+    const tk = p.token || {};
+    if(has(tk.label)){
+      const tok = el("div", {class:"rn-token"}, [
+        el("div", {class:"tk-label"}, [ el("span",{"aria-hidden":"true"},["🎟"]), document.createTextNode(tk.label) ]),
+        tk.reform ? el("div", {class:"tk-reform"}, ["🔮 requires-reform — AES e-script maturity"]) : null
+      ]);
+      root.appendChild(beat(b++, tok));
+    }
+    if(has(p.loopNote)){
+      root.appendChild(beat(b++, el("div", {class:"rn-loop"}, [
+        el("span", {class:"loop-ico", "aria-hidden":"true"}, ["↻"]),
+        document.createTextNode(p.loopNote + (has(p.loopBackTo)?" ("+p.loopBackTo+")":""))
+      ])));
+    }
+    return root;
+  }
+
+  /* =========================================================================
+     frontBackStage({frontstage:[], backstage:[]})  — the two-lane stage visual.
+     beats: each frontstage chip (in order) · line-of-visibility · each backstage chip
+     ========================================================================= */
+  function frontBackStage(p, ctx){
+    p = p || {};
+    const root = mock("fbs", ctx);
+    let b = 0;
+    const front = arr(p.frontstage).filter(has);
+    const back  = arr(p.backstage).filter(has);
+
+    const frontLane = el("div", {class:"fbs-lane front"}, [ el("div", {class:"lname"}, ["Frontstage — what the customer sees"]) ]);
+    const fchips = el("div", {class:"fbs-chips"});
+    front.forEach(f=>{
+      const chip = el("span", {class:"fbs-chip"}, [ el("span",{"aria-hidden":"true"},["●"]), document.createTextNode(String(f)) ]);
+      beat(b++, chip); fchips.appendChild(chip);
+    });
+    frontLane.appendChild(fchips);
+    root.appendChild(frontLane);
+
+    const lov = el("div", {class:"lov"}, ["line of visibility"]);
+    beat(b++, lov);
+    root.appendChild(lov);
+
+    const backLane = el("div", {class:"fbs-lane back"}, [ el("div", {class:"lname"}, ["Backstage — capability behind the line"]) ]);
+    const bchips = el("div", {class:"fbs-chips"});
+    back.forEach(bk=>{
+      const chip = el("span", {class:"fbs-chip"}, [ el("span",{"aria-hidden":"true"},["◆"]), document.createTextNode(String(bk)) ]);
+      beat(b++, chip); bchips.appendChild(chip);
+    });
+    backLane.appendChild(bchips);
+    root.appendChild(backLane);
+    return root;
+  }
+
+  // ---- public surface -------------------------------------------------------
+  return {
+    phoneFrame, pillSVG, avatarSVG,
+    whatsappNudge, cabinet, costCover, pharmacist, dispenseRowa,
+    deliveryTrack, adherencePack, curveball, renewal,
+    frontBackStage
+  };
+})();
+
+/* ---- ANIM content model (inlined from _shared/06-anim-data.js) ---- */
+/* =============================================================================
+   DELIVERABLE #06 — DATA MODEL for the interactive click-through journey ANIMATION
+   ----------------------------------------------------------------------------
+   Single top-level statement: `const ANIM = { ... };`
+   Owned by the DATA/CONTENT agent. No rendering, no DOM, no CSS here.
+   Conforms to 06-animation-BRIEF.md §4 (DATA schema) and §3 (MOCKUP PAYLOAD
+   CONTRACT). Substance lifted faithfully (condensed for motion) from
+   deliverables/05-tobe-future-state-journey.html's DATA + household.
+
+   meta/pillars/economies/household are reused from #05. `household` is copied
+   VERBATIM (it powers the cabinet hero — do not alter members/medicines).
+   Every cite / personaRef is an EXACT slug already used in #05 and resolves to
+   a real vault .md file. No invented slugs.
+   ============================================================================= */
+
+const ANIM = {
+
+  meta:{
+    title:"Script Re-imagined — the journey, in motion",
+    subtitle:"The same future-state household repeat as #05, re-expressed as a cinematic, interactive click-through animation: watch each of nine moments build, then pause to explore the story, today's quoted pain, and the capabilities behind the line. Toggle the economy to see the same journey for an insured (Nomvula) and a cash/uninsured (Sipho) household.",
+    state:"to-be",
+    variant:"aspirational",
+    updated:"2026-06-14",
+    useCase:"The household medicine manager — the self-running repeat (a patient who is also a caregiver: own chronic meds + an elderly parent's chronic meds + a child's acute curveball, across one account)."
+  },
+
+  philosophy:{ pyramid:["Trust","Convenience","Speed"], line:"Predictability beats speed — confidence comes from clarity and fallback, not from automation alone." },
+
+  // Canonical pillars — verbatim ids/names/oneLiners from #05 / deliverables/_shared/pillars.md.
+  pillars:[
+    {id:"S1", type:"strategic", name:"Serve both economies on one spine", oneLiner:"Insured (~16%) and cash (~84%) are different journeys sharing one spine; the cash majority is never a degraded afterthought."},
+    {id:"S2", type:"strategic", name:"Pharmacy as the health front door", oneLiner:"Scripting is the entry to an ongoing care relationship, not a one-off transaction; the store+clinic estate is a strategic asset."},
+    {id:"S3", type:"strategic", name:"Compete on service, not price", oneLiner:"SEP + capped dispensing fee fix the price; the durable differentiator is the experience around the drug."},
+    {id:"S4", type:"strategic", name:"Chronic-medicine flywheel = retention engine", oneLiner:"Proactive managed chronic repeats are the recurring relationship that compounds loyalty and adherence."},
+    {id:"S5", type:"strategic", name:"Pharmacist at top-of-licence; automate the toil", oneLiner:"Automation/central-fill/telepharmacy absorb mechanics so pharmacists do the clinical, trust-building work."},
+    {id:"U1", type:"ux", name:"Channel ladder: WhatsApp-first & data-frugal", oneLiner:"WhatsApp/USSD/SMS first, app as enhancement; low-data, async, resumable, idempotent by default."},
+    {id:"U2", type:"ux", name:"Never leave them guessing", oneLiner:"Honest real-time status at every step; the silent wait and unexplained rejection are the primary pains."},
+    {id:"U3", type:"ux", name:"Make money legible, early, always", oneLiner:"Price + cover + co-pay shown before the till; cash/EFT/wallet supported; never a cost shock."},
+    {id:"U4", type:"ux", name:"Design for graceful failure", oneLiner:"Plain-language recovery, never a dead end, always a route to a pharmacist."},
+    {id:"U5", type:"ux", name:"Dignity, privacy & language by default", oneLiner:"Stigma-aware, discreet, multilingual, POPIA-grade consent; caregivers/proxies are first-class users."},
+    {id:"U6", type:"ux", name:"Reduce the journey, don't just digitise it", oneLiner:"Eliminate steps and re-keying; one profile across channels; measure friction removed, not features shipped."},
+    {id:"U7", type:"ux", name:"Adherence-as-design", oneLiner:"Effectiveness is lost after dispensing; design the schedule/label and refill loop as a behaviour-change surface."}
+  ],
+
+  economies:[
+    {
+      id:"insured", label:"Insured — Nomvula", personaRef:"design-kit/personas/insured-chronic-multimorbid",
+      persona:{
+        name:"Nomvula",
+        eyebrow:"Patient · household manager",
+        bio:"54 · Midrand · HR manager · Discovery member, HTN + type-2 diabetes on the CDL · app-capable, time-pressured · also manages her mother Gogo's chronic meds and her 7-year-old's acute needs from one account."
+      }
+    },
+    {
+      id:"cash", label:"Cash / uninsured — Sipho", personaRef:"design-kit/personas/low-data-whatsapp-first-peri-urban",
+      persona:{
+        name:"Sipho",
+        eyebrow:"Patient · household manager",
+        bio:"45 · peri-urban Durban · informal income · hypertensive on a cheap Android, intermittent signal, no street address · also collects for his elderly mother (chronic, CCMDD) and a young child's acute needs — cash, at the margin, near home."
+      }
+    }
+  ],
+
+  /* ---------------------------------------------------------------------------
+     HOUSEHOLD — copied VERBATIM from #05. Powers the cabinet hero (m2). Keyed by
+     economy → members[] → medicines[]. ILLUSTRATIVE data, consistent with the
+     personas (no citations: example regimens, not sourced facts). "shape" drives
+     the inline-SVG pill icon (tablet|caplet|capsule|bottle); tone/tone2 colours.
+  --------------------------------------------------------------------------- */
+  household:{
+    insured:{
+      frame:"Three people, one account. Nomvula's chronic meds, Gogo's chronic repeat and Lethabo's short acute course — every dose, every status and every rand of cover, in one calm place. Discovery is applied automatically; any co-pay is shown here, never at the till.",
+      asOf:"Cycle ready · next collection in 4 days",
+      members:[
+        {
+          role:"Me", name:"Nomvula", you:true,
+          sub:"54 · HR manager · HTN + type-2 diabetes on the CDL",
+          avatar:"adult-f",
+          medicines:[
+            {name:"Amlodipine", strength:"5 mg", shape:"tablet", tone:"#f0a23b", tone2:"#d9821b",
+             forText:"Lowers blood pressure (calcium-channel blocker)",
+             dose:"1 in the morning", supply:"30 days left", status:"ok",
+             fund:{kind:"covered", text:"Covered · R0", sub:"Discovery · CDL"}},
+            {name:"Hydrochlorothiazide", strength:"12.5 mg", shape:"tablet", tone:"#e9e2d2", tone2:"#c9bfa6",
+             forText:"Water tablet — helps control blood pressure",
+             dose:"1 in the morning", supply:"30 days left", status:"ok",
+             fund:{kind:"covered", text:"Covered · R0", sub:"Discovery · CDL"}},
+            {name:"Metformin", strength:"850 mg", shape:"caplet", tone:"#ffffff", tone2:"#d4dbd6",
+             forText:"Controls blood sugar in type-2 diabetes",
+             dose:"1 morning · 1 night", supply:"6 days left", status:"due",
+             fund:{kind:"covered", text:"Covered · R0", sub:"Discovery · CDL"}},
+            {name:"Atorvastatin", strength:"20 mg", shape:"tablet", tone:"#d96b8a", tone2:"#b84a6b",
+             forText:"Lowers cholesterol to protect heart & vessels",
+             dose:"1 at night", supply:"12 days left", status:"way",
+             fund:{kind:"copay", text:"Co-pay R42", sub:"non-formulary brand"},
+             note:"A fully-funded generic is one tap away — switch to pay R0."}
+          ]
+        },
+        {
+          role:"Gogo (mother)", name:"Gogo", proxy:true,
+          sub:"79 · lives with the family · elderly chronic regimen",
+          avatar:"elder-f",
+          medicines:[
+            {name:"Enalapril", strength:"10 mg", shape:"tablet", tone:"#7fb3e0", tone2:"#4f8fc4",
+             forText:"Blood-pressure tablet (ACE inhibitor)",
+             dose:"1 in the morning", supply:"18 days left", status:"ok",
+             fund:{kind:"covered", text:"Covered · R0", sub:"Discovery · CDL"}},
+            {name:"Warfarin", strength:"5 mg", shape:"tablet", tone:"#8e6fc4", tone2:"#6c4aa0",
+             forText:"Thins the blood to prevent clots",
+             dose:"1 at night · INR-monitored", supply:"On the way", status:"way",
+             fund:{kind:"covered", text:"Covered · R0", sub:"Discovery · CDL"},
+             note:"High-alert: dose set by the latest INR; pharmacist reviews each repeat."}
+          ]
+        },
+        {
+          role:"Child", name:"Lethabo", proxy:true,
+          sub:"7 · short acute course (chest infection)",
+          avatar:"child",
+          medicines:[
+            {name:"Amoxicillin suspension", strength:"250 mg/5 mL", shape:"bottle", tone:"#f2c84b", tone2:"#e0a91f",
+             forText:"Antibiotic for a chest infection — finish the full course",
+             dose:"5 mL three times a day · 7 days", supply:"Acute · 7-day course", status:"ok",
+             fund:{kind:"copay", text:"Co-pay R28", sub:"acute · paid from savings"},
+             note:"Checked against Gogo's & Nomvula's meds in the house — safe to use."}
+          ]
+        }
+      ]
+    },
+    cash:{
+      frame:"One WhatsApp number, the whole family. Sipho's BP tablets, his mother's free public repeat and his child's acute antibiotic — each with a clear Rand price up front, collected near home. The cash price is shown before he travels; nothing is a black box at the till.",
+      asOf:"Ready for collection near home · PIN sent by SMS",
+      members:[
+        {
+          role:"Me", name:"Sipho", you:true,
+          sub:"45 · peri-urban Durban · hypertensive · pays cash",
+          avatar:"adult-m",
+          medicines:[
+            {name:"Amlodipine", strength:"5 mg", shape:"tablet", tone:"#f0a23b", tone2:"#d9821b",
+             forText:"Lowers blood pressure (calcium-channel blocker)",
+             dose:"1 in the morning", supply:"28 days left", status:"ok",
+             fund:{kind:"cash", text:"R91", sub:"tablets R57 + fee R34"},
+             note:"Generic option shown up front: R61 instead of R91."},
+            {name:"Hydrochlorothiazide", strength:"12.5 mg", shape:"tablet", tone:"#e9e2d2", tone2:"#c9bfa6",
+             forText:"Water tablet — helps control blood pressure",
+             dose:"1 in the morning", supply:"9 days left", status:"due",
+             fund:{kind:"cash", text:"R74", sub:"tablets R40 + fee R34"}}
+          ]
+        },
+        {
+          role:"Gogo (mother)", name:"Mama", proxy:true,
+          sub:"71 · public-sector chronic · CCMDD",
+          avatar:"elder-f",
+          medicines:[
+            {name:"Enalapril", strength:"10 mg", shape:"tablet", tone:"#7fb3e0", tone2:"#4f8fc4",
+             forText:"Blood-pressure tablet (ACE inhibitor)",
+             dose:"1 in the morning", supply:"On the way", status:"way",
+             fund:{kind:"free", text:"CCMDD · R0", sub:"free public supply"},
+             note:"Free public repeat, bridged onto the same near-home locker rail."},
+            {name:"Hydrochlorothiazide", strength:"12.5 mg", shape:"tablet", tone:"#e9e2d2", tone2:"#c9bfa6",
+             forText:"Water tablet for blood pressure",
+             dose:"1 in the morning", supply:"On the way", status:"way",
+             fund:{kind:"free", text:"CCMDD · R0", sub:"free public supply"}}
+          ]
+        },
+        {
+          role:"Child", name:"Little one", proxy:true,
+          sub:"6 · short acute course (chest infection)",
+          avatar:"child",
+          medicines:[
+            {name:"Amoxicillin suspension", strength:"250 mg/5 mL", shape:"bottle", tone:"#f2c84b", tone2:"#e0a91f",
+             forText:"Antibiotic for a chest infection — finish the full course",
+             dose:"5 mL three times a day · 7 days", supply:"Acute · 7-day course", status:"ok",
+             fund:{kind:"cash", text:"R64", sub:"medicine R30 + fee R34"},
+             note:"Priced & checked by a pharmacist before he travels."}
+          ]
+        }
+      ]
+    }
+  },
+
+  /* ---------------------------------------------------------------------------
+     SCENES — one per moment m1–m9, in order. Each carries a mockup type (brief
+     §2), pillars, flags, and byEconomy.insured + byEconomy.cash. Each economy
+     fills narration, story, emotion, trustStage, frontstage/backstage/support/
+     partners/regulatory/tech, pains, opportunities, metrics, asIsBaseline, and a
+     `mock` payload to the EXACT shape in brief §3 for that mockup type.
+     Trust arc: calm | trigger | acceleration | agitation | defection→loyalty.
+  --------------------------------------------------------------------------- */
+  scenes:[
+
+    /* 1 — predict & one-tap refill — whatsappNudge ------------------------- */
+    {
+      id:"m1", n:1, title:"My repeat is due — and I barely have to think about it",
+      spineStage:"REFILL/RENEW → SUBMIT", mockup:"whatsappNudge",
+      pillars:["S4","U6","U7","U2"], flags:["momentOfTruth"],
+      byEconomy:{
+        insured:{
+          narration:"A week before run-out, a single tap keeps the whole household supplied.",
+          story:"A WhatsApp message lands a week before run-out: “Hi Nomvula — your BP & diabetes meds and Gogo's repeat are due. Same as last month?” One tap and it's handled. She didn't have to remember — the system did, for the whole household.",
+          emotion:5, trustStage:"calm",
+          mock:{ contact:"Dis-Chem Pharmacy", verified:true,
+            messages:[
+              {from:"them", text:"Hi Nomvula \u{1F44B} Your BP & diabetes meds and Gogo's repeat are due in 7 days.", time:"08:12"},
+              {from:"them", text:"Same as last month? ✅ Yes  ✏️ Change  ⏰ Snooze", time:"08:12", quick:["✅ Yes","✏️ Change","⏰ Snooze"]},
+              {from:"me", text:"✅ Yes", time:"08:13"},
+              {from:"them", text:"Done — preparing the household repeat. We'll show cover & cost next.", time:"08:13"}
+            ],
+            typingBeforeIndex:3,
+            footnote:"Falls back to USSD on zero data" },
+          frontstage:["WhatsApp thread (channel-agnostic base, app for power features)","'Ready to send the same as last month?' confirm card"],
+          backstage:["Refill-prediction from dispensing history + days-supply pre-assembles each member's cycle","BRIX auto-dispense creates the eligible repeats without human keying","Workflow manager prioritises the order into the virtual queue"],
+          support:["Adherence / refill-prediction engine","Dispensary record (one household profile)","WhatsApp Business channel"],
+          partners:["Medical scheme (chronic benefit)"],
+          regulatory:["Proactive-contact + consented nudges are POPIA-governed; opt-out respected — wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          tech:[
+            {name:"BRIX auto-dispense", what:"eligible repeats auto-created & dispensed without manual keying", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
+            {name:"Refill prediction", what:"predicts run-out from days-supply and pre-assembles the cycle", cite:"wiki/digital-transformation/adherence-tech-and-digital-therapeutics", reform:false},
+            {name:"Workflow manager", what:"single virtual queue prioritises & routes the order", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false}
+          ],
+          pains:[{text:"Chronic re-order through the app/WhatsApp loops or dead-ends — the dominant complaint cluster", quote:"I have been pulling at my hair trying to order my medication via the App or even using the WhatsApp service.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}],
+          opportunities:[
+            {text:"Make the repeat truly managed, not opt-in — proactive nudge + one-tap confirm replaces the cold re-order", pillars:["S4","U6"], cite:"wiki/concepts/chronic-medicine-flywheel"},
+            {text:"Consolidate every household member's due meds into one confirmable order", pillars:["S4","U7"], cite:"design-kit/personas/caregiver-proxy-collector"}
+          ],
+          metrics:["% cycles auto-initiated","Time-to-confirm","Opt-out rate (kept low & honoured)"],
+          asIsBaseline:"Today the repeat is opt-in: she must remember, re-open a flow that loops back to the previous menu, and re-confirm each member separately — and it breaks hard at the ~6-month script expiry."
+        },
+        cash:{
+          narration:"No app, no data — one reply keeps the family's chronic supply ahead of run-out.",
+          story:"An SMS / WhatsApp line he can read on any phone: “Sawubona Sipho — your BP tablets and your mother's repeat are due. Reply 1 to prepare for collection near home.” No app, no data-heavy download — just a reply.",
+          emotion:4, trustStage:"calm",
+          mock:{ contact:"Dis-Chem · SMS/WhatsApp", verified:true,
+            messages:[
+              {from:"them", text:"Sawubona Sipho. Amaphilisi akho e-BP nawakamama wakho asele azosphela.", time:"07:40"},
+              {from:"them", text:"Phendula u-1 ukulungiselela ukulanda eduze kwakho. (Reply 1 to prepare for collection near home)", time:"07:40", quick:["1 — Yebo","2 — Shintsha","3 — Emva kwesikhathi"]},
+              {from:"me", text:"1", time:"07:41"},
+              {from:"them", text:"Kulungile. Silungiselela ukulanda eduze. Intengo izoboniswa ngaphambi kokuba uhambe.", time:"07:41"}
+            ],
+            typingBeforeIndex:3,
+            footnote:"Falls back to USSD on zero data — resumable if signal drops" },
+          frontstage:["WhatsApp / SMS / USSD prompt (data-frugal, resumable)","Plain-language, in-language confirm"],
+          backstage:["Refill prediction + BRIX auto-dispense for eligible cash repeats","His mother's CCMDD chronic line bridged onto the same near-home rail (\u{1F52E})","Idempotent, resume-after-reconnect so a dropped signal loses nothing"],
+          support:["SMS / USSD gateway","Refill-prediction engine","Offline-tolerant queue"],
+          partners:["Public clinic / CCMDD network","Pelebox / locker network"],
+          regulatory:["Consented, opt-out-able nudges; POPIA consent in-language — wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          tech:[
+            {name:"BRIX auto-dispense", what:"prepares eligible cash repeats ahead of run-out", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
+            {name:"CCMDD→retail bridge", what:"a stable public-sector chronic repeat served on near-home retail rails", cite:"wiki/medical-schemes/courier-chronic-pharmacy-models", reform:true}
+          ],
+          pains:[{text:"App / WhatsApp re-order is unusable on low data and dead-ends with no human path", quote:"Dis-Chem App is dysfunctional.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}],
+          opportunities:[
+            {text:"Data-frugal, resumable, no-app refill as the default — the cash majority's repeat just works", pillars:["U1","S1"], cite:"wiki/consumer-context/digital-access-and-whatsapp"},
+            {text:"Bridge the family's free CCMDD chronic supply onto the same near-home collection rail", pillars:["S1","S4"], cite:"design-kit/personas/public-sector-bridging-to-retail"}
+          ],
+          metrics:["Low-data prompt completion","Silent-lapse (missed collection) rate","Reach into the uninsured majority"],
+          asIsBaseline:"Today there is no proactive prompt he can use; the app is data-heavy and dead-ends, so he reverts to a half-day clinic queue and his mother's supply depends on remembering."
+        }
+      }
+    },
+
+    /* 2 — household / multi-member + proxy — cabinet (HERO) ---------------- */
+    {
+      id:"m2", n:2, title:"I handle Mum's and my little one's meds in the same place",
+      spineStage:"SUBMIT (multi-member / proxy)", mockup:"cabinet",
+      pillars:["S4","U5","U6","U1"], flags:[],
+      byEconomy:{
+        insured:{
+          narration:"One household view: three people, every dose and every rand of cover, in one calm place.",
+          story:"Nomvula opens one household view: herself, Gogo (her mother) and Lethabo (her son), each with their own meds, cycles and cover — but one place to act. She added Gogo's medication to her repeat order once; she never has to re-prove she's allowed to manage it.",
+          emotion:5, trustStage:"calm",
+          mock:{ useHousehold:true },
+          frontstage:["Household switcher (one account, linked members)","'Add a dependent' with consent capture"],
+          backstage:["AI captures, standardises & routes any new script into a dispensing-ready format (no re-key)","One household profile carries members, consents and cycles across channels","Proxy authority recorded once with a POPIA-grade audit trail"],
+          support:["AI capture/route service","Unified household profile (EMPI)","Consent & audit store"],
+          partners:["Prescriber (for new scripts)","Medical scheme"],
+          regulatory:["POPIA-compliant proxy/caregiver consent; pharmacist still validates each member's script — wiki/sa-regulatory/prescription-requirements-repeats"],
+          tech:[
+            {name:"AI capture / standardise / route", what:"reads an unstructured script, extracts & standardises it, routes for human handling only when needed", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
+            {name:"One household profile", what:"linked dependents, consents and cycles across WhatsApp / app / counter", cite:"wiki/concepts/identity-and-consent", reform:false},
+            {name:"POPIA proxy consent", what:"recorded delegated authority so a caregiver acts without re-proving each time", cite:"wiki/concepts/identity-and-consent", reform:false}
+          ],
+          pains:[{text:"Re-keying despite the info being on the system; family / multi-profile admin handled awkwardly at the counter", quote:"Type essays even though your information is on the system.", cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}],
+          opportunities:[
+            {text:"A first-class proxy / multi-profile model — one caregiver account holding linked dependents with lawful authority", pillars:["U5","U6"], cite:"design-kit/personas/caregiver-proxy-collector"},
+            {text:"Carry context across channels so nobody re-types what the system already holds", pillars:["U6","U1"], cite:"wiki/concepts/identity-and-consent"}
+          ],
+          metrics:["Re-keying events per order (target ≈ 0)","Dependents managed per account","Proxy-authority re-proof rate"],
+          asIsBaseline:"Today the flow assumes one person = one patient; managing Gogo and the child means carrying their IDs, re-explaining authority at the counter, and re-typing details already on the system."
+        },
+        cash:{
+          narration:"One WhatsApp number, the whole family — managed in his language, no app, no re-registration.",
+          story:"From one WhatsApp number, Sipho manages his own BP tablets, his mother's chronic repeat and his child's acute script. He forwards a script photo for the child; the system links it to the right household member and asks, in isiZulu, who he's collecting for — no app, no re-registration.",
+          emotion:4, trustStage:"trigger",
+          mock:{ useHousehold:true },
+          frontstage:["One WhatsApp thread for the household","In-language 'who is this for?' prompt"],
+          backstage:["AI capture reads the photo/USSD input and standardises it; PBQ human fallback if it can't","Household profile links members without forcing per-person logins","Discreet, recorded proxy consent for an elderly parent's collection"],
+          support:["AI capture/route service","SMS / USSD gateway","Consent & audit store"],
+          partners:["Public clinic / CCMDD","Pelebox / locker network"],
+          regulatory:["POPIA proxy consent in-language; pharmacist validation retained per script — wiki/sa-regulatory/prescription-requirements-repeats"],
+          tech:[
+            {name:"AI capture + PBQ fallback", what:"AI standardises the input; a human (PBQ) catches anything it can't, never a dead end", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
+            {name:"Household profile (no per-person login)", what:"linked members managed from one number", cite:"wiki/concepts/identity-and-consent", reform:false}
+          ],
+          pains:[{text:"Caregivers carry the whole family's admin and re-prove authority at the counter each time", quote:"Let me manage all of them in one place, and don't make me prove every single time that I'm allowed to collect Mama's medicine.", cite:"design-kit/personas/caregiver-proxy-collector"}],
+          opportunities:[
+            {text:"Forward-the-script, carer-friendly submission on any phone — no app, no PIN gate", pillars:["U1","U5"], cite:"design-kit/personas/low-data-whatsapp-first-peri-urban"},
+            {text:"One household view across cash and CCMDD wallets, echoing how the family already pools care", pillars:["S1","U5"], cite:"wiki/consumer-context/two-economy-affordability"}
+          ],
+          metrics:["Carer-forward submissions","Members per household number","Authority re-proof rate"],
+          asIsBaseline:"Today he re-explains at the counter who he is collecting for, and there is no single low-data place to hold his, his mother's and his child's medicine together."
+        }
+      }
+    },
+
+    /* 3 — cost & cover before commit — costCover --------------------------- */
+    {
+      id:"m3", n:3, title:"I know the cost and the cover before I commit",
+      spineStage:"FUND/CLAIM + PAY (pre-adjudication)", mockup:"costCover",
+      pillars:["S3","U3","U2","S1"], flags:["momentOfTruth"],
+      byEconomy:{
+        insured:{
+          narration:"Seconds after confirming: R0 to pay, in full — and the one co-pay comes with a fix.",
+          story:"Within seconds of confirming, plain language: “All in stock. Discovery covers Nomvula's and Gogo's meds in full — R0 to pay. One line has a R42 co-pay — here's why, and a fully-funded generic if you'd rather.” She knows the out-of-pocket before she commits, for the whole household.",
+          emotion:5, trustStage:"calm",
+          mock:{ heading:"Cover & cost — before you commit",
+            items:[
+              {name:"Nomvula · BP + diabetes meds", line:"Discovery · CDL", amount:"R0"},
+              {name:"Gogo · chronic repeat", line:"Discovery · CDL", amount:"R0"},
+              {name:"Atorvastatin 20 mg (brand)", line:"non-formulary co-pay", amount:"R42"}
+            ],
+            total:{label:"You pay today", amount:"R42"},
+            verdict:{tone:"warn", text:"R42 co-pay on one line — here's the fix"},
+            explain:"Three lines are fully funded. Only the brand statin carries a co-pay (non-formulary).",
+            alt:{text:"Switch to the funded generic atorvastatin", saving:"R42 → R0"},
+            cash:false },
+          frontstage:["Per-member funding panel (funded / co-pay / why)","Generic-swap prompt with R-saving shown"],
+          backstage:["Real-time pre-adjudication (a 'can-I-claim?' dry run) against PMB/CDL + formulary + MMAP + DSP before commit","Any co-pay or non-DSP issue surfaced WITH the fix, never as a dead-end rejection","Claim settles silently inside the flow"],
+          support:["Real-time claims switching","Scheme adjudication engine","Price engine (SEP + dispensing fee)"],
+          partners:["Medical scheme","Claims switching house"],
+          regulatory:["PMB / CDL funding honoured; SEP shown transparently — wiki/medical-schemes/pmb-cdl-chronic"],
+          tech:[
+            {name:"Real-time claim switching", what:"pre-adjudicates funded-vs-co-pay before commit", cite:"wiki/medical-schemes/realtime-claims-switching", reform:false},
+            {name:"SEP + fee price engine", what:"shows the regulated price components transparently", cite:"wiki/sa-regulatory/sep-dispensing-fee", reform:false}
+          ],
+          pains:[{text:"Co-payment discovered at the till; a chronic delivery once returned over a disputed co-pay nobody resolved", quote:"All he needed to do was contact Dis-Chem and verify the co-payment.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}],
+          opportunities:[
+            {text:"Pre-adjudicate and show funded-vs-co-pay before commit — the till-side cost shock is designed out", pillars:["U3","U2"], cite:"wiki/medical-schemes/realtime-claims-switching"},
+            {text:"Surface the fix (generic / DSP node) with any co-pay, so an exception opens a path not a dead end", pillars:["U4","S3"], cite:"wiki/medical-schemes/dsp-formularies-copayments"}
+          ],
+          metrics:["Co-pay-surprise rate (target ≈ 0)","Pre-adjudication accuracy","% generic-swap offered"],
+          asIsBaseline:"Today the co-pay appears at the till; a rejection (off-formulary, chronic not registered) surfaces in a queue with no clear next step — and members get steered to a courier to dodge it."
+        },
+        cash:{
+          narration:"An itemised cash price in his language, before he travels — no black box at the till.",
+          story:"Before he travels, Sipho sees an itemised cash price in isiZulu: “Tablets R57 + dispensing fee R34 = R91. A generic is R61. Your mother's repeat: R0 on CCMDD.” He can pick the cheaper generic or save toward it — and the cash path looks first-class, not an error state.",
+          emotion:4, trustStage:"calm",
+          mock:{ heading:"Intengo — your price, before you travel",
+            items:[
+              {name:"Amlodipine 5 mg — tablets", line:"SEP medicine price", amount:"R57"},
+              {name:"Dispensing fee (regulated)", line:"capped professional fee", amount:"R34"},
+              {name:"Mama's repeat — CCMDD", line:"free public supply", amount:"R0"}
+            ],
+            total:{label:"You pay (Amlodipine)", amount:"R91"},
+            verdict:{tone:"good", text:"All priced up front — no surprise at the counter"},
+            explain:"SEP + a capped dispensing fee fix the price by law; we show every component. Mama's CCMDD line is free.",
+            alt:{text:"Choose the generic instead", saving:"R91 → R61"},
+            cash:true },
+          frontstage:["In-language itemised price breakdown","Generic / pack-size options + save-toward"],
+          backstage:["Price engine = SEP + regulated dispensing fee, shown transparently (no discounting — it's regulated)","Save-toward construct echoing stokvel logic; pay at collection","CCMDD eligibility surfaced so free cover is applied, not missed"],
+          support:["Price engine (SEP + fee)","Wallet / payments","CCMDD eligibility service"],
+          partners:["Payment provider","Public clinic / CCMDD"],
+          regulatory:["SEP + capped dispensing fee fix the price — compete on service, show price transparently — wiki/sa-regulatory/sep-dispensing-fee"],
+          tech:[
+            {name:"SEP + fee price engine", what:"quotes an itemised, defensible cash price before he travels", cite:"wiki/concepts/price-transparency", reform:false},
+            {name:"Save-toward wallet", what:"accrues small increments for a lumpy bill on irregular income", cite:"wiki/consumer-context/two-economy-affordability", reform:false}
+          ],
+          pains:[{text:"Scheduled-medicine pricing feels arbitrary and the cash path is a black box until the till", quote:"I am horrified that the pricing of scheduled medication differs so dramatically from one Dis-Chem pharmacy to another.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}],
+          opportunities:[
+            {text:"Price transparency at commit (SEP makes this natural) — the cash patient never faces a shock", pillars:["U3","S3"], cite:"wiki/concepts/price-transparency"},
+            {text:"Save-toward / pay-at-collection for irregular income — affordability designed for, not assumed away", pillars:["U3","S1"], cite:"wiki/consumer-context/two-economy-affordability"}
+          ],
+          metrics:["% shown full price before commit","Save-toward adoption","CCMDD eligibility surfaced"],
+          asIsBaseline:"Today the price collapses to a number at the till; the regulated dispensing fee bites hardest on cheap medicines, and the trip + queue are themselves a cost on an irregular income."
+        }
+      }
+    },
+
+    /* 4 — named pharmacist has my back — pharmacist ------------------------ */
+    {
+      id:"m4", n:4, title:"A named pharmacist has my back",
+      spineStage:"VALIDATE / CLINICAL-CHECK", mockup:"pharmacist",
+      pillars:["S5","U4","U2","U5"], flags:["momentOfTruth","reform"],
+      byEconomy:{
+        insured:{
+          narration:"AI assembles the safety checks across the household; a named human signs them off.",
+          story:"A clear note: “Checked by Naledi M., your pharmacist.” The interaction & allergy screen ran across Nomvula's, Gogo's and the child's records together; nothing clashed. The safety work is visible, and a human signed it off — not a black box.",
+          emotion:5, trustStage:"calm",
+          mock:{ name:"Naledi M.", title:"Your pharmacist", reg:"SAPC-registered",
+            statusSteps:[
+              {label:"Household order received", state:"done"},
+              {label:"AI drafts the whole-regimen checks", state:"done"},
+              {label:"Pharmacist reviewing", state:"active"},
+              {label:"Checked by Naledi ✓", state:"todo"}
+            ],
+            checks:["Whole-regimen interaction & allergy screen across all 3 members","Gogo's warfarin dose vs latest INR (high-alert)","Lethabo's antibiotic vs the household's other meds","Scheduling, duplicate-therapy & repeats-remaining"],
+            chatPrompt:"Ask Naledi a question",
+            aiNote:"AI flags interactions and drafts the checks; a registered pharmacist decides \u{1F52E}" },
+          frontstage:["Named-pharmacist confirmation","Proactive query only when truly needed"],
+          backstage:["AI clinical co-pilot DRAFTS legality/scheduling, interaction, allergy, duplicate-therapy and repeats-remaining checks across the whole household","The registered pharmacist confirms or overrides — automation bias designed against","Virtual Manager oversees SLA so no check stalls silently"],
+          support:["AI clinical decision support (assistive)","FHIR medication history","Virtual Manager (SLA oversight)"],
+          partners:["Prescriber (for clarifications)","Medical scheme"],
+          regulatory:["NON-NEGOTIABLE: a registered pharmacist's clinical sign-off is retained — AI assembles, the human authorises — wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
+          tech:[
+            {name:"AI clinical co-pilot", what:"drafts the safety checks across all household members; pharmacist signs off", cite:"wiki/digital-transformation/ai-in-pharmacy", reform:true},
+            {name:"Virtual Manager", what:"human supervises the virtual queue so SLAs are met and nothing stalls", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
+            {name:"Pharmacist single sign-off", what:"the final clinical gate stays human (GPP)", cite:"wiki/sa-regulatory/pharmacy-act-sapc-gpp", reform:false}
+          ],
+          pains:[{text:"Renewal/clinical help where the frontline doesn't know what to do, and rudeness erode safety trust", quote:"I've been trying to renew my prescription and the nurse doesn't know what to do.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}],
+          opportunities:[
+            {text:"AI co-pilot turns minutes of toil into a seconds-long pharmacist sign-off — pharmacist at top-of-licence", pillars:["S5","U6"], cite:"wiki/digital-transformation/ai-in-pharmacy"},
+            {text:"Make safety visible (named check, double-check) — visible double-checking reduces fear", pillars:["U2","S5"], cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}
+          ],
+          metrics:["Time-to-validate (target seconds)","Pharmacist override rate (kept visible)","% checks named to a pharmacist"],
+          asIsBaseline:"Today she waits with no visibility while checks run; an unregistered chronic condition or an interaction risk can surface only at the counter, and renewal help is hit-and-miss."
+        },
+        cash:{
+          narration:"A remote-supervised pharmacist verifies it for a node near home — clinical safety without the trek.",
+          story:"In isiZulu: “Checked & priced by a pharmacist. Your child's antibiotic is safe with your mother's BP meds in the house.” A remote-supervised pharmacist verified it for a node near home — so Sipho gets clinical safety without a half-day trip.",
+          emotion:4, trustStage:"trigger",
+          mock:{ name:"Thabo K.", title:"Pharmacist (remote-supervised node)", reg:"SAPC-registered",
+            statusSteps:[
+              {label:"Order received at near-home node", state:"done"},
+              {label:"AI drafts checks + generic options + price", state:"done"},
+              {label:"Pharmacist verifying (video link)", state:"active"},
+              {label:"Checked & priced ✓", state:"todo"}
+            ],
+            checks:["Lethabo's antibiotic vs Mama's BP meds in the house","Legality & scheduling check","Generic options + itemised cash price","High-risk meds routed to direct counselling"],
+            chatPrompt:"Speak to the pharmacist (video / voice)",
+            aiNote:"AI drafts the checks; a remote pharmacist confirms — judgement never automated away \u{1F52E}" },
+          frontstage:["In-language pharmacist confirmation","Channel-choice route to a human"],
+          backstage:["AI co-pilot drafts legality/interaction/duplicate checks + generic options + itemised price","Remote-supervised pharmacist verification serves a near-home node without a resident pharmacist","High-risk meds routed to direct counselling"],
+          support:["AI clinical decision support (assistive)","Telepharmacy link","Virtual Manager (SLA oversight)"],
+          partners:["Telepharmacy hub","Public clinic / CCMDD"],
+          regulatory:["NON-NEGOTIABLE: pharmacist sign-off retained even for a remote/near-home node — wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
+          tech:[
+            {name:"Remote-supervised validation", what:"extends a pharmacist's reach to near-home nodes the cash majority can use", cite:"wiki/digital-transformation/telepharmacy-and-omnichannel", reform:true},
+            {name:"AI clinical co-pilot", what:"drafts the checks; pharmacist confirms — judgement never automated away", cite:"wiki/digital-transformation/ai-in-pharmacy", reform:true}
+          ],
+          pains:[{text:"Distrust and an under-equipped frontline; perceived organisational inability to care", quote:"Rudeness of pharmacy manager and pharmacist.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}],
+          opportunities:[
+            {text:"Remote-supervised validation brings a pharmacist's reach to near-home nodes for the cash majority", pillars:["S5","S1"], cite:"wiki/digital-transformation/telepharmacy-and-omnichannel"},
+            {text:"Manufacture 'local-pharmacy feel' — a named, continuous pharmacist relationship at chain scale", pillars:["S2","U5"], cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}
+          ],
+          metrics:["% quoted & checked before commit","Remote-verified nodes per pharmacist","Routed-to-human rate for high-risk"],
+          asIsBaseline:"Today he waits at the counter with no certainty; near-home nodes can't serve him without a resident pharmacist, and a brusque interaction reads as the organisation not caring."
+        }
+      }
+    },
+
+    /* 5 — picked, checked, packed (ROWA hero) — dispenseRowa --------------- */
+    {
+      id:"m5", n:5, title:"It's picked, checked and packed — and I can watch it happen",
+      spineStage:"DISPENSE", mockup:"dispenseRowa",
+      pillars:["S5","U2","U7","U4"], flags:["momentOfTruth"],
+      byEconomy:{
+        insured:{
+          narration:"Picked by ROWA, scan-verified against each script, packed by date and time — and she can watch it.",
+          story:"On her phone she watches the status move: Picking → Checked → Packed. The household's meds are picked by the ROWA robot, scan-verified against each script, and packed into one adherence pack organised by date and time — Gogo's mornings, Nomvula's twice-daily, the child's short course. Nothing is missing, and she can see it.",
+          emotion:5, trustStage:"calm",
+          mock:{ steps:[
+              {label:"BRIX queues the eligible household repeat", icon:"\u{1F5C2}️"},
+              {label:"ROWA robot picks each pack", icon:"\u{1F916}"},
+              {label:"Independent scan-verify against each script ✓", icon:"✅"},
+              {label:"Sealed into one dated, by-time dose-pack", icon:"\u{1F4E6}"}
+            ],
+            robot:true, scanVerify:true, packPhoto:true,
+            statusLine:"You can watch each step — picked → checked → packed" },
+          frontstage:["Live status (picked/checked/packed)","'What's in this pack' itemised handover view"],
+          backstage:["ROWA automated picker dispenses eligible stock; meds shoot to the checking bench, labels print at point","Deep-learning vision verification flags look-alike / wrong-product before handover","Pharmacist single sign-off remains the gate; assistant packs into a date/time adherence pack","Dashboard E2E workflow manager tracks every member's order"],
+          support:["ROWA automated picker","Scan / vision verification","Dashboard (E2E workflow manager)","Adherence-packaging line"],
+          partners:["Central-fill / VC","Adherence-packaging service"],
+          regulatory:["NON-NEGOTIABLE: pharmacist final check + GPP counselling mandatory; design against verification bypass — wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
+          tech:[
+            {name:"ROWA automated picker ⭐", what:"robotic pick of eligible stock; non-ROWA items prepared by hand — the S5 automate-the-toil proof-point", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
+            {name:"Scan / vision verification", what:"flags look-alike / wrong-product before handover", cite:"wiki/digital-transformation/pharmacy-automation-and-robotics", reform:false},
+            {name:"Adherence dose-pack", what:"consolidates the household's meds by date & time", cite:"wiki/dispensing-practice/adherence-packaging", reform:false},
+            {name:"Dashboard (E2E)", what:"tracks each member's order across the whole spine", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false}
+          ],
+          pains:[{text:"Items omitted from the pack, discovered only after leaving — a safety and adherence break", quote:"On opening the packet a few days later, I discovered my blood pressure tablets were missing.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}],
+          opportunities:[
+            {text:"ROWA + vision QA delivers high-accuracy at volume while freeing pharmacists for clinical work", pillars:["S5","U4"], cite:"wiki/digital-transformation/pharmacy-automation-and-robotics"},
+            {text:"Consolidate the household's scripts into one adherence-packaged parcel + one collection event", pillars:["S4","U7"], cite:"wiki/dispensing-practice/adherence-packaging"}
+          ],
+          metrics:["First-time-right %","Dispensing-error rate (target ≈ 0)","ROWA pick throughput"],
+          asIsBaseline:"Today chronic meds are pre-packed at the nearest store and a pharmacist checks each script, but a wrong/short pack (a missing BP item) can slip through and is only caught days later at home."
+        },
+        cash:{
+          narration:"Same ROWA pick, same scan-check, same pharmacist sign-off — no second-class lane for cash.",
+          story:"A simple status line he can read on any phone: “Ready soon.” His and his mother's chronic tablets are ROWA-picked and scan-checked the same way as anyone's — same accuracy, same care — then packed for collection near home. No second-class lane for the cash household.",
+          emotion:4, trustStage:"trigger",
+          mock:{ steps:[
+              {label:"Order queued on the same spine", icon:"\u{1F5C2}️"},
+              {label:"ROWA robot picks — identical accuracy", icon:"\u{1F916}"},
+              {label:"Scan-verify ✓ (same standard)", icon:"✅"},
+              {label:"Packed for near-home collection", icon:"\u{1F4E6}"}
+            ],
+            robot:true, scanVerify:true, packPhoto:false,
+            statusLine:"Low-data status: Ready soon → Ready now" },
+          frontstage:["Low-data status messages","Neutral, discreet parcel"],
+          backstage:["Same ROWA pick + vision verification + pharmacist sign-off as the insured lane","Order staged in secure storage marked ready for near-home collection","Dashboard tracks the cash order on the same spine"],
+          support:["ROWA automated picker","Scan / vision verification","Dashboard (E2E workflow manager)","Order storage"],
+          partners:["Central-fill / VC","Pelebox / locker network"],
+          regulatory:["NON-NEGOTIABLE: pharmacist final check + counselling mandatory regardless of funding route — wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
+          tech:[
+            {name:"ROWA automated picker ⭐", what:"same robotic accuracy for the cash household — no degraded lane", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
+            {name:"Scan / vision verification", what:"accuracy check before handover, identical standard", cite:"wiki/digital-transformation/pharmacy-automation-and-robotics", reform:false},
+            {name:"Order storage → retrieval", what:"staged ready for near-home collection", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false}
+          ],
+          pains:[{text:"Dispensing accuracy is read as a life-threatening failure of professional duty, not a retail slip", quote:"Incorrect or missing medication is framed as potentially life-threatening and a failure of professional duty.", cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}],
+          opportunities:[
+            {text:"Identical ROWA accuracy and pharmacist check for the cash household — first-class, not afterthought", pillars:["S1","S5"], cite:"wiki/digital-transformation/pharmacy-automation-and-robotics"},
+            {text:"Make safety visible with a simple ready/checked status even on low data", pillars:["U2","U4"], cite:"wiki/concepts/graceful-failure"}
+          ],
+          metrics:["First-time-right % (parity insured vs cash)","Dispensing-error rate","Low-data status delivery"],
+          asIsBaseline:"Today the cash household's accuracy depends on the same manual checks under load; a wrong or short dispense is felt as a profound safety failure, and there is little visible reassurance."
+        }
+      }
+    },
+
+    /* 6 — arrives when they said — deliveryTrack --------------------------- */
+    {
+      id:"m6", n:6, title:"It arrives when they said — and I'm never left guessing",
+      spineStage:"COLLECT / DELIVER", mockup:"deliveryTrack",
+      pillars:["S1","U2","U4","U6"], flags:["momentOfTruth"],
+      byEconomy:{
+        insured:{
+          narration:"A realistic window, truthful tracking to actual handover, and a QR proof-of-delivery.",
+          story:"“Delivering this afternoon — we'll confirm before the driver leaves.” A realistic window, not a too-precise promise. She can pause, adjust or switch to a locker. At handover she scans a QR; proof-of-delivery closes the loop. One parcel, the whole household, no guessing.",
+          emotion:4, trustStage:"calm",
+          mock:{ mode:"home",
+            steps:[
+              {label:"Packed & sealed", state:"done"},
+              {label:"Out for delivery", state:"done"},
+              {label:"Arriving — 12 min", state:"active"},
+              {label:"Delivered ✓ (QR proof-of-delivery)", state:"todo"}
+            ],
+            driver:{name:"PICCUP driver · Sibusiso", eta:"12 min"},
+            pod:"Signed by Nomvula",
+            altModes:["Locker (PUDO)","Click & collect"],
+            realisticWindow:"Thu 08:00–12:00 — a window you can plan around" },
+          frontstage:["Realistic delivery window + control points","QR handover / proof-of-delivery"],
+          backstage:["Automated retrieval (arm/conveyor) brings the parcel to the counter; QR self-identify","VC consolidates the household order into a route → PICCUP driver → proof-of-delivery","Closed-loop tracking confirms actual handover, not just dispatch"],
+          support:["Automated retrieval","VC consolidation","PICCUP (driver + POD)","Dashboard tracking"],
+          partners:["VC consolidation hub","PICCUP / last-mile carrier"],
+          regulatory:["Courier of scheduled medicines must meet licensing + cold-chain rules — wiki/sa-regulatory/courier-online-pharmacy-rules"],
+          tech:[
+            {name:"VC consolidation → PICCUP + POD", what:"groups the household order into a route; driver delivers with proof-of-delivery", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
+            {name:"Automated retrieval", what:"arm/conveyor brings the parcel to the counter", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
+            {name:"QR handover", what:"customer self-identifies / confirms collection", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
+            {name:"Pelebox / pickup-point collect-near-home", what:"collect at a Pelebox smart locker or partner pickup point with an SMS/WhatsApp one-time PIN — no app, sub-minute, private; locker dispensing of scheduled meds without a pharmacist present is the part that needs reform", cite:"wiki/consumer-context/last-mile-addressing-logistics", reform:true}
+          ],
+          pains:[{text:"'Processed and out for delivery' then nothing arrives — the worst failure because the system promised", quote:"I received a notification that it has been processed on my medical aid and was out for delivery. I did not receive it.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}],
+          opportunities:[
+            {text:"Realistic windows + confirm/pause/adjust control points beat too-precise promises", pillars:["U2","U4"], cite:"wiki/dischem/store-of-the-future-customer-voice"},
+            {text:"Closed-loop tracking to actual handover (QR + POD) kills the 'dispatched but never arrived' failure", pillars:["U2","U6"], cite:"wiki/concepts/graceful-failure"}
+          ],
+          metrics:["Promise-kept rate","'Dispatched-not-delivered' rate (target ≈ 0)","Reschedule / pause usage"],
+          asIsBaseline:"Today an order can be marked processed and 'out for delivery' and then simply not arrive, with no closed-loop confirmation and an unreachable dispensary when she tries to chase it."
+        },
+        cash:{
+          narration:"In the locker near home, a one-time PIN by SMS — no address, private, under a minute.",
+          story:"“Your parcel is in the locker near home — PIN 4821.” The Pelebox pattern he already trusts: SMS/WhatsApp + a one-time PIN, collect near home in under a minute, private and discreet. His mother's repeat lands the same way. No address needed, no delivery man who can't find his place.",
+          emotion:4, trustStage:"calm",
+          mock:{ mode:"locker",
+            steps:[
+              {label:"Packed & staged", state:"done"},
+              {label:"Loaded into the near-home locker", state:"done"},
+              {label:"PIN 4821 sent by SMS / WhatsApp", state:"active"},
+              {label:"Collected ✓ (PIN redeemed)", state:"todo"}
+            ],
+            pod:"PIN redeemed — collection confirmed",
+            altModes:["Pelebox smart locker","Staffed-counter fallback"],
+            realisticWindow:"Ready now — collect any time today, no address needed" },
+          frontstage:["SMS/WhatsApp + one-time PIN collection","Discreet, neutral parcel; staffed-counter fallback"],
+          backstage:["Order storage → automated retrieval / locker load near home","VC consolidation routes near-home collection; reroute to another point if a locker fails","Closed-loop confirmation when the PIN is redeemed"],
+          support:["Pelebox / locker network","VC consolidation","Order storage","Dashboard tracking"],
+          partners:["Pelebox / locker operator","CCMDD network","PICCUP (where delivery is feasible)"],
+          regulatory:["Locker collection of scheduled medicines + cold chain must satisfy licensing/oversight — wiki/sa-regulatory/courier-online-pharmacy-rules"],
+          tech:[
+            {name:"Pelebox-style locker + PIN", what:"SMS/WhatsApp one-time PIN, near-home, sub-minute, no address", cite:"wiki/consumer-context/last-mile-addressing-logistics", reform:false},
+            {name:"Locker dispensing of scheduled meds", what:"needs oversight clarity for S2+ release into a locker", cite:"wiki/sa-regulatory/courier-online-pharmacy-rules", reform:true},
+            {name:"VC consolidation + reroute", what:"routes near-home collection; reroutes if a locker is full/down", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false}
+          ],
+          pains:[{text:"Unreachable dispensary and distrust of narrow windows; defection to a local pharmacy for relationship care", quote:"Called 4 different dispensaries, nobody is picking up.", cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}],
+          opportunities:[
+            {text:"Adopt the proven Pelebox pattern — near-home, private, no-address collection as the default", pillars:["U1","U6"], cite:"design-kit/personas/public-sector-bridging-to-retail"},
+            {text:"Reliable near-home collection with a staffed fallback is the antidote to defection", pillars:["S1","U4"], cite:"wiki/consumer-context/last-mile-addressing-logistics"}
+          ],
+          metrics:["Near-home collection rate","Sub-minute collection time","Locker-fail reroute success"],
+          asIsBaseline:"Today home delivery assumes a findable address he doesn't have, deliveries fail in informal areas, and when something goes wrong the dispensary line goes unanswered."
+        }
+      }
+    },
+
+    /* 7 — taking it right is easy — adherencePack -------------------------- */
+    {
+      id:"m7", n:7, title:"Taking it right is the easy part",
+      spineStage:"ADHERE", mockup:"adherencePack",
+      pillars:["S2","U7","U5","U1"], flags:[],
+      byEconomy:{
+        insured:{
+          narration:"A dose-pack by date and time, with consented reminders tied to routine — never harassment.",
+          story:"The adherence pack is labelled by date and time, with hybrid digital + printed instructions she can re-check later. Gentle reminders are tied to routine, not random; she set Gogo's to mornings. Everything is consented and opt-out-able — help that supports, never harasses.",
+          emotion:5, trustStage:"calm",
+          mock:{ days:[
+              {label:"MON", slots:[
+                {time:"AM", pills:["#f0a23b","#e9e2d2","#ffffff","#7fb3e0"]},
+                {time:"PM", pills:["#ffffff","#d96b8a","#8e6fc4"]}
+              ]},
+              {label:"TUE", slots:[
+                {time:"AM", pills:["#f0a23b","#e9e2d2","#ffffff","#7fb3e0"]},
+                {time:"PM", pills:["#ffffff","#d96b8a","#8e6fc4"]}
+              ]},
+              {label:"WED", slots:[
+                {time:"AM", pills:["#f0a23b","#e9e2d2","#ffffff","#7fb3e0"]},
+                {time:"PM", pills:["#ffffff","#d96b8a","#8e6fc4"]}
+              ]}
+            ],
+            reminder:"Gentle nudge tied to your routine — opt out any time",
+            print:true,
+            forMember:"Gogo · INR-set warfarin packed separately" },
+          frontstage:["Adherence pack + re-checkable hybrid instructions","Per-member, opt-out-able reminders"],
+          backstage:["Schedule designed as a behaviour-change surface, not a reminder bolt-on","Consented nudges tied to routine; opt-out honoured (no harassment)","Pharmacist counselling available by channel choice"],
+          support:["Adherence engine","Hybrid label/print service","Counselling channel"],
+          partners:["Adherence-packaging service"],
+          regulatory:["GPP counselling at handover; POPIA consent governs reminder contact — wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
+          tech:[
+            {name:"Adherence dose-pack + hybrid instructions", what:"date/time pack plus digital & printed dosage info, re-checkable", cite:"wiki/dispensing-practice/adherence-packaging", reform:false},
+            {name:"Consented, opt-out-able nudges", what:"reminders tied to routine; agency respected, never harassment", cite:"wiki/digital-transformation/adherence-tech-and-digital-therapeutics", reform:false}
+          ],
+          pains:[{text:"Communication overload after a customer tried to opt out flips support into perceived harassment", quote:"Persistent calls/SMS/WhatsApp, especially after the customer tried to opt out, flips support into perceived harassment.", cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}],
+          opportunities:[
+            {text:"Design the schedule/label and refill loop as a behaviour-change surface, not a reminder bolt-on", pillars:["U7","S2"], cite:"wiki/concepts/medication-adherence"},
+            {text:"Hybrid digital + print instructions customers actively want, re-checkable later", pillars:["U7","U5"], cite:"wiki/dischem/store-of-the-future-customer-voice"}
+          ],
+          metrics:["Adherence (PDC/MPR) uplift","Opt-out respect rate (target 100%)","Refill continuity"],
+          asIsBaseline:"Today adherence depends on the customer; reminders can be rigid and un-opt-out-able, tipping into harassment, while instructions are paper-only and easy to lose."
+        },
+        cash:{
+          narration:"Short in-language reminders tied to payday, plus a printed label that survives load-shedding.",
+          story:"Sipho gets a short isiZulu voice/text dosing reminder tied to payday and routine, and a printed label he can keep. His mother's pack is organised so she can't mix up her tablets. Reminders stop the moment he asks — help on his terms, in his language.",
+          emotion:4, trustStage:"calm",
+          mock:{ days:[
+              {label:"MON", slots:[
+                {time:"AM", pills:["#f0a23b","#e9e2d2"]},
+                {time:"PM", pills:["#f0a23b"]}
+              ]},
+              {label:"TUE", slots:[
+                {time:"AM", pills:["#f0a23b","#e9e2d2"]},
+                {time:"PM", pills:["#f0a23b"]}
+              ]},
+              {label:"WED", slots:[
+                {time:"AM", pills:["#f0a23b","#e9e2d2"]},
+                {time:"PM", pills:["#f0a23b"]}
+              ]}
+            ],
+            reminder:"Isikhumbuzo ngolimi lwakho, kuhambisana nosuku lweholo — yeka noma nini (in-language, payday-timed, opt out any time)",
+            print:true,
+            forMember:"Mama · pre-packed so the elderly regimen isn't mixed up" },
+          frontstage:["In-language voice/text reminders","Printed-label backup (load-shedding-proof)"],
+          backstage:["Reminders tied to payday/routine, data-frugal, opt-out honoured","Organised dosing for an elderly parent's regimen","Counselling by voice/WhatsApp on request"],
+          support:["Adherence engine (SMS/voice)","Print service","Counselling channel"],
+          partners:["CCMDD adherence support"],
+          regulatory:["Counselling + in-language consent; opt-out honoured under POPIA — wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
+          tech:[
+            {name:"Hybrid print + voice/SMS reminders", what:"in-language, payday-timed, with a printed backup", cite:"wiki/dispensing-practice/adherence-packaging", reform:false},
+            {name:"Organised dosing for a parent", what:"pre-packed doses so an elderly regimen isn't mixed up", cite:"wiki/digital-transformation/adherence-tech-and-digital-therapeutics", reform:false}
+          ],
+          pains:[{text:"Digital-only instructions worry customers; print must remain as safety/backup", quote:"Digital-only instructions worry customers (access, signal); print must remain as safety/backup.", cite:"wiki/dischem/store-of-the-future-customer-voice"}],
+          opportunities:[
+            {text:"Reminders tied to payday and routine, in-language and opt-out-able — adherence that fits his life", pillars:["U7","U1"], cite:"wiki/digital-transformation/adherence-tech-and-digital-therapeutics"},
+            {text:"Hybrid print + voice keeps instructions usable on low data and signal", pillars:["U5","U7"], cite:"wiki/dischem/store-of-the-future-customer-voice"}
+          ],
+          metrics:["Silent-lapse rate","Reminder opt-out respect","Parent-regimen mix-up rate"],
+          asIsBaseline:"Today there is little adherence support tuned for him; reminders, when they exist, ignore data/signal realities and routine, and instructions are paper-only with no in-language voice option."
+        }
+      }
+    },
+
+    /* 8 — curveball / graceful failure + after-hours acute — curveball ----- */
+    {
+      id:"m8", n:8, title:"When life throws a curveball, the system bends — it doesn't break",
+      spineStage:"GRACEFUL-FAILURE (parallel) + AFTER-HOURS ACUTE", mockup:"curveball",
+      pillars:["S2","U4","U5","U2"], flags:["momentOfTruth","reform"],
+      byEconomy:{
+        insured:{
+          narration:"Stock-out, claim reject, sick child at 9pm — every exception opens a fix, never a dead end.",
+          story:"Sunday night, the 7-year-old spikes a fever. Nomvula opens the same WhatsApp thread; an after-hours pharmacist teleconsult is the front door. A script is issued, checked against the child's record and the household's other meds, and routed to a 24-hour node — no shuttling, no dead ends. Earlier that week a stock-out auto-offered a funded generic in two taps. The system bent; it didn't break.",
+          emotion:4, trustStage:"agitation→loyalty",
+          mock:{ scenarios:[
+              {problem:"Stock-out", problemIcon:"\u{1F534}", problemText:"Your statin is out of stock at the fulfilment node.", recovery:"Funded generic, pharmacist-approved", recoveryText:"Two taps to swap to a funded generic — R0, checked, no wasted trip.", pillar:["U4","S3"]},
+              {problem:"Claim rejected", problemIcon:"\u{1F534}", problemText:"Scheme rejected one line (chronic not registered).", recovery:"Plain-language reason + 2-tap fix", recoveryText:"We explain why and offer the lawful alternative — not a dead-end rejection.", pillar:["U2","U4"]},
+              {problem:"After-hours: child spikes a fever", problemIcon:"\u{1F321}️", problemText:"Sunday 9pm — Lethabo has a fever.", recovery:"After-hours pharmacist teleconsult front door", recoveryText:"Script issued, checked against the household's meds, routed to a 24-hour node — no ER shuttle.", pillar:["S2","U2"]}
+            ],
+            line:"Confidence comes from clarity and fallback, not automation alone." },
+          frontstage:["After-hours pharmacist/teleconsult front door","Plain-language failure + 2-tap recovery"],
+          backstage:["Out-of-stock auto-offers a funded generic; claim reject explained with the lawful alternative","New acute script reconciled against the household's chronic regimen (interaction/duplication check)","Failed delivery reroutes to a locker; the case keeps one owner, never a silent dead end"],
+          support:["Telepharmacy / after-hours node","AI co-pilot (interaction check)","Virtual Manager (owns the exception)"],
+          partners:["After-hours / 24-hour pharmacy node","Medical scheme"],
+          regulatory:["After-hours live pharmacist authorisation + e-script transmission are not yet 24/7 in SA — wiki/dispensing-practice/after-hours-emergency-acute-access"],
+          tech:[
+            {name:"After-hours teleconsult front door", what:"a pharmacist/clinician entry point for the acute curveball", cite:"wiki/dispensing-practice/after-hours-emergency-acute-access", reform:true},
+            {name:"Auto-offer funded generic", what:"a stock-out opens a 2-tap fix, not a dead end", cite:"wiki/concepts/graceful-failure", reform:false},
+            {name:"Plain-language reject + fix", what:"a claim reject is explained with the lawful alternative", cite:"wiki/medical-schemes/realtime-claims-switching", reform:false},
+            {name:"Acute↔chronic reconciliation", what:"checks the new acute script against the household's regimen", cite:"wiki/dispensing-practice/clinical-checks-and-mtm", reform:false}
+          ],
+          pains:[{text:"A trust-breaking failure with no recovery path drives defection to a local pharmacy, even at a premium", quote:"Move scripts to Clicks or local independents, willing to pay significantly more (R460) for relationship care.", cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}],
+          opportunities:[
+            {text:"Judge the service on recovery — every exception opens a 2-tap, human-reachable path", pillars:["U4","S2"], cite:"wiki/concepts/graceful-failure"},
+            {text:"An after-hours acute episode becomes a convergence point into the household's care relationship", pillars:["S2","U2"], cite:"wiki/dispensing-practice/after-hours-emergency-acute-access"}
+          ],
+          metrics:["Exception self-recovery rate","After-hours acute resolution time","Defection avoided"],
+          asIsBaseline:"Today a stock-out, claim reject or failed delivery is often a silent dead end with an unreachable dispensary; an after-hours acute episode for the child means an ER trip and a shuttling, anxious experience."
+        },
+        cash:{
+          narration:"Same Sunday-night fever, but cash — a WhatsApp pharmacist, a clear price, a held place.",
+          story:"The same Sunday-night fever, but cash. Sipho reaches an after-hours pharmacist over WhatsApp; the antibiotic price is clear, checked against his mother's meds in the house, and ready for a near-home locker by morning. When his own BP tablets were out earlier, the system offered a cheaper generic and held his place — never a wasted trip, never a closed door.",
+          emotion:3, trustStage:"agitation→loyalty",
+          mock:{ scenarios:[
+              {problem:"Stock-out", problemIcon:"\u{1F534}", problemText:"Your BP tablets are out at this node.", recovery:"Cheaper generic + place held", recoveryText:"A cheaper generic is offered and your place is held — never a wasted trip.", pillar:["U4","S1"]},
+              {problem:"Signal drops mid-flow", problemIcon:"\u{1F4F6}", problemText:"Your connection dropped during the order.", recovery:"Resume-after-reconnect", recoveryText:"Nothing is lost — pick up exactly where you left off when signal returns.", pillar:["U1","U4"]},
+              {problem:"After-hours: child spikes a fever", problemIcon:"\u{1F321}️", problemText:"Sunday 9pm — the little one has a fever.", recovery:"After-hours WhatsApp pharmacist", recoveryText:"Low-data consult, clear cash price, checked against Mama's meds, ready at a near-home locker by morning.", pillar:["S2","U3"]}
+            ],
+            line:"Always a human-reachable, low-data fallback — never a dead end for the cash household." },
+          frontstage:["After-hours WhatsApp pharmacist front door","Clear cash price + plain-language fix"],
+          backstage:["Out-of-stock offers a cheaper generic and holds his place; nothing is a wasted trip","Acute script reconciled against the household's regimen; routed to a near-home node","Resume-after-reconnect so a dropped signal never loses the case"],
+          support:["Telepharmacy / after-hours node","Offline-tolerant queue","Virtual Manager (owns the exception)"],
+          partners:["After-hours / 24-hour node","Public clinic (acute fallback)"],
+          regulatory:["After-hours live authorisation + locker release of an acute script need oversight clarity — wiki/dispensing-practice/after-hours-emergency-acute-access"],
+          tech:[
+            {name:"After-hours WhatsApp pharmacist", what:"a low-data acute front door for the cash household", cite:"wiki/dispensing-practice/after-hours-emergency-acute-access", reform:true},
+            {name:"Auto-offer cheaper generic", what:"a stock-out becomes an affordable choice, not a wasted trip", cite:"wiki/concepts/graceful-failure", reform:false},
+            {name:"Resume-after-reconnect", what:"a dropped signal never loses the case", cite:"wiki/consumer-context/digital-access-and-whatsapp", reform:false}
+          ],
+          pains:[{text:"A digital breakdown with no alternative path becomes a hard blocker and reads as abandonment", quote:"Digital breakdowns become hard blockers when no alternative path exists.", cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}],
+          opportunities:[
+            {text:"Always a human-reachable, low-data fallback — never a dead end for the cash household", pillars:["U4","S1"], cite:"wiki/concepts/graceful-failure"},
+            {text:"After-hours acute access without an ER trip, at a clear cash price", pillars:["S2","U3"], cite:"wiki/dispensing-practice/after-hours-emergency-acute-access"}
+          ],
+          metrics:["Exception self-recovery rate","Wasted-trip rate (target ≈ 0)","After-hours acute resolution"],
+          asIsBaseline:"Today an after-hours acute need means the public ER or a closed pharmacy; a stock-out or a data dropout is a wasted trip back to the clinic queue, with no held place and no human he can reach."
+        }
+      }
+    },
+
+    /* 9 — renew without a trek — renewal (closes the flywheel → m1) ------- */
+    {
+      id:"m9", n:9, title:"Renewing is a tap, not a trek",
+      spineStage:"REFILL/RENEW (script expiry)", mockup:"renewal",
+      pillars:["S4","S2","U6","U4"], flags:[],
+      byEconomy:{
+        insured:{
+          narration:"A 2-minute teleconsult renews it; the e-script token drops back into the loop, and the repeat runs on.",
+          story:"Before a script expires, the same thread offers: “Gogo's repeat needs a renewal — book a 2-minute teleconsult?” A pharmacist/clinician renews it, an e-script token flows straight back into the loop, and the repeat keeps running. No silent drop-off, no separate trek for a piece of paper.",
+          emotion:5, trustStage:"calm",
+          mock:{ messages:[
+              {from:"them", text:"Heads up — Gogo's repeat is on its last script. A quick check-in to renew?", time:"09:05"},
+              {from:"them", text:"Book a 2-minute teleconsult? ✅ Yes, renew", time:"09:05"},
+              {from:"me", text:"✅ Yes, renew", time:"09:06"},
+              {from:"them", text:"Renewed by the clinician ✓ New e-script token issued — the repeat continues automatically.", time:"09:11"}
+            ],
+            teleconsult:{provider:"Kena", lowData:true},
+            token:{label:"New e-script token issued", reform:true},
+            loopBackTo:"m1",
+            loopNote:"…and the self-running repeat begins again." },
+          frontstage:["Pre-expiry renewal prompt","In-WhatsApp / app teleconsult"],
+          backstage:["Teleconsult → e-script token re-enters the refill loop without a fresh manual submit","Workflow manager re-queues the renewed repeat automatically","Continuity preserved across the household's members"],
+          support:["Teleconsult service","E-script token rail","Refill engine"],
+          partners:["Prescriber / clinician","Medical scheme"],
+          regulatory:["Telehealth-originated renewal scripts permitted; an AES gives a true paperless script — wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          tech:[
+            {name:"Teleconsult → e-script token", what:"renewal flows back into the loop without a clinic trek", cite:"wiki/concepts/e-prescription-token", reform:true},
+            {name:"Workflow manager re-queue", what:"the renewed repeat re-enters the virtual queue automatically", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false}
+          ],
+          pains:[{text:"A hard break at script expiry causes silent drop-off; renewal help is unreliable", quote:"I've been trying to renew my prescription and the nurse doesn't know what to do.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}],
+          opportunities:[
+            {text:"Orchestrate the renewal gap — prompt and renew before expiry instead of letting it lapse", pillars:["S4","U6"], cite:"design-kit/personas/insured-chronic-multimorbid"},
+            {text:"Teleconsult→e-script→fulfilment as one unbroken loop inside the ecosystem", pillars:["S2","U6"], cite:"wiki/concepts/e-prescription-token"}
+          ],
+          metrics:["Renewal-before-expiry rate","Silent drop-off rate (target ≈ 0)","Teleconsult→fulfilment completion"],
+          asIsBaseline:"Today the script breaks hard at ~6-month expiry; she must chase a new script through a clinic where 'the nurse doesn't know what to do', and the repeat silently lapses in the gap."
+        },
+        cash:{
+          narration:"A low-data WhatsApp consult renews it; the token re-enters the near-home loop. Supply never breaks.",
+          story:"Before his (or his mother's) script lapses, a low-data prompt: “Time to renew — reply 1 for a quick WhatsApp consult.” A short, in-language teleconsult renews it; the token re-enters the near-home collection loop. The family's chronic supply doesn't fall through the expiry gap.",
+          emotion:4, trustStage:"calm",
+          mock:{ messages:[
+              {from:"them", text:"Isikhathi sokuvuselela — your script is about to lapse.", time:"08:20"},
+              {from:"them", text:"Reply 1 for a quick WhatsApp consult to renew.", time:"08:20"},
+              {from:"me", text:"1", time:"08:21"},
+              {from:"them", text:"Kuvuselelwe ✓ New e-script token issued — near-home collection continues.", time:"08:27"}
+            ],
+            teleconsult:{provider:"Kena", lowData:true},
+            token:{label:"New e-script token issued", reform:true},
+            loopBackTo:"m1",
+            loopNote:"…and the family's near-home repeat begins again." },
+          frontstage:["Low-data pre-expiry prompt","In-language WhatsApp/USSD teleconsult"],
+          backstage:["Teleconsult → e-script token re-enters the loop without a clinic queue","Bridges to CCMDD renewal where that's his route","Resumable on low signal"],
+          support:["Teleconsult service (low-data)","E-script token rail","Refill engine"],
+          partners:["Clinician / public clinic","CCMDD network"],
+          regulatory:["Telehealth renewal permitted; in-language POPIA consent; AES for paperless — wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          tech:[
+            {name:"Low-data teleconsult → token", what:"renews without a clinic trek, on any phone", cite:"wiki/concepts/e-prescription-token", reform:true},
+            {name:"CCMDD renewal bridge", what:"renews a public-route chronic script onto the near-home rail", cite:"wiki/medical-schemes/courier-chronic-pharmacy-models", reform:true}
+          ],
+          pains:[{text:"The silent lapse — a missed renewal because of distance, data or a broken reminder, not a clinical decision", quote:"His risk is the silent lapse — a missed collection because of distance, data, or a broken reminder.", cite:"design-kit/personas/low-data-whatsapp-first-peri-urban"}],
+          opportunities:[
+            {text:"Close the expiry gap for the cash household with a low-data teleconsult renewal", pillars:["S4","U6"], cite:"wiki/concepts/e-prescription-token"},
+            {text:"Bridge public CCMDD renewal onto the same near-home rail so supply never breaks", pillars:["S1","S2"], cite:"design-kit/personas/public-sector-bridging-to-retail"}
+          ],
+          metrics:["Renewal-before-expiry rate","Silent-lapse rate (target ≈ 0)","Low-data teleconsult completion"],
+          asIsBaseline:"Today the script lapses silently at expiry; renewing means another clinic queue or a wasted trip, and a missed renewal quietly breaks the family's chronic supply."
+        }
+      }
+    }
+
+  ]
+};
+
+</script>
+<script>
+/* =============================================================================
+   ENGINE — drives the BUILD → SETTLE → EXPLORE loop. Vanilla JS, defensive.
+   Reads the inlined `const ANIM` global and the global `MOCKUPS` library.
+   ============================================================================= */
+(function(){
+  "use strict";
+
+  var A = (typeof ANIM === "object" && ANIM) ? ANIM : {};
+  var SCENES = Array.isArray(A.scenes) ? A.scenes : [];
+  var ECONS = Array.isArray(A.economies) ? A.economies : [];
+  var HH = A.household || {};
+
+  // ---- tiny DOM helpers -----------------------------------------------------
+  function $(sel){ return document.querySelector(sel); }
+  function arr(v){ return Array.isArray(v) ? v : (v==null ? [] : [v]); }
+  function has(v){ return v!=null && v!==""; }
+  function clear(n){ if(n) while(n.firstChild) n.removeChild(n.firstChild); }
+  function el(tag, attrs, kids){
+    var n = document.createElement(tag);
+    if(attrs) for(var k in attrs){
+      var v = attrs[k];
+      if(v==null || v===false) continue;
+      if(k==="class") n.className = v;
+      else if(k.slice(0,2)==="on" && typeof v==="function") n.addEventListener(k.slice(2), v);
+      else n.setAttribute(k, v===true ? "" : v);
+    }
+    arr(kids).forEach(function(c){ if(c==null) return; n.appendChild(typeof c==="string" ? document.createTextNode(c) : c); });
+    return n;
+  }
+  function txt(s){ return document.createTextNode(s==null ? "" : String(s)); }
+  function safeFn(fn){ try{ return fn(); }catch(e){ if(window.console&&console.warn) console.warn("[engine]", e); return null; } }
+
+  // ---- state ----------------------------------------------------------------
+  var state = { sceneIndex:0, econ:(ECONS[0]&&ECONS[0].id)||"insured", playing:false, autoplay:false, reduceMotion:false };
+  var timer = null, autoTimer = null;
+  var buildGroups = [];   // array of arrays of [data-beat] elements, ascending
+  var buildPos = 0;       // next group index to reveal
+  var settled = false;
+
+  var BEAT_MS = 520;      // calm cadence
+  var AUTO_WAIT = 2500;
+
+  // emotion glyphs (5 = calm/confident high)
+  function emoDots(n){
+    n = Math.max(0, Math.min(5, parseInt(n,10) || 0));
+    return "●●●●●".slice(0,n) + "○○○○○".slice(0,5-n);
+  }
+
+  // ---- prefers-reduced-motion detection -------------------------------------
+  try{
+    if(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      state.reduceMotion = true;
+    }
+  }catch(e){}
+
+  function ctx(){ return { econ:state.econ, household:HH, reduceMotion:state.reduceMotion }; }
+  function curScene(){ return SCENES[state.sceneIndex] || {}; }
+  function curEco(){ var s=curScene(); return (s.byEconomy && s.byEconomy[state.econ]) || (s.byEconomy && s.byEconomy.insured) || {}; }
+  function curEconMeta(){ for(var i=0;i<ECONS.length;i++){ if(ECONS[i].id===state.econ) return ECONS[i]; } return ECONS[0]||{}; }
+
+  // ===========================================================================
+  // PERSONA CHIP
+  // ===========================================================================
+  function renderPersona(){
+    var mount = $("#persona-chip"); if(!mount) return;
+    clear(mount);
+    var em = curEconMeta(); var p = em.persona || {};
+    var avKind = state.econ==="cash" ? "adult-m" : "adult-f";
+    var av = el("span", {class:"pc-av", "aria-hidden":"true"});
+    if(MOCKUPS && MOCKUPS.avatarSVG) safeFn(function(){ av.appendChild(MOCKUPS.avatarSVG(avKind, state.econ)); });
+    mount.appendChild(av);
+    mount.appendChild(el("span", {}, [
+      el("span", {class:"pc-name"}, [ p.name || em.label || "" ]),
+      el("span", {class:"pc-bio"}, [ p.eyebrow ? (p.eyebrow) : "" ])
+    ]));
+  }
+
+  // ===========================================================================
+  // SCENE RAIL
+  // ===========================================================================
+  function renderRail(){
+    var rail = $("#scene-rail"); if(!rail) return;
+    clear(rail);
+    rail.appendChild(el("h2", {}, ["The nine moments"]));
+    SCENES.forEach(function(s, i){
+      var isMot = arr(s.flags).indexOf("momentOfTruth") >= 0;
+      var btn = el("button", {
+        type:"button", class:"chapter",
+        "aria-current": (i===state.sceneIndex) ? "true" : "false",
+        onclick: function(){ goTo(i); }
+      }, [
+        el("span", {class:"ch-n"}, [
+          txt("Moment " + (s.n||i+1)),
+          isMot ? el("span", {class:"star", title:"Moment of truth", "aria-label":"moment of truth"}, ["★"]) : null
+        ]),
+        el("span", {class:"ch-title"}, [ s.title || ("Scene "+(i+1)) ])
+      ]);
+      rail.appendChild(btn);
+    });
+  }
+  function syncRail(){
+    var nodes = document.querySelectorAll("#scene-rail .chapter");
+    for(var i=0;i<nodes.length;i++) nodes[i].setAttribute("aria-current", (i===state.sceneIndex)?"true":"false");
+  }
+
+  // ===========================================================================
+  // EXPLORE PANELS
+  // ===========================================================================
+  function pillTag(id){
+    var ps = arr(A.pillars);
+    var meta = null;
+    for(var i=0;i<ps.length;i++){ if(ps[i].id===id){ meta = ps[i]; break; } }
+    var cls = "pill-tag " + (/^U/i.test(String(id)) ? "u" : "s");
+    return el("span", {class:cls, title: meta && meta.oneLiner ? meta.oneLiner : ""}, [
+      txt(id + " "),
+      meta && meta.name ? el("span", {class:"pt-name"}, [meta.name]) : null
+    ]);
+  }
+  function citeEl(slug){
+    if(!has(slug)) return null;
+    return el("span", {class:"cite", title:slug}, [ txt(String(slug)) ]);
+  }
+  function panel(title, icon, bodyNode, openByDefault){
+    var bodyId = "exp-body-" + Math.random().toString(36).slice(2,8);
+    var head = el("button", {
+      type:"button", class:"exp-head", "aria-expanded": openByDefault?"true":"false", "aria-controls":bodyId
+    }, [
+      icon ? el("span", {class:"ehi", "aria-hidden":"true"}, [icon]) : null,
+      txt(title),
+      el("span", {class:"echev", "aria-hidden":"true"}, ["▸"])
+    ]);
+    var body = el("div", {class:"exp-body", id:bodyId});
+    if(!openByDefault) body.hidden = true;
+    body.appendChild(bodyNode);
+    head.addEventListener("click", function(){
+      var open = head.getAttribute("aria-expanded")==="true";
+      head.setAttribute("aria-expanded", String(!open));
+      body.hidden = open;
+    });
+    return el("div", {class:"exp-panel"}, [head, body]);
+  }
+
+  function buildExplore(){
+    var mount = $("#explore-mount"); if(!mount) return;
+    clear(mount);
+    var e = curEco();
+
+    // --- Today (asIsBaseline + quoted cited pain) ---
+    var todayBody = el("div", {});
+    arr(e.pains).forEach(function(p){
+      p = p || {};
+      var card = el("div", {class:"pain-card"}, [
+        el("span", {class:"pl-k"}, ["🔴 Today's pain"]),
+        el("div", {}, [ p.text || "" ]),
+        has(p.quote) ? el("blockquote", {}, [ "“"+p.quote+"”" ]) : null,
+        citeEl(p.cite)
+      ]);
+      todayBody.appendChild(card);
+    });
+    if(has(e.asIsBaseline)){
+      todayBody.appendChild(el("div", {class:"asis"}, [
+        el("span", {class:"asis-k"}, ["As-is baseline"]),
+        txt(e.asIsBaseline)
+      ]));
+    }
+    mount.appendChild(panel("Today — the quoted pain", "🔴", todayBody, true));
+
+    // --- Opportunities ---
+    if(arr(e.opportunities).length){
+      var oppBody = el("div", {});
+      arr(e.opportunities).forEach(function(o){
+        o = o || {};
+        var tags = el("div", {class:"pill-tags", style:"margin-top:6px"});
+        arr(o.pillars).forEach(function(id){ tags.appendChild(pillTag(id)); });
+        oppBody.appendChild(el("div", {class:"opp"}, [
+          el("div", {}, [ "💡 " + (o.text||"") ]),
+          arr(o.pillars).length ? tags : null,
+          citeEl(o.cite)
+        ]));
+      });
+      mount.appendChild(panel("Opportunities", "💡", oppBody, false));
+    }
+
+    // --- Capabilities / Tech ---
+    if(arr(e.tech).length){
+      var techWrap = el("div", {class:"chiprow"});
+      arr(e.tech).forEach(function(t){
+        t = t || {};
+        var chip = el("div", {class:"techchip" + (t.reform?" reform":"")}, [
+          el("div", {class:"tc-name"}, [ txt(t.name||"Capability"), t.reform ? el("span", {title:"requires reform"}, ["🔮"]) : null ]),
+          has(t.what) ? el("div", {class:"tc-what"}, [t.what]) : null,
+          has(t.cite) ? el("span", {class:"tc-cite", title:t.cite}, [ "🔗 "+t.cite ]) : null
+        ]);
+        techWrap.appendChild(chip);
+      });
+      mount.appendChild(panel("Capabilities & tech", "🛠", techWrap, false));
+    }
+
+    // --- Pillars (scene S/U tags) ---
+    var sc = curScene();
+    if(arr(sc.pillars).length){
+      var pwrap = el("div", {class:"pill-tags"});
+      arr(sc.pillars).forEach(function(id){ pwrap.appendChild(pillTag(id)); });
+      mount.appendChild(panel("Pillars in play", "🧭", pwrap, false));
+    }
+
+    // --- Metrics ---
+    if(arr(e.metrics).length){
+      var mwrap = el("div", {class:"metric-list"});
+      arr(e.metrics).forEach(function(m){ mwrap.appendChild(el("span", {class:"metric"}, [String(m)])); });
+      mount.appendChild(panel("Metrics that move", "📈", mwrap, false));
+    }
+
+    // --- Full frontstage / backstage / support / partners / regulatory ---
+    function colList(label, items){
+      var lis = arr(items).filter(has);
+      if(!lis.length) return null;
+      var ul = el("ul", {});
+      lis.forEach(function(x){ ul.appendChild(el("li", {}, [String(x)])); });
+      return el("div", {class:"detail-col"}, [ el("h4", {}, [label]), ul ]);
+    }
+    var grid = el("div", {class:"detail-grid"}, [
+      colList("Frontstage — customer sees", e.frontstage),
+      colList("Backstage — capability behind the line", e.backstage),
+      colList("Support processes", e.support),
+      colList("Partners", e.partners),
+      colList("Regulatory & non-negotiables", e.regulatory)
+    ]);
+    mount.appendChild(panel("Frontstage · backstage · support · partners · regulatory", "🎭", grid, false));
+  }
+
+  // ===========================================================================
+  // SCENE RENDER (mockup + lanes + head + narration)
+  // ===========================================================================
+  function renderSceneShell(){
+    var s = curScene(), e = curEco();
+    $("#sh-stage").textContent = s.spineStage || "";
+    $("#sh-title").textContent = s.title || "";
+    $("#narration").textContent = e.narration || "";
+
+    var reads = $("#sh-reads"); clear(reads);
+    if(arr(s.flags).indexOf("momentOfTruth") >= 0){
+      reads.appendChild(el("span", {class:"read-chip star"}, ["⭐ Moment of truth"]));
+    }
+    if(arr(s.flags).indexOf("reform") >= 0){
+      reads.appendChild(el("span", {class:"read-chip", title:"requires regulatory / system reform"}, ["🔮 requires-reform"]));
+    }
+    if(has(e.trustStage)){
+      reads.appendChild(el("span", {class:"read-chip"}, [ "Trust: " + e.trustStage ]));
+    }
+    if(has(e.emotion)){
+      reads.appendChild(el("span", {class:"read-chip"}, [ el("span", {class:"emo", "aria-hidden":"true"}, [emoDots(e.emotion)]), txt(" emotion") ]));
+    }
+  }
+
+  function renderMockAndLanes(){
+    var s = curScene(), e = curEco(), c = ctx();
+    var phoneMount = $("#phone-mount");
+    clear(phoneMount);
+
+    var type = s.mockup;
+    var renderer = (MOCKUPS && typeof MOCKUPS[type]==="function") ? MOCKUPS[type] : null;
+    var inner = null;
+    if(renderer){
+      inner = safeFn(function(){ return renderer(e.mock || {}, c); });
+    }
+    if(!inner){
+      inner = el("div", {class:"surf tiny"}, ["This moment's mockup could not be rendered."]);
+    }
+    var framed = safeFn(function(){ return MOCKUPS.phoneFrame(inner, c); }) || inner;
+    phoneMount.appendChild(framed);
+
+    // lanes — single frontBackStage component spanning both mount points (front + back lanes)
+    var frontMount = $("#frontstage-lane"), backMount = $("#backstage-lane");
+    clear(frontMount); clear(backMount);
+    var fbs = safeFn(function(){ return MOCKUPS.frontBackStage({ frontstage:e.frontstage, backstage:e.backstage }, c); });
+    if(fbs) frontMount.appendChild(fbs);
+  }
+
+  // collect [data-beat] groups across the stage (phone + lanes), ascending
+  function collectBeats(){
+    var stageEl = $("#stage");
+    var nodes = stageEl ? stageEl.querySelectorAll(".mock [data-beat]") : [];
+    var map = {};
+    for(var i=0;i<nodes.length;i++){
+      var b = parseInt(nodes[i].getAttribute("data-beat"), 10);
+      if(isNaN(b)) b = 0;
+      (map[b] = map[b] || []).push(nodes[i]);
+    }
+    var keys = Object.keys(map).map(Number).sort(function(a,b){ return a-b; });
+    return keys.map(function(k){ return map[k]; });
+  }
+
+  function hideAllBeats(){
+    var stageEl = $("#stage");
+    var nodes = stageEl ? stageEl.querySelectorAll(".mock [data-beat]") : [];
+    for(var i=0;i<nodes.length;i++){ nodes[i].classList.remove("reveal","is-shown"); }
+  }
+  function revealAllBeats(){
+    var stageEl = $("#stage");
+    var nodes = stageEl ? stageEl.querySelectorAll(".mock [data-beat]") : [];
+    for(var i=0;i<nodes.length;i++){ nodes[i].classList.add("reveal"); }
+  }
+
+  // ===========================================================================
+  // BUILD / SETTLE / TIMERS
+  // ===========================================================================
+  function stopTimers(){
+    if(timer){ clearTimeout(timer); timer = null; }
+    if(autoTimer){ clearTimeout(autoTimer); autoTimer = null; }
+  }
+  function setBuildBar(){
+    var total = buildGroups.length || 1;
+    var frac = Math.min(1, buildPos/total);
+    var fill = $("#buildbar-fill"); if(fill) fill.style.width = (frac*100).toFixed(1)+"%";
+  }
+  function setOverall(){
+    var total = SCENES.length || 1;
+    var fill = $("#overall-fill");
+    if(fill) fill.style.width = ((state.sceneIndex+1)/total*100).toFixed(1)+"%";
+    var cnt = $("#scene-count");
+    if(cnt){ clear(cnt); cnt.appendChild(txt("Scene " + (state.sceneIndex+1) + " ")); cnt.appendChild(el("span", {class:"sc-of"}, ["/ " + total])); }
+  }
+
+  function doSettle(){
+    settled = true;
+    state.playing = false;
+    $("#stage").classList.add("is-settled");
+    setPlayBtn();
+    buildPos = buildGroups.length; setBuildBar();
+    if(state.autoplay){
+      autoTimer = setTimeout(function(){ if(state.sceneIndex < SCENES.length-1){ goTo(state.sceneIndex+1); } else { state.autoplay=false; setAutoplayBtn(); } }, AUTO_WAIT);
+    }
+  }
+
+  function tick(){
+    if(buildPos >= buildGroups.length){ doSettle(); return; }
+    buildGroups[buildPos].forEach(function(n){ n.classList.add("reveal"); });
+    buildPos++;
+    setBuildBar();
+    if(buildPos >= buildGroups.length){ timer = setTimeout(doSettle, BEAT_MS); return; }
+    timer = setTimeout(tick, BEAT_MS);
+  }
+
+  function startBuild(){
+    stopTimers();
+    settled = false;
+    $("#stage").classList.remove("is-settled");
+    closeExplore();
+    if(state.reduceMotion){
+      revealAllBeats();
+      buildPos = buildGroups.length;
+      doSettle();
+      return;
+    }
+    state.playing = true; setPlayBtn();
+    timer = setTimeout(tick, 220);
+  }
+
+  function pauseBuild(){
+    stopTimers();
+    state.playing = false; setPlayBtn();
+  }
+  function resumeBuild(){
+    if(settled){ replayScene(); return; }
+    if(buildPos >= buildGroups.length){ doSettle(); return; }
+    state.playing = true; setPlayBtn();
+    timer = setTimeout(tick, 120);
+  }
+  function replayScene(){
+    stopTimers();
+    hideAllBeats();
+    buildPos = 0; setBuildBar();
+    $("#stage").classList.remove("is-settled");
+    closeExplore();
+    startBuild();
+  }
+
+  // ===========================================================================
+  // EXPLORE toggle
+  // ===========================================================================
+  function openExplore(){
+    var m = $("#explore-mount"), t = $("#explore-toggle");
+    if(m){ m.hidden = false; }
+    if(t){ t.setAttribute("aria-expanded","true"); t.textContent = "Hide details ▴"; }
+  }
+  function closeExplore(){
+    var m = $("#explore-mount"), t = $("#explore-toggle");
+    if(m){ m.hidden = true; }
+    if(t){ t.setAttribute("aria-expanded","false"); t.textContent = "Explore this moment ▾"; }
+  }
+
+  // ===========================================================================
+  // LOAD A SCENE
+  // ===========================================================================
+  function loadScene(keepSettled){
+    stopTimers();
+    renderSceneShell();
+    renderMockAndLanes();
+    buildExplore();
+    buildGroups = collectBeats();
+    buildPos = 0;
+    setOverall();
+    syncRail();
+    var stageEl = $("#stage");
+
+    if(state.reduceMotion){
+      revealAllBeats();
+      buildPos = buildGroups.length; setBuildBar();
+      settled = true; stageEl.classList.add("is-settled"); state.playing=false; setPlayBtn();
+      if(keepSettled){ openExplore(); }
+      return;
+    }
+    if(keepSettled){
+      // economy switch on an already-settled scene: keep it assembled
+      revealAllBeats();
+      buildPos = buildGroups.length; setBuildBar();
+      settled = true; stageEl.classList.add("is-settled"); state.playing=false; setPlayBtn();
+      openExplore();
+    } else {
+      hideAllBeats(); setBuildBar();
+      stageEl.classList.remove("is-settled");
+      startBuild();
+    }
+  }
+
+  function goTo(i){
+    if(i<0 || i>=SCENES.length) return;
+    state.sceneIndex = i;
+    state.autoplay && stopTimers();
+    loadScene(false);
+    try{ $("#stage").scrollIntoView({behavior: state.reduceMotion ? "auto" : "smooth", block:"nearest"}); }catch(e){}
+  }
+
+  // ===========================================================================
+  // BUTTON STATE SYNC
+  // ===========================================================================
+  function setPlayBtn(){
+    var b = $("#btn-play"); if(!b) return;
+    if(state.playing){ b.textContent = "⏸ Pause"; }
+    else if(settled){ b.textContent = "↺ Replay"; }
+    else { b.textContent = "▶ Play"; }
+  }
+  function setAutoplayBtn(){
+    var b = $("#autoplay-toggle"); if(!b) return;
+    b.setAttribute("aria-pressed", String(state.autoplay));
+    b.textContent = "Autoplay: " + (state.autoplay ? "on" : "off");
+  }
+  function setRmBtn(){
+    var b = $("#rm-toggle"); if(!b) return;
+    b.setAttribute("aria-pressed", String(state.reduceMotion));
+    b.textContent = "Reduce motion: " + (state.reduceMotion ? "on" : "off");
+  }
+
+  // ===========================================================================
+  // WIRING
+  // ===========================================================================
+  function wire(){
+    // title + subtitle
+    if(A.meta){
+      if(A.meta.title) $("#anim-title").textContent = A.meta.title;
+      if(A.meta.subtitle) $("#anim-subtitle").textContent = A.meta.subtitle;
+    }
+
+    // economy toggle
+    var seg = $("#econ-seg");
+    if(seg) seg.addEventListener("click", function(e){
+      var btn = e.target.closest("button[data-econ]"); if(!btn) return;
+      state.econ = btn.getAttribute("data-econ");
+      var bs = seg.querySelectorAll("button");
+      for(var i=0;i<bs.length;i++) bs[i].setAttribute("aria-pressed", String(bs[i]===btn));
+      renderPersona();
+      // re-render current scene, preserving settled state
+      loadScene(settled);
+    });
+
+    $("#btn-prev").addEventListener("click", function(){ goTo(state.sceneIndex-1); });
+    $("#btn-next").addEventListener("click", function(){ goTo(state.sceneIndex+1); });
+    $("#btn-replay").addEventListener("click", replayScene);
+    $("#btn-play").addEventListener("click", function(){
+      if(state.playing){ pauseBuild(); }
+      else if(settled){ replayScene(); }
+      else { resumeBuild(); }
+    });
+    $("#autoplay-toggle").addEventListener("click", function(){
+      state.autoplay = !state.autoplay; setAutoplayBtn();
+      if(state.autoplay && settled){
+        if(state.sceneIndex < SCENES.length-1){ autoTimer = setTimeout(function(){ goTo(state.sceneIndex+1); }, AUTO_WAIT); }
+      } else { if(autoTimer){ clearTimeout(autoTimer); autoTimer=null; } }
+    });
+    $("#rm-toggle").addEventListener("click", function(){
+      state.reduceMotion = !state.reduceMotion; setRmBtn();
+      document.body.classList.toggle("reduce-motion", state.reduceMotion);
+      loadScene(false);
+    });
+    $("#explore-toggle").addEventListener("click", function(){
+      var open = this.getAttribute("aria-expanded")==="true";
+      if(open) closeExplore(); else openExplore();
+    });
+
+    // keyboard
+    document.addEventListener("keydown", function(e){
+      if(e.defaultPrevented) return;
+      var tag = (e.target && e.target.tagName) || "";
+      if(tag==="INPUT" || tag==="TEXTAREA") return;
+      var k = e.key;
+      if(k==="ArrowLeft"){ goTo(state.sceneIndex-1); e.preventDefault(); }
+      else if(k==="ArrowRight"){ goTo(state.sceneIndex+1); e.preventDefault(); }
+      else if(k===" " || k==="Spacebar"){
+        if(state.playing){ pauseBuild(); } else if(settled){ replayScene(); } else { resumeBuild(); }
+        e.preventDefault();
+      }
+      else if(k==="r" || k==="R"){ replayScene(); e.preventDefault(); }
+      else if(/^[1-9]$/.test(k)){ var idx = parseInt(k,10)-1; if(idx<SCENES.length){ goTo(idx); e.preventDefault(); } }
+    });
+
+    // body reduce-motion class if pref detected
+    if(state.reduceMotion) document.body.classList.add("reduce-motion");
+
+    setAutoplayBtn(); setRmBtn();
+  }
+
+  // ===========================================================================
+  // BOOT
+  // ===========================================================================
+  function boot(){
+    if(!SCENES.length){
+      var stageEl = $("#stage");
+      if(stageEl) stageEl.appendChild(el("div", {class:"surf"}, ["No scenes to display."]));
+      return;
+    }
+    wire();
+    renderPersona();
+    renderRail();
+    loadScene(false);
+  }
+
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+})();
+</script>
+</body>
+</html>
