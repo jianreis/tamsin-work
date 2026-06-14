@@ -30,6 +30,7 @@ payer or an insurance/PBM middle layer.
 - [[wiki/global-benchmarks/uk-boots-pharmacy2u-nhs-eps|🇬🇧 UK — NHS EPS, NHS App, Pharmacy2U/LloydsDirect, Boots, Pharmacy First]]
 - [[wiki/global-benchmarks/europe-docmorris-redcare-erezept|🇪🇺 Europe — DocMorris, Redcare & Germany's E-Rezept (and its lessons)]]
 - [[wiki/global-benchmarks/usa-cvs-walgreens-amazon|🇺🇸 USA — CVS/Caremark, Walgreens, Amazon Pharmacy/PillPack, Cost Plus, Capsule]]
+  - [[wiki/global-benchmarks/amazon-pharmacy-pillpack-deepdive|↳ 🔬 Amazon Pharmacy & PillPack — deep dive]] _(mechanics, economics, adherence evidence, SA/PackMyMeds transferability)_
 
 ## How to use these pages
 
