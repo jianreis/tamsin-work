@@ -17,8 +17,11 @@ Everything here must be **traceable to the wiki** (and through it, to sources).
 - [[design-kit/personas/_personas-index|Personas index]]
 
 ## Journeys
-- [[design-kit/journeys/as-is-prescription-journey|As-is prescription journey]] (current state)
-- _To-be / future-state journeys are produced from this vault — see [[CLAUDE]] §8._
+- [[design-kit/journeys/as-is-prescription-journey|As-is prescription journey]] (current state, Dis-Chem)
+- **To-be / future-state worked exemplars** (proof-of-concept):
+  - [[design-kit/journeys/to-be-blueprint-chronic-insured|To-be service blueprint — the self-running repeat]] (Nomvula, insured chronic — the chronic-medicine flywheel)
+  - [[design-kit/journeys/to-be-journey-cash-acute|To-be journey — fast, transparent, near home]] (Thabo, cash-pay acute — the uninsured majority)
+- _Together these demonstrate the [[wiki/concepts/dual-journey|dual journey]]: one spine, two first-class funded paths. Produce more per [[CLAUDE]] §8._
 
 ## Templates
 - [[design-kit/templates/service-blueprint-template|Service blueprint template]]
