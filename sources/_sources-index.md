@@ -68,6 +68,8 @@ _Populated as sources are ingested. Group by domain; show reliability tier._
 - [[src-sch-nhi-act-status]] (B) — NHI Act 2023, Section 33, litigation status 2024–2026.
 
 ### Dispensing practice
+- [[src-adh-choudhry-rct]] (A) — adherence packaging/sync evidence + the Choudhry-2017 null (reminder devices showed no benefit).
+
 ### Digital transformation
 - [[src-dig-ncpdp-script-cms]] (A) — NCPDP SCRIPT standard & CMS 2024 final rule (v2023011).
 - [[src-dig-fhir-medication-resources]] (A) — HL7 FHIR `MedicationRequest`/`MedicationDispense` & MPD IG.
@@ -88,6 +90,9 @@ _Populated as sources are ingested. Group by domain; show reliability tier._
 ### Global benchmarks
 - USA — [[src-gbl-ftc-pbm-report]] (A) — FTC PBM reports: ~80% of scripts via 3 vertically-integrated PBMs.
 - USA — [[src-gbl-amazon-pharmacy]] (B) — Amazon Pharmacy RxPass, same-day delivery, PillPack dose-packaging.
+  - USA — [[src-amzn-pillpack-cnbc]] (B) — PillPack acquisition ($753M), dose-sachet mechanics, Surescripts data war. _(deep dive)_
+  - USA — [[src-amzn-rxpass]] (B) — RxPass $5/mo generics subscription + Medicare expansion; same-day/drone. _(deep dive)_
+  - USA — [[src-amzn-scale-drugchannels]] (B) — Amazon <1% of US dispensing (Top-15 absence); leaked revenue/loss; PBM model. _(deep dive)_
 - USA — [[src-gbl-costplus-drugs]] (B) — Mark Cuban Cost Plus: cost + 15% + fees transparency (not always cheapest).
 - USA — [[src-gbl-walgreens-capsule]] (B) — Walgreens med-sync + go-private; Capsule courier model retrenchment.
 - USA — [[src-gbl-us-surescripts-eprescribing]] (B) — Surescripts network + EPCS 2FA for controlled substances.
