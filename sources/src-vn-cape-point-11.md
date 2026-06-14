@@ -32,11 +32,14 @@ locally with `whisper.cpp` (large-v3) — Hugging Face / Azure model hosts are
 firewalled in the build environment, so the model was sourced from a GitHub
 release. The **first portion is coherent and decision-useful**; the **tail
 degraded into a repetition loop** (a known Whisper failure mode on silence/low
-SNR), so the closing minutes are not faithfully captured. A clean re-run
-(`no_context`) is in progress. The claims below are taken only from the coherent
-portion and are corroborated by Jian's written instructions in the same session.
-Reliability **B**: authoritative for *intent/brief* (primary stakeholders), but
-informal/verbal and partially lost at the tail.
+SNR), so the closing minutes are not faithfully captured. A clean
+`no_context` re-run **reproduced the same tail loop**, confirming the loss is
+**intrinsic to the audio's final segment** (not a decoder-settings artefact); the
+coherent opening — which carries the **full brief** — is **identical across both
+independent runs**, so it is high-confidence. The claims below are taken only from
+that coherent portion and are corroborated by Jian's written instructions in the
+same session. Reliability **B**: authoritative for *intent/brief* (primary
+stakeholders), but informal/verbal and partially lost at the tail.
 
 ## Key claims
 - **The deliverable = an experience-definition journey map**, not a service
