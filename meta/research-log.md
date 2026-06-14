@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Research log"
-updated: "2026-06-13"
+updated: "2026-06-14"
 tags: [meta]
 ---
 
@@ -33,3 +33,11 @@ Append-only log of what's been ingested and built. One line per meaningful step.
 | 2026-06-13 | build | Wrote 2 worked future-state exemplars: to-be blueprint (chronic insured, Nomvula) + to-be journey (cash acute, Thabo). Surfaced in Home + design-kit index. |
 | 2026-06-13 | build | Final LINT clean: 227 files, 0 dead links / 0 orphans / 0 stubs; 63 ⚠️ UNVERIFIED + 48 🔮 requires-reform flags tracked. Vault build v1 complete. |
 | 2026-06-14 | research | /deep-research pass — Amazon Pharmacy & PillPack (5 parallel angle agents → synthesis). Added [[amazon-pharmacy-pillpack-deepdive]] + 5 new sources (src-amzn-pillpack-cnbc, src-amzn-rxpass, src-amzn-scale-drugchannels, src-adh-choudhry-rct, src-reg-section18a); reused existing src-gbl-costplus-drugs + src-gbl-walgreens-capsule. Key findings: RxPass unlawful in SA (§18A + SEP) → 🔮 reform; PillPack dose-packaging transfers (Board Notice 172/2019); Amazon still <1% of US dispensing (absent from Top-15); packaging adherence lift modest (~+8pp) + Choudhry-2017 null. |
+| 2026-06-14 | intake | **Tamsin intake batch** — 9 inputs (1 voice note + 8 PDFs) ingested via 7 parallel orchestrated sub-agents. Rows below. Voice note transcribed locally (whisper.cpp large-v3) — HF/Azure model hosts firewalled, model sourced from a GitHub release. |
+| 2026-06-14 | dischem | INGEST src-dc-complaints-jan2025 (B): Jan-2025 C4C resolved complaints (n=360). New wiki/dischem/pharmacy-complaints-pain-points segmenting 5 pain clusters → journey spine + S/U pillars; chronic re-order is the dominant cluster. |
+| 2026-06-14 | consumer | INGEST src-dc-script-journey-interviews-2025 (B): 10 in-store IDIs (Oct 2025) on the as-is script journey. New wiki/consumer-context/voice-of-customer-script-journey. Flags co-pay/app scope-tension vs as-is (different, in-store-only population). |
+| 2026-06-14 | dischem | INGEST src-dc-store-future-interviews-2026 (B): Store-of-the-Future interviews (n=12, Jan 2026, 4 scenarios). New wiki/dischem/store-of-the-future-customer-voice. Theme: predictability>speed; digital must reinforce certainty + keep a human fallback. |
+| 2026-06-14 | dischem | INGEST src-dc-social-media-research-2025 (C): Bigly social-media listening (1,270 coded comments, Dec 2025). New wiki/dischem/dischem-social-sentiment-trust-journey (Patient Trust Journey: Calm→Trigger→Acceleration→Agitation→Defection; 65% neg pharmacy vs 65% pos price/promo). |
+| 2026-06-14 | digital | INGEST src-dc-omnichannel-scripting-roadmap (B): Dis-Chem "Script Re-imagined — Virtual Order Operational Flow" board. New wiki/digital-transformation/dischem-scripting-tech-roadmap (24 capabilities incl. ROWA picker robot, AI capture/route, BRIX auto-dispense, Dashboard E2E, PICCUP delivery). Planned, not live. |
+| 2026-06-14 | dispensing | INGEST src-om-kenya-outpatient-afterhours-emergency (C): Old Mutual Kenya target-state claims CX map (Tamsin Madden). New wiki/dispensing-practice/after-hours-emergency-acute-access — off-spine complex use case (after-hours/emergency/out-patient acute access). |
+| 2026-06-14 | design | INGEST src-bigly-blueprint-board-style (design reference, not evidence): Bigly future-state "board" treatment. New design-kit/templates/future-state-blueprint-board-style (visual language + schema) — the style reference for the interactive HTML future-state journey deliverable. |

@@ -1,7 +1,7 @@
 ---
 type: index
 title: "Design Kit — index"
-updated: "2026-06-13"
+updated: "2026-06-14"
 tags: [index, design-kit]
 ---
 
@@ -28,6 +28,7 @@ Everything here must be **traceable to the wiki** (and through it, to sources).
 - [[design-kit/templates/journey-map-template|Journey map template]]
 - [[design-kit/templates/jtbd-library|Jobs-To-Be-Done library]]
 - [[design-kit/templates/future-state-principles|Future-state design principles]]
+- [[design-kit/templates/future-state-blueprint-board-style|Future-state blueprint board — style & treatment reference]] — the Bigly "board" visual language + reusable schema for the interactive HTML future-state journey deliverable.
 
 ## How to use (summary)
 See [[CLAUDE]] §8 — "How to USE this vault to build blueprints & journeys".
