@@ -296,6 +296,30 @@ button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--brand-dark
 .channel-chip .cc-pill.lead{background:var(--brand); color:#fff; border-color:var(--brand)}
 .channel-chip .cc-note{color:var(--muted2)}
 
+/* ---- per-surface channel badge (every moment) ---------------------------- */
+.channel-badge{ display:inline-flex; align-items:center; gap:5px; margin:0 auto 8px; border-radius:99px; padding:3px 11px; font-size:.68rem; font-weight:800; letter-spacing:.01em; white-space:nowrap; }
+.channel-badge .cb-ico{font-size:.82rem; line-height:1}
+.channel-badge.wa{ background:var(--brand); color:#fff; border:1px solid var(--brand-dark); }
+.channel-badge.app{ background:#efe9f3; color:var(--purple); border:1px solid #d9c2e4; }
+.phone-with-channel{display:flex; flex-direction:column; align-items:center;}
+
+/* ---- APP / portal surface skin (Pillar U1 — native app for power features) */
+.device.app-surface .screen{ background:var(--bg); }
+.app-header{ display:flex; align-items:center; gap:9px; padding:9px 12px; background:var(--card); color:var(--ink); border-bottom:1px solid var(--line); }
+.app-header .app-back{font-size:1.15rem; color:var(--muted); line-height:1; font-weight:700;}
+.app-header .app-id{flex:1 1 auto; min-width:0; display:flex; flex-direction:column; gap:1px}
+.app-header .app-wordmark{display:flex; align-items:baseline; gap:2px; font-weight:800; font-size:.84rem; letter-spacing:-.01em; color:var(--brand-dark);}
+.app-header .app-wordmark .plus{color:var(--lime); font-size:1rem; line-height:0;}
+.app-header .app-title{font-size:.72rem; font-weight:700; color:var(--ink); line-height:1.1;}
+.app-header .app-profile{ width:28px; height:28px; flex:0 0 auto; border-radius:50%; background:var(--mint); border:1px solid var(--mint-deep); display:flex; align-items:center; justify-content:center; font-size:.78rem; }
+.app-cue{ display:flex; align-items:center; gap:7px; margin:8px 0 2px; background:#f0f8f3; border:1px solid var(--mint-deep); border-radius:10px; padding:6px 10px; font-size:.72rem; color:var(--ink-soft); font-weight:600; }
+.app-cue .ac-ico{flex:0 0 auto; font-size:.92rem; line-height:1;}
+.app-cue b{font-weight:800; color:var(--brand-dark);}
+.app-tabbar{ display:flex; align-items:stretch; justify-content:space-around; background:var(--card); border-top:1px solid var(--line); padding:6px 4px 7px; }
+.app-tabbar .at-tab{ display:flex; flex-direction:column; align-items:center; gap:2px; font-size:.56rem; font-weight:700; color:var(--muted2); flex:1 1 0; }
+.app-tabbar .at-tab .at-ico{font-size:1rem; line-height:1;}
+.app-tabbar .at-tab.on{color:var(--brand-dark);}
+
 /* ---- WhatsApp status card (derived customer-facing status) --------------- */
 .wastat .surf-h{margin-bottom:8px}
 .wastat .ws-steps{list-style:none; margin:0; padding:0;}
@@ -497,16 +521,25 @@ window.MOCKUPS = (function(){
   }
 
   /* =========================================================================
-     phoneFrame(innerNode, ctx, opts) — WhatsApp-first chat surface wrapper.
-     Renders a WhatsApp chat header (contact + verified + online) over a
-     chat-tint screen, with a persistent channel chip beneath the phone noting
-     app / USSD / in-store variants. opts:{ contact?, sub?, chat?:true }.
+     phoneFrame(innerNode, ctx, opts) — channel-aware device surface wrapper.
+     Two channels (Pillar U1 channel ladder):
+       • "whatsapp"/"chat" (DEFAULT): WhatsApp chat header over a chat-tint
+         screen — the entry/nudge/status channel.
+       • "app": a DISTINCT native app/portal surface for rich, persistent power
+         views (My Medicine Cabinet, My Dose-Pack): light header w/ Dis-Chem
+         wordmark + screen title + back chevron + profile dot, app-surface bg,
+         low-key bottom tab-bar, and a "opened from your WhatsApp reminder" cue.
+     Every surface shows a per-moment channel badge above the phone, plus the
+     persistent channel-agnostic chip beneath it.
+     opts:{ contact?, sub?, chat?:true, channel?:"whatsapp"|"app", appTitle? }.
      Pass opts.chat===false for a neutral (non-chat) device.
      ========================================================================= */
   function phoneFrame(innerNode, ctx, opts){
     opts = opts || {};
     const chat = opts.chat !== false;
+    const app  = chat && (opts.channel === "app");
     const screenBody = el("div", {class:"screen-body"});
+    if(app) screenBody.appendChild(appCue());
     if(innerNode) screenBody.appendChild(innerNode);
     const screenKids = [
       el("div", {class:"statusbar", "aria-hidden":"true"}, [
@@ -514,15 +547,53 @@ window.MOCKUPS = (function(){
         el("span", {class:"sb-r"}, ["●●●  ", "📶  ", "🔋"])
       ])
     ];
-    if(chat) screenKids.push(waHeader(opts.contact, opts.sub));
+    if(chat) screenKids.push(app ? appHeader(opts.appTitle) : waHeader(opts.contact, opts.sub));
     screenKids.push(screenBody);
-    const dev = el("div", {class:"device" + (chat?" wa-surface":"")}, [
+    if(app) screenKids.push(appTabbar());
+    const surfCls = app ? " app-surface" : (chat ? " wa-surface" : "");
+    const dev = el("div", {class:"device" + surfCls}, [
       el("div", {class:"notch", "aria-hidden":"true"}),
       el("div", {class:"screen"}, screenKids)
     ]);
     if(ctx && ctx.reduceMotion) dev.classList.add("reduce-motion");
     if(!chat) return dev;
-    return el("div", {class:"phone-with-channel"}, [ dev, channelChip() ]);
+    return el("div", {class:"phone-with-channel"}, [ channelBadge(app?"app":"whatsapp"), dev, channelChip() ]);
+  }
+
+  // app/portal header — clearly an APP, not WhatsApp
+  function appHeader(title){
+    return el("div", {class:"app-header", "aria-hidden":"true"}, [
+      el("span", {class:"app-back"}, ["‹"]),
+      el("div", {class:"app-id"}, [
+        el("div", {class:"app-wordmark"}, [ "Dis-Chem", el("span", {class:"plus"}, ["+"]) ]),
+        el("div", {class:"app-title"}, [ has(title)?String(title):"My health" ])
+      ]),
+      el("div", {class:"app-profile"}, ["👤"])
+    ]);
+  }
+  function appTabbar(){
+    const tab = (ico, label, on)=> el("div", {class:"at-tab"+(on?" on":"")}, [
+      el("span", {class:"at-ico", "aria-hidden":"true"}, [ico]), el("span", {}, [label])
+    ]);
+    return el("div", {class:"app-tabbar", "aria-hidden":"true"}, [
+      tab("🏠","Home",false), tab("💊","Cabinet",true), tab("📦","Orders",false), tab("⋯","More",false)
+    ]);
+  }
+  function appCue(){
+    return el("div", {class:"app-cue"}, [
+      el("span", {class:"ac-ico", "aria-hidden":"true"}, ["💬"]),
+      el("span", {}, [ el("b", {}, ["Opened from your WhatsApp reminder"]), document.createTextNode(" — the full view lives in the app") ])
+    ]);
+  }
+  function channelBadge(kind){
+    if(kind === "app"){
+      return el("div", {class:"channel-badge app", "aria-label":"This moment: in the app / portal"}, [
+        el("span", {class:"cb-ico", "aria-hidden":"true"}, ["📱"]), document.createTextNode("App · portal")
+      ]);
+    }
+    return el("div", {class:"channel-badge wa", "aria-label":"This moment: WhatsApp"}, [
+      el("span", {class:"cb-ico", "aria-hidden":"true"}, ["💬"]), document.createTextNode("WhatsApp")
+    ]);
   }
 
   // WhatsApp-style chat header used on every customer-facing surface
@@ -551,7 +622,7 @@ window.MOCKUPS = (function(){
         el("span", {class:"cc-pill"}, ["USSD"]),
         el("span", {class:"cc-pill"}, ["in-store"])
       ]),
-      el("div", {class:"cc-note"}, ["One channel-agnostic experience · data-frugal · USSD fallback on zero data"])
+      el("div", {class:"cc-note"}, ["WhatsApp is the entry point; rich management views open in the app · data-frugal · USSD fallback on zero data"])
     ]);
   }
 
