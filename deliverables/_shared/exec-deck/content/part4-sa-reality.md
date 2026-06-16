@@ -66,15 +66,3 @@ evidence: [wiki/consumer-context/digital-access-and-whatsapp, wiki/consumer-cont
 visual: omit
 flags: [unverified]
 notes: "Data costs are volatile per SPEC §5 (~R20–R79/GB; RAMP warns of a possible fourth price-increase cycle) — date the figure. WhatsApp exact % (93–96%) is a wide-band signal flagged unverified in the wiki; the load-bearing claim (WhatsApp = #1 channel) is robust. ICASA figures are 2024 reporting year (A-tier)."
-
-## SLIDE: sources
-id: sources-part4
-title: Sources — the South African reality
-items:
-  - "ICASA State of the ICT Sector 2025 (2024 figures) — src-con-icasa-ict-2025 (A)"
-  - "RAMP data-price index & SA data-cost trend — src-con-ramp-data-prices (B)"
-  - "Load-shedding scale & network/cold-chain impact — src-con-loadshedding (B)"
-  - "Andy Gray on SA medicine pricing (SEP/SEPA, Feb 2026) — src-reg-gray-pricing-2026 (B)"
-  - "CMS schemes & two-economy split, PMB/CDL, DSPs, claims switching, CCMDD — wiki/medical-schemes/*"
-  - "SEP/§22G, scheduling, e-Rx/telehealth/POPIA — wiki/sa-regulatory/*"
-notes: NHI flagged reform (in court 2026); insured % basis varies (cite both ~16% / 15.8% / 9.17m); data costs volatile.

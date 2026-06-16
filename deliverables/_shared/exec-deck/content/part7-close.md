@@ -31,6 +31,17 @@ items:
   - "wiki/digital-transformation/interoperability-identity-records — internal EMPI + FHIR (S6)"
   - "wiki/concepts/omnichannel-fulfilment — one order, one profile, store-as-node (S6)"
   - "wiki/global-benchmarks/patterns-to-borrow-and-cautions — what transfers to SA (S4, S6)"
+  - "src-gbl-australia-escript — Australia eScript token + ASL, MedAdvisor, Chemist Warehouse (A) [Part 3]"
+  - "src-gbl-india-epharmacy — India e-pharmacy: PharmEasy, Apollo, Tata 1mg, Netmeds (B) [Part 3]"
+  - "src-gbl-apollo-247-results — Apollo HealthCo / Apollo 24|7 listed-company disclosures (A) [Part 3]"
+  - "src-gbl-china-internet-hospitals — China internet hospitals: Ping An / Alibaba / JD Health (B) [Part 3]"
+  - "src-gbl-china-eprescription-policy — China AI ban, prescription-first policy (B) [Part 3]"
+  - "src-con-icasa-ict-2025 — ICASA State of the ICT Sector 2025 (2024 figures) (A) [Part 4]"
+  - "src-con-ramp-data-prices — RAMP data-price index & SA data-cost trend (B) [Part 4]"
+  - "src-con-loadshedding — load-shedding scale & network/cold-chain impact (B) [Part 4]"
+  - "src-reg-gray-pricing-2026 — Andy Gray on SA medicine pricing (SEP/SEPA, Feb 2026) (B) [Part 4]"
+  - "wiki/medical-schemes/* — CMS schemes & two-economy split, PMB/CDL, DSPs, claims switching, CCMDD [Part 4]"
+  - "wiki/sa-regulatory/* — SEP/§22G, scheduling, e-Rx / telehealth / POPIA [Part 4]"
   - "src-dc-complaints-jan2025 — Dis-Chem C4C dataset, n=360 (B-tier, single month)"
   - "src-gbl-medadvisor — Australia adherence-app benchmark (B-tier)"
-notes: Visible vault paths only, no external URLs (per SPEC §5). These are the principal pages; full citations live in each wiki page's source list.
+notes: Visible vault paths only, no external URLs (per SPEC §5). Consolidated from the former Part 3 / Part 4 source slides so no citation is lost. Full citations live in each wiki page's source list.

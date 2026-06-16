@@ -97,15 +97,3 @@ evidence: [wiki/global-benchmarks/china-pingan-alibaba-jdhealth, src-gbl-china-e
 visual: dia:teleconsult-loop
 flags: []
 notes: "Source-confirmed verbatim — NHC supervision rules Feb 2022; reaffirmed Beijing draft Aug 2023. This is the cleanest, most defensible AI/safety guardrail in the deck — AI in front of a human, never instead of one. dia:teleconsult-loop carries the AI-triage to human to pharmacist guardrail visually."
-
-## SLIDE: sources
-id: sources-part3
-title: Sources — overseas markets
-items:
-  - "Australia eScript token + ASL, MedAdvisor, Chemist Warehouse — src-gbl-australia-escript (A)"
-  - "India e-pharmacy — PharmEasy, Apollo, Tata 1mg, Netmeds — src-gbl-india-epharmacy (B)"
-  - "Apollo HealthCo / Apollo 24|7 listed-company disclosures — src-gbl-apollo-247-results (A)"
-  - "China internet hospitals — Ping An / Alibaba / JD Health — src-gbl-china-internet-hospitals (B)"
-  - "China e-prescription policy — AI ban, prescription-first — src-gbl-china-eprescription-policy (B)"
-  - "Synthesis — patterns to borrow & cautions — wiki/global-benchmarks/patterns-to-borrow-and-cautions"
-notes: Foreign scale figures are company/agency-reported; treat as directional. Apollo's listed disclosures are the firmest numbers in the set.
