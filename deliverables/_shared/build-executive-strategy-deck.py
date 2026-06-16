@@ -275,8 +275,19 @@ def _th(h):
     return h * _CANVAS["sy"]
 
 
+# Minimum on-slide font size for any diagram label (projector legibility floor).
+# When a diagram is drawn into a scaled sub-region the raw multiply can drop
+# labels far below this; _ts() floors the *scaled* size so no diagram text ever
+# renders below DIA_FONT_FLOOR pt. At full canvas (s==1.0) this is a no-op for
+# any authored size >= the floor.
+DIA_FONT_FLOOR = 9.0
+
+
 def _ts(size):
-    return size * _CANVAS["s"]
+    scaled = size * _CANVAS["s"]
+    if _CANVAS["s"] != 1.0 and scaled < DIA_FONT_FLOOR:
+        return DIA_FONT_FLOOR
+    return scaled
 
 
 def _scale_runs(runs):
@@ -584,7 +595,7 @@ def _pillar_grid(slide, items, top, cols, accent, card_h=None, small=False):
             name_x = x + Inches(0.2)
             name_w = cw - Inches(0.4)
         nsize = 11.5 if not small else 11
-        dsize = 9.5 if not small else 8.7
+        dsize = 9.5 if not small else 9
         add_text(slide, name_x, y + Inches(0.16), name_w, Inches(0.7),
                  [[(name, {"size": nsize, "bold": True, "color": INK})]],
                  line_spacing=0.95)
@@ -612,9 +623,9 @@ def _flag_strip(slide, flags, y=Inches(6.78)):
     runs = []
     for i, (txt, col) in enumerate(parts):
         if i:
-            runs.append(("    ", {"size": 8.5, "color": SLATE}))
-        runs.append((txt, {"size": 8.5, "italic": True, "color": col}))
-    add_text(slide, Inches(0.6), y, Inches(9.0), Inches(0.3), [runs])
+            runs.append(("    ", {"size": 9, "color": SLATE}))
+        runs.append((txt, {"size": 9, "italic": True, "color": col}))
+    add_text(slide, Inches(0.6), y, Inches(11.5), Inches(0.3), [runs])
 
 
 def _evidence_line(items):
@@ -642,7 +653,7 @@ def dia_front_door(slide, caption=None):
     chip(slide, 0.78, 2.55, 1.1, 0.32, "TODAY", fill=None, txt=SLATE, size=10,
          shape=MSO_SHAPE.RECTANGLE)
     chip(slide, 1.7, 2.95, 2.8, 0.78, "Dispensing counter", sub="one-off transaction",
-         fill=WHITE, txt=INK, line=LINE, line_w=Pt(1), size=11)
+         fill=WHITE, txt=INK, line=LINE, line_w=Pt(1), size=11, sub_size=9)
     for i, lab in enumerate(("Queue", "Hand over script", "Pay & leave")):
         chip(slide, 1.5, 3.92 + i * 0.46, 3.2, 0.38, lab, fill=CARD_BG, txt=SLATE,
              line=LINE, line_w=Pt(0.75), size=9.5, bold=False)
@@ -666,7 +677,7 @@ def dia_front_door(slide, caption=None):
     for (sx, sy), lab in zip(positions, sats):
         connector(slide, 10.25, 3.58, sx + sat_w / 2, sy + 0.18, color=GREEN,
                   width=1.0, arrow=False)
-        chip(slide, sx, sy, sat_w, 0.42, lab, fill=MINT_MD, txt=GREEN_DK, size=8.5)
+        chip(slide, sx, sy, sat_w, 0.46, lab, fill=MINT_MD, txt=GREEN_DK, size=9)
     dia_caption(slide, caption or ("~40% of consumers want broader clinical services "
                 "via the pharmacy — direction of travel."), y=5.55)
 
@@ -683,9 +694,9 @@ def dia_fulfilment_node(slide, caption=None):
     for lab, y in zip(inbound, ys):
         chip(slide, 0.7, y, 2.6, 0.62, lab, fill=MINT, txt=GREEN_DK, size=10)
         connector(slide, 3.3, y + 0.31, 5.0, 3.55, color=GREEN, width=1.25)
-    dia_text(slide, 0.7, 5.02, 2.8, 0.3,
+    dia_text(slide, 0.7, 5.02, 4.3, 0.34,
              [[("channel ladder — meet them where they are",
-                {"size": 8, "italic": True, "color": SLATE})]])
+                {"size": 9, "italic": True, "color": SLATE})]])
     for (lab, reform), y in zip(outbound, ys):
         if reform:
             box = chip(slide, 9.4, y, 2.85, 0.62, "🔮 " + lab, fill=MINT_MD,
@@ -694,9 +705,9 @@ def dia_fulfilment_node(slide, caption=None):
         else:
             chip(slide, 9.4, y, 2.85, 0.62, lab, fill=MINT_MD, txt=GREEN_DK, size=10)
         connector(slide, 8.3, 3.55, 9.4, y + 0.31, color=GREEN, width=1.25)
-    dia_text(slide, 9.4, 5.02, 3.0, 0.3,
+    dia_text(slide, 9.4, 5.02, 3.3, 0.34,
              [[("scheduled-med lockers need reform",
-                {"size": 8, "italic": True, "color": AMBER})]])
+                {"size": 9, "italic": True, "color": AMBER})]])
     band = dia_rect(slide, 0.6, 5.42, 12.13, 0.52, fill=CARD_BG, line=LINE,
                     line_w=Pt(0.75), shape=MSO_SHAPE.RECTANGLE)
     draw_label(band, [[(caption or ("The convenience bar is set by retail (Sixty60), "
@@ -747,16 +758,16 @@ def dia_efficacy_effectiveness(slide, caption=None):
     # Bar A — Efficacy (full height)
     a_h = 3.0
     draw_rect(slide, 2.2, base_y - a_h, 1.8, a_h, fill=GREEN)
-    dia_text(slide, 2.2, base_y - a_h - 0.46, 1.8, 0.42,
+    dia_text(slide, 1.9, base_y - a_h - 0.5, 2.4, 0.46,
              [[("Efficacy", {"size": 12, "bold": True, "color": GREEN_DK})],
-              [("what the drug can do", {"size": 8.5, "color": SLATE})]],
+              [("what the drug can do", {"size": 9, "color": SLATE})]],
              align=PP_ALIGN.CENTER)
     # Bar B — Effectiveness (shorter)
     b_h = 2.2
     draw_rect(slide, 5.2, base_y - b_h, 1.8, b_h, fill=MINT_MD)
-    dia_text(slide, 5.2, base_y - b_h - 0.46, 1.8, 0.42,
+    dia_text(slide, 4.9, base_y - b_h - 0.5, 2.4, 0.46,
              [[("Effectiveness", {"size": 12, "bold": True, "color": INK})],
-              [("what it does in real life", {"size": 8.5, "color": SLATE})]],
+              [("what it does in real life", {"size": 9, "color": SLATE})]],
              align=PP_ALIGN.CENTER)
     # LIME gap bracket (the single highlight) — spans Bar B's shortfall
     gx = 4.6
@@ -776,7 +787,7 @@ def dia_efficacy_effectiveness(slide, caption=None):
                 {"size": 9, "italic": True, "color": SLATE})]])
     dia_text(slide, 0.6, 5.62, 12.13, 0.3,
              [[("⚠ vendor app/lift figures unverified",
-                {"size": 8, "italic": True, "color": AMBER})]])
+                {"size": 9, "italic": True, "color": AMBER})]])
 
 
 def dia_script_artefact(slide, caption=None):
@@ -836,7 +847,7 @@ def dia_transfer_fit(slide, caption=None):
         cell = draw_rect(slide, x0 + label_w + c * cw, y0, cw, hh, fill=GREEN_DK,
                          line=WHITE, line_w=Pt(1))
         draw_label(cell, [[(lab, {"size": 9.5, "bold": True, "color": WHITE})],
-                          [(sub, {"size": 7.5, "color": MINT})]],
+                          [(sub, {"size": 9, "color": MINT})]],
                    align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, margins=0.05)
     # rows: (region, strength, fill, [glyphs])  glyph: c=check x=cross d=dash
     rows = [
@@ -854,7 +865,7 @@ def dia_transfer_fit(slide, caption=None):
                        line_w=Pt(0.75))
         scol = GREEN_DK if ri < 3 else SLATE
         draw_label(lc, [[(region, {"size": 10.5, "bold": True, "color": INK})],
-                        [(strength, {"size": 7.8, "bold": True, "color": scol})]],
+                        [(strength, {"size": 9, "bold": True, "color": scol})]],
                    align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.MIDDLE, margins=0.12)
         for c, g in enumerate(glyphs):
             cellx = x0 + label_w + c * cw
@@ -879,15 +890,15 @@ def dia_au_token_loop(slide, caption=None):
     bottom = (ccx, 4.4)
     left = (3.6, 3.45)
     chip(slide, top[0] - nw / 2, top[1] - nh / 2, nw, nh, "Token issued",
-         sub="SMS / email · no PIN", fill=GREEN, txt=WHITE, size=11, sub_size=8.5)
+         sub="SMS / email · no PIN", fill=GREEN, txt=WHITE, size=11, sub_size=9)
     chip(slide, right[0] - nw / 2, right[1] - nh / 2, nw, nh, "Scan at any pharmacy",
          sub="any phone · forwardable", fill=MINT, txt=GREEN_DK, size=10.5,
-         sub_size=8)
+         sub_size=9)
     chip(slide, bottom[0] - nw / 2, bottom[1] - nh / 2, nw, nh, "Dispense",
          fill=MINT, txt=GREEN_DK, size=11)
     chip(slide, left[0] - nw / 2, left[1] - nh / 2, nw, nh, "New token per repeat",
          sub="anti-double-dispense built in", fill=MINT_MD, txt=GREEN_DK,
-         size=10.5, sub_size=8)
+         size=10.5, sub_size=9)
     # clockwise arrows: top→right, right→bottom, bottom→left
     connector(slide, top[0] + nw / 2 - 0.3, top[1] + 0.15,
               right[0] - 0.1, right[1] - nh / 2, color=GREEN, width=1.5)
@@ -919,24 +930,47 @@ def dia_au_token_loop(slide, caption=None):
                 "SA needs a printed-QR / USSD / WhatsApp fallback."), y=5.68)
 
 
-def dia_teleconsult_loop(slide, caption=None):
-    """Left→right 4-stage pipeline with AMBER guardrail chips below."""
+def dia_teleconsult_loop(slide, caption=None, active=None, active_label=None):
+    """Left→right 4-stage pipeline with AMBER guardrail chips below.
+
+    `active` (optional) names the stage to emphasise for a given market:
+      'ai-triage'  — China-AI: AI-triage guardrail emphasis (1st stage)
+      'clinician'  — human-clinician emphasis (2nd stage)
+      'pharmacist' — China: pharmacist-review emphasis (3rd stage)
+      'order'      — India: order/deliver emphasis (last stage)
+    The active stage gets a LIME top-rule + a small caret tag above it.
+    `active_label` overrides the caret tag text."""
     stages = [("AI triage / intake", "structured questions", MINT, GREEN_DK),
               ("Human clinician", "diagnoses & e-signs the Rx", GREEN, WHITE),
               ("Pharmacist review", "clinical check", GREEN, WHITE),
-              ("Dispense & deliver", None, MINT, GREEN_DK)]
+              ("Dispense & deliver", "to collect or door", MINT, GREEN_DK)]
+    active_idx = {"ai-triage": 0, "clinician": 1, "pharmacist": 2,
+                  "order": 3}.get(str(active or "").strip().lower())
+    if active_label is None:
+        active_label = {0: "AI triage only", 1: "clinician signs",
+                        2: "non-delegable", 3: "store-as-node"}.get(active_idx,
+                                                                    "active here")
     x = 0.7
     nw, nh, gap = 2.6, 1.2, 0.42
-    y = 2.5
-    centres = []
+    y = 2.78
+    xs = []
     for i, (lab, sub, fill, txt) in enumerate(stages):
+        xs.append(x)
         chip(slide, x, y, nw, nh, lab, sub=sub, fill=fill, txt=txt, size=11,
-             sub_size=8.5)
-        centres.append(x + nw / 2)
+             sub_size=9)
         if i < len(stages) - 1:
             chevron(slide, x + nw + 0.04, y + nh / 2 - 0.18, gap - 0.08, 0.36,
                     fill=GREEN)
         x += nw + gap
+    if active_idx is not None:
+        ax = xs[active_idx]
+        # LIME emphasis rule across the active node + a caret tag above it
+        draw_rect(slide, ax, y - 0.02, nw, 0.1, fill=LIME)
+        tag = dia_rect(slide, ax + nw / 2 - 0.95, y - 0.42, 1.9, 0.32, fill=LIME,
+                       shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+        draw_label(tag, [[(str(active_label or "active here"),
+                           {"size": 9, "bold": True, "color": GREEN_DK})]],
+                   align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, margins=0.04)
     # GUARDRAILS band
     dia_text(slide, 0.7, 4.0, 12.0, 0.3,
              [[("GUARDRAILS", {"size": 9, "bold": True, "color": GREEN_DK})]])
@@ -963,13 +997,13 @@ def dia_two_economies_one_spine(slide, caption=None):
          size=11, shape=MSO_SHAPE.RECTANGLE, align=PP_ALIGN.LEFT)
     ins = ["Scheme adjudication", "DSP / formulary", "Co-pay surfaced",
            "Courier / collect"]
-    sw = 1.55
+    sw = 1.72
     for i, lab in enumerate(ins):
-        chip(slide, 0.95 + i * (sw + 0.25), 2.92, sw, 0.42, lab, fill=WHITE,
-             txt=GREEN_DK, size=8.5)
+        chip(slide, 0.95 + i * (sw + 0.18), 2.9, sw, 0.46, lab, fill=WHITE,
+             txt=GREEN_DK, size=9)
         if i:
-            connector(slide, 0.95 + i * (sw + 0.25) - 0.23, 3.13,
-                      0.95 + i * (sw + 0.25) - 0.02, 3.13, color=GREEN, width=1.0)
+            connector(slide, 0.95 + i * (sw + 0.18) - 0.17, 3.13,
+                      0.95 + i * (sw + 0.18) - 0.02, 3.13, color=GREEN, width=1.0)
     # Bottom track — CASH (equal weight)
     dia_rect(slide, 0.7, 3.7, 8.4, 1.0, fill=MINT_MD, line=GREEN_DK, line_w=Pt(1.25),
              shape=MSO_SHAPE.RECTANGLE)
@@ -978,11 +1012,11 @@ def dia_two_economies_one_spine(slide, caption=None):
     cash = ["SEP + dispensing fee", "CCMDD / retail pickup", "Price-sensitive choice",
             "Collect / delivery"]
     for i, lab in enumerate(cash):
-        chip(slide, 0.95 + i * (sw + 0.25), 4.22, sw, 0.42, lab, fill=WHITE,
-             txt=GREEN_DK, size=8.5)
+        chip(slide, 0.95 + i * (sw + 0.18), 4.2, sw, 0.46, lab, fill=WHITE,
+             txt=GREEN_DK, size=9)
         if i:
-            connector(slide, 0.95 + i * (sw + 0.25) - 0.23, 4.43,
-                      0.95 + i * (sw + 0.25) - 0.02, 4.43, color=GREEN_DK, width=1.0)
+            connector(slide, 0.95 + i * (sw + 0.18) - 0.17, 4.43,
+                      0.95 + i * (sw + 0.18) - 0.02, 4.43, color=GREEN_DK, width=1.0)
     # convergence arrows into spine
     connector(slide, 9.1, 2.9, 9.6, 3.3, color=GREEN, width=1.75)
     connector(slide, 9.1, 4.2, 9.6, 3.8, color=GREEN, width=1.75)
@@ -1022,16 +1056,16 @@ def dia_fragmentation_vs_orchestration(slide, caption=None):
     c = connector(slide, 5.4, 4.2, 4.6, 4.75, color=LINE, width=0.9, arrow=False)
     _line_xml(c, LINE, 0.9, dashed=True)
     # friction micro-labels
-    fr = [("re-enter details", 1.7, 3.2), ("chase status", 3.4, 3.55),
-          ("call to check", 3.55, 4.45), ("surprise co-pay", 1.45, 4.55)]
+    fr = [("re-enter details", 1.62, 3.18), ("chase status", 3.32, 3.5),
+          ("call to check", 3.5, 4.5), ("surprise co-pay", 1.35, 4.58)]
     for lab, fx, fy in fr:
-        dia_text(slide, fx, fy, 1.7, 0.24,
-                 [[(lab, {"size": 7.5, "italic": True, "color": SLATE})]])
+        dia_text(slide, fx, fy, 1.85, 0.24,
+                 [[(lab, {"size": 9, "italic": True, "color": SLATE})]])
     # ---- CENTRE divider ----
     draw_rect(slide, 6.45, 2.45, 0.014, 3.0, fill=LINE)
     chevron(slide, 6.2, 3.75, 0.5, 0.42, fill=GREEN)
-    dia_text(slide, 5.85, 4.2, 1.3, 0.4,
-             [[("absorb the coordination", {"size": 7.5, "italic": True,
+    dia_text(slide, 5.7, 4.2, 1.55, 0.5,
+             [[("absorb the coordination", {"size": 9, "italic": True,
                                             "color": GREEN_DK})]],
              align=PP_ALIGN.CENTER)
     # ---- RIGHT HALF (accented, clean) ----
@@ -1043,14 +1077,14 @@ def dia_fragmentation_vs_orchestration(slide, caption=None):
     draw_label(orch, [[("Treatment Orchestration", {"size": 12, "bold": True,
                                                     "color": WHITE})],
                       [("one system absorbs the coordination",
-                        {"size": 8.5, "color": MINT})]],
+                        {"size": 9, "color": MINT})]],
                align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, margins=0.1)
     # five demoted silos in a neat row
     row_silos = ["Prescriber", "Scheme", "Pharmacy", "Stock", "Delivery"]
     rsx, rsw = 6.7, 1.12
     for i, lab in enumerate(row_silos):
         x = rsx + i * (rsw + 0.05)
-        chip(slide, x, 4.35, rsw, 0.5, lab, fill=MINT, txt=GREEN_DK, size=8.5)
+        chip(slide, x, 4.35, rsw, 0.5, lab, fill=MINT, txt=GREEN_DK, size=9)
         connector(slide, x + rsw / 2, 4.35, x + rsw / 2, 3.95, color=GREEN,
                   width=1.0)
     # patient + phone mock
@@ -1064,12 +1098,12 @@ def dia_fragmentation_vs_orchestration(slide, caption=None):
                       [("Next: Tap to confirm delivery", {"size": 9,
                                                           "color": GREEN_DK})]],
                align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.MIDDLE, margins=0.12)
-    dia_text(slide, 6.7, 5.85, 6.0, 0.26,
+    dia_text(slide, 6.7, 5.82, 6.0, 0.3,
              [[("Patient sees ONE state + ONE next step.",
-                {"size": 8.5, "bold": True, "color": GREEN_DK})]])
-    dia_text(slide, 0.6, 5.85, 6.0, 0.26,
+                {"size": 9, "bold": True, "color": GREEN_DK})]])
+    dia_text(slide, 0.6, 5.82, 6.0, 0.3,
              [[(caption or "S6 — from dispensing a script to orchestrating the whole "
-                "treatment journey.", {"size": 8.5, "italic": True,
+                "treatment journey.", {"size": 9, "italic": True,
                                        "color": SLATE})]])
 
 
@@ -1086,12 +1120,12 @@ def dia_variables_upfront(slide, caption=None):
         ("Timing / ETA", "when can I have it?", hcx - 3.0, 4.5),
         ("Alternatives", "generic / substitute options", hcx - 3.0, 2.9),
     ]
-    sw, sh = 2.1, 0.72
+    sw, sh = 2.5, 0.82
     for lab, sub, scx, scy in sats:
         connector(slide, hcx, hcy, scx, scy + sh / 2, color=GREEN, width=1.25,
                   arrow=False)
         chip(slide, scx - sw / 2, scy, sw, sh, lab, sub=sub, fill=MINT,
-             txt=GREEN_DK, size=10, sub_size=8)
+             txt=GREEN_DK, size=10, sub_size=9)
     dia_caption(slide, caption or ("Money is the sharpest case, not the whole of it — "
                 "never spring a surprise at the till."), y=5.65)
 
@@ -1173,9 +1207,9 @@ def dia_pattern_pillar_map(slide, caption=None):
              align=PP_ALIGN.LEFT)
         rcent[i + 1] = (rx, y + h / 2)
         if is_u5:
-            tag = draw_rect(slide, rx + w - 1.05, y + 0.09, 0.95, 0.32, fill=LIME,
+            tag = draw_rect(slide, rx + w - 1.18, y + 0.07, 1.08, 0.36, fill=LIME,
                             shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-            draw_label(tag, [[("SA-specific", {"size": 7.5, "bold": True,
+            draw_label(tag, [[("SA-specific", {"size": 9, "bold": True,
                                                "color": GREEN_DK})]],
                        align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, margins=0.02)
     # connectors: (pattern# -> pillar#); 4->2 is the exemplar (GREEN_DK, thicker)
@@ -1321,6 +1355,50 @@ def _visual_of(block):
     return s
 
 
+def _render_diagram_block(slide, visual, block, caption=None):
+    """Render a native dia:<id> into the FULL diagram canvas (s == 1.0, so labels
+    keep their authored sizes — the legible reference, same as slides 18/30).
+    Honours an optional per-slide `diagram_active` field for diagrams that take an
+    active-stage highlight (currently dia:teleconsult-loop, N2)."""
+    key = str(visual).strip()[4:]
+    active = _g(block, "diagram_active")
+    if key == "teleconsult-loop" and active:
+        try:
+            dia_teleconsult_loop(slide, caption=caption, active=str(active))
+            return True
+        except Exception as exc:
+            sys.stderr.write(f"[warn] diagram '{visual}' failed: {exc}\n")
+            return False
+    return render_diagram(slide, visual, caption=caption)
+
+
+def _emit_diagram_slide(prs, block, visual, title, takeaway):
+    """Emit a DEDICATED follow-on slide carrying a native diagram full-canvas.
+
+    B1 fix: a `dia:` paired with a text column (pillar / market-profile) used to be
+    squeezed into a narrow side region, collapsing labels to ~4pt. Instead the
+    parent slide keeps the text and the diagram gets its own full-width canvas
+    here, so every label renders at its authored size (>= the 9pt floor), exactly
+    like the proven full-canvas diagrams on slides 18 and 30."""
+    slide = new_slide(prs)
+    # The so-what band is one strip (~2 lines). The diagram below carries the
+    # detail in its own caption, so keep the band's takeaway from overflowing by
+    # softly trimming a very long takeaway at a sentence/clause boundary.
+    tk = str(takeaway or "")
+    if len(tk) > 200:
+        cut = tk.rfind(" — ", 0, 200)
+        if cut < 80:
+            cut = tk.rfind(", ", 0, 200)
+        if cut < 80:
+            cut = tk.rfind(" ", 0, 197)
+        tk = (tk[:cut].rstrip(" ,—") + " …") if cut > 0 else (tk[:197] + "…")
+    content_chrome(slide, _g(block, "kicker", ""), title, tk,
+                   cite=_evidence_line(_g(block, "evidence")))
+    _render_diagram_block(slide, visual, block, caption=_g(block, "caption"))
+    _flag_strip(slide, _g(block, "flags"))
+    return slide
+
+
 def layout_cover(prs, block):
     slide = new_slide(prs)
     _set_bg(slide, WHITE)
@@ -1393,7 +1471,7 @@ def layout_theme(prs, block):
     visual = _visual_of(block)
     if is_dia(visual):
         # Native diagram owns the full canvas; bullets are summarised by the so-what.
-        render_diagram(slide, visual)
+        _render_diagram_block(slide, visual, block)
     elif visual:
         colw = Inches(6.7)
         _bullet_block(slide, Inches(0.6), top, colw - Inches(0.2), body,
@@ -1433,18 +1511,23 @@ def layout_market_profile(prs, block):
         add_text(slide, lx + Inches(0.28), yy + Inches(0.36), lw - Inches(0.5), Inches(0.32),
                  [[(value, {"size": 13, "bold": True, "color": GREEN_DK})]])
         yy += Inches(0.82)
-    # Right: body, OR a native diagram (drawn into the right region).
+    # Right: body, OR (for a native diagram) the loop is emitted on its own slide.
     rx = Inches(6.25)
     rw = Inches(6.48)
     body = _g(block, "body", []) or []
     visual = _visual_of(block)
     if is_dia(visual):
-        # Facts stay on the left; the diagram fills the right region. Body bullets
-        # are summarised by the so-what band (kept terse for the box).
+        # B1: do NOT cram the loop into a narrow side region (it collapsed labels
+        # to ~4pt). Facts stay left, body bullets fill the right column here, and
+        # the diagram gets its own full-width slide next.
         add_text(slide, rx, top, rw, Inches(0.3),
                  [[("HOW THE LOOP RUNS", {"size": 11, "bold": True, "color": GREEN})]])
-        with diagram_region(6.25, 2.85, 6.48, 3.1):
-            render_diagram(slide, visual)
+        _bullet_block(slide, rx, top + Inches(0.4), rw, body, size=11.5, gap=0.62)
+        _flag_strip(slide, _g(block, "flags"))
+        _maybe_notes(slide, block)
+        dtitle = f"{_g(block, 'title', 'The loop')} — how the loop runs"
+        _emit_diagram_slide(prs, block, visual, dtitle, _g(block, "so_what", ""))
+        return slide
     elif visual:
         add_text(slide, rx, top, rw, Inches(0.3),
                  [[("WHAT IT PROVES", {"size": 11, "bold": True, "color": GREEN})]])
@@ -1516,7 +1599,10 @@ def layout_pillar(prs, block):
                    _g(block, "what", ""), cite=_evidence_line(_g(block, "evidence")))
     top = Inches(2.45)
     visual = _visual_of(block)
-    colw = Inches(6.6) if visual else Inches(12.13)
+    dia = is_dia(visual)
+    # B1: a native diagram no longer shares the slide as a cramped side box; the
+    # text uses the full width and the diagram is emitted on its own slide next.
+    colw = Inches(6.6) if (visual and not dia) else Inches(12.13)
     # WHY card
     why = _g(block, "why", "")
     add_text(slide, Inches(0.6), top, colw, Inches(0.3),
@@ -1532,9 +1618,18 @@ def layout_pillar(prs, block):
         shape_text(band, [[("In practice:  ", {"size": 12, "bold": True, "color": GREEN_DK}),
                            (example, {"size": 12, "color": INK})]],
                    align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.MIDDLE, margins=0.2)
-    if is_dia(visual):
-        with diagram_region(7.3, 2.45, 5.43, 3.55):
-            render_diagram(slide, visual)
+    if dia:
+        _flag_strip(slide, _g(block, "flags"))
+        _maybe_notes(slide, block)
+        # Clean title for the dedicated diagram slide: prefer the block's real
+        # `title` (or `name`), avoiding the slug-prefixed pillar header.
+        base = _g(block, "title") or _g(block, "name") or name
+        dtitle = f"{base} — the pattern"
+        # Takeaway for the diagram slide: prefer the concise `so_what`/`what`
+        # (not the longer `why`, which can overflow the one-line so-what band).
+        dtake = _g(block, "so_what", "") or _g(block, "what", "")
+        _emit_diagram_slide(prs, block, visual, dtitle, dtake)
+        return slide
     elif visual:
         _render_visual(slide, visual, Inches(7.45), top, Inches(5.3), Inches(4.0),
                        caption=None)

@@ -18,6 +18,7 @@ The single navigable index for this ground-truth vault. **New here? Read
 
 ## 🧭 Start with the design kit (the actionable layer)
 - [[design-kit/_design-kit-index|Design Kit — index]]
+- 🎯 **For leadership** → [deliverables/00-scripting-strategy-deck.pptx](deliverables/00-scripting-strategy-deck.pptx) — Executive Scripting Strategy deck: an insight-led synthesis of where pharmacy is heading, what leading markets/firms do, what's uniquely SA, and the strategic opportunities (incl. treatment orchestration). PowerPoint; export a PDF via LibreOffice/PowerPoint.
 - **Worked future-state exemplars** (proof-of-concept, built from this vault):
   - 💠 [[design-kit/journeys/to-be-blueprint-chronic-insured|To-be blueprint — the self-running repeat (Nomvula, insured chronic)]]
   - 💠 [[design-kit/journeys/to-be-journey-cash-acute|To-be journey — fast & transparent (Thabo, cash-pay acute)]]

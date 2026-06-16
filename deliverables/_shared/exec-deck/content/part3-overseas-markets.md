@@ -60,6 +60,7 @@ body:
   - Telemedicine Practice Guidelines 2020 are the legal hinge that let a doctor issue a dispensable e-prescription.
 evidence: [wiki/global-benchmarks/india-pharmeasy-apollo-tata1mg, src-gbl-india-epharmacy, src-gbl-apollo-247-results]
 visual: dia:teleconsult-loop
+diagram_active: order
 flags: []
 notes: "~75k/day and the HealthCo profit are listed-company disclosures (A-tier); ~31% share and ~7,000 stores are from the e-pharmacy source. 19-min delivery is density-dependent and does NOT transfer across SA geography — borrow the store-as-node mechanism, not the speed promise. PharmEasy = the explicit anti-pattern."
 
@@ -80,6 +81,7 @@ body:
   - Platforms route an online order to the nearest physical pharmacy for fast O2O delivery — fits dense store estates.
 evidence: [wiki/global-benchmarks/china-pingan-alibaba-jdhealth, src-gbl-china-internet-hospitals]
 visual: dia:teleconsult-loop
+diagram_active: pharmacist
 flags: []
 notes: "Borrow the loop + the guardrails; reject the platform-scale super-apps and the state-directed insurance plumbing (NHSA wiring by fiat has no SA analogue). Internet-hospital-on-a-physical-hospital is a China-specific construct; SA's HPCSA telehealth rules differ."
 
@@ -95,5 +97,6 @@ body:
   - Implication for SA — AI may triage and intake; a licensed clinician diagnoses and signs; the pharmacist reviews.
 evidence: [wiki/global-benchmarks/china-pingan-alibaba-jdhealth, src-gbl-china-eprescription-policy]
 visual: dia:teleconsult-loop
+diagram_active: ai-triage
 flags: []
 notes: "Source-confirmed verbatim — NHC supervision rules Feb 2022; reaffirmed Beijing draft Aug 2023. This is the cleanest, most defensible AI/safety guardrail in the deck — AI in front of a human, never instead of one. dia:teleconsult-loop carries the AI-triage to human to pharmacist guardrail visually."

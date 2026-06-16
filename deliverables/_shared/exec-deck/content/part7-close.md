@@ -12,6 +12,7 @@ body:
   - "🔮 Needs reform: pharmacist-initiated renewal · scheme claim-continuity automation · locker dispensing of scheduled meds · SAPC clarity on remote verification."
   - "⚠️ Verify before building: vendor-reported adherence/automation figures (Accenture ~50% lift, ~70% Danish robots); insured % base/year; NHI status (in court)."
   - "Open questions: complaint denominators (rates, not just rankings); SA identity/consent model for an e-script; will NHI adopt FHIR? Build internal EMPI/FHIR regardless."
+evidence: [wiki/concepts/chronic-medicine-flywheel, wiki/dischem/pharmacy-complaints-pain-points, wiki/digital-transformation/interoperability-identity-records]
 flags: [reform, unverified]
 notes: Lead with the four sharpening bets, land on S6 as the strategic pivot, then be explicit about reform-gated and unverified items. Honesty is the point of this slide.
 

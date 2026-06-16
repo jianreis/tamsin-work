@@ -20,6 +20,7 @@ cards:
   - {id: S4, name: "Chronic-medicine flywheel = retention engine", oneLiner: "Proactive managed chronic repeats are the recurring relationship that compounds loyalty and adherence."}
   - {id: S5, name: "Pharmacist at top-of-licence; automate the toil", oneLiner: "Automation, central-fill and telepharmacy absorb mechanics so pharmacists do the clinical, trust-building work."}
   - {id: S6, name: "From prescription fulfilment to treatment orchestration", oneLiner: "Absorb the coordination patients do today — across prescriber, pharmacy, scheme, stock and delivery — into one system."}
+evidence: [deliverables/_shared/pillars.md]
 visual: dia:strategic-pillars-grid
 notes: S6 is the synthesis the other five point at; flag it visually as the hero on the grid.
 
@@ -89,6 +90,7 @@ id: pillar-s6-diagram
 kicker: S6 · From fulfilment to orchestration — THE HERO
 title: Today the patient is the integration layer between five silos that don't talk
 so_what: The patient personally carries the coordination tax across prescriber, pharmacy, scheme, stock and delivery — and the strategic move is to absorb that complexity into the system instead.
+evidence: [wiki/dischem/dischem-rx-current-journey, wiki/dischem/pharmacy-complaints-pain-points]
 visual: dia:fragmentation-vs-orchestration
 caption: "Left — fragmentation: prescriber (diagnose/prescribe; at script expiry the journey breaks back out to the prescriber with no orchestration) → pharmacy (opt-in reorder loop) → scheme (PMB registration + claim adjudication) → stock → delivery, with no single owner of a stuck repeat. The patient absorbs the delays, uncertainty, repeat visits, stock surprises, funding shocks and admin. Right — orchestration: one system owns the hand-offs end-to-end; the patient sees one continuous journey."
 notes: This is the deck's pivot. Builder: render the left as five disconnected silos with the patient shuttling between them; right as one spine with a single owner. Quotes "breaks back out to the prescriber with no orchestration" and "no single owner of a stuck repeat" are verbatim from the vault.
