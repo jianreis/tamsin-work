@@ -3,7 +3,7 @@ type: meta
 title: "Canonical pillars — strategic + UX (single source of truth)"
 status: reviewed
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-16"
 owner: report-agent
 consumed_by: ["01-research-report.html", "02-asis-blueprint-journey.html", "03-tobe-close-the-gap.html", "04-tobe-aspirational.html"]
 ---
@@ -18,14 +18,14 @@ consumed_by: ["01-research-report.html", "02-asis-blueprint-journey.html", "03-t
 > `wiki/ux-service-design/consultancy-pharmacy-research.md`,
 > `wiki/global-benchmarks/patterns-to-borrow-and-cautions.md`).
 
-The set is two layers. **Strategic pillars (S1–S5)** answer *why build this and what
+The set is two layers. **Strategic pillars (S1–S6)** answer *why build this and what
 business it is* — the "store of the future" operating-model bets. **UX pillars
 (U1–U7)** answer *how the experience must behave* at every touchpoint — the design
 constitution. A good blueprint step is defensible from at least one S and one U.
 
 ---
 
-## Strategic pillars (S1–S5)
+## Strategic pillars (S1–S6)
 
 ### S1 — Serve both economies on one spine
 - **id:** S1
@@ -57,6 +57,12 @@ constitution. A good blueprint step is defensible from at least one S and one U.
 - **oneLiner:** Use automation, central-fill and telepharmacy to absorb dispensing mechanics so pharmacists do counselling and clinical work — the human moments that build trust and the front door's value.
 - **sources:** `wiki/ux-service-design/consultancy-pharmacy-research` (Deloitte/McKinsey/EY, IDEO "pharmacist forward"), `wiki/digital-transformation/telepharmacy-and-omnichannel`, `design-kit/templates/future-state-principles` (#4)
 
+### S6 — From prescription fulfilment to treatment orchestration
+- **id:** S6
+- **type:** strategic
+- **oneLiner:** Today the patient is forced to coordinate across prescriber, pharmacy, scheme, stock and delivery; the opportunity is to absorb that coordination into one system — shifting from dispensing a script to orchestrating the whole treatment journey.
+- **sources:** `wiki/dischem/dischem-rx-current-journey`, `wiki/dischem/pharmacy-complaints-pain-points`, `wiki/concepts/omnichannel-fulfilment`, `wiki/digital-transformation/interoperability-identity-records`, `wiki/concepts/chronic-medicine-flywheel`
+
 ---
 
 ## UX pillars (U1–U7)
@@ -73,11 +79,11 @@ constitution. A good blueprint step is defensible from at least one S and one U.
 - **oneLiner:** Honest real-time status at every step (received → validated → funded → ready → on the way); the silent backstage wait and unexplained rejection are the primary pains to kill.
 - **sources:** `design-kit/templates/future-state-principles` (#5), `wiki/ux-service-design/healthcare-service-design-patterns` (transparency), `wiki/global-benchmarks/patterns-to-borrow-and-cautions` (#4 tracking)
 
-### U3 — Make money legible, early, always
+### U3 — Give me all the variables upfront
 - **id:** U3
 - **type:** ux
-- **oneLiner:** Show price before commitment (SEP + dispensing fee), apply scheme benefits and surface co-pays before the till, offer cash/EFT/wallet — never spring a cost shock.
-- **sources:** `wiki/sa-regulatory/sep-dispensing-fee`, `wiki/medical-schemes/realtime-claims-switching`, `wiki/consumer-context/two-economy-affordability`, `wiki/global-benchmarks/patterns-to-borrow-and-cautions` (#11), `design-kit/templates/future-state-principles` (#3)
+- **oneLiner:** Surface everything that materially affects the decision before commitment — cost, funding/cover, stock availability, timing/ETA, and alternatives — never spring a surprise. (Money is the sharpest case, not the whole of it.)
+- **sources:** `wiki/sa-regulatory/sep-dispensing-fee`, `wiki/medical-schemes/realtime-claims-switching`, `wiki/consumer-context/two-economy-affordability`, `wiki/global-benchmarks/patterns-to-borrow-and-cautions` (#11), `design-kit/templates/future-state-principles` (#3), `wiki/consumer-context/last-mile-addressing-logistics`, `wiki/medical-schemes/dsp-formularies-copayments`
 
 ### U4 — Design for graceful failure (always a human fallback)
 - **id:** U4
@@ -114,9 +120,10 @@ constitution. A good blueprint step is defensible from at least one S and one U.
 | S3 | strategic | Compete on service, not price |
 | S4 | strategic | Chronic-medicine flywheel = retention engine |
 | S5 | strategic | Pharmacist at top-of-licence; automate the toil |
+| S6 | strategic | From prescription fulfilment to treatment orchestration |
 | U1 | ux | Channel ladder: WhatsApp-first & data-frugal |
 | U2 | ux | Never leave them guessing (status & transparency) |
-| U3 | ux | Make money legible, early, always |
+| U3 | ux | Give me all the variables upfront |
 | U4 | ux | Design for graceful failure |
 | U5 | ux | Dignity, privacy & language by default |
 | U6 | ux | Reduce the journey, don't just digitise it |
@@ -130,9 +137,10 @@ const PILLARS = [
   {id:"S3", type:"strategic", name:"Compete on service, not price", oneLiner:"SEP + capped dispensing fee fix the price; the durable differentiator is the experience around the drug."},
   {id:"S4", type:"strategic", name:"Chronic-medicine flywheel = retention engine", oneLiner:"Proactive managed chronic repeats are the recurring relationship that compounds loyalty and adherence."},
   {id:"S5", type:"strategic", name:"Pharmacist at top-of-licence; automate the toil", oneLiner:"Automation/central-fill/telepharmacy absorb mechanics so pharmacists do the clinical, trust-building work."},
+  {id:"S6", type:"strategic", name:"From prescription fulfilment to treatment orchestration", oneLiner:"Today the patient coordinates across prescriber, pharmacy, scheme, stock and delivery; absorb that coordination into one system — from dispensing a script to orchestrating the whole treatment journey."},
   {id:"U1", type:"ux", name:"Channel ladder: WhatsApp-first & data-frugal", oneLiner:"WhatsApp/USSD/SMS first, app as enhancement; low-data, async, resumable, idempotent by default."},
   {id:"U2", type:"ux", name:"Never leave them guessing", oneLiner:"Honest real-time status at every step; the silent wait and unexplained rejection are the primary pains."},
-  {id:"U3", type:"ux", name:"Make money legible, early, always", oneLiner:"Price + cover + co-pay shown before the till; cash/EFT/wallet supported; never a cost shock."},
+  {id:"U3", type:"ux", name:"Give me all the variables upfront", oneLiner:"Surface everything that materially affects the decision before commitment — cost, cover, stock, timing/ETA, alternatives; never spring a surprise (money is the sharpest case, not the whole of it)."},
   {id:"U4", type:"ux", name:"Design for graceful failure", oneLiner:"Plain-language recovery, never a dead end, always a route to a pharmacist."},
   {id:"U5", type:"ux", name:"Dignity, privacy & language by default", oneLiner:"Stigma-aware, discreet, multilingual, POPIA-grade consent; caregivers/proxies are first-class users."},
   {id:"U6", type:"ux", name:"Reduce the journey, don't just digitise it", oneLiner:"Eliminate steps and re-keying; one profile across channels; measure friction removed, not features shipped."},
