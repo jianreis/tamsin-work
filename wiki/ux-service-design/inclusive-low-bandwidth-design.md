@@ -7,7 +7,7 @@ confidence: high
 tags: [domain/ux, domain/consumer, topic/accessibility, region/za, journey/submit, journey/collect]
 sources: [src-ux-wcag-older-users-accessibility, src-ux-sa-data-cost-digital-divide, src-ux-momconnect-ussd-whatsapp, src-ux-sa-whatsapp-conversational-commerce, src-ux-ahrq-health-literacy-teachback, src-ux-nhs-govuk-design-principles, src-ux-east-behavioural-insights]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Inclusive & low-bandwidth design for South Africa
@@ -126,17 +126,17 @@ to **WCAG 2.x AA** (Perceivable, Operable, Understandable, Robust):
   [[src-ux-wcag-older-users-accessibility]].
 - Ship **plain-language, pictogram-supported, multilingual** content; use
   teach-back for critical instructions [[src-ux-ahrq-health-literacy-teachback]].
-- Use **EAST "easy"** ruthlessly — every removed step or megabyte raises uptake
+- Use **EAST "easy"** ruthlessly, since every removed step or megabyte raises uptake
   among exactly the users hardest to reach [[src-ux-east-behavioural-insights]].
 - Pursue **zero-rating** so cost never blocks a refill.
 
 ## Open questions
-- Current operator **zero-rating** options for a Dis-Chem health service — verify;
+- Current operator **zero-rating** options for a Dis-Chem health service: verify;
   log to [[meta/open-questions]].
-- Which languages to prioritise for the target catchment — needs
+- Which languages to prioritise for the target catchment: needs
   [[wiki/consumer-context/_index|consumer-context]] data.
 - USSD session/cost economics for a commercial (non-government) health service in
-  SA — see [[wiki/digital-transformation/_index]].
+  SA: see [[wiki/digital-transformation/_index]].
 
 ## See also
 - [[pharmacy-ux-patterns]] · [[healthcare-service-design-patterns]] ·

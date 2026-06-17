@@ -7,7 +7,7 @@ confidence: medium
 tags: [domain/dischem, domain/consumer, domain/ux, journey/submit, journey/collect, journey/deliver, journey/dispense, journey/adhere, journey/refill, topic/last-mile, topic/adherence, topic/trust-safety, region/za]
 sources: [src-dc-store-future-interviews-2026]
 created: "2026-06-14"
-updated: "2026-06-14"
+updated: "2026-06-17"
 ---
 
 # Store of the Future — the customer voice (SOTF interview synthesis)
@@ -159,18 +159,18 @@ All from [[src-dc-store-future-interviews-2026]].
 
 ## Open questions
 - ⚠️ The study did not probe **VALIDATE / FUND / PAY** moments (claims,
-  co-payment, money-legibility / **U3**) — customer sentiment on the funding step
+  co-payment, money-legibility / **U3**), so customer sentiment on the funding step
   is unmeasured here; triangulate with [[wiki/dischem/dischem-rx-current-journey]]
   co-pay pain points.
-- ⚠️ "Phone notifications / message" was recorded **channel-agnostically** — does
+- ⚠️ "Phone notifications / message" was recorded **channel-agnostically**: does
   the preference resolve to **WhatsApp specifically** (per
   [[wiki/consumer-context/digital-access-and-whatsapp]]) or SMS/app? Needs
   channel-level validation.
-- ⚠️ n=12 qualitative — the X/12 splits are **directional**. Validate magnitudes
+- ⚠️ n=12 qualitative, so the X/12 splits are **directional**. Validate magnitudes
   (esp. ticketing, check-in, managed-delivery openness) before setting
   operational thresholds (grace-period length, window widths).
 - ⚠️ Skew toward **GP/metro (Melrose Arch pilot context)** and pre-packed-service
-  users (5/12) — under-weights rural / low-data / cash customers; reconcile with
+  users (5/12) under-weights rural / low-data / cash customers; reconcile with
   [[wiki/consumer-context/last-mile-addressing-logistics]] and
   [[wiki/consumer-context/two-economy-affordability]].
 - How should **missed-turn recovery** be operationalised (grace period length,

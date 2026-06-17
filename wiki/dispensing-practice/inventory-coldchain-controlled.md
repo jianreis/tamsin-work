@@ -16,11 +16,11 @@ The clinical front-of-house only works if the stock behind it is **correct,
 potent, in-date, secure and traceable**. This page covers three operational
 pillars that the dispensing workflow depends on: stock control (FEFO), cold
 chain for refrigerated lines and vaccines, and the handling of controlled
-(scheduled) substances — each with hard SA regulatory edges.
+(scheduled) substances, each with hard SA regulatory edges.
 
 ## Stock control: FEFO and expiry management
 
-Best practice for medicines is **FEFO — First-Expiry-First-Out** — not merely
+Best practice for medicines is **FEFO** (First-Expiry-First-Out), not merely
 FIFO: stock is issued in order of **expiry date**, so the soonest-to-expire pack
 goes first regardless of when it arrived. GPP requires **regular monitoring of
 the medicines inventory, including periodic inspection for expiry dates and
