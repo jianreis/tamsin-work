@@ -27,10 +27,10 @@ in their clinical system; it is sent to the **NHS Spine**; a dispenser pulls it
 down. The patient gets the script to a pharmacy in one of two ways
 [[src-gbl-nhs-eps]]:
 
-- **Nomination** — the patient nominates one community/internet pharmacy in
+- **Nomination**: the patient nominates one community/internet pharmacy in
   advance, and all their scripts route there automatically. Prescribers are
   **barred from steering** patients to a particular pharmacy (anti-conflict).
-- **Token** — a paper token (FP10SS) with a **scannable barcode** that pulls the
+- **Token**: a paper token (FP10SS) with a **scannable barcode** that pulls the
   electronic script down at *any* pharmacy.
 
 **Over 95% of all prescriptions in England are now produced electronically**, after
@@ -138,6 +138,6 @@ pharmacist-initiated-therapy debates [[wiki/sa-regulatory/_index]].
 ## Open questions
 
 - Pharmacy2U's "1.6m items/month, 750k patients" is company-stated and undated
-  precisely — treat as directional.
+  precisely; treat as directional.
 - Pharmacy First uptake ran below target; the durability of the
   pharmacist-front-door model under funding pressure is unresolved.

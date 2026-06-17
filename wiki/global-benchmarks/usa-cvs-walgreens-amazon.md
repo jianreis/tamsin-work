@@ -37,7 +37,7 @@ generics by hundreds-to-thousands of percent, generating **>$7.3bn** above
 acquisition cost (2017–2022), and sued them in September 2024 over insulin
 pricing [[src-gbl-ftc-pbm-report]]. The lesson for SA: opaque rebate-driven
 middle layers destroy price legibility. SA's **single exit price (SEP)** regime
-and capped dispensing fee already avoid this — protect that.
+and capped dispensing fee already avoid this, so protect that.
 
 ## CVS Health / Caremark — auto-refill as default
 
@@ -160,7 +160,7 @@ Schedule 5+ scripts [[wiki/sa-regulatory/_index]].)
 
 ## Open questions
 
-- Amazon Pharmacy's total Rx volume/revenue is not publicly broken out — scale
+- Amazon Pharmacy's total Rx volume/revenue is not publicly broken out; scale
   is inferred, not confirmed.
 - Capsule's current (2025–26) city coverage is poorly documented; treat its
   same-day model as proven-but-fragile rather than steady-state.

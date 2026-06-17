@@ -127,7 +127,7 @@ scope debates [[wiki/sa-regulatory/_index]].)
   [[wiki/consumer-context/_index]].
 
 - **Lax data governance.** Pharmacy2U's 2015 data-selling fine and MediSecure's 2024
-  breach are anti-patterns under **POPIA** — consent must be explicit, scoped,
+  breach are anti-patterns under **POPIA**: consent must be explicit, scoped,
   revocable, and never monetised [[src-gbl-pharmacy2u-lloydsdirect]],
   [[src-gbl-australia-escript]], [[wiki/sa-regulatory/_index]].
 
@@ -155,7 +155,7 @@ scope debates [[wiki/sa-regulatory/_index]].)
 ## Open questions
 
 - The SA-specific identity/consent model for an e-script (vs Australia's 100-points-
-  of-ID) is unresolved — needs a local design [[wiki/sa-regulatory/_index]].
+  of-ID) is unresolved and needs a local design [[wiki/sa-regulatory/_index]].
 - Whether SA should build a single national e-Rx rail or a federated/standards-based
   one (more outage-tolerant) is a key open architectural decision
   [[wiki/digital-transformation/_index]].

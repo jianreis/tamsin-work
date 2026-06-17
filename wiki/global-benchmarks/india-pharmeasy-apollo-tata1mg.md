@@ -123,5 +123,5 @@ lobby** is a near-exact template for SA's SAHPRA/Pharmacy-Council environment
 
 - Indian "registered user" counts are company marketing claims (registrations ≠
   active buyers); only Apollo's listed disclosures are firm.
-- Whether India ever finalises e-pharmacy rules — and in which direction (enable vs
-  restrict) — is unresolved as of 2026.
+- Whether India ever finalises e-pharmacy rules, and in which direction (enable vs
+  restrict), is unresolved as of 2026.
