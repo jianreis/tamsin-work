@@ -13,7 +13,7 @@ updated: "2026-06-13"
 # Inclusive & low-bandwidth design for South Africa
 
 "**This is for everyone**" [[src-ux-nhs-govuk-design-principles]] is not a slogan
-in South Africa — it is the design problem. The scripting service must work for
+in South Africa, it is the design problem. The scripting service must work for
 an elderly chronic patient on a feature phone with R5 of prepaid airtime, in
 isiZulu, during load-shedding, as well as for an affluent smartphone user on
 fibre. This page sets out the accessibility and low-resource patterns that make

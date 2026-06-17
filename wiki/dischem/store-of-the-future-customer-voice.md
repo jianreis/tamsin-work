@@ -54,30 +54,30 @@ human).
 
 ## Desired future-state features (what excited them)
 
-- **Numbered ticketing** for in-store waiting — the **strongest consensus** (11/12).
+- **Numbered ticketing** for in-store waiting - the **strongest consensus** (11/12).
   Calmer, fairer, less mental load; frees them to move/browse
   [[src-dc-store-future-interviews-2026]].
-- **Booking ahead** for a visit (8/12) and for **collection** (7/12) — as a
+- **Booking ahead** for a visit (8/12) and for **collection** (7/12) - as a
   **risk-reduction** tool, to plan around work/family and avoid peak congestion,
   *provided it stays flexible*.
 - **Phone-based notifications** of turn/readiness (7/12 phone-only, +4/12
-  phone-plus-screen) — so they can **step away without losing their place**.
-- **Digital check-in (QR/kiosk)** on arrival to collect (8/12) — explicitly
+  phone-plus-screen) - so they can **step away without losing their place**.
+- **Digital check-in (QR/kiosk)** on arrival to collect (8/12) - explicitly
   signals *"I'm here,"* removes the awkward wait for eye-contact: *"At least they
   know I'm there."*
-- **Managed/ongoing delivery** for chronic/repeat meds (8/12 open) — to cut
+- **Managed/ongoing delivery** for chronic/repeat meds (8/12 open) - to cut
   monthly admin and "not have to remember refills."
-- **Hybrid medication instructions** — digital **alongside** printed labels
-  (9/12) — re-checkable later for dosage/side-effects.
+- **Hybrid medication instructions** - digital **alongside** printed labels
+  (9/12) - re-checkable later for dosage/side-effects.
 - **Pre-packed / organised doses** for complex or chronic regimens (7/12).
 - **Channel-choice remote support** (call/chat/message) for most questions
-  (8/12) — to avoid return trips and handle questions that arise later.
+  (8/12) - to avoid return trips and handle questions that arise later.
 
 ## What worried them (concerns & guardrails)
 
 - **Rigidity & penalties.** Booking and ticketing lose confidence the moment they
   feel rigid or the **consequence of missing a slot/turn is unclear**. 9/12 said
-  missing a turn **should not mean starting over** — they expect a **grace
+  missing a turn **should not mean starting over**, and they expect a **grace
   period, an obvious next step, and staff discretion**. Missing a turn is *"a
   normal, human mistake."* (UX **U4 graceful-failure**.)
 - **Invisible progress.** Confidence collapses when **place in queue / order

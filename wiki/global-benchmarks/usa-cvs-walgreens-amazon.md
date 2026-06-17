@@ -7,7 +7,7 @@ confidence: medium
 tags: [domain/global, region/global, journey/refill, journey/deliver, journey/pay, topic/adherence, topic/last-mile, topic/trust-safety, topic/e-prescription]
 sources: [src-gbl-ftc-pbm-report, src-gbl-amazon-pharmacy, src-gbl-costplus-drugs, src-gbl-walgreens-capsule, src-gbl-us-surescripts-eprescribing]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # USA — retail pharmacy, PBMs, and the new direct-to-patient entrants
@@ -144,11 +144,11 @@ Schedule 5+ scripts [[wiki/sa-regulatory/_index]].)
   schemes + DSPs + SEP do this job differently [[wiki/medical-schemes/_index]].
   Do not recreate formulary-rebate opacity.
 - **Insurance-driven pricing at the till.** US "price" is a function of plan
-  design; SA SEP makes the listed price the price — a strength to keep.
+  design; SA SEP makes the listed price the price, a strength to keep.
 - **Free dedicated same-day courier as a universal default** (Capsule). SA
   last-mile cost and addressing make this uneconomic outside dense metros
   [[wiki/consumer-context/_index]].
-- **Drone delivery at national scale** — regulatory and density assumptions don't
+- **Drone delivery at national scale**: regulatory and density assumptions don't
   hold in SA today (flag 🔮 requires-reform / future).
 
 ## See also
