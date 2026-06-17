@@ -7,7 +7,7 @@ confidence: high
 tags: [domain/ux, journey/adhere, journey/refill, topic/adherence, topic/chronic, topic/trust-safety]
 sources: [src-ux-jtbd-christensen-ulwick, src-ux-com-b-behaviour-change-wheel, src-ux-east-behavioural-insights, src-ux-implementation-intentions-gollwitzer, src-ux-text-reminder-adherence-meta, src-ux-sludge-thaler-sunstein]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # JTBD & behavioural design for medication uptake and adherence
@@ -140,10 +140,10 @@ pack so you see it?"
    concrete states in [[pharmacy-ux-patterns]].
 
 ## Open questions
-- SA-specific adherence-driver mix (cost vs forgetting vs stock) needs local data
-  — triangulate [[wiki/consumer-context/_index]] + [[wiki/medical-schemes/_index]];
+- SA-specific adherence-driver mix (cost vs forgetting vs stock) needs local data:
+  triangulate [[wiki/consumer-context/_index]] + [[wiki/medical-schemes/_index]];
   log to [[meta/punchlist]].
-- Ethical line for "opt-out" auto-refill under POPIA/consent — see
+- Ethical line for "opt-out" auto-refill under POPIA/consent: see
   [[healthcare-service-design-patterns]] and [[wiki/sa-regulatory/_index]].
 
 ## See also
