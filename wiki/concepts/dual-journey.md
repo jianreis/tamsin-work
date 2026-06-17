@@ -6,16 +6,16 @@ status: draft
 confidence: high
 tags: [concept, domain/consumer, domain/schemes, region/za, topic/chronic, topic/acute]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
-# The dual journey — designing for two South Africas at once
+# The dual journey - designing for two South Africas at once
 
 South Africa runs a **two-economy** healthcare system: only roughly **16%** of
-people belong to a medical scheme; the other **~84%** rely on the public sector
+people belong to a medical scheme, while the other **~84%** rely on the public sector
 or pay **cash** out of pocket ([[wiki/consumer-context/two-economy-affordability]],
-[[wiki/medical-schemes/cms-medical-schemes-overview]]). This split — not age,
-device, or geography — is **the single most load-bearing design variable** in the
+[[wiki/medical-schemes/cms-medical-schemes-overview]]). This split, not age,
+device, or geography, is **the single most decisive design variable** in the
 prescription experience. It is [[design-kit/templates/future-state-principles|Principle #2]].
 
 A scheme-first design that treats cash payment as an *error state* or an
@@ -34,7 +34,7 @@ fulfil → adhere → refill), diverging only where money works differently:
 | Worked example | [[to-be-blueprint-chronic-insured]] (Nomvula) | [[to-be-journey-cash-acute]] (Thabo) |
 
 The unifying move is the same in both: **make money legible early** (Principle #3,
-[[wiki/concepts/price-transparency]]) — the form of the answer differs (covered/co-pay
+[[wiki/concepts/price-transparency]]). The form of the answer differs (covered/co-pay
 vs. cash total), but the promise of *no surprise at the till* does not.
 
 ## In this vault
@@ -47,6 +47,6 @@ vs. cash total), but the promise of *no surprise at the till* does not.
 ## Design stance
 Build **one spine, two funded paths**. Never branch the cash user into a degraded
 flow. Decide the funding path as early as possible (ask "scheme or cash?" once,
-remember it), then keep the experience — speed, dignity, transparency, fulfilment
-choice — equally good on both sides. Test every concept against **both** a scheme
+remember it), then keep the experience (speed, dignity, transparency, fulfilment
+choice) equally good on both sides. Test every concept against **both** a scheme
 persona and a cash persona before shipping.

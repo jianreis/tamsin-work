@@ -7,7 +7,7 @@ confidence: high
 tags: [domain/regulatory, journey/dispense, journey/validate, region/za]
 sources: [src-reg-pharmacy-act-53-1974, src-reg-gpp-rules-sapc, src-reg-affordable-medicines-concourt-2006, src-reg-medicines-act-101-1965]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Pharmacy Act 53 of 1974, SAPC & Good Pharmacy Practice
@@ -28,7 +28,7 @@ the Pharmacy Act controls *the pharmacy and its people*.
   [[src-reg-pharmacy-act-53-1974]].
 
 ## Pharmacist's assistants & supervision
-Categories: **learner basic → basic → learner post-basic → post-basic**. Learners
+Categories: **learner basic -> basic -> learner post-basic -> post-basic**. Learners
 and basics work under the **direct personal supervision** of a pharmacist;
 post-basics may work under **indirect** supervision (reg 12)
 [[src-reg-pharmacy-act-53-1974]]. Supervision ratios: **no more than 3** assistants
@@ -66,11 +66,11 @@ requirement as a valid regulation of the profession
   🔮 requires-reform.
 - **Supervision ratios constrain automation scale.** A high-throughput central
   fill / robotic model still needs enough supervising pharmacists to satisfy the
-  GPP supervision ratios — design the staffing model around this, not around the
+  GPP supervision ratios. Design the staffing model around this, not around the
   machine's capacity.
 - **Counselling is a mandated touchpoint, not an optional UX nicety.** The future
   journey must include a real counselling channel (in-person, video, or
-  pharmacist-chat) — especially for first fills and high-risk medicines.
+  pharmacist-chat), especially for first fills and high-risk medicines.
 - **Cold chain is auditable.** Any delivery/locker/courier concept for
   fridge-line medicines must carry temperature monitoring and records that satisfy
   GPP. See [[courier-online-pharmacy-rules]].
@@ -79,7 +79,7 @@ requirement as a valid regulation of the profession
 
 ## Open questions
 - Exact current GPP rule numbering for tele-pharmacy / remote supervision (does SAPC
-  yet permit a pharmacist to supervise dispensing remotely?) — ⚠️ UNVERIFIED;
+  yet permit a pharmacist to supervise dispensing remotely?) - ⚠️ UNVERIFIED;
   central to any "central fill + local counselling" model.
 
 ## See also

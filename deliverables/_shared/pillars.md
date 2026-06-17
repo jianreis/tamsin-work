@@ -3,7 +3,7 @@ type: meta
 title: "Canonical pillars — strategic + UX (single source of truth)"
 status: reviewed
 created: "2026-06-13"
-updated: "2026-06-16"
+updated: "2026-06-17"
 owner: report-agent
 consumed_by: ["01-research-report.html", "02-asis-blueprint-journey.html", "03-tobe-close-the-gap.html", "04-tobe-aspirational.html"]
 ---
@@ -12,15 +12,15 @@ consumed_by: ["01-research-report.html", "02-asis-blueprint-journey.html", "03-t
 
 > **This file is the single source of truth for pillar ids, names and one-liners.**
 > The interactive kit (#2–#4) embeds these in `DATA.pillars`; the research report
-> (#1) presents them as its backbone. **IDs are stable — never renumber.** Add new
+> (#1) presents them as its backbone. **IDs are stable - never renumber.** Add new
 > pillars with the next free id; supersede rather than reassign. Each pillar is
 > distilled from the vault (esp. `design-kit/templates/future-state-principles.md`,
 > `wiki/ux-service-design/consultancy-pharmacy-research.md`,
 > `wiki/global-benchmarks/patterns-to-borrow-and-cautions.md`).
 
 The set is two layers. **Strategic pillars (S1–S6)** answer *why build this and what
-business it is* — the "store of the future" operating-model bets. **UX pillars
-(U1–U7)** answer *how the experience must behave* at every touchpoint — the design
+business it is* - the "store of the future" operating-model bets. **UX pillars
+(U1–U7)** answer *how the experience must behave* at every touchpoint - the design
 constitution. A good blueprint step is defensible from at least one S and one U.
 
 ---

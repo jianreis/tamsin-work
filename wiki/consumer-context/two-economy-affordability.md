@@ -17,8 +17,8 @@ pharmacy market sits astride a structural fault line: a **small insured minority
 (~16%)** with medical-scheme cover and disposable income, and a **large uninsured
 majority (~84%)** who pay cash, ration data, and rely on public health and
 informal economies. A future scripting experience must serve **two wallets at
-once** — and must not be designed only for the affluent, app-fluent, card-paying
-minority. This is the single most load-bearing consumer reality in the vault.
+once**, and must not be designed only for the affluent, app-fluent, card-paying
+minority. This is the single most consequential consumer reality in the vault.
 
 ## Extreme inequality is the backdrop
 
@@ -26,11 +26,11 @@ SA's Gini coefficient (~**0.63–0.67** depending on measure/year) is among the
 highest recorded globally; Stats SA per-capita expenditure Gini was **0.67 (2006)
 → 0.65 (2015)**, forecast ~**0.63 (2025)** [[src-con-inequality-gini]]. The
 **labour market drives ~74%** of income inequality and income remains heavily
-racialised [[src-con-inequality-gini]]. Practically, household budgets span orders
-of magnitude — so a **single price point, single payment method, or single
+racialised [[src-con-inequality-gini]]. In practice, household budgets span orders
+of magnitude, so a **single price point, single payment method, or single
 delivery model will exclude a large share** of the population.
 
-## The insured (~16%) vs uninsured (~84%) split — load-bearing
+## The insured (~16%) vs uninsured (~84%) split
 
 Roughly **one in six South Africans is on a medical scheme; ~84% rely on the
 public sector or pay out of pocket** [[src-sch-coverage-two-economy]]. As of 2022,
@@ -49,17 +49,18 @@ The two customers are genuinely different:
   affordability, the cost of travel/queues, and trust. Public clinics + CCMDD are
   the default (see [[wiki/consumer-context/health-seeking-behaviour]]).
 
+
 ## Out-of-pocket sensitivity
 
 For the uninsured, medicine is a direct, visible cash expense. **Medicines and
-health products are the single most-used paid health service** — households spend
+health products are the single most-used paid health service**: households spend
 **~R11.2bn on medicines** (~R5.0bn prescribed, ~R4.5bn OTC) and **~R31.5bn total
 OOP**, averaging ~R1,481/household but heavily skewed to poorer/sicker households
-[[src-con-oop-health-spend]]. Critically, OOP includes **travel cost and distance,
-registration, and consultation** — so trips and queues are themselves a cost
-[[src-con-oop-health-spend]]. **Removing a trip, a queue, or a surprise charge is a
-real financial benefit, not just convenience.** Price transparency before commit is
-essential; "data is money" too (see
+[[src-con-oop-health-spend]]. OOP also includes **travel cost and distance,
+registration, and consultation**, so trips and queues are themselves a cost
+[[src-con-oop-health-spend]]. Removing a trip, a queue, or a surprise charge is a
+real financial benefit, not only convenience. Price transparency before commit is
+essential, and "data is money" too (see
 [[wiki/consumer-context/digital-access-and-whatsapp]]) [[src-con-ramp-data-prices]].
 
 ## The township / spaza economy: proximity, cash, credit, trust

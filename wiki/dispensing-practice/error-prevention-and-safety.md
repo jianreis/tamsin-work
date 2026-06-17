@@ -17,7 +17,7 @@ estimates the **global cost of medication errors at US$42 billion annually** and
 that medication harm is **around 50% of all preventable harm** in medical care
 [[src-disp-who-medication-without-harm]]. WHO's **Medication Without Harm**
 challenge (2017) set the goal of **halving severe avoidable medication-related
-harm** [[src-disp-who-medication-without-harm]]. Crucially, error is a *system*
+harm** [[src-disp-who-medication-without-harm]]. Error is a *system*
 property: it arises "when weak medication systems and human factors such as
 fatigue, poor environmental conditions or staff shortages affect the safety of
 the medication-use process" [[src-disp-who-medication-without-harm]]. Safe
@@ -28,12 +28,12 @@ dispensing is therefore designed, not exhorted.
 Drawing on MSH and WHO [[src-disp-msh-dispensing-cycle]]
 [[src-disp-who-medication-without-harm]], the common failure modes are:
 
-- **Wrong drug** — often a look-alike/sound-alike (LASA) substitution.
-- **Wrong strength / dose / quantity** — selection or calculation error.
+- **Wrong drug**: often a look-alike/sound-alike (LASA) substitution.
+- **Wrong strength / dose / quantity**: selection or calculation error.
 - **Wrong form** (e.g. immediate- vs extended-release).
-- **Wrong patient** — mismatched bag/label at handover.
-- **Labelling/instruction error** — incorrect or ambiguous directions.
-- **Omission / missed interaction** — failure to catch a clinical problem (see
+- **Wrong patient**: mismatched bag/label at handover.
+- **Labelling/instruction error**: incorrect or ambiguous directions.
+- **Omission / missed interaction**: failure to catch a clinical problem (see
   [[clinical-checks-and-mtm]]).
 
 Root causes cluster around **LASA names, illegible/ambiguous prescriptions,

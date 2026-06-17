@@ -7,7 +7,7 @@ confidence: high
 tags: [domain/regulatory, journey/pay, region/za]
 sources: [src-reg-sep-pricing-regulations, src-reg-gray-pricing-2026, src-reg-medicines-act-101-1965, src-reg-nhi-act-2023]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Medicine pricing: SEP, logistics fee & dispensing fee
@@ -23,7 +23,7 @@ The **SEP is the only price** at which a manufacturer/importer may sell a medici
 or scheduled substance to **anyone other than the State**
 [[src-reg-sep-pricing-regulations]] [[src-reg-medicines-act-101-1965]]. It must be
 **published**, applies uniformly nationwide, and **no discounts, rebates, bonuses or
-sampling** to non-State buyers are allowed — a core anti-perverse-incentive control.
+sampling** to non-State buyers are allowed, a core anti-perverse-incentive control.
 
 ## Logistics fee
 Wholesalers do **not** add a mark-up to SEP; instead the **manufacturer pays the
@@ -48,12 +48,12 @@ and recompute from the latest Gazette.)
 
 ## Annual adjustment (SEPA)
 Each year the **Pricing Committee** advises the Minister on (1) the **dispensing
-fees** and (2) the **SEP Adjustment (SEPA)** — the max % manufacturers may raise
+fees** and (2) the **SEP Adjustment (SEPA)**, the max % manufacturers may raise
 SEP. **SEPA 2026 = max 1.47%** (2025 was 5.25%) [[src-reg-gray-pricing-2026]]
 [[src-reg-sep-pricing-regulations]]. This mechanism has kept SA insulated from
 large international price increases.
 
-## In flux — NHI
+## In flux - NHI
 The **NHI Act 20 of 2023** (signed 2024, not yet in force) brings the **NHI Fund
 into Pricing-Committee appointments**; deeper future change to procurement/
 reimbursement is possible but unproclaimed [[src-reg-nhi-act-2023]].
@@ -66,7 +66,7 @@ reimbursement is possible but unproclaimed [[src-reg-nhi-act-2023]].
   "we'll beat the price" mechanic on the medicine component.
 - **Transparent, itemised pricing should be a feature.** Because pricing is
   regulated and public, the UI can confidently show **SEP + dispensing fee (+ VAT)**
-  line-by-line — a trust and price-transparency win that is fully compliant.
+  line-by-line, a trust and price-transparency win that is fully compliant.
 - **Dispensing-fee bands affect basket economics.** Margin on cheap chronic generics
   is dominated by the flat fee; on expensive specialty items the % is tiny. A
   fulfilment/courier cost model must reconcile against the *capped* dispensing fee,
@@ -74,11 +74,11 @@ reimbursement is possible but unproclaimed [[src-reg-nhi-act-2023]].
 - **Annual SEPA / band changes must be ingested.** Pricing logic must update each
   year from the Gazette; do not hard-code fees.
 - **Watch NHI.** Procurement and reimbursement assumptions for chronic medicines may
-  shift if/when NHI is proclaimed — design for configurability.
+  shift if/when NHI is proclaimed, so design for configurability.
 
 ## Open questions
 - Exact current dispensing-fee band thresholds and the very-high-SEP cap (search hinted
-  at a ~R1,500+ band with a capped rand fee) — ⚠️ UNVERIFIED; confirm vs latest
+  at a ~R1,500+ band with a capped rand fee) - ⚠️ UNVERIFIED; confirm vs latest
   Gazette.
 
 ## See also

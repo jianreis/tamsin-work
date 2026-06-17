@@ -7,7 +7,7 @@ confidence: medium
 tags: [domain/schemes, region/za, journey/fund, topic/trust-safety]
 sources: [src-sch-nhi-act-status, src-sch-coverage-two-economy, src-sch-ccmdd-public]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # The NHI horizon
@@ -15,7 +15,7 @@ updated: "2026-06-13"
 **National Health Insurance (NHI)** is the government's plan to fund healthcare
 through a single **NHI Fund** as dominant purchaser, aiming at universal coverage
 across the [[cms-medical-schemes-overview|two-economy split]]. It is the biggest
-*potential* disruptor to how prescriptions get paid for — but as of **mid-2026 it
+*potential* disruptor to how prescriptions get paid for, but as of **mid-2026 it
 is paused and contested**. We document **scenarios**, and **do not bet on one**.
 
 ## Status (as of 2026-06-13)
@@ -30,14 +30,14 @@ is paused and contested**. We document **scenarios**, and **do not bet on one**.
   Premier; public-participation grounds); **judgment pending**
   [[src-sch-nhi-act-status]].
 
-## The contested core — Section 33
+## The contested core - Section 33
 
 Section 33: once the Minister declares NHI **"fully implemented"** (a term the
 Act **leaves undefined**), **medical schemes may only offer complementary cover**
 — i.e. only services the NHI Fund does not reimburse [[src-sch-nhi-act-status]].
 This is the existential question for schemes (and for courier pharmacy, whose
-volume rides on scheme-funded chronic benefits). Challengers — **BHF, SAMA,
-HASA, Discovery, Solidarity**, Western Cape — cite constitutional defects
+volume rides on scheme-funded chronic benefits). Challengers - **BHF, SAMA,
+HASA, Discovery, Solidarity**, Western Cape - cite constitutional defects
 (public participation, provincial powers, signing process)
 [[src-sch-nhi-act-status]].
 
@@ -71,13 +71,13 @@ rural access) are the gaps a better experience would close.
 
 ## Design implications
 
-- **Don't design *for* NHI; design *robust to* it.** Anchor the experience in
+- **Design to withstand NHI, not design *for* it.** Anchor the experience in
   today's scheme + cash reality (Scenario 1), but keep the architecture **payer-
-  agnostic** — abstract "who funds this script" so a new payer (NHI Fund) can slot
+  agnostic**: abstract "who funds this script" so a new payer (NHI Fund) can slot
   in without a redesign.
 - **Lean into the uninsured/CCMDD bridge now.** Serving the uninsured via
   pick-up-point and primary-care-insurance models builds exactly the muscle any
-  NHI scenario rewards — and grows the addressable market today.
+  NHI scenario rewards, and grows the addressable market today.
 - **Treat formulary/funding rules as configurable, not hard-coded.** PMB,
   scheme formulary, MMAP, and a future NHI formulary are the same *shape* of
   rule; build one rules engine, swap the data.

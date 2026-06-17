@@ -2,16 +2,16 @@
 type: index
 title: "Digital transformation — index"
 domain: digital-transformation
-updated: "2026-06-14"
+updated: "2026-06-17"
 tags: [index, domain/digital]
 status: draft
 ---
 
 # Digital transformation in pharmacy
 
-The technology that enables a future-state scripting experience — covering global
+The technology that enables a future-state scripting experience, covering global
 state of the art with SA applicability and constraints throughout. Each page ends
-with `## Design implications` and `## Open questions`; uncertainty is marked
+with `## Design implications` and `## Open questions`. Uncertainty is marked
 `⚠️ UNVERIFIED` and anything needing regulatory change `🔮 requires-reform`.
 
 ## Pages

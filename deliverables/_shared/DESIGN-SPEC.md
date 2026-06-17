@@ -17,9 +17,9 @@
 | – | `deliverables/_shared/blueprint-kit.html` | Reference implementation of the interactive engine (owned by the kit agent). |
 
 ## 1. Hard rules (non-negotiable)
-- **Self-contained single file.** ALL CSS in one `<style>`, ALL JS in one `<script>`, ALL icons as inline SVG or unicode/emoji. **No external requests of any kind** — no CDNs, web-fonts, Google Fonts, external images, analytics. (The environment's egress allowlist blocks them, and reviewers must be able to open the file offline.) A grep for `https://` / `http://` / `src=` / `@import` / `cdn`/`googleapis` must find **zero loaded resources** (citation URLs printed as visible text are fine).
+- **Self-contained single file.** ALL CSS in one `<style>`, ALL JS in one `<script>`, ALL icons as inline SVG or unicode/emoji. **No external requests of any kind** - no CDNs, web-fonts, Google Fonts, external images, analytics. (The environment's egress allowlist blocks them, and reviewers must be able to open the file offline.) A grep for `https://` / `http://` / `src=` / `@import` / `cdn`/`googleapis` must find **zero loaded resources** (citation URLs printed as visible text are fine).
 - **No build step.** Plain HTML+CSS+vanilla JS. Must open by double-click in any modern browser.
-- **Cite the vault.** Every substantive claim links (as visible text, e.g. `wiki/dischem/dischem-rx-current-journey`) or hover-cites to its vault page/source slug. Where knowledge is missing, render an explicit **⚠️ gap** marker with a short note — do not invent.
+- **Cite the vault.** Every substantive claim links (as visible text, e.g. `wiki/dischem/dischem-rx-current-journey`) or hover-cites to its vault page/source slug. Where knowledge is missing, render an explicit **⚠️ gap** marker with a short note - do not invent.
 - **Honesty:** mark `⚠️ UNVERIFIED` / `⚠️ gap` and `🔮 requires-reform` exactly as the vault does.
 
 ## 2. Design language — minimal / low-fi (design tokens)
@@ -43,14 +43,14 @@ Wireframe-grade. Content and structure over polish. Inline this token set as CSS
 
 ## 3. Interactive kit — required components (deliverables #2–#4)
 The kit renders from a single embedded `const DATA = {…}` (schema in §4). Required, all vanilla JS:
-1. **Stage rail** — the journey spine as a horizontal, clickable row of stages; clicking a stage expands its detail panel (accordion); a "tap to expand / expand all / collapse all" control.
-2. **Dual-economy toggle** — a segmented control switching **Insured (Nomvula)** ↔ **Cash/uninsured (Sipho)**; all stage content + the emotion curve re-render for the selected economy. (Honours the #1 "serve both economies" principle.)
-3. **Emotion curve** — an inline `<svg>` line chart of emotion (1–5) across stages for the active economy; updates on economy toggle; marks ⭐ moments of truth.
-4. **Blueprint lanes** (per expanded stage) — labelled rows: *Customer actions · Frontstage · ⎯ line of visibility ⎯ · Backstage · Support systems · Partners · Regulatory constraint · Pains 🔴 · Opportunities 💡 · Metrics*. A lane-visibility control to show/hide lanes.
-5. **Hover-to-cite** — any element with a citation shows a small tooltip (on hover AND keyboard focus) naming the vault source (e.g. `[[src-dc-deliverd]]` / `wiki/...`).
-6. **Pillar legend + filter** — list the pillars; each stage/opportunity is tagged with the pillar id(s) it expresses; clicking a pillar highlights everywhere it appears. This is how themes "recur throughout."
-7. **As-is/To-be compare** (deliverables #3 & #4 only) — a toggle that reveals, per stage, the `asIsBaseline` vs the future vision (show the delta/gap). Deliverable #2 omits this.
-8. **Flag badges** — legended: ⭐ moment of truth · 🔴 pain · 💡 opportunity · ⚠️ knowledge gap/unverified · 🔮 requires-reform.
+1. **Stage rail** - the journey spine as a horizontal, clickable row of stages; clicking a stage expands its detail panel (accordion); a "tap to expand / expand all / collapse all" control.
+2. **Dual-economy toggle** - a segmented control switching **Insured (Nomvula)** ↔ **Cash/uninsured (Sipho)**; all stage content + the emotion curve re-render for the selected economy. (Honours the #1 "serve both economies" principle.)
+3. **Emotion curve** - an inline `<svg>` line chart of emotion (1–5) across stages for the active economy; updates on economy toggle; marks ⭐ moments of truth.
+4. **Blueprint lanes** (per expanded stage) - labelled rows: *Customer actions · Frontstage · ⎯ line of visibility ⎯ · Backstage · Support systems · Partners · Regulatory constraint · Pains 🔴 · Opportunities 💡 · Metrics*. A lane-visibility control to show/hide lanes.
+5. **Hover-to-cite** - any element with a citation shows a small tooltip (on hover AND keyboard focus) naming the vault source (e.g. `[[src-dc-deliverd]]` / `wiki/...`).
+6. **Pillar legend + filter** - list the pillars; each stage/opportunity is tagged with the pillar id(s) it expresses; clicking a pillar highlights everywhere it appears. This is how themes "recur throughout."
+7. **As-is/To-be compare** (deliverables #3 & #4 only) - a toggle that reveals, per stage, the `asIsBaseline` vs the future vision (show the delta/gap). Deliverable #2 omits this.
+8. **Flag badges** - legended: ⭐ moment of truth · 🔴 pain · 💡 opportunity · ⚠️ knowledge gap/unverified · 🔮 requires-reform.
 
 Keep JS dependency-free and defensive (render must not throw if an optional field is missing).
 
@@ -89,4 +89,4 @@ Rules: every `cite`/`ref`/`citations.ref` is a real vault slug or path (verify i
 - `node --check` on the extracted `<script>` (no JS syntax errors).
 - All `cite`/`ref` slugs resolve to real files in the vault.
 - Pillars referenced in #2–#4 match the ids in `_shared/pillars.md`.
-- Renders without console errors (reviewer confirms visually — orchestrator cannot run a browser here; flag this).
+- Renders without console errors (reviewer confirms visually - orchestrator cannot run a browser here; flag this).

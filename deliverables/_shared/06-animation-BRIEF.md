@@ -14,7 +14,7 @@
 `#05` is a **board / journey-map document** you read and expand. `#06` is a
 **motion piece**: the SAME 9-moment future-state journey, re-presented as a
 **self-playing, interactive animation**. Nothing new is invented about the
-journey — we re-express the *existing, great* content in a beautiful visual,
+journey - we re-express the *existing, great* content in a beautiful visual,
 animated format that anyone can **watch, replay and explore.**
 
 The user's words: *"a simple animation that illustrates the steps the user
@@ -22,13 +22,13 @@ takes (with mockups of the various steps) and the Dis-Chem frontstage and
 backstage actions… each key moment is its own animation that builds, and
 pauses at the end to allow the user to expand and explore the various
 components… delivered as a standalone HTML with each moment a separate visual
-animation."* Goal: **compelling, useful, beautiful** — present existing info in
+animation."* Goal: **compelling, useful, beautiful** - present existing info in
 a new visual format. **The "medicine cabinet" idea is the strongest concept in
-the work — make it the showpiece.**
+the work - make it the showpiece.**
 
 **Output file:** `deliverables/06-tobe-journey-animation.html` (single,
-self-contained — see §8 contract). Do NOT edit `index.html`, `05-*.html`,
-`DESIGN-SPEC.md`, `pillars.md`, `qa.py`, or this brief — the orchestrator wires
+self-contained - see §8 contract). Do NOT edit `index.html`, `05-*.html`,
+`DESIGN-SPEC.md`, `pillars.md`, `qa.py`, or this brief - the orchestrator wires
 those.
 
 ---
@@ -38,7 +38,7 @@ those.
 A full-bleed **cinematic stage** shows ONE scene (= one journey moment) at a
 time. Each scene runs a **three-phase loop**:
 
-1. **BUILD (animate-in):** the scene assembles itself in timed beats — a
+1. **BUILD (animate-in):** the scene assembles itself in timed beats - a
    narration caption fades/types in → the **customer phone mockup** animates →
    **frontstage** action chips light up in sequence → a **"line of visibility"**
    sweep crosses → **backstage** capability chips light up. A thin progress bar
@@ -46,7 +46,7 @@ time. Each scene runs a **three-phase loop**:
 2. **SETTLE / PAUSE:** when the build finishes, the scene **holds** in a fully
    assembled state and surfaces an **"Explore this moment ▾"** affordance. It
    does **not** auto-advance unless autoplay is on.
-3. **EXPLORE:** the viewer expands panels in place — **Today (the quoted, cited
+3. **EXPLORE:** the viewer expands panels in place - **Today (the quoted, cited
    pain)**, **Opportunities**, **Capabilities/Tech** (ROWA etc.), **Pillars**,
    **Metrics**, and the full **frontstage / backstage** detail. Clicking any
    mockup element or chip reveals its detail + vault citation.
@@ -66,7 +66,7 @@ and pauses to let the user explore."
 - **Overall progress** (scene n / 9) + **per-scene build progress**.
 - **Keyboard:** ← / → prev/next, **Space** play-pause, **R** replay, number keys
   1–9 jump. Real `<button>`s, `aria-pressed`/`aria-expanded`, focus-visible.
-- **`prefers-reduced-motion`:** skip the staged build entirely — render each
+- **`prefers-reduced-motion`:** skip the staged build entirely - render each
   scene fully assembled instantly; controls still navigate. Also a manual
   "Reduce motion / Skip animation" toggle.
 - `@media print`: expand every scene + all explore panels (static document).
@@ -109,7 +109,7 @@ Every scene's customer surface renders inside a **phone device frame**. The
 data agent fills `mock` payloads to these shapes; the assets agent writes
 renderers to these shapes. Renderers MUST be defensive (never throw on a
 missing optional field). All shapes are illustrative UI content (no citations
-needed on the mock content itself — citations live on pains/opps/tech).
+needed on the mock content itself - citations live on pains/opps/tech).
 
 ```js
 // 1 whatsappNudge
@@ -193,7 +193,7 @@ const ANIM = {
 ```
 
 **Every `cite`/`ref`/`personaRef` must resolve to a real vault file** (qa.py
-checks). Reuse the exact slugs already in #05 — do not invent new ones. Emotion
+checks). Reuse the exact slugs already in #05 - do not invent new ones. Emotion
 / trust values defensible from #05.
 
 ---
@@ -237,7 +237,7 @@ dispensing of scheduled meds, after-hours live authorisation).
 - **Assets agent exports** (plain functions on a global `MOCKUPS` object, no
   modules): `MOCKUPS.phoneFrame(innerNode)`, and one renderer per mockup type
   named exactly: `whatsappNudge, cabinet, costCover, pharmacist, dispenseRowa,
-  deliveryTrack, adherencePack, curveball, renewal` — each `(payload, ctx) =>
+  deliveryTrack, adherencePack, curveball, renewal` - each `(payload, ctx) =>
   HTMLElement`. `ctx = {econ, household, reduceMotion}`. Plus `MOCKUPS.pillSVG(med)`
   and `MOCKUPS.avatarSVG(kind, econ)` (ported from #05). Each renderer must add
   CSS classes that the engine can drive for the staged build (e.g. elements
@@ -246,7 +246,7 @@ dispensing of scheduled meds, after-hours live authorisation).
 - **Engine (build agent) drives the beats**: reveals `[data-beat]` groups in
   ascending order on a timer; pauses; toggles `.is-building`/`.is-settled` on
   `#stage`. Frontstage/backstage chips also carry `data-beat`.
-- **Helper `el(tag, attrs, children)`** — port from #05 (defensive DOM builder).
+- **Helper `el(tag, attrs, children)`** - port from #05 (defensive DOM builder).
   Use `textContent`, never `innerHTML`, for any data-derived strings.
 
 ---
@@ -256,7 +256,7 @@ dispensing of scheduled meds, after-hours live authorisation).
   vanilla `<script>`, ALL icons inline SVG/emoji. **No external requests** (no
   CDNs / fonts / images / analytics). Opens offline by double-click.
 - **Vanilla JS, no build step, no frameworks.** `node --check` must pass.
-- **Defensive render** — never throw on a missing optional field; a malformed
+- **Defensive render** - never throw on a missing optional field; a malformed
   scene degrades gracefully (skip, don't crash the deck).
 - **`python3 deliverables/_shared/qa.py deliverables/06-tobe-journey-animation.html`
   must print ✅ PASS** (no external resources, node --check clean, all
@@ -275,12 +275,12 @@ dispensing of scheduled meds, after-hours live authorisation).
 3. **Explore** expands per-moment Today-pain (quoted + cited) + opportunities +
    tech + pillars + metrics + frontstage/backstage detail.
 4. **Dual economy** toggle re-renders every scene incl. the cabinet.
-5. The **medicine cabinet (m2)** is a genuine showpiece — members + animated
+5. The **medicine cabinet (m2)** is a genuine showpiece - members + animated
    pills + status + funding, faithful to #05's `household` data.
 6. **ROWA** + ≥6 other named roadmap capabilities appear and are cited.
 7. Every scene shows an overt **Today pain (quoted + cited)** vs the future answer.
 8. `qa.py` ✅ PASS; `node --check` clean; opens offline; reduced-motion + print OK.
-9. Reads as **compelling, beautiful, low-friction** — watch / replay / explore.
+9. Reads as **compelling, beautiful, low-friction** - watch / replay / explore.
 
 ## 10. Read before building
 - `deliverables/05-tobe-future-state-journey.html` (the substance + `DATA`,

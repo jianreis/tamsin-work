@@ -7,14 +7,14 @@ confidence: high
 tags: [domain/global, region/global, journey/submit, journey/prescribe, journey/refill, journey/deliver, topic/e-prescription, topic/trust-safety, topic/automation, topic/chronic]
 sources: [src-gbl-docmorris-redcare, src-gbl-germany-erezept]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Europe — mail-order pharmacy unlocked by a national e-prescription (the hard way)
 
 Germany is the most instructive European case because it shows both halves of the
 story: a national **e-prescription (E-Rezept)** that finally let online pharmacies
-capture the prescription market at scale — and a **painful, multi-year, glitch-prone
+capture the prescription market at scale, and a **painful, multi-year, glitch-prone
 rollout** that is the single best cautionary tale in this vault for SA. The lesson:
 mandating a national e-script is the easy part; shipping a *reliable, low-friction*
 one is the hard part, and getting that order wrong sets adoption back years.

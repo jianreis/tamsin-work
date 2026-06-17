@@ -11,12 +11,12 @@ status: draft
 
 Council for Medical Schemes, PMBs, Chronic Disease List, designated service
 providers, formularies, real-time claims switching, courier pharmacies, and the
-NHI horizon. How prescriptions get paid for — the funding ground truth that
+NHI horizon. How prescriptions get paid for - the funding ground truth that
 shapes the whole scripting journey.
 
 ## The central tension
 South Africa is a **two-economy** healthcare system: only **~16%** are on a
-medical scheme; the **~84% majority** rely on the public sector or pay cash. Any
+medical scheme, and the **~84% majority** rely on the public sector or pay cash. Any
 scripting experience must serve **both**. See [[cms-medical-schemes-overview]]
 and [[cash-uninsured-pathway]].
 

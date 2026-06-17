@@ -2,19 +2,19 @@
 type: index
 title: "SA regulatory — index"
 domain: sa-regulatory
-updated: "2026-06-13"
+updated: "2026-06-17"
 tags: [index, domain/regulatory]
 status: draft
 ---
 
 # South African pharmacy regulation
 
-The **regulatory ground truth** — the non-negotiable legal constraints any
+The **regulatory ground truth** - the non-negotiable legal constraints any
 future-state scripting design must respect. Covers the Medicines Act & scheduling,
 SAHPRA, SAPC/Pharmacy Act & Good Pharmacy Practice, prescription validity & repeats,
 generic substitution, SEP & dispensing fees, e-prescriptions/telehealth/POPIA, and
 courier/online pharmacy rules. Each page ends with **Design implications /
-constraints**; items needing law/rule change are flagged 🔮 requires-reform.
+constraints**, and items needing law/rule change are flagged 🔮 requires-reform.
 
 > Sourcing note (2026-06-13): regulator/legislation PDFs (SAHPRA, SAFLII, gov.za,
 > faolex, PMC) returned HTTP 403 to the fetch tool this session. Claims are

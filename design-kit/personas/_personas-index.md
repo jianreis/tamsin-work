@@ -1,7 +1,7 @@
 ---
 type: index
 title: "Personas — index"
-updated: "2026-06-13"
+updated: "2026-06-17"
 tags: [index, personas, design-kit, region/za]
 ---
 
@@ -11,34 +11,34 @@ Research-backed personas spanning the South African pharmacy customer base, plus
 the frontline pharmacist whose oversight the future-state must protect. Each
 persona is grounded in [[wiki/consumer-context/_index|consumer context]], the
 [[wiki/medical-schemes/_index|medical-schemes]] funding reality and dispensing
-practice — not invented — and every SA-context claim cites its wiki page. Use them
+practice rather than invented, and every SA-context claim cites its wiki page. Use them
 with the [[jtbd-library]] and the [[as-is-prescription-journey]] to anchor
 to-be journeys and blueprints (see [[CLAUDE]] §8).
 
 ## The set
 
-1. **[[design-kit/personas/insured-chronic-multimorbid|Nomvula Khumalo — insured chronic, multimorbid]]** —
+1. **[[design-kit/personas/insured-chronic-multimorbid|Nomvula Khumalo — insured chronic, multimorbid]]** -
    suburban Discovery member, HTN + type-2 diabetes on the CDL, app-capable and
    time-pressured; wants several repeats to flow automatically and fully funded.
-2. **[[design-kit/personas/cash-pay-acute-customer|Thabo Mokoena — cash-pay acute customer]]** —
+2. **[[design-kit/personas/cash-pay-acute-customer|Thabo Mokoena — cash-pay acute customer]]** -
    uninsured peri-urban father needing a one-off antibiotic for his child today;
    WhatsApp-first, prepaid data, intensely price-sensitive.
-3. **[[design-kit/personas/caregiver-proxy-collector|Lerato Dlamini — caregiver / proxy collector]]** —
+3. **[[design-kit/personas/caregiver-proxy-collector|Lerato Dlamini — caregiver / proxy collector]]** -
    sandwich-generation daughter/mother managing meds for a diabetic parent and two
    children across multiple profiles, cycles and wallets.
-4. **[[design-kit/personas/elderly-poly-pharmacy|Trudie van Wyk — elderly poly-pharmacy patient]]** —
+4. **[[design-kit/personas/elderly-poly-pharmacy|Trudie van Wyk — elderly poly-pharmacy patient]]** -
    74, seven daily chronic meds, low digital literacy, values her known pharmacist
    and dose-packed medicine; possibly an assisted/shared device.
-5. **[[design-kit/personas/low-data-whatsapp-first-peri-urban|Sipho Ndlovu — low-data, peri-urban, WhatsApp-first]]** —
+5. **[[design-kit/personas/low-data-whatsapp-first-peri-urban|Sipho Ndlovu — low-data, peri-urban, WhatsApp-first]]** -
    cheap Android / feature phone, intermittent signal, no street address, relies on
    collection points; affordability-driven.
-6. **[[design-kit/personas/time-poor-urban-professional|Aisha Patel — time-poor urban professional]]** —
+6. **[[design-kit/personas/time-poor-urban-professional|Aisha Patel — time-poor urban professional]]** -
    insured city professional benchmarking against Sixty60/Takealot/Uber; wants
    speed, delivery, transparency, minimal friction.
-7. **[[design-kit/personas/public-sector-bridging-to-retail|Mandla Zwane — public-sector patient bridging to retail]]** —
+7. **[[design-kit/personas/public-sector-bridging-to-retail|Mandla Zwane — public-sector patient bridging to retail]]** -
    uninsured ART + HTN patient on clinic CCMDD/Pelebox, weighing retail for stock
-   reliability and convenient, discreet collection — but only if it stays affordable.
-8. **[[design-kit/personas/frontline-pharmacist|Naledi Mahlangu — frontline dispensary pharmacist (staff)]]** —
+   reliability and convenient, discreet collection - but only if it stays affordable.
+8. **[[design-kit/personas/frontline-pharmacist|Naledi Mahlangu — frontline dispensary pharmacist (staff)]]** -
    the legally accountable RP and clinical safety kernel; over-stretched, the
    person whose time and oversight the future-state must protect, not erode.
 
@@ -62,7 +62,7 @@ that block it (cite the [[as-is-prescription-journey]] and the relevant
 [[wiki/consumer-context/_index|consumer-context]] / [[wiki/medical-schemes/_index|schemes]]
 pages). The set is deliberately built to span the **two-economy split** (insured
 ~16% vs uninsured ~84%), the **digital-literacy and connectivity spread**, and the
-**customer vs staff** tension — design that satisfies only one end will fail the
+**customer vs staff** tension. Design that satisfies only one end will fail the
 others.
 
 ## See also

@@ -2,22 +2,22 @@
 type: index
 title: "Concepts — index"
 domain: concept
-updated: "2026-06-13"
+updated: "2026-06-17"
 tags: [index, concept]
 status: draft
 ---
 
 # Concepts — cross-cutting
 
-Short hub notes that crisply define a recurring idea, state the **design stance**
+Short hub notes that define a recurring idea, state the **design stance**
 for this project, and link OUT to the domain pages that treat it in depth. They
-synthesise and point — they do not duplicate domain detail. Each ends with
+synthesise and point rather than duplicate domain detail. Each ends with
 `## In this vault` (the links out) and `## Design stance`.
 
 ## Pages
 
 ### Foundational
-- [[wiki/concepts/dual-journey|The dual journey (two-economy design)]] — the insured ~16% vs cash/uninsured ~84% split; one spine, two first-class funded paths. The most load-bearing design variable.
+- [[wiki/concepts/dual-journey|The dual journey (two-economy design)]] — the insured ~16% vs cash/uninsured ~84% split; one spine, two first-class funded paths. The design variable that matters most.
 
 ### Journey concepts
 - [[wiki/concepts/moment-of-truth|Moment of truth]] — the make-or-break interactions in the Rx journey (first submit, funding result, fulfilment hand-over, first dose).

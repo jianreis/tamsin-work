@@ -6,7 +6,7 @@ status: draft
 confidence: high
 tags: [concept, domain/regulatory, domain/schemes, domain/global, journey/pay, region/za]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Price transparency
@@ -14,7 +14,7 @@ updated: "2026-06-13"
 In South Africa the **Single Exit Price (SEP)** fixes the manufacturer price of a
 medicine: every pharmacy sells the same product at the same SEP, with only a
 regulated **dispensing fee** added. The structural consequence is that **there is
-no price competition on the medicine itself** — discounting is not lawful. Pharmacies
+no price competition on the medicine itself**, because discounting is not lawful. Pharmacies
 therefore compete on *service*, not price, and the only honest move on cost is to
 make it **legible early**.
 
@@ -45,5 +45,5 @@ credibility advantage.
 Show the full cost before commitment, every time, itemised as SEP + dispensing fee
 + co-pay. Adjudicate the scheme claim early so the co-pay is known up front; give
 the cash-pay patient an honest price with no surprises. Compete on service, speed,
-dignity and reliability — never on a discount the law forbids. Treat any cost shock
+dignity and reliability, never on a discount the law forbids. Treat any cost shock
 at hand-over as a service defect.

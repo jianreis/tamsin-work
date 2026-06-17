@@ -13,22 +13,22 @@ updated: "2026-06-14"
 # Dis-Chem pharmacy — public social sentiment & the Patient Trust Journey
 
 This page synthesises a **social-media listening study** of public conversation
-about the Dis-Chem **pharmacy** experience — in-store pre-packed collection,
+about the Dis-Chem **pharmacy** experience - in-store pre-packed collection,
 repeats and home delivery ([[src-dc-social-media-research-2025]], 1,270
 pharmacy-relevant comments coded from 4,475 scraped across TikTok/Facebook/
 Instagram, Dec 2025). It complements the **internal** complaints analysis in
 [[wiki/dischem/pharmacy-complaints-pain-points]] (Jan-2025 C4C dataset): that one
-is resolved-complaint operational data; **this** is *public* emotional signal —
+is resolved-complaint operational data, while **this** is *public* emotional signal -
 how the failures read to the outside world and how trust erodes.
 
 **Reliability caveat (read first).** Public social posts are **event-driven and
-self-selecting** — the study itself notes pharmacy "is rarely talked about unless
+self-selecting** - the study itself notes pharmacy "is rarely talked about unless
 something goes wrong," so the corpus is **skewed negative** and is **not a
 satisfaction rate**. Treat the **trust-journey model, theme ranking and quotes**
 as strong qualitative signal; treat **percentages as directional**
 ([[src-dc-social-media-research-2025]], C-tier).
 
-**The two load-bearing insights for the future-state journey:**
+**The two central insights for the future-state journey:**
 1. **Customers judge Dis-Chem through a healthcare lens, not a retail one.**
    Pack My Meds, collections and delivery are experienced as **essential care
    systems, not conveniences**; failures are felt as **disruptions to care** with
@@ -38,7 +38,7 @@ as strong qualitative signal; treat **percentages as directional**
    sentiment is **65% negative / 29% positive / 6% neutral**, against a comparably
    sized Dis-Chem **price-and-promotion** dataset at **65% positive / 24% negative
    / 11% neutral** [[src-dc-social-media-research-2025]]. The same brand that wins
-   on retail price is **losing on pharmacy trust** — which is precisely the asset
+   on retail price is **losing on pharmacy trust** - which is precisely the asset
    the scripting experience must rebuild (anchors **S3** service-not-price).
 
 > **Pillar key.** Strategic: **S1** both-economies · **S2** health-front-door ·
@@ -54,7 +54,7 @@ as strong qualitative signal; treat **percentages as directional**
 ## The Patient Trust Journey (5 stages)
 
 The study's central artefact is an **emotional trust arc** that is orthogonal to
-the operational journey spine — it tracks *how trust degrades*, not which task is
+the operational journey spine - it tracks *how trust degrades*, not which task is
 being done. It is directly reusable as the **emotion lane** of the future-state
 blueprint, and its stages map to **service-recovery** design.
 
@@ -68,57 +68,57 @@ blueprint, and its stages map to **service-recovery** design.
 
 [[src-dc-social-media-research-2025]] (slides 7–36).
 
-### Trigger — the first cracks
+### Trigger - the first cracks
 Waiting time "attracts attention when it fails": long queues are read as
 **staffing/resource failure, not situational delay**, and framed as avoidable
 inefficiency ("**poorer than in a public hospital**[…] only two cashiers")
 [[src-dc-social-media-research-2025]]. Being asked to **repeat information or
-navigate multiple steps for the same request** escalates frustration fast —
+navigate multiple steps for the same request** escalates frustration fast -
 including the telling complaint that staff "**type essays even though your
 information is on the system**" (a direct argument for a **persistent patient
-profile / saved repeat** — **U6**, **U1**). When collection/pre-pack/delivery
+profile / saved repeat** - **U6**, **U1**). When collection/pre-pack/delivery
 **fails to save time despite prior confirmation**, it is read as a **healthcare,
 not retail, failure**. Speed is praised only when it **exceeds** expectation,
-often via **competitor comparison** — implying that **conservative, reliable
+often via **competitor comparison** - implying that **conservative, reliable
 promises** protect trust better than ambitious ones (**U2**).
 
-### Acceleration — failures become safety threats
+### Acceleration - failures become safety threats
 This is the highest-risk stage. **Incorrect or missing medication** is framed as
 **potentially life-threatening** and as a **failure of professional duty**, not a
 retail mistake (e.g. a "**wrong script**" for an acute renal patient; an
 **expired CorenzaC**) [[src-dc-social-media-research-2025]]. **Generic
 substitution** is frequently perceived as "incorrect medication," especially when
-it feels forced or efficacy is doubted — a **counselling/consent** design problem
+it feels forced or efficacy is doubted - a **counselling/consent** design problem
 (**U5**, **S5**). **Cold-chain** anxiety can arise **even when the chain has not
-been breached**, simply because it *appears* uncertain — visibility matters as
+been breached**, simply because it *appears* uncertain - visibility matters as
 much as the fact. **Lost, uncaptured or delayed scripts** break **continuity of
 care** for chronic patients (a **VALIDATE** + **REFILL** seam). **Out-of-stock
 chronic medication** with no proactive notice escalates to **fear-driven anger**.
 Two counterweights reduce fear: **visible double-checking by senior pharmacists**
-and **proactive pharmacist assistance** — i.e. *making the safety process visible*
+and **proactive pharmacist assistance** - i.e. *making the safety process visible*
 builds trust (a strong **S5** + frontstage-design cue).
 
-### Agitation — the recovery layer fails
+### Agitation - the recovery layer fails
 When customers **cannot locate or recover an order**, perception shifts from
 inconvenience to **abandonment**. **Digital breakdowns** (app/online failures)
-become hard blockers **when no alternative path exists** — a direct **U4
+become hard blockers **when no alternative path exists** - a direct **U4
 graceful-failure** mandate. **Unreachable customer service** (unanswered
 dispensary lines; "**called 4 different dispensaries[…] nobody is picking up**")
-is read as **organisational inability to care**. And **communication overload** —
+is read as **organisational inability to care**. And **communication overload** -
 persistent calls/SMS/WhatsApp, **especially after the customer tried to opt out**
-— flips support into **perceived harassment** and loss of control. This is the
-study's sharpest nuance: the *same* digital tools **reduce** effort and stress
+- flips support into **perceived harassment** and loss of control. The study draws a
+careful distinction here: the *same* digital tools **reduce** effort and stress
 when they work and respect agency, but **amplify** distrust when rigid or
 un-opt-out-able (**U2**/**U7** done well vs **finding #5** done badly).
 
-### Defection — and the "local pharmacy" win condition
-After a trust-breaking failure, **many do not attempt recovery** — they
+### Defection - and the "local pharmacy" win condition
+After a trust-breaking failure, **many do not attempt recovery** - they
 **explicitly move their prescriptions to Clicks or local independents**, and are
 **willing to pay significantly more** (one cites **R460 more**) and sacrifice
 convenience for **personalised, relationship-based care**
 [[src-dc-social-media-research-2025]]. Critically, **Dis-Chem performs best when
-it mirrors how a local pharmacy behaves** — familiarity, continuity, personal
-recognition — and in those moments compares **favourably vs Clicks**. The
+it mirrors how a local pharmacy behaves** - familiarity, continuity, personal
+recognition - and in those moments compares **favourably vs Clicks**. The
 strategic read: the future-state scripting experience should manufacture
 "**local-pharmacy feel at chain scale**" (continuity of pharmacist relationship,
 remembered history, proactive care) — the core **S3**/**S2** bet.
