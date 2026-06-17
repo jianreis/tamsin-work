@@ -7,7 +7,7 @@ confidence: medium
 tags: [domain/digital, topic/telehealth, topic/automation, topic/e-prescription, topic/ai]
 sources: [src-dig-telepharmacy-models, src-dig-adc-lockers-market, src-dig-sa-eprescribing-reg33, src-dig-cv-pill-triage, src-dig-fhir-identity-matching, src-dig-agentic-ai-governance]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Telepharmacy & omnichannel fulfilment
@@ -17,7 +17,7 @@ updated: "2026-06-13"
 prescription across any mix of channels (in-store, app/web, click-and-collect,
 locker, courier, on-demand) against one continuous profile. Together they decouple
 *where the pharmacist is* from *where the patient is* and *how the medicine is
-delivered* — the core flexibility a future-state scripting experience needs to cut
+delivered*, the core flexibility a future-state scripting experience needs to cut
 queues, extend reach, and let pharmacists work at the top of their licence.
 
 ## Telepharmacy and remote verification models
@@ -28,7 +28,7 @@ receives, prepares and processes the prescription, while the **remote pharmacist
 performs final verification**, conducts required counselling by video, answers
 questions and documents the clinical record [[src-dig-telepharmacy-models]].
 **Remote order entry and verification** let a single central pharmacist check work
-across multiple sites — the lever that lets a branch network run more collection
+across multiple sites, the lever that lets a branch network run more collection
 points than it has resident pharmacists.
 
 The quality evidence is reassuring: a study of rural-Midwest telepharmacy found
@@ -45,12 +45,12 @@ Omnichannel means the patient chooses the fulfilment mode that suits the moment
 without re-entering data or losing context:
 
 - **In-store** dispensing and counselling (acute, complex, advice-seeking).
-- **Click-and-collect** — order ahead, skip the dispensing queue.
-- **Smart lockers** — secure, contactless, 24/7-capable pickup that decouples
+- **Click-and-collect** - order ahead, skip the dispensing queue.
+- **Smart lockers** - secure, contactless, 24/7-capable pickup that decouples
   collection from counter staffing [[src-dig-adc-lockers-market]].
-- **Courier / scheduled delivery** — the natural channel for chronic/repeat
+- **Courier / scheduled delivery** - the natural channel for chronic/repeat
   medication, fed by central-fill.
-- **On-demand delivery** — fast same-day for acute needs.
+- **On-demand delivery** - fast same-day for acute needs.
 
 The discipline that makes it "omni" rather than "multi" is a **unified patient
 profile**: one identity, one medication history, one set of scheme/eligibility
@@ -65,7 +65,7 @@ present a one-tap confirmation, under pharmacist/human oversight
 ## SA applicability and constraints
 
 Omnichannel fulfilment is **already partly live** in SA retail pharmacy (Dis-Chem
-offers app ordering, click-and-collect and courier/on-demand delivery — cross-link
+offers app ordering, click-and-collect and courier/on-demand delivery - cross-link
 to `dischem`), so the building blocks exist. Telepharmacy is the bigger
 opportunity-and-question:
 
@@ -73,7 +73,7 @@ opportunity-and-question:
   authentication; e-scripts must be AES-signed and ideally sent prescriber→pharmacy
   [[src-dig-sa-eprescribing-reg33]]. Whether **remote pharmacist verification** and
   **video counselling** fully satisfy SAPC supervision/Good Pharmacy Practice rules
-  for an unattended locker or technician-run point is the key open question — likely
+  for an unattended locker or technician-run point is the key open question, likely
   🔮 **requires-reform** or explicit SAPC guidance (cross-link to `sa-regulatory`).
 - **Connectivity/data cost:** video counselling assumes adequate bandwidth; SA's
   data costs and load-shedding argue for low-bandwidth fallbacks (voice, async chat,
@@ -91,7 +91,7 @@ app/WhatsApp/in-store.
 - **Design one profile, many channels.** The unified patient profile (identity +
   med history + scheme + consent) is the backbone; channel choice should never
   reset context.
-- **Use telepharmacy to multiply pharmacist reach** — remote verification + video/
+- **Use telepharmacy to multiply pharmacist reach** - remote verification + video/
   async counselling lets more collection points operate per pharmacist, especially
   for lockers and underserved areas.
 - **Match channel to script type:** acute → in-store/on-demand; chronic/repeat →
@@ -107,7 +107,7 @@ app/WhatsApp/in-store.
   verification and video-only counselling for SA retail dispensing, and may a locker
   release without a pharmacist on site? 🔮 likely requires-reform.
 - ⚠️ Can a single pharmacist legally supervise how many remote points/technicians in
-  SA? (Supervision-ratio rule — cross-link to `sa-regulatory`.)
+  SA? (Supervision-ratio rule - cross-link to `sa-regulatory`.)
 - ⚠️ UNVERIFIED: Patient acceptance and trust of locker/remote-verified collection
   vs face-to-face pharmacist hand-over in the SA market (consumer signal needed).
 - ⚠️ How is counselling for high-risk meds handled when fulfilled by locker/courier?

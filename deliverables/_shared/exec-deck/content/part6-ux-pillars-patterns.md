@@ -50,20 +50,20 @@ evidence: [wiki/global-benchmarks/amazon-pharmacy-pillpack-deepdive, wiki/global
 example: Amazon PillPack / Amazon Pharmacy shows insured copay vs cash price side-by-side, the delivery date, and generic alternatives upfront at checkout. Mark Cuban Cost Plus shows a fully itemised cost + markup + fees. Both make the variables legible before you pay.
 visual: dia:variables-upfront
 flags: []
-notes: This is the SPEC §6 rename (was "Make money legible, early, always"). Broaden the radial diagram beyond price: Cost · Funding/cover · Stock · Timing/ETA · Alternatives · (and any other decision-material variable). SA's SEP + capped dispensing fee already make the cost spoke natural — lean into it. Anim m3 ("I know the cost and the cover before I commit") is the in-journey proof.
+notes: This is the SPEC §6 rename (was "Make money legible, early, always"). Broaden the radial diagram beyond price: Cost · Funding/cover · Stock · Timing/ETA · Alternatives · (and any other decision-material variable). SA's SEP + capped dispensing fee already make the cost spoke natural - lean into it. Anim m3 ("I know the cost and the cover before I commit") is the in-journey proof.
 
 ## SLIDE: theme
 id: ux-pillars-each-grounded
 kicker: UX · Grounded
-title: Each pillar earns its place — one proven org example apiece
+title: Each pillar earns its place - one proven org example apiece
 so_what: Every UX pillar already has a working real-world implementation we can point to, so the design constitution is defensible to a sceptical executive, not a designer's wish-list.
 body:
   - U1 — WhatsApp is SA's default channel (#1 app, ~99% mobile coverage); USSD/SMS for the low end; India/China platform loops prove the model at scale.
   - U2 — NHS App: >39m users, real-time "Amazon-style" status (ordered → ready → collected) cuts call-centre load and anxiety.
   - U4 — Dual prescription verification (India) + AI-triage-before-human with hard guardrails (China bans AI-generated scripts) = graceful, safe failure.
-  - U5 — Australia eScript token is an SMS the patient can forward to a carer; nominated/ASL consent is per-pharmacy and revocable — proxy/caregiver as a first-class user.
+  - U5 — Australia eScript token is an SMS the patient can forward to a carer; nominated/ASL consent is per-pharmacy and revocable - proxy/caregiver as a first-class user.
   - U6 — MedAdvisor: a digital script wallet + "tap to refill" so medicine is prepared and ready; new-token-per-repeat removes the re-submit step.
-  - U7 — PillPack pre-sorts daily medicines into per-dose sachets labelled by date and time — the dose, not the bottle, is the unit patients manage.
+  - U7 — PillPack pre-sorts daily medicines into per-dose sachets labelled by date and time - the dose, not the bottle, is the unit patients manage.
 evidence: [wiki/consumer-context/digital-access-and-whatsapp, wiki/global-benchmarks/uk-boots-pharmacy2u-nhs-eps, wiki/global-benchmarks/patterns-to-borrow-and-cautions, wiki/global-benchmarks/australia-chemist-warehouse-escript, wiki/global-benchmarks/amazon-pharmacy-pillpack-deepdive]
 flags: [unverified]
-notes: U3 is covered by its own hero slide (PillPack/Cost Plus), so it is intentionally not repeated here. FLAG unverified — NHS App user/order counts, MedAdvisor reach, PillPack scale and Amazon ~99%-pricing-estimate are company/agency-reported; cite the mechanism as proven, the magnitudes as directional. All examples are "direction of travel," not SA-local proof.
+notes: U3 is covered by its own hero slide (PillPack/Cost Plus), so it is intentionally not repeated here. FLAG unverified - NHS App user/order counts, MedAdvisor reach, PillPack scale and Amazon ~99%-pricing-estimate are company/agency-reported; cite the mechanism as proven, the magnitudes as directional. All examples are "direction of travel," not SA-local proof.

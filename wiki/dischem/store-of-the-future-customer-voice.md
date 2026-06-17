@@ -26,8 +26,8 @@ is primary research on **Dis-Chem's own SOTF concept and dispensary journey**,
 and is the customer-evidence counterpart to the as-is journey page. It draws on
 consumer-context but is programme-specific.
 
-**Evidence weight:** B-tier — company primary qualitative research, **n=12**.
-The "X/12" figures are **interview tallies, directional signals — not population
+**Evidence weight:** B-tier, company primary qualitative research, **n=12**.
+The "X/12" figures are **interview tallies, directional signals, not population
 estimates** [[src-dc-store-future-interviews-2026]]. Use to ground design intent;
 validate magnitudes quantitatively before committing operational thresholds.
 
@@ -35,7 +35,7 @@ validate magnitudes quantitatively before committing operational thresholds.
 
 The single strongest theme across all scenarios: customers evaluate a journey by
 **how clearly they understand what is happening**, not how fast it moves. They
-**tolerate waiting but not uncertainty** — the stated mental model was *"Waiting
+**tolerate waiting but not uncertainty**. The stated mental model was *"Waiting
 is fine — being unsure isn't"* [[src-dc-store-future-interviews-2026]]. They
 responded most positively to clear readiness confirmation, visible progress, and
 explicit next steps; systems that **reduce guesswork** beat systems that merely
@@ -44,7 +44,7 @@ reassurance**, not raw speed (pillar **S3 service-not-price**; UX **U2 status**)
 
 A second master theme governs all digital touchpoints: *"Digital should help me
 feel more certain, not more exposed."* Customers are **not anti-digital**, but
-confidence is **conditional** — digital is trusted when it **confirms readiness,
+confidence is **conditional**: digital is trusted when it **confirms readiness,
 clarifies timing and removes follow-up**, and is questioned when it **removes
 visible human fallback, shifts responsibility onto them, or adds ambiguity**.
 *"Confidence comes from clarity and fallback, not from automation alone."*

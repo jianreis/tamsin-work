@@ -5,7 +5,7 @@ status: reviewed
 tags: [design-kit, template, domain/ux]
 method_ref: "[[wiki/ux-service-design/journey-mapping-method]]"
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Customer Journey Map — template & instructions
@@ -29,7 +29,7 @@ For the behind-the-scenes view, pair with the [[service-blueprint-template]].
 - **Type:** as-is | to-be
 - **Channels in scope:** app · WhatsApp · USSD · in-store · web · courier · locker
 
-## Stages (default spine — adapt per scenario)
+## Stages (default spine - adapt per scenario)
 `Trigger/Need → Prescribe → Submit → Validate & clinical check → Fund/claim →
 Pay → Dispense → Collect/Deliver → Adhere → Refill/Renew`
 

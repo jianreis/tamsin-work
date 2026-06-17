@@ -7,7 +7,7 @@ confidence: medium
 tags: [domain/consumer, domain/dischem, domain/ux, journey/submit, journey/validate, journey/pay, journey/collect, journey/dispense, journey/adhere, journey/refill, topic/chronic, topic/acute, region/za]
 sources: [src-dc-script-journey-interviews-2025]
 created: "2026-06-14"
-updated: "2026-06-14"
+updated: "2026-06-17"
 ---
 
 # Voice of the customer — the in-store script journey
@@ -140,7 +140,7 @@ segments.
   perception** when cashiers chat at busy times; recurring desire to **pay at the
   dispensary counter** for script-only trips
   [[src-dc-script-journey-interviews-2025]]. The "pay where you're dispensed"
-  ask appears twice (Stages 5 & 6) — a clear, concrete fix.
+  ask appears twice (Stages 5 & 6), a clear, concrete fix.
 
 ### Leaving the store & taking medication → maps to COLLECT / ADHERE
 - **Works:** **one-stop reinforcement** (browse household/personal-care/snacks
@@ -151,7 +151,7 @@ segments.
   Note: ADHERE is observed only at *initiation* ("same-day start"); **ongoing
   adherence, refill orchestration and script-expiry** were out of scope, so this
   study does **not** speak to the as-is "refill is opt-in and breaks at expiry"
-  pain — that remains unevidenced here.
+  pain, which remains unevidenced here.
 
 ## Strategic-pillar read (S1–S5)
 
@@ -177,15 +177,15 @@ segments.
 
 ## UX-pillar read (U1–U7)
 
-- **U1 (WhatsApp-first):** *cautionary* — this cohort is digital-shy and
+- **U1 (WhatsApp-first):** *cautionary*. This cohort is digital-shy and
   scam-wary; WhatsApp adoption needs **visible trust + control**, and the
   "WhatsApp *and* hand over paper" double-step must be **eliminated, not added**
   [[src-dc-script-journey-interviews-2025]].
-- **U2 (status):** the **single strongest unmet need** — "did Dis-Chem get my
+- **U2 (status):** the **single strongest unmet need**, "did Dis-Chem get my
   script?" A confirmation/status signal closes the Stage-1 coordination gap
   [[src-dc-script-journey-interviews-2025]].
 - **U3 (money-legible):** co-pays already feel **fair and transparent** at the
-  till here — preserve that legibility; the ask is **pay-at-dispensary**
+  till here, so preserve that legibility; the ask is **pay-at-dispensary**
   convenience [[src-dc-script-journey-interviews-2025]].
 - **U4 (graceful-failure):** stock-out handling ("take your details and call when
   stock comes") is a **good failure pattern to formalise** before the customer
@@ -212,12 +212,12 @@ segments.
   **Validate→Fund (co-pay shock)** and **app reliability** as top trust risks
   drawn from D-tier signals; this study's in-store sample reports **co-pays as
   small/fair and handled smoothly** and **does not engage the app at all**
-  [[src-dc-script-journey-interviews-2025]]. This is **not** a refutation — it is
+  [[src-dc-script-journey-interviews-2025]]. This is **not** a refutation. It is
   a **different population** (in-store regulars, off-peak, insured-leaning) than
-  the dissatisfied app/HelloPeter reviewers. The honest reading: **co-pay shock
+  the dissatisfied app/HelloPeter reviewers. **Co-pay shock
   and app friction are real for the digital/courier segments the as-is map drew
   from, but the in-store self-collect segment experiences a markedly calmer
-  journey.** Both can be true.
+  journey**, and both can be true.
 
 ## Open questions
 - Do the as-is "co-payment surprise" and "app reliability" pains hold for the

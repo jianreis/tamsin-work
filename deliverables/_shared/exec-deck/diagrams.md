@@ -1,7 +1,7 @@
-# diagrams.md — native diagram design specs (WS3)
+# diagrams.md - native diagram design specs (WS3)
 
 > **Audience:** the WS4 engine agent who draws these as python-pptx shapes in
-> `build-executive-strategy-deck.py`. These are **renderer-agnostic specs** —
+> `build-executive-strategy-deck.py`. These are **renderer-agnostic specs** -
 > exact labels, layout grid (inches), arrows, and palette roles. No python here.
 > Read `SPEC.md` §1 (palette/geometry), §2 (layouts), §4 (catalogue) first.
 

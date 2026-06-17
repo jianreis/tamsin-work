@@ -1,4 +1,4 @@
-# BUILD-STATUS — deliverables orchestration tracker
+# BUILD-STATUS - deliverables orchestration tracker
 
 > Orchestrator's live state for the 4-deliverable build. If a session resumes
 > (token cap / hourly check), read this first to know what's done and what's next.
