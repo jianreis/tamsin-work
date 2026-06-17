@@ -49,7 +49,7 @@ clarifies timing and removes follow-up**, and is questioned when it **removes
 visible human fallback, shifts responsibility onto them, or adds ambiguity**.
 *"Confidence comes from clarity and fallback, not from automation alone."*
 [[src-dc-store-future-interviews-2026]] (UX **U4 graceful-failure**, **U5
-dignity**; pillar **S5 pharmacist/automate** — automate the certainty, keep the
+dignity**; pillar **S5 pharmacist/automate**, automate the certainty, keep the
 human).
 
 ## Desired future-state features (what excited them)
@@ -87,11 +87,11 @@ human).
   distrusted; customers **trust realistic windows over precise ones** (broader
   "this afternoon" preferred 6/12). Over-promising erodes trust.
 - **Automation without checks.** Managed delivery appeals **only with control
-  points** — confirm before each delivery, ability to **pause/adjust**,
+  points**: confirm before each delivery, ability to **pause/adjust**,
   reassurance that errors can be corrected, visible human support. "Automatic
   without checks" drops confidence.
 - **Digital as sole source.** Digital-only instructions worry customers (access,
-  signal, "where do I find it") — print must remain as **safety/backup**.
+  signal, "where do I find it"), so print must remain as **safety/backup**.
 - **Losing the human.** Across scenarios, removing **visible human fallback** or
   **transferring responsibility** to the customer is the recurring failure mode.
 
@@ -108,11 +108,11 @@ All from [[src-dc-store-future-interviews-2026]].
   line, I don't want to scan something"*), ~3/12 want **printed-only**
   instructions, ~4/12 want **in-person support** for sensitive issues. The design
   must **offer both paths**, not force digital (UX **U5 dignity/language**).
-- **Schedule flexibility & location** drove delivery-window preference — flexible
+- **Schedule flexibility & location** drove delivery-window preference: flexible
   / work-from-home customers chose broader windows; those who can "reliably be
   present" or have urgent meds accepted narrow ones.
 - **Caregiving load.** Many manage pharmacy errands **on behalf of others** and
-  on the move (children, calls, work) — which underpins the demand for
+  on the move (children, calls, work), which underpins the demand for
   **step-away notifications** and **forgiving recovery**.
 
 (All directional, n=12 [[src-dc-store-future-interviews-2026]].)
@@ -133,28 +133,28 @@ All from [[src-dc-store-future-interviews-2026]].
 ## Mapping to strategic & UX pillars
 
 - **S2 front-door / S3 service-not-price.** Customers reward **reassurance and
-  certainty** over speed and price — direct evidence for a service-led "health
-  front door" thesis: the value created is **confidence**, not transactional
+  certainty** over speed and price, direct evidence for a service-led "health
+  front door" thesis: the value created is **confidence** rather than transactional
   speed [[src-dc-store-future-interviews-2026]].
 - **S4 chronic-flywheel.** Managed delivery + pre-packed doses land best with
-  **chronic** customers — the natural wedge for a recurring managed service.
+  **chronic** customers, the natural wedge for a recurring managed service.
 - **S5 pharmacist / automate.** Automate the **status, ticketing and check-in**
-  (the certainty layer); **keep the pharmacist/human visible** as fallback —
+  (the certainty layer); **keep the pharmacist/human visible** as fallback, since
   customers want automation that *reduces* their responsibility, not *transfers*
   it.
 - **U2 status.** The most-wanted capability: readiness/turn/progress visibility,
   delivered to the **phone**.
 - **U4 graceful-failure.** Recovery, grace periods and missed-turn forgiveness
-  are explicit fairness tests — "forgiveness by default."
+  are explicit fairness tests: "forgiveness by default."
 - **U5 dignity / U6 reduce-journey.** Offer human and digital paths side-by-side;
   cut repeat trips and awkward re-explanations at handover.
 - **U7 adherence.** Hybrid instructions, organised dosing and managed refills are
-  adherence levers customers actively want.
+  adherence levers customers want.
 - **U1 WhatsApp-first.** Customers asked for **phone-based** notifications and
-  **message/chat** support — consistent with WhatsApp-first delivery
+  **message/chat** support, consistent with WhatsApp-first delivery
   ([[wiki/consumer-context/digital-access-and-whatsapp]]), though the study
   recorded "SMS/app/message" generically rather than naming WhatsApp.
-- **U3 money-legible.** **No direct signal** — this study did not probe pricing,
+- **U3 money-legible.** **No direct signal**: this study did not probe pricing,
   co-payment or claim transparency (a scope gap to validate elsewhere).
 
 ## Open questions
