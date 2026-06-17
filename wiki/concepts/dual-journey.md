@@ -40,7 +40,7 @@ vs. cash total), but the promise of *no surprise at the till* does not.
 ## In this vault
 - Funding reality: [[wiki/medical-schemes/cash-uninsured-pathway]] · [[wiki/medical-schemes/dsp-formularies-copayments]] · [[wiki/medical-schemes/realtime-claims-switching]]
 - Consumer reality: [[wiki/consumer-context/two-economy-affordability]] · [[wiki/consumer-context/health-seeking-behaviour]]
-- Public-sector mirror (the uninsured chronic precedent): CCMDD / Pelebox — [[wiki/medical-schemes/courier-chronic-pharmacy-models]], [[wiki/consumer-context/last-mile-addressing-logistics]]
+- Public-sector mirror (the uninsured chronic precedent): CCMDD / Pelebox - [[wiki/medical-schemes/courier-chronic-pharmacy-models]], [[wiki/consumer-context/last-mile-addressing-logistics]]
 - Related concepts: [[wiki/concepts/price-transparency]] · [[wiki/concepts/channel-ladder]] · [[wiki/concepts/chronic-medicine-flywheel]]
 - Personas spanning the split: [[design-kit/personas/_personas-index]]
 

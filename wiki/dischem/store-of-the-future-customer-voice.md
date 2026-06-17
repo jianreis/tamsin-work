@@ -36,7 +36,7 @@ validate magnitudes quantitatively before committing operational thresholds.
 The single strongest theme across all scenarios: customers evaluate a journey by
 **how clearly they understand what is happening**, not how fast it moves. They
 **tolerate waiting but not uncertainty**. The stated mental model was *"Waiting
-is fine — being unsure isn't"* [[src-dc-store-future-interviews-2026]]. They
+is fine - being unsure isn't"* [[src-dc-store-future-interviews-2026]]. They
 responded most positively to clear readiness confirmation, visible progress, and
 explicit next steps; systems that **reduce guesswork** beat systems that merely
 optimise throughput. This reframes the SOTF brief: the prize is **certainty and

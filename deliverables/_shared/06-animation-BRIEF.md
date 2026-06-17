@@ -138,13 +138,13 @@ needed on the mock content itself - citations live on pains/opps/tech).
 
 // 6 deliveryTrack
 { mode:"home|locker|collect",
-  steps:[{label:"Packed & sealed", state}, {label:"Out for delivery", state}, {label:"Arriving — 12 min", state}, {label:"Delivered ✓", state}],
+  steps:[{label:"Packed & sealed", state}, {label:"Out for delivery", state}, {label:"Arriving - 12 min", state}, {label:"Delivered ✓", state}],
   driver?:{name, eta}, pod?:"Signed by Nomvula", altModes?:["Locker (PUDO)","Click & collect"],
-  realisticWindow?:"Thu 08:00–12:00 — a window you can plan around" }
+  realisticWindow?:"Thu 08:00–12:00 - a window you can plan around" }
 
 // 7 adherencePack
 { days:[{label:"MON", slots:[{time:"AM", pills:[tone,tone,...]},{time:"PM", pills:[...]}]}, ...],
-  reminder?:"Gentle nudge tied to your routine — opt out any time",
+  reminder?:"Gentle nudge tied to your routine - opt out any time",
   print?:true,                    // hybrid digital + printed instructions
   forMember?:"Gogo · INR-set warfarin packed separately" }
 
@@ -170,7 +170,7 @@ Add the `scenes[]` array.
 
 ```js
 const ANIM = {
-  meta:{ title:"Script Re-imagined — the journey, in motion", subtitle, state:"to-be", variant:"aspirational", updated:"2026-06-14", useCase },
+  meta:{ title:"Script Re-imagined - the journey, in motion", subtitle, state:"to-be", variant:"aspirational", updated:"2026-06-14", useCase },
   pillars:[ {id,type,name,oneLiner} ],            // verbatim from #05 / pillars.md
   philosophy:{ pyramid:["Trust","Convenience","Speed"], line:"Predictability beats speed." },
   economies:[ {id:"insured", label, personaRef, persona:{name,bio,...}}, {id:"cash", ...} ],
@@ -213,7 +213,7 @@ Reuse the **pill SVG** generator and **member avatar SVG** from #05 verbatim for
 the cabinet (shapes: tablet | caplet | capsule | bottle; tone/tone2 colours).
 Treatment: confident, generous whitespace, "a moving magazine spread of a
 service." A subtle **Dis-Chem green** brand band on top with the lime "+" and
-the **"⚠ Concept for review — not an official Dis-Chem artefact · generated
+the **"⚠ Concept for review - not an official Dis-Chem artefact · generated
 2026-06-14 from the Bigly ground-truth vault"** ribbon. Animations are smooth,
 ease-out, ~300–600 ms per beat; nothing frenetic. Respect reduced-motion.
 

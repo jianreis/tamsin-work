@@ -12,7 +12,7 @@ updated: "2026-06-17"
 
 # Cash / uninsured pathway
 
-The **majority** of South Africans — **~84%** — are not on a medical scheme
+The **majority** of South Africans - **~84%** - are not on a medical scheme
 [[src-sch-coverage-two-economy]]. For a retail pharmacy this is not a fringe
 case: it is the **larger market**, and the one a future scripting experience most
 risks designing past. Cash patients pay **out of pocket**, and the experience
@@ -22,9 +22,9 @@ must make that **transparent, affordable and dignified**.
 
 In the private sector, medicine has a regulated, transparent price:
 
-- **Single Exit Price (SEP)** — the single maximum manufacturer price, the same
+- **Single Exit Price (SEP)** - the single maximum manufacturer price, the same
   to everyone, no discounts/bonusing [[src-sch-sep-dispensing-fee]].
-- **+ regulated dispensing fee** — a banded formula on top of SEP
+- **+ regulated dispensing fee** - a banded formula on top of SEP
   [[src-sch-sep-dispensing-fee]]:
   - SEP < R109.56 → max **R14.50 + 46% of SEP**
   - SEP < R292.25 → max **R27.75 + 33% of SEP**
@@ -39,14 +39,14 @@ Annual SEP increases are capped (**SEPA 1.47% for 2026**, down from 5.25% in
 ## Bridging products (not schemes)
 
 - **Health insurance** (e.g. GetSavvi): cheaper, **primary-care** products from
-  ~**R582/month** (2026) — unlimited GP, some chronic meds, emergency, HIV/STI
+  ~**R582/month** (2026) - unlimited GP, some chronic meds, emergency, HIV/STI
   testing; **no PMBs**, **not a medical scheme** [[src-sch-cash-health-insurance]].
   Useful framing: many "uninsured" customers actually hold a thin insurance
   product with limited medicine cover.
 - **Medical savings accounts (MSAs)**: on many *scheme* options, members self-fund
-  day-to-day/medicine from a personal pot — functionally cash once depleted
+  day-to-day/medicine from a personal pot - functionally cash once depleted
   [[src-sch-cash-health-insurance]].
-- **Public CCMDD**: the uninsured chronic patient's free route — collect
+- **Public CCMDD**: the uninsured chronic patient's free route - collect
   pre-packed chronic meds at a pick-up point ([[courier-chronic-pharmacy-models]],
   [[src-sch-ccmdd-public]]). Retail pharmacies are CCMDD pick-up points.
 
@@ -81,7 +81,7 @@ need all of this now?" are real affordability levers.
   R2 provision above R1,530.73 SEP) need confirmation against the primary
   Gazette. ⚠️ → [[open-questions]].
 - Real out-of-pocket affordability data (what % of income a typical chronic
-  script consumes) — triangulate with consumer-context research.
+  script consumes) - triangulate with consumer-context research.
 
 ## See also
 - [[cms-medical-schemes-overview]] · [[dsp-formularies-copayments]]

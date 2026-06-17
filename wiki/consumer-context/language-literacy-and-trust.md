@@ -16,7 +16,7 @@ South Africa is **multilingual, multi-literate, and stigma-sensitive**. No singl
 language is spoken at home by even a quarter of the population, English (the default
 of most apps and labels) is a home language for fewer than one in ten, and health
 information competes with low health literacy and deep, well-founded fears about
-**privacy and disclosure** — especially around HIV, mental health, and chronic
+**privacy and disclosure** - especially around HIV, mental health, and chronic
 illness. A scripting experience that is English-only, jargon-heavy, or careless
 with privacy will exclude or alienate the majority. Trust is **earned per channel**:
 South Africans extend it to pharmacists and clinics differently than to apps.
@@ -36,7 +36,7 @@ as consequential as medicine instructions.
 ## Health literacy
 
 Beyond language, **health literacy is uneven**. Adherence research repeatedly cites
-**poor treatment literacy** as a system-level barrier — patients do not always
+**poor treatment literacy** as a system-level barrier - patients do not always
 understand regimens, refill timing, or why stable chronic disease still needs
 continuous medicine [[src-con-adherence-stigma]]. Instructions written in clinical
 register, or only in English, compound this. **Plain-language, multilingual, and

@@ -50,9 +50,9 @@ Pay → Dispense → Collect/Deliver → Adhere → Refill/Renew`
 ## Emotion curve (quick capture)
 ```
 5 😀
-4 🙂        ●——●
-3 😐  ●——●          ●
-2 🙁              ●——●        ●
+4 🙂        ● -  - ●
+3 😐  ● -  - ●          ●
+2 🙁              ● -  - ●        ●
 1 😠                    ●            (plot per stage)
    Trig Presc Submit Valid Fund Pay Disp Deliver Adhere Refill
 ```

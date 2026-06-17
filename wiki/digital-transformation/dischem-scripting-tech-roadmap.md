@@ -14,7 +14,7 @@ updated: "2026-06-17"
 
 This page inventories the **technology capabilities Dis-Chem has already roadmapped**
 for its future-state omnichannel scripting (prescription) experience, captured from the
-internal **"Script Re-imagined — Virtual Order Operational Flow"** board
+internal **"Script Re-imagined - Virtual Order Operational Flow"** board
 [[src-dc-omnichannel-scripting-roadmap]]. It exists so the future-state journey/blueprint
 build can **weave in technology that is already planned**, grounding the deliverable in
 Dis-Chem's own intent rather than inventing capability. The proof-point for the

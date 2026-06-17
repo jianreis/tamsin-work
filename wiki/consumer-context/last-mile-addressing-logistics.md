@@ -76,7 +76,7 @@ address stigma (see [[wiki/consumer-context/language-literacy-and-trust]]).
 ## Courier reliability
 
 Home delivery exists and works well for the insured/urban segment (the courier
-pharmacies dispense over a million scripts/month — [[src-courier-pharmacies-sa]]),
+pharmacies dispense over a million scripts/month - [[src-courier-pharmacies-sa]]),
 but reliability is uneven: Dis-Chem's own app reviews surface **orders cancelled or
 reversed minutes before scheduled delivery** and **multiple confusing
 address-entry steps** as recurring complaints [[src-dc-app-reviews]] (D-tier

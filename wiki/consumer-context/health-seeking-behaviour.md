@@ -16,7 +16,7 @@ Where South Africans actually get medicines is shaped by **cost, proximity, and
 the public/private split**. The majority use **public clinics** and increasingly
 collect chronic medicine through **CCMDD pick-up points and Pelebox lockers**; the
 insured minority use private GPs, retail pharmacy, and courier pharmacy. The demand
-is dominated by **chronic disease** — SA has the world's largest HIV programme plus
+is dominated by **chronic disease** - SA has the world's largest HIV programme plus
 a rising burden of hypertension, diabetes, TB, and largely-untreated mental
 illness. Adherence failures are mostly driven by **system friction and stigma, not
 patient indifference**, which is the design space a better scripting

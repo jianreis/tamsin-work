@@ -36,7 +36,7 @@ fulfilment hand-over, and the silent refill→renewal gap.
 ---
 
 ## Stage A — Predict & trigger  *(new front-end to the loop)*
-- **Evidence:** A WhatsApp message lands ~7 days before run-out: *"Hi Nomvula —
+- **Evidence:** A WhatsApp message lands ~7 days before run-out: *"Hi Nomvula - 
   your BP & diabetes meds are due. Ready to send the same as last month? ✅ Yes / ✏️ Change / ⏰ Snooze."*
 - **Customer action:** One tap. (She didn't have to remember - the system did.)
 - **Emotion:** 🙂 in control, unburdened.
@@ -52,9 +52,9 @@ fulfilment hand-over, and the silent refill→renewal gap.
 - **Metric:** % cycles auto-initiated; time-to-confirm; opt-out rate.
 
 ## Stage B — Confirm & pre-check  *(the no-surprise promise)* ⭐
-- **Evidence:** Within seconds: *"All in stock ✓. Discovery covers this in full —
+- **Evidence:** Within seconds: *"All in stock ✓. Discovery covers this in full - 
   **R0 to pay** ✓. Pharmacist will do a quick safety check. Deliver to home
-  Thursday AM?"* (or, if applicable: *"R42 co-pay — here's why, and a fully-funded
+  Thursday AM?"* (or, if applicable: *"R42 co-pay - here's why, and a fully-funded
   generic option."*)
 - **Customer action:** Confirms delivery slot; optionally swaps to the funded generic.
 - **Emotion:** 🙂 reassured - **cost is known before commit**, not after the till.
@@ -113,7 +113,7 @@ fulfilment hand-over, and the silent refill→renewal gap.
 - **Metric:** claim first-pass acceptance rate.
 
 ## Stage F — Deliver / collect  *(promise kept)* ⭐
-- **Evidence:** Live tracking in WhatsApp; driver ETA; *"Delivered ✓ — signed by
+- **Evidence:** Live tracking in WhatsApp; driver ETA; *"Delivered ✓ - signed by
   Nomvula."* Choice of **home delivery, click-and-collect, or a locker/pickup point**.
 - **Backstage:** Omnichannel routing; **cold-chain-aware** handling for fridge
   lines; proof-of-delivery; **no silent cancellation**, any exception escalates
@@ -128,14 +128,14 @@ fulfilment hand-over, and the silent refill→renewal gap.
 ## Stage G — Graceful failure  *(the real test, runs in parallel)*
 - **Triggers & recovery** ([[wiki/concepts/graceful-failure]], [[wiki/ux-service-design/pharmacy-ux-patterns]]):
   - *Stock-out* → auto-offer funded generic (pharmacist-approved) or split/partial + ETA, never a silent gap.
-  - *Claim rejects* → plain-language reason + the fix (e.g. "chronic condition not registered — register now in 2 taps"; the pharmacy can register CDL, see [[wiki/medical-schemes/pmb-cdl-chronic]]).
+  - *Claim rejects* → plain-language reason + the fix (e.g. "chronic condition not registered - register now in 2 taps"; the pharmacy can register CDL, see [[wiki/medical-schemes/pmb-cdl-chronic]]).
   - *Delivery fails / load-shedding* → reroute to collection/locker; keep her informed.
   - *Out of repeats* → see Stage H.
 - **Metric:** % exceptions resolved without customer chasing; recovery satisfaction.
 
 ## Stage H — Proactive renewal  *(close the script-expiry gap)* ⭐
 - **Evidence:** *"This is your last repeat. Want a quick check-in with a clinician
-  to renew — no clinic trip?"* → in-WhatsApp **Kena** teleconsult → new **e-script
+  to renew - no clinic trip?"* → in-WhatsApp **Kena** teleconsult → new **e-script
   token** issued back into the loop.
 - **Backstage:** Telehealth consult → e-prescription; orchestration spans the
   prescriber gap the as-is journey breaks at.

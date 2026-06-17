@@ -105,7 +105,7 @@ than core, and any clinical claims need an evidence and regulatory check.
   medical-device in SA, and what clearance a therapeutic-claim DTx needs.
   🔮 may require-reform/clarification.
 - ⚠️ Which adherence channel performs best in SA (WhatsApp vs SMS vs app vs USSD)
-  for chronic patients? (Consumer-research gap — cross-link to `consumer-context`.)
+  for chronic patients? (Consumer-research gap - cross-link to `consumer-context`.)
 - ⚠️ UNVERIFIED: Do adherence/monitoring tools improve **clinical outcomes** (not
   just measured adherence) durably at scale? Evidence is thinner and GRADE-low
   [[src-dig-adherence-tech-evidence]].

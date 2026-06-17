@@ -11,7 +11,7 @@ grounded_in:
   - "[[wiki/consumer-context/language-literacy-and-trust]]"
   - "[[wiki/medical-schemes/pmb-cdl-chronic]]"
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Naledi Mahlangu — frontline dispensary pharmacist (staff persona)
@@ -107,7 +107,7 @@ removes *her* from the loop.
 
 ## How to design for them
 - **Automate the toil, not the judgement:** OCR/structured intake to kill
-  re-keying, proactive stock checks, and auto-handling of scheme/co-pay logic — so
+  re-keying, proactive stock checks, and auto-handling of scheme/co-pay logic - so
   her time goes to the clinical check, not admin
   [[wiki/dispensing-practice/dispensing-process-steps]].
 - **Make the clinical check un-skippable by design:** even fast e-script and

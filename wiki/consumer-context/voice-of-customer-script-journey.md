@@ -134,7 +134,7 @@ segments.
 ### Paying & collecting → maps to PAY / COLLECT
 - **Works:** **medical-aid claims process instantly and accurately** at the till
   ("I just hand my card and it's done"); **co-pays seen as small and fair**
-  ("R17 versus R300 — that's fair"); checkout doubles as a **shopping extension**
+  ("R17 versus R300 - that's fair"); checkout doubles as a **shopping extension**
   (specials, 3-for-2) [[src-dc-script-journey-interviews-2025]].
 - **Pain:** **till queues can exceed pharmacy queues**, and **idle-staff
   perception** when cashiers chat at busy times; recurring desire to **pay at the

@@ -31,6 +31,6 @@ Everything here must be **traceable to the wiki** (and through it, to sources).
 - [[design-kit/templates/future-state-blueprint-board-style|Future-state blueprint board — style & treatment reference]] — the Bigly "board" visual language + reusable schema for the interactive HTML future-state journey deliverable.
 
 ## How to use (summary)
-See [[CLAUDE]] §8 — "How to USE this vault to build blueprints & journeys".
+See [[CLAUDE]] §8 - "How to USE this vault to build blueprints & journeys".
 Ground as-is in Dis-Chem + regulatory; pull best practice + global patterns;
 anchor in real SA personas; apply method; respect non-negotiables; cite the vault.

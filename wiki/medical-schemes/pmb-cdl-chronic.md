@@ -44,11 +44,11 @@ PMB cover is **automatic for every member**, but each chronic condition must be
    scheme** to register the condition (often via a "Chronic Illness Benefit
    Application" / "out-of-hospital PMB" form).
 2. Scheme checks the condition is a defined PMB AND the prescribed treatment
-   matches the **defined benefit** — the **treatment algorithm** (published per
+   matches the **defined benefit** - the **treatment algorithm** (published per
    CDL condition in the Government Gazette) and the scheme **formulary**
    [[src-sch-cms-pmb-resource]] (see [[dsp-formularies-copayments]]).
 3. Once approved/registered, repeat scripts are funded from the **chronic
-   benefit** (not the day-to-day savings pot) — a different, usually richer pool.
+   benefit** (not the day-to-day savings pot) - a different, usually richer pool.
 
 Until registration is complete, a chronic script may fail to fund or hit the
 member's savings/acute benefit, a common, frustrating failure mode.

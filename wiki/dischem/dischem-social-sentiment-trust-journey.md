@@ -7,7 +7,7 @@ confidence: medium
 tags: [domain/dischem, domain/consumer, topic/trust-safety, topic/adherence, topic/automation, journey/dispense, journey/collect, journey/deliver, journey/refill, journey/validate, region/za]
 sources: [src-dc-social-media-research-2025]
 created: "2026-06-14"
-updated: "2026-06-14"
+updated: "2026-06-17"
 ---
 
 # Dis-Chem pharmacy — public social sentiment & the Patient Trust Journey
@@ -121,7 +121,7 @@ it mirrors how a local pharmacy behaves** - familiarity, continuity, personal
 recognition - and in those moments compares **favourably vs Clicks**. The
 strategic read: the future-state scripting experience should manufacture
 "**local-pharmacy feel at chain scale**" (continuity of pharmacist relationship,
-remembered history, proactive care) — the core **S3**/**S2** bet.
+remembered history, proactive care) - the core **S3**/**S2** bet.
 
 ---
 
@@ -130,26 +130,26 @@ remembered history, proactive care) — the core **S3**/**S2** bet.
 **Channel of conversation** ([[src-dc-social-media-research-2025]] p38):
 **In-person 76%**, **Online 16%**, Communication 3%, Small-pharmacies 3%,
 Recommendation 2%. In-person dominates the *volume* of conversation, but **online
-is more uniformly negative** (~78% neg vs ~60% in-person) — i.e. **digital
+is more uniformly negative** (~78% neg vs ~60% in-person) - i.e. **digital
 journeys generate proportionally more dissatisfaction per mention**.
 
 **Most-negative themes** (treat as ranking, not rates):
 - **In-person sub-themes** (p43–44): biggest *volume* is **Service** (~220
-  mentions) and it is the *least* negative (~40% neg / ~58% pos) — staff
+  mentions) and it is the *least* negative (~40% neg / ~58% pos) - staff
   interaction is where Dis-Chem still earns goodwill. The most *negative* in-person
   sub-themes are **Collections (~93% neg)**, **Stock issues (~91%)**, **Wait time
   (~89%)** and **Issue-with-medication (~77%)**.
 - **Online sub-themes** (p46–47): **Delivery** is the dominant online pain (~75
   mentions, ~70% neg), followed by **Wait time** (~44). **Issue-with-medication,
-  Collections, Stock issues and Pack-My-Meds are ~96–100% negative** online —
+  Collections, Stock issues and Pack-My-Meds are ~96–100% negative** online - 
   near-total dissatisfaction whenever they surface.
-- **"Small pharmacies"** theme is ~96% negative *toward Dis-Chem* — because
+- **"Small pharmacies"** theme is ~96% negative *toward Dis-Chem* - because
   customers invoke small pharmacies to **praise the alternative and damn Dis-Chem**
   (the defection signal again).
 
 **Design read.** The two highest-leverage fix zones are **Collections / Pack My
-Meds reliability** (very high negativity in both channels — **S4** chronic
-flywheel, **U2/U4**) and **Delivery** (the dominant online pain — **COLLECT/
+Meds reliability** (very high negativity in both channels - **S4** chronic
+flywheel, **U2/U4**) and **Delivery** (the dominant online pain - **COLLECT/
 DELIVER**, **U2/U4**). **Service** (human interaction) is the **residual trust
 asset to protect and amplify** (**S5/S3/U5**).
 
@@ -181,21 +181,21 @@ asset to protect and amplify** (**S5/S3/U5**).
 
 ## Open questions
 - **Sampling-frame bias.** The corpus was scraped from **posts mentioning rewards
-  programmes** — does this over-represent loyalty-engaged customers and
+  programmes** - does this over-represent loyalty-engaged customers and
   under-represent cash/uninsured or low-data users? Likely skews the channel mix.
 - **Percentages vs rates.** No denominators; figures are directional. How do the
   trust-journey *proportions* compare with the internal C4C complaint ranking
-  ([[wiki/dischem/pharmacy-complaints-pain-points]]) — do they corroborate?
+  ([[wiki/dischem/pharmacy-complaints-pain-points]]) - do they corroborate?
 - **Reconcile "Collections" vs "Pack My Meds".** Both appear as sub-themes; are
   customers distinguishing in-store pre-pack collection from the PackMyMeds repeat
   service, or conflating them? Affects which service the fix targets.
 - **The "racist CEO" defection driver.** At least one defection cites a reputational/
-  brand-trust event, not a service failure — how much of "negative sentiment" is
+  brand-trust event, not a service failure - how much of "negative sentiment" is
   brand/reputation noise vs operable service failure? Needs separation before
   treating all 65% as fixable by service design.
 - **Generic-substitution communication.** Is the "incorrect medication" perception
   largely **un-explained generic substitution**? If so it is a counselling/consent
-  fix, not a dispensing-accuracy one — cross-check against dispensing-practice.
+  fix, not a dispensing-accuracy one - cross-check against dispensing-practice.
 
 ## See also
 - [[src-dc-social-media-research-2025]] — the source deck, full data appendix and

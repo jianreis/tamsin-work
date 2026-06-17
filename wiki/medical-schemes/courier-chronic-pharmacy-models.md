@@ -93,7 +93,7 @@ rural gaps) are **direct UX evidence** of what to fix [[src-sch-ccmdd-public]].
 - **Scriptpharm** and **MedXpress (non-Discovery)** ownership/model specifics
   unconfirmed. ⚠️ → [[open-questions]].
 - Exact split of who funds the courier leg across schemes (DSP-funded vs
-  member-funded) — varies by scheme/option.
+  member-funded) - varies by scheme/option.
 
 ## See also
 - [[dsp-formularies-copayments]] · [[pmb-cdl-chronic]] · [[cash-uninsured-pathway]]

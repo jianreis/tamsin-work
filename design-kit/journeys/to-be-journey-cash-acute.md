@@ -22,7 +22,7 @@ updated: "2026-06-17"
 > scheme-first "happy path" fails. Here it is first-class. See
 > [[wiki/concepts/dual-journey]].
 
-**JTBD:** *"Get this acute script filled fast, at a price I can see, near home —
+**JTBD:** *"Get this acute script filled fast, at a price I can see, near home - 
 with whatever phone and airtime I have."* ([[jtbd-library]])
 **Primary channel:** [[wiki/concepts/channel-ladder|WhatsApp → USSD/SMS fallback]];
 **no app install, low-data, resumable**. **Fulfilment:** nearest collection /
@@ -54,7 +54,7 @@ locker rather than delivery-first ([[wiki/consumer-context/last-mile-addressing-
 
 ## Stage 3 — Validate & clinical check
 - **Doing:** Answers two quick questions (child's age/weight, allergies); waits briefly.
-- **Thinking:** *"A real pharmacist is checking it — good."*
+- **Thinking:** *"A real pharmacist is checking it - good."*
 - **Feeling:** 🙂 reassured.
 - **Touchpoints:** WhatsApp status *"Pharmacist checking ✓"*; chat available.
 - **Backstage (visible as status):** legality + **scheduling** check, dose-for-weight, interaction screen; **photo script verified by pharmacist** (a photo is a "transmission", not yet a paperless e-script, see [[wiki/sa-regulatory/e-prescription-telehealth-popia]]).
@@ -63,7 +63,7 @@ locker rather than delivery-first ([[wiki/consumer-context/last-mile-addressing-
 
 ## Stage 4 — Price (cash, transparent) ⭐
 - **Doing:** Sees an itemised cash price **before committing**: *"R74.50 total =
-  medicine (SEP R52) + dispensing fee + VAT. A generic is R48.30 — switch? ✅"*
+  medicine (SEP R52) + dispensing fee + VAT. A generic is R48.30 - switch? ✅"*
 - **Thinking:** *"Now I know. I can choose the generic and afford it."*
 - **Feeling:** 😀 relief, trust, control.
 - **Touchpoints:** WhatsApp price card; generic toggle.
@@ -105,8 +105,8 @@ locker rather than delivery-first ([[wiki/consumer-context/last-mile-addressing-
 ## Emotion curve (as-is → to-be)
 ```
        Need  Submit Valid  Price   Pay   Disp  Collect Adhere
-as-is:  😣 —— 😣 ——— 😐 ——— 😣 ——— 😣 ——— 😐 ——— 😣 ——— 😐   (cost shock + fulfilment risk)
-to-be:  😣 —— 🙂 ——— 🙂 ——— 😀 ——— 🙂 ——— 🙂 ——— 🙂 ——— 🙂   (transparency + reliability lift the curve)
+as-is:  😣 -  - 😣 -  -  - 😐 -  -  - 😣 -  -  - 😣 -  -  - 😐 -  -  - 😣 -  -  - 😐   (cost shock + fulfilment risk)
+to-be:  😣 -  - 🙂 -  -  - 🙂 -  -  - 😀 -  -  - 🙂 -  -  - 🙂 -  -  - 🙂 -  -  - 🙂   (transparency + reliability lift the curve)
 ```
 
 ## Top 3 moments of truth

@@ -45,11 +45,11 @@ constraints**, and items needing law/rule change are flagged 🔮 requires-refor
 2. A **registered pharmacist** must validate and (directly supervise) dispensing of
    S2+; **counselling is mandatory** (GPP).
 3. The legal seller of scheduled medicines is always a **DoH-licensed, SAPC-recorded
-   pharmacy** — an app is only a channel.
+   pharmacy** - an app is only a channel.
 4. **S6 = no repeats, 30-day cap, register**; S2–S5 repeats ≤ 6 months (S4 needs a
    stated repeat count).
 5. A true paperless e-script needs an **ECTA Advanced Electronic Signature**;
    telehealth-originated scripts are now allowed (HPCSA, post-COVID).
-6. **Medicine price is fixed (SEP)** — no discounting; compete on service. Pricing
+6. **Medicine price is fixed (SEP)** - no discounting; compete on service. Pricing
    can be shown transparently (SEP + dispensing fee + VAT).
 7. **POPIA** governs all prescription/health data as "special personal information".

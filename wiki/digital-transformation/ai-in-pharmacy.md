@@ -124,7 +124,7 @@ rules keep the pharmacist responsible, so designs must keep a pharmacist gate.
 - ⚠️ UNVERIFIED: Real-world triage-agent safety on SA languages/colloquial symptom
   descriptions (lab 84% flowchart selection is English/in-distribution)
   [[src-dig-cv-pill-triage]].
-- ⚠️ Where does liability sit for an AI-assisted dispensing error in SA — pharmacist,
+- ⚠️ Where does liability sit for an AI-assisted dispensing error in SA - pharmacist,
   employer, or vendor? (Cross-link to `sa-regulatory`.)
 
 ## See also

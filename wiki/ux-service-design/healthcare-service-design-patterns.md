@@ -7,7 +7,7 @@ confidence: high
 tags: [domain/ux, topic/trust-safety, topic/telehealth, topic/accessibility, journey/validate, journey/adhere]
 sources: [src-ux-picker-patient-centred-care, src-ux-nhs-digital-front-door, src-ux-nhs-govuk-design-principles, src-ux-ahrq-health-literacy-teachback, src-ux-sludge-thaler-sunstein, src-ux-nng-error-messages, src-ux-com-b-behaviour-change-wheel]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Healthcare service-design patterns & trust-safety in health UX
@@ -119,7 +119,7 @@ universal precautions* [[src-ux-ahrq-health-literacy-teachback]]:
   [[src-ux-ahrq-health-literacy-teachback]].
 - **Ask Me 3** spine for any med: *What is it for? What do I do? Why does it
   matter?* [[src-ux-ahrq-health-literacy-teachback]].
-- Low health literacy correlates with worse adherence and more errors — so
+- Low health literacy correlates with worse adherence and more errors - so
   clarity is **safety**.
 
 ## Designing for anxiety & vulnerability
@@ -157,10 +157,10 @@ someone. Design accordingly:
   [[src-ux-ahrq-health-literacy-teachback]].
 
 ## Open questions
-- POPIA specifics for consent UX and lawful basis for auto-refill/proxy ordering —
+- POPIA specifics for consent UX and lawful basis for auto-refill/proxy ordering - 
   see [[wiki/sa-regulatory/_index]]; log to [[meta/open-questions]].
 - SAPC/clinical rules on what dosing counselling may be delivered digitally vs
-  pharmacist-only — see [[wiki/dispensing-practice/_index]].
+  pharmacist-only - see [[wiki/dispensing-practice/_index]].
 
 ## See also
 - [[pharmacy-ux-patterns]] · [[inclusive-low-bandwidth-design]] ·

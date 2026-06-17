@@ -22,7 +22,7 @@ which rails the claim runs on, and what "the customer" can even afford.
 Medical schemes are **not-for-profit member funds** regulated by the **Council
 for Medical Schemes (CMS)** under the **Medical Schemes Act 131 of 1998**. The
 Act mandates community rating (no risk-based premiums), open enrolment for open
-schemes, and a legal floor of cover — the **Prescribed Minimum Benefits**
+schemes, and a legal floor of cover - the **Prescribed Minimum Benefits**
 ([[pmb-cdl-chronic|PMBs]]). Schemes are distinct from **health insurance**
 products (short-term insurance, e.g. GetSavvi), which are cheaper, primary-care
 focused, and **carry no PMB obligation** [[src-sch-cash-health-insurance]].
@@ -46,7 +46,7 @@ absolute numbers and **GHS %** for population share, and always state the year.
 
 - **71 schemes**: **16 open** (anyone may join) + **55 restricted** (employer/
   sector-bound, e.g. GEMS) [[src-sch-cms-industry-report-2024]].
-- **9.1m+ beneficiaries**, +0.45% on 2023 — **slow growth, ageing** (avg age
+- **9.1m+ beneficiaries**, +0.45% on 2023 - **slow growth, ageing** (avg age
   32 → 34.2) [[src-sch-cms-industry-report-2024]].
 - Bigger, older, more concentrated; by 2024 open schemes = 56.1% of principal
   members, restricted 43.9% (restricted rising) [[src-sch-cms-industry-report-2024]].
@@ -96,7 +96,7 @@ scheme-funded model stands.**
 - Exact CMS 2024/25 figures need confirmation against the primary PDF (site
   returned 403 to automated fetch). ⚠️ Re-verify beneficiary count and scheme
   split. → see [[open-questions]].
-- Reconcile "9.5m insured / 17.4%" vs "9.17m / 15.8%" — different bases/years.
+- Reconcile "9.5m insured / 17.4%" vs "9.17m / 15.8%" - different bases/years.
 
 ## See also
 - [[pmb-cdl-chronic]] · [[dsp-formularies-copayments]] · [[realtime-claims-switching]]

@@ -21,7 +21,7 @@ prescription into a number the member actually pays.
 
 A **DSP** is a provider (pharmacy, doctor, hospital) the scheme **contracts** as
 its preferred channel for a service [[src-sch-dsp-formulary-copay]]. Using a
-**non-DSP** voluntarily can trigger a **co-payment** — often a **percentage** or
+**non-DSP** voluntarily can trigger a **co-payment** - often a **percentage** or
 the **difference between the DSP tariff and what the chosen provider charged**
 [[src-sch-dsp-formulary-copay]]. For chronic medicine, the DSP is frequently a
 **courier pharmacy** (e.g. Pharmacy Direct, Clicks Direct Medicines, MedXpress

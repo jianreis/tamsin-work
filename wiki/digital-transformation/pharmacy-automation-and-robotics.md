@@ -7,7 +7,7 @@ confidence: medium
 tags: [domain/digital, topic/automation, topic/ai, topic/e-prescription]
 sources: [src-dig-pharmacy-automation-evidence, src-dig-adc-lockers-market, src-dig-sa-automation-adoption, src-dig-cv-pill-triage, src-dig-eprescribing-safety-scoping]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Pharmacy automation & robotics
@@ -80,16 +80,16 @@ higher-volume, well-capitalised settings, and SA-specific constraints shape the
 business case:
 
 - **Capital intensity** vs the regulated dispensing-fee economics (cross-link to
-  `medical-schemes`) — central-fill amortises best across very high repeat volumes.
-- **Load-shedding/power reliability** — automated lines need UPS/generator backup;
+  `medical-schemes`) - central-fill amortises best across very high repeat volumes.
+- **Load-shedding/power reliability** - automated lines need UPS/generator backup;
   a stalled robot is a stalled dispensary.
-- **Imported hardware/maintenance** — spares, service and skills availability
+- **Imported hardware/maintenance** - spares, service and skills availability
   affect uptime.
 
 What suits a high-volume SA dispensary: a **central-fill model for chronic/repeat
 medication** (predictable, high-volume, courier/locker-delivered), in-store
 **vision-based verification** to harden the final check, and **smart lockers** for
-contactless collection — leaving in-store pharmacists for acute scripts and
+contactless collection - leaving in-store pharmacists for acute scripts and
 counselling.
 
 ## Design implications
@@ -112,7 +112,7 @@ counselling.
   robotic dispensing today, and at what scale? Secondary coverage asserts it; needs
   primary confirmation [[src-dig-sa-automation-adoption]].
 - ⚠️ At what repeat-script volume does central-fill become economic under SA's
-  regulated dispensing fee? (Modelling gap — cross-link to `medical-schemes`.)
+  regulated dispensing fee? (Modelling gap - cross-link to `medical-schemes`.)
 - ⚠️ UNVERIFIED: Real-world (not lab) accuracy of vision verification on the SA
   product range, including local generics and packaging variants.
 - ⚠️ Are pharmacist-supervised smart lockers compliant with SAPC hand-over /

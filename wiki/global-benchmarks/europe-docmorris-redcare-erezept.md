@@ -39,7 +39,7 @@ Telematics Infrastructure for **remote mail-order fulfilment**
 [[src-gbl-docmorris-redcare]], [[src-gbl-germany-erezept]]. gematik (the national
 agency) extended both firms' CardLink approval **to 31 January 2027**. The strategic
 point for SA: **whoever owns the digital redemption flow of the national e-script
-captures the mail-order Rx market** — that is the prize, and it sat behind a
+captures the mail-order Rx market** - that is the prize, and it sat behind a
 national rail.
 
 ## E-Rezept — how it works
@@ -49,11 +49,11 @@ The German e-prescription flow [[src-gbl-germany-erezept]]:
    health-professional card, eHBA); it is stored on the central **Telematics
    Infrastructure (TI)** operated under **gematik**.
 2. The patient redeems it one of four ways:
-   - **(a) eGK card insertion** — insert the health card at the pharmacy reader
+   - **(a) eGK card insertion** - insert the health card at the pharmacy reader
      (became the dominant method);
-   - **(b) the "Das E-Rezept" app** — but login requires an **insurer-issued PIN**;
+   - **(b) the "Das E-Rezept" app** - but login requires an **insurer-issued PIN**;
    - **(c) a paper token** with a data-matrix code; or
-   - **(d) CardLink** — NFC card + phone, no PIN, enabling mail-order (from 2024).
+   - **(d) CardLink** - NFC card + phone, no PIN, enabling mail-order (from 2024).
 
 It became **mandatory for statutory-insurance prescriptions on 1 January 2024**.
 The backend scaled impressively: **100 million** e-prescriptions redeemed by early
@@ -62,19 +62,19 @@ March 2024 and the **one-billionth on 17 October 2025** [[src-gbl-germany-erezep
 ## The lessons — why this is the key cautionary tale
 
 **1. Don't mandate ahead of a stable, low-friction stack.** The mandatory start
-was originally set for **1 January 2022** but had to be postponed — by early
-December 2021 only ~**42 e-prescriptions** had been written nationwide — slipping
+was originally set for **1 January 2022** but had to be postponed - by early
+December 2021 only ~**42 e-prescriptions** had been written nationwide - slipping
 **two full years** to 2024 [[src-gbl-germany-erezept]]. Shipping a mandate before
 the tooling existed bought delay and credibility damage.
 
 **2. A single central rail is a single point of failure.** A central TI outage on
 **14 February 2024** (a certificate-verification fault at a service provider)
-knocked out components nationwide; recurring downtime continued into 2025 — the
+knocked out components nationwide; recurring downtime continued into 2025 - the
 pharmacists' federation reported **five outage days in a single August-2025
 fortnight**, each affecting tens of thousands of patients. Its memorable line:
 *"The e-prescription is outperforming Deutsche Bahn in terms of unreliability"*
-[[src-gbl-germany-erezept]]. **For SA — where load-shedding and connectivity gaps
-are real — a single online-only dependency without an offline fallback is
+[[src-gbl-germany-erezept]]. **For SA - where load-shedding and connectivity gaps
+are real - a single online-only dependency without an offline fallback is
 dangerous** [[wiki/consumer-context/_index]].
 
 **3. Consumer login friction routes people to the path of least resistance.** Of
@@ -84,7 +84,7 @@ app**, because the app login was gated behind an insurer-issued PIN
 until CardLink removed the PIN. **Lesson: the redemption UX must be effortless
 (scan/tap), or patients default to the analogue option.**
 
-**4. If the new flow is slower for providers, it is resented — even when
+**4. If the new flow is slower for providers, it is resented - even when
 mandatory.** An ABDA/IQVIA survey of ~1,100 pharmacies (early 2024) found ~**69%**
 said the top problem was "patient present but the e-prescription not yet
 available", and ~70% reported delayed medication supply [[src-gbl-germany-erezept]].
@@ -92,7 +92,7 @@ Provider workflow burden is an adoption tax.
 
 **5. Plan the standards/crypto migration early.** A deferred RSA-2048 → ECC crypto
 migration at end-2025 threatened to push thousands of practices with non-ECC
-health-professional cards back to paper — self-inflicted technical debt resurrecting
+health-professional cards back to paper - self-inflicted technical debt resurrecting
 the fallback years later [[src-gbl-germany-erezept]].
 
 ## Broader EU context
@@ -106,15 +106,15 @@ single retailer.
 
 ## What to borrow for SA
 
-- **A national/utility e-script rail is the unlock for scaled digital Rx** — the
+- **A national/utility e-script rail is the unlock for scaled digital Rx** - the
   prize is real, so invest in it; relevant to SA e-Rx ambitions
   [[wiki/digital-transformation/_index]], [[wiki/sa-regulatory/_index]].
 - **Make redemption effortless (scan/tap), never PIN-gated.** CardLink's
   card-to-phone (no-PIN) redemption is the pattern; the app-with-PIN is the
   anti-pattern.
-- **Design an explicit offline/degraded-mode fallback** — paper token / cached
-  QR — so an outage doesn't halt dispensing (critical for load-shedding SA).
-- **Minimise provider workflow burden** — if e-prescribing is slower than paper at
+- **Design an explicit offline/degraded-mode fallback** - paper token / cached
+  QR - so an outage doesn't halt dispensing (critical for load-shedding SA).
+- **Minimise provider workflow burden** - if e-prescribing is slower than paper at
   the counter, adoption suffers regardless of mandate.
 
 ## What doesn't transfer
@@ -122,7 +122,7 @@ single retailer.
 - **The eGK national health-card + insurer-PIN architecture** assumes universal
   statutory insurance and a smart-card estate SA does not have
   [[wiki/medical-schemes/_index]].
-- **A single centralised TI as the only rail** — SA should prefer a more resilient,
+- **A single centralised TI as the only rail** - SA should prefer a more resilient,
   offline-tolerant design given connectivity/power realities
   [[wiki/consumer-context/_index]].
 - **Cross-border free-movement mail-order economics** are an EU-single-market
@@ -139,5 +139,5 @@ single retailer.
 ## Open questions
 
 - Whether Germany's "PoPP" next-gen redemption (replacing CardLink approvals from
-  2027) resolves the friction — not yet demonstrated.
+  2027) resolves the friction - not yet demonstrated.
 - Long-run TI reliability after 2024–25 outages remains to be proven.
