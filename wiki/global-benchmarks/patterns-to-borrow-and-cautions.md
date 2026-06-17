@@ -16,9 +16,9 @@ This page distils the six regional benchmark pages into a decision-useful patter
 library for the future-state Dis-Chem scripting experience. **Headline judgement:
 the emerging-market models (India, China) and Australia transfer to SA far better
 than the US/UK/EU models, because they assume mixed funding, cash-paying patients,
-dense store estates as fulfilment nodes, and pragmatic verification — not a single
-tax-funded payer or an insurance-PBM middle layer.** Borrow mechanisms; reject
-funding architectures.
+dense store estates as fulfilment nodes, and pragmatic verification rather than a single
+tax-funded payer or an insurance-PBM middle layer.** Borrow the mechanisms and reject
+the funding architectures.
 
 ## The 11 highest-value transferable patterns
 
@@ -27,70 +27,70 @@ funding architectures.
 > visual reference — in the companion page
 > **[[wiki/global-benchmarks/patterns-deep-dive|Deep-dive — the 11 patterns, in detail]]**.
 
-1. **QR-code e-script token (SMS/email), scanned at any pharmacy** — the single most
+1. **QR-code e-script token (SMS/email), scanned at any pharmacy**, the single most
    transferable design. Australia's token is a *key* that unlocks the script from a
-   secure delivery service; low-friction, no PIN, works on any phone, forwardable to
-   a carer [[src-gbl-australia-escript]]. Germany proves the inverse: a PIN-gated app
+   secure delivery service: low-friction, no PIN, works on any phone, forwardable to
+   a carer [[src-gbl-australia-escript]]. Germany shows the inverse, where a PIN-gated app
    drove ~99% of patients to the analogue fallback [[src-gbl-germany-erezept]]. **For
-   SA, make redemption a scan/tap; design a printed-QR / USSD / WhatsApp fallback for
+   SA, make redemption a scan/tap, and design a printed-QR / USSD / WhatsApp fallback for
    low-connectivity and load-shedding** [[wiki/consumer-context/_index]].
 
-2. **New token issued per repeat (built-in anti-double-dispense)** — Australia issues
+2. **New token issued per repeat (built-in anti-double-dispense)**: Australia issues
    a fresh token after each dispense until repeats are exhausted [[src-gbl-australia-escript]].
    Clean repeat UX with a safety control baked in. Fits SA chronic repeat dispensing.
 
-3. **Nominated / Active-Script-List model for chronic patients** — let a patient
+3. **Nominated / Active-Script-List model for chronic patients**: let a patient
    nominate a default pharmacy (UK EPS) or consent once to a managed list of all
    their scripts (Australia ASL), with **per-pharmacy, revocable consent**
    [[src-gbl-nhs-eps]], [[src-gbl-australia-escript]]. **Offer token *and* list and
-   let the patient choose** — don't force one model.
+   let the patient choose** rather than forcing one model.
 
-4. **A free, trusted app with real-time "Amazon-style" tracking** — the NHS App
+4. **A free, trusted app with real-time "Amazon-style" tracking**: the NHS App
    reached >39m users and 67.8m repeat orders/year, with status tracking that cuts
    call-centre load and anxiety [[src-gbl-nhs-app-prescriptions]]. Reducing
    nomination friction is itself a growth lever.
 
 5. **Auto-refill / medication synchronisation as the default for stable chronic
-   therapy** — make the refill automatic and the cancel the exception (CVS ReadyFill,
+   therapy**: make the refill automatic and the cancel the exception (CVS ReadyFill,
    Walgreens Save a Trip) [[src-gbl-amazon-pharmacy]], [[src-gbl-walgreens-capsule]].
    Aligns with SA CDL repeats and Dis-Chem PackMyMeds [[src-dc-packmymeds]].
 
 6. **Adherence packaging by date/time, delivered (PillPack), with an app layer
-   (MedAdvisor)** — pre-sorted dose packets for polypharmacy, plus a script wallet +
+   (MedAdvisor)**: pre-sorted dose packets for polypharmacy, plus a script wallet +
    pre-order/"tap to refill" + reminders + carer mode for the adhere/refill stages
    [[src-gbl-amazon-pharmacy]], [[src-gbl-medadvisor]].
 
-7. **Teleconsult → e-prescription → order → deliver as one integrated loop** — the
+7. **Teleconsult → e-prescription → order → deliver as one integrated loop**: the
    India and China core loop, scoped to follow-up/chronic care with explicit
    exclusions for high-risk scheduled drugs [[src-gbl-india-epharmacy]],
    [[src-gbl-china-internet-hospitals]].
 
-8. **Omnichannel: turn the store estate into fulfilment / dark-store nodes** — Apollo
+8. **Omnichannel: turn the store estate into fulfilment / dark-store nodes**: Apollo
    fulfils online orders from Asia's largest pharmacy network for ~19-minute metro
    delivery [[src-gbl-apollo-247-results]]. Dis-Chem/Clicks already have the footprint
    [[wiki/dischem/_index]], [[src-clicks-direct-medicines]]. Own inventory + logistics
    buys reliability (JD Health) [[src-gbl-china-internet-hospitals]].
 
-9. **Pragmatic dual prescription verification** where there's no national rail —
+9. **Pragmatic dual prescription verification** where there's no national rail:
    digital pharmacist review **+** physical validation at dispense (India)
    [[src-gbl-india-epharmacy]]. A workable bridge for SA before a national e-Rx exists
    [[wiki/digital-transformation/_index]].
 
-10. **AI triage in front of a human prescriber, with hard guardrails** — AI does
-    intake/triage; a licensed clinician diagnoses and signs. China's rules
+10. **AI triage in front of a human prescriber, with hard guardrails**: AI does
+    intake/triage, and a licensed clinician diagnoses and signs. China's rules
     **ban AI-generated prescriptions** and enforce "prescription first, drug second"
-    [[src-gbl-china-eprescription-policy]] — a defensible AI/safety stance for SA
+    [[src-gbl-china-eprescription-policy]], a defensible AI/safety stance for SA
     [[wiki/sa-regulatory/_index]].
 
-11. **Price transparency at the point of commit** — show an itemised, defensible
+11. **Price transparency at the point of commit**: show an itemised, defensible
     breakdown before the patient pays (Amazon price-at-checkout; Cost Plus cost +
     markup + fees) [[src-gbl-amazon-pharmacy]], [[src-gbl-costplus-drugs]]. SA's SEP +
-    capped dispensing fee already make this natural — lean into it
+    capped dispensing fee already make this natural, so lean into it
     [[wiki/medical-schemes/_index]].
 
-(Honourable mention — **the pharmacist as clinical front door** under protocols:
+(Honourable mention, **the pharmacist as clinical front door** under protocols:
 England's Pharmacy First lets pharmacists assess and supply for 7 conditions without
-a GP visit [[src-gbl-pharmacy-first]]; relevant to SA pharmacist-initiated-therapy
+a GP visit [[src-gbl-pharmacy-first]], relevant to SA pharmacist-initiated-therapy
 scope debates [[wiki/sa-regulatory/_index]].)
 
 ## The main "doesn't transfer" cautions
@@ -116,28 +116,28 @@ scope debates [[wiki/sa-regulatory/_index]].)
   that suppressed app use to ~1% [[src-gbl-germany-erezept]].
 
 - **Free dedicated same-day courier as a universal default.** Capsule's economics
-  proved fragile even in dense US metros [[src-gbl-walgreens-capsule]]; SA last-mile
-  cost and **addressing gaps** make this uneconomic outside metros — prefer
+  proved fragile even in dense US metros [[src-gbl-walgreens-capsule]]. SA last-mile
+  cost and **addressing gaps** make this uneconomic outside metros, so prefer
   **mode-appropriate** delivery + store collection [[wiki/consumer-context/_index]].
 
-- **Population-density-dependent speed promises** (19-minute / 30-minute delivery) —
+- **Population-density-dependent speed promises** (19-minute / 30-minute delivery)
   do not hold across SA's geography [[wiki/consumer-context/_index]].
 
 - **State-directed insurance integration** (China's NHSA wiring reimbursement by
-  fiat) — incompatible with SA's multi-scheme regulated environment
+  fiat), incompatible with SA's multi-scheme regulated environment
   [[wiki/medical-schemes/_index]].
 
-- **Universal-smartphone / always-on-data assumptions** — SA data costs and device
+- **Universal-smartphone / always-on-data assumptions**: SA data costs and device
   access require graceful degradation (USSD, WhatsApp, printed QR)
   [[wiki/consumer-context/_index]].
 
 - **Lax data governance.** Pharmacy2U's 2015 data-selling fine and MediSecure's 2024
-  breach are anti-patterns under **POPIA** — consent must be explicit, scoped,
+  breach are anti-patterns under **POPIA**: consent must be explicit, scoped,
   revocable, and never monetised [[src-gbl-pharmacy2u-lloydsdirect]],
   [[src-gbl-australia-escript]], [[wiki/sa-regulatory/_index]].
 
-- **Venture-subsidised growth-at-all-costs** (PharmEasy) — convenience burned on a
-  subsidy is not durable; SA models should anchor on existing estate/funding
+- **Venture-subsidised growth-at-all-costs** (PharmEasy): convenience burned on a
+  subsidy does not last, and SA models should anchor on existing estate/funding
   [[src-gbl-india-epharmacy]].
 
 ## Which regions to weight most for SA
@@ -161,7 +161,7 @@ scope debates [[wiki/sa-regulatory/_index]].)
 ## Open questions
 
 - The SA-specific identity/consent model for an e-script (vs Australia's 100-points-
-  of-ID) is unresolved — needs a local design [[wiki/sa-regulatory/_index]].
+  of-ID) is unresolved and needs a local design [[wiki/sa-regulatory/_index]].
 - Whether SA should build a single national e-Rx rail or a federated/standards-based
   one (more outage-tolerant) is a key open architectural decision
   [[wiki/digital-transformation/_index]].

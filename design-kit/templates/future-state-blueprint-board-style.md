@@ -6,7 +6,7 @@ tags: [design-kit, template, domain/ux, topic/automation]
 method_ref: "[[wiki/ux-service-design/journey-mapping-method]]"
 sources: [src-bigly-blueprint-board-style]
 created: "2026-06-14"
-updated: "2026-06-14"
+updated: "2026-06-17"
 ---
 
 # Future-State Blueprint Board — style & treatment reference
@@ -14,7 +14,7 @@ updated: "2026-06-14"
 A precise, reusable capture of the **indicative Bigly "board" treatment** so an
 HTML build-agent can faithfully **reproduce and extend** it for the future-state
 customer-journey/blueprint deliverables. Source artefact:
-[[src-bigly-blueprint-board-style]] (a *design reference, not evidence* — never
+[[src-bigly-blueprint-board-style]] (a *design reference, not evidence* - never
 cite it for facts).
 
 > **Scope note.** The two captured PDFs are two *different* views, not two views
@@ -34,7 +34,7 @@ then a sequence of **MOMENT columns** running left→right across the top, each
 moment owning one or more **ACTIVITY cards** of first-person narrative beneath
 it. A bold **Dis-Chem green** brand band tops the board; **moment headers** sit
 on a softer mint band; **activity bodies** are quiet black-on-white prose.
-Calm, editorial, confident — "a magazine spread of a service", not a busy Miro
+Calm, editorial, confident - "a magazine spread of a service", not a busy Miro
 wall. Pairs with a **principles deck** (dark, sectioned by audience) that states
 the design philosophy the journey is built to honour.
 
@@ -64,27 +64,27 @@ the design philosophy the journey is built to honour.
 ```
 - **Two structural axes:** a **vertical lane axis** on the far left (two stacked
   row-labels: a **Moment** row on the mint band, an **Activity** row below it,
-  each with its own icon — a clock for Moment, a node/sitemap glyph for Activity)
+  each with its own icon - a clock for Moment, a node/sitemap glyph for Activity)
   and a **horizontal moment axis** running across the top.
 - **Persona rail:** full-height, dark (near-black) panel, fixed/sticky as the
   board scrolls horizontally. ≈ 18–22% of viewport width on desktop.
 - **Moment columns:** equal-ish width; the board is **wider than the screen** and
   **scrolls horizontally**. Each column = one moment header + its activity card(s).
 - **Density:** generous whitespace; one to three activity cards per moment;
-  cards left-aligned, breathing room between. Not grid-dense — editorial.
+  cards left-aligned, breathing room between. Not grid-dense - editorial.
 
 ### 2.2 Tall principles deck (companion treatment)
 Vertical scroll, full-bleed **sections stacked top→bottom**, each section a flat
 colour block:
-1. **Cover** — near-black; centred Dis-Chem wordmark + lime "+", "Future State
+1. **Cover** - near-black; centred Dis-Chem wordmark + lime "+", "Future State
    Scripting" kicker, bigly mark at base.
-2. **Philosophy** — near-black; oversized headline with one accent word
+2. **Philosophy** - near-black; oversized headline with one accent word
    underlined in green; the **Speed / Convenience / Trust pyramid** (Trust =
    green base, Convenience = mid, Speed = apex) flanked by **Customer** (left) and
    **Dispenser** (right) read-outs.
-3. **Customer principles** — solid **purple** block; section eyebrow "Customer /
+3. **Customer principles** - solid **purple** block; section eyebrow "Customer /
    Service Design Principles", then a list of principle cards.
-4. **Dispenser principles** — solid **grey** block; same structure for the ops/
+4. **Dispenser principles** - solid **grey** block; same structure for the ops/
    dispenser audience.
 
 ---
@@ -112,7 +112,7 @@ colour block:
   left rail). Each card = **bold sentence-case title** (first-person, e.g. "I
   need sinus relief", "Consult with the pharmacist") + **body prose** (calm,
   several short paragraphs, present-tense first-person narration of the
-  experience). No emotion scores or lane tables on the board itself — the board
+  experience). No emotion scores or lane tables on the board itself - the board
   is a **narrative storyboard**, not a filled blueprint grid. (We will *add* the
   blueprint lanes when we extend it; see §7.)
 
@@ -144,7 +144,7 @@ decoration. One brand green carries the identity; the mint band is its tint.
 ### 4.2 Typography
 - **Display/headlines:** heavy sans (board name, persona name, principle
   headlines). Big, confident.
-- **Moment titles:** *italic* serif-or-sans, medium weight — gives the moments a
+- **Moment titles:** *italic* serif-or-sans, medium weight - gives the moments a
   "chapter heading" voice.
 - **Activity titles:** bold sans, sentence case.
 - **Body:** regular sans, comfortable line-height, generous measure.
@@ -229,7 +229,7 @@ like a production line · Remove noise to protect flow · Many inputs, one
 controlled funnel · The system prioritises the work · Proximity without exposure.
 
 > The brief's **repeat-medication exemplar (Lisa)** maps cleanly onto this same
-> schema — substitute persona = Lisa (34, married, 2-yr-old, receptionist) and
+> schema - substitute persona = Lisa (34, married, 2-yr-old, receptionist) and
 > moments = "My monthly medication order is being prepared → I get order progress
 > updates → My medication is delivered → I manage my repeat medication → I renew
 > a prescription before it runs out → I add my mother's medication → I add a
@@ -239,7 +239,7 @@ controlled funnel · The system prioritises the work · Proximity without exposu
 
 ## 6. Relationship to our journey spine
 
-The board's moments are **persona-voiced labels**, not spine stages — so the HTML
+The board's moments are **persona-voiced labels**, not spine stages - so the HTML
 build should carry a `spineStage` tag on each moment to keep it reconciled with
 our canonical spine
 (`PRESCRIBE → SUBMIT → VALIDATE & CLINICAL CHECK → FUND/CLAIM → PAY → DISPENSE →
@@ -303,21 +303,21 @@ contract:
    placeholder, bio, **⚡ Current Friction** (top pains), **Patient Need**
    (JTBD), boxed **How might we…** header line. Honours the board's rail anatomy.
 2. **Moment / stage rail (horizontal, scrollable, clickable).** The journey spine
-   as the board's moment row — italic human moment label up top, `spineStage` as
+   as the board's moment row - italic human moment label up top, `spineStage` as
    the key. Click a moment to expand its detail (accordion); "expand all /
    collapse all". This is the board's left→right moment axis made interactive.
 3. **Expanded stage = two tabs:**
-   - **Story** — the board's narrative activity card(s): first-person prose,
+   - **Story** - the board's narrative activity card(s): first-person prose,
      bold title. Preserves the board voice.
-   - **Blueprint** — the DESIGN-SPEC lanes (Customer actions · Frontstage · ⎯line
+   - **Blueprint** - the DESIGN-SPEC lanes (Customer actions · Frontstage · ⎯line
      of visibility⎯ · Backstage · Support systems · Partners · Regulatory · Pains
      🔴 · Opportunities 💡 · Metrics), with lane show/hide. The behind-the-line
      depth the board omits.
-4. **Dual-economy toggle** (Insured ↔ Cash/uninsured) — re-renders persona rail,
+4. **Dual-economy toggle** (Insured ↔ Cash/uninsured) - re-renders persona rail,
    story, lanes, and emotion curve. Honours the "serve both economies" principle
    and the board's persona-led framing.
 5. **Pain → Future overlay.** Per stage, a toggle reveals `asIsBaseline` (today's
-   friction, drawn from the persona's ⚡ list) beneath the future vision — the
+   friction, drawn from the persona's ⚡ list) beneath the future vision - the
    board's "Current Friction" promise, made per-moment and dynamic.
 6. **Emotion curve** (inline SVG) across moments for the active economy; ⭐ marks
    moments of truth. (Board-absent; spec-required extension.)
@@ -325,30 +325,30 @@ contract:
    legend; clicking a pillar highlights every moment/opportunity expressing it; a
    small Speed/Convenience/Trust pyramid icon anchors the philosophy.
 8. **Tech / ROWA / automation callouts.** Where a moment leans on automation
-   ("guided automation", "production-line fulfillment", "one controlled funnel",
+   ("guided automation", "production-line fulfilment", "one controlled funnel",
    ROWA dispensing robotics, locker/last-mile, status orchestration), surface a
    small **tech-callout chip** on the Blueprint tab (dashed border per
    DESIGN-SPEC's "speculative" cue; `🔮 requires-reform` where rules must change).
 9. **Optional brand skin toggle.** A clearly-labelled switch that themes the lo-fi
    view toward the board's brand palette (green band, mint moment headers, purple/
-   grey principle blocks) **via CSS variables only** — default OFF so #01–#04 ship
+   grey principle blocks) **via CSS variables only** - default OFF so #01–#04 ship
    lo-fi-compliant; ON for stakeholder presentation. Flag this choice to the
    orchestrator; do not break the DESIGN-SPEC `https://`/external-resource QA gate.
 
-**Net:** the board gives us the *spine of the story and the voice*; DESIGN-SPEC
-gives us the *engine and the rigour*. Drive both from one `DATA`/`Board` object
+The board gives us the story and the voice. DESIGN-SPEC gives us the engine and
+the rigour. Drive both from one `DATA`/`Board` object
 (§5) tagged with `spineStage`, so the narrative board and the lane blueprint are
 two renderings of the same single source of truth.
 
 ## Open questions
 - Which principle set (board customer/dispenser) becomes canonical **pillars** vs
   what `deliverables/_shared/pillars.md` already defines? (Reconcile with the
-  report agent — do not fork pillar ids.) See [[meta/open-questions]].
+  report agent - do not fork pillar ids.) See [[meta/open-questions]].
 - Brand-skin: in-scope for the four deliverables, or a separate fifth "board"
   view? Orchestrator to decide given the lo-fi mandate.
 
 ## See also
-- [[src-bigly-blueprint-board-style]] — the captured source artefact.
+- [[src-bigly-blueprint-board-style]] - the captured source artefact.
 - [[design-kit/templates/journey-map-template]] · [[design-kit/templates/service-blueprint-template]]
 - [[design-kit/templates/future-state-principles]]
-- `deliverables/_shared/DESIGN-SPEC.md` — the build contract these reconcile with.
+- `deliverables/_shared/DESIGN-SPEC.md` - the build contract these reconcile with.

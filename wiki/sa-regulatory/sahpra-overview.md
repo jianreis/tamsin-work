@@ -7,10 +7,10 @@ confidence: high
 tags: [domain/regulatory, topic/trust-safety, topic/scheduling, region/za]
 sources: [src-reg-sahpra-licensing, src-reg-medicines-act-101-1965, src-reg-online-pharmacy-study-2024, src-reg-nhi-act-2023]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
-# SAHPRA — the medicines regulator
+# SAHPRA - the medicines regulator
 
 The **South African Health Products Regulatory Authority (SAHPRA)** is the
 statutory regulator created under the Medicines Act, operational from **2018**
@@ -33,7 +33,7 @@ efficacy [[src-reg-sahpra-licensing]].
 
 Note: **§22C(1)(a) dispensing licences** (incl. dispensing doctors) and **pharmacy
 premises licences** are issued by the **NDoH Director-General** (with SAPC
-recording), not SAHPRA — a common point of confusion. See [[pharmacy-act-sapc-gpp]].
+recording), not SAHPRA, a common point of confusion. See [[pharmacy-act-sapc-gpp]].
 
 ## Stance on online / distance selling
 SAHPRA's position (reinforced by a 2024 peer-reviewed audit) is that **online
@@ -55,9 +55,9 @@ medicines, 2026) [[src-reg-sahpra-licensing]].
   surface and dispense **SAHPRA-registered products**; the catalogue should
   validate against the SAHPRA register and hide/flag unregistered items.
 - **The selling entity must be a licensed pharmacy.** An app, WhatsApp bot or web
-  storefront is a *channel*; the legal seller must be a **DoH-licensed,
+  storefront is a *channel*. The legal seller must be a **DoH-licensed,
   SAPC-recorded pharmacy** with a pharmacist. A pure-tech intermediary cannot itself
-  sell scheduled medicines — 🔮 requires-reform if the design assumes a
+  sell scheduled medicines, so this is 🔮 requires-reform if the design assumes a
   non-pharmacy platform as the seller of record.
 - **Distinguish the two licence streams.** Supply-chain (SAHPRA §22C(1)(b)) vs
   dispensing/premises (NDoH + SAPC). A multi-site / dark-store / courier fulfilment
@@ -68,7 +68,7 @@ medicines, 2026) [[src-reg-sahpra-licensing]].
 
 ## Open questions
 - Whether SAHPRA has published a *dedicated* e-pharmacy / distance-selling guideline
-  (vs general guidance) — search surfaced general guidelines (SAHPGL-HPA-07) but no
+  (vs general guidance): search surfaced general guidelines (SAHPGL-HPA-07) but no
   standalone online-pharmacy code; logged ⚠️ UNVERIFIED.
 
 ## See also

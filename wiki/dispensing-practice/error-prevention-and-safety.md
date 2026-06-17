@@ -7,7 +7,7 @@ confidence: high
 tags: [domain/dispensing, topic/trust-safety, topic/automation, journey/dispense, journey/validate, region/global]
 sources: [src-disp-who-medication-without-harm, src-disp-lasa-tallman, src-disp-barcode-nejm, src-disp-ismp-high-alert, src-disp-msh-dispensing-cycle, src-disp-gs1-serialisation]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Dispensing error prevention & medication safety
@@ -17,7 +17,7 @@ estimates the **global cost of medication errors at US$42 billion annually** and
 that medication harm is **around 50% of all preventable harm** in medical care
 [[src-disp-who-medication-without-harm]]. WHO's **Medication Without Harm**
 challenge (2017) set the goal of **halving severe avoidable medication-related
-harm** [[src-disp-who-medication-without-harm]]. Crucially, error is a *system*
+harm** [[src-disp-who-medication-without-harm]]. Error is a *system*
 property: it arises "when weak medication systems and human factors such as
 fatigue, poor environmental conditions or staff shortages affect the safety of
 the medication-use process" [[src-disp-who-medication-without-harm]]. Safe
@@ -28,12 +28,12 @@ dispensing is therefore designed, not exhorted.
 Drawing on MSH and WHO [[src-disp-msh-dispensing-cycle]]
 [[src-disp-who-medication-without-harm]], the common failure modes are:
 
-- **Wrong drug** — often a look-alike/sound-alike (LASA) substitution.
-- **Wrong strength / dose / quantity** — selection or calculation error.
+- **Wrong drug**: often a look-alike/sound-alike (LASA) substitution.
+- **Wrong strength / dose / quantity**: selection or calculation error.
 - **Wrong form** (e.g. immediate- vs extended-release).
-- **Wrong patient** — mismatched bag/label at handover.
-- **Labelling/instruction error** — incorrect or ambiguous directions.
-- **Omission / missed interaction** — failure to catch a clinical problem (see
+- **Wrong patient**: mismatched bag/label at handover.
+- **Labelling/instruction error**: incorrect or ambiguous directions.
+- **Omission / missed interaction**: failure to catch a clinical problem (see
   [[clinical-checks-and-mtm]]).
 
 Root causes cluster around **LASA names, illegible/ambiguous prescriptions,
@@ -48,12 +48,12 @@ estimates up to ~25%) [[src-disp-lasa-tallman]]. They arise from visually simila
 packaging and phonetically similar names. Evidence-based countermeasures are
 **system-level** [[src-disp-lasa-tallman]]:
 
-- **Tall Man lettering** — selective capitalisation to highlight differences
+- **Tall Man lettering** - selective capitalisation to highlight differences
   (e.g. *hydrALAZINE* vs *hydrOXYzine*), recommended by both ISMP and FDA.
 - **Physical separation** of confusable pairs and **brand-labelled bins/shelves**.
 - **Dual brand + generic display** on labels and screens.
 - **Barcode verification** from stocking through dispensing.
-- **Indication on the prescription** — including the reason for use materially
+- **Indication on the prescription** - including the reason for use materially
   reduces mis-hearing/mis-reading of a drug name.
 
 ## Barcode / NAPPI scanning
@@ -66,7 +66,7 @@ receiving, preparation and dispensing** [[src-disp-barcode-nejm]]. In SA, the
 **NAPPI code** is the national product identifier scannable at dispense. Two
 design cautions: (1) a barcode system **surfaces near-misses that were
 previously invisible**, so an early rise in reported catches is expected and
-healthy [[src-disp-barcode-nejm]]; (2) **no system hits 100% scan rates** —
+healthy [[src-disp-barcode-nejm]]; (2) **no system hits 100% scan rates** - 
 workarounds (smudged labels, un-updated barcodes, overridden warnings) must be
 designed against [[src-disp-barcode-nejm]]. Serialisation/GS1 DataMatrix extends
 scanning to authenticity verification (see
@@ -77,8 +77,8 @@ scanning to authenticity verification (see
 For routine items a structured final check against the prescription is standard;
 for **high-alert medications** a true **independent double-check** (a second
 qualified person verifying independently, not just glancing) is the recognised
-safeguard. High-alert classes — **insulin, anticoagulants, opioids,
-chemotherapy** — cause disproportionately severe harm when dispensed in error
+safeguard. High-alert classes - **insulin, anticoagulants, opioids,
+chemotherapy** - cause disproportionately severe harm when dispensed in error
 and warrant extra safeguards and enhanced counselling
 [[src-disp-ismp-high-alert]]. The check is most effective when **independent of
 the person who assembled the order**.
@@ -100,19 +100,19 @@ tools is a sign the system is working**, not failing [[src-disp-barcode-nejm]].
   high-alert items, and a system-locked independent-check step.
 - **Design for the single-pharmacist store.** Where a second checker is
   unavailable, lean on barcode verification + software interlocks as compensating
-  controls — and make this an explicit blueprint decision.
+  controls - and make this an explicit blueprint decision.
 - **Surface, don't suppress, near-misses.** Build frictionless near-miss capture
   into the dispensing UI and expect the count to rise initially; treat that as a
   success metric, not a red flag.
 - **Plan for workarounds.** Assume scanning will be bypassed under pressure;
   measure scan-compliance and design the path of least resistance to be the safe
   one (e.g. label printing gated on a successful scan).
-- **High-alert medicines deserve a distinct journey lane** — extra check,
+- **High-alert medicines deserve a distinct journey lane** - extra check,
   enhanced counselling, tighter refill review.
 
 ## Open questions
 
-- ⚠️ UNVERIFIED — **SA-specific dispensing-error rates** and whether SAPC
+- ⚠️ UNVERIFIED - **SA-specific dispensing-error rates** and whether SAPC
   mandates near-miss reporting / a specific incident system. Global figures
   (US$42bn, LASA %) are cited from WHO/ISMP extracts (primary PDFs 403 on
   2026-06-13); SA-specific prevalence not located.

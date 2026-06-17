@@ -7,7 +7,7 @@ confidence: medium
 tags: [domain/dischem, journey/submit, journey/dispense, journey/collect, journey/deliver, journey/refill, topic/chronic, topic/last-mile, region/za]
 sources: [src-dc-dispensary-services, src-dc-packmymeds, src-dc-deliverd, src-dc-fy2026-results, src-sa-scheme-chronic-dsp]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Dis-Chem — dispensary & scripting services
@@ -31,10 +31,10 @@ real time at the till (see funding under [[wiki/dischem/dischem-rx-current-journ
 
 ## Script submission channels
 A customer can get a prescription to Dis-Chem via [[src-dc-dispensary-services]]:
-- **In person** — hand the script to the dispensary.
-- **Dis-Chem app** — upload a new script or re-order an existing repeat.
-- **SMS / email** — send the script to the pharmacy.
-- **WhatsApp** — primarily for chronic/repeat ordering via PackMyMeds (below).
+- **In person** - hand the script to the dispensary.
+- **Dis-Chem app** - upload a new script or re-order an existing repeat.
+- **SMS / email** - send the script to the pharmacy.
+- **WhatsApp** - primarily for chronic/repeat ordering via PackMyMeds (below).
 
 ## Repeat prescriptions
 Dis-Chem can dispense **repeats for up to 6 months** for **Schedule 2, 3 and 4**
@@ -67,9 +67,9 @@ For scripts/orders submitted online [[src-dc-dispensary-services]]:
 **DeliverD**, launched July 2021 via the Dis-Chem app, is an **on-demand
 same-day / ~60-minute** delivery service [[src-dc-deliverd]]:
 - Coverage: **selected stores**, within ~**10km**, in **main metros**.
-- Hours: 7 days/week — Mon–Sat 09:00–16:30; Sun & public holidays 09:00–13:00.
+- Hours: 7 days/week - Mon–Sat 09:00–16:30; Sun & public holidays 09:00–13:00.
 - Fee: **R35** (since 1 Dec 2021; launched at R60); bulk orders >10kg cost more.
-  *(Fees date-stamped 2021 — ⚠️ verify for 2026.)*
+  *(Fees date-stamped 2021 - ⚠️ verify for 2026.)*
 - Catalogue: 7,000+ front-shop products at launch; prescription/repeat ordering
   also flows through the app.
 
@@ -77,7 +77,7 @@ DeliverD is Dis-Chem's headline convenience differentiator and pre-dated Clicks'
 equivalent on-demand OTC service (launched April 2026) [[src-clicks-direct-medicines]].
 
 ## Dis-Chem Direct (courier pharmacy)
-**Dis-Chem Direct** is a **courier pharmacy — not a physical store** — that
+**Dis-Chem Direct** is a **courier pharmacy - not a physical store** - that
 couriers chronic medicine to the door (direct@dischem.co.za, tel 011 589 2788)
 [[src-dc-dispensary-services]]. This is Dis-Chem's answer to scheme-funded
 distance pharmacies like [[src-clicks-direct-medicines|Clicks Direct Medicines]],

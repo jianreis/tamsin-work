@@ -7,7 +7,7 @@ confidence: medium
 tags: [domain/dischem, domain/digital, journey/submit, journey/refill, topic/trust-safety, topic/accessibility, region/za]
 sources: [src-dc-app-reviews, src-dc-deliverd, src-dc-packmymeds, src-dc-dispensary-services, src-dc-health-kena]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Dis-Chem — digital channels
@@ -16,7 +16,7 @@ Dis-Chem's prescription-relevant digital surface is three-pronged: the
 **Dis-Chem app**, the **dischem.co.za** e-commerce site, and **WhatsApp**
 (chronic/repeat ordering). A separate **Dis-Chem Health** app covers
 insurance/telehealth. The app is the hub for script upload, repeat re-ordering,
-PackMyMeds and DeliverD — but **app-store and review-site sentiment is
+PackMyMeds and DeliverD, but **app-store and review-site sentiment is
 strongly negative**, which is a major as-is signal for a redesign brief.
 
 ## The Dis-Chem app
@@ -27,8 +27,8 @@ The app (Apple App Store id1226396951; Google Play `za.co.dischem`) supports
 - Shop the 7,000+ front-shop catalogue; pay in-app.
 - Manage **PackMyMeds** repeat reminders and orders [[src-dc-packmymeds]].
 
-### Sentiment signal (D-tier — reviews *suggest*, not fact)
-App-store reviews [[src-dc-app-reviews]] *suggest* recurring problems — to be
+### Sentiment signal (D-tier - reviews *suggest*, not fact)
+App-store reviews [[src-dc-app-reviews]] *suggest* recurring problems - to be
 treated as **signals**, not verified facts:
 - **Login failures**, including false "jailbroken/rooted device" blocks on
   legitimate phones.
@@ -37,13 +37,13 @@ treated as **signals**, not verified facts:
 - **Orders cancelled/reversed minutes before scheduled delivery**.
 - **Multiple, separately-set delivery addresses** causing confusion.
 - **Crashes/freezes**; a recurring "needs a complete overhaul" theme.
-- Positives exist — some users like **repeat ordering** and **fast delivery** —
+- Positives exist - some users like **repeat ordering** and **fast delivery** -
   but are outweighed by reliability complaints.
 
 These themes are corroborated by independent complaint clusters on HelloPeter
 ([[src-dc-hellopeter-complaints]]: stock-outs, mis-delivery, a dispensing error),
 so the **digital + fulfilment reliability gap is a genuine as-is pain**, not just
-noise. (Two independent signal sources = a finding worth designing against.)
+noise. Two independent signal sources make this a finding worth designing against.
 
 ## Website e-commerce (dischem.co.za)
 The website mirrors the app's commerce and script-upload functions: submit a
@@ -58,7 +58,7 @@ Dis-Chem runs a **WhatsApp** channel for **chronic/repeat ordering** via
 PackMyMeds: save **0860 347 243**, send **"Hi"**, register, then receive a
 **WhatsApp link** when a repeat is due [[src-dc-packmymeds]]. WhatsApp is
 strategically important in SA (low data cost, ubiquitous, familiar) and is the
-lowest-friction digital channel for the chronic cohort — relevant for any
+lowest-friction digital channel for the chronic cohort - relevant for any
 future-state design targeting accessibility.
 
 ## Dis-Chem Health app (adjacent)
@@ -73,11 +73,11 @@ not the dispensing app, but it matters because a future scripting journey could
 - **WhatsApp** is the most accessible repeat channel and a strong foundation for
   a low-friction future-state refill loop.
 - **Fulfilment integrity** (right item, on time, accurate status) is where
-  digital promises break down — a redesign must close the **digital ↔ physical**
+  digital promises break down - a redesign must close the **digital ↔ physical**
   loop, not just polish the UI.
 
 ## Open questions
-- ⚠️ **Current app-store ratings** (numeric) not captured — pull live Apple/Play
+- ⚠️ **Current app-store ratings** (numeric) not captured - pull live Apple/Play
   scores and recent review volume.
 - ⚠️ Whether script **upload uses OCR / structured capture** or just stores an
   image for pharmacist re-key (affects error rate).

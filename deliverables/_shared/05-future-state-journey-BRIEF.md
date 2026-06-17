@@ -10,12 +10,12 @@
 
 ## 0. Transcript-confirmed framing (Jian × Tamsin voice note — AUTHORITATIVE; overrides anything below where they conflict)
 Source: [[src-vn-cape-point-11]].
-- **What it IS:** the **experience definition** — a future-state customer **journey map** in the board treatment, **indicative, not prescriptive**. It is explicitly **NOT a service blueprint** (that is the *next* step). The job is: *"let's all agree on the experience we want to create,"* then blueprint it later. So the **surface is the customer experience**; the systems depth is a lighter **Components / Capabilities** layer ("the capabilities that need to be in place"), **not** full service-blueprint lanes.
-- **Per-moment anatomy — match Tamsin's board exactly:** **Moment · (Patient) Need · Activities · Previous Pain Points · Components/Capabilities.** Keep the emotion read, pillar tags and dual-economy toggle on top of that.
-- **Horizon & ambition:** an **aspirational ~5-year** vision — *"What is the experience we want to build for the next five years?"* If the org buys in, **technology is led by this** to deliver.
-- **Tech constraint: NONE.** *"In no way constrained by the existing technology landscape"* / *"no restrictions."* Design the ideal. **Boundary:** ambitious but **credible, not absurd** — the explicit reductio was *"UFOs deliver my meds"*; **drones are borderline/contested** — don't lean on them, or mark clearly speculative 🔮. Legacy-system replacement cost is acknowledged but **deliberately ignored** for this piece.
-- **Already signed-off capabilities — show as real/grounded:** **OCR** script capture; **automated pickers (ROWA)**. (These plus the rest of the roadmap in §5 are the "Components/Capabilities" layer.)
-- **Hero "manage my medications" moment:** a *"really beautiful end-to-end"* view — a clear breakdown of **every household member's medication** with a **pill visual** (inline SVG only, no external images), plus tracking and "using my medication." Make this a showpiece moment.
+- **What it IS:** the **experience definition** - a future-state customer **journey map** in the board treatment, **indicative, not prescriptive**. It is explicitly **NOT a service blueprint** (that is the *next* step). The job is: *"let's all agree on the experience we want to create,"* then blueprint it later. So the **surface is the customer experience**; the systems depth is a lighter **Components / Capabilities** layer ("the capabilities that need to be in place"), **not** full service-blueprint lanes.
+- **Per-moment anatomy - match Tamsin's board exactly:** **Moment · (Patient) Need · Activities · Previous Pain Points · Components/Capabilities.** Keep the emotion read, pillar tags and dual-economy toggle on top of that.
+- **Horizon & ambition:** an **aspirational ~5-year** vision - *"What is the experience we want to build for the next five years?"* If the org buys in, **technology is led by this** to deliver.
+- **Tech constraint: NONE.** *"In no way constrained by the existing technology landscape"* / *"no restrictions."* Design the ideal. **Boundary:** ambitious but **credible, not absurd** - the explicit reductio was *"UFOs deliver my meds"*; **drones are borderline/contested** - don't lean on them, or mark clearly speculative 🔮. Legacy-system replacement cost is acknowledged but **deliberately ignored** for this piece.
+- **Already signed-off capabilities - show as real/grounded:** **OCR** script capture; **automated pickers (ROWA)**. (These plus the rest of the roadmap in §5 are the "Components/Capabilities" layer.)
+- **Hero "manage my medications" moment:** a *"really beautiful end-to-end"* view - a clear breakdown of **every household member's medication** with a **pill visual** (inline SVG only, no external images), plus tracking and "using my medication." Make this a showpiece moment.
 - **Channel-agnostic base:** this is the consistent **base** that later gets tweaked per channel (WhatsApp / app / in-store / USSD). Design it to read as that base (Pillar U1, channel ladder).
 
 ## 1. The ask (from Jian/Tamsin, verbatim intent)
@@ -30,9 +30,9 @@ A **future-state journey for a complex use case**. Constraints:
 **"The household medicine manager — the self-running repeat."** One person who is
 simultaneously a **patient and a caregiver**: she manages **her own multimorbid
 chronic medication, her elderly mother's chronic medication, and her young child's
-occasional acute needs** — across one account. This is genuinely *complex* because
+occasional acute needs** - across one account. This is genuinely *complex* because
 it exercises the whole spine, multiple members/profiles, proxy/consent, funding
-edge-cases, an acute curveball mid-loop, and graceful failure — and it is exactly
+edge-cases, an acute curveball mid-loop, and graceful failure, and it is exactly
 the **dominant complaint cluster** (chronic re-order / repeat-script management).
 
 It also matches the indicative **board exemplar** ("Repeat Medication Service" —
@@ -106,7 +106,7 @@ UX: **U1** WhatsApp-first/data-frugal · **U2** never-leave-guessing/status · *
 Every moment tags ≥1 S and ≥1 U; the pillar legend filter highlights recurrence. The board's customer/dispenser principles (e.g. "Repeats should just, repeat", "The counter is for care, not admin") are **expressions of these pillars** — map them in, do **not** fork new pillar ids.
 
 ## 7. Board treatment (style — read `design-kit/templates/future-state-blueprint-board-style.md`)
-**Hi-fi, branded, editorial** — diverge from the lo-fi DESIGN-SPEC aesthetic on
+**Hi-fi, branded, editorial** - diverge from the lo-fi DESIGN-SPEC aesthetic on
 purpose (the user wants the board look), but keep the DESIGN-SPEC **hard technical
 rules** (see §8). Treatment:
 - **Dis-Chem green** brand band on top (`#1a9b4a`), lime "+" accent, **mint** moment-header band (`#bfe3cf`); near-black persona rail; purple/grey for the principles motif.

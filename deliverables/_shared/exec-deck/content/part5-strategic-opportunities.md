@@ -1,7 +1,7 @@
 # Part 5 — Strategic Opportunities (the six pillars)
 
 > The "why build this, and what business it is" layer. Six strategic pillars (S1–S6).
-> S1–S5 are compact; **S6 is the hero** (net-new synthesis) and gets a diagram + a deep pillar slide.
+> S1–S5 are compact; S6 is the hero (net-new synthesis) and gets a diagram plus a deep pillar slide.
 
 ## SLIDE: section-divider
 id: part5-divider

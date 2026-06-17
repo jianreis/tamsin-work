@@ -1,12 +1,12 @@
-# Part 7 — Close (the bets / what's next + sources)
+# Part 7 - Close (the bets / what's next + sources)
 
 ## SLIDE: closing
 id: the-bets
-title: The bets — and the honest open questions
+title: The bets - and the honest open questions
 body:
   - "Bet 1 — Build one spine, two journeys (S1): a first-class cash path beside the scheme path, never card-only, price legible before commit."
   - "Bet 2 — Own the chronic flywheel (S4): proactive register-once → auto-dispense → refill loop, wired into scheme/DSP rails; out-compete the couriers on it."
-  - "Bet 3 — Compete on service (S3): the Jan-2025 complaints are fix-the-seams problems — re-order state, closed-loop tracking, claim transparency, handover checks."
+  - "Bet 3 — Compete on service (S3): the Jan-2025 complaints are fix-the-seams problems - re-order state, closed-loop tracking, claim transparency, handover checks."
   - "Bet 4 — Free the pharmacist (S5): automate the toil, push to top-of-licence, make the store + clinic estate the health front door (S2)."
   - "The big bet — Orchestration (S6): absorb the coordination the patient does today into one system; from dispensing a script to owning the treatment journey."
   - "🔮 Needs reform: pharmacist-initiated renewal · scheme claim-continuity automation · locker dispensing of scheduled meds · SAPC clarity on remote verification."
@@ -18,7 +18,7 @@ notes: Lead with the four sharpening bets, land on S6 as the strategic pivot, th
 
 ## SLIDE: sources
 id: vault-sources
-title: Where this comes from — the vault behind the deck
+title: Where this comes from - the vault behind the deck
 items:
   - "wiki/dischem/dischem-rx-current-journey — the as-is prescription journey (S6)"
   - "wiki/dischem/pharmacy-complaints-pain-points — Jan-2025 complaints, segmented (S3, S6)"

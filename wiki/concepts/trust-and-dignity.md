@@ -6,14 +6,14 @@ status: draft
 confidence: high
 tags: [concept, topic/trust-safety, domain/consumer, domain/ux, domain/dispensing, journey/collect, journey/adhere, region/za]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Trust & dignity
 
 **Trust** is the willingness to hand a pharmacy your health need, your money, and
 your most sensitive personal data; **dignity** is being treated as a person rather
-than processed as a case. For a medicine service these are not soft extras — they
+than processed as a case. For a medicine service these are not soft extras: they
 gate whether people submit a script at all, disclose what they actually take, and
 keep coming back. Two findings shape the stance.
 
@@ -24,9 +24,9 @@ counter to the chat window; each channel has to earn it on its own terms, and th
 right channel for a sensitive item may not be the most convenient one.
 
 **Stigma is a primary design constraint.** For HIV, TB, mental health,
-contraception and other sensitive conditions, the fear of being *seen* — at the
+contraception and other sensitive conditions, the fear of being *seen* (at the
 counter, on a delivery note, in a notification, by a household member sharing a
-phone — is itself a barrier to adherence. Privacy is therefore a feature, not a
+phone) is itself a barrier to adherence. Privacy is therefore a feature, not a
 compliance checkbox: discreet packaging, neutral notifications, private
 consultation space, and minimal data exposure by default.
 
@@ -40,7 +40,7 @@ make the rest credible. The design rule is: never hide the human.
 - [[wiki/dispensing-practice/counselling-and-health-literacy|Counselling & health literacy]] — the pharmacist hand-over and teach-back.
 
 ## Design stance
-Earn trust per channel and never assume it transfers. Make privacy the default —
+Earn trust per channel and never assume it transfers. Make privacy the default:
 discreet by design, minimal data exposed, stigma-aware packaging and
 notifications. Keep the pharmacist visible and reachable as the trust anchor.
 Treat dignity as a measurable outcome: no one should feel exposed, judged, or

@@ -7,13 +7,13 @@ confidence: high
 tags: [domain/schemes, journey/pay, journey/fund, region/za, topic/chronic]
 sources: [src-sch-dsp-formulary-copay, src-sch-cms-pmb-resource, src-sch-sep-dispensing-fee, src-sch-claim-rejections-gems, src-sch-courier-models]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # DSPs, formularies, reference pricing & co-payments
 
 These are the four levers schemes use to **steer where and what** a member gets
-dispensed — and the source of most "you owe an extra Rxx" moments at the
+dispensed, and the source of most "you owe an extra Rxx" moments at the
 counter. For a scripting experience, they are the rules that turn a valid
 prescription into a number the member actually pays.
 
@@ -21,11 +21,11 @@ prescription into a number the member actually pays.
 
 A **DSP** is a provider (pharmacy, doctor, hospital) the scheme **contracts** as
 its preferred channel for a service [[src-sch-dsp-formulary-copay]]. Using a
-**non-DSP** voluntarily can trigger a **co-payment** — often a **percentage** or
+**non-DSP** voluntarily can trigger a **co-payment** - often a **percentage** or
 the **difference between the DSP tariff and what the chosen provider charged**
 [[src-sch-dsp-formulary-copay]]. For chronic medicine, the DSP is frequently a
 **courier pharmacy** (e.g. Pharmacy Direct, Clicks Direct Medicines, MedXpress
-network) — see [[courier-chronic-pharmacy-models]]. This is why "where you fill
+network); see [[courier-chronic-pharmacy-models]]. This is why "where you fill
 your script" is a funded-vs-co-pay decision, not just convenience.
 
 ## Formularies
@@ -63,10 +63,10 @@ dispensing ([[realtime-claims-switching]]).
 
 - **Pre-compute the co-payment before the member commits.** The single most
   valuable thing the experience can do is tell the member, *before* they confirm,
-  *"at this pharmacy, with this generic, you pay R0 / you'll owe R37"* — and offer
+  *"at this pharmacy, with this generic, you pay R0 / you'll owe R37"*, and offer
   the funded alternative (switch generic, switch to the DSP courier).
 - **Make DSP steering a helpful nudge, not a trap.** Surface *"your scheme's
-  preferred pharmacy for this chronic script is X — using it means no co-payment"*
+  preferred pharmacy for this chronic script is X - using it means no co-payment"*
   with a one-tap route to that channel.
 - **Generic substitution as a money-saving feature.** Where MMAP/reference price
   bites, present the equivalent generic and the saving explicitly (respect

@@ -7,12 +7,12 @@ confidence: high
 tags: [domain/schemes, domain/digital, journey/validate, journey/pay, region/za, topic/trust-safety]
 sources: [src-sch-claims-switching, src-sch-nappi-coding, src-sch-claim-rejections-gems, src-sch-dsp-formulary-copay]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Real-time claims & switching
 
-At the moment of dispensing, a SA pharmacy doesn't "bill the scheme and wait" —
+At the moment of dispensing, a SA pharmacy doesn't "bill the scheme and wait":
 it submits the claim **electronically through a switching house** and gets a
 **real-time adjudicated answer**: paid in full, paid with a co-payment, or
 rejected [[src-sch-claims-switching]] [[src-sch-claim-rejections-gems]]. This
@@ -25,12 +25,12 @@ A **switch** (clearing house) routes the claim from the pharmacy's dispensing
 system to the scheme/administrator and returns the response **instantly**
 [[src-sch-claims-switching]]. The main switches:
 
-- **SwitchOn (formerly MediSwitch)** — Altron HealthTech; real-time submission +
+- **SwitchOn (formerly MediSwitch)** - Altron HealthTech; real-time submission +
   instant adjudicated response [[src-sch-claims-switching]].
-- **MediKredit (HealthNet ST)** — connects ~**9,000 providers** incl. pharmacies
+- **MediKredit (HealthNet ST)** - connects ~**9,000 providers** incl. pharmacies
   in real time [[src-sch-claims-switching]]; also **owns/manages the NAPPI file**
   [[src-sch-nappi-coding]].
-- **Healthbridge** — switching + claim-rejection-reduction tooling
+- **Healthbridge** - switching + claim-rejection-reduction tooling
   [[src-sch-claims-switching]].
 
 Adjudicated amounts settle to the provider's bank in ~**14–30 days**
@@ -40,12 +40,12 @@ Adjudicated amounts settle to the provider's bank in ~**14–30 days**
 
 A medicine claim is matched against scheme rules using:
 
-- **NAPPI code** — 9-digit unique product identifier (6 = product, 3 = pack
+- **NAPPI code** - 9-digit unique product identifier (6 = product, 3 = pack
   size); the standard for claiming medicines [[src-sch-nappi-coding]].
-- **ICD-10 diagnosis code** — links the medicine to a fundable condition (and to
+- **ICD-10 diagnosis code** - links the medicine to a fundable condition (and to
   PMB/chronic logic); coding errors cause rejections [[src-sch-claims-switching]]
   [[src-sch-nappi-coding]].
-- **Member identity & a valid prescription** — name/ID/membership/DOB must match
+- **Member identity & a valid prescription** - name/ID/membership/DOB must match
   the scheme database [[src-sch-claim-rejections-gems]].
 
 The adjudication then applies **formulary, MMAP, DSP, benefit pool and PMB/chronic
@@ -78,8 +78,8 @@ failed medical-necessity. Appeals typically take ~**30 days**.
 - **Catch the data-mismatch class early.** Validate member identity against the
   scheme up front so name/ID/DOB mismatches never reach the counter.
 - **Make NAPPI/ICD-10 correctness invisible to the member but bulletproof
-  backstage** — these are silent rejection causes the member can't fix.
-- **Design for the co-payment moment specifically** — it's the most common
+  backstage**: these are silent rejection causes the member can't fix.
+- **Design for the co-payment moment specifically.** It's the most common
   non-rejection friction; show it before commit, with funded alternatives.
 - **Asynchronous channels (courier/app) need the same adjudication, earlier.**
   For delivery flows, adjudicate at order time, not dispatch, so the member isn't

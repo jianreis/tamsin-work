@@ -1,9 +1,9 @@
-# SPEC — Executive Scripting Strategy Deck (build contract)
+# SPEC - Executive Scripting Strategy Deck (build contract)
 
 > Coordination contract for all build agents. **Read this first.** Owner: orchestrator.
 > Goal: a polished, insight-led **executive slide deck** (`.pptx` + `.pdf`) telling Tamsin's
 > six-part strategic story. Built by extending the North Star deck pipeline. Nothing existing
-> is overwritten — not `01-research-report.html`, not the `#06` North Star deck.
+> is overwritten - not `01-research-report.html`, not the `#06` North Star deck.
 
 ## 0. Outputs & locations (filenames are fixed)
 - Engine: `deliverables/_shared/build-executive-strategy-deck.py` (NEW; copies palette+helpers from `build-northstar-deck.py`)
@@ -35,7 +35,7 @@
 | `sources` | vault citation list | title, items[] |
 | `closing` | what's next / the bets | title, body[] |
 
-## 3. Content-spec schema (Markdown — what content agents write)
+## 3. Content-spec schema (Markdown - what content agents write)
 Each part file is an ordered list of slide blocks. One block per slide:
 
 ```
@@ -74,7 +74,7 @@ Rules: keep `body` to 3–5 bullets max; every non-obvious claim needs an `evide
 - **Cite the vault** on substantive slides via the `evidence` field (visible `wiki/...` / `src-...`).
 
 ## 6. Canonical pillar updates (use this EXACT wording in pillars.md AND the deck)
-New strategic pillar (next free id — do NOT renumber existing):
+New strategic pillar (next free id - do NOT renumber existing):
 - **S6 — From prescription fulfilment to treatment orchestration**
   oneLiner: "Today the patient is forced to coordinate across prescriber, pharmacy, scheme, stock and delivery; the opportunity is to absorb that coordination into one system — shifting from dispensing a script to orchestrating the whole treatment journey."
   sources: `wiki/dischem/dischem-rx-current-journey`, `wiki/dischem/pharmacy-complaints-pain-points`, `wiki/concepts/omnichannel-fulfilment`, `wiki/digital-transformation/interoperability-identity-records`, `wiki/concepts/chronic-medicine-flywheel`

@@ -7,24 +7,24 @@ confidence: medium
 tags: [domain/dischem, domain/digital, topic/automation, topic/e-prescription, topic/ai, journey/submit, journey/validate, journey/dispense, journey/pay, journey/collect, journey/deliver, region/za]
 sources: [src-dc-omnichannel-scripting-roadmap]
 created: "2026-06-14"
-updated: "2026-06-14"
+updated: "2026-06-17"
 ---
 
 # Dis-Chem scripting tech roadmap (Virtual Order Operational Flow)
 
 This page inventories the **technology capabilities Dis-Chem has already roadmapped**
 for its future-state omnichannel scripting (prescription) experience, captured from the
-internal **"Script Re-imagined — Virtual Order Operational Flow"** board
+internal **"Script Re-imagined - Virtual Order Operational Flow"** board
 [[src-dc-omnichannel-scripting-roadmap]]. It exists so the future-state journey/blueprint
-build can **weave in technology that is already planned** — grounding the deliverable in
+build can **weave in technology that is already planned**, grounding the deliverable in
 Dis-Chem's own intent rather than inventing capability. The proof-point for the
 "automate-the-toil" strategy is the **ROWA automated picker/dispensing robot**.
 
 **What the board describes.** A single **virtual order queue** feeds an **AI-assisted
 Central Care Centre (AC)**, routes orders to an **automated dispensary** (ROWA-anchored),
-then through **omnichannel collection and delivery**. The flow runs across eight stages —
-**Intake → Process → Pick → Check → Pack → Collection → Dispatch & Consolidation →
-Deliver** — and four swimlanes: **Central Care Centre (AC)**, **Pharmacy Back of House**,
+then through **omnichannel collection and delivery**. The flow runs across eight stages
+(**Intake → Process → Pick → Check → Pack → Collection → Dispatch & Consolidation →
+Deliver**) and four swimlanes: **Central Care Centre (AC)**, **Pharmacy Back of House**,
 **Pharmacy Counter**, and **delivery**. The unifying spine is the **Dashboard**, defined
 on the board as the *"E2E workflow manager (dispensary and front store; collections and
 delivery)"* [[src-dc-omnichannel-scripting-roadmap]].
@@ -75,7 +75,7 @@ questions). Source is company-primary but forward-looking → Tier B.
 
 ⭐ = key automation proof-point for **S5 (pharmacist / automate-the-toil)**.
 
-## ROWA — the automation anchor
+## ROWA - the automation anchor
 
 The **ROWA automated picker/dispensing robot** is the centrepiece of the back-of-house
 automation and the clearest evidence that Dis-Chem's future-state intends to **remove
@@ -88,7 +88,7 @@ instructions, **ROWA dispenses eligible stock automatically**, and **only non-RO
 ROWA-to-checking-bench conveyance feeding the pharmacist's single sign-off. ROWA is a
 recognised commercial robotic dispensing system (see general evidence in
 [[pharmacy-automation-and-robotics]]), so the throughput/accuracy case is well-established
-in principle; what the board adds is that Dis-Chem **has named it as the intended platform**.
+in principle. What the board adds is that Dis-Chem **has named it as the intended platform**.
 
 ## How to use this page (for the journey/blueprint build)
 
@@ -105,7 +105,7 @@ in principle; what the board adds is that Dis-Chem **has named it as the intende
 ## Open questions
 
 - **No timeline or sequencing.** The board shows no dates, phasing or live-status. Which
-  capabilities are live now vs. in-build vs. aspirational? ROWA in particular — deployed,
+  capabilities are live now vs. in-build vs. aspirational? ROWA in particular - deployed,
   piloted, or planned? ⚠️ UNVERIFIED.
 - **Vendor/system identities.** What exactly are **BRIX**, **PICCUP**, **VC** and the
   **Ticketing** platform (internal names vs. vendors)? **Fiori** implies an SAP front end

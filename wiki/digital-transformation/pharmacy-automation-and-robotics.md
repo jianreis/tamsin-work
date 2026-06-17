@@ -7,13 +7,13 @@ confidence: medium
 tags: [domain/digital, topic/automation, topic/ai, topic/e-prescription]
 sources: [src-dig-pharmacy-automation-evidence, src-dig-adc-lockers-market, src-dig-sa-automation-adoption, src-dig-cv-pill-triage, src-dig-eprescribing-safety-scoping]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Pharmacy automation & robotics
 
-**Pharmacy automation** moves the physical work of dispensing — storing, counting,
-picking, packing, verifying, handing over — from manual labour to machines, with
+**Pharmacy automation** moves the physical work of dispensing (storing, counting,
+picking, packing, verifying, handing over) from manual labour to machines, with
 the pharmacist's attention re-routed to clinical judgement and patient interaction.
 For a high-volume SA dispensary the prize is throughput and accuracy at peak load
 without proportional staffing, plus shorter queues at the collection point. The
@@ -33,12 +33,12 @@ many front-end stores, which is the natural model for chronic/repeat medication 
 scale [[src-dig-pharmacy-automation-evidence]].
 
 **Automated dispensing cabinets (ADCs)** are computerised cabinets that store and
-dispense medication near the point of care with tracking and access control —
+dispense medication near the point of care with tracking and access control:
 primarily an inpatient/ward technology, less central to retail scripting but
 relevant for controlled-substance custody [[src-dig-adc-lockers-market]].
 
 **Smart pickup lockers** provide secure, contactless prescription collection,
-reducing hand-off/pickup errors and decoupling collection from counter staffing —
+reducing hand-off/pickup errors and decoupling collection from counter staffing,
 directly relevant to omnichannel fulfilment ([[telepharmacy-and-omnichannel]])
 [[src-dig-adc-lockers-market]].
 
@@ -63,11 +63,11 @@ The evidence is encouraging but should be read carefully:
   with **−85%** target dispensing errors and **−74%** potential adverse drug events
   in one study [[src-dig-pharmacy-automation-evidence]].
 
-Critically, a "Critical Evaluation … Call to Action" review warns that automation
+A "Critical Evaluation … Call to Action" review warns that automation
 evidence quality is uneven and benefits depend on **workflow redesign**, not the
 robot alone [[src-dig-pharmacy-automation-evidence]]. Automation can also relocate
-rather than remove error — e.g. verification bypass or mis-stocking — echoing the
-automation-bias caution from e-prescribing [[src-dig-eprescribing-safety-scoping]].
+rather than remove error (for example, verification bypass or mis-stocking), which
+echoes the automation-bias caution from e-prescribing [[src-dig-eprescribing-safety-scoping]].
 
 ## SA applicability and constraints
 
@@ -80,16 +80,16 @@ higher-volume, well-capitalised settings, and SA-specific constraints shape the
 business case:
 
 - **Capital intensity** vs the regulated dispensing-fee economics (cross-link to
-  `medical-schemes`) — central-fill amortises best across very high repeat volumes.
-- **Load-shedding/power reliability** — automated lines need UPS/generator backup;
+  `medical-schemes`) - central-fill amortises best across very high repeat volumes.
+- **Load-shedding/power reliability** - automated lines need UPS/generator backup;
   a stalled robot is a stalled dispensary.
-- **Imported hardware/maintenance** — spares, service and skills availability
+- **Imported hardware/maintenance** - spares, service and skills availability
   affect uptime.
 
 What suits a high-volume SA dispensary: a **central-fill model for chronic/repeat
 medication** (predictable, high-volume, courier/locker-delivered), in-store
 **vision-based verification** to harden the final check, and **smart lockers** for
-contactless collection — leaving in-store pharmacists for acute scripts and
+contactless collection - leaving in-store pharmacists for acute scripts and
 counselling.
 
 ## Design implications
@@ -112,7 +112,7 @@ counselling.
   robotic dispensing today, and at what scale? Secondary coverage asserts it; needs
   primary confirmation [[src-dig-sa-automation-adoption]].
 - ⚠️ At what repeat-script volume does central-fill become economic under SA's
-  regulated dispensing fee? (Modelling gap — cross-link to `medical-schemes`.)
+  regulated dispensing fee? (Modelling gap - cross-link to `medical-schemes`.)
 - ⚠️ UNVERIFIED: Real-world (not lab) accuracy of vision verification on the SA
   product range, including local generics and packaging variants.
 - ⚠️ Are pharmacist-supervised smart lockers compliant with SAPC hand-over /

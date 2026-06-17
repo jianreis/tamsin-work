@@ -10,7 +10,7 @@ status: draft
 # Global benchmarks — leading pharmacies abroad
 
 Case studies and pattern libraries from the US, UK, EU, India, China, and
-Australia — what the leading prescription ("scripting") / refill / delivery
+Australia. What the leading prescription ("scripting") / refill / delivery
 experiences actually do, the *mechanism* behind each, and what transfers to a
 South African retail pharmacy (anchored on Dis-Chem).
 
@@ -18,8 +18,8 @@ South African retail pharmacy (anchored on Dis-Chem).
 [[wiki/global-benchmarks/patterns-to-borrow-and-cautions|Patterns to borrow & cautions]].
 Headline judgement: **Australia, India and China transfer to SA far better than
 the US/UK/EU**, because they assume mixed funding, cash-paying patients, store
-estates as fulfilment nodes, and pragmatic verification — not a single tax-funded
-payer or an insurance/PBM middle layer.
+estates as fulfilment nodes, and pragmatic verification, rather than a single
+tax-funded payer or an insurance/PBM middle layer.
 
 ## Pages
 

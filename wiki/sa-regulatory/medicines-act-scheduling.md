@@ -7,7 +7,7 @@ confidence: high
 tags: [domain/regulatory, topic/scheduling, journey/validate, journey/dispense, region/za]
 sources: [src-reg-medicines-act-101-1965, src-reg-consolidated-schedules-2025, src-reg-sahpra-scheduling-guideline, src-reg-affordable-medicines-concourt-2006]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Medicines Act & medicine scheduling (S0–S8)
@@ -49,11 +49,11 @@ constitutionally-upheld licensing of dispensers sits in **§22C**
 - **Emergency supply by a pharmacist:** S2/S3/S4 on a non-recurring basis; S5/S6 up
   to a 48-hour quantity [[src-reg-medicines-act-101-1965]].
 - **Dispensing vs prescribing are separated:** a doctor who wishes to *dispense*
-  (not just prescribe) needs a **§22C(1)(a) dispensing licence** — upheld by the
+  (not just prescribe) needs a **§22C(1)(a) dispensing licence**, upheld by the
   Constitutional Court [[src-reg-affordable-medicines-concourt-2006]]. See
   [[pharmacy-act-sapc-gpp]].
 
-## S6 controlled substances — the strictest everyday tier
+## S6 controlled substances - the strictest everyday tier
 S6 (e.g. opioid analgesics) **cannot be repeated** (a new prescription is required
 each time) and may be sold only if the **treatment course does not exceed 30
 consecutive days**; a controlled register is mandatory
@@ -70,7 +70,7 @@ are essentially out of scope for retail scripting (permit / DG special permissio
 - **Prescriber identity must be schedule-aware.** The UI must confirm the prescriber
   is entitled to prescribe that schedule (e.g. a nurse-prescriber cannot script
   outside scope). 🔮 requires-reform if the design wants to let an AI/algorithm
-  "prescribe" S3+ without a registered human prescriber — that is not currently
+  "prescribe" S3+ without a registered human prescriber, which is not currently
   lawful.
 - **Scheduling is a moving target.** Substances are rescheduled by Gazette; the
   product catalogue must sync to the latest Consolidated Schedules, not hard-code.
@@ -79,9 +79,9 @@ are essentially out of scope for retail scripting (permit / DG special permissio
 
 ## Open questions
 - Exact verbatim §22A subsection wording (prescriber lists per schedule) needs
-  confirmation against the gazetted Act text — logged ⚠️ UNVERIFIED.
+  confirmation against the gazetted Act text - logged ⚠️ UNVERIFIED.
 - Whether independent nurse-prescriber scope has expanded under recent NDoH policy
-  (PHC) — verify.
+  (PHC) - verify.
 
 ## See also
 - [[sahpra-overview]] · [[pharmacy-act-sapc-gpp]] · [[prescription-requirements-repeats]]
