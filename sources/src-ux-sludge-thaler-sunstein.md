@@ -45,4 +45,3 @@ principle in trust-and-safety UX.
 - [[wiki/ux-service-design/jtbd-and-behavioural-design]]
 - [[wiki/ux-service-design/healthcare-service-design-patterns]]
 - [[wiki/ux-service-design/pharmacy-ux-patterns]]
-</content>

@@ -185,5 +185,3 @@ A 5-stage emotional arc the deck uses to organise findings:
 - [[wiki/dischem/pharmacy-complaints-pain-points]]
 - [[wiki/dischem/store-of-the-future-customer-voice]]
 - [[wiki/consumer-context/voice-of-customer-script-journey]]
-</content>
-</invoke>

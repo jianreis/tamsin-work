@@ -172,5 +172,3 @@ responsibility or removes control.
 
 # Used in
 - [[wiki/dischem/store-of-the-future-customer-voice]]
-</content>
-</invoke>

@@ -150,4 +150,3 @@ pack so you see it?"
 - [[journey-mapping-method]] · [[service-blueprinting-method]] ·
   [[pharmacy-ux-patterns]] · [[healthcare-service-design-patterns]] ·
   [[inclusive-low-bandwidth-design]]
-</content>

@@ -132,4 +132,3 @@ in principle; what the board adds is that Dis-Chem **has named it as the intende
 - [[e-prescribing-systems-and-standards]] — e-Rx/standards underpinning "virtual order"
 - [[dischem-dispensary-services]] · [[dischem-digital-channels]] — current-state Dis-Chem
 - [[dischem-rx-current-journey]] — as-is scripting journey this roadmap re-imagines
-</content>

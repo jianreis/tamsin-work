@@ -48,4 +48,3 @@ consent, error/safety messages).
 - [[wiki/ux-service-design/healthcare-service-design-patterns]]
 - [[wiki/ux-service-design/inclusive-low-bandwidth-design]]
 - [[wiki/ux-service-design/pharmacy-ux-patterns]]
-</content>

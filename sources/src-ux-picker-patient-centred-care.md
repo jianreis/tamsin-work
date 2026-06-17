@@ -51,4 +51,3 @@ journey should be evaluated.
 # Used in
 - [[wiki/ux-service-design/healthcare-service-design-patterns]]
 - [[wiki/ux-service-design/journey-mapping-method]]
-</content>

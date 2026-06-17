@@ -50,4 +50,3 @@ and the Timely element of EAST. Used for adherence/refill prompt design.
 # Used in
 - [[wiki/ux-service-design/jtbd-and-behavioural-design]]
 - [[wiki/ux-service-design/pharmacy-ux-patterns]]
-</content>
