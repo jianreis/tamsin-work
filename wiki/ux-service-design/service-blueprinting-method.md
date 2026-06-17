@@ -178,4 +178,3 @@ out-of-stock are designed for in [[pharmacy-ux-patterns]].
   [[healthcare-service-design-patterns]] · [[jtbd-and-behavioural-design]] ·
   [[inclusive-low-bandwidth-design]]
 - [[CLAUDE|Vault schema §8 — how to build blueprints]]
-</content>

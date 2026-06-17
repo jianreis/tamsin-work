@@ -22,6 +22,11 @@ the funding architectures.
 
 ## The 11 highest-value transferable patterns
 
+> 📖 **Each pattern below is expanded in detail** — the problem it solved, exactly how
+> it works, the consumer and pharmacist pain it removes, the single SA take-away, and a
+> visual reference — in the companion page
+> **[[wiki/global-benchmarks/patterns-deep-dive|Deep-dive — the 11 patterns, in detail]]**.
+
 1. **QR-code e-script token (SMS/email), scanned at any pharmacy**, the single most
    transferable design. Australia's token is a *key* that unlocks the script from a
    secure delivery service: low-friction, no PIN, works on any phone, forwardable to
@@ -148,6 +153,7 @@ scope debates [[wiki/sa-regulatory/_index]].)
 
 ## See also
 
+- **[[wiki/global-benchmarks/patterns-deep-dive|🔬 Deep-dive — the 11 patterns, in detail]]** (the rich, 5-part companion to this summary)
 - [[wiki/global-benchmarks/australia-chemist-warehouse-escript]] · [[wiki/global-benchmarks/india-pharmeasy-apollo-tata1mg]] · [[wiki/global-benchmarks/china-pingan-alibaba-jdhealth]]
 - [[wiki/global-benchmarks/uk-boots-pharmacy2u-nhs-eps]] · [[wiki/global-benchmarks/europe-docmorris-redcare-erezept]] · [[wiki/global-benchmarks/usa-cvs-walgreens-amazon]]
 - [[wiki/medical-schemes/_index]] · [[wiki/sa-regulatory/_index]] · [[wiki/consumer-context/_index]] · [[wiki/digital-transformation/_index]] · [[wiki/dischem/_index]]

@@ -184,4 +184,3 @@ All from [[src-dc-store-future-interviews-2026]].
 - [[wiki/consumer-context/digital-access-and-whatsapp]]
 - [[wiki/consumer-context/adjacent-digital-expectations]]
 - [[wiki/consumer-context/health-seeking-behaviour]]
-</content>

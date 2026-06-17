@@ -125,11 +125,10 @@ in principle. What the board adds is that Dis-Chem **has named it as the intende
   specified.
 
 ## See also
-- [[src-dc-omnichannel-scripting-roadmap]] - the board (source)
-- [[pharmacy-automation-and-robotics]] - ROWA-class robotic dispensing evidence
-- [[telepharmacy-and-omnichannel]] - omnichannel fulfilment & unified profile
-- [[ai-in-pharmacy]] - AI capture/routing, agentic workflow risks & governance
-- [[e-prescribing-systems-and-standards]] - e-Rx/standards underpinning "virtual order"
-- [[dischem-dispensary-services]] · [[dischem-digital-channels]] - current-state Dis-Chem
-- [[dischem-rx-current-journey]] - as-is scripting journey this roadmap re-imagines
-</content>
+- [[src-dc-omnichannel-scripting-roadmap]] — the board (source)
+- [[pharmacy-automation-and-robotics]] — ROWA-class robotic dispensing evidence
+- [[telepharmacy-and-omnichannel]] — omnichannel fulfilment & unified profile
+- [[ai-in-pharmacy]] — AI capture/routing, agentic workflow risks & governance
+- [[e-prescribing-systems-and-standards]] — e-Rx/standards underpinning "virtual order"
+- [[dischem-dispensary-services]] · [[dischem-digital-channels]] — current-state Dis-Chem
+- [[dischem-rx-current-journey]] — as-is scripting journey this roadmap re-imagines

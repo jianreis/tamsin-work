@@ -50,4 +50,3 @@ rejected, out of stock, invalid script, delivery failed).
 # Used in
 - [[wiki/ux-service-design/pharmacy-ux-patterns]]
 - [[wiki/ux-service-design/healthcare-service-design-patterns]]
-</content>

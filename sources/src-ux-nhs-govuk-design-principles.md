@@ -57,4 +57,3 @@ service design — directly transferable to a public-facing pharmacy service.
 - [[wiki/ux-service-design/healthcare-service-design-patterns]]
 - [[wiki/ux-service-design/inclusive-low-bandwidth-design]]
 - [[wiki/ux-service-design/service-blueprinting-method]]
-</content>

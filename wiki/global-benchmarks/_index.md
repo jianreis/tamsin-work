@@ -24,6 +24,7 @@ tax-funded payer or an insurance/PBM middle layer.
 ## Pages
 
 - [[wiki/global-benchmarks/patterns-to-borrow-and-cautions|🔑 Synthesis — patterns to borrow & cautions]]
+  - [[wiki/global-benchmarks/patterns-deep-dive|↳ 🔬 Deep-dive — the 11 patterns, in detail]] _(per-pattern: problem · how it works · consumer pain · pharmacist pain · SA take-away · visual reference)_
 - [[wiki/global-benchmarks/australia-chemist-warehouse-escript|🇦🇺 Australia — eScript token + Active Script List, MedAdvisor, Chemist Warehouse]] _(best fit for SA)_
 - [[wiki/global-benchmarks/india-pharmeasy-apollo-tata1mg|🇮🇳 India — PharmEasy, Apollo 247, Tata 1mg, Netmeds]]
 - [[wiki/global-benchmarks/china-pingan-alibaba-jdhealth|🇨🇳 China — Ping An Health, Alibaba Health, JD Health & internet hospitals]]
