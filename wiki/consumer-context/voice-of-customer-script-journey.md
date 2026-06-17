@@ -19,7 +19,7 @@ interviews** with in-store self-collect customers, fielded **20–25 October
 what customers say **works** and what **causes friction**, and maps those to our
 [[design-kit/journeys/as-is-prescription-journey|as-is journey spine]] and
 [[design-kit/personas/_personas-index|personas]]. It is the first
-**lived-experience** evidence we hold on the as-is journey — earlier pains
+**lived-experience** evidence we hold on the as-is journey. Earlier pains
 rested largely on D-tier app-store / HelloPeter signals, so this materially
 upgrades confidence on the in-store path while leaving digital/remote
 fulfilment unevidenced.
@@ -27,7 +27,7 @@ fulfilment unevidenced.
 > **Read this as sentiment, not prevalence.** Small-n (10), purposive,
 > in-store-only, mostly off-peak. Counts like "7/10 acute" describe the sample,
 > not the SA customer base [[src-dc-script-journey-interviews-2025]]. The study
-> **explicitly excluded delivery, click-and-collect and app/web flows** — so the
+> **explicitly excluded delivery, click-and-collect and app/web flows**, so the
 > upbeat tone below is largely a verdict on the **physical in-store experience**,
 > not on Dis-Chem's digital channels.
 
@@ -38,10 +38,10 @@ fulfilment unevidenced.
 7/10, mostly 35–54, Black 6/10, **acute 7/10 vs chronic 3/10**; medication-use
 skewed to long-term/mixed regimen users (8/10)
 [[src-dc-script-journey-interviews-2025]]. This is a **regular, in-store-loyal,
-medical-aid-leaning** slice — closest to personas
+medical-aid-leaning** slice - closest to personas
 [[design-kit/personas/insured-chronic-multimorbid|Nomvula (insured chronic)]],
 [[design-kit/personas/elderly-poly-pharmacy|Trudie (poly-pharmacy)]] and
-[[design-kit/personas/cash-pay-acute-customer|Thabo (cash acute)]] — and
+[[design-kit/personas/cash-pay-acute-customer|Thabo (cash acute)]] - and
 **under-represents** the WhatsApp-first/low-data
 ([[design-kit/personas/low-data-whatsapp-first-peri-urban|Sipho]]),
 delivery-first ([[design-kit/personas/time-poor-urban-professional|Aisha]]) and
@@ -51,27 +51,27 @@ segments.
 ## The big themes (cross-journey)
 
 - **Three drivers decide everything: speed/convenience, one-stop shopping, stock
-  reliability** — and the same three explain why customers choose Dis-Chem
+  reliability**, and the same three explain why customers choose Dis-Chem
   specifically [[src-dc-script-journey-interviews-2025]]. A future-state design
   that trades any of these away will lose this segment.
 - **Loyalty is to convenience, not to brand.** Customers keep a "main" pharmacy
-  but switch to Clicks/Pharmet for speed or stock that day — "If I can't find
+  but switch to Clicks/Pharmet for speed or stock that day - "If I can't find
   something at Dis-Chem, I'll just check Clicks or Pharmet"
-  [[src-dc-script-journey-interviews-2025]]. **A stock-out doesn't just lose a
-  sale; it relocates the customer.**
+  [[src-dc-script-journey-interviews-2025]]. A stock-out doesn't just lose a
+  sale, it relocates the customer.
 - **Human service sets the emotional tone.** Friendly, knowledgeable, familiar
-  staff are repeatedly the reason people stay — "they're familiar with me and my
+  staff are repeatedly the reason people stay - "they're familiar with me and my
   medication" [[src-dc-script-journey-interviews-2025]]. Confirms the
   [[design-kit/personas/frontline-pharmacist|pharmacist relationship]] as a real
   asset, not a romantic one.
 - **"Chronic" is a behaviour, not a diagnosis, in the customer's head.** People
-  call recurring sinus or gout "chronic" because they medicate routinely; frame
+  call recurring sinus or gout "chronic" because they medicate routinely, so frame
   journeys around **ongoing-management behaviour, not clinical category**
   [[src-dc-script-journey-interviews-2025]]. Design implication: the
   "chronic flywheel" should target *self-perceived routine medicators*, who are
   a larger group than the clinically-chronic / CDL-registered set.
-- **Digital is low-trust and habit-mismatched here** — not rejected, just "it
-  doesn't yet fit their habits"; one participant is actively scam-wary
+- **Digital is low-trust and habit-mismatched here**, not rejected, just "it
+  doesn't yet fit their habits", and one participant is actively scam-wary
   [[src-dc-script-journey-interviews-2025]]. The bar for a digital front-door is
   **trust and visible control**, not features.
 
@@ -81,15 +81,15 @@ segments.
 - **Works:** doctor-pharmacy **co-location** lets people fill immediately;
   extended hours; predictable queues; **face-to-face assurance**
   [[src-dc-script-journey-interviews-2025]].
-- **Pain:** **paper everywhere** — nearly all still get a handwritten script;
+- **Pain:** **paper everywhere**. Nearly all still get a handwritten script;
   the two who tried email/app upload found it "secondary or unreliable." When
   doctors email/fax a script, **customers can't tell if Dis-Chem received it**,
-  causing double trips and calls; there is **no confirmation system** for
+  causing double trips and calls, and there is **no confirmation system** for
   digital hand-overs [[src-dc-script-journey-interviews-2025]]. This **confirms
   and sharpens** the as-is "manual, paper-to-rekey, no e-script hand-off" pain
   ([[design-kit/journeys/as-is-prescription-journey|as-is]] Stages 1–2): the
   felt problem is **lack of a receipt/confirmation**, not the paper itself.
-- **Pain:** timing is gated by **payday and errand-bundling** — "I plan it
+- **Pain:** timing is gated by **payday and errand-bundling** - "I plan it
   around payday or if I'm already going to the shops"
   [[src-dc-script-journey-interviews-2025]]. Money-timing is a real scheduling
   constraint, not only an affordability one.
@@ -98,11 +98,11 @@ segments.
 - **Works:** **ticketing + browse-while-you-wait** is liked ("I can still
   browse"); clean, organised, separated queues; staff who direct you
   [[src-dc-script-journey-interviews-2025]].
-- **Pain:** **ticketing is inconsistent across branches** — customers notice
-  instantly when it's missing; **month-end / pensioner-day surges push waits to
+- **Pain:** **ticketing is inconsistent across branches**, and customers notice
+  instantly when it's missing. **Month-end / pensioner-day surges push waits to
   ~25–30 min**, felt acutely "when you're not feeling well"
   [[src-dc-script-journey-interviews-2025]]. New, in-store-specific pain not in
-  the current as-is map (which focuses on app/fulfilment); **peak-load fairness**
+  the current as-is map (which focuses on app/fulfilment), where **peak-load fairness**
   is the issue.
 
 ### Handover & waiting → maps to VALIDATE / FUND-CLAIM
@@ -111,23 +111,23 @@ segments.
   "adjusted" in person); short dispense window once in the system
   [[src-dc-script-journey-interviews-2025]].
 - **Pain:** **profile-lookup inconsistency across branches** (surname
-  variants/duplicates, "profile not found"); **redundant digital steps** —
-  asked to WhatsApp/email a script *and* hand over the paper; **family /
+  variants/duplicates, "profile not found"); **redundant digital steps**, being
+  asked to WhatsApp/email a script *and* hand over the paper; and **family /
   multi-profile admin** at the counter [[src-dc-script-journey-interviews-2025]].
   Directly validates the
   [[design-kit/personas/caregiver-proxy-collector|caregiver/proxy]] persona's
   multi-profile pain. **Contrast with the as-is map:** the as-is treats
-  Validate→Fund as the *biggest trust risk* (co-pay shock); here, in this
-  insured-leaning sample, **co-pay handling felt smooth and on-the-counter** —
+  Validate→Fund as the *biggest trust risk* (co-pay shock). Here, in this
+  insured-leaning sample, **co-pay handling felt smooth and on-the-counter** -
   see contradiction below.
 
 ### Information & counselling → maps to DISPENSE (counsel)
-- **Works — and notably frictionless:** **no significant frictions observed.**
+- **Works, and frictionless:** **no significant frictions observed.**
   Printed labels trusted and clear; the **"show-and-tell" (hold the box)** style
   builds confidence; pharmacists tailor advice and even walk customers to the
   vitamin aisle; chronic users just "check the label and go"
   [[src-dc-script-journey-interviews-2025]]. A genuine **strength to protect** in
-  any automation push — confirms the
+  any automation push, confirming the
   [[design-kit/personas/frontline-pharmacist|pharmacist]] counselling moment as
   high-value.
 
@@ -158,12 +158,12 @@ segments.
 - **S1 (both-economies):** sample is insured-leaning; the **payday/errand-bundle
   timing** and **cash-for-extras-when-savings-run-low** behaviours are the
   clearest two-economy signals [[src-dc-script-journey-interviews-2025]]. The
-  uninsured/low-data end is under-heard — a coverage gap, not a "both economies
+  uninsured/low-data end is under-heard, a coverage gap, not a "both economies
   work fine" finding.
 - **S2 (front-door):** customers want a **confirmation/receipt** that a script
-  landed, and **consistent ticketing/wayfinding** — the front door's job here is
+  landed, and **consistent ticketing/wayfinding**. The front door's job here is
   *certainty*, not novelty [[src-dc-script-journey-interviews-2025]].
-- **S3 (service-not-price):** strongly supported — **staff relationship,
+- **S3 (service-not-price):** strongly supported. **Staff relationship,
   counselling and stock reliability** are why people stay; price (co-pay)
   rarely framed as a grievance in this sample
   [[src-dc-script-journey-interviews-2025]].

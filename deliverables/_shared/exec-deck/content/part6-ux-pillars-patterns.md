@@ -1,15 +1,15 @@
-# Part 6 — UX pillars and transferable patterns (strategy made buildable)
+# Part 6 - UX pillars and transferable patterns (strategy made buildable)
 
 ## SLIDE: section-divider
 id: divider-ux-pillars-patterns
 num: 6
-title: From strategy to the touchpoint — seven UX pillars, proven patterns
+title: From strategy to the touchpoint - seven UX pillars, proven patterns
 subtitle: How the experience must behave, and where each behaviour has already worked abroad
-notes: Part 5 set the strategic bets (S-pillars); Part 6 is the design constitution (U-pillars) and the proof that each is buildable. Every pillar carries a real-world org example with a vault citation. U3 has been renamed — see the hero slide.
+notes: Part 5 set the strategic bets (S-pillars). Part 6 is the design constitution (U-pillars) and the proof that each is buildable. Every pillar carries a real-world org example with a vault citation. U3 has been renamed - see the hero slide.
 
 ## SLIDE: pillar-grid
 id: ux-pillars-overview
-title: The seven UX pillars — the design constitution for every touchpoint
+title: The seven UX pillars - the design constitution for every touchpoint
 cards:
   - {id: U1, name: "Channel ladder: WhatsApp-first & data-frugal", oneLiner: "WhatsApp/USSD/SMS first, app as enhancement; low-data, async, resumable, idempotent by default."}
   - {id: U2, name: "Never leave them guessing", oneLiner: "Honest real-time status at every step; the silent wait and unexplained rejection are the primary pains."}
@@ -24,8 +24,8 @@ notes: Names and one-liners are verbatim from the canonical pillars.md. U3 uses 
 ## SLIDE: comparison
 id: pattern-pillar-map
 kicker: UX · The map
-title: Every pillar is already buildable — each behaviour maps to a pattern that has shipped abroad
-so_what: We are not inventing experience principles, we are importing proven mechanisms — so each UX pillar can point to working journey moments and a real overseas precedent, not aspiration.
+title: Every pillar is already buildable - each behaviour maps to a pattern that has shipped abroad
+so_what: We are importing proven mechanisms rather than inventing experience principles, so each UX pillar can point to working journey moments and a real overseas precedent, not aspiration.
 columns: ["UX pillar", "Future-state journey moment", "Global pattern (precedent)"]
 rows:
   - ["U1 — WhatsApp-first & data-frugal", "WhatsApp-first nudge; USSD/SMS fallback (m1)", "QR token on any phone, forwardable; WhatsApp as SA's default channel"]
@@ -38,16 +38,16 @@ rows:
 evidence: [deliverables/_shared/06-anim-data.js, wiki/global-benchmarks/patterns-to-borrow-and-cautions, wiki/global-benchmarks/australia-chemist-warehouse-escript, wiki/global-benchmarks/amazon-pharmacy-pillpack-deepdive]
 visual: dia:pattern-pillar-map
 flags: []
-notes: Left = the North Star deck's nine journey moments (m1–m9 in 06-anim-data.js); right = the 11 transferable global patterns from patterns-to-borrow-and-cautions.md. Borrow the mechanism, reject the foreign funding architecture (no PBM, no single-payer rail). All precedents are "direction of travel" — no SA-local proof exists.
+notes: Left = the North Star deck's nine journey moments (m1–m9 in 06-anim-data.js); right = the 11 transferable global patterns from patterns-to-borrow-and-cautions.md. Borrow the mechanism, reject the foreign funding architecture (no PBM, no single-payer rail). All precedents are "direction of travel" - no SA-local proof exists.
 
 ## SLIDE: pillar
 id: u3-variables-upfront-hero
 kicker: UX · Hero pillar (renamed)
 name: U3 — Give me all the variables upfront
-what: Surface everything that materially affects the decision BEFORE commitment — cost, funding/cover, stock availability, timing/ETA, alternatives, and anything else that would change the choice — never spring a surprise at the till.
-why: Money is the sharpest case, not the whole of it — the trust-breaker is any hidden variable revealed too late (an out-of-stock after the trip, an ETA that slips, a co-pay at the counter), so legibility before commit is the single highest-trust design move and SEP makes the price half of it free.
+what: Surface everything that materially affects the decision BEFORE commitment - cost, funding/cover, stock availability, timing/ETA, alternatives, and anything else that would change the choice - never spring a surprise at the till.
+why: Money is the sharpest case, not the whole of it. The trust-breaker is any hidden variable revealed too late (an out-of-stock after the trip, an ETA that slips, a co-pay at the counter), so legibility before commit is the highest-trust design move and SEP makes the price half of it free.
 evidence: [wiki/global-benchmarks/amazon-pharmacy-pillpack-deepdive, wiki/global-benchmarks/usa-cvs-walgreens-amazon, wiki/sa-regulatory/sep-dispensing-fee, deliverables/_shared/06-anim-data.js]
-example: Amazon PillPack / Amazon Pharmacy shows insured copay vs cash price side-by-side, the delivery date, and generic alternatives upfront at checkout; Mark Cuban Cost Plus shows a fully itemised cost + markup + fees — both make the variables legible before you pay.
+example: Amazon PillPack / Amazon Pharmacy shows insured copay vs cash price side-by-side, the delivery date, and generic alternatives upfront at checkout. Mark Cuban Cost Plus shows a fully itemised cost + markup + fees. Both make the variables legible before you pay.
 visual: dia:variables-upfront
 flags: []
 notes: This is the SPEC §6 rename (was "Make money legible, early, always"). Broaden the radial diagram beyond price: Cost · Funding/cover · Stock · Timing/ETA · Alternatives · (and any other decision-material variable). SA's SEP + capped dispensing fee already make the cost spoke natural — lean into it. Anim m3 ("I know the cost and the cover before I commit") is the in-journey proof.

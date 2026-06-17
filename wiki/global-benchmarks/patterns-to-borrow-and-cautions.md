@@ -16,9 +16,9 @@ This page distils the six regional benchmark pages into a decision-useful patter
 library for the future-state Dis-Chem scripting experience. **Headline judgement:
 the emerging-market models (India, China) and Australia transfer to SA far better
 than the US/UK/EU models, because they assume mixed funding, cash-paying patients,
-dense store estates as fulfilment nodes, and pragmatic verification — not a single
-tax-funded payer or an insurance-PBM middle layer.** Borrow mechanisms; reject
-funding architectures.
+dense store estates as fulfilment nodes, and pragmatic verification rather than a single
+tax-funded payer or an insurance-PBM middle layer.** Borrow the mechanisms and reject
+the funding architectures.
 
 ## The 11 highest-value transferable patterns
 
