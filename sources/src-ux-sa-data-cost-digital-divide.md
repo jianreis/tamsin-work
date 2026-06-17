@@ -45,4 +45,3 @@ zero-rated / feature-phone-friendly design choices in the scripting service.
 # Used in
 - [[wiki/ux-service-design/inclusive-low-bandwidth-design]]
 - [[wiki/ux-service-design/pharmacy-ux-patterns]]
-</content>

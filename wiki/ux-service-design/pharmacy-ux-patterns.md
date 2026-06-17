@@ -160,4 +160,3 @@ cover *before* the user commits, and confirm risky/irreversible actions
 - [[journey-mapping-method]] · [[service-blueprinting-method]] ·
   [[jtbd-and-behavioural-design]] · [[healthcare-service-design-patterns]] ·
   [[inclusive-low-bandwidth-design]]
-</content>

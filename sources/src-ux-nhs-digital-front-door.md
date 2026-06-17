@@ -44,4 +44,3 @@ future-state scripting service, including its **care-navigation** function.
 # Used in
 - [[wiki/ux-service-design/healthcare-service-design-patterns]]
 - [[wiki/ux-service-design/pharmacy-ux-patterns]]
-</content>

@@ -149,4 +149,3 @@ narrow it to a persona+scenario to get a journey map [[src-ux-nng-journey-mappin
   [[jtbd-and-behavioural-design]] · [[healthcare-service-design-patterns]] ·
   [[inclusive-low-bandwidth-design]]
 - [[CLAUDE|Vault schema §8 — how to build journeys]]
-</content>

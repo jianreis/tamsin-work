@@ -7,7 +7,7 @@ confidence: medium
 tags: [domain/global, region/global, journey/submit, journey/validate, journey/dispense, journey/pay, journey/collect, journey/deliver, journey/adhere, journey/refill, topic/e-prescription, topic/adherence, topic/last-mile, topic/trust-safety, topic/telehealth, topic/ai]
 sources: [src-gbl-australia-escript, src-gbl-nhs-eps, src-gbl-nhs-app-prescriptions, src-gbl-germany-erezept, src-gbl-docmorris-redcare, src-gbl-amazon-pharmacy, src-gbl-costplus-drugs, src-gbl-india-epharmacy, src-gbl-apollo-247-results, src-gbl-china-internet-hospitals, src-gbl-china-eprescription-policy, src-gbl-pharmacy-first, src-gbl-medadvisor, src-gbl-ftc-pbm-report, src-gbl-walgreens-capsule, src-gbl-pharmacy2u-lloydsdirect, src-gbl-us-surescripts-eprescribing]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Synthesis — what to borrow, and what doesn't transfer to SA
@@ -21,6 +21,11 @@ tax-funded payer or an insurance-PBM middle layer.** Borrow mechanisms; reject
 funding architectures.
 
 ## The 11 highest-value transferable patterns
+
+> 📖 **Each pattern below is expanded in detail** — the problem it solved, exactly how
+> it works, the consumer and pharmacist pain it removes, the single SA take-away, and a
+> visual reference — in the companion page
+> **[[wiki/global-benchmarks/patterns-deep-dive|Deep-dive — the 11 patterns, in detail]]**.
 
 1. **QR-code e-script token (SMS/email), scanned at any pharmacy** — the single most
    transferable design. Australia's token is a *key* that unlocks the script from a
@@ -148,6 +153,7 @@ scope debates [[wiki/sa-regulatory/_index]].)
 
 ## See also
 
+- **[[wiki/global-benchmarks/patterns-deep-dive|🔬 Deep-dive — the 11 patterns, in detail]]** (the rich, 5-part companion to this summary)
 - [[wiki/global-benchmarks/australia-chemist-warehouse-escript]] · [[wiki/global-benchmarks/india-pharmeasy-apollo-tata1mg]] · [[wiki/global-benchmarks/china-pingan-alibaba-jdhealth]]
 - [[wiki/global-benchmarks/uk-boots-pharmacy2u-nhs-eps]] · [[wiki/global-benchmarks/europe-docmorris-redcare-erezept]] · [[wiki/global-benchmarks/usa-cvs-walgreens-amazon]]
 - [[wiki/medical-schemes/_index]] · [[wiki/sa-regulatory/_index]] · [[wiki/consumer-context/_index]] · [[wiki/digital-transformation/_index]] · [[wiki/dischem/_index]]

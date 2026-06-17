@@ -46,4 +46,3 @@ MomConnect/Freedom House sources.
 # Used in
 - [[wiki/ux-service-design/inclusive-low-bandwidth-design]]
 - [[wiki/ux-service-design/pharmacy-ux-patterns]]
-</content>

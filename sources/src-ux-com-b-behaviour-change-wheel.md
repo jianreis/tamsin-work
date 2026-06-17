@@ -59,4 +59,3 @@ intervention type fits. Used to structure adherence design in the vault.
 - [[wiki/ux-service-design/jtbd-and-behavioural-design]]
 - [[wiki/ux-service-design/pharmacy-ux-patterns]]
 - [[wiki/ux-service-design/healthcare-service-design-patterns]]
-</content>

@@ -49,4 +49,3 @@ effectiveness).
 # Used in
 - [[wiki/ux-service-design/pharmacy-ux-patterns]]
 - [[wiki/ux-service-design/jtbd-and-behavioural-design]]
-</content>

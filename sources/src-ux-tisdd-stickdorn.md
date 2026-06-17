@@ -56,5 +56,3 @@ the vault's UX pages.
 - [[wiki/ux-service-design/service-blueprinting-method]]
 - [[wiki/ux-service-design/journey-mapping-method]]
 - [[wiki/ux-service-design/healthcare-service-design-patterns]]
-</content>
-</invoke>

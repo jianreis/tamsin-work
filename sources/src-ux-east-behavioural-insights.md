@@ -53,4 +53,3 @@ as a simpler successor to MINDSPACE (2010); revised 2024. Used as the practical
 - [[wiki/ux-service-design/jtbd-and-behavioural-design]]
 - [[wiki/ux-service-design/pharmacy-ux-patterns]]
 - [[wiki/ux-service-design/inclusive-low-bandwidth-design]]
-</content>

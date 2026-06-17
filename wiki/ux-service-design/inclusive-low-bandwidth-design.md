@@ -142,4 +142,3 @@ to **WCAG 2.x AA** (Perceivable, Operable, Understandable, Robust):
 - [[pharmacy-ux-patterns]] · [[healthcare-service-design-patterns]] ·
   [[journey-mapping-method]] · [[jtbd-and-behavioural-design]] ·
   [[wiki/consumer-context/_index|SA consumer context]]
-</content>

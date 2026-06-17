@@ -47,4 +47,3 @@ disrupting my life") in the vault.
 # Used in
 - [[wiki/ux-service-design/jtbd-and-behavioural-design]]
 - [[wiki/ux-service-design/pharmacy-ux-patterns]]
-</content>

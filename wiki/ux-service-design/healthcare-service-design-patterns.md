@@ -166,4 +166,3 @@ someone. Design accordingly:
 - [[pharmacy-ux-patterns]] · [[inclusive-low-bandwidth-design]] ·
   [[jtbd-and-behavioural-design]] · [[journey-mapping-method]] ·
   [[service-blueprinting-method]]
-</content>
