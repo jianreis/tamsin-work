@@ -47,6 +47,7 @@ The single navigable index for this ground-truth vault. **New here? Read
 - [[meta/glossary|Glossary]] — SA pharmacy & service-design terms
 - [[meta/research-log|Research log]] — what's been ingested
 - [[meta/source-reliability-guide|Source reliability guide]]
+- [[meta/writing-style-guide|Writing style guide]] — required anti-AI-slop prose reference
 
 ---
 

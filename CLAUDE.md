@@ -127,6 +127,11 @@ See `design-kit/_design-kit-index.md` for those schemas.
 - **Currency:** South African Rand = `R` / `ZAR`. Note the date of any price.
 - **Voice:** neutral, precise, decision-useful. Short sentences. No marketing fluff.
 - **South African spelling** (organise, behaviour) in prose.
+- **Prose voice is governed by [[writing-style-guide]]** (`meta/writing-style-guide.md`) — the
+  *required* anti-AI-slop reference for all reader-facing prose (wiki, personas,
+  journeys/blueprints, deliverables, source-note summaries, meta docs). Read it before drafting;
+  self-check against its frequency budget and grep checks before any handoff. This file owns
+  structure; the writing guide owns prose voice. Where they overlap, follow both.
 
 ### Tag taxonomy (use `domain/...` + facets)
 `domain/dischem` `domain/regulatory` `domain/schemes` `domain/dispensing`
