@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Same-Day Script — the acute e-script loop (Future-State Customer Journey)</title>
+<title>Same-Day Script - the acute e-script loop (Future-State Customer Journey)</title>
 <style>
 /* =============================================================================
-   DELIVERABLE #07 — FUTURE-STATE ACUTE SCRIPTING JOURNEY (hi-fi "board" treatment)
+   DELIVERABLE #07 - FUTURE-STATE ACUTE SCRIPTING JOURNEY (hi-fi "board" treatment)
    Sibling to #05; same engine, same board treatment. Self-contained: all CSS here,
    all JS in one vanilla script block, all icons inline SVG/emoji. No external
    requests of any kind. The battle this journey wins: ACUTE / CONVENIENCE, on
    SPEED + RELIABILITY. The second view dramatises the e-script portal's output as
-   a WhatsApp-STYLE thread (generic chat treatment — no WhatsApp brand assets).
+   a WhatsApp-STYLE thread (generic chat treatment - no WhatsApp brand assets).
    ============================================================================= */
 :root{
   /* board palette (design-kit/templates/future-state-blueprint-board-style.md §4.1) */
@@ -325,7 +325,7 @@ footer .pyramid-note{margin-top:6px}
 /* view containers (only one shown at a time) */
 .viewpane[hidden]{display:none}
 
-/* ---- THE SCRIPT IN MY POCKET (WhatsApp-STYLE chat — generic, no brand assets) -- */
+/* ---- THE SCRIPT IN MY POCKET (WhatsApp-STYLE chat - generic, no brand assets) -- */
 .pocket{padding:calc(var(--sp)*2) calc(var(--sp)*3) 0; max-width:var(--maxw); margin:0 auto}
 .pocket-hero{
   background:linear-gradient(150deg,#157a3b 0%,#1a9b4a 60%,#46b56a 100%); color:#fff;
@@ -469,7 +469,7 @@ footer .pyramid-note{margin-top:6px}
       <span class="co">bigly labs</span>
     </div>
     <div class="ribbon" role="note">
-      <span>⚠ Concept for review — not an official Dis-Chem artefact</span>
+      <span>⚠ Concept for review - not an official Dis-Chem artefact</span>
       <span class="gen">generated 2026-06-17 from the Bigly ground-truth vault · <span class="mono">deliverables/07-tobe-acute-escript-journey.html</span></span>
     </div>
   </header>
@@ -499,19 +499,19 @@ footer .pyramid-note{margin-top:6px}
   </div>
 
   <!-- ===== VIEW: THE SCRIPT IN MY POCKET ===== -->
-  <div class="viewpane" id="view-pocket" role="region" aria-label="The script in my pocket — a WhatsApp-style message thread" hidden>
+  <div class="viewpane" id="view-pocket" role="region" aria-label="The script in my pocket - a WhatsApp-style message thread" hidden>
     <div class="pocket" id="pocket-mount" aria-live="polite"></div>
   </div>
 
   <footer>
-    <p>This future-state journey is an <b>experience definition</b> — indicative, not prescriptive; an aspirational ~5-year vision <b>not constrained by Dis-Chem's current technology</b>. It is a journey map, <b>not</b> a service blueprint: the customer experience is the surface; the systems depth lives in the on-demand <b>Components / Capabilities</b> layer. This sibling to #05 wins the <b>acute / convenience</b> battle on <b>speed + reliability</b>. The hero — a Dis-Chem-operated e-script portal that lets a partner doctor send a token and see live stock + price during the consult — is shown <b>honestly</b>: a proprietary, prescriber-facing exchange raises prescriber-independence, Competition Act and HPCSA-ethics questions, so it is designed <b>against steering</b> and marked <span class="mono">🔮 requires-reform</span>.</p>
-    <p class="pyramid-note tiny">Design philosophy: <b>Trust &gt; Convenience &gt; Speed</b> — predictability earns the speed claim (reliability is the second protagonist). Strategic pillars S1–S6 and UX pillars U1–U7 are the canonical set from <span class="mono">deliverables/_shared/pillars.md</span>.</p>
+    <p>This future-state journey is an <b>experience definition</b> - indicative, not prescriptive; an aspirational ~5-year vision <b>not constrained by Dis-Chem's current technology</b>. It is a journey map, <b>not</b> a service blueprint: the customer experience is the surface; the systems depth lives in the on-demand <b>Components / Capabilities</b> layer. This sibling to #05 wins the <b>acute / convenience</b> battle on <b>speed + reliability</b>. The hero - a Dis-Chem-operated e-script portal that lets a partner doctor send a token and see live stock + price during the consult - is shown <b>honestly</b>: a proprietary, prescriber-facing exchange raises prescriber-independence, Competition Act and HPCSA-ethics questions, so it is designed <b>against steering</b> and marked <span class="mono">🔮 requires-reform</span>.</p>
+    <p class="pyramid-note tiny">Design philosophy: <b>Trust &gt; Convenience &gt; Speed</b> - predictability earns the speed claim (reliability is the second protagonist). Strategic pillars S1–S6 and UX pillars U1–U7 are the canonical set from <span class="mono">deliverables/_shared/pillars.md</span>.</p>
   </footer>
 </div>
 
 <script>
 /* =============================================================================
-   SAME-DAY SCRIPT — board-treatment acute journey engine (dependency-free vanilla JS)
+   SAME-DAY SCRIPT - board-treatment acute journey engine (dependency-free vanilla JS)
    Renders entirely from the single DATA object below. Defensive: never throws on a
    missing optional field. Cloned from #05; the second view renders a WhatsApp-STYLE
    message thread (generic chat treatment, no WhatsApp brand assets, all inline SVG).
@@ -520,27 +520,27 @@ footer .pyramid-note{margin-top:6px}
 
 const DATA = {
   meta:{
-    title:"Same-Day Script — the acute e-script loop",
-    subtitle:"A future-state customer journey for the same-day acute episode that starts OUTSIDE Dis-Chem — at an external partner doctor. The hero is a Dis-Chem-operated e-script portal: during the consult the doctor sends a secure token and sees live stock + a price adjudicated to the patient's funding, so what's chosen is in stock and affordable before anyone travels. Toggle the economy to swap the whole scenario; open any moment for the story, today's baseline pain, and the capabilities behind the line.",
+    title:"Same-Day Script - the acute e-script loop",
+    subtitle:"A future-state customer journey for the same-day acute episode that starts outside Dis-Chem, at an external partner doctor. The hero is a Dis-Chem-operated e-script portal: during the consult the doctor sends a secure token and sees live stock + a price adjudicated to the patient's funding, so what's chosen is in stock and affordable before anyone travels. Toggle the economy to swap the whole scenario; open any moment for the story, today's baseline pain, and the capabilities behind the line.",
     "state":"to-be",
     "variant":"aspirational",
     updated:"2026-06-17",
-    useCase:"The same-day acute episode that begins at an external partner doctor and is won on SPEED + RELIABILITY — insured (an adult's own infection) or cash (a parent's sick child), each redeemed at Dis-Chem off a secure e-script token."
+    useCase:"The same-day acute episode that begins at an external partner doctor and is won on speed and reliability - insured (an adult's own infection) or cash (a parent's sick child), each redeemed at Dis-Chem off a secure e-script token."
   },
 
-  philosophy:{ pyramid:["Trust","Convenience","Speed"], line:"Predictability earns the speed claim — reliability is what turns 'same-day' from a gamble into a promise (confidence comes from clarity and fallback, not from automation alone)." },
+  philosophy:{ pyramid:["Trust","Convenience","Speed"], line:"Predictability earns the speed claim - reliability is what turns 'same-day' from a gamble into a promise (confidence comes from clarity and fallback, not from automation alone)." },
 
-  // Canonical pillars — verbatim ids/names/oneLiners from deliverables/_shared/pillars.md (incl. S6).
+  // Canonical pillars - verbatim ids/names/oneLiners from deliverables/_shared/pillars.md (incl. S6).
   pillars:[
     {id:"S1", type:"strategic", name:"Serve both economies on one spine", oneLiner:"Insured (~16%) and cash (~84%) are different journeys sharing one spine; the cash majority is never a degraded afterthought."},
     {id:"S2", type:"strategic", name:"Pharmacy as the health front door", oneLiner:"Scripting is the entry to an ongoing care relationship, not a one-off transaction; the store+clinic estate is a strategic asset."},
     {id:"S3", type:"strategic", name:"Compete on service, not price", oneLiner:"SEP + capped dispensing fee fix the price; the durable differentiator is the experience around the drug."},
     {id:"S4", type:"strategic", name:"Chronic-medicine flywheel = retention engine", oneLiner:"Proactive managed chronic repeats are the recurring relationship that compounds loyalty and adherence."},
     {id:"S5", type:"strategic", name:"Pharmacist at top-of-licence; automate the toil", oneLiner:"Automation/central-fill/telepharmacy absorb mechanics so pharmacists do the clinical, trust-building work."},
-    {id:"S6", type:"strategic", name:"From prescription fulfilment to treatment orchestration", oneLiner:"Today the patient coordinates across prescriber, pharmacy, scheme, stock and delivery; absorb that coordination into one system — from dispensing a script to orchestrating the whole treatment journey."},
+    {id:"S6", type:"strategic", name:"From prescription fulfilment to treatment orchestration", oneLiner:"Today the patient coordinates across prescriber, pharmacy, scheme, stock and delivery; absorb that coordination into one system - from dispensing a script to orchestrating the whole treatment journey."},
     {id:"U1", type:"ux", name:"Channel ladder: WhatsApp-first & data-frugal", oneLiner:"WhatsApp/USSD/SMS first, app as enhancement; low-data, async, resumable, idempotent by default."},
     {id:"U2", type:"ux", name:"Never leave them guessing", oneLiner:"Honest real-time status at every step; the silent wait and unexplained rejection are the primary pains."},
-    {id:"U3", type:"ux", name:"Give me all the variables upfront", oneLiner:"Surface everything that materially affects the decision before commitment — cost, cover, stock, timing/ETA, alternatives; never spring a surprise (money is the sharpest case, not the whole of it)."},
+    {id:"U3", type:"ux", name:"Give me all the variables upfront", oneLiner:"Surface everything that materially affects the decision before commitment - cost, cover, stock, timing/ETA, alternatives; never spring a surprise (money is the sharpest case, not the whole of it)."},
     {id:"U4", type:"ux", name:"Design for graceful failure", oneLiner:"Plain-language recovery, never a dead end, always a route to a pharmacist."},
     {id:"U5", type:"ux", name:"Dignity, privacy & language by default", oneLiner:"Stigma-aware, discreet, multilingual, POPIA-grade consent; caregivers/proxies are first-class users."},
     {id:"U6", type:"ux", name:"Reduce the journey, don't just digitise it", oneLiner:"Eliminate steps and re-keying; one profile across channels; measure friction removed, not features shipped."},
@@ -549,41 +549,41 @@ const DATA = {
 
   economies:[
     {
-      id:"insured", label:"Insured — Nomvula", personaRef:"design-kit/personas/insured-chronic-multimorbid",
+      id:"insured", label:"Insured - Nomvula", personaRef:"design-kit/personas/insured-chronic-multimorbid",
       persona:{
         name:"Nomvula",
         eyebrow:"Patient · insured · time-poor",
-        bio:"54 · Midrand · HR manager · Discovery member (also manages chronic HTN + type-2 diabetes) — but today it's her OWN acute throat infection, diagnosed by her private GP this morning. Acute draws on day-to-day / medical savings, not the CDL. Time-poor; judges every service against Sixty60.",
+        bio:"54 · Midrand · HR manager · Discovery member (also manages chronic HTN + type-2 diabetes) - but today it's her own acute throat infection, diagnosed by her private GP this morning. Acute draws on day-to-day / medical savings, not the CDL. Time-poor; judges every service against Sixty60.",
         currentFriction:[
-          {label:"Co-pay surprise — and acute comes from savings", detail:"Acute isn't CDL/PMB; it draws on day-to-day / medical savings, and she only learns the out-of-pocket at the till.", cite:"design-kit/personas/insured-chronic-multimorbid"},
+          {label:"Co-pay surprise - and acute comes from savings", detail:"Acute isn't CDL/PMB; it draws on day-to-day / medical savings, and she only learns the out-of-pocket at the till.", cite:"design-kit/personas/insured-chronic-multimorbid"},
           {label:"No time for a queue when she's unwell", detail:"Between work and feeling rotten, a month-end ~25–30 min dispensary wait is the last thing she can spare.", cite:"design-kit/personas/time-poor-urban-professional"},
           {label:"Paper script, no proof it landed", detail:"Her GP hands her paper or emails the pharmacy; she can't tell if Dis-Chem got it, so she risks a wasted trip.", cite:"wiki/consumer-context/voice-of-customer-script-journey"},
           {label:"App / WhatsApp transactions dead-end", detail:"\"Pulling my hair\" trying to transact; the channel loops back to the previous menu.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}
         ],
-        patientNeed:"Get a same-day acute course sorted around a workday — the cost clear before she commits, ready near work or delivered fast, and zero uncertainty about whether it'll actually arrive.",
-        hmw:"How might we turn an external GP's acute script into a same-day, ready-when-promised Dis-Chem collection or delivery — with the co-pay known at the consult, not sprung at the till?"
+        patientNeed:"Get a same-day acute course sorted around a workday - the cost clear before she commits, ready near work or delivered fast, and zero uncertainty about whether it'll actually arrive.",
+        hmw:"How might we turn an external GP's acute script into a same-day, ready-when-promised Dis-Chem collection or delivery - with the co-pay known at the consult, not sprung at the till?"
       }
     },
     {
-      id:"cash", label:"Cash — Sipho", personaRef:"design-kit/personas/low-data-whatsapp-first-peri-urban",
+      id:"cash", label:"Cash - Sipho", personaRef:"design-kit/personas/low-data-whatsapp-first-peri-urban",
       persona:{
         name:"Sipho",
         eyebrow:"Caregiver · cash · WhatsApp-first",
-        bio:"45 · peri-urban Durban · informal income · no medical scheme · cheap Android, rationed data, no street address — today his 4-year-old, Lindiwe, has a fever + chest infection and a partner-clinic GP has prescribed an antibiotic suspension. Cash, near home, in isiZulu, for a sick child.",
+        bio:"45 · peri-urban Durban · informal income · no medical scheme · cheap Android, rationed data, no street address - today his 4-year-old, Lindiwe, has a fever + chest infection and a partner-clinic GP has prescribed an antibiotic suspension. Cash, near home, in isiZulu, for a sick child.",
         currentFriction:[
-          {label:"Price is a black box — and cash can't wait", detail:"With no scheme he must know the rand price before he travels; today he only finds out at the till.", cite:"design-kit/personas/cash-pay-acute-customer"},
+          {label:"Price is a black box - and cash can't wait", detail:"With no scheme he must know the rand price before he travels; today he only finds out at the till.", cite:"design-kit/personas/cash-pay-acute-customer"},
           {label:"App-first flows lock him out", detail:"Logins and big downloads burn data he can't spare; WhatsApp / USSD or nothing.", cite:"design-kit/personas/low-data-whatsapp-first-peri-urban"},
-          {label:"Delivery assumes an address he doesn't have", detail:"Near-home collection — a locker with a PIN — is the only reliable option in an informal settlement.", cite:"wiki/consumer-context/last-mile-addressing-logistics"},
+          {label:"Delivery assumes an address he doesn't have", detail:"Near-home collection - a locker with a PIN - is the only reliable option in an informal settlement.", cite:"wiki/consumer-context/last-mile-addressing-logistics"},
           {label:"A sick child raises the stakes", detail:"He's collecting for a dependent, in his language; a wasted trip or a stock-out costs a day's income and his child's comfort.", cite:"design-kit/personas/caregiver-proxy-collector"}
         ],
-        patientNeed:"Fill his child's antibiotic today at a price he agreed before leaving the clinic, collected near home by PIN — all over WhatsApp in isiZulu, with the pharmacist's safety check fully intact.",
-        hmw:"How might we give a cash parent the exact price and a guaranteed in-stock, near-home collection at the moment of prescribing — so a sick child's antibiotic is decided on the spot, not gambled on at a far-off till?"
+        patientNeed:"Fill his child's antibiotic today at a price he agreed before leaving the clinic, collected near home by PIN - all over WhatsApp in isiZulu, with the pharmacist's safety check fully intact.",
+        hmw:"How might we give a cash parent the exact price and a guaranteed in-stock, near-home collection at the moment of prescribing - so a sick child's antibiotic is decided on the spot, not gambled on at a far-off till?"
       }
     }
   ],
 
   /* ---------------------------------------------------------------------------
-     MOMENTS — first-person board titles, each tagged to the journey spine, each
+     MOMENTS - first-person board titles, each tagged to the journey spine, each
      carrying >=1 strategic (S) and >=1 UX (U) pillar, both economies, an overt
      Today baseline (quoted + cited pain), and the capabilities woven in. Trust
      arc: calm | trigger | acceleration | agitation | defection->loyalty
@@ -591,48 +591,48 @@ const DATA = {
   --------------------------------------------------------------------------- */
   moments:[
 
-    /* 1 — external doctor sends the token (HERO part 1) -------------------- */
+    /* 1 - external doctor sends the token (HERO part 1) -------------------- */
     {
       id:"m1", title:"My doctor sends the script to Dis-Chem before I've left the room",
-      spineStage:"PRESCRIBE (external doctor → portal)",
-      need:"Have the acute script land at Dis-Chem the instant the doctor signs it — with proof it arrived and nothing to re-type.",
+      spineStage:"PRESCRIBE (external doctor -> portal)",
+      need:"Have the acute script land at Dis-Chem the instant the doctor signs it - with proof it arrived and nothing to re-type.",
       pillars:["S6","S2","U6","U1"],
       byEconomy:{
         insured:{
           emotion:5, trustStage:"calm",
-          story:"Her GP finishes the throat exam, and from his own system — with Nomvula's consent — pulls up her single medication profile, signs the script, and sends a secure token to her phone. Before she's off the examination couch, a WhatsApp lands: “Your script from Dr Pillay is at Dis-Chem ✓.” No paper to lose, no wondering if it arrived.",
-          activities:["Consents, in the consult, to the doctor seeing her one medication profile","Receives a secure e-script token by WhatsApp the moment it's signed","Carries a key she can redeem at any Dis-Chem — no paper, no re-keying"],
+          story:"Her GP finishes the throat exam, and from his own system - with Nomvula's consent - pulls up her single medication profile, signs the script, and sends a secure token to her phone. Before she's off the examination couch, a WhatsApp lands: \"Your script from Dr Pillay is at Dis-Chem ✓.\" No paper to lose, no wondering if it arrived.",
+          activities:["Consents, in the consult, to the doctor seeing her one medication profile","Receives a secure e-script token by WhatsApp the moment it's signed","Carries a key she can redeem at any Dis-Chem - no paper, no re-keying"],
           customerActions:["Give in-consult consent to share her profile","Receive the token on her phone"],
-          frontstage:["In-consult consent prompt","‘Script received ✓’ confirmation + token on WhatsApp"],
+          frontstage:["In-consult consent prompt","'Script received ✓' confirmation + token on WhatsApp"],
           backstage:["Partner doctor uses the Dis-Chem-operated e-script portal to view the consented profile and issue a token (Australia Pattern 1: the token is a key that unlocks the script, not the script in the clear)","AI captures & standardises the inbound e-script into a dispensing-ready record; PBQ human fallback if anything is ambiguous","One profile across channels means nothing is re-typed at the counter"],
           support:["Dis-Chem-operated e-script portal","AI capture / standardise / route","One profile (EMPI) across channels"],
           partners:["Partner GP / prescriber","E-script token rail"],
-          regulatory:["Sharing a medication record with an external prescriber needs explicit, scoped POPIA consent; a true paperless token needs an ECTA Advanced Electronic Signature — wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          regulatory:["Sharing a medication record with an external prescriber needs explicit, scoped POPIA consent; a true paperless token needs an ECTA Advanced Electronic Signature - wiki/sa-regulatory/e-prescription-telehealth-popia"],
           tech:[
-            {name:"E-script token (Pattern 1)", what:"a secure one-time key the patient redeems at any Dis-Chem — borrowed from Australia's national model; the paperless AES-signed form is the part that needs reform", cite:"wiki/global-benchmarks/australia-chemist-warehouse-escript", reform:true},
-            {name:"Dis-Chem-operated prescriber portal", what:"lets a partner doctor see the consented profile and send the token — but a proprietary, prescriber-facing exchange surfacing one chain's stock/price raises prescriber-independence, Competition Act & HPCSA-ethics questions; a truly neutral token is ‘any pharmacy’. Designed AGAINST steering: it informs, never nudges", cite:"wiki/global-benchmarks/patterns-deep-dive", reform:true},
-            {name:"AI capture + PBQ fallback", what:"standardises the inbound e-script; a human catches anything it can't, never a dead end", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
+            {name:"E-script token (Pattern 1)", what:"a secure one-time key the patient redeems at any Dis-Chem - borrowed from Australia's national model; the paperless AES-signed form is the part that needs reform", cite:"wiki/global-benchmarks/australia-chemist-warehouse-escript", reform:true},
+            {name:"Dis-Chem-operated prescriber portal", what:"lets a partner doctor see the consented profile and send the token - but a proprietary, prescriber-facing exchange surfacing one chain's stock/price raises prescriber-independence, Competition Act & HPCSA-ethics questions; a truly neutral token is 'any pharmacy'. Designed against steering: it informs, the prescriber and patient choose", cite:"wiki/global-benchmarks/patterns-deep-dive", reform:true},
+            {name:"AI capture + PBQ fallback", what:"standardises the inbound e-script; a human handles anything it can't", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
             {name:"One profile across channels", what:"consented identity so nothing is re-keyed across WhatsApp / app / counter", cite:"wiki/digital-transformation/interoperability-identity-records", reform:false}
           ],
           pains:[{text:"Re-keying despite the information being on the system; the doctor↔pharmacy hand-off is disconnected", quote:"Type essays even though your information is on the system.", cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}],
           opportunities:[
-            {text:"Absorb the prescriber↔pharmacy hand-off the patient does today — the script lands, proven, with zero re-typing", pillars:["S6","U6"], cite:"wiki/concepts/e-prescription-token"},
+            {text:"Absorb the prescriber↔pharmacy hand-off the patient does today - the script lands, proven, with zero re-typing", pillars:["S6","U6"], cite:"wiki/concepts/e-prescription-token"},
             {text:"Make the token portable and patient-owned, and design against any steering toward Dis-Chem's own dispensing", pillars:["S2","U5"], cite:"wiki/global-benchmarks/patterns-to-borrow-and-cautions"}
           ],
-          metrics:["% scripts arriving as a structured token vs paper","Re-keying events per script (target ≈ 0)","‘Did it arrive?’ confirmation rate"],
+          metrics:["% scripts arriving as a structured token vs paper","Re-keying events per script (target ≈ 0)","'Did it arrive?' confirmation rate"],
           flags:["momentOfTruth","reform"],
           asIsBaseline:"Today the GP hands her paper or emails/faxes the pharmacy; she can't tell if Dis-Chem received it, so she risks a wasted trip and re-explains everything at the counter as if her details weren't already on file."
         },
         cash:{
           emotion:4, trustStage:"calm",
-          story:"At the clinic gate, the partner GP signs Lindiwe's script and — with Sipho's consent — sends a token straight to his WhatsApp. In isiZulu: “Udokotela usethumele isikripthi sikaLindiwe ku-Dis-Chem ✓ (Your child's script just arrived at Dis-Chem).” No app to install, no data-heavy upload, no paper to lose on the taxi home.",
-          activities:["Consents over WhatsApp for the clinic doctor to share the child's profile","Gets a secure token by WhatsApp / USSD — no app, low data","Holds a key he can redeem at the Dis-Chem nearest home"],
+          story:"At the clinic gate, the partner GP signs Lindiwe's script and - with Sipho's consent - sends a token straight to his WhatsApp. In isiZulu: \"Udokotela usethumele isikripthi sikaLindiwe ku-Dis-Chem ✓ (Your child's script just arrived at Dis-Chem).\" No app to install, no data-heavy upload, no paper to lose on the taxi home.",
+          activities:["Consents over WhatsApp for the clinic doctor to share the child's profile","Gets a secure token by WhatsApp / USSD - no app, low data","Holds a key he can redeem at the Dis-Chem nearest home"],
           customerActions:["Give in-language consent at the clinic","Receive the token on WhatsApp"],
-          frontstage:["In-language consent + ‘script received ✓’","Token delivered over WhatsApp / USSD, printable QR fallback"],
-          backstage:["Partner clinic doctor issues the token via the Dis-Chem-operated portal; token is a consent-scoped pointer, not health data in the clear","AI capture standardises a photographed/clinic script; PBQ human fallback","Offline-readable QR + USSD fallback for low data and load-shedding"],
+          frontstage:["In-language consent + 'script received ✓'","Token delivered over WhatsApp / USSD, printable QR fallback"],
+          backstage:["Partner clinic doctor issues the token via the Dis-Chem-operated portal; the token is a consent-scoped pointer the pharmacy resolves only at redemption","AI capture standardises a photographed/clinic script; PBQ human fallback","Offline-readable QR + USSD fallback for low data and load-shedding"],
           support:["Dis-Chem-operated e-script portal","SMS / USSD gateway","AI capture / standardise / route"],
           partners:["Partner clinic / GP","E-script token rail"],
-          regulatory:["POPIA requires the token to be a consent-scoped pointer, not health data in the clear; paperless AES still maturing in SA — wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          regulatory:["POPIA requires the token to be a consent-scoped pointer, not health data in the clear; paperless AES still maturing in SA - wiki/sa-regulatory/e-prescription-telehealth-popia"],
           tech:[
             {name:"E-script token over WhatsApp/USSD", what:"a low-data key with a printed-QR fallback so a lost SMS or no-data day never blocks care", cite:"wiki/concepts/e-prescription-token", reform:true},
             {name:"Dis-Chem-operated prescriber portal", what:"borrows Australia's token model, but a chain-owned exchange must be designed against steering and is flagged for prescriber-independence/Competition/HPCSA review", cite:"wiki/global-benchmarks/patterns-deep-dive", reform:true},
@@ -640,67 +640,67 @@ const DATA = {
           ],
           pains:[{text:"App / WhatsApp channels dead-end on low data and offer no reliable path from clinic to pharmacy", quote:"Dis-Chem App is dysfunctional.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}],
           opportunities:[
-            {text:"Meet him where he lives — a token on WhatsApp/USSD, no app, resumable on a dropped signal", pillars:["U1","S6"], cite:"wiki/consumer-context/digital-access-and-whatsapp"},
-            {text:"Close the clinic→pharmacy gap for the cash majority so the script can't be lost between two buildings", pillars:["S1","U6"], cite:"wiki/concepts/e-prescription-token"}
+            {text:"Meet him where he lives - a token on WhatsApp/USSD, no app, resumable on a dropped signal", pillars:["U1","S6"], cite:"wiki/consumer-context/digital-access-and-whatsapp"},
+            {text:"Close the clinic->pharmacy gap for the cash majority so the script can't be lost between two buildings", pillars:["S1","U6"], cite:"wiki/concepts/e-prescription-token"}
           ],
-          metrics:["Token delivery on low data","Lost-script rate (target ≈ 0)","Clinic→pharmacy completion"],
+          metrics:["Token delivery on low data","Lost-script rate (target ≈ 0)","Clinic->pharmacy completion"],
           flags:["momentOfTruth","reform"],
           asIsBaseline:"Today he leaves the clinic with a paper script, unsure which Dis-Chem will have it in stock or what it costs; the app is unusable on his data, so the whole errand is a gamble before he's even set off."
         }
       }
     },
 
-    /* 2 — live stock + price at the consult (HERO part 2) ------------------ */
+    /* 2 - live stock + price at the consult (HERO part 2) ------------------ */
     {
-      id:"m2", title:"We chose what's in stock and what I can afford — during the consult",
+      id:"m2", title:"We chose what's in stock and what I can afford - during the consult",
       spineStage:"FUND / CLAIM + PAY (at prescribing)",
-      need:"Know — at the moment of prescribing — that it's in stock and exactly what it costs, so the choice of generic-vs-brand is made there, not gambled on at the till.",
+      need:"Know - at the moment of prescribing - that it's in stock and exactly what it costs, so the choice of generic-vs-brand is made there, not gambled on at the till.",
       pillars:["S3","U3","S6","S1"],
       byEconomy:{
         insured:{
           emotion:5, trustStage:"calm",
-          story:"As the GP types, the portal shows — adjudicated to Nomvula's Discovery cover in real time — what's in stock nearby and what she'll pay: “Antibiotic: in stock, R0 (day-to-day cover). Brand analgesic: R38 co-pay; the generic is R0.” They pick the funded generic right there. She leaves the room already knowing the whole course costs her nothing.",
-          activities:["Sees live stock + her adjudicated co-pay during the consult, per line","Chooses the funded generic with the rand delta shown, with her doctor","Commits knowing the out-of-pocket — never a till-side surprise"],
+          story:"As the GP types, the portal shows - adjudicated to Nomvula's Discovery cover in real time - what's in stock nearby and what she'll pay: \"Antibiotic: in stock, R0 (day-to-day cover). Brand analgesic: R38 co-pay; the generic is R0.\" They pick the funded generic right there. She leaves the room already knowing the whole course costs her nothing.",
+          activities:["Sees live stock + her adjudicated co-pay during the consult, per line","Chooses the funded generic with the rand delta shown, with her doctor","Commits knowing the out-of-pocket - never a till-side surprise"],
           customerActions:["Review the adjudicated price with her GP","Accept the funded generic"],
           frontstage:["In-consult stock + price panel (funded / co-pay / why)","Generic-vs-brand choice with the R-saving shown"],
-          backstage:["Real-time claims switching pre-adjudicates against day-to-day / savings + formulary + MMAP at the moment of prescribing","Price engine shows the regulated SEP + capped dispensing fee transparently — no discounting, because price is regulated; Dis-Chem competes on service","§22F generic substitution surfaced as a saving; the portal informs, the prescriber and patient choose (designed against steering)"],
+          backstage:["Real-time claims switching pre-adjudicates against day-to-day / savings + formulary + MMAP at the moment of prescribing","Price engine shows the regulated SEP + capped dispensing fee transparently - no discounting, because price is regulated; Dis-Chem competes on service","§22F generic substitution surfaced as a saving; the portal informs, the prescriber and patient choose (designed against steering)"],
           support:["Real-time claims switching","Price engine (SEP + dispensing fee)","Live stock service"],
           partners:["Medical scheme","Claims switching house"],
-          regulatory:["Pharmacist must offer interchangeable generics under §22F (patient/prescriber may decline); SEP + capped fee fix the price — compete on service, not headline price — wiki/sa-regulatory/sep-dispensing-fee"],
+          regulatory:["Pharmacist must offer interchangeable generics under §22F (patient/prescriber may decline); SEP + capped fee fix the price - compete on service, not headline price - wiki/sa-regulatory/sep-dispensing-fee"],
           tech:[
-            {name:"Real-time claim adjudication at prescribing", what:"a ‘can-I-claim?’ dry run shows funded-vs-co-pay before anyone travels (Pattern 11: price transparency at the point of commit)", cite:"wiki/medical-schemes/realtime-claims-switching", reform:false},
+            {name:"Real-time claim adjudication at prescribing", what:"a 'can-I-claim?' dry run shows funded-vs-co-pay before anyone travels (Pattern 11: price transparency at the point of commit)", cite:"wiki/medical-schemes/realtime-claims-switching", reform:false},
             {name:"SEP + fee price engine", what:"shows the regulated, defensible price components transparently", cite:"wiki/sa-regulatory/sep-dispensing-fee", reform:false},
             {name:"Live stock at point of prescribing", what:"confirms in-stock at named nearby stores so the choice isn't theoretical", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
             {name:"Generic-substitution counsel (§22F / MMAP)", what:"surfaces the cheaper interchangeable generic and the saving; choice stays with prescriber & patient", cite:"wiki/medical-schemes/dsp-formularies-copayments", reform:false}
           ],
           pains:[{text:"Co-payment discovered at the till; nobody verifies it up front, and the disputed amount is left to derail the order", quote:"All he needed to do was contact Dis-Chem and verify the co-payment.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}],
           opportunities:[
-            {text:"Move the money + stock decision to the consult — the variables are all upfront, so there's no surprise to recover from", pillars:["U3","S3"], cite:"wiki/medical-schemes/realtime-claims-switching"},
+            {text:"Move the money + stock decision to the consult - the variables are all upfront, so there's no surprise to recover from", pillars:["U3","S3"], cite:"wiki/medical-schemes/realtime-claims-switching"},
             {text:"Make generic-vs-brand a counselled choice at the point of prescribing, not a swap sprung at the counter", pillars:["S6","U3"], cite:"wiki/global-benchmarks/patterns-to-borrow-and-cautions"}
           ],
           metrics:["Co-pay-surprise rate (target ≈ 0)","% shown stock + price before commit","Generic-acceptance rate"],
           flags:["momentOfTruth","reform"],
-          asIsBaseline:"Today she discovers the co-pay at the till, after the trip and the wait; if the brand isn't funded, the swap is a surprise at the counter — and an unverified co-pay can quietly hold up the whole order."
+          asIsBaseline:"Today she discovers the co-pay at the till, after the trip and the wait; if the brand isn't funded, the swap is a surprise at the counter - and an unverified co-pay can quietly hold up the whole order."
         },
         cash:{
           emotion:5, trustStage:"calm",
-          story:"This is the moment that changes everything for Sipho. Before he leaves the clinic, his WhatsApp shows the full cash price, in isiZulu: “Amoxicillin syrup R96 + Paracetamol syrup R58 = R154. Generic combo: R119 — saves R35.” He picks the generic on the spot. He travels knowing the exact rand he'll spend on his child — no black box, no gamble.",
-          activities:["Sees the full itemised cash price (SEP + dispensing fee) before he travels, in-language","Chooses the cheaper generic / pack with the saving shown — the affordability lever is in his hands","Decides to fill it today because the number is certain, not feared"],
+          story:"This is the moment that changes everything for Sipho. Before he leaves the clinic, his WhatsApp shows the full cash price, in isiZulu: \"Amoxicillin syrup R96 + Paracetamol syrup R58 = R154. Generic combo: R119 - saves R35.\" He picks the generic on the spot. He travels knowing the exact rand he'll spend on his child - no black box, no gamble.",
+          activities:["Sees the full itemised cash price (SEP + dispensing fee) before he travels, in-language","Chooses the cheaper generic / pack with the saving shown - the affordability lever is in his hands","Decides to fill it today because the number is certain before he sets off"],
           customerActions:["Read the in-language price card","Pick the generic combo"],
           frontstage:["In-language itemised cash price","Generic / pack options with the rand saving"],
-          backstage:["Price engine = regulated SEP + capped dispensing fee, shown transparently (the fee bites hardest on cheap children's medicines — so the generic choice matters most here)","Live stock confirmed at a named near-home store before he sets off","Pay-at-collection so an irregular-income parent isn't asked to pay before he's holding it"],
+          backstage:["Price engine = regulated SEP + capped dispensing fee, shown transparently (the fee bites hardest on cheap children's medicines - so the generic choice matters most here)","Live stock confirmed at a named near-home store before he sets off","Pay-at-collection so an irregular-income parent isn't asked to pay before he's holding it"],
           support:["Price engine (SEP + fee)","Live stock service","Pay-at-collection / wallet"],
           partners:["Payment provider","Near-home Dis-Chem / locker network"],
-          regulatory:["SEP + capped dispensing fee make a transparent cash quote natural and lawful; no discounting of the medicine itself — wiki/sa-regulatory/sep-dispensing-fee"],
+          regulatory:["SEP + capped dispensing fee make a transparent cash quote natural and lawful; no discounting of the medicine itself - wiki/sa-regulatory/sep-dispensing-fee"],
           tech:[
-            {name:"Cash price at point of prescribing", what:"an itemised, defensible quote before he travels — the single game-changer for the cash majority (Pattern 11)", cite:"wiki/concepts/price-transparency", reform:false},
-            {name:"SEP + fee price engine", what:"the regulated price built transparently; the dispensing fee on a cheap syrup is shown, not hidden", cite:"wiki/sa-regulatory/sep-dispensing-fee", reform:false},
+            {name:"Cash price at point of prescribing", what:"an itemised, defensible quote before he travels, so the cash majority can decide on price before spending a cent on transport (Pattern 11)", cite:"wiki/concepts/price-transparency", reform:false},
+            {name:"SEP + fee price engine", what:"the regulated price built transparently; the dispensing fee on a cheap syrup is shown line by line", cite:"wiki/sa-regulatory/sep-dispensing-fee", reform:false},
             {name:"Generic / pack-size choice", what:"surfaces the cheapest safe option for a weight-based child's course", cite:"wiki/medical-schemes/cash-uninsured-pathway", reform:false}
           ],
           pains:[{text:"The cash price is a black box until the till, and scheduled-medicine pricing feels arbitrary store-to-store", quote:"I am horrified that the pricing of scheduled medication differs so dramatically from one Dis-Chem pharmacy to another.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}],
           opportunities:[
-            {text:"Price certainty at the point of prescribing — he decides generic before he spends a cent on transport", pillars:["U3","S1"], cite:"wiki/concepts/price-transparency"},
-            {text:"Treat the ~84% cash majority as first-class: the price card is the headline feature, not an afterthought", pillars:["S1","S3"], cite:"wiki/consumer-context/two-economy-affordability"}
+            {text:"Price certainty at the point of prescribing - he decides generic before he spends a cent on transport", pillars:["U3","S1"], cite:"wiki/concepts/price-transparency"},
+            {text:"Treat the ~84% cash majority as first-class: the price card is the headline feature here", pillars:["S1","S3"], cite:"wiki/consumer-context/two-economy-affordability"}
           ],
           metrics:["% shown full cash price before travel","Generic-uptake on price","Abandon-after-travel rate (target ≈ 0)"],
           flags:["momentOfTruth"],
@@ -709,32 +709,32 @@ const DATA = {
       }
     },
 
-    /* 3 — clinically checked before arrival -------------------------------- */
+    /* 3 - clinically checked before arrival -------------------------------- */
     {
       id:"m3", title:"It's clinically checked before I even arrive",
       spineStage:"VALIDATE / CLINICAL-CHECK",
-      need:"Trust that a named, registered pharmacist has clinically checked the script — done while I travel, not in a queue at the counter.",
+      need:"Trust that a named, registered pharmacist has clinically checked the script - done while I travel, not in a queue at the counter.",
       pillars:["S5","U2","S6","U4"],
       byEconomy:{
         insured:{
           emotion:5, trustStage:"calm",
-          story:"On the drive in, a message: “Checked by Naledi Mokoena, your pharmacist ✓ — safe with your other meds.” An AI co-pilot had already drafted the legality, interaction and allergy checks off the token; the registered pharmacist reviewed and signed. The clinical safety work happened while she travelled, not while she stood waiting.",
-          activities:["Gets a named-pharmacist ‘checked ✓’ while still on her way","Knows a real human did the final clinical sign-off","Is contacted only if something is genuinely ambiguous"],
+          story:"On the drive in, a message: \"Checked by Naledi Mokoena, your pharmacist ✓ - safe with your other meds.\" An AI co-pilot had already drafted the legality, interaction and allergy checks off the token; the registered pharmacist reviewed and signed. The clinical safety work happened while she travelled, not while she stood waiting.",
+          activities:["Gets a named-pharmacist 'checked ✓' while still on her way","Knows a real human did the final clinical sign-off","Is contacted only if something is genuinely ambiguous"],
           customerActions:["Read the named-pharmacist confirmation","Answer a clarifying question only if asked"],
-          frontstage:["Named-pharmacist ‘checked ✓’ en route","Proactive query only when truly needed"],
-          backstage:["AI clinical co-pilot drafts legality/scheduling, interaction, allergy and duplicate-therapy checks off the token against her profile","Registered pharmacist confirms or overrides — automation bias designed against; the human gate is non-negotiable (GPP)","Validation runs while she travels, so the counter is for care, not waiting"],
+          frontstage:["Named-pharmacist 'checked ✓' en route","Proactive query only when truly needed"],
+          backstage:["AI clinical co-pilot drafts legality/scheduling, interaction, allergy and duplicate-therapy checks off the token against her profile","Registered pharmacist confirms or overrides, with automation bias designed against; the human gate is non-negotiable (GPP)","Validation runs while she travels, so the counter is for care rather than queueing"],
           support:["AI clinical decision support (assistive)","Pharmacist sign-off (GPP)","Medication history (one profile)"],
           partners:["Prescriber (for clarifications)","Medical scheme"],
-          regulatory:["NON-NEGOTIABLE: dispensing requires a registered pharmacist's clinical sign-off under GPP — AI assembles, the human authorises — wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
+          regulatory:["NON-NEGOTIABLE: dispensing requires a registered pharmacist's clinical sign-off under GPP - AI assembles, the human authorises - wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
           tech:[
-            {name:"AI clinical co-pilot", what:"drafts the safety checks off the token; the pharmacist signs off — assistive, human-gated", cite:"wiki/digital-transformation/ai-in-pharmacy", reform:true},
+            {name:"AI clinical co-pilot", what:"drafts the safety checks off the token; the pharmacist signs off - assistive, human-gated", cite:"wiki/digital-transformation/ai-in-pharmacy", reform:true},
             {name:"Pharmacist single sign-off", what:"the final clinical gate stays human (GPP) regardless of channel", cite:"wiki/sa-regulatory/pharmacy-act-sapc-gpp", reform:false},
             {name:"Validate-while-travelling", what:"the check completes off the token before arrival, so the queue disappears", cite:"wiki/dispensing-practice/clinical-checks-and-mtm", reform:false}
           ],
           pains:[{text:"Renewal/clinical help where the frontline doesn't know what to do; checks happen as a counter wait", quote:"I've been trying to renew my prescription and the nurse doesn't know what to do.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}],
           opportunities:[
-            {text:"AI co-pilot turns minutes of toil into a seconds-long pharmacist sign-off — pharmacist at top-of-licence", pillars:["S5","S6"], cite:"wiki/digital-transformation/ai-in-pharmacy"},
-            {text:"Make the safety work visible and named, completed before arrival — confidence, not a silent wait", pillars:["U2","S5"], cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}
+            {text:"AI co-pilot turns minutes of toil into a seconds-long pharmacist sign-off - pharmacist at top-of-licence", pillars:["S5","S6"], cite:"wiki/digital-transformation/ai-in-pharmacy"},
+            {text:"Make the safety work visible and named, and complete it before she arrives instead of in a counter queue", pillars:["U2","S5"], cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}
           ],
           metrics:["Time-to-validate (target seconds, off the token)","Pharmacist override rate (kept visible)","% checks named to a pharmacist"],
           flags:["momentOfTruth","reform"],
@@ -742,48 +742,48 @@ const DATA = {
         },
         cash:{
           emotion:4, trustStage:"calm",
-          story:"In isiZulu, before he travels: “Ihloliwe ngu-Naledi, usokhemisi ✓ — i-dose ilungele isisindo sikaLindiwe (checked by the pharmacist; the dose is right for your child's weight).” A remote-supervised pharmacist verified the suspension and the weight-based dosing for a node near home — so Sipho gets a real clinical check without a half-day trip to a big store.",
-          activities:["Gets an in-language ‘checked ✓’ confirming the dose suits his child's weight","Knows a pharmacist verified it even for a near-home node","Is routed to a pharmacist for anything high-risk, never released blind"],
+          story:"In isiZulu, before he travels: \"Ihloliwe ngu-Naledi, usokhemisi ✓ - i-dose ilungele isisindo sikaLindiwe (checked by the pharmacist; the dose is right for your child's weight).\" A remote-supervised pharmacist verified the suspension and the weight-based dosing for a node near home - so Sipho gets a real clinical check without a half-day trip to a big store.",
+          activities:["Gets an in-language 'checked ✓' confirming the dose suits his child's weight","Knows a pharmacist verified it even for a near-home node","Is routed to a pharmacist for anything high-risk, never released blind"],
           customerActions:["Read the in-language confirmation","Talk to the pharmacist by voice/WhatsApp if he wants"],
           frontstage:["In-language pharmacist confirmation (weight-based dose checked)","Channel-choice route to a human"],
-          backstage:["AI co-pilot drafts legality/interaction/duplicate checks + weight-based dosing for the suspension","Remote-supervised pharmacist verification serves a near-home node without a resident pharmacist","High-risk items routed to direct counselling, never auto-released"],
+          backstage:["AI co-pilot drafts legality/interaction/duplicate checks + weight-based dosing for the suspension","Remote-supervised pharmacist verification serves a near-home node without a resident pharmacist","High-risk items routed to direct counselling before any release"],
           support:["AI clinical decision support (assistive)","Telepharmacy link","Pharmacist sign-off (GPP)"],
           partners:["Telepharmacy hub","Partner clinic"],
-          regulatory:["NON-NEGOTIABLE: pharmacist sign-off retained even for a remote/near-home node; remote-supervised dispensing rule numbering is ⚠️ UNVERIFIED — wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
+          regulatory:["NON-NEGOTIABLE: pharmacist sign-off retained even for a remote/near-home node; remote-supervised dispensing rule numbering is ⚠️ UNVERIFIED - wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
           tech:[
             {name:"Remote-supervised validation", what:"extends a pharmacist's clinical check to near-home nodes the cash majority can actually reach", cite:"wiki/digital-transformation/telepharmacy-and-omnichannel", reform:true},
             {name:"AI clinical co-pilot", what:"drafts the checks + paediatric weight-based dosing; the pharmacist confirms", cite:"wiki/digital-transformation/ai-in-pharmacy", reform:true},
             {name:"Pharmacist single sign-off", what:"the human clinical gate, identical standard to the insured lane", cite:"wiki/sa-regulatory/pharmacy-act-sapc-gpp", reform:false}
           ],
-          pains:[{text:"Customers tolerate waiting but not uncertainty — a silent, unexplained wait while checks run erodes trust fastest", quote:"Waiting is fine — being unsure isn't.", cite:"wiki/dischem/store-of-the-future-customer-voice"}],
+          pains:[{text:"Customers tolerate waiting but not uncertainty - a silent, unexplained wait while checks run erodes trust fastest", quote:"Waiting is fine - being unsure isn't.", cite:"wiki/dischem/store-of-the-future-customer-voice"}],
           opportunities:[
             {text:"Bring a pharmacist's clinical check to a near-home node so the cash family isn't unsafe by default", pillars:["S5","S1"], cite:"wiki/digital-transformation/telepharmacy-and-omnichannel"},
-            {text:"Replace the silent wait with a clear, in-language ‘checked ✓’ before he sets off", pillars:["U2","U5"], cite:"wiki/consumer-context/language-literacy-and-trust"}
+            {text:"Replace the silent wait with a clear, in-language 'checked ✓' before he sets off", pillars:["U2","U5"], cite:"wiki/consumer-context/language-literacy-and-trust"}
           ],
           metrics:["% checked before travel","Remote-verified nodes per pharmacist","Routed-to-human rate for high-risk"],
           flags:["momentOfTruth","reform"],
-          asIsBaseline:"Today a near-home node can't safely serve him without a resident pharmacist; he waits at a counter with no certainty the dose is right for a small child, and uncertainty — not the wait itself — is what breaks trust."
+          asIsBaseline:"Today a near-home node can't safely serve him without a resident pharmacist; he waits at a counter with no certainty the dose is right for a small child, and uncertainty - not the wait itself - is what breaks trust."
         }
       }
     },
 
-    /* 4 — ready on arrival ------------------------------------------------- */
+    /* 4 - ready on arrival ------------------------------------------------- */
     {
-      id:"m4", title:"I walk in and it's ready — minutes, not a queue",
+      id:"m4", title:"I walk in and it's ready - minutes, not a queue",
       spineStage:"DISPENSE + COLLECT",
-      need:"Collect a same-day acute course in minutes — picked, checked and waiting — without joining the month-end dispensary queue.",
+      need:"Collect a same-day acute course in minutes - picked, checked and waiting - without joining the month-end dispensary queue.",
       pillars:["S5","U6","U2","S3"],
       byEconomy:{
         insured:{
           emotion:5, trustStage:"calm",
-          story:"Because the check was done off the token while she travelled, the course was picked by the back-of-house robot and packed before she arrived. She walks to the Scripts-Ready counter, scans a QR, and it's handed over — minutes, not a queue. (Stuck at work instead? One tap switches it to a ~60-minute DeliverD drop to her office.)",
-          activities:["Walks in to a ready, pre-checked course — no queue","Scans a QR at a Scripts-Ready counter for instant handover","Or switches to fast on-demand delivery to work in one tap"],
+          story:"Because the check was done off the token while she travelled, the course was picked by the back-of-house robot and packed before she arrived. She walks to the Scripts-Ready counter, scans a QR, and it's handed over - minutes, not a queue. (Stuck at work instead? One tap switches it to a ~60-minute DeliverD drop to her office.)",
+          activities:["Walks in to a ready, pre-checked course - no queue","Scans a QR at a Scripts-Ready counter for instant handover","Or switches to fast on-demand delivery to work in one tap"],
           customerActions:["Scan the QR at the Scripts-Ready counter","Optionally switch to DeliverD to the office"],
           frontstage:["Ready-on-arrival Scripts-Ready counter","QR self-identify handover; one-tap delivery switch"],
           backstage:["Back-of-house automation (ROWA-style picker) prepares the course off the validated token before arrival","Scan/vision verification confirms the right product; pharmacist sign-off already done","On-demand DeliverD/PICCUP route with proof-of-delivery if she chooses delivery"],
           support:["Back-of-house automation","QR handover","DeliverD / PICCUP (on-demand)","Status orchestration (Dashboard)"],
           partners:["Central-fill / VC","DeliverD / PICCUP last-mile"],
-          regulatory:["Counselling at handover (GPP) is retained; courier of scheduled medicines must meet licensing + cold-chain rules — wiki/sa-regulatory/courier-online-pharmacy-rules"],
+          regulatory:["Counselling at handover (GPP) is retained; courier of scheduled medicines must meet licensing + cold-chain rules - wiki/sa-regulatory/courier-online-pharmacy-rules"],
           tech:[
             {name:"Back-of-house automation (ROWA-style)", what:"picks and stages the course off the validated token so it's ready before she arrives", cite:"wiki/digital-transformation/pharmacy-automation-and-robotics", reform:false},
             {name:"QR handover", what:"customer self-identifies; the counter is for counsel, not admin", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
@@ -791,139 +791,139 @@ const DATA = {
           ],
           pains:[{text:"Loyalty is to convenience, not brand; if it's slow or out of stock that day, customers simply switch", quote:"If I can't find something at Dis-Chem, I'll just check Clicks or Pharmet.", cite:"wiki/consumer-context/voice-of-customer-script-journey"}],
           opportunities:[
-            {text:"Collapse the dispense+collect wait by doing the work off the token before arrival — speed that's earned, not promised", pillars:["U6","S5"], cite:"wiki/dischem/store-of-the-future-customer-voice"},
+            {text:"Collapse the dispense+collect wait by doing the work off the token before arrival - speed that's earned, not promised", pillars:["U6","S5"], cite:"wiki/dischem/store-of-the-future-customer-voice"},
             {text:"Match the Sixty60/Takealot speed bar with a fast, reliable on-demand option for the time-poor", pillars:["S3","U2"], cite:"wiki/consumer-context/adjacent-digital-expectations"}
           ],
           metrics:["Ready-on-arrival rate","Counter handover time (target minutes)","On-demand delivery ETA hit-rate"],
           flags:["momentOfTruth"],
-          asIsBaseline:"Today even a simple acute script means a trip, then a month-end ~25–30 min wait while it's checked and dispensed in front of her — and if it's slow or short that day, she defects to Clicks for speed."
+          asIsBaseline:"Today even a simple acute script means a trip, then a month-end ~25–30 min wait while it's checked and dispensed in front of her - and if it's slow or short that day, she defects to Clicks for speed."
         },
         cash:{
           emotion:5, trustStage:"calm",
-          story:"By the time Sipho reaches the rank, his WhatsApp says ready. He collects at a smart locker near home with a PIN — sub-minute, private, no queue and no address needed. The antibiotic his sick child needs is in his hand the same afternoon, for the price he already agreed.",
-          activities:["Collects at a near-home smart locker with a one-time PIN — no queue, no address","Picks it up sub-minute, privately and discreetly","Falls back to a staffed counter if the locker is full or down"],
+          story:"By the time Sipho reaches the rank, his WhatsApp says ready. He collects at a smart locker near home with a PIN - sub-minute, private, no queue and no address needed. The antibiotic his sick child needs is in his hand the same afternoon, for the price he already agreed.",
+          activities:["Collects at a near-home smart locker with a one-time PIN - no queue, no address","Picks it up sub-minute, privately and discreetly","Falls back to a staffed counter if the locker is full or down"],
           customerActions:["Open the locker with the PIN","Use the staffed counter as fallback"],
           frontstage:["Near-home locker collection by PIN","Staffed-counter fallback; discreet, neutral parcel"],
           backstage:["Course picked off the validated token by back-of-house automation, staged for near-home collection","Pelebox-style locker loaded; one-time PIN by WhatsApp/SMS","Pharmacist counselling offered by voice/WhatsApp because a locker can't counsel"],
           support:["Back-of-house automation","Pelebox-style locker network","Status orchestration (Dashboard)"],
           partners:["Pelebox / locker operator","Near-home partner pickup point"],
-          regulatory:["Locker release of a SCHEDULED medicine without a pharmacist present needs oversight clarity — wiki/sa-regulatory/courier-online-pharmacy-rules"],
+          regulatory:["Locker release of a SCHEDULED medicine without a pharmacist present needs oversight clarity - wiki/sa-regulatory/courier-online-pharmacy-rules"],
           tech:[
             {name:"Pelebox-style locker + PIN", what:"near-home, sub-minute, no-address collection the cash majority already trusts", cite:"wiki/consumer-context/last-mile-addressing-logistics", reform:false},
             {name:"Locker release of scheduled meds", what:"releasing an S2+ medicine from a locker without a pharmacist present is the part that needs reform; counselling stays a phone/voice channel", cite:"wiki/sa-regulatory/courier-online-pharmacy-rules", reform:true},
-            {name:"Back-of-house automation", what:"same robotic pick + pharmacist sign-off as the insured lane — no degraded second class", cite:"wiki/digital-transformation/pharmacy-automation-and-robotics", reform:false}
+            {name:"Back-of-house automation", what:"same robotic pick + pharmacist sign-off as the insured lane - no degraded second class", cite:"wiki/digital-transformation/pharmacy-automation-and-robotics", reform:false}
           ],
-          pains:[{text:"Customers tolerate waiting but not uncertainty; at the counter they want to know they've been seen and where they stand", quote:"Waiting is fine — being unsure isn't.", cite:"wiki/dischem/store-of-the-future-customer-voice"}],
+          pains:[{text:"Customers tolerate waiting but not uncertainty; at the counter they want to know they've been seen and where they stand", quote:"Waiting is fine - being unsure isn't.", cite:"wiki/dischem/store-of-the-future-customer-voice"}],
           opportunities:[
-            {text:"Near-home locker collection by PIN makes ‘same-day, no wasted trip’ real for the cash, no-address case", pillars:["U6","S1"], cite:"wiki/consumer-context/last-mile-addressing-logistics"},
-            {text:"Give the ~84% the same back-of-house accuracy and pharmacist check — first-class, not an afterthought", pillars:["S3","U2"], cite:"wiki/global-benchmarks/patterns-to-borrow-and-cautions"}
+            {text:"Near-home locker collection by PIN makes 'same-day, no wasted trip' real for the cash, no-address case", pillars:["U6","S1"], cite:"wiki/consumer-context/last-mile-addressing-logistics"},
+            {text:"Give the ~84% the same back-of-house accuracy and pharmacist check the insured lane gets", pillars:["S3","U2"], cite:"wiki/global-benchmarks/patterns-to-borrow-and-cautions"}
           ],
           metrics:["Near-home collection rate","Sub-minute collection time","Same-day fulfilment for cash"],
           flags:["momentOfTruth","reform"],
-          asIsBaseline:"Today filling a child's antibiotic means a long trip to a stocked store and a queue, with delivery assuming an address he doesn't have — so a sick child waits while a parent loses a day's income."
+          asIsBaseline:"Today filling a child's antibiotic means a long trip to a stocked store and a queue, with delivery assuming an address he doesn't have - so a sick child waits while a parent loses a day's income."
         }
       }
     },
 
-    /* 5 — reliability / graceful failure (the second protagonist) --------- */
+    /* 5 - reliability / graceful failure (the second protagonist) --------- */
     {
-      id:"m5", title:"If my store's out or I can't get there, it's sorted — no wasted trip",
+      id:"m5", title:"If my store's out or I can't get there, it's sorted - no wasted trip",
       spineStage:"GRACEFUL-FAILURE / RELIABILITY (parallel)",
-      need:"When stock, signal, transport or a delivery fails, recover gracefully — reroute, re-issue, reach a human — never a silent dead end or a wasted trip.",
+      need:"When stock, signal, transport or a delivery fails, recover gracefully - reroute, re-issue, reach a human - never a silent dead end or a wasted trip.",
       pillars:["U4","U2","S6","S1"],
       byEconomy:{
         insured:{
-          emotion:4, trustStage:"agitation→loyalty",
-          story:"The Sandton store gets busy, so the system quietly sources her course from Rosebank instead — same ETA, confirmed in stock — and only presses ‘out for delivery’ once the driver physically has it. At handover she gets photo proof. The one failure that breaks trust — “dispatched, never arrived” — is engineered out, so a wobble becomes loyalty.",
-          activities:["Has stock confirmed at the consult, so a store-level shortage is handled behind the scenes","Sees an honest reroute, not a too-precise promise that silently fails","Gets closed-loop proof at actual handover — never ‘dispatched but nothing came’"],
+          emotion:4, trustStage:"agitation->loyalty",
+          story:"The Sandton store gets busy, so the system quietly sources her course from Rosebank instead - same ETA, confirmed in stock - and only presses 'out for delivery' once the driver physically has it. At handover she gets photo proof. The one failure that breaks trust - \"dispatched, never arrived\" - is engineered out, so a wobble becomes loyalty.",
+          activities:["Has stock confirmed at the consult, so a store-level shortage is handled behind the scenes","Sees an honest reroute, not a too-precise promise that silently fails","Gets closed-loop proof at actual handover - never 'dispatched but nothing came'"],
           customerActions:["Accept the auto-reroute (or pick another node)","Confirm receipt / accept proof-of-delivery"],
-          frontstage:["Honest reroute notice + realistic window","Closed-loop ‘delivered & signed ✓’ with proof"],
-          backstage:["Stock known at prescribing, so out-of-stock is caught before she travels, not at the counter","Auto-reroute to the nearest in-stock node / on-demand / locker; the token is re-issued so nothing is double-dispensed","‘Out for delivery’ only fires when the driver has it in hand; POD closes the loop"],
+          frontstage:["Honest reroute notice + realistic window","Closed-loop 'delivered & signed ✓' with proof"],
+          backstage:["Stock known at prescribing, so out-of-stock is caught before she travels, not at the counter","Auto-reroute to the nearest in-stock node / on-demand / locker; the token is re-issued so nothing is double-dispensed","'Out for delivery' only fires when the driver has it in hand; POD closes the loop"],
           support:["Graceful-failure orchestration","Auto-reroute engine","DeliverD / PICCUP + POD"],
           partners:["VC consolidation","DeliverD / PICCUP last-mile"],
-          regulatory:["Closed-loop custody + cold chain for couriered scheduled medicines must satisfy licensing/oversight — wiki/sa-regulatory/courier-online-pharmacy-rules"],
+          regulatory:["Closed-loop custody + cold chain for couriered scheduled medicines must satisfy licensing/oversight - wiki/sa-regulatory/courier-online-pharmacy-rules"],
           tech:[
             {name:"Graceful-failure reroute", what:"an out-of-stock or busy store reroutes to the nearest in-stock node; the token re-issues, never a dead end", cite:"wiki/concepts/graceful-failure", reform:false},
-            {name:"Closed-loop tracking to handover", what:"‘dispatched’ only fires when the driver holds it; POD confirms actual receipt", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
+            {name:"Closed-loop tracking to handover", what:"'dispatched' only fires when the driver holds it; POD confirms actual receipt", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:false},
             {name:"One profile across channels", what:"the case keeps one owner across reroutes, so nobody re-explains", cite:"wiki/digital-transformation/interoperability-identity-records", reform:false}
           ],
-          pains:[{text:"‘Processed and out for delivery’ then nothing arrives — the worst failure, because the system itself promised", quote:"I received a notification that it has been processed on my medical aid and was out for delivery. I did not receive it.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}],
+          pains:[{text:"'Processed and out for delivery' then nothing arrives - the worst failure, because the system itself promised", quote:"I received a notification that it has been processed on my medical aid and was out for delivery. I did not receive it.", cite:"wiki/dischem/pharmacy-complaints-pain-points"}],
           opportunities:[
-            {text:"Judge the service on recovery — reliability is what earns the speed claim and converts a wobble into loyalty", pillars:["U4","U2"], cite:"wiki/dischem/dischem-social-sentiment-trust-journey"},
+            {text:"Judge the service on recovery - reliability is what earns the speed claim and converts a wobble into loyalty", pillars:["U4","U2"], cite:"wiki/dischem/dischem-social-sentiment-trust-journey"},
             {text:"Knowing stock at the consult removes the surprise; reroute + POD removes the dead end", pillars:["S6","S1"], cite:"wiki/concepts/graceful-failure"}
           ],
-          metrics:["‘Dispatched-not-delivered’ rate (target ≈ 0)","Auto-reroute success rate","Promise-kept rate"],
+          metrics:["'Dispatched-not-delivered' rate (target ≈ 0)","Auto-reroute success rate","Promise-kept rate"],
           flags:["momentOfTruth"],
-          asIsBaseline:"Today an order can be marked ‘out for delivery’ and simply not arrive, with no closed loop and an unreachable dispensary when she chases it — the precise failure that drives customers away at a premium."
+          asIsBaseline:"Today an order can be marked 'out for delivery' and simply not arrive, with no closed loop and an unreachable dispensary when she chases it - the precise failure that drives customers away at a premium."
         },
         cash:{
-          emotion:4, trustStage:"agitation→loyalty",
-          story:"His near-home locker turns out to be full. Instead of a dead end, a WhatsApp arrives in isiZulu: “Locker yakho igcwele — sesikuthumele ku-locker eduze. PIN entsha: 5093 (your locker was full; we've moved it to the next one nearby, new PIN 5093).” No wasted trip, no unanswered phone, no closed door on a sick child's medicine.",
-          activities:["Gets an automatic reroute to the next near-home locker when one is full/down","Receives a fresh PIN over WhatsApp — never stranded by a digital dead end","Always has a human he can reach over WhatsApp/voice as a fallback"],
+          emotion:4, trustStage:"agitation->loyalty",
+          story:"His near-home locker turns out to be full. Instead of a dead end, a WhatsApp arrives in isiZulu: \"Locker yakho igcwele - sesikuthumele ku-locker eduze. PIN entsha: 5093 (your locker was full; we've moved it to the next one nearby, new PIN 5093).\" No wasted trip, no unanswered phone, no closed door on a sick child's medicine.",
+          activities:["Gets an automatic reroute to the next near-home locker when one is full/down","Receives a fresh PIN over WhatsApp - never stranded by a digital dead end","Always has a human he can reach over WhatsApp/voice as a fallback"],
           customerActions:["Use the new PIN at the next locker","Tap to reach a human if needed"],
           frontstage:["In-language reroute + new PIN","Always a human-reachable fallback over WhatsApp/voice"],
           backstage:["Stock confirmed at the consult so the trip is never speculative","Locker-full / locker-down auto-reroutes to the next node; token re-issued","Resume-after-reconnect so a dropped signal never loses the case; a real person owns the exception"],
           support:["Graceful-failure orchestration","Locker reroute engine","Offline-tolerant queue + human fallback"],
           partners:["Pelebox / locker network","Near-home partner pickup point"],
-          regulatory:["Reroute/re-issue of a scheduled-medicine token must preserve single-dispense control and pharmacist oversight — wiki/sa-regulatory/courier-online-pharmacy-rules"],
+          regulatory:["Reroute/re-issue of a scheduled-medicine token must preserve single-dispense control and pharmacist oversight - wiki/sa-regulatory/courier-online-pharmacy-rules"],
           tech:[
-            {name:"Locker reroute + re-issued token", what:"a full/broken locker reroutes to the next; a fresh single-use PIN issues, never a dead end", cite:"wiki/concepts/graceful-failure", reform:true},
+            {name:"Locker reroute + re-issued token", what:"a full or broken locker reroutes to the next; a fresh single-use PIN issues so the trip still completes", cite:"wiki/concepts/graceful-failure", reform:true},
             {name:"Resume-after-reconnect", what:"a dropped signal never loses the case for a low-data user", cite:"wiki/consumer-context/digital-access-and-whatsapp", reform:false},
-            {name:"Human fallback over WhatsApp/voice", what:"every digital exception has a reachable person — the antidote to abandonment", cite:"wiki/digital-transformation/telepharmacy-and-omnichannel", reform:false}
+            {name:"Human fallback over WhatsApp/voice", what:"every digital exception has a reachable person - the antidote to abandonment", cite:"wiki/digital-transformation/telepharmacy-and-omnichannel", reform:false}
           ],
           pains:[{text:"A digital breakdown with no alternative path becomes a hard blocker and reads as abandonment", quote:"Digital breakdowns become hard blockers when no alternative path exists.", cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}],
           opportunities:[
-            {text:"Always a human-reachable, low-data fallback — never a dead end for the cash household", pillars:["U4","S1"], cite:"wiki/concepts/graceful-failure"},
+            {text:"Always a human-reachable, low-data fallback - never a dead end for the cash household", pillars:["U4","S1"], cite:"wiki/concepts/graceful-failure"},
             {text:"Reliability is the DeliverD-gap fix: no wasted trip on a sick-child errand earns durable loyalty", pillars:["U2","S6"], cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}
           ],
           metrics:["Wasted-trip rate (target ≈ 0)","Locker-fail reroute success","Reachable-human rate on exceptions"],
           flags:["momentOfTruth","reform"],
-          asIsBaseline:"Today a stock-out, a full collection point or a data dropout is a wasted trip back to a clinic queue, with an unanswered dispensary line and no held place — exactly when a feverish child can't wait."
+          asIsBaseline:"Today a stock-out, a full collection point or a data dropout is a wasted trip back to a clinic queue, with an unanswered dispensary line and no held place - exactly when a feverish child can't wait."
         }
       }
     },
 
-    /* 6 — adherence (short acute course, finished properly) --------------- */
+    /* 6 - adherence (short acute course, finished properly) --------------- */
     {
-      id:"m6", title:"Taking it right — a short course, finished properly",
+      id:"m6", title:"Taking it right - a short course, finished properly",
       spineStage:"ADHERE (acute course)",
-      need:"Actually finish the course correctly — clear, in-language dosing, a finish-the-course nudge, and a pharmacist a tap away — without being harassed.",
+      need:"Actually finish the course correctly - clear, in-language dosing, a finish-the-course nudge, and a pharmacist a tap away - without being harassed.",
       pillars:["U7","U5","S5","U1"],
       byEconomy:{
         insured:{
           emotion:5, trustStage:"calm",
-          story:"At handover she gets a simple ScriptPath-style schedule: “1 tablet, 3× a day with food, for 7 days,” with gentle nudges at 08:00 / 14:00 / 20:00 and a day-7 ‘did you finish?’ check. The instructions are hybrid — printed and re-checkable on her phone. Reminders stop the instant she opts out — support, never harassment.",
+          story:"At handover she gets a simple ScriptPath-style schedule: \"1 tablet, 3× a day with food, for 7 days,\" with gentle nudges at 08:00 / 14:00 / 20:00 and a day-7 'did you finish?' check. The instructions are hybrid - printed and re-checkable on her phone. Reminders stop the instant she opts out - support, never harassment.",
           activities:["Follows a clear, time-of-day acute schedule, hybrid printed + digital","Gets gentle finish-the-course nudges, with a day-7 completion check","Adjusts or opts out of any reminder at any time"],
           customerActions:["Follow the dosing schedule","Tune or opt out of reminders"],
           frontstage:["ScriptPath-style time-of-day schedule","Hybrid printed + re-checkable digital instructions; opt-out-able nudges"],
           backstage:["Schedule designed as a behaviour-change surface for a short course (the failure mode is stopping early, not forgetting a refill)","Consented nudges; opt-out honoured (no harassment)","Pharmacist counselling at handover (GPP) plus a tap-to-ask channel"],
           support:["Adherence schedule engine","Hybrid label/print service","Counselling channel"],
           partners:["Adherence-tech / scheduling service"],
-          regulatory:["GPP counselling at handover is mandatory; POPIA consent governs reminder contact and opt-out — wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
+          regulatory:["GPP counselling at handover is mandatory; POPIA consent governs reminder contact and opt-out - wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
           tech:[
             {name:"ScriptPath-style course schedule", what:"a clear time-of-day plan + finish-the-course check for the acute course", cite:"wiki/dispensing-practice/adherence-packaging", reform:false},
-            {name:"Consented, opt-out-able nudges", what:"reminders tied to her day; agency respected, never harassment", cite:"wiki/digital-transformation/adherence-tech-and-digital-therapeutics", reform:false},
+            {name:"Consented, opt-out-able nudges", what:"reminders tied to her day, with opt-out honoured the moment she asks", cite:"wiki/digital-transformation/adherence-tech-and-digital-therapeutics", reform:false},
             {name:"Pharmacist counselling on tap", what:"a human for side-effects/queries, protecting a trusted strength", cite:"wiki/dispensing-practice/counselling-and-health-literacy", reform:false}
           ],
           pains:[{text:"Persistent, un-opt-out-able messaging flips well-meant support into perceived harassment", quote:"Persistent calls/SMS/WhatsApp, especially after the customer tried to opt out, flips support into perceived harassment.", cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}],
           opportunities:[
-            {text:"Design the schedule/label as a behaviour-change surface for finishing a short course, not a reminder bolt-on", pillars:["U7","S5"], cite:"wiki/concepts/medication-adherence"},
+            {text:"Design the schedule/label as a behaviour-change surface aimed at finishing a short course", pillars:["U7","S5"], cite:"wiki/concepts/medication-adherence"},
             {text:"Protect counselling as a trusted human strength while making instructions re-checkable later", pillars:["U5","U1"], cite:"wiki/dispensing-practice/counselling-and-health-literacy"}
           ],
           metrics:["Course-completion rate","Opt-out respect rate (target 100%)","Counselling uptake"],
           flags:[],
-          asIsBaseline:"Today finishing the course is left to her; instructions are paper-only and easy to lose, and reminders — when they exist — can be rigid and un-opt-out-able, tipping into harassment."
+          asIsBaseline:"Today finishing the course is left to her; instructions are paper-only and easy to lose, and reminders - when they exist - can be rigid and un-opt-out-able, tipping into harassment."
         },
         cash:{
           emotion:5, trustStage:"calm",
-          story:"Sipho gets the child's dosing in isiZulu, matched to her weight: “Amoxicillin: 5 mℓ × 3 a day, for 7 days. Qedela yonke i-course (finish all 7 days).” A short isiZulu voice note explains the syringe and why to finish even once she's better, and a printed label stays in the box for load-shedding days.",
+          story:"Sipho gets the child's dosing in isiZulu, matched to her weight: \"Amoxicillin: 5 mℓ × 3 a day, for 7 days. Qedela yonke i-course (finish all 7 days).\" A short isiZulu voice note explains the syringe and why to finish even once she's better, and a printed label stays in the box for load-shedding days.",
           activities:["Follows in-language, weight-based dosing for the child's suspension","Hears a short isiZulu voice note on measuring and finishing the course","Keeps a printed label as the reliable, signal-proof backup"],
           customerActions:["Follow the in-language dosing","Play the voice note; opt out anytime"],
           frontstage:["In-language weight-based dosing + voice note","Printed-label backup (load-shedding-proof)"],
           backstage:["Dosing rendered for the child's weight; finish-the-course messaging in isiZulu","Reminders data-frugal and opt-out honoured","Pharmacist counselling by voice/WhatsApp because the locker can't counsel"],
           support:["Adherence engine (SMS/voice)","Print service","Counselling channel (voice/WhatsApp)"],
           partners:["Telepharmacy hub","Community health worker (where relevant)"],
-          regulatory:["Counselling + in-language consent retained; opt-out honoured under POPIA — wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
+          regulatory:["Counselling + in-language consent retained; opt-out honoured under POPIA - wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
           tech:[
             {name:"In-language weight-based dosing", what:"the child's mℓ-per-dose and a finish-the-course message, in isiZulu", cite:"wiki/consumer-context/language-literacy-and-trust", reform:false},
             {name:"Hybrid print + voice", what:"a printed label plus a short voice note, usable on low data and through load-shedding", cite:"wiki/dispensing-practice/adherence-packaging", reform:false},
@@ -936,62 +936,62 @@ const DATA = {
           ],
           metrics:["Course-completion (child)","Dosing-error rate","Opt-out respect rate"],
           flags:[],
-          asIsBaseline:"Today the parent leaves with a paper label, often in a second language, no help measuring a syringe, and little support to finish the course once the fever breaks — the classic acute adherence failure."
+          asIsBaseline:"Today the parent leaves with a paper label, often in a second language, no help measuring a syringe, and little support to finish the course once the fever breaks - the classic acute adherence failure."
         }
       }
     },
 
-    /* 7 — acute becomes the front door (S2 conversion) -------------------- */
+    /* 7 - acute becomes the front door (S2 conversion) -------------------- */
     {
       id:"m7", title:"This becomes my front door, not a one-off",
-      spineStage:"REFILL / RENEW seed (acute → relationship)",
-      need:"Turn a one-off acute episode into the start of an ongoing care relationship — with my profile retained, a gentle check-in, and a clear path into ongoing care.",
+      spineStage:"REFILL / RENEW seed (acute -> relationship)",
+      need:"Turn a one-off acute episode into the start of an ongoing care relationship - with my profile retained, a gentle check-in, and a clear path into ongoing care.",
       pillars:["S2","S6","U7","S4"],
       byEconomy:{
         insured:{
           emotion:5, trustStage:"calm",
-          story:"A few days on: “Feeling better, Nomvula? If symptoms aren't gone by Friday, we can set up a quick pharmacist or GP teleconsult.” Her consented profile is retained, so next time — acute or her chronic repeat — it's even faster. The transaction has quietly become a front door into ongoing care, the way #05's chronic loop begins.",
-          activities:["Gets a gentle, opt-out-able follow-up on how the course went","Has the option of a fast pharmacist/GP teleconsult if it hasn't cleared","Keeps one consented profile so the next episode — or her chronic loop — is faster"],
+          story:"A few days on: \"Feeling better, Nomvula? If symptoms aren't gone by Friday, we can set up a quick pharmacist or GP teleconsult.\" Her consented profile is retained, so next time - acute or her chronic repeat - it's even faster. The transaction has quietly become a front door into ongoing care, the way #05's chronic loop begins.",
+          activities:["Gets a gentle, opt-out-able follow-up on how the course went","Has the option of a fast pharmacist/GP teleconsult if it hasn't cleared","Keeps one consented profile so the next episode - or her chronic loop - is faster"],
           customerActions:["Reply to the follow-up","Book a teleconsult if needed"],
-          frontstage:["Gentle ‘how did it go?’ follow-up","One-tap path into teleconsult / ongoing care"],
-          backstage:["Acute episode reconciled into her one profile, available across channels","Pathway into the chronic/managed loop (the #05 flywheel) when relevant","Proactive, consented, opt-out-able follow-up — relationship, not retargeting"],
+          frontstage:["Gentle 'how did it go?' follow-up","One-tap path into teleconsult / ongoing care"],
+          backstage:["Acute episode reconciled into her one profile, available across channels","Pathway into the chronic/managed loop (the #05 flywheel) when relevant","Proactive, consented, opt-out-able follow-up that earns the next visit"],
           support:["One profile (EMPI)","Teleconsult service","Relationship / follow-up engine"],
           partners:["Prescriber / clinician","Medical scheme"],
-          regulatory:["Retaining the profile + proactive contact are POPIA-consented and opt-out-able; telehealth follow-up is permitted — wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          regulatory:["Retaining the profile + proactive contact are POPIA-consented and opt-out-able; telehealth follow-up is permitted - wiki/sa-regulatory/e-prescription-telehealth-popia"],
           tech:[
             {name:"Retained consented profile", what:"the acute episode seeds a continuous relationship, faster every next time", cite:"wiki/digital-transformation/interoperability-identity-records", reform:false},
-            {name:"Acute→chronic pathway", what:"a clean hand-off into the managed chronic loop (#05) where relevant", cite:"wiki/concepts/chronic-medicine-flywheel", reform:false},
+            {name:"Acute->chronic pathway", what:"a clean hand-off into the managed chronic loop (#05) where relevant", cite:"wiki/concepts/chronic-medicine-flywheel", reform:false},
             {name:"Teleconsult follow-up", what:"a fast route to a pharmacist/GP if the episode hasn't resolved", cite:"wiki/digital-transformation/telepharmacy-and-omnichannel", reform:false}
           ],
           pains:[{text:"After a trust-breaking experience, customers defect to a local pharmacy for relationship care, even at a premium", quote:"Move scripts to Clicks or local independents, willing to pay significantly more (R460) for relationship care.", cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}],
           opportunities:[
-            {text:"Convert a won acute episode into the front door of an ongoing relationship — capture loyalty courier pharmacies chase", pillars:["S2","S4"], cite:"wiki/dischem/competitive-landscape-sa-pharmacy"},
+            {text:"Convert a won acute episode into the front door of an ongoing relationship - capture loyalty courier pharmacies chase", pillars:["S2","S4"], cite:"wiki/dischem/competitive-landscape-sa-pharmacy"},
             {text:"Orchestrate continuity across acute and chronic on one profile, so the next episode is effortless", pillars:["S6","U7"], cite:"wiki/concepts/omnichannel-fulfilment"}
           ],
-          metrics:["Acute→relationship conversion","Repeat-engagement rate","Defection avoided"],
+          metrics:["Acute->relationship conversion","Repeat-engagement rate","Defection avoided"],
           flags:[],
-          asIsBaseline:"Today an acute script is a pure transaction with no continuity; nothing is retained, no one checks in, and the relationship — and the loyalty — defaults to whoever is nearest next time."
+          asIsBaseline:"Today an acute script is a pure transaction with no continuity; nothing is retained, no one checks in, and the relationship - and the loyalty - defaults to whoever is nearest next time."
         },
         cash:{
           emotion:5, trustStage:"calm",
-          story:"After Lindiwe's course, a short isiZulu note: “Ingane ikahle? (Is she well?) If the fever lasts more than 2 days we can help over WhatsApp. We've kept Lindiwe's profile — next time will be quicker. Reply STOP anytime.” A cash family that's usually treated as a stranger is, for once, remembered and welcomed back.",
-          activities:["Gets a brief, in-language check-in on the child's recovery","Can reach help over WhatsApp if symptoms persist","Keeps a profile so the next episode is faster — and feels like a relationship, not a transaction"],
+          story:"After Lindiwe's course, a short isiZulu note: \"Ingane ikahle? (Is she well?) If the fever lasts more than 2 days we can help over WhatsApp. We've kept Lindiwe's profile - next time will be quicker. Reply STOP anytime.\" A cash family that's usually treated as a stranger is, for once, remembered and welcomed back.",
+          activities:["Gets a brief, in-language check-in on the child's recovery","Can reach help over WhatsApp if symptoms persist","Keeps a profile so the next episode is faster and feels like continuing care"],
           customerActions:["Reply to the in-language check-in","Reach WhatsApp help if needed"],
-          frontstage:["In-language ‘is she well?’ check-in","WhatsApp path to ongoing help; easy STOP"],
+          frontstage:["In-language 'is she well?' check-in","WhatsApp path to ongoing help; easy STOP"],
           backstage:["Episode retained on a low-data profile keyed to his WhatsApp number","Pathway into near-home ongoing care / CCMDD bridge where relevant","Proactive contact is consented, in-language and opt-out-able"],
           support:["One profile (low-data)","WhatsApp care channel","Relationship / follow-up engine"],
           partners:["Partner clinic / CHW","Near-home pickup network"],
-          regulatory:["In-language POPIA consent; proactive contact opt-out-able; telehealth follow-up permitted — wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          regulatory:["In-language POPIA consent; proactive contact opt-out-able; telehealth follow-up permitted - wiki/sa-regulatory/e-prescription-telehealth-popia"],
           tech:[
-            {name:"Retained low-data profile", what:"keyed to his WhatsApp number so the cash family is remembered, not re-registered", cite:"wiki/digital-transformation/interoperability-identity-records", reform:false},
+            {name:"Retained low-data profile", what:"keyed to his WhatsApp number so the cash family is remembered between visits", cite:"wiki/digital-transformation/interoperability-identity-records", reform:false},
             {name:"WhatsApp follow-up + care path", what:"in-language check-in and a route to ongoing help, opt-out-able", cite:"wiki/digital-transformation/telepharmacy-and-omnichannel", reform:false}
           ],
-          pains:[{text:"His risk is the silent lapse — distance, data or a broken reminder — and a cash customer is rarely remembered or welcomed back", quote:"His risk is the silent lapse — a missed collection because of distance, data, or a broken reminder.", cite:"design-kit/personas/low-data-whatsapp-first-peri-urban"}],
+          pains:[{text:"His risk is the silent lapse - distance, data or a broken reminder - and a cash customer is rarely remembered or welcomed back", quote:"His risk is the silent lapse - a missed collection because of distance, data, or a broken reminder.", cite:"design-kit/personas/low-data-whatsapp-first-peri-urban"}],
           opportunities:[
-            {text:"Make the cash majority a remembered relationship, not a one-off stranger — first-class continuity", pillars:["S2","S1"], cite:"wiki/dischem/competitive-landscape-sa-pharmacy"},
+            {text:"Give the cash majority the same continuity an insured patient gets - remembered between episodes", pillars:["S2","S1"], cite:"wiki/dischem/competitive-landscape-sa-pharmacy"},
             {text:"Open a near-home ongoing-care path (incl. CCMDD bridge) off a won acute episode", pillars:["S4","S6"], cite:"wiki/consumer-context/health-seeking-behaviour"}
           ],
-          metrics:["Cash acute→relationship conversion","Return-engagement rate","Opt-out respect rate"],
+          metrics:["Cash acute->relationship conversion","Return-engagement rate","Opt-out respect rate"],
           flags:[],
           asIsBaseline:"Today a cash acute purchase is anonymous and one-off; nothing is kept, no one follows up, and the family stays a stranger who shops on price and proximity alone."
         }
@@ -1001,7 +1001,7 @@ const DATA = {
   ],
 
   /* ---------------------------------------------------------------------------
-     POCKET — the hero "The script in my pocket" view. A WhatsApp-STYLE message
+     POCKET - the hero "The script in my pocket" view. A WhatsApp-STYLE message
      thread per economy (generic chat treatment; NO WhatsApp brand assets). The
      toggle swaps the whole conversation + episode. Episode/regimen/price detail
      is ILLUSTRATIVE (no citations on example regimens, exactly as #05's household
@@ -1013,118 +1013,118 @@ const DATA = {
       headerSub:"Pharmacy · ✓ POPIA-consented · replies instantly",
       messages:[
         {kind:"divider", body:"Today"},
-        {kind:"sys", body:"🔒 Messages are POPIA-consented and secured. Dis-Chem+ only messages you about scripts you've opted into — reply STOP anytime.", cite:"wiki/sa-regulatory/e-prescription-telehealth-popia"},
+        {kind:"sys", body:"🔒 Messages are POPIA-consented and secured. Dis-Chem+ only messages you about scripts you've opted into - reply STOP anytime.", cite:"wiki/sa-regulatory/e-prescription-telehealth-popia"},
 
-        /* 1 — token */
+        /* 1 - token */
         {from:"dischem", kind:"token", time:"14:02",
          body:"Hi Nomvula 👋 Your doctor, Dr N. Pillay, just sent your script to Dis-Chem ✓",
          cite:"wiki/global-benchmarks/australia-chemist-warehouse-escript",
          token:{code:"DX-7K42-9QPL", sub:"Acute throat infection · antibiotic course + analgesic"}},
-        {from:"me", kind:"text", time:"14:03", ticks:"read", body:"Oh that's quick — I'm still in the parking lot 😄"},
+        {from:"me", kind:"text", time:"14:03", ticks:"read", body:"Oh that's quick - I'm still in the parking lot 😄"},
 
-        /* 2 — price/stock card */
+        /* 2 - price/stock card */
         {from:"dischem", kind:"price", time:"14:03",
          body:"In stock at 3 stores near you. Here's exactly what you'll pay, on your Discovery day-to-day cover:",
          cite:"wiki/medical-schemes/realtime-claims-switching",
          price:{inStock:true,
            items:[{name:"Antibiotic (generic)", price:"R0 · funded"},{name:"Brand analgesic", price:"R38 co-pay"}],
            yours:"R38", generic:{label:"Switch the analgesic to generic", delta:"R0 · saves R38"}}},
-        {from:"me", kind:"text", time:"14:04", ticks:"read", body:"Take the generic please — R0 it is ✅"},
+        {from:"me", kind:"text", time:"14:04", ticks:"read", body:"Take the generic please - R0 it is ✅"},
         {from:"dischem", kind:"text", time:"14:04",
-         body:"Done — your whole 7-day course is now R0 to you. No surprises at the till. 💚",
+         body:"Done - your whole 7-day course is now R0 to you. No surprises at the till. 💚",
          cite:"wiki/sa-regulatory/sep-dispensing-fee"},
 
-        /* 3 — clinical check */
+        /* 3 - clinical check */
         {from:"dischem", kind:"status", time:"14:11",
-         body:"Checked by Naledi Mokoena, your pharmacist ✓ — safe to take alongside your other meds, no clashes.",
+         body:"Checked by Naledi Mokoena, your pharmacist ✓ - safe to take alongside your other meds, no clashes.",
          cite:"wiki/sa-regulatory/pharmacy-act-sapc-gpp"},
 
-        /* 4 — ready / qr */
+        /* 4 - ready / qr */
         {from:"dischem", kind:"qr", time:"14:34",
-         body:"Ready now — skip the queue and scan this at the Scripts-Ready counter:",
+         body:"Ready now - skip the queue and scan this at the Scripts-Ready counter:",
          cite:"wiki/digital-transformation/pharmacy-automation-and-robotics",
-         qr:{code:"DX-7K42-RDY", label:"Ready now — show this QR", where:"Dis-Chem Sandton City · Scripts-Ready counter"}},
+         qr:{code:"DX-7K42-RDY", label:"Ready now - show this QR", where:"Dis-Chem Sandton City · Scripts-Ready counter"}},
         {from:"me", kind:"text", time:"14:36", ticks:"read", body:"Stuck in a meeting till 5 🙈 can you deliver to my office instead?"},
         {from:"dischem", kind:"text", time:"14:36",
-         body:"Of course. On-demand DeliverD to your office — ETA ~60 min, by 16:40. I'll only send the driver once it's in hand.",
+         body:"Of course. On-demand DeliverD to your office - ETA ~60 min, by 16:40. I'll only send the driver once it's in hand.",
          cite:"wiki/consumer-context/last-mile-addressing-logistics"},
 
-        /* 5 — reliability / reroute */
+        /* 5 - reliability / reroute */
         {from:"dischem", kind:"text", time:"15:40",
-         body:"Heads-up: Sandton is busy, so I've sourced your parcel from Rosebank — same ETA, confirmed in stock. Nothing changes for you.",
+         body:"Heads-up: Sandton is busy, so I've sourced your parcel from Rosebank - same ETA, confirmed in stock. Nothing changes for you.",
          cite:"wiki/concepts/graceful-failure"},
         {from:"dischem", kind:"text", time:"16:38",
-         body:"Delivered & signed for at your reception, 16:38 ✓ Photo proof saved to your order. No more ‘out for delivery but never arrived’.",
+         body:"Delivered & signed for at your reception, 16:38 ✓ Photo proof saved to your order. No more 'out for delivery but never arrived'.",
          cite:"wiki/dischem/pharmacy-complaints-pain-points"},
         {from:"me", kind:"text", time:"16:41", ticks:"read", body:"Got it, thank you 🙏"},
 
-        /* 6 — adherence */
+        /* 6 - adherence */
         {from:"dischem", kind:"text", time:"16:42",
          body:"Your 7-day course: 1 tablet, 3× a day with food. I'll nudge you at 08:00, 14:00 & 20:00, and check in on day 7 that you finished. Tap to talk to a pharmacist anytime. Reply MUTE to stop nudges.",
          cite:"wiki/dispensing-practice/adherence-packaging"},
 
-        /* 7 — front door */
+        /* 7 - front door */
         {from:"dischem", kind:"text", time:"Fri 09:15",
-         body:"Feeling better, Nomvula? If symptoms aren't gone by the weekend, I can set up a quick pharmacist or GP teleconsult. I've kept your profile, so next time — or your chronic repeat — is even faster. 💚",
+         body:"Feeling better, Nomvula? If symptoms aren't gone by the weekend, I can set up a quick pharmacist or GP teleconsult. I've kept your profile, so next time - or your chronic repeat - is even faster. 💚",
          cite:"wiki/dischem/competitive-landscape-sa-pharmacy"}
       ]
     },
     cash:{
-      who:"Sipho — for Lindiwe (4)", lang:"isiZulu + English", asOf:"Namuhla · script sent from the clinic",
+      who:"Sipho - for Lindiwe (4)", lang:"isiZulu + English", asOf:"Namuhla · script sent from the clinic",
       headerSub:"Ikhemisi · ✓ POPIA-consented · iphendula masinyane",
       messages:[
         {kind:"divider", body:"Namuhla · Today"},
         {kind:"sys", body:"🔒 Imiyalezo ivikelekile futhi i-POPIA-consented. Reply STOP anytime. (Messages are secured and consented.)", cite:"wiki/sa-regulatory/e-prescription-telehealth-popia"},
 
-        /* 1 — token */
+        /* 1 - token */
         {from:"dischem", kind:"token", time:"11:15",
          body:"Sawubona Sipho 👋 Udokotela usethumele isikripthi sikaLindiwe ku-Dis-Chem ✓ (Your child's script just arrived.)",
          cite:"wiki/concepts/e-prescription-token",
          token:{code:"DX-3M88-1ZTK", sub:"Lindiwe (4) · fever + chest infection · antibiotic syrup + paracetamol"}},
         {from:"me", kind:"text", time:"11:16", ticks:"read", body:"Yebo. Imalini? (How much?) Anginayo i-app. 📵"},
 
-        /* 2 — price-first card */
+        /* 2 - price-first card */
         {from:"dischem", kind:"price", time:"11:16",
          body:"Ikhona eduze kwakho ✓ Nayi yonke imali ngaphambi kokuthi uhambe (full price before you travel):",
          cite:"wiki/sa-regulatory/sep-dispensing-fee",
          price:{inStock:true,
            items:[{name:"Amoxicillin syrup 250mg/5mℓ", price:"R96"},{name:"Paracetamol syrup", price:"R58"}],
            yours:"R154", generic:{label:"Generic combo (i-generic)", delta:"R119 · saves R35"}}},
-        {from:"me", kind:"text", time:"11:18", ticks:"read", body:"Yenza i-generic. (Do the generic — R119.)"},
+        {from:"me", kind:"text", time:"11:18", ticks:"read", body:"Yenza i-generic. (Do the generic - R119.)"},
         {from:"dischem", kind:"text", time:"11:18",
-         body:"Kulungile ✓ Isamba: R119. Khokha lapho uthatha — akukho i-deposit. (Total R119; pay when you collect.)",
+         body:"Kulungile ✓ Isamba: R119. Khokha lapho uthatha - akukho i-deposit. (Total R119; pay when you collect.)",
          cite:"wiki/consumer-context/two-economy-affordability"},
 
-        /* 3 — clinical check, weight-based */
+        /* 3 - clinical check, weight-based */
         {from:"dischem", kind:"status", time:"11:29",
-         body:"Ihloliwe ngu-Naledi, usokhemisi ✓ — i-dose ilungele isisindo sikaLindiwe. (Checked by the pharmacist; the dose suits your child's weight.)",
+         body:"Ihloliwe ngu-Naledi, usokhemisi ✓ - i-dose ilungele isisindo sikaLindiwe. (Checked by the pharmacist; the dose suits your child's weight.)",
          cite:"wiki/sa-regulatory/pharmacy-act-sapc-gpp"},
 
-        /* 4 — locker / PIN */
+        /* 4 - locker / PIN */
         {from:"dischem", kind:"locker", time:"11:58",
          body:"Iready manje! Locker eduze nawe (ready now at the locker near you):",
          cite:"wiki/consumer-context/last-mile-addressing-logistics",
-         locker:{pin:"4821", label:"Iready — locker eduze nawe", where:"Pelebox-style locker · KwaMashu · valid till 18:00"}},
+         locker:{pin:"4821", label:"Iready - locker eduze nawe", where:"Pelebox-style locker · KwaMashu · valid till 18:00"}},
 
-        /* 5 — reliability / reroute */
+        /* 5 - reliability / reroute */
         {from:"dischem", kind:"locker", time:"12:20",
-         body:"Locker yakho igcwele — sesikuthumele ku-locker eduze. (Your locker was full; we moved it to the next one nearby.) Akukho luhambo lwemahhala (no wasted trip):",
+         body:"Locker yakho igcwele - sesikuthumele ku-locker eduze. (Your locker was full; we moved it to the next one nearby.) Akukho luhambo lwemahhala (no wasted trip):",
          cite:"wiki/concepts/graceful-failure",
          locker:{pin:"5093", label:"I-locker entsha eduze (new locker nearby)", where:"Pelebox-style locker · Bridge City · valid till 18:00"}},
         {from:"me", kind:"text", time:"12:31", ticks:"read", body:"Ngiyithathile. Ngiyabonga kakhulu! (Got it. Thank you so much!) 🙏"},
 
-        /* 6 — adherence, in-language weight-based */
+        /* 6 - adherence, in-language weight-based */
         {from:"dischem", kind:"text", time:"12:32",
-         body:"Amoxicillin: 5 mℓ × 3 ngosuku, izinsuku ezi-7. Paracetamol uma enomkhuhlane kuphela. QEDELA yonke i-course — noma esebncono. (Finish all 7 days even when she's better.) Ngithumele i-voice note?",
+         body:"Amoxicillin: 5 mℓ × 3 ngosuku, izinsuku ezi-7. Paracetamol uma enomkhuhlane kuphela. QEDELA yonke i-course - noma esebncono. (Finish all 7 days even when she's better.) Ngithumele i-voice note?",
          cite:"wiki/consumer-context/language-literacy-and-trust"},
         {from:"me", kind:"text", time:"12:33", ticks:"read", body:"Yebo, thumela i-voice note. (Yes, send the voice note.)"},
         {from:"dischem", kind:"text", time:"12:33",
-         body:"🎧 Voice note (isiZulu, 0:38) — ukukala nge-syringe + ukuqeda i-course. Kukhona ne-label ephrintiwe ebhokisini. (How to measure + finish the course; a printed label is in the box too.)",
+         body:"🎧 Voice note (isiZulu, 0:38) - ukukala nge-syringe + ukuqeda i-course. Kukhona ne-label ephrintiwe ebhokisini. (How to measure + finish the course; a printed label is in the box too.)",
          cite:"wiki/dischem/store-of-the-future-customer-voice"},
 
-        /* 7 — front door */
+        /* 7 - front door */
         {from:"dischem", kind:"text", time:"Ngomso 09:30",
-         body:"Ingane ikahle? (Is she well?) Uma umkhuhlane uqhubeka ngaphezu kwezinsuku ezi-2, singasiza nge-WhatsApp consult. Sigcine iprofile kaLindiwe — ngokuzayo kuzoba lula. Reply STOP anytime. 💚",
+         body:"Ingane ikahle? (Is she well?) Uma umkhuhlane uqhubeka ngaphezu kwezinsuku ezi-2, singasiza nge-WhatsApp consult. Sigcine iprofile kaLindiwe - ngokuzayo kuzoba lula. Reply STOP anytime. 💚",
          cite:"wiki/dischem/competitive-landscape-sa-pharmacy"}
       ]
     }
@@ -1159,7 +1159,7 @@ const DATA = {
   const TRUST_LABEL = {
     calm:"Calm / Confident", trigger:"Trigger", acceleration:"Acceleration",
     agitation:"Agitation", "defection":"Defection",
-    "agitation→loyalty":"Agitation → Loyalty", "defection→loyalty":"Defection → Loyalty"
+    "agitation->loyalty":"Agitation, then Loyalty", "defection->loyalty":"Defection, then Loyalty"
   };
 
   // lanes for the behind-the-line tab
@@ -1211,7 +1211,7 @@ const DATA = {
   // ---- citation element -----------------------------------------------------
   function citeEl(text, ref){
     if(!has(ref)) return document.createTextNode(text);
-    const b = el("button", {class:"cite", type:"button", "aria-label":text+" — source: "+ref}, [text]);
+    const b = el("button", {class:"cite", type:"button", "aria-label":text+" - source: "+ref}, [text]);
     b.appendChild(el("span", {class:"tip", role:"tooltip"}, ["source: "+ref]));
     b.addEventListener("click", e=>{ e.stopPropagation(); b.classList.toggle("show"); });
     return b;
@@ -1225,7 +1225,7 @@ const DATA = {
       const cls = "ptag " + (p && p.type==="ux" ? "u" : "s");
       const t = el("button", {
         class:cls, type:"button", "data-ptag":pid,
-        title:(p?(p.id+" — "+p.name):pid),
+        title:(p?(p.id+" - "+p.name):pid),
         "aria-label":"Filter by pillar "+pid+(p?": "+p.name:""),
         onclick:(e)=>{ e.stopPropagation(); setPillar(pid); }
       }, [pid]);
@@ -1269,7 +1269,7 @@ const DATA = {
     const txt = el("div", {class:"ptxt"});
     txt.appendChild(el("h3", {}, ["Our philosophy: ", el("u", {}, ["Trust"]), " > Convenience > Speed"]));
     txt.appendChild(el("p", {}, [has(PHIL.line)?PHIL.line:"Predictability beats speed."]));
-    txt.appendChild(el("p", {class:"tiny", style:"color:#9bcfb0"}, ["This journey is won on speed + reliability — but speed is only credible because the medicine is known in stock and the handover is closed-loop. Ops & systems depth lives behind the line of visibility, on demand."]));
+    txt.appendChild(el("p", {class:"tiny", style:"color:#9bcfb0"}, ["This journey is won on speed + reliability - but speed is only credible because the medicine is known in stock and the handover is closed-loop. Ops & systems depth lives behind the line of visibility, on demand."]));
     wrap.appendChild(txt);
     return wrap;
   }
@@ -1408,7 +1408,7 @@ const DATA = {
       pl.appendChild(grp);
     });
     const det = el("div", {class:"pillar-detail"+(state.activePillar?" show":""), id:"pillar-detail"});
-    if(state.activePillar){ const p = pillarById(state.activePillar); if(p) det.textContent = p.id+" — "+p.oneLiner; }
+    if(state.activePillar){ const p = pillarById(state.activePillar); if(p) det.textContent = p.id+" - "+p.oneLiner; }
     pl.appendChild(det);
     mount.appendChild(pl);
   }
@@ -1450,7 +1450,7 @@ const DATA = {
   }
 
   // ===========================================================================
-  // BOARD — moment rail + moment cards
+  // BOARD - moment rail + moment cards
   // ===========================================================================
   function badges(d){
     const out=[];
@@ -1469,7 +1469,7 @@ const DATA = {
 
   function momentRail(){
     const wrap = el("div", {class:"momentrail-wrap"});
-    wrap.appendChild(el("h2", {}, ["The journey — ", el("span", {class:"tiny", style:"font-weight:400"}, ["click a moment to open it"])]));
+    wrap.appendChild(el("h2", {}, ["The journey - ", el("span", {class:"tiny", style:"font-weight:400"}, ["click a moment to open it"])]));
     const rail = el("div", {class:"momentrail", role:"tablist", "aria-label":"Moment rail"});
     MOMENTS.forEach((m,i)=>{
       const id = m.id || ("m"+i);
@@ -1501,7 +1501,7 @@ const DATA = {
       const items = arr(d.regulatory); if(!items.length) return null;
       const ul = el("ul");
       items.forEach(s=>{
-        const m = String(s).match(/^(.*?)\s[—-]\s(\S+\/\S+|src-\S+)$/);
+        const m = String(s).match(/^(.*?)\s[-]\s(\S+\/\S+|src-\S+)$/);
         const li = el("li", {class:"reg-item"});
         if(m) li.appendChild(citeEl(m[1], m[2])); else li.appendChild(document.createTextNode(String(s)));
         ul.appendChild(li);
@@ -1526,7 +1526,7 @@ const DATA = {
       items.forEach(p=>{
         const li = el("li", {class:"pain-item"});
         li.appendChild(citeEl((typeof p==="object"?p.text:p)||"", typeof p==="object"?p.cite:null));
-        if(typeof p==="object" && has(p.quote)) li.appendChild(el("span", {class:"pain-quote"}, ["“"+p.quote+"”"]));
+        if(typeof p==="object" && has(p.quote)) li.appendChild(el("span", {class:"pain-quote"}, ["\""+p.quote+"\""]));
         ul.appendChild(li);
       });
       content=ul;
@@ -1581,7 +1581,7 @@ const DATA = {
       bl.appendChild(el("div", {class:"bl-txt"}, [d.asIsBaseline]));
       arr(d.pains).forEach(p=>{
         if(typeof p==="object" && has(p.quote)){
-          const q = el("div", {class:"quote"}, ["“"+p.quote+"”"]);
+          const q = el("div", {class:"quote"}, ["\""+p.quote+"\""]);
           q.appendChild(el("span", {class:"src"}, [citeEl("source: "+(p.cite||""), p.cite)]));
           bl.appendChild(q);
         }
@@ -1713,10 +1713,10 @@ const DATA = {
   }
 
   // ===========================================================================
-  // THE SCRIPT IN MY POCKET — WhatsApp-STYLE thread (generic, all inline SVG)
+  // THE SCRIPT IN MY POCKET - WhatsApp-STYLE thread (generic, all inline SVG)
   // ===========================================================================
 
-  // deterministic pseudo-QR matrix — INLINE SVG ONLY, never an external image.
+  // deterministic pseudo-QR matrix - INLINE SVG ONLY, never an external image.
   function qrSVG(seed){
     const ns="http://www.w3.org/2000/svg";
     const svg=document.createElementNS(ns,"svg");
@@ -1758,7 +1758,7 @@ const DATA = {
     const qw = el("div", {class:"tok-qr"}); qw.appendChild(qrSVG(t.code||"DX")); box.appendChild(qw);
     box.appendChild(el("div", {class:"tok-code"}, [t.code||"DX-0000-0000"]));
     if(has(t.sub)) box.appendChild(el("div", {class:"tok-sub"}, [t.sub]));
-    box.appendChild(el("div", {class:"tok-note"}, ["Redeem at any Dis-Chem — the token is a one-time key, not the script in the clear; a fresh code issues after each collection."]));
+    box.appendChild(el("div", {class:"tok-note"}, ["Redeem at any Dis-Chem - the token is a one-time key that unlocks the script at the counter; a fresh code issues after each collection."]));
     return box;
   }
 
@@ -1772,16 +1772,16 @@ const DATA = {
       });
       box.appendChild(ul);
     }
-    box.appendChild(el("div", {class:"pc-total"}, [el("span", {}, ["Total to you"]), el("span", {class:"pt-v"}, [p.yours||"—"])]));
+    box.appendChild(el("div", {class:"pc-total"}, [el("span", {}, ["Total to you"]), el("span", {class:"pt-v"}, [p.yours||" - "])]));
     if(p.generic && has(p.generic.label)){
-      box.appendChild(el("div", {class:"pc-generic"}, ["🔁 "+p.generic.label+(has(p.generic.delta)?" — "+p.generic.delta:"")]));
+      box.appendChild(el("div", {class:"pc-generic"}, ["🔁 "+p.generic.label+(has(p.generic.delta)?" - "+p.generic.delta:"")]));
     }
     return box;
   }
 
   function qrReadyCard(q){
     const box = el("div", {class:"qrcard"});
-    box.appendChild(el("div", {class:"qc-h"}, ["✅ "+(q.label||"Ready now — show this QR")]));
+    box.appendChild(el("div", {class:"qc-h"}, ["✅ "+(q.label||"Ready now - show this QR")]));
     const qw = el("div", {class:"qc-qr"}); qw.appendChild(qrSVG(q.code||"READY")); box.appendChild(qw);
     if(has(q.where)) box.appendChild(el("div", {class:"qc-loc"}, [q.where]));
     return box;
@@ -1837,10 +1837,10 @@ const DATA = {
     hero.appendChild(el("div", {class:"ph-eyebrow"}, ["The script in my pocket"]));
     hero.appendChild(el("h2", {}, ["The same journey, as the messages I actually receive"]));
     hero.appendChild(el("div", {class:"ph-frame"}, [
-      "This is the e-script portal's customer-facing output — the WhatsApp-style thread the personas actually live in (U1). ",
+      "This is the e-script portal's customer-facing output - the WhatsApp-style thread the personas actually live in (U1). ",
       el("b", {}, ["Toggle the economy"]),
       " to swap the whole conversation: ", el("b", {}, ["Nomvula's"]), " own adult-infection thread (English, funding-aware) or ",
-      el("b", {}, ["Sipho's"]), " child's-acute thread (isiZulu, price-first, near-home locker PIN). It is a WhatsApp-style treatment only — no WhatsApp brand assets; every claim carries a hover-cite."
+      el("b", {}, ["Sipho's"]), " child's-acute thread (isiZulu, price-first, near-home locker PIN). It is a WhatsApp-style treatment only - no WhatsApp brand assets; every claim carries a hover-cite."
     ]));
     const econ = el("div", {class:"pocket-econ"});
     econ.appendChild(el("span", {class:"pe-label"}, ["Conversation"]));
@@ -1934,7 +1934,7 @@ const DATA = {
     document.querySelectorAll('.pbtn[data-pillar]').forEach(b=> b.setAttribute("aria-pressed", String(b.getAttribute("data-pillar")===state.activePillar)));
     const det = $("#pillar-detail");
     if(det){
-      if(state.activePillar){ const p=pillarById(state.activePillar); det.textContent = p?(p.id+" — "+p.oneLiner):""; det.classList.add("show"); }
+      if(state.activePillar){ const p=pillarById(state.activePillar); det.textContent = p?(p.id+" - "+p.oneLiner):""; det.classList.add("show"); }
       else { det.textContent=""; det.classList.remove("show"); }
     }
     applyPillar();
@@ -1979,7 +1979,7 @@ const DATA = {
   try{ renderAll(); }
   catch(err){
     const b = document.getElementById("board");
-    if(b) b.appendChild(el("div", {class:"gap-box"}, ["⚠️ Engine error: "+(err&&err.message?err.message:String(err))+" — check the DATA object."]));
+    if(b) b.appendChild(el("div", {class:"gap-box"}, ["⚠️ Engine error: "+(err&&err.message?err.message:String(err))+" - check the DATA object."]));
     if(window.console) console.error(err);
   }
 })();
