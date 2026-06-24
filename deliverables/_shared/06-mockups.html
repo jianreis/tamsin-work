@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>#06 Mockup Library — gallery / QA (Script Re-imagined animation)</title>
+<title>#06 Mockup Library - gallery / QA (Script Re-imagined animation)</title>
 <style>
 /* =============================================================================
-   DELIVERABLE #06 — MOCKUP / COMPONENT LIBRARY (assets agent)
+   DELIVERABLE #06 - MOCKUP / COMPONENT LIBRARY (assets agent)
    Self-contained: ALL component CSS here, ALL JS in one vanilla script block.
    No external requests of any kind. Inline SVG only, no raster, no fonts.
    Palette tokens are inherited VERBATIM from #05 so #06 reads as a sibling.
@@ -16,7 +16,7 @@
    styles + the demo harness at the bottom are gallery-only chrome.
    ============================================================================= */
 :root{
-  /* board palette — VERBATIM from #05 (brief §5) */
+  /* board palette - VERBATIM from #05 (brief §5) */
   --brand:#1a9b4a; --brand-dark:#157a3b;
   --lime:#b5d334; --mint:#bfe3cf; --mint-deep:#9bcfb0;
   --ink:#1d1d1d; --ink-soft:#2b2b2b; --bg:#f6f8f6; --card:#ffffff;
@@ -38,7 +38,7 @@ button{font:inherit; cursor:pointer}
 button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--brand-dark); outline-offset:2px}
 
 /* =============================================================================
-   >>>>>>>>>>>>>>>>  COMPONENT LIBRARY CSS — copy this block into #06  <<<<<<<<<<
+   >>>>>>>>>>>>>>>>  COMPONENT LIBRARY CSS - copy this block into #06  <<<<<<<<<<
    ============================================================================= */
 
 /* ---- staged-build mechanism (brief §7) -----------------------------------
@@ -109,7 +109,7 @@ button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--brand-dark
 .reduce-motion .typing i{animation:none; opacity:.6}
 .wa-foot{font-size:.72rem; color:var(--muted); margin-top:8px; display:flex; gap:6px; align-items:baseline;}
 
-/* ---- 2 cabinet (HERO) — ported from #05 (.member/.med/chips) -------------- */
+/* ---- 2 cabinet (HERO) - ported from #05 (.member/.med/chips) -------------- */
 /* phone-scaled cabinet header */
 .cabm{ }
 .cabm .cab-top{
@@ -303,7 +303,7 @@ button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--brand-dark
 .channel-badge.app{ background:#efe9f3; color:var(--purple); border:1px solid #d9c2e4; }
 .phone-with-channel{display:flex; flex-direction:column; align-items:center;}
 
-/* ---- APP / portal surface skin (Pillar U1 — native app for power features) */
+/* ---- APP / portal surface skin (Pillar U1 - native app for power features) */
 .device.app-surface .screen{ background:var(--bg); }
 .app-header{ display:flex; align-items:center; gap:9px; padding:9px 12px; background:var(--card); color:var(--ink); border-bottom:1px solid var(--line); }
 .app-header .app-back{font-size:1.15rem; color:var(--muted); line-height:1; font-weight:700;}
@@ -480,19 +480,19 @@ footer{margin:34px 24px 0; border-top:1px solid var(--line); padding-top:16px; c
   <header>
     <div class="brandband">
       <span class="wordmark">Dis-Chem<span class="plus">+</span></span>
-      <span class="kicker">Script Re-imagined — Mockup Library</span>
+      <span class="kicker">Script Re-imagined - Mockup Library</span>
       <span class="maptag">#06 Animation · component gallery</span>
       <span class="co tiny">bigly labs</span>
     </div>
     <div class="ribbon" role="note">
-      <span>⚠ Concept for review — not an official Dis-Chem artefact</span>
+      <span>⚠ Concept for review - not an official Dis-Chem artefact</span>
       <span class="gen">generated 2026-06-14 from the Bigly ground-truth vault · <span class="mono">deliverables/_shared/06-mockups.html</span></span>
     </div>
   </header>
 
   <section class="gintro">
-    <h1>Mockup / component library — gallery &amp; QA</h1>
-    <p>Reusable, animatable renderers for the #06 click-through journey animation. Every component is rendered once below with a representative sample payload (these double as the <b>payload-contract examples</b> the build agent copies). Press <b>▶ Play build</b> on any component to step its <span class="mono">data-beat</span> reveal sequence; toggle <b>Reduce motion</b> to verify the instant (fully-assembled) mode. The build agent should copy the <span class="mono">:root</span> tokens, the “COMPONENT LIBRARY CSS” block, and the global <span class="mono">MOCKUPS</span> object.</p>
+    <h1>Mockup / component library - gallery &amp; QA</h1>
+    <p>Reusable, animatable renderers for the #06 click-through journey animation. Every component is rendered once below with a representative sample payload (these double as the <b>payload-contract examples</b> the build agent copies). Press <b>▶ Play build</b> on any component to step its <span class="mono">data-beat</span> reveal sequence; toggle <b>Reduce motion</b> to verify the instant (fully-assembled) mode. The build agent should copy the <span class="mono">:root</span> tokens, the "COMPONENT LIBRARY CSS" block, and the global <span class="mono">MOCKUPS</span> object.</p>
   </section>
 
   <div class="gtoolbar">
@@ -508,14 +508,14 @@ footer{margin:34px 24px 0; border-top:1px solid var(--line); padding-top:16px; c
   <main id="gallery" aria-live="polite"></main>
 
   <footer>
-    <p>Inline SVG only · no external requests · vanilla JS. Renderers are defensive — a missing optional field degrades gracefully, never throws. Data-derived strings use <span class="mono">textContent</span> (never innerHTML). Palette + <span class="mono">pillSVG</span>/<span class="mono">avatarSVG</span> ported verbatim from <span class="mono">deliverables/05-tobe-future-state-journey.html</span>.</p>
+    <p>Inline SVG only · no external requests · vanilla JS. Renderers are defensive - a missing optional field degrades gracefully, never throws. Data-derived strings use <span class="mono">textContent</span> (never innerHTML). Palette + <span class="mono">pillSVG</span>/<span class="mono">avatarSVG</span> ported verbatim from <span class="mono">deliverables/05-tobe-future-state-journey.html</span>.</p>
   </footer>
 </div>
 
 <script>
 "use strict";
 /* =============================================================================
-   >>>>>>>>>>>>>>>>  GLOBAL MOCKUPS LIBRARY — copy this into #06  <<<<<<<<<<<<<<<
+   >>>>>>>>>>>>>>>>  GLOBAL MOCKUPS LIBRARY - copy this into #06  <<<<<<<<<<<<<<<
    Every renderer: (payload, ctx) => HTMLElement.  ctx = {econ, household, reduceMotion}.
    DEFENSIVE: never throws on a missing/optional field. textContent for data strings.
    Staged build: animatable elements carry data-beat="0|1|2…"; the engine reveals
@@ -529,7 +529,7 @@ window.MOCKUPS = (function(){
   const has = v => v!=null && v!=="";
   const num = (v,d)=>{ const n=Number(v); return isFinite(n)?n:d; };
 
-  // defensive DOM builder — VERBATIM port from #05
+  // defensive DOM builder - VERBATIM port from #05
   function el(tag, attrs, kids){
     const n = document.createElement(tag);
     if(attrs) for(const k in attrs){
@@ -561,7 +561,7 @@ window.MOCKUPS = (function(){
   const beat = (i, node) => { if(node) node.setAttribute("data-beat", String(i)); return node; };
 
   /* =========================================================================
-     pillSVG(med) — VERBATIM port from #05. shapes: tablet|caplet|capsule|bottle.
+     pillSVG(med) - VERBATIM port from #05. shapes: tablet|caplet|capsule|bottle.
      ========================================================================= */
   function pillSVG(med){
     const svg = svgEl("svg", {viewBox:"0 0 48 48", role:"img", "aria-hidden":"true"});
@@ -594,7 +594,7 @@ window.MOCKUPS = (function(){
   }
 
   /* =========================================================================
-     avatarSVG(kind, econ) — VERBATIM port of #05 memberAvatarSVG(kind, econId).
+     avatarSVG(kind, econ) - VERBATIM port of #05 memberAvatarSVG(kind, econId).
      ========================================================================= */
   function avatarSVG(kind, econ){
     const svg = svgEl("svg", {viewBox:"0 0 48 48", role:"img", "aria-hidden":"true"});
@@ -617,10 +617,10 @@ window.MOCKUPS = (function(){
   }
 
   /* =========================================================================
-     phoneFrame(innerNode, ctx, opts) — channel-aware device surface wrapper.
+     phoneFrame(innerNode, ctx, opts) - channel-aware device surface wrapper.
      Two channels (Pillar U1 channel ladder):
        • "whatsapp"/"chat" (DEFAULT): WhatsApp chat header over a chat-tint
-         screen — the entry/nudge/status channel.
+         screen - the entry/nudge/status channel.
        • "app": a DISTINCT native app/portal surface for rich, persistent power
          views (My Medicine Cabinet, My Dose-Pack): light header w/ Dis-Chem
          wordmark + screen title + back chevron + profile dot, app-surface bg,
@@ -668,7 +668,7 @@ window.MOCKUPS = (function(){
     return el("div", {class:"phone-with-channel"}, [ channelBadge(kind, opts), dev, channelChip(econ) ]);
   }
 
-  // teleconsult video surface — unmistakably NOT WhatsApp
+  // teleconsult video surface - unmistakably NOT WhatsApp
   function teleHeader(contact){
     const who = has(contact) ? String(contact) : "Kena";
     return el("div", {class:"tele-header", "aria-hidden":"true"}, [
@@ -702,7 +702,7 @@ window.MOCKUPS = (function(){
     ]);
   }
 
-  // app/portal header — clearly an APP, not WhatsApp
+  // app/portal header - clearly an APP, not WhatsApp
   function appHeader(title){
     return el("div", {class:"app-header", "aria-hidden":"true"}, [
       el("span", {class:"app-back"}, ["‹"]),
@@ -724,7 +724,7 @@ window.MOCKUPS = (function(){
   function appCue(){
     return el("div", {class:"app-cue"}, [
       el("span", {class:"ac-ico", "aria-hidden":"true"}, ["💬"]),
-      el("span", {}, [ el("b", {}, ["Opened from your WhatsApp reminder"]), document.createTextNode(" — the full view lives in the app") ])
+      el("span", {}, [ el("b", {}, ["Opened from your WhatsApp reminder"]), document.createTextNode(" - the full view lives in the app") ])
     ]);
   }
   function channelBadge(kind, opts){
@@ -767,7 +767,7 @@ window.MOCKUPS = (function(){
     ]);
   }
 
-  // persistent channel note — ECONOMY-AWARE (Fix I).
+  // persistent channel note - ECONOMY-AWARE (Fix I).
   function channelChip(econ){
     if(econ === "cash"){
       return el("div", {class:"channel-chip cash", "aria-label":"Channel: WhatsApp-first, USSD/SMS fallback, collect near home, no app needed"}, [
@@ -792,9 +792,9 @@ window.MOCKUPS = (function(){
   }
 
   /* =========================================================================
-     waStatusCard(payload, ctx) — derived, customer-facing WhatsApp status card
+     waStatusCard(payload, ctx) - derived, customer-facing WhatsApp status card
      for backstage moments (m4/m5). Shows ONLY what the customer would really
-     see — status thread + optional pack photo + status line + an "ask the
+     see - status thread + optional pack photo + status line + an "ask the
      pharmacist" affordance. Deliberately omits internal checks / AI note /
      robot / system names.
      payload: { steps:[{label,state}], line?, photo?:bool, prompt?, title? }
@@ -842,7 +842,7 @@ window.MOCKUPS = (function(){
   }
 
   /* =========================================================================
-     behindLine(richNode, opts) — honest "behind the line" container for the
+     behindLine(richNode, opts) - honest "behind the line" container for the
      detailed backstage MECHANISM (pharmacist review / ROWA etc.). NOT
      phone-framed; distinct ops/system (grey-purple) treatment with a dashed
      "line of visibility" header saying it is NOT a customer screen.
@@ -851,13 +851,13 @@ window.MOCKUPS = (function(){
     opts = opts || {};
     // the "not a customer screen" caveat is the FIRST readable element for SRs;
     // worded title sits ABOVE the dashed motif; a back-of-house pill top-right.
-    const srCaveat = el("span", {class:"sr-only"}, ["Back of house — not a customer screen. "]);
+    const srCaveat = el("span", {class:"sr-only"}, ["Back of house - not a customer screen. "]);
     const head = el("div", {class:"bl-head"}, [
       srCaveat,
       el("span", {class:"bl-pill"}, ["BACK OF HOUSE · not a customer screen"]),
-      el("span", {class:"bl-title"}, [ has(opts.title)?String(opts.title):"Behind the line — what Dis-Chem does" ]),
-      el("span", {class:"bl-line", "aria-hidden":"true"}, ["— — — line of visibility — — —"]),
-      el("span", {class:"bl-sub"}, [ has(opts.sub)?String(opts.sub):"Illustrative — not a literal customer screen." ])
+      el("span", {class:"bl-title"}, [ has(opts.title)?String(opts.title):"Behind the line - what Dis-Chem does" ]),
+      el("span", {class:"bl-line", "aria-hidden":"true"}, ["- - - line of visibility - - -"]),
+      el("span", {class:"bl-sub"}, [ has(opts.sub)?String(opts.sub):"Illustrative - not a literal customer screen." ])
     ]);
     const body = el("div", {class:"bl-body"});
     if(richNode) body.appendChild(richNode);
@@ -874,7 +874,7 @@ window.MOCKUPS = (function(){
     p = p || {};
     const root = mock("wa-mock", ctx);
     let b = 0;
-    // WhatsApp chat header now lives in phoneFrame (single source) — thread only here.
+    // WhatsApp chat header now lives in phoneFrame (single source) - thread only here.
     const wa = el("div", {class:"wa"});
     const thread = el("div", {class:"wa-thread"});
     const typingIdx = num(p.typingBeforeIndex, -1);
@@ -909,7 +909,7 @@ window.MOCKUPS = (function(){
   }
 
   /* =========================================================================
-     2  cabinet (HERO) — reads ctx.household[ctx.econ] directly. payload {useHousehold:true}
+     2  cabinet (HERO) - reads ctx.household[ctx.econ] directly. payload {useHousehold:true}
      beats: 0 = hero header; then each MEMBER card head reveals (sliding in),
             then each MED row, then status/funding chips pop (handled inside row).
      Convention: member cards = ascending beats; each med row = next beat;
@@ -921,7 +921,7 @@ window.MOCKUPS = (function(){
     due:{cls:"due", glyph:"⏰", label:"Due soon"}
   };
 
-  // medRow ported from #05 — but with staged-build beats for pill-drop + chip-pop.
+  // medRow ported from #05 - but with staged-build beats for pill-drop + chip-pop.
   function medRow(med, beatRef){
     if(!med) return null;
     const li = el("li", {class:"med"});
@@ -965,7 +965,7 @@ window.MOCKUPS = (function(){
     head.appendChild(el("div", {class:"mem-avatar"}, [ avatarSVG(member.avatar||"adult", econ) ]));
     const idc = el("div", {class:"mem-id"});
     idc.appendChild(el("div", {class:"mem-role"}, [ member.role || (member.you?"Me":"Member") ]));
-    idc.appendChild(el("div", {class:"mem-name"}, [ has(member.name)?member.name:"—" ]));
+    idc.appendChild(el("div", {class:"mem-name"}, [ has(member.name)?member.name:"-" ]));
     if(has(member.sub)) idc.appendChild(el("div", {class:"mem-sub"}, [member.sub]));
     head.appendChild(idc);
     if(member.proxy){
@@ -1079,7 +1079,7 @@ window.MOCKUPS = (function(){
     if(has(p.explain)) surf.appendChild(beat(b++, el("div", {class:"cost-explain"}, [p.explain])));
     if(p.alt && has(p.alt.text)){
       const alt = el("div", {class:"cost-alt"}, [ document.createTextNode(p.alt.text) ]);
-      if(has(p.alt.saving)) alt.appendChild(el("span", {class:"save"}, [" — save "+p.alt.saving]));
+      if(has(p.alt.saving)) alt.appendChild(el("span", {class:"save"}, [" - save "+p.alt.saving]));
       surf.appendChild(beat(b++, alt));
     }
     return root;
@@ -1401,7 +1401,7 @@ window.MOCKUPS = (function(){
     return root;
   }
 
-  // small pillar-tag row (S/U colour) — defensive
+  // small pillar-tag row (S/U colour) - defensive
   function pillarTags(ids){
     ids = arr(ids).filter(has);
     if(!ids.length) return null;
@@ -1423,7 +1423,7 @@ window.MOCKUPS = (function(){
     p = p || {};
     const root = mock("rn-mock", ctx);
     let b = 0;
-    // WhatsApp chat header now lives in phoneFrame (single source) — thread only here.
+    // WhatsApp chat header now lives in phoneFrame (single source) - thread only here.
     const wa = el("div", {class:"wa"});
     const thread = el("div", {class:"wa-thread"});
     arr(p.messages).forEach(m=>{
@@ -1451,7 +1451,7 @@ window.MOCKUPS = (function(){
     if(has(tk.label)){
       const tok = el("div", {class:"rn-token"}, [
         el("div", {class:"tk-label"}, [ el("span",{"aria-hidden":"true"},["🎟"]), document.createTextNode(tk.label) ]),
-        tk.reform ? el("div", {class:"tk-reform"}, ["🔮 requires-reform — AES e-script maturity"]) : null
+        tk.reform ? el("div", {class:"tk-reform"}, ["🔮 requires-reform - AES e-script maturity"]) : null
       ]);
       root.appendChild(beat(b++, tok));
     }
@@ -1465,7 +1465,7 @@ window.MOCKUPS = (function(){
   }
 
   /* =========================================================================
-     ussdMenu(payload, ctx) — a USSD-styled numbered menu surface for the
+     ussdMenu(payload, ctx) - a USSD-styled numbered menu surface for the
      zero-data fallback rung. NO images, plain monospace, limited colour.
      payload: { title, items:[string], footer?, response?:{ choice, result } }
      ========================================================================= */
@@ -1496,7 +1496,7 @@ window.MOCKUPS = (function(){
   }
 
   /* =========================================================================
-     frontBackStage({frontstage:[], backstage:[]})  — the two-lane stage visual.
+     frontBackStage({frontstage:[], backstage:[]})  - the two-lane stage visual.
      beats: each frontstage chip (in order) · line-of-visibility · each backstage chip
      ========================================================================= */
   function frontBackStage(p, ctx){
@@ -1506,7 +1506,7 @@ window.MOCKUPS = (function(){
     const front = arr(p.frontstage).filter(has);
     const back  = arr(p.backstage).filter(has);
 
-    const frontLane = el("div", {class:"fbs-lane front"}, [ el("div", {class:"lname"}, ["Frontstage — what the customer sees"]) ]);
+    const frontLane = el("div", {class:"fbs-lane front"}, [ el("div", {class:"lname"}, ["Frontstage - what the customer sees"]) ]);
     const fchips = el("div", {class:"fbs-chips"});
     front.forEach(f=>{
       const chip = el("span", {class:"fbs-chip"}, [ el("span",{"aria-hidden":"true"},["●"]), document.createTextNode(String(f)) ]);
@@ -1519,7 +1519,7 @@ window.MOCKUPS = (function(){
     beat(b++, lov);
     root.appendChild(lov);
 
-    const backLane = el("div", {class:"fbs-lane back"}, [ el("div", {class:"lname"}, ["Backstage — capability behind the line"]) ]);
+    const backLane = el("div", {class:"fbs-lane back"}, [ el("div", {class:"lname"}, ["Backstage - capability behind the line"]) ]);
     const bchips = el("div", {class:"fbs-chips"});
     back.forEach(bk=>{
       const chip = el("span", {class:"fbs-chip"}, [ el("span",{"aria-hidden":"true"},["◆"]), document.createTextNode(String(bk)) ]);
@@ -1551,15 +1551,15 @@ window.MOCKUPS = (function(){
   // ctx.household example for the build agent).
   const HOUSEHOLD = {
     insured:{
-      frame:"Three people, one account. Nomvula's chronic meds, Gogo's chronic repeat and Lethabo's short acute course — every dose, every status and every rand of cover, in one calm place.",
+      frame:"Three people, one account. Nomvula's chronic meds, Gogo's chronic repeat and Lethabo's short acute course - every dose, every status and every rand of cover, in one calm place.",
       asOf:"Cycle ready · next collection in 4 days",
       members:[
         { role:"Me", name:"Nomvula", you:true, sub:"54 · HR manager · HTN + type-2 diabetes on the CDL", avatar:"adult-f",
           medicines:[
             {name:"Amlodipine", strength:"5 mg", shape:"tablet", tone:"#f0a23b", tone2:"#d9821b", forText:"Lowers blood pressure (calcium-channel blocker)", dose:"1 in the morning", supply:"30 days left", status:"ok", fund:{kind:"covered", text:"Covered · R0", sub:"Discovery · CDL"}},
-            {name:"Hydrochlorothiazide", strength:"12.5 mg", shape:"tablet", tone:"#e9e2d2", tone2:"#c9bfa6", forText:"Water tablet — helps control blood pressure", dose:"1 in the morning", supply:"30 days left", status:"ok", fund:{kind:"covered", text:"Covered · R0", sub:"Discovery · CDL"}},
+            {name:"Hydrochlorothiazide", strength:"12.5 mg", shape:"tablet", tone:"#e9e2d2", tone2:"#c9bfa6", forText:"Water tablet - helps control blood pressure", dose:"1 in the morning", supply:"30 days left", status:"ok", fund:{kind:"covered", text:"Covered · R0", sub:"Discovery · CDL"}},
             {name:"Metformin", strength:"850 mg", shape:"caplet", tone:"#ffffff", tone2:"#d4dbd6", forText:"Controls blood sugar in type-2 diabetes", dose:"1 morning · 1 night", supply:"6 days left", status:"due", fund:{kind:"covered", text:"Covered · R0", sub:"Discovery · CDL"}},
-            {name:"Atorvastatin", strength:"20 mg", shape:"tablet", tone:"#d96b8a", tone2:"#b84a6b", forText:"Lowers cholesterol to protect heart & vessels", dose:"1 at night", supply:"12 days left", status:"way", fund:{kind:"copay", text:"Co-pay R42", sub:"non-formulary brand"}, note:"A fully-funded generic is one tap away — switch to pay R0."}
+            {name:"Atorvastatin", strength:"20 mg", shape:"tablet", tone:"#d96b8a", tone2:"#b84a6b", forText:"Lowers cholesterol to protect heart & vessels", dose:"1 at night", supply:"12 days left", status:"way", fund:{kind:"copay", text:"Co-pay R42", sub:"non-formulary brand"}, note:"A fully-funded generic is one tap away - switch to pay R0."}
           ]},
         { role:"Gogo (mother)", name:"Gogo", proxy:true, sub:"79 · lives with the family · elderly chronic regimen", avatar:"elder-f",
           medicines:[
@@ -1568,18 +1568,18 @@ window.MOCKUPS = (function(){
           ]},
         { role:"Child", name:"Lethabo", proxy:true, sub:"7 · short acute course (chest infection)", avatar:"child",
           medicines:[
-            {name:"Amoxicillin suspension", strength:"250 mg/5 mL", shape:"bottle", tone:"#f2c84b", tone2:"#e0a91f", forText:"Antibiotic for a chest infection — finish the full course", dose:"5 mL three times a day · 7 days", supply:"Acute · 7-day course", status:"ok", fund:{kind:"copay", text:"Co-pay R28", sub:"acute · paid from savings"}, note:"Checked against Gogo's & Nomvula's meds in the house — safe to use."}
+            {name:"Amoxicillin suspension", strength:"250 mg/5 mL", shape:"bottle", tone:"#f2c84b", tone2:"#e0a91f", forText:"Antibiotic for a chest infection - finish the full course", dose:"5 mL three times a day · 7 days", supply:"Acute · 7-day course", status:"ok", fund:{kind:"copay", text:"Co-pay R28", sub:"acute · paid from savings"}, note:"Checked against Gogo's & Nomvula's meds in the house - safe to use."}
           ]}
       ]
     },
     cash:{
-      frame:"One WhatsApp number, the whole family. Sipho's BP tablets, his mother's free public repeat and his child's acute antibiotic — each with a clear Rand price up front, collected near home.",
+      frame:"One WhatsApp number, the whole family. Sipho's BP tablets, his mother's free public repeat and his child's acute antibiotic - each with a clear Rand price up front, collected near home.",
       asOf:"Ready for collection near home · PIN sent by SMS",
       members:[
         { role:"Me", name:"Sipho", you:true, sub:"45 · peri-urban Durban · hypertensive · pays cash", avatar:"adult-m",
           medicines:[
             {name:"Amlodipine", strength:"5 mg", shape:"tablet", tone:"#f0a23b", tone2:"#d9821b", forText:"Lowers blood pressure (calcium-channel blocker)", dose:"1 in the morning", supply:"28 days left", status:"ok", fund:{kind:"cash", text:"R91", sub:"tablets R57 + fee R34"}, note:"Generic option shown up front: R61 instead of R91."},
-            {name:"Hydrochlorothiazide", strength:"12.5 mg", shape:"tablet", tone:"#e9e2d2", tone2:"#c9bfa6", forText:"Water tablet — helps control blood pressure", dose:"1 in the morning", supply:"9 days left", status:"due", fund:{kind:"cash", text:"R74", sub:"tablets R40 + fee R34"}}
+            {name:"Hydrochlorothiazide", strength:"12.5 mg", shape:"tablet", tone:"#e9e2d2", tone2:"#c9bfa6", forText:"Water tablet - helps control blood pressure", dose:"1 in the morning", supply:"9 days left", status:"due", fund:{kind:"cash", text:"R74", sub:"tablets R40 + fee R34"}}
           ]},
         { role:"Gogo (mother)", name:"Mama", proxy:true, sub:"71 · public-sector chronic · CCMDD", avatar:"elder-f",
           medicines:[
@@ -1588,7 +1588,7 @@ window.MOCKUPS = (function(){
           ]},
         { role:"Child", name:"Little one", proxy:true, sub:"6 · short acute course (chest infection)", avatar:"child",
           medicines:[
-            {name:"Amoxicillin suspension", strength:"250 mg/5 mL", shape:"bottle", tone:"#f2c84b", tone2:"#e0a91f", forText:"Antibiotic for a chest infection — finish the full course", dose:"5 mL three times a day · 7 days", supply:"Acute · 7-day course", status:"ok", fund:{kind:"cash", text:"R64", sub:"medicine R30 + fee R34"}, note:"Priced & checked by a pharmacist before he travels."}
+            {name:"Amoxicillin suspension", strength:"250 mg/5 mL", shape:"bottle", tone:"#f2c84b", tone2:"#e0a91f", forText:"Antibiotic for a chest infection - finish the full course", dose:"5 mL three times a day · 7 days", supply:"Acute · 7-day course", status:"ok", fund:{kind:"cash", text:"R64", sub:"medicine R30 + fee R34"}, note:"Priced & checked by a pharmacist before he travels."}
           ]}
       ]
     }
@@ -1602,7 +1602,7 @@ window.MOCKUPS = (function(){
       whatsappNudge: insured ? {
         contact:"Dis-Chem Pharmacy", verified:true,
         messages:[
-          {from:"them", text:"Hi Nomvula — your BP & diabetes meds and Gogo's repeat are due next week. Same as last month?", time:"08:12",
+          {from:"them", text:"Hi Nomvula - your BP & diabetes meds and Gogo's repeat are due next week. Same as last month?", time:"08:12",
            quick:["✅ Yes","✏️ Change","⏰ Snooze"]},
           {from:"me", text:"✅ Yes", time:"08:13"},
           {from:"them", text:"Done 👍 Preparing the whole household repeat. I'll send cost & cover next.", time:"08:13"}
@@ -1612,7 +1612,7 @@ window.MOCKUPS = (function(){
       } : {
         contact:"Dis-Chem Pharmacy", verified:true,
         messages:[
-          {from:"them", text:"Sawubona Sipho — your BP tablets and your mother's repeat are due. Reply 1 to prepare for collection near home.", time:"09:02",
+          {from:"them", text:"Sawubona Sipho - your BP tablets and your mother's repeat are due. Reply 1 to prepare for collection near home.", time:"09:02",
            quick:["1 · Yes","2 · Change","3 · Later"]},
           {from:"me", text:"1", time:"09:05"}
         ],
@@ -1622,26 +1622,26 @@ window.MOCKUPS = (function(){
       cabinet: { useHousehold:true },
 
       costCover: insured ? {
-        heading:"Your cover — before you commit",
+        heading:"Your cover - before you commit",
         items:[
-          {name:"Nomvula — 3 chronic meds", line:"Discovery · CDL", amount:"R0"},
-          {name:"Gogo — 2 chronic meds", line:"Discovery · CDL", amount:"R0"},
+          {name:"Nomvula - 3 chronic meds", line:"Discovery · CDL", amount:"R0"},
+          {name:"Gogo - 2 chronic meds", line:"Discovery · CDL", amount:"R0"},
           {name:"Atorvastatin 20 mg", line:"non-formulary brand", amount:"R42"}
         ],
         total:{label:"You pay today", amount:"R42"},
-        verdict:{tone:"warn", text:"One R42 co-pay — here's why"},
+        verdict:{tone:"warn", text:"One R42 co-pay - here's why"},
         explain:"Everything else is funded in full. Only the branded statin carries a co-pay.",
         alt:{text:"Switch to the funded generic", saving:"R42 → R0"},
         cash:false
       } : {
-        heading:"Your cash price — before you travel",
+        heading:"Your cash price - before you travel",
         items:[
           {name:"Amlodipine 5 mg", line:"tablets R57 + dispensing fee R34", amount:"R91"},
           {name:"Hydrochlorothiazide 12.5 mg", line:"tablets R40 + fee R34", amount:"R74"},
-          {name:"Mama — Enalapril + HCTZ", line:"CCMDD · free public supply", amount:"R0"}
+          {name:"Mama - Enalapril + HCTZ", line:"CCMDD · free public supply", amount:"R0"}
         ],
         total:{label:"Cash total today", amount:"R165"},
-        verdict:{tone:"good", text:"Price shown up front — no till surprise ✓"},
+        verdict:{tone:"good", text:"Price shown up front - no till surprise ✓"},
         explain:"SEP + the regulated dispensing fee, shown in full. The fee is fixed by law, not discounted.",
         alt:{text:"Generic Amlodipine", saving:"R91 → R61"},
         cash:true
@@ -1679,13 +1679,13 @@ window.MOCKUPS = (function(){
         steps:[
           {label:"Packed & sealed", state:"done"},
           {label:"Out for delivery", state:"done"},
-          {label:"Arriving — 12 min", state:"active"},
+          {label:"Arriving - 12 min", state:"active"},
           {label:"Delivered ✓", state:"todo"}
         ],
         driver:{name:"Thabo", eta:"arriving in 12 min"},
         pod:"Signed by Nomvula",
         altModes:["Locker (PUDO)","Click & collect"],
-        realisticWindow:"Thu 08:00–12:00 — a window you can plan around"
+        realisticWindow:"Thu 08:00–12:00 - a window you can plan around"
       } : {
         mode:"locker",
         steps:[
@@ -1696,7 +1696,7 @@ window.MOCKUPS = (function(){
         ],
         pod:"PIN-verified collection near home",
         altModes:["Pelebox locker","Collect at the clinic"],
-        realisticWindow:"Ready today — collect any time, PIN by SMS"
+        realisticWindow:"Ready today - collect any time, PIN by SMS"
       },
 
       adherencePack: {
@@ -1705,7 +1705,7 @@ window.MOCKUPS = (function(){
           {label:"TUE", slots:[{time:"AM", pills:["#f0a23b","#e9e2d2","#ffffff"]},{time:"PM", pills:["#ffffff","#d96b8a"]}]},
           {label:"WED", slots:[{time:"AM", pills:["#f0a23b","#e9e2d2","#ffffff"]},{time:"PM", pills:["#ffffff","#d96b8a"]}]}
         ],
-        reminder:"Gentle nudge tied to your routine — opt out any time",
+        reminder:"Gentle nudge tied to your routine - opt out any time",
         print:true,
         forMember: insured ? "Gogo · INR-set warfarin packed separately" : "Sipho · BP tablets"
       },
@@ -1713,7 +1713,7 @@ window.MOCKUPS = (function(){
       curveball: {
         scenarios:[
           {problem:"Stock-out", problemIcon:"🔴", problemText:"Your usual brand is out of stock.",
-           recovery:"Funded generic, pharmacist-approved", recoveryText:"Same molecule, R0 to you — approved before you even notice.", pillar:["U4","S3"]},
+           recovery:"Funded generic, pharmacist-approved", recoveryText:"Same molecule, R0 to you - approved before you even notice.", pillar:["U4","S3"]},
           {problem:"Claim rejected", problemIcon:"🟠", problemText:"Scheme flags chronic not registered.",
            recovery:"2-tap fix in the chat", recoveryText:"We pre-fill the chronic-registration; you confirm, it clears.", pillar:["U4","U2"]},
           {problem:"After-hours: child spikes a fever", problemIcon:"🌙", problemText:"It's 21:00 and the little one is worse.",
@@ -1726,7 +1726,7 @@ window.MOCKUPS = (function(){
         messages:[
           {from:"them", text:"Heads-up: this is your last repeat on this script. A quick check-in to renew?", time:"07:48"},
           {from:"me", text:"Yes please", time:"07:50"},
-          {from:"them", text:"Great — booking a low-data video check-in with a clinician now.", time:"07:50"}
+          {from:"them", text:"Great - booking a low-data video check-in with a clinician now.", time:"07:50"}
         ],
         teleconsult:{provider:"Kena", lowData:true},
         token:{label:"New e-script token issued", reform:true},
@@ -1735,7 +1735,7 @@ window.MOCKUPS = (function(){
       },
 
       frontBackStage: insured ? {
-        frontstage:["WhatsApp thread","‘Same as last month?’ confirm card","Per-member funding panel"],
+        frontstage:["WhatsApp thread","'Same as last month?' confirm card","Per-member funding panel"],
         backstage:["Refill-prediction engine","BRIX auto-dispense","Real-time claims switching","Workflow manager"]
       } : {
         frontstage:["SMS / USSD prompt","In-language confirm","Itemised cash price"],
