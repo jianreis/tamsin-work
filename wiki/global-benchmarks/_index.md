@@ -2,7 +2,7 @@
 type: index
 title: "Global benchmarks — index"
 domain: global-benchmarks
-updated: "2026-06-13"
+updated: "2026-06-17"
 tags: [index, domain/global, region/global]
 status: draft
 ---
@@ -10,7 +10,7 @@ status: draft
 # Global benchmarks — leading pharmacies abroad
 
 Case studies and pattern libraries from the US, UK, EU, India, China, and
-Australia — what the leading prescription ("scripting") / refill / delivery
+Australia. What the leading prescription ("scripting") / refill / delivery
 experiences actually do, the *mechanism* behind each, and what transfers to a
 South African retail pharmacy (anchored on Dis-Chem).
 
@@ -18,12 +18,13 @@ South African retail pharmacy (anchored on Dis-Chem).
 [[wiki/global-benchmarks/patterns-to-borrow-and-cautions|Patterns to borrow & cautions]].
 Headline judgement: **Australia, India and China transfer to SA far better than
 the US/UK/EU**, because they assume mixed funding, cash-paying patients, store
-estates as fulfilment nodes, and pragmatic verification — not a single tax-funded
-payer or an insurance/PBM middle layer.
+estates as fulfilment nodes, and pragmatic verification, rather than a single
+tax-funded payer or an insurance/PBM middle layer.
 
 ## Pages
 
 - [[wiki/global-benchmarks/patterns-to-borrow-and-cautions|🔑 Synthesis — patterns to borrow & cautions]]
+  - [[wiki/global-benchmarks/patterns-deep-dive|↳ 🔬 Deep-dive — the 11 patterns, in detail]] _(per-pattern: problem · how it works · consumer pain · pharmacist pain · SA take-away · visual reference)_
 - [[wiki/global-benchmarks/australia-chemist-warehouse-escript|🇦🇺 Australia — eScript token + Active Script List, MedAdvisor, Chemist Warehouse]] _(best fit for SA)_
 - [[wiki/global-benchmarks/india-pharmeasy-apollo-tata1mg|🇮🇳 India — PharmEasy, Apollo 247, Tata 1mg, Netmeds]]
 - [[wiki/global-benchmarks/china-pingan-alibaba-jdhealth|🇨🇳 China — Ping An Health, Alibaba Health, JD Health & internet hospitals]]

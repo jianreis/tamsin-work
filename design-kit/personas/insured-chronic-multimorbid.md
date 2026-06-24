@@ -12,7 +12,7 @@ grounded_in:
   - "[[wiki/consumer-context/adjacent-digital-expectations]]"
   - "[[wiki/consumer-context/digital-access-and-whatsapp]]"
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Nomvula Khumalo — insured chronic, multimorbid
@@ -30,27 +30,27 @@ updated: "2026-06-13"
   health information fine but resents jargon.
 
 ## Health situation
-- **Multimorbid:** hypertension + **type-2 diabetes** — both on the 26-condition
+- **Multimorbid:** hypertension + **type-2 diabetes** - both on the 26-condition
   Chronic Disease List, so her scheme **must** fund medication, consultations and
   certain tests as PMBs [[wiki/medical-schemes/pmb-cdl-chronic]].
 - On **4–5 concurrent chronic medicines** (incl. metformin and an
   ACE-inhibitor); diabetes meds make her a **high-alert / monitoring** patient.
   Multimorbidity (HTN + DM) is exactly the rising NCD pattern driving repeat
   demand [[wiki/consumer-context/health-seeking-behaviour]].
-- Stable and well-controlled — her need is **continuity**, not diagnosis.
+- Stable and well-controlled - her need is **continuity**, not diagnosis.
 
 ## Devices, channels & connectivity
-- **Smartphone + the Dis-Chem app**, home fibre and uncapped work Wi-Fi — she is
+- **Smartphone + the Dis-Chem app**, home fibre and uncapped work Wi-Fi - she is
   the **app-capable minority**, not data-constrained.
 - Lives on WhatsApp for everything else and would happily refill there
   [[wiki/consumer-context/digital-access-and-whatsapp]].
-- Benchmarks the pharmacy against **Sixty60, Takealot and Discovery's own app** —
+- Benchmarks the pharmacy against **Sixty60, Takealot and Discovery's own app** -
   expects live status, an honest ETA, two-tap reorder
   [[wiki/consumer-context/adjacent-digital-expectations]].
 
 ## Money & funding
 - On a **medical scheme** (open scheme, comprehensive option); chronic meds
-  funded from her **chronic benefit pool**, not savings — *when* registration and
+  funded from her **chronic benefit pool**, not savings - *when* registration and
   formulary line up [[wiki/medical-schemes/pmb-cdl-chronic]].
 - Not price-poor, but **allergic to co-payment surprises**: a non-formulary or
   non-DSP fill can trigger an unexpected co-pay even on a PMB condition
@@ -59,19 +59,19 @@ updated: "2026-06-13"
 
 ## Goals / Jobs-To-Be-Done
 See [[jtbd-library]]. Her dominant jobs:
-- **Keep chronic meds flowing without thinking about it** — repeats handled
+- **Keep chronic meds flowing without thinking about it** - repeats handled
   automatically and reliably, never run out, never re-do admin.
-- **Pay in a way that works for me** — scheme applied automatically, co-pay (if
+- **Pay in a way that works for me** - scheme applied automatically, co-pay (if
   any) shown up front, no counter surprise.
-- **Get it where I am** — delivery to door or a fast collect that fits a workday.
+- **Get it where I am** - delivery to door or a fast collect that fits a workday.
 - Emotional: **feel in control of my health, not processed by a system.**
 
 ## Key pains in the current journey
-- **Co-payment / DSP surprise at funding** — the single biggest trust risk in the
+- **Co-payment / DSP surprise at funding** - the single biggest trust risk in the
   [[as-is-prescription-journey|as-is journey]] (Stage 4); she discovers a co-pay
   only at the till [[wiki/medical-schemes/dsp-formularies-copayments]].
 - **Refill is opt-in, not managed**, and **breaks hard at script expiry (~6
-  months)** — she must re-confirm each cycle and chase a new script
+  months)** - she must re-confirm each cycle and chase a new script
   ([[as-is-prescription-journey]] Stages 8–9).
 - **Chronic stock-outs with no generic on hand** force a wasted trip
   ([[as-is-prescription-journey]] Stages 3, 6).

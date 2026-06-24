@@ -7,12 +7,12 @@ confidence: medium
 tags: [domain/ux, journey/submit, journey/validate, journey/refill, journey/collect, journey/deliver, topic/trust-safety, topic/accessibility]
 sources: [src-ux-pharmacy-app-patterns, src-ux-nng-error-messages, src-ux-east-behavioural-insights, src-ux-implementation-intentions-gollwitzer, src-ux-ahrq-health-literacy-teachback, src-ux-sludge-thaler-sunstein, src-ux-momconnect-ussd-whatsapp, src-ux-wcag-older-users-accessibility, src-ux-text-reminder-adherence-meta, src-ux-jtbd-christensen-ulwick]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Pharmacy UX patterns for the scripting journey
 
-Concrete, reusable interaction patterns for the scripting journey — the building
+Concrete, reusable interaction patterns for the scripting journey, the building
 blocks an agent assembles into a future-state [[journey-mapping-method|journey]]
 and [[service-blueprinting-method|blueprint]]. They apply the method
 ([[jtbd-and-behavioural-design]]), trust-safety
@@ -20,7 +20,7 @@ and [[service-blueprinting-method|blueprint]]. They apply the method
 ([[inclusive-low-bandwidth-design]]) to specific moments. Established pharmacy
 apps (Walgreens/CVS et al.) set baseline expectations consumers already carry
 [[src-ux-pharmacy-app-patterns]]; the SA design must meet or beat them within
-local realities (data cost, scheme claims, scheduling law) — treat the precedent
+local realities (data cost, scheme claims, scheduling law). Treat the precedent
 as Tier-C pattern, not proof.
 
 Every pattern below should work on the **lowest suitable channel** (WhatsApp /
@@ -30,75 +30,75 @@ USSD / SMS), default to **low-data and resumable**, and meet **WCAG AA**
 ## 1. Rx capture (photo / scan / e-token)
 
 How a script enters the system.
-- **Photo capture** — take/upload a photo of the paper script (WhatsApp-native);
+- **Photo capture**: take/upload a photo of the paper script (WhatsApp-native);
   guide framing, auto-detect legibility, and let the user retake. Most inclusive
   for the paper-script reality.
-- **Barcode / Rx-number scan** — for refills, scan the bottle/box barcode or enter
-  the Rx number — the established fast path [[src-ux-pharmacy-app-patterns]].
-- **e-Token / e-prescription** — accept a digital prescription token/reference
-  (future-state; flag `🔮 requires-reform` pending SA e-Rx readiness — see
+- **Barcode / Rx-number scan**: for refills, scan the bottle/box barcode or enter
+  the Rx number, the established fast path [[src-ux-pharmacy-app-patterns]].
+- **e-Token / e-prescription**: accept a digital prescription token/reference
+  (future-state; flag `🔮 requires-reform` pending SA e-Rx readiness, see
   [[wiki/sa-regulatory/_index]] / [[wiki/digital-transformation/_index]]).
 - **Patterns:** confirm what was read back to the user in plain language ("I see
-  Amlodipine 5mg — correct?"); never silently accept an unreadable image; allow
+  Amlodipine 5mg, correct?"); never silently accept an unreadable image; allow
   resume if the connection drops mid-upload.
 
 ## 2. Identity & consent
 
-- **Lightweight, progressive identity** — ask only what the step needs; reuse the
+- **Lightweight, progressive identity**: ask only what the step needs; reuse the
   WhatsApp/phone number as a stable identifier; avoid forcing re-disclosure of a
   sensitive condition repeatedly [[src-ux-ahrq-health-literacy-teachback]].
-- **Explicit, revocable consent** — plain-language statement of *what/why/how
+- **Explicit, revocable consent**: plain-language statement of *what/why/how
   long/who*; **no pre-ticked boxes or dark patterns**
   [[src-ux-sludge-thaler-sunstein]]; anchor to
   [[healthcare-service-design-patterns|POPIA-grade consent]].
-- **Proxy / dependant flows** — let one account manage a family member's or
-  child's scripts with appropriate consent [[src-ux-pharmacy-app-patterns]] — a
+- **Proxy / dependant flows**: let one account manage a family member's or
+  child's scripts with appropriate consent [[src-ux-pharmacy-app-patterns]], a
   core part of the JTBD social dimension [[src-ux-jtbd-christensen-ulwick]].
 
 ## 3. Refill & auto-refill
 
-- **One-tap refill** — for a known chronic script, refill in a single confirmed
+- **One-tap refill**: for a known chronic script, refill in a single confirmed
   action; pre-fill everything known (item, quantity, last fulfilment, channel)
   [[src-ux-pharmacy-app-patterns]] [[src-ux-east-behavioural-insights]].
-- **Auto-refill as a default (opt-out)** — enrol chronic scripts in scheduled
+- **Auto-refill as a default (opt-out)**: enrol chronic scripts in scheduled
   refills timed to supply; defaults are one of the strongest uptake levers
   [[src-ux-east-behavioural-insights]]. Keep it **honest and easy to cancel**
   (the opposite of sludge) [[src-ux-sludge-thaler-sunstein]], and respect consent
   limits ([[healthcare-service-design-patterns]]).
 - **Pickup vs delivery choice** at refill [[src-ux-pharmacy-app-patterns]].
-- **Implementation-intention prompt at enrolment** — "When/where will you take
+- **Implementation-intention prompt at enrolment**: "When/where will you take
   this dose?" to lock in the habit cue [[src-ux-implementation-intentions-gollwitzer]].
 
 ## 4. Funding & price transparency
 
-- **Show cover and co-pay *before* commit** — funded amount, co-payment, and any
+- **Show cover and co-pay *before* commit**: funded amount, co-payment, and any
   cheaper generic, up front; price surprise at the till is a top trust-breaker
   [[src-ux-pharmacy-app-patterns]] ([[healthcare-service-design-patterns]]).
-- **Scheme claim happens backstage** — surface a simple status; never expose raw
-  switch errors to the patient (translate them — see error patterns). Ground the
+- **Scheme claim happens backstage**: surface a simple status; never expose raw
+  switch errors to the patient (translate them; see error patterns). Ground the
   claim mechanics in [[wiki/medical-schemes/_index]].
 
 ## 5. Order status & tracking
 
-- **Proactive, discreet status** — confirm receipt, then notify at *received →
+- **Proactive, discreet status**: confirm receipt, then notify at *received →
   pharmacist-checked → ready/dispatched → delivered*, closing the silent
   backstage gap that drives anxiety (see [[service-blueprinting-method]] worked
   example) [[src-ux-pharmacy-app-patterns]].
-- **Discreet wording** — "Your order is ready," not the condition/medicine name,
+- **Discreet wording**: "Your order is ready," not the condition/medicine name,
   for privacy on shared/lock screens ([[healthcare-service-design-patterns]]).
-- **Channel-appropriate** — push for app users, **SMS for everyone** as the
+- **Channel-appropriate**: push for app users, **SMS for everyone** as the
   universal fallback [[src-ux-momconnect-ussd-whatsapp]].
 
 ## 6. Reminders & adherence nudges
 
-- **Personalised, two-way, sustained reminders** — evidence shows texting ~doubles
+- **Personalised, two-way, sustained reminders**: evidence shows texting ~doubles
   adherence odds; effects are larger when personalised, two-way, and >6 months
   [[src-ux-text-reminder-adherence-meta]]. Use the person's name and *their* med.
-- **Timely** — fire a few days before supply runs out (and payday-aware where
+- **Timely**: fire a few days before supply runs out (and payday-aware where
   relevant) [[src-ux-east-behavioural-insights]].
-- **No shame mechanics** — no streaks/guilt; supportive, dignified tone
+- **No shame mechanics**: no streaks/guilt; supportive, dignified tone
   ([[healthcare-service-design-patterns]]).
-- **Refill-when-low** — connect the reminder directly to the one-tap refill so the
+- **Refill-when-low**: connect the reminder directly to the one-tap refill so the
   prompt and the action are one easy step [[src-ux-east-behavioural-insights]].
 
 ## 7. Graceful error states (the trust make-or-break)
@@ -123,8 +123,8 @@ cover *before* the user commits, and confirm risky/irreversible actions
 ## 8. Dosing & safety information
 
 - **Plain-language dosing** with **pictograms** (sun/moon, with/without food) and
-  **teach-back / Ask Me 3** for critical meds — *what it's for, what to do, why it
-  matters* [[src-ux-ahrq-health-literacy-teachback]].
+  **teach-back / Ask Me 3** for critical meds (*what it's for, what to do, why it
+  matters*) [[src-ux-ahrq-health-literacy-teachback]].
 - **Multilingual** clinical content, comprehension-checked, in the user's language
   ([[inclusive-low-bandwidth-design]]).
 
@@ -144,20 +144,19 @@ cover *before* the user commits, and confirm risky/irreversible actions
 - Make every pattern **low-data, resumable, idempotent, WCAG-AA, multilingual**,
   and runnable on **WhatsApp/USSD/SMS** [[src-ux-momconnect-ussd-whatsapp]]
   [[src-ux-wcag-older-users-accessibility]] ([[inclusive-low-bandwidth-design]]).
-- **Audit for sludge** — strip friction from refill/collect; reserve it for
+- **Audit for sludge**: strip friction from refill/collect; reserve it for
   high-risk actions only [[src-ux-sludge-thaler-sunstein]].
 
 ## Open questions
 - SA **e-prescription / e-token** readiness and legal status for digital Rx
-  capture — see [[wiki/sa-regulatory/_index]] / [[wiki/digital-transformation/_index]];
+  capture: see [[wiki/sa-regulatory/_index]] / [[wiki/digital-transformation/_index]];
   mark `🔮 requires-reform` until confirmed.
-- Real distribution of claim-rejection reasons (for the rejection-state copy) —
+- Real distribution of claim-rejection reasons (for the rejection-state copy):
   see [[wiki/medical-schemes/_index]]; log to [[meta/punchlist]].
-- Which dosing counselling may be delivered digitally vs pharmacist-only (SAPC) —
+- Which dosing counselling may be delivered digitally vs pharmacist-only (SAPC):
   see [[wiki/dispensing-practice/_index]].
 
 ## See also
 - [[journey-mapping-method]] · [[service-blueprinting-method]] ·
   [[jtbd-and-behavioural-design]] · [[healthcare-service-design-patterns]] ·
   [[inclusive-low-bandwidth-design]]
-</content>

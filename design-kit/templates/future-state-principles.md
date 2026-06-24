@@ -4,18 +4,18 @@ title: "Future-state design principles — SA pharmacy scripting"
 status: draft
 tags: [design-kit, template, domain/ux, domain/consumer]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Future-state design principles — SA pharmacy scripting
 
 The design constitution for the future-state experience. Every blueprint,
-journey and concept should be checkable against these. **Draft** — the synthesis
+journey and concept should be checkable against these. **Draft** - the synthesis
 pass will attach evidence (`[[src-…]]`, wiki links) to each principle and may add
 or sharpen them once the research domains land.
 
 > Tagline: **Futuristic, but legal and operable.** Ambition constrained by SA
-> reality and pharmacy law — not science fiction.
+> reality and pharmacy law - not science fiction.
 
 ## 1. Meet people on the channel they already have
 WhatsApp- and USSD-capable first; app as an enhancement, never a gate. Assume
@@ -32,7 +32,7 @@ Show price before commitment (SEP + dispensing fee), apply scheme benefits
 automatically, surface co-pays *before* the till, and never spring a cost shock.
 (grounds: [[wiki/sa-regulatory/sep-dispensing-fee]], [[wiki/medical-schemes/realtime-claims-switching]])
 
-## 4. The pharmacist is the trust anchor — keep them visible
+## 4. The pharmacist is the trust anchor - keep them visible
 Automation handles the bookkeeping; the pharmacist's clinical judgement and human
 contact remain front-and-centre and easy to reach. Never hide the human.
 (grounds: [[wiki/dispensing-practice/clinical-checks-and-mtm]])
@@ -43,7 +43,7 @@ on the way). Treat the silent wait and the unexplained rejection as primary pain
 
 ## 6. Safety and legality are invisible, not absent
 Valid-prescription checks, scheduling rules, clinical review and POPIA consent
-happen reliably behind the line of visibility — felt as reassurance, not friction.
+happen reliably behind the line of visibility - felt as reassurance, not friction.
 (grounds: [[wiki/sa-regulatory/_index]])
 
 ## 7. Chronic care should run itself
@@ -52,7 +52,7 @@ adherence-friendly packaging; the best refill is the one the customer didn't hav
 to think about. (grounds: [[wiki/dispensing-practice/adherence-packaging]], [[wiki/medical-schemes/courier-chronic-pharmacy-models]])
 
 ## 8. Fulfilment must fit SA's last mile
-Offer collection, pickup-points/lockers, and delivery — and design for places
+Offer collection, pickup-points/lockers, and delivery - and design for places
 without street addresses, for load-shedding, and for cold-chain integrity.
 (grounds: [[wiki/consumer-context/last-mile-addressing-logistics]])
 
@@ -71,7 +71,7 @@ Many South Africans collect/manage meds for others. Support multi-profile,
 delegated authority, and proxy collection explicitly and safely.
 
 ## 12. Design for graceful failure
-Out-of-stock, claim rejected, script invalid, delivery failed, power out — these
+Out-of-stock, claim rejected, script invalid, delivery failed, power out - these
 *will* happen. The experience is judged on how well it recovers, with a clear
 human fallback. (grounds: [[wiki/ux-service-design/pharmacy-ux-patterns]])
 

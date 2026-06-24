@@ -8,7 +8,7 @@ confidence: medium
 tags: [domain/dischem, journey/submit, journey/validate, journey/pay, journey/dispense, journey/collect, journey/deliver, journey/adhere, journey/refill, topic/chronic, region/za]
 sources: [src-dc-dispensary-services, src-dc-packmymeds, src-dc-deliverd, src-dc-app-reviews, src-dc-hellopeter-complaints, src-sa-scheme-chronic-dsp, src-clicks-direct-medicines]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # As-is prescription journey — current state (Dis-Chem, South Africa)
@@ -19,22 +19,22 @@ updated: "2026-06-13"
 > app/web, WhatsApp and courier channels. It is the grounding artefact for
 > future-state ("to-be") work per [[CLAUDE]] §8. Synthesis + evidence live in
 > [[wiki/dischem/dischem-rx-current-journey]]. Some pains rest on **D-tier**
-> consumer signals ([[src-dc-app-reviews]], [[src-dc-hellopeter-complaints]]) —
+> consumer signals ([[src-dc-app-reviews]], [[src-dc-hellopeter-complaints]]),
 > flagged inline and to be triangulated. Fees/timelines are date-stamped.
 
 ## Lanes (legend)
-- **Customer actions** — what the person does.
-- **Channels/touchpoints** — where it happens.
-- **Frontstage** — visible Dis-Chem people/interfaces.
-- **Backstage** — invisible processes/systems/partners.
-- **Pains** — friction & failure modes (with evidence).
-- **Emotion** — the felt experience (😊 positive · 😐 neutral · 😣 negative).
+- **Customer actions** - what the person does.
+- **Channels/touchpoints** - where it happens.
+- **Frontstage** - visible Dis-Chem people/interfaces.
+- **Backstage** - invisible processes/systems/partners.
+- **Pains** - friction & failure modes (with evidence).
+- **Emotion** - the felt experience (😊 positive · 😐 neutral · 😣 negative).
 
 ---
 
 ## Stage 1 — Prescribe
 - **Customer actions:** See a GP/specialist/clinic or a telehealth prescriber;
-  receive a script (usually paper; sometimes a photo or e-script).
+  receive a script (usually paper, sometimes a photo or e-script).
 - **Channels/touchpoints:** Doctor's room, hospital, clinic, **Kena Health**
   telehealth app, Dis-Chem in-store clinic/nurse.
 - **Frontstage:** Prescriber; (in Dis-Chem ecosystem) clinic nurse / Kena
@@ -46,7 +46,7 @@ updated: "2026-06-13"
 - **Emotion:** 😐 → 😣 (unwell, anxious about cost/availability).
 
 ## Stage 2 — Submit
-- **Customer actions:** Get the script to Dis-Chem — hand it in, photograph &
+- **Customer actions:** Get the script to Dis-Chem - hand it in, photograph &
   upload, SMS/email it, or (chronic) order via WhatsApp.
 - **Channels/touchpoints:** **In-store dispensary**; **Dis-Chem app**;
   **dischem.co.za**; **SMS/email**; **WhatsApp ("Hi" → 0860 347 243)**
@@ -66,11 +66,11 @@ updated: "2026-06-13"
 - **Channels/touchpoints:** Dispensary counter; phone/WhatsApp follow-up.
 - **Frontstage:** Pharmacist counselling/queries.
 - **Backstage:** Legality & **scheduling** checks (valid prescriber, in-date,
-  schedule, **repeats remaining — up to 6 months for S2–S4**
+  schedule, **repeats remaining - up to 6 months for S2–S4**
   [[src-dc-dispensary-services]]); interaction screening; generic-substitution
   decision; **stock check**; **chronic-condition registration** check with the
   scheme [[src-sa-scheme-chronic-dsp]].
-- **Pains:** Hidden delays — missing info, **unregistered chronic condition**
+- **Pains:** Hidden delays - missing info, **unregistered chronic condition**
   (claim will reject), **stock-out discovered here** [[src-dc-hellopeter-complaints]].
 - **Emotion:** 😐 → 😣 (opaque waiting; "is it ready yet?").
 
@@ -81,7 +81,7 @@ updated: "2026-06-13"
   (for auth).
 - **Frontstage:** Cashier/pharmacist explaining cover vs co-pay.
 - **Backstage:** **Real-time electronic claim switching** to the scheme; PMB/CDL
-  rules; **DSP / network-pharmacy** logic — if Dis-Chem isn't the scheme's
+  rules; **DSP / network-pharmacy** logic - if Dis-Chem isn't the scheme's
   chronic DSP, a **co-payment** applies; member may be locked to one pharmacy for
   6 months [[src-sa-scheme-chronic-dsp]].
 - **Pains:** **Co-payment surprise**; claim rejections; auth delays; pressure to
@@ -106,8 +106,8 @@ updated: "2026-06-13"
 - **Backstage:** Pick/label/check; **PackMyMeds pre-pack at nearest store**
   [[src-dc-packmymeds]]; QA check.
 - **Pains:** **Stock-outs with no generic on hand** [[src-dc-hellopeter-complaints]];
-  **labelling/selection errors** (e.g. wrong product under a correct label —
-  safety-critical) [[src-dc-hellopeter-complaints]] *(D-tier — triangulate)*.
+  **labelling/selection errors** (e.g. wrong product under a correct label,
+  safety-critical) [[src-dc-hellopeter-complaints]] *(D-tier - triangulate)*.
 - **Emotion:** 😊 (handover/advice) but 😣 if wrong/short.
 
 ## Stage 7 — Collect / Deliver
@@ -141,8 +141,8 @@ updated: "2026-06-13"
 - **Channels/touchpoints:** WhatsApp/SMS/app → back to Submit→…→Collect/Deliver.
 - **Frontstage:** Reorder link; dispensary.
 - **Backstage:** Repeat decrement; when repeats are exhausted, **hand-off back to
-  the prescriber** (Stage 1) — no orchestration across that gap.
-- **Pains:** **Opt-in, not managed** — customer effort each cycle
+  the prescriber** (Stage 1), with no orchestration across that gap.
+- **Pains:** **Opt-in, not managed**, customer effort each cycle
   [[src-dc-packmymeds]]; **hard break at script expiry** (high drop-off /
   adherence-gap risk); re-registration friction with the scheme.
 - **Emotion:** 😐 → 😣 (chore; risk of lapse).
@@ -150,13 +150,13 @@ updated: "2026-06-13"
 ---
 
 ## Top as-is pains (ranked for design)
-1. **Fulfilment integrity** — wrong/missing items, last-minute cancellations,
+1. **Fulfilment integrity** - wrong/missing items, last-minute cancellations,
    dispensing errors (Stages 6–7) [[src-dc-app-reviews]]
    [[src-dc-hellopeter-complaints]].
 2. **Chronic-med stock-outs** with no generic alternative (Stages 3, 6)
    [[src-dc-hellopeter-complaints]].
 3. **Co-payment / DSP surprises** at funding (Stage 4) [[src-sa-scheme-chronic-dsp]].
-4. **App reliability** — login, payment, search, crashes (Stages 2, 5)
+4. **App reliability** - login, payment, search, crashes (Stages 2, 5)
    [[src-dc-app-reviews]].
 5. **Refill is opt-in, not managed**, and **breaks at script expiry**
    (Stages 8–9) [[src-dc-packmymeds]].

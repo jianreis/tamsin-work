@@ -2,16 +2,16 @@
 type: index
 title: "Digital transformation — index"
 domain: digital-transformation
-updated: "2026-06-14"
+updated: "2026-06-17"
 tags: [index, domain/digital]
 status: draft
 ---
 
 # Digital transformation in pharmacy
 
-The technology that enables a future-state scripting experience — covering global
+The technology that enables a future-state scripting experience, covering global
 state of the art with SA applicability and constraints throughout. Each page ends
-with `## Design implications` and `## Open questions`; uncertainty is marked
+with `## Design implications` and `## Open questions`. Uncertainty is marked
 `⚠️ UNVERIFIED` and anything needing regulatory change `🔮 requires-reform`.
 
 ## Pages
@@ -35,11 +35,11 @@ with `## Design implications` and `## Open questions`; uncertainty is marked
   sensors, electronic monitoring, refill prediction, digital therapeutics;
   adherence-outcome evidence (proven but modest/conditional).
 - [[dischem-scripting-tech-roadmap]] — **Dis-Chem's own roadmapped scripting tech**
-  ("Script Re-imagined — Virtual Order Operational Flow"): AI capture/standardise/
+  ("Script Re-imagined - Virtual Order Operational Flow"): AI capture/standardise/
   route, single virtual queue, BRIX auto-dispense, the **ROWA** picker robot,
   automated retrieval, QR-scan counter handover, VC consolidation + driver delivery
   (PICCUP), Dashboard as the E2E workflow manager. 24-capability table mapped to the
-  journey spine + pillars — the technology layer the future-state journey integrates.
+  journey spine + pillars - the technology layer the future-state journey integrates.
 
 ## Sources
 14 source notes prefixed `src-dig-` in [[sources/_sources-index|sources]] (HL7,

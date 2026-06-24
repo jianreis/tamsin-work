@@ -9,3 +9,7 @@
 Thumbs.db
 *.tmp
 .gstack/
+
+# Python bytecode (deck build scripts)
+__pycache__/
+*.pyc

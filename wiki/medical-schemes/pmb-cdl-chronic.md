@@ -7,7 +7,7 @@ confidence: high
 tags: [domain/schemes, topic/chronic, region/za, journey/fund, journey/validate]
 sources: [src-sch-cms-pmb-resource, src-sch-cms-industry-report-2024, src-sch-dsp-formulary-copay]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # PMBs, the CDL & chronic registration
@@ -21,17 +21,17 @@ and what the member must do first.**
 
 ## The three PMB categories
 
-1. **Emergency medical conditions** — must be funded.
-2. **~270 Diagnosis Treatment Pairs (DTPs)** — a defined condition paired with a
+1. **Emergency medical conditions** - must be funded.
+2. **~270 Diagnosis Treatment Pairs (DTPs)** - a defined condition paired with a
    defined treatment (~271 conditions cited) [[src-sch-cms-pmb-resource]].
-3. **Chronic Disease List (CDL) — 26 chronic conditions** for which schemes must
+3. **Chronic Disease List (CDL) - 26 chronic conditions** for which schemes must
    fund **medication + relevant consultations + certain tests**
    [[src-sch-cms-pmb-resource]].
 
 The CDL includes **hypertension, diabetes mellitus type 1 & 2, asthma, COPD,
 epilepsy, chronic renal disease, coronary artery disease, glaucoma,
 hypothyroidism, HIV/AIDS** and others [[src-sch-cms-pmb-resource]]. (HIV is
-funded as a PMB — material given SA's HIV burden and the CCMDD link in
+funded as a PMB, material given SA's HIV burden and the CCMDD link in
 [[courier-chronic-pharmacy-models]].)
 
 ## How a member gets chronic cover funded
@@ -44,21 +44,21 @@ PMB cover is **automatic for every member**, but each chronic condition must be
    scheme** to register the condition (often via a "Chronic Illness Benefit
    Application" / "out-of-hospital PMB" form).
 2. Scheme checks the condition is a defined PMB AND the prescribed treatment
-   matches the **defined benefit** — the **treatment algorithm** (published per
+   matches the **defined benefit** - the **treatment algorithm** (published per
    CDL condition in the Government Gazette) and the scheme **formulary**
    [[src-sch-cms-pmb-resource]] (see [[dsp-formularies-copayments]]).
 3. Once approved/registered, repeat scripts are funded from the **chronic
-   benefit** (not the day-to-day savings pot) — a different, usually richer pool.
+   benefit** (not the day-to-day savings pot) - a different, usually richer pool.
 
 Until registration is complete, a chronic script may fail to fund or hit the
-member's savings/acute benefit — a common, frustrating failure mode.
+member's savings/acute benefit, a common, frustrating failure mode.
 
 ## The funding subtlety
 
 PMB does **not** mean "anything goes". Schemes may steer to a **formulary** and a
 **DSP** ([[dsp-formularies-copayments]]); if the member uses a non-formulary
 medicine or a non-DSP voluntarily, a **co-payment** can apply even for a PMB
-condition — provided the scheme offers an adequate funded option. Knowing the
+condition, provided the scheme offers an adequate funded option. Knowing the
 condition is "PMB" is necessary but not sufficient for full funding.
 
 ## Design implications
@@ -67,10 +67,10 @@ condition is "PMB" is necessary but not sufficient for full funding.
   law lets the **pharmacy** register a chronic condition. A future scripting
   experience can **detect a likely-CDL chronic script and offer to initiate
   registration** in-flow (with consent), converting a silent rejection into a
-  guided action — a high-value moment.
+  guided action, a high-value moment.
 - **Surface PMB/chronic status to the member in plain language.** Most members
   don't know the CDL exists or that registration is required. The UI should
-  explain *"this looks like a chronic condition your scheme must cover — let's
+  explain *"this looks like a chronic condition your scheme must cover - let's
   register it so it's funded from your chronic benefit, not your savings."*
 - **Match to algorithm + formulary up front.** Pre-check the prescribed
   medicine against the CDL algorithm and scheme formulary so the member learns

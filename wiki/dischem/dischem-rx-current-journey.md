@@ -7,7 +7,7 @@ confidence: medium
 tags: [domain/dischem, journey/submit, journey/validate, journey/pay, journey/dispense, journey/collect, journey/deliver, journey/refill, topic/chronic, topic/acute, region/za]
 sources: [src-dc-dispensary-services, src-dc-packmymeds, src-dc-deliverd, src-dc-app-reviews, src-dc-hellopeter-complaints, src-sa-scheme-chronic-dsp, src-clicks-direct-medicines]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Dis-Chem — current prescription journey (as-is)
@@ -54,11 +54,11 @@ For **scheme members**, this is the make-or-break step
 - The dispensary submits a **real-time claim** to the scheme (electronic
   switching) and learns on the spot what is **covered vs co-payable**.
 - If Dis-Chem is **not the scheme's DSP / network pharmacy** for chronic meds, a
-  **co-payment** applies — a frequent, poorly-anticipated surprise that pushes
+  **co-payment** applies - a frequent, poorly-anticipated surprise that pushes
   chronic patients toward courier pharmacies (Clicks Direct, Pharmacy Direct,
   Medipost, or **Dis-Chem Direct**) [[src-clicks-direct-medicines]].
 - Members can usually pick one chronic pharmacy within ~10km and must **stay 6
-  months** [[src-sa-scheme-chronic-dsp]] — a lock-in that shapes channel choice.
+  months** [[src-sa-scheme-chronic-dsp]] - a lock-in that shapes channel choice.
 
 For **cash** customers, this collapses into a price quote at the till.
 
@@ -72,7 +72,7 @@ The pharmacist **dispenses, labels, and counsels**. For chronic repeats via
 PackMyMeds, meds are **pre-packed at the nearest store** ahead of pickup
 [[src-dc-packmymeds]]. Risks here are operational: **stock-outs** (incl. no
 generic alternative) and **labelling/selection errors** are documented in
-consumer complaints — e.g. a wrong product dispensed under a correct-drug label
+consumer complaints - e.g. a wrong product dispensed under a correct-drug label
 [[src-dc-hellopeter-complaints]]. (Anecdotal D-tier, but a recurring theme.)
 
 ## 7. Collect / Deliver
@@ -82,7 +82,7 @@ consumer complaints — e.g. a wrong product dispensed under a correct-drug labe
   metros within ~10km (R35, 2021-dated) [[src-dc-deliverd]]; chronic at distance
   via **Dis-Chem Direct** courier pharmacy [[src-dc-dispensary-services]].
 
-Friction: delivery **reliability** is a top complaint — orders **cancelled
+Friction: delivery **reliability** is a top complaint - orders **cancelled
 minutes before delivery**, **missing/wrong items** on arrival
 [[src-dc-app-reviews]] [[src-dc-hellopeter-complaints]].
 
@@ -90,31 +90,31 @@ minutes before delivery**, **missing/wrong items** on arrival
 Between fills, the customer is expected to **take the medicine and not run out**.
 Dis-Chem's adherence lever is **PackMyMeds reminders** (SMS/WhatsApp when a
 repeat is due) [[src-dc-packmymeds]]. This is **reactive/opt-in** rather than a
-fully managed refill — the patient must still confirm each cycle.
+fully managed refill - the patient must still confirm each cycle.
 
 ## 9. Refill
 At repeat time, the customer taps the **SMS/WhatsApp link** (PackMyMeds) or
 re-orders in the app; the cycle returns to **Validate → Fund → Dispense →
 Collect/Deliver** [[src-dc-packmymeds]]. When repeats run out (after ~6 months),
-the customer must obtain a **new script** — re-entering at **Prescribe** — a
+the customer must obtain a **new script**, re-entering at **Prescribe** - a
 hard hand-off point with high drop-off risk.
 
 ## As-is pain points (evidence-backed)
-1. **Stock-outs of chronic meds with no generic on hand** — patients left without
+1. **Stock-outs of chronic meds with no generic on hand** - patients left without
    essential medicine [[src-dc-hellopeter-complaints]].
-2. **Delivery unreliability** — late, cancelled, missing or wrong items
+2. **Delivery unreliability** - late, cancelled, missing or wrong items
    [[src-dc-app-reviews]] [[src-dc-hellopeter-complaints]].
-3. **Dispensing/labelling errors** — safety-critical
+3. **Dispensing/labelling errors** - safety-critical
    [[src-dc-hellopeter-complaints]].
-4. **App reliability** — login blocks, payment failures, weak search, crashes
+4. **App reliability** - login blocks, payment failures, weak search, crashes
    [[src-dc-app-reviews]].
 5. **Co-payment surprises** at the funding step for non-DSP chronic scripts
    [[src-sa-scheme-chronic-dsp]].
-6. **Manual script handling** — photo upload still re-keyed by a pharmacist;
+6. **Manual script handling** - photo upload still re-keyed by a pharmacist;
    no clear structured/e-script capture.
-7. **Refill is opt-in, not managed** — adherence relies on the patient
+7. **Refill is opt-in, not managed** - adherence relies on the patient
    re-confirming each cycle [[src-dc-packmymeds]].
-8. **New-script hand-off** — when repeats expire, the journey breaks back out to
+8. **New-script hand-off** - when repeats expire, the journey breaks back out to
    the prescriber with no orchestration.
 
 ## Open questions
@@ -123,7 +123,7 @@ hard hand-off point with high drop-off risk.
   source).
 - ⚠️ Whether **DeliverD/courier carry Rx** routinely or mostly front-shop OTC.
 - ⚠️ Cold-chain / scheduled-medicine handling in delivery channels.
-- Pain points 1–3 rest on **D-tier anecdotes** — triangulate with B-tier audit /
+- Pain points 1–3 rest on **D-tier anecdotes** - triangulate with B-tier audit /
   scheme complaint data before treating as quantified.
 
 ## See also

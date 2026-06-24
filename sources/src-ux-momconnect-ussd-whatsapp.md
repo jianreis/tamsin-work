@@ -45,4 +45,3 @@ population — feature-phone and smartphone alike — for a scripting service.
 # Used in
 - [[wiki/ux-service-design/inclusive-low-bandwidth-design]]
 - [[wiki/ux-service-design/pharmacy-ux-patterns]]
-</content>

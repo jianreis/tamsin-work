@@ -2,19 +2,19 @@
 type: index
 title: "SA regulatory — index"
 domain: sa-regulatory
-updated: "2026-06-13"
+updated: "2026-06-17"
 tags: [index, domain/regulatory]
 status: draft
 ---
 
 # South African pharmacy regulation
 
-The **regulatory ground truth** — the non-negotiable legal constraints any
+The **regulatory ground truth** - the non-negotiable legal constraints any
 future-state scripting design must respect. Covers the Medicines Act & scheduling,
 SAHPRA, SAPC/Pharmacy Act & Good Pharmacy Practice, prescription validity & repeats,
 generic substitution, SEP & dispensing fees, e-prescriptions/telehealth/POPIA, and
 courier/online pharmacy rules. Each page ends with **Design implications /
-constraints**; items needing law/rule change are flagged 🔮 requires-reform.
+constraints**, and items needing law/rule change are flagged 🔮 requires-reform.
 
 > Sourcing note (2026-06-13): regulator/legislation PDFs (SAHPRA, SAFLII, gov.za,
 > faolex, PMC) returned HTTP 403 to the fetch tool this session. Claims are
@@ -45,11 +45,11 @@ constraints**; items needing law/rule change are flagged 🔮 requires-reform.
 2. A **registered pharmacist** must validate and (directly supervise) dispensing of
    S2+; **counselling is mandatory** (GPP).
 3. The legal seller of scheduled medicines is always a **DoH-licensed, SAPC-recorded
-   pharmacy** — an app is only a channel.
+   pharmacy** - an app is only a channel.
 4. **S6 = no repeats, 30-day cap, register**; S2–S5 repeats ≤ 6 months (S4 needs a
    stated repeat count).
 5. A true paperless e-script needs an **ECTA Advanced Electronic Signature**;
    telehealth-originated scripts are now allowed (HPCSA, post-COVID).
-6. **Medicine price is fixed (SEP)** — no discounting; compete on service. Pricing
+6. **Medicine price is fixed (SEP)** - no discounting; compete on service. Pricing
    can be shown transparently (SEP + dispensing fee + VAT).
 7. **POPIA** governs all prescription/health data as "special personal information".

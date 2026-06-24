@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blueprint Kit — interactive service-blueprint engine (reference)</title>
+<title>Blueprint Kit - interactive service-blueprint engine (reference)</title>
 <style>
 :root{
   --bg:#ffffff; --ink:#18181b; --muted:#52525b; --line:#d4d4d8; --panel:#f4f4f5;
@@ -198,7 +198,7 @@ footer{margin-top:calc(var(--sp)*4); border-top:1px solid var(--line); padding-t
 
   <header>
     <div class="ribbon" role="note">
-      <span>⚠ Concept for review — not an official Dis-Chem artefact</span>
+      <span>⚠ Concept for review - not an official Dis-Chem artefact</span>
     </div>
     <h1 id="doc-title">Blueprint Kit</h1>
     <p class="sub" id="doc-sub">Reference implementation of the interactive service-blueprint engine</p>
@@ -216,14 +216,14 @@ footer{margin-top:calc(var(--sp)*4); border-top:1px solid var(--line); padding-t
 
 <script>
 /* =============================================================================
-   BLUEPRINT KIT — interactive engine (dependency-free vanilla JS)
+   BLUEPRINT KIT - interactive engine (dependency-free vanilla JS)
    The engine reads ONLY from the DATA object defined below.
    To make a new deliverable: copy this file, then change ONLY the DATA object
    between the REPLACE markers. Do not edit the engine unless fixing the engine.
    ============================================================================ */
 
-/* ===== REPLACE DATA BELOW — content agents swap this object ===================
-   DELIVERABLE #4 — ASPIRATIONAL / FUTURE-PROOFED ("to-be", variant "aspirational")
+/* ===== REPLACE DATA BELOW - content agents swap this object ===================
+   DELIVERABLE #4 - ASPIRATIONAL / FUTURE-PROOFED ("to-be", variant "aspirational")
    Dis-Chem scripting pushed to GLOBAL BEST PRACTICE, untethered to current SA tech
    and regulatory limits. Both economies are first-class; the aspirational state
    especially lifts the cash/uninsured majority (and anticipates NHI scenarios).
@@ -236,23 +236,24 @@ footer{margin-top:calc(var(--sp)*4); border-top:1px solid var(--line); padding-t
    =========================================================================== */
 const DATA = {
   meta:{
-    title:"Dis-Chem Scripting — Aspirational / Future-Proofed (To-Be)",
-    subtitle:"Global best-practice dual-economy service blueprint + journey — national e-script token rails, agentic refill, full FHIR interoperability, central-fill + locker release, an AI clinical co-pilot under pharmacist sign-off. Toggle compare to see the leap from today.",
+    title:"Dis-Chem Scripting - Aspirational / Future-Proofed (To-Be)",
+    subtitle:"Global best-practice dual-economy service blueprint + journey - national e-script token rails, agentic refill, full FHIR interoperability, central-fill + locker release, an AI clinical co-pilot under pharmacist sign-off. Toggle compare to see the leap from today.",
     state:"to-be",            // "as-is" | "to-be"
     variant:"aspirational",   // null | "close-the-gap" | "aspirational"
     updated:"2026-06-13"
   },
 
-  // Canonical pillars — verbatim from deliverables/_shared/pillars.md (report agent owns).
+  // Canonical pillars - verbatim from deliverables/_shared/pillars.md (report agent owns).
   pillars:[
     {id:"S1", type:"strategic", name:"Serve both economies on one spine", oneLiner:"Insured (~16%) and cash (~84%) are different journeys sharing one spine; the cash majority is never a degraded afterthought."},
     {id:"S2", type:"strategic", name:"Pharmacy as the health front door", oneLiner:"Scripting is the entry to an ongoing care relationship, not a one-off transaction; the store+clinic estate is a strategic asset."},
     {id:"S3", type:"strategic", name:"Compete on service, not price", oneLiner:"SEP + capped dispensing fee fix the price; the durable differentiator is the experience around the drug."},
     {id:"S4", type:"strategic", name:"Chronic-medicine flywheel = retention engine", oneLiner:"Proactive managed chronic repeats are the recurring relationship that compounds loyalty and adherence."},
     {id:"S5", type:"strategic", name:"Pharmacist at top-of-licence; automate the toil", oneLiner:"Automation/central-fill/telepharmacy absorb mechanics so pharmacists do the clinical, trust-building work."},
+    {id:"S6", type:"strategic", name:"From prescription fulfilment to treatment orchestration", oneLiner:"Today the patient coordinates across prescriber, pharmacy, scheme, stock and delivery; absorb that coordination into one system - from dispensing a script to orchestrating the whole treatment journey."},
     {id:"U1", type:"ux", name:"Channel ladder: WhatsApp-first & data-frugal", oneLiner:"WhatsApp/USSD/SMS first, app as enhancement; low-data, async, resumable, idempotent by default."},
     {id:"U2", type:"ux", name:"Never leave them guessing", oneLiner:"Honest real-time status at every step; the silent wait and unexplained rejection are the primary pains."},
-    {id:"U3", type:"ux", name:"Make money legible, early, always", oneLiner:"Price + cover + co-pay shown before the till; cash/EFT/wallet supported; never a cost shock."},
+    {id:"U3", type:"ux", name:"Give me all the variables upfront", oneLiner:"Surface everything that materially affects the decision before commitment - cost, cover, stock, timing/ETA, alternatives; never spring a surprise (money is the sharpest case, not the whole of it)."},
     {id:"U4", type:"ux", name:"Design for graceful failure", oneLiner:"Plain-language recovery, never a dead end, always a route to a pharmacist."},
     {id:"U5", type:"ux", name:"Dignity, privacy & language by default", oneLiner:"Stigma-aware, discreet, multilingual, POPIA-grade consent; caregivers/proxies are first-class users."},
     {id:"U6", type:"ux", name:"Reduce the journey, don't just digitise it", oneLiner:"Eliminate steps and re-keying; one profile across channels; measure friction removed, not features shipped."},
@@ -260,26 +261,26 @@ const DATA = {
   ],
 
   economies:[
-    {id:"insured", label:"Insured — Nomvula", personaRef:"design-kit/personas/insured-chronic-multimorbid"},
-    {id:"cash",    label:"Cash/uninsured — Sipho", personaRef:"design-kit/personas/low-data-whatsapp-first-peri-urban"}
+    {id:"insured", label:"Insured - Nomvula", personaRef:"design-kit/personas/insured-chronic-multimorbid"},
+    {id:"cash",    label:"Cash/uninsured - Sipho", personaRef:"design-kit/personas/low-data-whatsapp-first-peri-urban"}
   ],
 
   stages:[
     /* ---- 1. PRESCRIBE  (🔮 teleconsult→e-script loop + national rail) ----- */
     {
-      id:"prescribe", name:"Prescribe", goal:"Originate a valid, fully-digital prescription — at the moment and channel that suits the patient.",
+      id:"prescribe", name:"Prescribe", goal:"Originate a valid, fully-digital prescription - at the moment and channel that suits the patient.",
       byEconomy:{
         insured:{
           emotion:5,
-          customerActions:["Book an in-app teleconsult or see her doctor; the script is signed digitally on the spot","Nothing to carry — the e-script lands in her trusted profile instantly"],
+          customerActions:["Book an in-app teleconsult or see her doctor; the script is signed digitally on the spot","Nothing to carry - the e-script lands in her trusted profile instantly"],
           thoughts:"My doctor signed it, and it's already on my phone before I leave the call.",
           touchpoints:["In-app teleconsult (Kena / Dis-Chem clinic)","GP / specialist with e-prescribing","One trusted patient profile (app / WhatsApp)"],
           frontstage:["Prescriber (in-person or video)","Dis-Chem clinic / telepharmacy clinician"],
           backstage:["Prescriber signs with an ECTA Advanced Electronic Signature","E-script published to a national/federated e-script exchange as a FHIR MedicationRequest","Issued as a portable, repeat-aware e-script token bound to her identity & consent"],
           support:["National/federated e-script exchange (FHIR)","Trusted-identity & consent service (EMPI on SA ID)","Dis-Chem clinical record"],
           partners:["GP / specialist","Kena Health","NHI / national e-Rx exchange operator"],
-          regulatory:["Telehealth-originated scripts permitted (HPCSA); AES gives a true paperless script — wiki/sa-regulatory/e-prescription-telehealth-popia"],
-          pains:[{text:"Residual: a prescriber not yet on the exchange still issues outside it — bridged by token capture, never a dead end", cite:"wiki/digital-transformation/e-prescribing-systems-and-standards"}],
+          regulatory:["Telehealth-originated scripts permitted (HPCSA); AES gives a true paperless script - wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          pains:[{text:"Residual: a prescriber not yet on the exchange still issues outside it - bridged by token capture, never a dead end", cite:"wiki/digital-transformation/e-prescribing-systems-and-standards"}],
           opportunities:[
             {text:"Teleconsult→e-script→fulfilment as one unbroken loop inside the Dis-Chem ecosystem (China internet-hospital pattern, scoped to follow-up/chronic)", pillars:["S2","U6"], cite:"wiki/global-benchmarks/china-pingan-alibaba-jdhealth"},
             {text:"Issue the script as a national e-script token the patient owns and can present at any node", pillars:["U6","S3"], cite:"wiki/concepts/e-prescription-token"}
@@ -287,48 +288,48 @@ const DATA = {
           metrics:["% scripts originated fully-digital (AES)","Teleconsult→fulfilment loop completion"],
           flags:["reform"],
           asIsBaseline:"Today she sees a GP/specialist (or Kena telehealth) and usually receives a paper script she must physically carry; there is no national e-script exchange and no digital hand-off to the pharmacy.",
-          gaps:["🔮 requires-reform: a national/federated FHIR e-script exchange + AES at scale does not yet exist in SA — wiki/digital-transformation/interoperability-identity-records"],
+          gaps:["🔮 requires-reform: a national/federated FHIR e-script exchange + AES at scale does not yet exist in SA - wiki/digital-transformation/interoperability-identity-records"],
           citations:[{label:"E-prescription token", ref:"wiki/concepts/e-prescription-token"},{label:"E-prescribing standards", ref:"wiki/digital-transformation/e-prescribing-systems-and-standards"},{label:"China loop", ref:"wiki/global-benchmarks/china-pingan-alibaba-jdhealth"},{label:"E-Rx / telehealth / POPIA", ref:"wiki/sa-regulatory/e-prescription-telehealth-popia"}]
         },
         cash:{
           emotion:5,
-          customerActions:["Opens a WhatsApp teleconsult or visits a clinic; the script is signed digitally and sent to him as a token","No app, no data-heavy download — a light token + a backstop list he never has to manage"],
-          thoughts:"I got my script over WhatsApp and it works at any pharmacy — even the one near home.",
+          customerActions:["Opens a WhatsApp teleconsult or visits a clinic; the script is signed digitally and sent to him as a token","No app, no data-heavy download - a light token + a backstop list he never has to manage"],
+          thoughts:"I got my script over WhatsApp and it works at any pharmacy - even the one near home.",
           touchpoints:["WhatsApp / USSD teleconsult","Public clinic / CCMDD on the same national rail","SMS e-script token"],
           frontstage:["Prescriber (clinic or low-bandwidth video/voice)","Telepharmacy clinician"],
           backstage:["AES-signed e-script published to the national/federated exchange","Token delivered by SMS/WhatsApp; an Active-Script-List backstop so a lost SMS never blocks care","Public (CCMDD) and private rails interoperate"],
           support:["National/federated e-script exchange (FHIR)","Trusted-identity & consent service","SMS/USSD gateway"],
           partners:["Public clinic / NDoH / CCMDD","NHI / national e-Rx exchange operator"],
-          regulatory:["Telehealth-originated scripts permitted; POPIA consent in-language by default — wiki/sa-regulatory/e-prescription-telehealth-popia"],
-          pains:[{text:"Residual: low-connectivity moments — handled by USSD/printed-QR fallback and async resume, never a failed step", cite:"wiki/consumer-context/digital-access-and-whatsapp"}],
+          regulatory:["Telehealth-originated scripts permitted; POPIA consent in-language by default - wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          pains:[{text:"Residual: low-connectivity moments - handled by USSD/printed-QR fallback and async resume, never a failed step", cite:"wiki/consumer-context/digital-access-and-whatsapp"}],
           opportunities:[
-            {text:"Put the uninsured majority on the SAME national e-script rail as the insured — one spine, no second-class path", pillars:["S1","U1"], cite:"wiki/concepts/e-prescription-token"},
+            {text:"Put the uninsured majority on the SAME national e-script rail as the insured - one spine, no second-class path", pillars:["S1","U1"], cite:"wiki/concepts/e-prescription-token"},
             {text:"Anticipate NHI as a national interoperability backbone the cash patient is first to benefit from", pillars:["S1","S2"], cite:"wiki/medical-schemes/nhi-horizon"}
           ],
           metrics:["Share of uninsured chronic originated digitally","Public↔private rail interoperability rate"],
           flags:["reform"],
-          asIsBaseline:"Today he defaults to the public clinic / CCMDD for stable chronic and gets a paper script; he turns to Dis-Chem retail mainly for acute needs — the two economies barely connect.",
-          gaps:["🔮 requires-reform: cross-funder / public↔private e-script data sharing and an NHI-grade national backbone are unbuilt — wiki/medical-schemes/nhi-horizon"],
+          asIsBaseline:"Today he defaults to the public clinic / CCMDD for stable chronic and gets a paper script; he turns to Dis-Chem retail mainly for acute needs - the two economies barely connect.",
+          gaps:["🔮 requires-reform: cross-funder / public↔private e-script data sharing and an NHI-grade national backbone are unbuilt - wiki/medical-schemes/nhi-horizon"],
           citations:[{label:"E-prescription token", ref:"wiki/concepts/e-prescription-token"},{label:"NHI horizon", ref:"wiki/medical-schemes/nhi-horizon"},{label:"Digital access & WhatsApp", ref:"wiki/consumer-context/digital-access-and-whatsapp"},{label:"Identity & consent", ref:"wiki/concepts/identity-and-consent"}]
         }
       }
     },
 
-    /* ---- 2. SUBMIT  (token scan/redeem anywhere — moment of truth dissolved) */
+    /* ---- 2. SUBMIT  (token scan/redeem anywhere - moment of truth dissolved) */
     {
-      id:"submit", name:"Submit", goal:"Get the script to fulfilment with effectively zero friction — or skip submission entirely.",
+      id:"submit", name:"Submit", goal:"Get the script to fulfilment with effectively zero friction - or skip submission entirely.",
       byEconomy:{
         insured:{
           emotion:5,
-          customerActions:["For repeats: nothing — the script is already in her profile, ambiently orchestrated","For a new script: one tap to redeem the token at Dis-Chem (or scan at any node)"],
-          thoughts:"I didn't really 'submit' anything — it was just there.",
+          customerActions:["For repeats: nothing - the script is already in her profile, ambiently orchestrated","For a new script: one tap to redeem the token at Dis-Chem (or scan at any node)"],
+          thoughts:"I didn't really 'submit' anything - it was just there.",
           touchpoints:["One trusted profile (app / WhatsApp)","E-script token scan/redeem at any node","Auto-populated Active Script List"],
           frontstage:["One-tap confirm screen","No upload, no photo, no re-key"],
-          backstage:["Token scanned → full structured script retrieved from the exchange (no transcription)","FHIR MedicationRequest flows straight into the dispensing queue — re-key error designed out"],
+          backstage:["Token scanned → full structured script retrieved from the exchange (no transcription)","FHIR MedicationRequest flows straight into the dispensing queue - re-key error designed out"],
           support:["E-script exchange","Unified patient profile","Dispensing system"],
           partners:["National e-Rx exchange operator"],
-          regulatory:["A registered pharmacist still validates before dispensing — automate the capture, not the judgement — wiki/sa-regulatory/prescription-requirements-repeats"],
-          pains:[{text:"Residual: an off-exchange paper script still needs capture — handled by structured OCR + pharmacist check, not blind re-key", cite:"wiki/digital-transformation/e-prescribing-systems-and-standards"}],
+          regulatory:["A registered pharmacist still validates before dispensing - automate the capture, not the judgement - wiki/sa-regulatory/prescription-requirements-repeats"],
+          pains:[{text:"Residual: an off-exchange paper script still needs capture - handled by structured OCR + pharmacist check, not blind re-key", cite:"wiki/digital-transformation/e-prescribing-systems-and-standards"}],
           opportunities:[
             {text:"Scan-to-retrieve a structured script eliminates the upload→re-key→error chain entirely (the as-is submit pain disappears)", pillars:["U6","U2"], cite:"wiki/concepts/e-prescription-token"},
             {text:"Token + Active-Script-List: a lightweight per-script token AND a managed list, patient chooses (Australia)", pillars:["U6","S4"], cite:"wiki/global-benchmarks/australia-chemist-warehouse-escript"}
@@ -341,16 +342,16 @@ const DATA = {
         cash:{
           emotion:5,
           customerActions:["Forwards the SMS/WhatsApp token, or replies to redeem at a node near home","On low signal: a USSD code or printed QR works the same way"],
-          thoughts:"I just forwarded a message and it's handled — no app, no data I can't afford.",
+          thoughts:"I just forwarded a message and it's handled - no app, no data I can't afford.",
           touchpoints:["WhatsApp / SMS token","USSD fallback","Printed-QR fallback (load-shedding-proof)"],
           frontstage:["Forward-the-token (carer-friendly)","Small-payload, resumable thread"],
           backstage:["Token unlocks the structured script at any participating node","Idempotent, resume-after-reconnect; no lost progress on a dropped connection"],
           support:["E-script exchange","SMS/USSD gateway","Offline-tolerant queue"],
           partners:["National e-Rx exchange operator","CCMDD network on the same rail"],
-          regulatory:["Pharmacist validation retained; POPIA consent in-language — wiki/sa-regulatory/prescription-requirements-repeats"],
-          pains:[{text:"Residual: zero-data moments — covered by USSD + printed QR, so submission never fails for lack of airtime", cite:"wiki/consumer-context/digital-access-and-whatsapp"}],
+          regulatory:["Pharmacist validation retained; POPIA consent in-language - wiki/sa-regulatory/prescription-requirements-repeats"],
+          pains:[{text:"Residual: zero-data moments - covered by USSD + printed QR, so submission never fails for lack of airtime", cite:"wiki/consumer-context/digital-access-and-whatsapp"}],
           opportunities:[
-            {text:"The token is just an SMS — forwardable to a carer, works on any phone, no PIN gate (Australia's anti-friction lesson)", pillars:["U1","U5"], cite:"wiki/global-benchmarks/australia-chemist-warehouse-escript"},
+            {text:"The token is just an SMS - forwardable to a carer, works on any phone, no PIN gate (Australia's anti-friction lesson)", pillars:["U1","U5"], cite:"wiki/global-benchmarks/australia-chemist-warehouse-escript"},
             {text:"Data-frugal, idempotent, resumable submission as the DEFAULT, not a degraded mode", pillars:["U1","S1"], cite:"wiki/consumer-context/digital-access-and-whatsapp"}
           ],
           metrics:["Low-data submission completion (target ≈ 100%)","Token-forward-to-carer usage"],
@@ -363,48 +364,48 @@ const DATA = {
 
     /* ---- 3. VALIDATE  (AI clinical co-pilot drafts; pharmacist signs off) - */
     {
-      id:"validate", name:"Validate", goal:"Confirm the script is legal, safe and fillable — instantly, with the human judgement retained.",
+      id:"validate", name:"Validate", goal:"Confirm the script is legal, safe and fillable - instantly, with the human judgement retained.",
       byEconomy:{
         insured:{
           emotion:5,
-          customerActions:["Effectively nothing — validation is instant and invisible","Sees a clear 'checked by [named pharmacist]' confirmation"],
+          customerActions:["Effectively nothing - validation is instant and invisible","Sees a clear 'checked by [named pharmacist]' confirmation"],
           thoughts:"It was checked in seconds, and a real pharmacist's name is on it.",
           touchpoints:["Status notification (app / WhatsApp)","Named-pharmacist confirmation"],
           frontstage:["Pharmacist reviews the AI-drafted check and signs off","Proactive query only if something is genuinely ambiguous"],
-          backstage:["AI clinical co-pilot DRAFTS: legality/scheduling, interaction & allergy screening, repeats-remaining, duplicate-therapy, formulary/CDL/DSP pre-check","Co-pilot assembles the evidence; the registered pharmacist confirms or overrides — automation bias designed against","Full medication history available via FHIR for a complete check"],
+          backstage:["AI clinical co-pilot DRAFTS: legality/scheduling, interaction & allergy screening, repeats-remaining, duplicate-therapy, formulary/CDL/DSP pre-check","Co-pilot assembles the evidence; the registered pharmacist confirms or overrides - automation bias designed against","Full medication history available via FHIR for a complete check"],
           support:["AI clinical decision support (assistive)","FHIR medication history","Dispensing system","Scheme eligibility service"],
           partners:["Medical scheme","Prescriber (for clarifications)"],
-          regulatory:["NON-NEGOTIABLE: a registered pharmacist's clinical sign-off is retained — AI assembles, the human authorises — wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
-          pains:[{text:"Residual risk: alert fatigue / automation bias — countered by tuning for signal and logging every override", cite:"wiki/digital-transformation/ai-in-pharmacy"}],
+          regulatory:["NON-NEGOTIABLE: a registered pharmacist's clinical sign-off is retained - AI assembles, the human authorises - wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
+          pains:[{text:"Residual risk: alert fatigue / automation bias - countered by tuning for signal and logging every override", cite:"wiki/digital-transformation/ai-in-pharmacy"}],
           opportunities:[
-            {text:"AI clinical co-pilot turns minutes of toil into a seconds-long pharmacist sign-off — pharmacist at top-of-licence", pillars:["S5","U6"], cite:"wiki/digital-transformation/ai-in-pharmacy"},
+            {text:"AI clinical co-pilot turns minutes of toil into a seconds-long pharmacist sign-off - pharmacist at top-of-licence", pillars:["S5","U6"], cite:"wiki/digital-transformation/ai-in-pharmacy"},
             {text:"Pre-check formulary + CDL + DSP so funding status is known before the patient ever waits (China 'prescription first' guardrail kept)", pillars:["U2","S4"], cite:"wiki/medical-schemes/dsp-formularies-copayments"}
           ],
           metrics:["Time-to-validate (target seconds)","Pharmacist override rate (a quality signal, kept visible)"],
           flags:["reform","momentOfTruth"],
           asIsBaseline:"Today she waits with no visibility while the pharmacist runs legality/scheduling, interaction, stock and scheme-registration checks; an unregistered chronic condition or a stock-out often surfaces only at the counter.",
-          gaps:["🔮 requires-reform: SAPC/SAHPRA classification of an AI clinical-decision-support tool (regulated medical device?) and liability for AI-assisted checks are unresolved — wiki/digital-transformation/ai-in-pharmacy"],
+          gaps:["🔮 requires-reform: SAPC/SAHPRA classification of an AI clinical-decision-support tool (regulated medical device?) and liability for AI-assisted checks are unresolved - wiki/digital-transformation/ai-in-pharmacy"],
           citations:[{label:"AI in pharmacy", ref:"wiki/digital-transformation/ai-in-pharmacy"},{label:"Pharmacy Act / SAPC / GPP", ref:"wiki/sa-regulatory/pharmacy-act-sapc-gpp"},{label:"DSP / formularies / co-pays", ref:"wiki/medical-schemes/dsp-formularies-copayments"},{label:"Interoperability & identity", ref:"wiki/digital-transformation/interoperability-identity-records"}]
         },
         cash:{
           emotion:5,
-          customerActions:["Nothing to do — gets an instant, in-language 'checked & priced' message","Knows exactly what it costs before he commits"],
+          customerActions:["Nothing to do - gets an instant, in-language 'checked & priced' message","Knows exactly what it costs before he commits"],
           thoughts:"In my language, in seconds, it told me it's fine and what I'll pay.",
           touchpoints:["WhatsApp / SMS status (in-language)","Cash price quoted up front"],
           frontstage:["Pharmacist signs off the co-pilot's draft","Plain-language, in-language confirmation"],
-          backstage:["AI co-pilot drafts legality/interaction/duplicate checks + generic-substitution options + an itemised cash price (SEP + dispensing fee)","Remote pharmacist verification lets a node near home be served without a resident pharmacist","Pharmacist confirms — judgement never automated away"],
+          backstage:["AI co-pilot drafts legality/interaction/duplicate checks + generic-substitution options + an itemised cash price (SEP + dispensing fee)","Remote pharmacist verification lets a node near home be served without a resident pharmacist","Pharmacist confirms - judgement never automated away"],
           support:["AI clinical decision support (assistive)","Telepharmacy link","Dispensing system","Price engine (SEP + fee)"],
           partners:["Telepharmacy hub","Public clinic / CCMDD on the same rail"],
-          regulatory:["NON-NEGOTIABLE: pharmacist sign-off retained even for a remote/locker node — wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
-          pains:[{text:"Residual: high-risk meds still need direct counselling — routed to a pharmacist, never released blind", cite:"wiki/digital-transformation/telepharmacy-and-omnichannel"}],
+          regulatory:["NON-NEGOTIABLE: pharmacist sign-off retained even for a remote/locker node - wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
+          pains:[{text:"Residual: high-risk meds still need direct counselling - routed to a pharmacist, never released blind", cite:"wiki/digital-transformation/telepharmacy-and-omnichannel"}],
           opportunities:[
             {text:"Remote-supervised validation extends a pharmacist's reach to near-home nodes the cash majority can actually use", pillars:["S5","S1"], cite:"wiki/digital-transformation/telepharmacy-and-omnichannel"},
-            {text:"Quote an itemised cash price (SEP + fee) + generic choice up front — the cash path becomes first-class, not an error state", pillars:["U3","S3"], cite:"wiki/medical-schemes/cash-uninsured-pathway"}
+            {text:"Quote an itemised cash price (SEP + fee) + generic choice up front - the cash path becomes first-class, not an error state", pillars:["U3","S3"], cite:"wiki/medical-schemes/cash-uninsured-pathway"}
           ],
           metrics:["% quoted a price before commit (target 100%)","Remote-verified nodes per pharmacist"],
           flags:["reform","momentOfTruth"],
           asIsBaseline:"Today he waits at the counter with no price certainty before committing; the cash path can feel like an error state rather than a first-class route.",
-          gaps:["🔮 requires-reform: SAPC acceptance of remote pharmacist verification and the supervision-ratio for remote nodes are unresolved — wiki/digital-transformation/telepharmacy-and-omnichannel"],
+          gaps:["🔮 requires-reform: SAPC acceptance of remote pharmacist verification and the supervision-ratio for remote nodes are unresolved - wiki/digital-transformation/telepharmacy-and-omnichannel"],
           citations:[{label:"Telepharmacy & omnichannel", ref:"wiki/digital-transformation/telepharmacy-and-omnichannel"},{label:"AI in pharmacy", ref:"wiki/digital-transformation/ai-in-pharmacy"},{label:"Cash/uninsured pathway", ref:"wiki/medical-schemes/cash-uninsured-pathway"},{label:"Pharmacy Act / SAPC / GPP", ref:"wiki/sa-regulatory/pharmacy-act-sapc-gpp"}]
         }
       }
@@ -412,27 +413,27 @@ const DATA = {
 
     /* ---- 4. FUND / CLAIM  (pre-adjudicated; cost shock dissolved) -------- */
     {
-      id:"fund", name:"Fund / Claim", goal:"Settle who pays what — known in full BEFORE commit, never at the till.",
+      id:"fund", name:"Fund / Claim", goal:"Settle who pays what - known in full BEFORE commit, never at the till.",
       byEconomy:{
         insured:{
           emotion:5,
-          customerActions:["Sees funded-vs-co-pay in plain language before she confirms — no surprise","Accepts a generic-substitution prompt with the saving shown, if she wants"],
+          customerActions:["Sees funded-vs-co-pay in plain language before she confirms - no surprise","Accepts a generic-substitution prompt with the saving shown, if she wants"],
           thoughts:"I knew the exact out-of-pocket before I pressed confirm. No queue, no shock.",
           touchpoints:["In-profile funding panel (funded / co-pay / why)","Generic-swap prompt with R-saving shown"],
           frontstage:["Transparent cost breakdown","One-tap accept"],
-          backstage:["Real-time pre-adjudication ('can-I-claim?' dry run) against PMB/CDL + formulary + MMAP + DSP before commit","If a co-pay or non-DSP issue exists, it's surfaced WITH the fix (generic swap, DSP node, motivation) — never a dead-end rejection","Claim settles silently inside the flow"],
+          backstage:["Real-time pre-adjudication ('can-I-claim?' dry run) against PMB/CDL + formulary + MMAP + DSP before commit","If a co-pay or non-DSP issue exists, it's surfaced WITH the fix (generic swap, DSP node, motivation) - never a dead-end rejection","Claim settles silently inside the flow"],
           support:["Real-time claims switch","Scheme adjudication engine","FHIR eligibility service"],
           partners:["Medical scheme","Claims switching house"],
-          regulatory:["PMB / CDL funding obligations honoured; SEP shown transparently — wiki/medical-schemes/pmb-cdl-chronic"],
-          pains:[{text:"Residual: a scheme rule genuinely excludes an item — shown early in plain language with the lawful alternative", cite:"wiki/medical-schemes/realtime-claims-switching"}],
+          regulatory:["PMB / CDL funding obligations honoured; SEP shown transparently - wiki/medical-schemes/pmb-cdl-chronic"],
+          pains:[{text:"Residual: a scheme rule genuinely excludes an item - shown early in plain language with the lawful alternative", cite:"wiki/medical-schemes/realtime-claims-switching"}],
           opportunities:[
-            {text:"Pre-adjudicate and show funded-vs-co-pay before commit — the as-is till-side co-pay shock is designed out", pillars:["U3","U2"], cite:"wiki/medical-schemes/realtime-claims-switching"},
+            {text:"Pre-adjudicate and show funded-vs-co-pay before commit - the as-is till-side co-pay shock is designed out", pillars:["U3","U2"], cite:"wiki/medical-schemes/realtime-claims-switching"},
             {text:"Cross-funder eligibility one trusted query away (anticipating NHI) so the right cover is always applied", pillars:["U3","S1"], cite:"wiki/medical-schemes/nhi-horizon"}
           ],
           metrics:["Co-pay-surprise rate (target ≈ 0)","Pre-adjudication accuracy"],
           flags:["reform","momentOfTruth"],
           asIsBaseline:"Today the co-payment is discovered at the till; a real-time rejection (data mismatch, off-formulary, chronic not registered) surfaces in a queue with no clear next step, and members get steered to a courier pharmacy to dodge co-pays.",
-          gaps:["🔮 requires-reform: standardised cross-funder real-time eligibility / data sharing (and an NHI national funding layer) does not yet exist — wiki/medical-schemes/nhi-horizon"],
+          gaps:["🔮 requires-reform: standardised cross-funder real-time eligibility / data sharing (and an NHI national funding layer) does not yet exist - wiki/medical-schemes/nhi-horizon"],
           citations:[{label:"Real-time claims switching", ref:"wiki/medical-schemes/realtime-claims-switching"},{label:"PMB / CDL", ref:"wiki/medical-schemes/pmb-cdl-chronic"},{label:"DSP / co-pays", ref:"wiki/medical-schemes/dsp-formularies-copayments"},{label:"NHI horizon", ref:"wiki/medical-schemes/nhi-horizon"}]
         },
         cash:{
@@ -440,20 +441,20 @@ const DATA = {
           customerActions:["Sees an itemised cash price (SEP + dispensing fee + VAT) up front, in-language","Picks a cheaper generic / smaller pack, or saves toward it"],
           thoughts:"I can see the whole price before I decide, and I can save toward it.",
           touchpoints:["In-language price breakdown","Generic / pack-size options","Save-toward wallet"],
-          frontstage:["Itemised, defensible price (no discounting — it's regulated)","Pre-paid / instant-EFT / cash-on-collection"],
+          frontstage:["Itemised, defensible price (no discounting - it's regulated)","Pre-paid / instant-EFT / cash-on-collection"],
           backstage:["Price engine = SEP + regulated dispensing fee, shown transparently","Save-toward construct echoing stokvel logic; pay at collection","If NHI covers him in future, the same flow simply applies the cover"],
           support:["Price engine (SEP + fee)","Payments / wallet","POS"],
           partners:["Payment provider"],
-          regulatory:["SEP + capped dispensing fee fix the price — compete on service, show price transparently — wiki/sa-regulatory/sep-dispensing-fee"],
-          pains:[{text:"Residual: the regulated fee still bites on cheap meds — softened by generic choice and save-toward, and made fully transparent", cite:"wiki/sa-regulatory/sep-dispensing-fee"}],
+          regulatory:["SEP + capped dispensing fee fix the price - compete on service, show price transparently - wiki/sa-regulatory/sep-dispensing-fee"],
+          pains:[{text:"Residual: the regulated fee still bites on cheap meds - softened by generic choice and save-toward, and made fully transparent", cite:"wiki/sa-regulatory/sep-dispensing-fee"}],
           opportunities:[
-            {text:"Price transparency at point of commit (SEP makes this natural) — the cash patient never faces a shock", pillars:["U3","S3"], cite:"wiki/concepts/price-transparency"},
-            {text:"Save-toward / pre-paid refill wallet for irregular income — affordability designed for, not assumed away", pillars:["U3","S1"], cite:"wiki/consumer-context/two-economy-affordability"}
+            {text:"Price transparency at point of commit (SEP makes this natural) - the cash patient never faces a shock", pillars:["U3","S3"], cite:"wiki/concepts/price-transparency"},
+            {text:"Save-toward / pre-paid refill wallet for irregular income - affordability designed for, not assumed away", pillars:["U3","S1"], cite:"wiki/consumer-context/two-economy-affordability"}
           ],
           metrics:["% shown full price before commit","Save-toward adoption"],
           flags:["reform"],
           asIsBaseline:"Today the price collapses to a number at the till; the regulated dispensing fee bites hardest on cheap medicines and the trip + queue are themselves a cost on an irregular income.",
-          gaps:["🔮 requires-reform (scenario): an NHI fund covering the currently-uninsured would let this same cash flow apply national cover — unbuilt — wiki/medical-schemes/nhi-horizon"],
+          gaps:["🔮 requires-reform (scenario): an NHI fund covering the currently-uninsured would let this same cash flow apply national cover - unbuilt - wiki/medical-schemes/nhi-horizon"],
           citations:[{label:"Price transparency", ref:"wiki/concepts/price-transparency"},{label:"SEP & dispensing fee", ref:"wiki/sa-regulatory/sep-dispensing-fee"},{label:"Two-economy affordability", ref:"wiki/consumer-context/two-economy-affordability"},{label:"NHI horizon", ref:"wiki/medical-schemes/nhi-horizon"}]
         }
       }
@@ -461,20 +462,20 @@ const DATA = {
 
     /* ---- 5. PAY  (settlement folded into the flow) ---------------------- */
     {
-      id:"pay", name:"Pay", goal:"Settle the amount due — already known, paid in whatever way suits.",
+      id:"pay", name:"Pay", goal:"Settle the amount due - already known, paid in whatever way suits.",
       byEconomy:{
         insured:{
           emotion:5,
-          customerActions:["Confirms the out-of-pocket she already saw at funding — one tap, in-app","No queue"],
+          customerActions:["Confirms the out-of-pocket she already saw at funding - one tap, in-app","No queue"],
           thoughts:"I'd already seen the amount, so paying was just a tap.",
           touchpoints:["In-app / WhatsApp payment","Scheme settles silently"],
           frontstage:["One-tap confirm","Receipt to profile"],
           backstage:["Scheme pays its share via the switch; the member balance settles by card/EFT/wallet inside the flow","POPIA-grade handling of payment + health data"],
           support:["Payment gateway","Claims switch"],
           partners:["Medical scheme","Payment provider"],
-          regulatory:["POPIA governs payment + health-data handling — wiki/sa-regulatory/e-prescription-telehealth-popia"],
-          pains:[{text:"Residual: a payment-provider outage — handled by a fallback method and a resumable, idempotent payment step", cite:"wiki/consumer-context/adjacent-digital-expectations"}],
-          opportunities:[{text:"Payment folded into the confirmed flow — no separate cost step, no surprise carried over", pillars:["U3","U6"], cite:"wiki/consumer-context/adjacent-digital-expectations"}],
+          regulatory:["POPIA governs payment + health-data handling - wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          pains:[{text:"Residual: a payment-provider outage - handled by a fallback method and a resumable, idempotent payment step", cite:"wiki/consumer-context/adjacent-digital-expectations"}],
+          opportunities:[{text:"Payment folded into the confirmed flow - no separate cost step, no surprise carried over", pillars:["U3","U6"], cite:"wiki/consumer-context/adjacent-digital-expectations"}],
           metrics:["Payment success rate","Friction steps removed"],
           flags:[],
           asIsBaseline:"Today she settles the co-pay at the till or in-app; in-app payment-processing failures and a surprise out-of-pocket carried over from funding are common.",
@@ -483,17 +484,17 @@ const DATA = {
         cash:{
           emotion:5,
           customerActions:["Pays cash / instant EFT on collection, or draws down a save-toward wallet","Never has to find the full amount at once"],
-          thoughts:"I paid the way I always do — cash when I fetch it — and I'd been saving toward it.",
+          thoughts:"I paid the way I always do - cash when I fetch it - and I'd been saving toward it.",
           touchpoints:["Cash on collection","Instant EFT","Save-toward wallet"],
           frontstage:["Pay-at-collection","Pre-paid drawdown"],
           backstage:["Wallet accrues small increments (stokvel logic); settles the regulated price at collection","POPIA-grade, minimal-data handling"],
           support:["Payments / wallet","POS"],
           partners:["Payment provider"],
-          regulatory:["POPIA governs payment + health-data handling — wiki/sa-regulatory/e-prescription-telehealth-popia"],
-          pains:[{text:"Residual: a one-off affordability spike — softened by save-toward and generic choice, never a locked door", cite:"wiki/consumer-context/two-economy-affordability"}],
+          regulatory:["POPIA governs payment + health-data handling - wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          pains:[{text:"Residual: a one-off affordability spike - softened by save-toward and generic choice, never a locked door", cite:"wiki/consumer-context/two-economy-affordability"}],
           opportunities:[
             {text:"Cash-on-collection + save-toward wallet makes a lumpy bill affordable on an irregular income", pillars:["U3","S1"], cite:"wiki/consumer-context/two-economy-affordability"},
-            {text:"No stored card required — payment meets him where he is", pillars:["U1","U3"], cite:"wiki/medical-schemes/cash-uninsured-pathway"}
+            {text:"No stored card required - payment meets him where he is", pillars:["U1","U3"], cite:"wiki/medical-schemes/cash-uninsured-pathway"}
           ],
           metrics:["Cash-on-collection uptake","Save-toward completion"],
           flags:[],
@@ -505,19 +506,19 @@ const DATA = {
 
     /* ---- 6. DISPENSE  (central-fill + vision QA + pharmacist sign-off) --- */
     {
-      id:"dispense", name:"Dispense", goal:"Prepare, verify and assure the medicine at scale — accuracy hardened, judgement retained.",
+      id:"dispense", name:"Dispense", goal:"Prepare, verify and assure the medicine at scale - accuracy hardened, judgement retained.",
       byEconomy:{
         insured:{
           emotion:5,
-          customerActions:["Nothing — her 4–5 chronic meds are consolidated and prepared ahead in one parcel","Adherence-packaged by date/time"],
+          customerActions:["Nothing - her 4–5 chronic meds are consolidated and prepared ahead in one parcel","Adherence-packaged by date/time"],
           thoughts:"All my medicines, one parcel, ready before I even ask.",
           touchpoints:["Central-fill output","Adherence (date/time) packaging","One consolidated parcel"],
           frontstage:["Pharmacist counselling at hand-over (or by video for remote nodes)"],
-          backstage:["Predictable chronic/repeat scripts routed to an automated central-fill lane (robotic pick/count/pack)","Deep-learning vision verification flags look-alike / wrong-product before hand-over","NON-NEGOTIABLE: a named pharmacist's final sign-off remains the gate — automate the toil, not the judgement"],
+          backstage:["Predictable chronic/repeat scripts routed to an automated central-fill lane (robotic pick/count/pack)","Deep-learning vision verification flags look-alike / wrong-product before hand-over","NON-NEGOTIABLE: a named pharmacist's final sign-off remains the gate - automate the toil, not the judgement"],
           support:["Central-fill automation","Vision verification","AI demand-forecasting (attacks stock-outs)","Dispensing system"],
           partners:["Central-fill facility","PackMyMeds / Dis-Chem Direct"],
-          regulatory:["NON-NEGOTIABLE: pharmacist final check + GPP counselling mandatory; design against verification bypass — wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
-          pains:[{text:"Residual: automation can relocate error (mis-stock, verification bypass) — countered by vision QA + mandatory pharmacist sign-off + power-resilient lines", cite:"wiki/digital-transformation/pharmacy-automation-and-robotics"}],
+          regulatory:["NON-NEGOTIABLE: pharmacist final check + GPP counselling mandatory; design against verification bypass - wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
+          pains:[{text:"Residual: automation can relocate error (mis-stock, verification bypass) - countered by vision QA + mandatory pharmacist sign-off + power-resilient lines", cite:"wiki/digital-transformation/pharmacy-automation-and-robotics"}],
           opportunities:[
             {text:"Central-fill + vision QA delivers ~99.9%-class accuracy at volume while freeing pharmacists for clinical work", pillars:["S5","U4"], cite:"wiki/digital-transformation/pharmacy-automation-and-robotics"},
             {text:"Consolidate 4–5 scripts into one adherence-packaged parcel + one collection event", pillars:["S4","U7"], cite:"wiki/digital-transformation/adherence-tech-and-digital-therapeutics"}
@@ -525,28 +526,28 @@ const DATA = {
           metrics:["First-time-right %","Dispensing-error rate (target ≈ 0)","Central-fill throughput"],
           flags:["reform"],
           asIsBaseline:"Today chronic meds are pre-packed at the nearest store via PackMyMeds and a pharmacist checks each script; labelling/selection errors (wrong product under a correct-drug label) are a safety-critical risk.",
-          gaps:["🔮 requires-reform: SAPC acceptance of remote pharmacist sign-off for central-fill output released away from the dispensing pharmacist's site — wiki/digital-transformation/telepharmacy-and-omnichannel"],
+          gaps:["🔮 requires-reform: SAPC acceptance of remote pharmacist sign-off for central-fill output released away from the dispensing pharmacist's site - wiki/digital-transformation/telepharmacy-and-omnichannel"],
           citations:[{label:"Automation & robotics", ref:"wiki/digital-transformation/pharmacy-automation-and-robotics"},{label:"Adherence tech", ref:"wiki/digital-transformation/adherence-tech-and-digital-therapeutics"},{label:"Pharmacy Act / SAPC / GPP", ref:"wiki/sa-regulatory/pharmacy-act-sapc-gpp"},{label:"Telepharmacy", ref:"wiki/digital-transformation/telepharmacy-and-omnichannel"}]
         },
         cash:{
           emotion:5,
-          customerActions:["Nothing — his repeat is central-filled and routed to a node near home, in stock","Gets a low-data 'ready' message"],
-          thoughts:"It was ready and in stock — no wasted trip back to the clinic queue.",
+          customerActions:["Nothing - his repeat is central-filled and routed to a node near home, in stock","Gets a low-data 'ready' message"],
+          thoughts:"It was ready and in stock - no wasted trip back to the clinic queue.",
           touchpoints:["Central-fill → near-home node","Low-data 'ready' notification"],
           frontstage:["Counselling by the node pharmacist or telepharmacy video/voice/async"],
           backstage:["Predictable chronic routed to central-fill; AI demand-forecasting designs stock-outs out before he travels","Vision QA + remote pharmacist sign-off before release to a locker / near-home point","The same automated lane serves public-channel (CCMDD) volume on one spine"],
           support:["Central-fill automation","Vision verification","AI demand-forecasting","Telepharmacy link"],
           partners:["Central-fill facility","CCMDD / near-home node network"],
-          regulatory:["NON-NEGOTIABLE: pharmacist sign-off retained for locker/remote release — wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
-          pains:[{text:"Residual: a true stock-out — minimised by forecasting; if it occurs, a funded generic or near-home alternative is offered, never a dead end", cite:"wiki/digital-transformation/ai-in-pharmacy"}],
+          regulatory:["NON-NEGOTIABLE: pharmacist sign-off retained for locker/remote release - wiki/sa-regulatory/pharmacy-act-sapc-gpp"],
+          pains:[{text:"Residual: a true stock-out - minimised by forecasting; if it occurs, a funded generic or near-home alternative is offered, never a dead end", cite:"wiki/digital-transformation/ai-in-pharmacy"}],
           opportunities:[
             {text:"Stock-out designed out: confirm stock + a funded generic before he travels so a trip is never wasted", pillars:["U4","S1"], cite:"wiki/digital-transformation/ai-in-pharmacy"},
-            {text:"One central-fill lane serves both economies — the cash majority gets the same accuracy and reliability", pillars:["S1","S5"], cite:"wiki/digital-transformation/pharmacy-automation-and-robotics"}
+            {text:"One central-fill lane serves both economies - the cash majority gets the same accuracy and reliability", pillars:["S1","S5"], cite:"wiki/digital-transformation/pharmacy-automation-and-robotics"}
           ],
           metrics:["Stock-out-before-trip rate (target ≈ 0)","First-time-right %"],
           flags:["reform"],
-          asIsBaseline:"Today a stock-out with no generic on hand forces a wasted, costly trip — and may send him back to the clinic queue.",
-          gaps:["🔮 requires-reform: SAPC acceptance of remote pharmacist sign-off + locker release of scheduled medicines without an on-site pharmacist — wiki/digital-transformation/telepharmacy-and-omnichannel"],
+          asIsBaseline:"Today a stock-out with no generic on hand forces a wasted, costly trip - and may send him back to the clinic queue.",
+          gaps:["🔮 requires-reform: SAPC acceptance of remote pharmacist sign-off + locker release of scheduled medicines without an on-site pharmacist - wiki/digital-transformation/telepharmacy-and-omnichannel"],
           citations:[{label:"Automation & robotics", ref:"wiki/digital-transformation/pharmacy-automation-and-robotics"},{label:"AI in pharmacy", ref:"wiki/digital-transformation/ai-in-pharmacy"},{label:"Telepharmacy", ref:"wiki/digital-transformation/telepharmacy-and-omnichannel"},{label:"Pharmacy Act / SAPC / GPP", ref:"wiki/sa-regulatory/pharmacy-act-sapc-gpp"}]
         }
       }
@@ -554,47 +555,47 @@ const DATA = {
 
     /* ---- 7. COLLECT / DELIVER  (central-fill → locker release near home) - */
     {
-      id:"collect", name:"Collect / Deliver", goal:"Get the medicine to the patient reliably — mode matched to the person, promise always kept.",
+      id:"collect", name:"Collect / Deliver", goal:"Get the medicine to the patient reliably - mode matched to the person, promise always kept.",
       byEconomy:{
         insured:{
           emotion:5,
-          customerActions:["Chooses the mode that suits the moment: door delivery, fast collect, or locker — honest live ETA throughout","Tracks it like a parcel"],
+          customerActions:["Chooses the mode that suits the moment: door delivery, fast collect, or locker - honest live ETA throughout","Tracks it like a parcel"],
           thoughts:"Honest tracking, my named pharmacist, and it arrived exactly as promised.",
           touchpoints:["On-demand / scheduled courier","Click-and-collect","Smart locker","Live status (app / WhatsApp)"],
           frontstage:["Real-time tracking + honest ETA","Named pharmacist on the order","Delivery-integrity SLA"],
-          backstage:["Omnichannel routing against one unified profile — mode-appropriate, never a one-size promise","Cold-chain assured for fridge-line meds; status events streamed"],
+          backstage:["Omnichannel routing against one unified profile - mode-appropriate, never a one-size promise","Cold-chain assured for fridge-line meds; status events streamed"],
           support:["Order-management system","Courier / locker platform","Unified profile"],
           partners:["Courier network","Locker network","Dis-Chem Direct"],
-          regulatory:["Scheduled-medicine + cold-chain handling in transit — wiki/sa-regulatory/courier-online-pharmacy-rules"],
-          pains:[{text:"Residual: a metro-only fast-delivery promise can't hold everywhere — solved by matching mode to geography, not a universal speed claim", cite:"wiki/global-benchmarks/patterns-to-borrow-and-cautions"}],
+          regulatory:["Scheduled-medicine + cold-chain handling in transit - wiki/sa-regulatory/courier-online-pharmacy-rules"],
+          pains:[{text:"Residual: a metro-only fast-delivery promise can't hold everywhere - solved by matching mode to geography, not a universal speed claim", cite:"wiki/global-benchmarks/patterns-to-borrow-and-cautions"}],
           opportunities:[
-            {text:"Honest live ETA + delivery-integrity SLA matching the Sixty60 bar — the broken-promise pain is designed out", pillars:["U2","U4"], cite:"wiki/consumer-context/adjacent-digital-expectations"},
+            {text:"Honest live ETA + delivery-integrity SLA matching the Sixty60 bar - the broken-promise pain is designed out", pillars:["U2","U4"], cite:"wiki/consumer-context/adjacent-digital-expectations"},
             {text:"True omnichannel: one profile, many fulfilment modes, context never reset", pillars:["U6","S2"], cite:"wiki/concepts/omnichannel-fulfilment"}
           ],
           metrics:["On-time-in-full %","Pre-delivery cancellation rate (target ≈ 0)"],
           flags:["momentOfTruth"],
-          asIsBaseline:"Today she gets click-and-collect (~2h), courier (~24h) or DeliverD (~60min, selected metros), but orders are cancelled minutes before delivery and items arrive missing/wrong — the broken promise erodes trust.",
+          asIsBaseline:"Today she gets click-and-collect (~2h), courier (~24h) or DeliverD (~60min, selected metros), but orders are cancelled minutes before delivery and items arrive missing/wrong - the broken promise erodes trust.",
           citations:[{label:"Omnichannel fulfilment", ref:"wiki/concepts/omnichannel-fulfilment"},{label:"Adjacent digital expectations", ref:"wiki/consumer-context/adjacent-digital-expectations"},{label:"Patterns to borrow / cautions", ref:"wiki/global-benchmarks/patterns-to-borrow-and-cautions"}]
         },
         cash:{
           emotion:5,
-          customerActions:["Collects at a smart locker / near-home point with a one-time PIN — no address needed","Gets a low-data 'ready + PIN' message"],
-          thoughts:"It was waiting in a locker near home; I opened it with a PIN — private, quick, no delivery man lost in my area.",
+          customerActions:["Collects at a smart locker / near-home point with a one-time PIN - no address needed","Gets a low-data 'ready + PIN' message"],
+          thoughts:"It was waiting in a locker near home; I opened it with a PIN - private, quick, no delivery man lost in my area.",
           touchpoints:["Smart locker near home","CCMDD / near-home collection point","SMS / WhatsApp 'ready' + one-time PIN"],
           frontstage:["Contactless PIN release","Discreet, dignified pickup","Telepharmacy counselling link if he wants it"],
-          backstage:["Central-fill output released to the locker after remote pharmacist sign-off + vision QA","Routed to a known node near home — the addressing gap designed out","Cold-chain-capable lockers for fridge-line meds"],
+          backstage:["Central-fill output released to the locker after remote pharmacist sign-off + vision QA","Routed to a known node near home - the addressing gap designed out","Cold-chain-capable lockers for fridge-line meds"],
           support:["Smart-locker network","Central-fill","Telepharmacy link","SMS/USSD gateway"],
           partners:["Locker network (Pelebox-style)","CCMDD pick-up points"],
-          regulatory:["Scheduled-medicine handling at unattended pick-up + remote counselling — wiki/sa-regulatory/courier-online-pharmacy-rules"],
-          pains:[{text:"Residual: counselling for a high-risk med — offered by telepharmacy video/voice at the locker, or routed to a pharmacist node", cite:"wiki/digital-transformation/telepharmacy-and-omnichannel"}],
+          regulatory:["Scheduled-medicine handling at unattended pick-up + remote counselling - wiki/sa-regulatory/courier-online-pharmacy-rules"],
+          pains:[{text:"Residual: counselling for a high-risk med - offered by telepharmacy video/voice at the locker, or routed to a pharmacist node", cite:"wiki/digital-transformation/telepharmacy-and-omnichannel"}],
           opportunities:[
             {text:"Central-fill → smart-locker release near home: the cash majority gets reliable, dignified, address-free collection (Pelebox pattern at scale)", pillars:["S1","U5"], cite:"wiki/consumer-context/last-mile-addressing-logistics"},
-            {text:"Decouple collection from the counter — 24/7-capable, private, sub-minute, no queue", pillars:["U1","S5"], cite:"wiki/digital-transformation/pharmacy-automation-and-robotics"}
+            {text:"Decouple collection from the counter - 24/7-capable, private, sub-minute, no queue", pillars:["U1","S5"], cite:"wiki/digital-transformation/pharmacy-automation-and-robotics"}
           ],
           metrics:["Near-home / locker coverage","Successful-pickup rate"],
           flags:["reform","momentOfTruth"],
           asIsBaseline:"Today home delivery assumes a findable street address he doesn't have and is unreliable in informal areas, so he must travel to collect; a missed 'ready' SMS plus distance is a primary lapse risk.",
-          gaps:["🔮 requires-reform: locker release of SCHEDULED medicines without an on-site pharmacist, and remote-counselling acceptance, need SAPC reform/guidance — wiki/digital-transformation/telepharmacy-and-omnichannel"],
+          gaps:["🔮 requires-reform: locker release of SCHEDULED medicines without an on-site pharmacist, and remote-counselling acceptance, need SAPC reform/guidance - wiki/digital-transformation/telepharmacy-and-omnichannel"],
           citations:[{label:"Last-mile / addressing", ref:"wiki/consumer-context/last-mile-addressing-logistics"},{label:"Automation & lockers", ref:"wiki/digital-transformation/pharmacy-automation-and-robotics"},{label:"Telepharmacy", ref:"wiki/digital-transformation/telepharmacy-and-omnichannel"},{label:"Courier / online rules", ref:"wiki/sa-regulatory/courier-online-pharmacy-rules"}]
         }
       }
@@ -602,19 +603,19 @@ const DATA = {
 
     /* ---- 8. ADHERE  (predictive, near-zero-effort) ---------------------- */
     {
-      id:"adhere", name:"Adhere", goal:"Make taking the medicine effortless and effective — the system works to keep her on therapy.",
+      id:"adhere", name:"Adhere", goal:"Make taking the medicine effortless and effective - the system works to keep her on therapy.",
       byEconomy:{
         insured:{
           emotion:5,
           customerActions:["Takes adherence-packaged doses by date/time","Gets a behaviour-tuned nudge only when it actually helps"],
-          thoughts:"It's genuinely on autopilot — and it nudges me before I'd ever run out.",
+          thoughts:"It's genuinely on autopilot - and it nudges me before I'd ever run out.",
           touchpoints:["Adherence (date/time) packaging","Smart, in-language reminders","Carer mode"],
           frontstage:["Behaviour-change-designed schedule + label","Proactive 'about to run out' nudge"],
           backstage:["A predictive adherence model estimates run-out from fill history (PDC) and prompts before the gap","Ambient orchestration links adherence → the next refill automatically","Adherence framed as effectiveness, not compliance"],
           support:["Predictive adherence engine","Adherence packaging","Unified profile"],
           partners:["PackMyMeds / Dis-Chem Direct","Prescriber (for review triggers)"],
-          regulatory:["POPIA consent governs any adherence-data use — wiki/sa-regulatory/e-prescription-telehealth-popia"],
-          pains:[{text:"Residual: adherence-AI evidence is still weak — framed as supportive, never over-promised, with a human review trigger", cite:"wiki/digital-transformation/adherence-tech-and-digital-therapeutics"}],
+          regulatory:["POPIA consent governs any adherence-data use - wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          pains:[{text:"Residual: adherence-AI evidence is still weak - framed as supportive, never over-promised, with a human review trigger", cite:"wiki/digital-transformation/adherence-tech-and-digital-therapeutics"}],
           opportunities:[
             {text:"Predictive run-out + adherence-as-design: the schedule/label/refill loop is a behaviour-change surface, not a reminder bolt-on", pillars:["U7","S4"], cite:"wiki/concepts/medication-adherence"},
             {text:"Adherence packaging by date/time for polypharmacy (PillPack/MedAdvisor pattern)", pillars:["U7","S5"], cite:"wiki/global-benchmarks/australia-chemist-warehouse-escript"}
@@ -627,21 +628,21 @@ const DATA = {
         cash:{
           emotion:5,
           customerActions:["Takes his doses; a light, in-language SMS nudge reaches him reliably","A carer can be looped in"],
-          thoughts:"The reminder always reaches me now, in my language — I don't just quietly run out.",
+          thoughts:"The reminder always reaches me now, in my language - I don't just quietly run out.",
           touchpoints:["Low-data SMS / WhatsApp nudge (in-language)","USSD check-in","Carer mode"],
           frontstage:["Reliable, low-data nudge","No-app, no-data-cost adherence"],
           backstage:["A predictive run-out model triggers a nudge via the channel that actually reaches him","Multi-channel delivery (SMS→USSD→voice) so a single failure never causes a silent lapse"],
           support:["Predictive adherence engine","SMS/USSD gateway","Unified profile"],
           partners:["CCMDD (public-channel chronic)","Community health worker (optional)"],
-          regulatory:["POPIA consent, in-language, governs adherence messaging — wiki/sa-regulatory/e-prescription-telehealth-popia"],
-          pains:[{text:"Residual: a fully offline patient — reached via a community health worker or clinic touchpoint, so no one is left to lapse silently", cite:"wiki/consumer-context/health-seeking-behaviour"}],
+          regulatory:["POPIA consent, in-language, governs adherence messaging - wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          pains:[{text:"Residual: a fully offline patient - reached via a community health worker or clinic touchpoint, so no one is left to lapse silently", cite:"wiki/consumer-context/health-seeking-behaviour"}],
           opportunities:[
             {text:"Kill the silent lapse: low-data, multi-channel, in-language nudges that never depend on an app or a data balance", pillars:["U1","U7"], cite:"wiki/consumer-context/digital-access-and-whatsapp"},
             {text:"Adherence support for the uninsured majority on the same flywheel as the insured", pillars:["S1","U7"], cite:"wiki/concepts/chronic-medicine-flywheel"}
           ],
           metrics:["Reminder delivery rate (target ≈ 100%)","Lapse rate (target ≈ 0)"],
           flags:[],
-          asIsBaseline:"Today the silent lapse — a missed collection from distance, a zero data balance, or a broken reminder — is the failure mode, not a clinical decision to stop.",
+          asIsBaseline:"Today the silent lapse - a missed collection from distance, a zero data balance, or a broken reminder - is the failure mode, not a clinical decision to stop.",
           citations:[{label:"Chronic-medicine flywheel", ref:"wiki/concepts/chronic-medicine-flywheel"},{label:"Digital access & WhatsApp", ref:"wiki/consumer-context/digital-access-and-whatsapp"},{label:"Health-seeking behaviour", ref:"wiki/consumer-context/health-seeking-behaviour"}]
         }
       }
@@ -649,59 +650,59 @@ const DATA = {
 
     /* ---- 9. REFILL  (ambient/agentic; renewal gap dissolved) ------------ */
     {
-      id:"refill", name:"Refill", goal:"Re-order and renew before any lapse — the patient does (almost) nothing.",
+      id:"refill", name:"Refill", goal:"Re-order and renew before any lapse - the patient does (almost) nothing.",
       byEconomy:{
         insured:{
           emotion:5,
-          customerActions:["Approves a pre-assembled refill with one tap — or it just flows under standing consent","Never re-applies; the renewal is handled before expiry"],
-          thoughts:"It renews itself before I run out — I haven't filled in a form in a year.",
+          customerActions:["Approves a pre-assembled refill with one tap - or it just flows under standing consent","Never re-applies; the renewal is handled before expiry"],
+          thoughts:"It renews itself before I run out - I haven't filled in a form in a year.",
           touchpoints:["One-tap confirm (app / WhatsApp)","Auto-flow under standing consent","New token per repeat"],
           frontstage:["A pre-assembled refill ready to confirm","Proactive renewal before the 6-month expiry"],
-          backstage:["Agentic refill orchestration: an agent checks scheme eligibility, confirms stock, drafts the order, books fulfilment — and presents a one-tap confirm (human gate kept)","A fresh repeat-aware token issues per dispense (anti-double-dispense)","At repeat expiry, the system triggers a teleconsult renewal BEFORE the gap — the as-is hard break is dissolved"],
+          backstage:["Agentic refill orchestration: an agent checks scheme eligibility, confirms stock, drafts the order, books fulfilment - and presents a one-tap confirm (human gate kept)","A fresh repeat-aware token issues per dispense (anti-double-dispense)","At repeat expiry, the system triggers a teleconsult renewal BEFORE the gap - the as-is hard break is dissolved"],
           support:["Agentic orchestration (under oversight)","E-script token service","Scheme eligibility","Central-fill"],
           partners:["Medical scheme","Prescriber (renewal teleconsult)","E-Rx exchange operator"],
-          regulatory:["A new script is still required at repeat expiry — orchestrate the renewal, don't bypass it — wiki/sa-regulatory/prescription-requirements-repeats"],
-          pains:[{text:"Residual: multi-agent miscoordination risk — bounded by a mandatory one-tap human/pharmacist confirmation and a full audit trail", cite:"wiki/digital-transformation/ai-in-pharmacy"}],
+          regulatory:["A new script is still required at repeat expiry - orchestrate the renewal, don't bypass it - wiki/sa-regulatory/prescription-requirements-repeats"],
+          pains:[{text:"Residual: multi-agent miscoordination risk - bounded by a mandatory one-tap human/pharmacist confirmation and a full audit trail", cite:"wiki/digital-transformation/ai-in-pharmacy"}],
           opportunities:[
-            {text:"Agentic refill assembles, the human authorises — effort drops to one tap (or zero under standing consent)", pillars:["S4","U6"], cite:"wiki/digital-transformation/ai-in-pharmacy"},
+            {text:"Agentic refill assembles, the human authorises - effort drops to one tap (or zero under standing consent)", pillars:["S4","U6"], cite:"wiki/digital-transformation/ai-in-pharmacy"},
             {text:"Orchestrate the script-renewal gap: a proactive teleconsult renewal before expiry kills the drop-off cliff", pillars:["S4","U7"], cite:"wiki/concepts/chronic-medicine-flywheel"}
           ],
           metrics:["Refill drop-off at expiry (target ≈ 0)","Renewal-before-lapse %","Refill effort (taps)"],
           flags:["reform","momentOfTruth"],
-          asIsBaseline:"Today refill is opt-in not managed — she confirms each cycle and must chase a NEW script when repeats expire (~6 months); the hard break at expiry drives high drop-off.",
-          gaps:["🔮 requires-reform: agentic refill orchestration touching scheme eligibility + e-script renewal needs cross-funder data sharing and AI-governance / liability clarity — wiki/digital-transformation/ai-in-pharmacy"],
+          asIsBaseline:"Today refill is opt-in not managed - she confirms each cycle and must chase a NEW script when repeats expire (~6 months); the hard break at expiry drives high drop-off.",
+          gaps:["🔮 requires-reform: agentic refill orchestration touching scheme eligibility + e-script renewal needs cross-funder data sharing and AI-governance / liability clarity - wiki/digital-transformation/ai-in-pharmacy"],
           citations:[{label:"Chronic-medicine flywheel", ref:"wiki/concepts/chronic-medicine-flywheel"},{label:"AI in pharmacy", ref:"wiki/digital-transformation/ai-in-pharmacy"},{label:"E-prescription token", ref:"wiki/concepts/e-prescription-token"},{label:"Prescription rules", ref:"wiki/sa-regulatory/prescription-requirements-repeats"}]
         },
         cash:{
           emotion:5,
           customerActions:["Replies to one low-data prompt, or the refill flows under standing consent to a near-home locker","No re-registration friction"],
-          thoughts:"I just reply 'yes' and it's waiting near home — I never have to start over.",
+          thoughts:"I just reply 'yes' and it's waiting near home - I never have to start over.",
           touchpoints:["Low-data WhatsApp / SMS / USSD prompt","New token per repeat","Near-home locker fulfilment"],
           frontstage:["One-reply refill","Proactive renewal prompt before expiry"],
           backstage:["Agentic orchestration confirms eligibility/stock + routes to a near-home node; one-tap human confirm","Public↔private interoperability so his CCMDD chronic and retail refills sit on one loop","A fresh token per repeat; renewal teleconsult triggered before expiry"],
           support:["Agentic orchestration (under oversight)","E-script token service","SMS/USSD gateway","Central-fill → locker"],
           partners:["Public clinic / CCMDD","Prescriber (renewal teleconsult)","E-Rx exchange operator"],
-          regulatory:["A new script is still required at repeat expiry — orchestrate, don't bypass — wiki/sa-regulatory/prescription-requirements-repeats"],
-          pains:[{text:"Residual: a fully offline patient — caught by a clinic/CHW touchpoint so the loop never silently breaks", cite:"wiki/consumer-context/health-seeking-behaviour"}],
+          regulatory:["A new script is still required at repeat expiry - orchestrate, don't bypass - wiki/sa-regulatory/prescription-requirements-repeats"],
+          pains:[{text:"Residual: a fully offline patient - caught by a clinic/CHW touchpoint so the loop never silently breaks", cite:"wiki/consumer-context/health-seeking-behaviour"}],
           opportunities:[
             {text:"Win the loop courier/CCMDD pharmacies currently own: a managed, low-data, near-home refill flywheel for the cash majority", pillars:["S4","S1"], cite:"wiki/medical-schemes/courier-chronic-pharmacy-models"},
-            {text:"One refill loop across public + private rails — the uninsured patient is first-class, not bridged as an afterthought", pillars:["S1","U1"], cite:"wiki/concepts/chronic-medicine-flywheel"}
+            {text:"One refill loop across public + private rails - the uninsured patient is first-class, not bridged as an afterthought", pillars:["S1","U1"], cite:"wiki/concepts/chronic-medicine-flywheel"}
           ],
           metrics:["Refill continuation rate","Renewal-before-lapse %"],
           flags:["reform","momentOfTruth"],
           asIsBaseline:"Today he re-collects at the clinic/CCMDD when prompted and chases a new script at expiry; most of his managed chronic refill happens outside Dis-Chem retail, with re-registration / re-script friction and lapse risk if a reminder fails.",
-          gaps:["🔮 requires-reform: public↔private (CCMDD↔retail) cross-funder data sharing on one refill loop, and an NHI backbone, are unbuilt — wiki/medical-schemes/nhi-horizon"],
+          gaps:["🔮 requires-reform: public↔private (CCMDD↔retail) cross-funder data sharing on one refill loop, and an NHI backbone, are unbuilt - wiki/medical-schemes/nhi-horizon"],
           citations:[{label:"Chronic-medicine flywheel", ref:"wiki/concepts/chronic-medicine-flywheel"},{label:"CCMDD / courier models", ref:"wiki/medical-schemes/courier-chronic-pharmacy-models"},{label:"NHI horizon", ref:"wiki/medical-schemes/nhi-horizon"},{label:"Health-seeking behaviour", ref:"wiki/consumer-context/health-seeking-behaviour"}]
         }
       }
     }
   ]
 };
-/* ===== REPLACE DATA ABOVE — content agents swap this object ================= */
+/* ===== REPLACE DATA ABOVE - content agents swap this object ================= */
 
 
 /* =============================================================================
-   ENGINE — do not edit below unless fixing the engine itself.
+   ENGINE - do not edit below unless fixing the engine itself.
    ============================================================================ */
 (function(){
   "use strict";
@@ -771,7 +772,7 @@ const DATA = {
   // ---- citation element -----------------------------------------------------
   function citeEl(text, ref){
     if(!has(ref)) return document.createTextNode(text);
-    const b = el("button", {class:"cite", type:"button", "aria-label":text+" — source "+ref}, [text]);
+    const b = el("button", {class:"cite", type:"button", "aria-label":text+" - source "+ref}, [text]);
     b.appendChild(el("span", {class:"tip", role:"tooltip"}, ["source: "+ref]));
     // toggle on click for touch / keyboard explicitness
     b.addEventListener("click", ()=> b.classList.toggle("show"));
@@ -831,8 +832,8 @@ const DATA = {
 
   function pillarLegend(){
     if(!PILLARS.length) return null;
-    const wrap = el("div", {class:"legend pillar-legend", "aria-label":"Pillars — click to highlight"});
-    wrap.appendChild(el("div", {class:"tiny"}, ["Pillars — click one to highlight everywhere it appears (click again to clear):"]));
+    const wrap = el("div", {class:"legend pillar-legend", "aria-label":"Pillars - click to highlight"});
+    wrap.appendChild(el("div", {class:"tiny"}, ["Pillars - click one to highlight everywhere it appears (click again to clear):"]));
     PILLARS.forEach(p=>{
       const row = el("div", {class:"prow"});
       row.appendChild(el("button", {
@@ -840,7 +841,7 @@ const DATA = {
         onclick:()=>togglePillar(p.id)
       }, [p.id]));
       row.appendChild(el("span", {class:"ptype"}, [p.type||""]));
-      row.appendChild(el("span", {}, [(p.name||"")+(p.oneLiner?" — "+p.oneLiner:"")]));
+      row.appendChild(el("span", {}, [(p.name||"")+(p.oneLiner?" - "+p.oneLiner:"")]));
       wrap.appendChild(row);
     });
     return wrap;
@@ -942,7 +943,7 @@ const DATA = {
     });
 
     const wrap = el("div", {class:"emotion-wrap"});
-    wrap.appendChild(el("div", {class:"tiny"}, ["Emotion curve — "+(currentEconLabel())+" · 1 = 😠 low … 5 = 😀 high · ⭐ = moment of truth"]));
+    wrap.appendChild(el("div", {class:"tiny"}, ["Emotion curve - "+(currentEconLabel())+" · 1 = 😠 low … 5 = 😀 high · ⭐ = moment of truth"]));
     wrap.appendChild(svg);
     return wrap;
   }
@@ -968,7 +969,7 @@ const DATA = {
     const kind = lane.kind;
     if(kind==="text"){
       if(!has(d[lane.key])) return null;
-      return el("div", {class:"thoughts"}, ["“"+d[lane.key]+"”"]);
+      return el("div", {class:"thoughts"}, ["\""+d[lane.key]+"\""]);
     }
     if(kind==="list"){
       const items = arr(d[lane.key]);
@@ -1026,7 +1027,7 @@ const DATA = {
     head.appendChild(el("span", {}, [
       el("span", {class:"chev"}, ["▸ "]),
       el("span", {class:"ttl"}, [(idx+1)+". "+(stage.name||sid)+" "]),
-      el("span", {class:"goal"}, [has(stage.goal)?("— "+stage.goal):""])
+      el("span", {class:"goal"}, [has(stage.goal)?("- "+stage.goal):""])
     ]));
     head.appendChild(el("span", {class:"badges", "aria-hidden":"true"}, [stageBadges(d)]));
     panel.appendChild(head);
@@ -1165,7 +1166,7 @@ const DATA = {
     app.appendChild(stageRail());
     app.appendChild(emotionCurve());
 
-    app.appendChild(el("h2", {}, ["Stages — click a stage to expand its blueprint lanes"]));
+    app.appendChild(el("h2", {}, ["Stages - click a stage to expand its blueprint lanes"]));
     STAGES.forEach((s,i)=> app.appendChild(stagePanel(s,i)));
 
     // restore compare button state class
@@ -1179,7 +1180,7 @@ const DATA = {
   try{ render(); }
   catch(err){
     const app = $("#app");
-    if(app) app.appendChild(el("div", {class:"gap-box"}, ["⚠️ Engine error: "+(err && err.message ? err.message : String(err))+" — check the DATA object."]));
+    if(app) app.appendChild(el("div", {class:"gap-box"}, ["⚠️ Engine error: "+(err && err.message ? err.message : String(err))+" - check the DATA object."]));
     if(window.console) console.error(err);
   }
 })();

@@ -53,4 +53,3 @@ targets, text resizing) for inclusive interface design.
 # Used in
 - [[wiki/ux-service-design/inclusive-low-bandwidth-design]]
 - [[wiki/ux-service-design/pharmacy-ux-patterns]]
-</content>

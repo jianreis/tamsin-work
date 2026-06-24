@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blueprint Kit — interactive service-blueprint engine (reference)</title>
+<title>Blueprint Kit - interactive service-blueprint engine (reference)</title>
 <style>
 :root{
   --bg:#ffffff; --ink:#18181b; --muted:#52525b; --line:#d4d4d8; --panel:#f4f4f5;
@@ -198,7 +198,7 @@ footer{margin-top:calc(var(--sp)*4); border-top:1px solid var(--line); padding-t
 
   <header>
     <div class="ribbon" role="note">
-      <span>⚠ Concept for review — not an official Dis-Chem artefact</span>
+      <span>⚠ Concept for review - not an official Dis-Chem artefact</span>
     </div>
     <h1 id="doc-title">Blueprint Kit</h1>
     <p class="sub" id="doc-sub">Reference implementation of the interactive service-blueprint engine</p>
@@ -216,40 +216,41 @@ footer{margin-top:calc(var(--sp)*4); border-top:1px solid var(--line); padding-t
 
 <script>
 /* =============================================================================
-   BLUEPRINT KIT — interactive engine (dependency-free vanilla JS)
+   BLUEPRINT KIT - interactive engine (dependency-free vanilla JS)
    The engine reads ONLY from the DATA object defined below.
    To make a new deliverable: copy this file, then change ONLY the DATA object
    between the REPLACE markers. Do not edit the engine unless fixing the engine.
    ============================================================================ */
 
-/* ===== REPLACE DATA BELOW — content agents swap this object ===================
-   DELIVERABLE #2 — CURRENT-STATE ("as-is") Dis-Chem scripting blueprint + journey.
+/* ===== REPLACE DATA BELOW - content agents swap this object ===================
+   DELIVERABLE #2 - CURRENT-STATE ("as-is") Dis-Chem scripting blueprint + journey.
    Real content grounded in the Bigly vault (primary source:
    design-kit/journeys/as-is-prescription-journey). Dual-economy: insured (Nomvula)
    vs cash/uninsured (Sipho) are genuinely different as-is journeys.
-   This is HONEST CURRENT REALITY — no asIsBaseline, no 🔮 requires-reform.
+   This is HONEST CURRENT REALITY - no asIsBaseline, no 🔮 requires-reform.
    Opportunities are kept light (the to-be deliverables #3/#4 own those).
    Every cite/ref slug resolves to a real vault file. Schema = DESIGN-SPEC §4.
    =========================================================================== */
 const DATA = {
   meta:{
-    title:"Dis-Chem Scripting — Current State (As-Is)",
-    subtitle:"Interactive dual-economy service blueprint + journey — how a prescription is filled at Dis-Chem today",
+    title:"Dis-Chem Scripting - Current State (As-Is)",
+    subtitle:"Interactive dual-economy service blueprint + journey - how a prescription is filled at Dis-Chem today",
     state:"as-is",            // "as-is" | "to-be"
     variant:null,             // null | "close-the-gap" | "aspirational"
     updated:"2026-06-13"
   },
 
-  // Canonical pillars — verbatim from deliverables/_shared/pillars.md (report agent owns).
+  // Canonical pillars - verbatim from deliverables/_shared/pillars.md (report agent owns).
   pillars:[
     {id:"S1", type:"strategic", name:"Serve both economies on one spine", oneLiner:"Insured (~16%) and cash (~84%) are different journeys sharing one spine; the cash majority is never a degraded afterthought."},
     {id:"S2", type:"strategic", name:"Pharmacy as the health front door", oneLiner:"Scripting is the entry to an ongoing care relationship, not a one-off transaction; the store+clinic estate is a strategic asset."},
     {id:"S3", type:"strategic", name:"Compete on service, not price", oneLiner:"SEP + capped dispensing fee fix the price; the durable differentiator is the experience around the drug."},
     {id:"S4", type:"strategic", name:"Chronic-medicine flywheel = retention engine", oneLiner:"Proactive managed chronic repeats are the recurring relationship that compounds loyalty and adherence."},
     {id:"S5", type:"strategic", name:"Pharmacist at top-of-licence; automate the toil", oneLiner:"Automation/central-fill/telepharmacy absorb mechanics so pharmacists do the clinical, trust-building work."},
+    {id:"S6", type:"strategic", name:"From prescription fulfilment to treatment orchestration", oneLiner:"Today the patient coordinates across prescriber, pharmacy, scheme, stock and delivery; absorb that coordination into one system - from dispensing a script to orchestrating the whole treatment journey."},
     {id:"U1", type:"ux", name:"Channel ladder: WhatsApp-first & data-frugal", oneLiner:"WhatsApp/USSD/SMS first, app as enhancement; low-data, async, resumable, idempotent by default."},
     {id:"U2", type:"ux", name:"Never leave them guessing", oneLiner:"Honest real-time status at every step; the silent wait and unexplained rejection are the primary pains."},
-    {id:"U3", type:"ux", name:"Make money legible, early, always", oneLiner:"Price + cover + co-pay shown before the till; cash/EFT/wallet supported; never a cost shock."},
+    {id:"U3", type:"ux", name:"Give me all the variables upfront", oneLiner:"Surface everything that materially affects the decision before commitment - cost, cover, stock, timing/ETA, alternatives; never spring a surprise (money is the sharpest case, not the whole of it)."},
     {id:"U4", type:"ux", name:"Design for graceful failure", oneLiner:"Plain-language recovery, never a dead end, always a route to a pharmacist."},
     {id:"U5", type:"ux", name:"Dignity, privacy & language by default", oneLiner:"Stigma-aware, discreet, multilingual, POPIA-grade consent; caregivers/proxies are first-class users."},
     {id:"U6", type:"ux", name:"Reduce the journey, don't just digitise it", oneLiner:"Eliminate steps and re-keying; one profile across channels; measure friction removed, not features shipped."},
@@ -257,8 +258,8 @@ const DATA = {
   ],
 
   economies:[
-    {id:"insured", label:"Insured — Nomvula", personaRef:"design-kit/personas/insured-chronic-multimorbid"},
-    {id:"cash",    label:"Cash/uninsured — Sipho", personaRef:"design-kit/personas/low-data-whatsapp-first-peri-urban"}
+    {id:"insured", label:"Insured - Nomvula", personaRef:"design-kit/personas/insured-chronic-multimorbid"},
+    {id:"cash",    label:"Cash/uninsured - Sipho", personaRef:"design-kit/personas/low-data-whatsapp-first-peri-urban"}
   ],
 
   stages:[
@@ -268,21 +269,21 @@ const DATA = {
       byEconomy:{
         insured:{
           emotion:3,
-          customerActions:["See a private GP / specialist (or Kena Health telehealth)","Receive a script — usually paper, sometimes a photo or e-script"],
+          customerActions:["See a private GP / specialist (or Kena Health telehealth)","Receive a script - usually paper, sometimes a photo or e-script"],
           thoughts:"Will all my chronic meds be covered and registered this time?",
           touchpoints:["Doctor's rooms / specialist","Kena Health telehealth (Dis-Chem ecosystem)","Dis-Chem in-store clinic / nurse"],
           frontstage:["Prescriber","Dis-Chem clinic nurse / Kena clinician"],
-          backstage:["Clinical decision","Paper-script issuance — SA is still largely paper at the prescriber end; no national e-script exchange"],
+          backstage:["Clinical decision","Paper-script issuance - SA is still largely paper at the prescriber end; no national e-script exchange"],
           support:["Prescriber's practice-management system (outside Dis-Chem)"],
           partners:["Private GP / specialist","Kena Health"],
-          regulatory:["Valid prescriber + Reg-33 content + scheduling apply — wiki/sa-regulatory/prescription-requirements-repeats"],
+          regulatory:["Valid prescriber + Reg-33 content + scheduling apply - wiki/sa-regulatory/prescription-requirements-repeats"],
           pains:[
-            {text:"Script may be illegible / incomplete; no digital hand-off to the pharmacy — she must physically carry it", cite:"design-kit/journeys/as-is-prescription-journey"}
+            {text:"Script may be illegible / incomplete; no digital hand-off to the pharmacy - she must physically carry it", cite:"design-kit/journeys/as-is-prescription-journey"}
           ],
           opportunities:[{text:"Bridge telehealth (Kena) prescribing into Dis-Chem dispensing within one ecosystem", pillars:["S2"], cite:"wiki/digital-transformation/e-prescribing-systems-and-standards"}],
           metrics:["% scripts arriving digitally vs on paper"],
           flags:[],
-          gaps:["E-script readiness in SA: a scanned/photographed script is an electronic transmission, NOT a true AES e-prescription — wiki/sa-regulatory/prescription-requirements-repeats"],
+          gaps:["E-script readiness in SA: a scanned/photographed script is an electronic transmission, NOT a true AES e-prescription - wiki/sa-regulatory/prescription-requirements-repeats"],
           citations:[{label:"As-is journey (primary)", ref:"design-kit/journeys/as-is-prescription-journey"},{label:"Kena Health", ref:"src-dc-health-kena"}]
         },
         cash:{
@@ -294,15 +295,15 @@ const DATA = {
           backstage:["Paper-script issuance","CCMDD chronic enrolment for clinically-stable patients"],
           support:["Public-sector clinic records (outside Dis-Chem)"],
           partners:["Public clinic / NDoH","CCMDD programme"],
-          regulatory:["Valid prescriber + Reg-33 content + scheduling apply — wiki/sa-regulatory/prescription-requirements-repeats"],
+          regulatory:["Valid prescriber + Reg-33 content + scheduling apply - wiki/sa-regulatory/prescription-requirements-repeats"],
           pains:[
             {text:"For stable chronic meds he defaults to the public clinic / CCMDD; he turns to Dis-Chem retail mainly for acute needs or when the clinic is out of stock", cite:"design-kit/personas/low-data-whatsapp-first-peri-urban"},
             {text:"Long clinic queues; a private fill can be a meaningful share of an irregular week's income", cite:"wiki/medical-schemes/cash-uninsured-pathway"}
           ],
-          opportunities:[{text:"Retail can already act as a CCMDD pick-up point — a bridge between the two economies", pillars:["S1"], cite:"wiki/medical-schemes/courier-chronic-pharmacy-models"}],
+          opportunities:[{text:"Retail can already act as a CCMDD pick-up point - a bridge between the two economies", pillars:["S1"], cite:"wiki/medical-schemes/courier-chronic-pharmacy-models"}],
           metrics:["Share of chronic via public/CCMDD vs retail"],
           flags:[],
-          gaps:["How much Sipho actually uses Dis-Chem retail today is uncertain — most stable chronic stays in the public/CCMDD channel — design-kit/personas/low-data-whatsapp-first-peri-urban"],
+          gaps:["How much Sipho actually uses Dis-Chem retail today is uncertain - most stable chronic stays in the public/CCMDD channel - design-kit/personas/low-data-whatsapp-first-peri-urban"],
           citations:[{label:"Sipho persona", ref:"design-kit/personas/low-data-whatsapp-first-peri-urban"},{label:"Cash/uninsured pathway", ref:"wiki/medical-schemes/cash-uninsured-pathway"},{label:"CCMDD / courier", ref:"wiki/medical-schemes/courier-chronic-pharmacy-models"}]
         }
       }
@@ -321,35 +322,35 @@ const DATA = {
           backstage:["Script image queued for pharmacist review"],
           support:["Dispensary system","Dis-Chem app / e-commerce platform"],
           partners:[],
-          regulatory:["Pharmacist must validate before dispensing — wiki/sa-regulatory/prescription-requirements-repeats"],
+          regulatory:["Pharmacist must validate before dispensing - wiki/sa-regulatory/prescription-requirements-repeats"],
           pains:[
-            {text:"App login failures — including false 'jailbroken/rooted device' blocks on legitimate phones — can stop submission entirely", cite:"src-dc-app-reviews"},
+            {text:"App login failures - including false 'jailbroken/rooted device' blocks on legitimate phones - can stop submission entirely", cite:"src-dc-app-reviews"},
             {text:"Photo-quality issues; weak in-app search; crashes/freezes (recurring 'needs an overhaul' theme)", cite:"src-dc-app-reviews"}
           ],
           opportunities:[{text:"Two-tap reorder against the meet-the-Sixty60-bar expectation", pillars:["U6","U2"], cite:"wiki/consumer-context/adjacent-digital-expectations"}],
           metrics:["Submission success rate","App crash / login-failure rate"],
           flags:[],
-          gaps:["OCR vs manual re-key: it is unclear whether upload uses structured/OCR capture or just stores an image for the pharmacist to re-key — the latter adds transcription-error risk — wiki/dischem/dischem-digital-channels"],
+          gaps:["OCR vs manual re-key: it is unclear whether upload uses structured/OCR capture or just stores an image for the pharmacist to re-key - the latter adds transcription-error risk - wiki/dischem/dischem-digital-channels"],
           citations:[{label:"App reviews (D-tier signal)", ref:"src-dc-app-reviews"},{label:"Dispensary services", ref:"src-dc-dispensary-services"},{label:"Digital channels", ref:"wiki/dischem/dischem-digital-channels"}]
         },
         cash:{
           emotion:2,
-          customerActions:["Hand the script in at the counter (most common for acute)","Or send a WhatsApp photo — only if it's light on data"],
+          customerActions:["Hand the script in at the counter (most common for acute)","Or send a WhatsApp photo - only if it's light on data"],
           thoughts:"Please don't make me install an app or burn my data.",
           touchpoints:["In-store dispensary","WhatsApp (\"Hi\" → 0860 347 243)","SMS"],
           frontstage:["Dispensary assistant","WhatsApp thread (primarily chronic/repeat today)"],
           backstage:["Script image queued for pharmacist review"],
           support:["Dispensary system"],
           partners:[],
-          regulatory:["Pharmacist must validate before dispensing — wiki/sa-regulatory/prescription-requirements-repeats"],
+          regulatory:["Pharmacist must validate before dispensing - wiki/sa-regulatory/prescription-requirements-repeats"],
           pains:[
-            {text:"App-first, data-heavy flows lock him out — login, account creation, large image/PDF downloads each cost real rands", cite:"wiki/consumer-context/digital-access-and-whatsapp"},
-            {text:"Flows fail when data/airtime runs out mid-step — no resume, lost progress", cite:"wiki/consumer-context/digital-access-and-whatsapp"}
+            {text:"App-first, data-heavy flows lock him out - login, account creation, large image/PDF downloads each cost real rands", cite:"wiki/consumer-context/digital-access-and-whatsapp"},
+            {text:"Flows fail when data/airtime runs out mid-step - no resume, lost progress", cite:"wiki/consumer-context/digital-access-and-whatsapp"}
           ],
           opportunities:[{text:"WhatsApp/USSD-first, small-payload submission that survives a dropped connection", pillars:["U1"], cite:"wiki/consumer-context/digital-access-and-whatsapp"}],
           metrics:["In-store vs digital submission split","Low-data submission completion rate"],
           flags:[],
-          gaps:["WhatsApp channel scope: unclear whether it is bot vs human-agent and whether it accepts NEW scripts or only repeats — wiki/dischem/dischem-digital-channels"],
+          gaps:["WhatsApp channel scope: unclear whether it is bot vs human-agent and whether it accepts NEW scripts or only repeats - wiki/dischem/dischem-digital-channels"],
           citations:[{label:"Digital access & WhatsApp", ref:"wiki/consumer-context/digital-access-and-whatsapp"},{label:"PackMyMeds", ref:"src-dc-packmymeds"}]
         }
       }
@@ -365,12 +366,12 @@ const DATA = {
           thoughts:"Is it ready yet? Is my chronic condition still registered?",
           touchpoints:["Dispensary counter","Phone / WhatsApp follow-up"],
           frontstage:["Pharmacist counselling / queries"],
-          backstage:["Legality & scheduling checks (valid prescriber, in-date, repeats remaining — up to 6 months S2–S4)","Interaction screening","Generic-substitution decision","Stock check","Chronic-condition registration check with the scheme"],
+          backstage:["Legality & scheduling checks (valid prescriber, in-date, repeats remaining - up to 6 months S2–S4)","Interaction screening","Generic-substitution decision","Stock check","Chronic-condition registration check with the scheme"],
           support:["Dispensary system","Scheme chronic-registration check"],
           partners:["Medical scheme"],
-          regulatory:["Repeats valid up to 6 months for S2–S5; S6 no repeats — wiki/sa-regulatory/prescription-requirements-repeats"],
+          regulatory:["Repeats valid up to 6 months for S2–S5; S6 no repeats - wiki/sa-regulatory/prescription-requirements-repeats"],
           pains:[
-            {text:"Hidden delays — an unregistered chronic condition means the claim will reject, and a stock-out is often discovered only here", cite:"src-dc-hellopeter-complaints"}
+            {text:"Hidden delays - an unregistered chronic condition means the claim will reject, and a stock-out is often discovered only here", cite:"src-dc-hellopeter-complaints"}
           ],
           opportunities:[{text:"Pre-check formulary + CDL + DSP status before the counter", pillars:["U2","S4"], cite:"wiki/medical-schemes/dsp-formularies-copayments"}],
           metrics:["Median time-to-validate","Claim-reject-at-till rate"],
@@ -380,13 +381,13 @@ const DATA = {
         cash:{
           emotion:2,
           customerActions:["Wait","Answer pharmacist queries"],
-          thoughts:"Just tell me what it costs — and whether you even have it.",
+          thoughts:"Just tell me what it costs - and whether you even have it.",
           touchpoints:["Dispensary counter","WhatsApp follow-up"],
           frontstage:["Pharmacist queries / counselling"],
           backstage:["Legality & scheduling checks","Interaction screening","Generic-substitution decision","Stock check"],
           support:["Dispensary system"],
           partners:[],
-          regulatory:["Pharmacist oversight is non-negotiable; generic substitution default unless refused — wiki/sa-regulatory/prescription-requirements-repeats"],
+          regulatory:["Pharmacist oversight is non-negotiable; generic substitution default unless refused - wiki/sa-regulatory/prescription-requirements-repeats"],
           pains:[
             {text:"No price certainty before he commits; the cash path can feel like an error state rather than a first-class route", cite:"wiki/medical-schemes/cash-uninsured-pathway"}
           ],
@@ -400,18 +401,18 @@ const DATA = {
 
     /* ---- 4. FUND / CLAIM  (⭐ Validate→Fund moment of truth) -------------- */
     {
-      id:"fund", name:"Fund / Claim", goal:"Establish who pays what — the financial moment of truth.",
+      id:"fund", name:"Fund / Claim", goal:"Establish who pays what - the financial moment of truth.",
       byEconomy:{
         insured:{
           emotion:1,
           customerActions:["Present scheme card","Discover any co-payment on the spot"],
-          thoughts:"Wait — why is there a co-pay on a PMB chronic condition?",
+          thoughts:"Wait - why is there a co-pay on a PMB chronic condition?",
           touchpoints:["Dispensary till","In-app payment","Scheme call-centre (for auth)"],
           frontstage:["Cashier / pharmacist explaining cover vs co-pay"],
-          backstage:["Real-time electronic claim switching (SwitchOn / MediKredit / Healthbridge)","Adjudicated against NAPPI + ICD-10 + member identity","PMB / CDL + formulary + MMAP rules","DSP / network-pharmacy logic — if Dis-Chem isn't the scheme's chronic DSP, a co-payment applies"],
+          backstage:["Real-time electronic claim switching (SwitchOn / MediKredit / Healthbridge)","Adjudicated against NAPPI + ICD-10 + member identity","PMB / CDL + formulary + MMAP rules","DSP / network-pharmacy logic - if Dis-Chem isn't the scheme's chronic DSP, a co-payment applies"],
           support:["Claims switch","Scheme adjudication engine"],
           partners:["Medical scheme","Claims switching house"],
-          regulatory:["PMB / CDL funding obligations — wiki/medical-schemes/pmb-cdl-chronic"],
+          regulatory:["PMB / CDL funding obligations - wiki/medical-schemes/pmb-cdl-chronic"],
           pains:[
             {text:"Co-payment surprise discovered at the till; member may be locked to one chronic pharmacy for 6 months; steered toward a courier pharmacy (Clicks Direct / Pharmacy Direct / Medipost / Dis-Chem Direct) to avoid co-pays", cite:"src-sa-scheme-chronic-dsp"},
             {text:"Real-time rejection (data mismatch, off-formulary, chronic not registered, benefit exhausted) surfaces in a queue with no clear next step", cite:"wiki/medical-schemes/realtime-claims-switching"}
@@ -427,10 +428,10 @@ const DATA = {
           thoughts:"That dispensing fee really bites on a cheap medicine.",
           touchpoints:["Dispensary till","WhatsApp / verbal quote"],
           frontstage:["Cashier / pharmacist quoting the price"],
-          backstage:["Cash-price calc = SEP + regulated dispensing fee (banded: ~R15.80 + 46% on cheap meds)","No claim to switch — there is no scheme"],
+          backstage:["Cash-price calc = SEP + regulated dispensing fee (banded: ~R15.80 + 46% on cheap meds)","No claim to switch - there is no scheme"],
           support:["Point-of-sale"],
           partners:[],
-          regulatory:["SEP + capped dispensing fee fix the price; discounting the medicine is unlawful — wiki/sa-regulatory/sep-dispensing-fee"],
+          regulatory:["SEP + capped dispensing fee fix the price; discounting the medicine is unlawful - wiki/sa-regulatory/sep-dispensing-fee"],
           pains:[
             {text:"The regulated dispensing fee bites hardest on cheap medicines (46% band); price is fixed, so he can't shop it down", cite:"wiki/sa-regulatory/sep-dispensing-fee"},
             {text:"The trip and the queue are themselves a cost on an irregular income", cite:"wiki/consumer-context/two-economy-affordability"}
@@ -456,7 +457,7 @@ const DATA = {
           backstage:["Scheme pays its share","Card / EFT settlement of the member balance"],
           support:["Payment gateway","Claims switch"],
           partners:["Medical scheme","Payment provider"],
-          regulatory:["POPIA governs payment + health-data handling — wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          regulatory:["POPIA governs payment + health-data handling - wiki/sa-regulatory/e-prescription-telehealth-popia"],
           pains:[
             {text:"In-app payment-processing failures; queueing in store; a surprise out-of-pocket carried over from funding", cite:"src-dc-app-reviews"}
           ],
@@ -468,13 +469,13 @@ const DATA = {
         cash:{
           emotion:2,
           customerActions:["Pay cash / instant EFT, often on collection"],
-          thoughts:"I'll pay when I fetch it — I don't keep a card balance.",
+          thoughts:"I'll pay when I fetch it - I don't keep a card balance.",
           touchpoints:["Dispensary till","Instant EFT","Cash on collection"],
           frontstage:["Cashier"],
           backstage:["Cash / EFT settlement of the full amount"],
           support:["Point-of-sale"],
           partners:["Payment provider"],
-          regulatory:["POPIA governs payment + health-data handling — wiki/sa-regulatory/e-prescription-telehealth-popia"],
+          regulatory:["POPIA governs payment + health-data handling - wiki/sa-regulatory/e-prescription-telehealth-popia"],
           pains:[
             {text:"Pays out of pocket at the margin; no stored card; the full amount can be unaffordable at once", cite:"wiki/consumer-context/two-economy-affordability"}
           ],
@@ -493,20 +494,20 @@ const DATA = {
         insured:{
           emotion:4,
           customerActions:["Wait for preparation","Chronic meds pre-packed ahead via PackMyMeds"],
-          thoughts:"Good — it's all prepared in one parcel.",
+          thoughts:"Good - it's all prepared in one parcel.",
           touchpoints:["Dispensary","Back-of-house pack station"],
           frontstage:["Pharmacist hands over + counsels"],
           backstage:["Pick / label / check","PackMyMeds pre-pack at the nearest store ahead of pickup","Pharmacist QA check"],
           support:["Dispensary system","PackMyMeds scheduler"],
           partners:["PackMyMeds"],
-          regulatory:["Pharmacist final check + GPP counselling are mandatory — wiki/sa-regulatory/prescription-requirements-repeats"],
+          regulatory:["Pharmacist final check + GPP counselling are mandatory - wiki/sa-regulatory/prescription-requirements-repeats"],
           pains:[
-            {text:"Labelling / selection errors — e.g. a wrong product under a correct-drug label — are safety-critical", cite:"src-dc-hellopeter-complaints"}
+            {text:"Labelling / selection errors - e.g. a wrong product under a correct-drug label - are safety-critical", cite:"src-dc-hellopeter-complaints"}
           ],
           opportunities:[{text:"Consolidate her 4–5 scripts into one prepared parcel + one collection event", pillars:["S4","U6"], cite:"wiki/consumer-context/health-seeking-behaviour"}],
           metrics:["Dispensing-error rate","First-time-right %"],
           flags:[],
-          gaps:["Dispensing-error & stock-out rates rest on D-tier HelloPeter/app signals only — triangulate with B-tier audit data — meta/open-questions"],
+          gaps:["Dispensing-error & stock-out rates rest on D-tier HelloPeter/app signals only - triangulate with B-tier audit data - meta/open-questions"],
           citations:[{label:"PackMyMeds", ref:"src-dc-packmymeds"},{label:"Hellopeter complaints (D-tier)", ref:"src-dc-hellopeter-complaints"}]
         },
         cash:{
@@ -518,14 +519,14 @@ const DATA = {
           backstage:["Pick / label / check","Pharmacist QA check"],
           support:["Dispensary system"],
           partners:[],
-          regulatory:["Pharmacist final check + GPP counselling are mandatory — wiki/sa-regulatory/prescription-requirements-repeats"],
+          regulatory:["Pharmacist final check + GPP counselling are mandatory - wiki/sa-regulatory/prescription-requirements-repeats"],
           pains:[
-            {text:"Stock-outs with no generic on hand force a wasted, costly trip — and may send him back to the clinic queue", cite:"src-dc-hellopeter-complaints"}
+            {text:"Stock-outs with no generic on hand force a wasted, costly trip - and may send him back to the clinic queue", cite:"src-dc-hellopeter-complaints"}
           ],
           opportunities:[{text:"Confirm stock + a funded generic at quote time so the trip is never wasted", pillars:["U4","S1"], cite:"wiki/consumer-context/health-seeking-behaviour"}],
           metrics:["Stock-out-at-counter rate"],
           flags:[],
-          gaps:["Stock-out rate is a D-tier anecdote, not quantified — meta/open-questions"],
+          gaps:["Stock-out rate is a D-tier anecdote, not quantified - meta/open-questions"],
           citations:[{label:"Hellopeter complaints (D-tier)", ref:"src-dc-hellopeter-complaints"}]
         }
       }
@@ -533,7 +534,7 @@ const DATA = {
 
     /* ---- 7. COLLECT / DELIVER  (⭐ moment of truth) ---------------------- */
     {
-      id:"collect", name:"Collect / Deliver", goal:"Get the medicine to the customer — the promise kept or broken.",
+      id:"collect", name:"Collect / Deliver", goal:"Get the medicine to the customer - the promise kept or broken.",
       byEconomy:{
         insured:{
           emotion:3,
@@ -544,27 +545,27 @@ const DATA = {
           backstage:["Order routing","Courier dispatch","Status updates"],
           support:["Order-management system","Courier / DeliverD platform"],
           partners:["DeliverD courier","Dis-Chem Direct"],
-          regulatory:["Scheduled-medicine handling in transit applies — wiki/sa-regulatory/prescription-requirements-repeats"],
+          regulatory:["Scheduled-medicine handling in transit applies - wiki/sa-regulatory/prescription-requirements-repeats"],
           pains:[
-            {text:"Orders cancelled minutes before delivery; missing / wrong items on arrival — the broken promise erodes trust", cite:"src-dc-app-reviews"},
+            {text:"Orders cancelled minutes before delivery; missing / wrong items on arrival - the broken promise erodes trust", cite:"src-dc-app-reviews"},
             {text:"Coverage gaps outside main metros (DeliverD ≈ selected metros, ≤10km)", cite:"src-dc-deliverd"}
           ],
           opportunities:[{text:"Honest live ETA + delivery-integrity SLA, matching the Sixty60 bar", pillars:["U2","U4"], cite:"wiki/consumer-context/adjacent-digital-expectations"}],
           metrics:["On-time-in-full %","Pre-delivery cancellation rate"],
           flags:["momentOfTruth"],
-          gaps:["DeliverD fee is R35 but that figure is 2021-dated (launched R60, dropped Dec 2021) — verify for 2026 — wiki/dischem/dischem-dispensary-services","Cold-chain / fridge-line & S5/S6 handling across DeliverD and courier is undocumented — meta/open-questions","Dis-Chem Direct vs PackMyMeds relationship (one fulfilment engine or two) is unclear — wiki/dischem/dischem-dispensary-services"],
+          gaps:["DeliverD fee is R35 but that figure is 2021-dated (launched R60, dropped Dec 2021) - verify for 2026 - wiki/dischem/dischem-dispensary-services","Cold-chain / fridge-line & S5/S6 handling across DeliverD and courier is undocumented - meta/open-questions","Dis-Chem Direct vs PackMyMeds relationship (one fulfilment engine or two) is unclear - wiki/dischem/dischem-dispensary-services"],
           citations:[{label:"DeliverD", ref:"src-dc-deliverd"},{label:"App reviews (D-tier)", ref:"src-dc-app-reviews"},{label:"Dispensary services", ref:"src-dc-dispensary-services"}]
         },
         cash:{
           emotion:2,
           customerActions:["Collect in-store / at a near-home point; home delivery is rarely viable"],
-          thoughts:"The delivery man can't find my place — let me fetch it on the way home.",
+          thoughts:"The delivery man can't find my place - let me fetch it on the way home.",
           touchpoints:["Store collection desk","CCMDD / Pelebox-style near-home pickup point","SMS / WhatsApp 'ready' + PIN"],
           frontstage:["Collection point / locker","SMS / WhatsApp status"],
           backstage:["Order routing","Collection-PIN issuance"],
           support:["Dispensary system","SMS gateway"],
           partners:["CCMDD pick-up points","Pelebox-style locker networks (where present)"],
-          regulatory:["Scheduled-medicine handling at pick-up points applies — wiki/sa-regulatory/prescription-requirements-repeats"],
+          regulatory:["Scheduled-medicine handling at pick-up points applies - wiki/sa-regulatory/prescription-requirements-repeats"],
           pains:[
             {text:"Home delivery assumes a findable street address he doesn't have; courier delivery is unreliable in informal/peri-urban areas, so he must travel to collect", cite:"wiki/consumer-context/last-mile-addressing-logistics"},
             {text:"Distance + a missed 'ready' SMS is a primary lapse risk", cite:"design-kit/personas/low-data-whatsapp-first-peri-urban"}
@@ -572,7 +573,7 @@ const DATA = {
           opportunities:[{text:"Adopt the Pelebox / CCMDD pattern: SMS/WhatsApp + one-time PIN, collect near home, no address required", pillars:["U1","S1"], cite:"wiki/consumer-context/last-mile-addressing-logistics"}],
           metrics:["Near-home-collection coverage","Successful-pickup rate"],
           flags:["momentOfTruth"],
-          gaps:["Retail Dis-Chem near-home collection-point / locker coverage outside metros is not quantified — wiki/consumer-context/last-mile-addressing-logistics"],
+          gaps:["Retail Dis-Chem near-home collection-point / locker coverage outside metros is not quantified - wiki/consumer-context/last-mile-addressing-logistics"],
           citations:[{label:"Last-mile / addressing", ref:"wiki/consumer-context/last-mile-addressing-logistics"},{label:"Sipho persona", ref:"design-kit/personas/low-data-whatsapp-first-peri-urban"},{label:"CCMDD / courier", ref:"wiki/medical-schemes/courier-chronic-pharmacy-models"}]
         }
       }
@@ -602,7 +603,7 @@ const DATA = {
         },
         cash:{
           emotion:2,
-          customerActions:["Take medicine","Answer an SMS reminder — if it reaches him"],
+          customerActions:["Take medicine","Answer an SMS reminder - if it reaches him"],
           thoughts:"If the reminder doesn't reach me, I just run out.",
           touchpoints:["Home","SMS reminder (clinic/CCMDD-side for most chronic)"],
           frontstage:["SMS reminder"],
@@ -611,7 +612,7 @@ const DATA = {
           partners:["CCMDD (for public-channel chronic)"],
           regulatory:[],
           pains:[
-            {text:"The silent lapse — a missed collection from distance, a zero data balance, or a broken reminder — not a clinical decision to stop", cite:"wiki/consumer-context/health-seeking-behaviour"}
+            {text:"The silent lapse - a missed collection from distance, a zero data balance, or a broken reminder - not a clinical decision to stop", cite:"wiki/consumer-context/health-seeking-behaviour"}
           ],
           opportunities:[{text:"Low-data, SMS-first adherence nudges that never depend on an app", pillars:["U1","U7"], cite:"wiki/consumer-context/digital-access-and-whatsapp"}],
           metrics:["Reminder delivery rate","Lapse rate"],
@@ -623,7 +624,7 @@ const DATA = {
 
     /* ---- 9. REFILL  (⭐ Refill→new-script moment of truth) --------------- */
     {
-      id:"refill", name:"Refill", goal:"Re-order each cycle and renew the script before a lapse — the silent drop-off point.",
+      id:"refill", name:"Refill", goal:"Re-order each cycle and renew the script before a lapse - the silent drop-off point.",
       byEconomy:{
         insured:{
           emotion:2,
@@ -631,17 +632,17 @@ const DATA = {
           thoughts:"Why do I have to re-apply and chase a new script every six months?",
           touchpoints:["WhatsApp / SMS / app → loops back to Submit → … → Collect/Deliver"],
           frontstage:["Reorder link","Dispensary"],
-          backstage:["Repeat decrement each cycle","At repeat expiry, hard hand-off back to the prescriber (Stage 1) — no orchestration across that gap"],
+          backstage:["Repeat decrement each cycle","At repeat expiry, hard hand-off back to the prescriber (Stage 1) - no orchestration across that gap"],
           support:["Dispensary system","PackMyMeds scheduler"],
           partners:["Medical scheme","Prescriber"],
-          regulatory:["A new script is required once repeats are exhausted (~6 months, S2–S5) — wiki/sa-regulatory/prescription-requirements-repeats"],
+          regulatory:["A new script is required once repeats are exhausted (~6 months, S2–S5) - wiki/sa-regulatory/prescription-requirements-repeats"],
           pains:[
-            {text:"Opt-in, not managed — customer effort every cycle; a hard break at script expiry drives high drop-off / adherence-gap risk; re-registration friction with the scheme", cite:"src-dc-packmymeds"}
+            {text:"Opt-in, not managed - customer effort every cycle; a hard break at script expiry drives high drop-off / adherence-gap risk; re-registration friction with the scheme", cite:"src-dc-packmymeds"}
           ],
           opportunities:[{text:"Orchestrate the script-renewal gap: prompt / renew before the 6-month expiry instead of letting it lapse", pillars:["S4","U7"], cite:"wiki/digital-transformation/e-prescribing-systems-and-standards"}],
           metrics:["Refill drop-off rate at expiry","Renewal-before-lapse %"],
           flags:["momentOfTruth"],
-          gaps:["Whether PackMyMeds auto-re-authorises scheme chronic registration or requires manual re-auth each cycle is unclear — meta/open-questions"],
+          gaps:["Whether PackMyMeds auto-re-authorises scheme chronic registration or requires manual re-auth each cycle is unclear - meta/open-questions"],
           citations:[{label:"PackMyMeds", ref:"src-dc-packmymeds"},{label:"Prescription rules", ref:"wiki/sa-regulatory/prescription-requirements-repeats"}]
         },
         cash:{
@@ -653,11 +654,11 @@ const DATA = {
           backstage:["Repeat decrement","Re-registration / re-script friction"],
           support:["SMS gateway","Dispensary system"],
           partners:["Public clinic / CCMDD","Prescriber"],
-          regulatory:["A new script is required once repeats are exhausted — wiki/sa-regulatory/prescription-requirements-repeats"],
+          regulatory:["A new script is required once repeats are exhausted - wiki/sa-regulatory/prescription-requirements-repeats"],
           pains:[
-            {text:"Re-registration / re-script friction; a lapse if a reminder fails or the trip is too far — and most of his managed chronic refill happens outside Dis-Chem retail today", cite:"design-kit/personas/low-data-whatsapp-first-peri-urban"}
+            {text:"Re-registration / re-script friction; a lapse if a reminder fails or the trip is too far - and most of his managed chronic refill happens outside Dis-Chem retail today", cite:"design-kit/personas/low-data-whatsapp-first-peri-urban"}
           ],
-          opportunities:[{text:"A managed, low-data refill loop tied to near-home pickup — the loop courier/CCMDD pharmacies already win", pillars:["S4","U1"], cite:"wiki/medical-schemes/courier-chronic-pharmacy-models"}],
+          opportunities:[{text:"A managed, low-data refill loop tied to near-home pickup - the loop courier/CCMDD pharmacies already win", pillars:["S4","U1"], cite:"wiki/medical-schemes/courier-chronic-pharmacy-models"}],
           metrics:["Refill continuation rate"],
           flags:["momentOfTruth"],
           citations:[{label:"Sipho persona", ref:"design-kit/personas/low-data-whatsapp-first-peri-urban"},{label:"CCMDD / courier models", ref:"wiki/medical-schemes/courier-chronic-pharmacy-models"}]
@@ -666,11 +667,11 @@ const DATA = {
     }
   ]
 };
-/* ===== REPLACE DATA ABOVE — content agents swap this object ================= */
+/* ===== REPLACE DATA ABOVE - content agents swap this object ================= */
 
 
 /* =============================================================================
-   ENGINE — do not edit below unless fixing the engine itself.
+   ENGINE - do not edit below unless fixing the engine itself.
    ============================================================================ */
 (function(){
   "use strict";
@@ -740,7 +741,7 @@ const DATA = {
   // ---- citation element -----------------------------------------------------
   function citeEl(text, ref){
     if(!has(ref)) return document.createTextNode(text);
-    const b = el("button", {class:"cite", type:"button", "aria-label":text+" — source "+ref}, [text]);
+    const b = el("button", {class:"cite", type:"button", "aria-label":text+" - source "+ref}, [text]);
     b.appendChild(el("span", {class:"tip", role:"tooltip"}, ["source: "+ref]));
     // toggle on click for touch / keyboard explicitness
     b.addEventListener("click", ()=> b.classList.toggle("show"));
@@ -800,8 +801,8 @@ const DATA = {
 
   function pillarLegend(){
     if(!PILLARS.length) return null;
-    const wrap = el("div", {class:"legend pillar-legend", "aria-label":"Pillars — click to highlight"});
-    wrap.appendChild(el("div", {class:"tiny"}, ["Pillars — click one to highlight everywhere it appears (click again to clear):"]));
+    const wrap = el("div", {class:"legend pillar-legend", "aria-label":"Pillars - click to highlight"});
+    wrap.appendChild(el("div", {class:"tiny"}, ["Pillars - click one to highlight everywhere it appears (click again to clear):"]));
     PILLARS.forEach(p=>{
       const row = el("div", {class:"prow"});
       row.appendChild(el("button", {
@@ -809,7 +810,7 @@ const DATA = {
         onclick:()=>togglePillar(p.id)
       }, [p.id]));
       row.appendChild(el("span", {class:"ptype"}, [p.type||""]));
-      row.appendChild(el("span", {}, [(p.name||"")+(p.oneLiner?" — "+p.oneLiner:"")]));
+      row.appendChild(el("span", {}, [(p.name||"")+(p.oneLiner?" - "+p.oneLiner:"")]));
       wrap.appendChild(row);
     });
     return wrap;
@@ -911,7 +912,7 @@ const DATA = {
     });
 
     const wrap = el("div", {class:"emotion-wrap"});
-    wrap.appendChild(el("div", {class:"tiny"}, ["Emotion curve — "+(currentEconLabel())+" · 1 = 😠 low … 5 = 😀 high · ⭐ = moment of truth"]));
+    wrap.appendChild(el("div", {class:"tiny"}, ["Emotion curve - "+(currentEconLabel())+" · 1 = 😠 low … 5 = 😀 high · ⭐ = moment of truth"]));
     wrap.appendChild(svg);
     return wrap;
   }
@@ -937,7 +938,7 @@ const DATA = {
     const kind = lane.kind;
     if(kind==="text"){
       if(!has(d[lane.key])) return null;
-      return el("div", {class:"thoughts"}, ["“"+d[lane.key]+"”"]);
+      return el("div", {class:"thoughts"}, ["\""+d[lane.key]+"\""]);
     }
     if(kind==="list"){
       const items = arr(d[lane.key]);
@@ -995,7 +996,7 @@ const DATA = {
     head.appendChild(el("span", {}, [
       el("span", {class:"chev"}, ["▸ "]),
       el("span", {class:"ttl"}, [(idx+1)+". "+(stage.name||sid)+" "]),
-      el("span", {class:"goal"}, [has(stage.goal)?("— "+stage.goal):""])
+      el("span", {class:"goal"}, [has(stage.goal)?("- "+stage.goal):""])
     ]));
     head.appendChild(el("span", {class:"badges", "aria-hidden":"true"}, [stageBadges(d)]));
     panel.appendChild(head);
@@ -1134,7 +1135,7 @@ const DATA = {
     app.appendChild(stageRail());
     app.appendChild(emotionCurve());
 
-    app.appendChild(el("h2", {}, ["Stages — click a stage to expand its blueprint lanes"]));
+    app.appendChild(el("h2", {}, ["Stages - click a stage to expand its blueprint lanes"]));
     STAGES.forEach((s,i)=> app.appendChild(stagePanel(s,i)));
 
     // restore compare button state class
@@ -1148,7 +1149,7 @@ const DATA = {
   try{ render(); }
   catch(err){
     const app = $("#app");
-    if(app) app.appendChild(el("div", {class:"gap-box"}, ["⚠️ Engine error: "+(err && err.message ? err.message : String(err))+" — check the DATA object."]));
+    if(app) app.appendChild(el("div", {class:"gap-box"}, ["⚠️ Engine error: "+(err && err.message ? err.message : String(err))+" - check the DATA object."]));
     if(window.console) console.error(err);
   }
 })();

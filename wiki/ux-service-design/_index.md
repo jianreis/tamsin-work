@@ -2,7 +2,7 @@
 type: index
 title: "UX & service design — index"
 domain: ux-service-design
-updated: "2026-06-13"
+updated: "2026-06-17"
 tags: [index, domain/ux]
 status: draft
 ---
@@ -12,7 +12,7 @@ status: draft
 Service blueprinting, journey mapping, JTBD, healthcare service design
 frameworks, patient experience, behavioural design for adherence, trust & safety
 in health UX, inclusive/low-bandwidth design. These pages are the **method
-reference** the design-kit blueprint/journey templates cite — see
+reference** the design-kit blueprint/journey templates cite - see
 [[CLAUDE|schema §8]].
 
 ## Pages
@@ -40,7 +40,7 @@ reference** the design-kit blueprint/journey templates cite — see
 - [[inclusive-low-bandwidth-design]] — accessibility (WCAG AA, elderly,
   low-vision, low-literacy), low-data / feature-phone / **USSD / WhatsApp / SMS**
   channel ladder, multilingual design, and intermittent-connectivity /
-  load-shedding resilience — the SA-critical page.
+  load-shedding resilience - the SA-critical page.
 - [[pharmacy-ux-patterns]] — concrete scripting interaction patterns: Rx capture
   (photo/scan/e-token), identity & consent, refill & auto-refill, funding/price
   transparency, status/tracking, reminders/adherence nudges, and graceful

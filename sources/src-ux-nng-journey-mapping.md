@@ -67,4 +67,3 @@ the authoritative method reference the vault's journey-map template cites.
 # Used in
 - [[wiki/ux-service-design/journey-mapping-method]]
 - [[wiki/ux-service-design/service-blueprinting-method]]
-</content>

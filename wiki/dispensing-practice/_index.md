@@ -2,7 +2,7 @@
 type: index
 title: "Dispensing best practice — index"
 domain: dispensing-practice
-updated: "2026-06-14"
+updated: "2026-06-17"
 tags: [index, domain/dispensing]
 status: draft
 ---
@@ -11,7 +11,7 @@ status: draft
 
 Global best practice (WHO/FIP, GPP, leading systems) for the dispensing process,
 prescription validation, clinical interventions & medication therapy management,
-error prevention, adherence packaging, counselling, cold chain and inventory —
+error prevention, adherence packaging, counselling, cold chain and inventory,
 with **South African applicability** noted throughout. Anchored on FIP/WHO Good
 Pharmacy Practice and SA's SAPC GPP rules.
 

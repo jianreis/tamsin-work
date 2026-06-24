@@ -7,23 +7,23 @@ confidence: medium
 tags: [domain/dispensing, domain/ux, journey/validate, journey/pay, journey/collect, journey/deliver, topic/acute, topic/telehealth, topic/trust-safety, region/za, region/global]
 sources: [src-om-kenya-outpatient-afterhours-emergency]
 created: "2026-06-14"
-updated: "2026-06-14"
+updated: "2026-06-17"
 ---
 
 # After-hours, emergency & out-patient acute medication access
 
 The vault's design spine is built around the **chronic / repeat** flywheel
-([[wiki/concepts/chronic-medicine-flywheel]]) — a predictable, schedulable,
-relationship-based journey. But a meaningful share of real scripting moments are
+([[wiki/concepts/chronic-medicine-flywheel]]), a predictable, schedulable,
+relationship-based journey. A meaningful share of real scripting moments are
 **off-spine**: a new acute script is generated **under stress, outside business
 hours, away from the customer's usual pharmacy, with funding uncertain**. The
 clearest worked example we have is an analogous Bigly Labs design board for a
 **Kenyan health-insurance** out-patient / after-hours-emergency claims journey
-([[src-om-kenya-outpatient-afterhours-emergency]]) — a sick child taken to an ER
+([[src-om-kenya-outpatient-afterhours-emergency]]): a sick child taken to an ER
 on a Sunday evening, where collecting the prescribed antibiotic is one leg of a
 larger, anxious visit. Although the artifact is **insurance-claims-centric and
 Kenyan** (treat its future-state mechanics as **design signals, not SA
-evidence** — reliability C), its pain analysis transfers almost directly to the
+evidence**, reliability C), its pain analysis transfers almost directly to the
 SA pharmacy-scripting problem and surfaces a **candidate complex use case** worth
 designing for explicitly.
 
@@ -34,7 +34,7 @@ Two related off-spine scenarios appear in the source
 1. **After-hours emergency.** Trigger: an acute condition worsens when the usual
    front door (GP/clinic/regular pharmacy) is closed; the customer escalates to
    an ER under time pressure and emotional stress. The medication is a
-   **single, simple, covered course** (here, antibiotics for tonsillitis) — but
+   **single, simple, covered course** (here, antibiotics for tonsillitis), but
    the *experience* around obtaining it is heavy.
 2. **Out-patient (hospital) visit.** Trigger: a consultation, test, minor
    procedure or **medication dispensed during a hospital visit** without
@@ -62,18 +62,18 @@ the vault:
   create outsized pain, and it is **manually submitted** with **no member-facing
   status** ([[src-om-kenya-outpatient-afterhours-emergency]]). SA analogue:
   point-of-sale **scheme adjudication / claim rejections** and chronic
-  authorisation, where the customer also lacks live visibility — argues for
+  authorisation, where the customer also lacks live visibility, which argues for
   [[wiki/concepts/moment-of-truth|status as a designed surface]] and
   [[wiki/concepts/graceful-failure]].
 - **Cumulative, repeated waiting.** Each new test/treatment/medication can
-  re-trigger the queue → front-desk → wait loop; pain is *cumulative*, not a
+  re-trigger the queue -> front-desk -> wait loop; pain is *cumulative*, not a
   single SLA number ([[src-om-kenya-outpatient-afterhours-emergency]]). The
   proposed counter-principle, *"Run Ahead of the Customer"* (authorise
   pre-emptively, remove friction before it's hit), is directly reusable for the
   SA scripting blueprint.
 - **Medication authorised too late / queue-hopping.** Cover for the medication is
   only triggered **at the pharmacy**, sending the patient back to reception, so
-  they shuttle **pharmacy → front desk → pharmacy**
+  they shuttle **pharmacy -> front desk -> pharmacy**
   ([[src-om-kenya-outpatient-afterhours-emergency]]). This is the off-spine
   version of the SA "go to the till to find out the price/cover" black box.
 - **Dependant identity friction.** Front desks demand **OTP verification from the
@@ -82,7 +82,7 @@ the vault:
   [[wiki/concepts/identity-and-consent]] and POPIA-compliant
   proxy/caregiver access in SA.
 - **Redundant paper + reconciliation tail.** A **paper claim form** is completed
-  but serves no purpose; the **visit stays "open"** unless the member returns to
+  but serves no purpose, and the **visit stays "open"** unless the member returns to
   reception to "check out", blocking the provider's claim
   ([[src-om-kenya-outpatient-afterhours-emergency]]). SA analogue: paper-script
   handling and manual claim closeout.
@@ -92,11 +92,11 @@ the vault:
   [[wiki/concepts/medication-adherence]] and post-fill care.
 
 ## The gaps it exposes for the SA spine
-The future-state mechanics the board proposes — biometric login, **emergency
+The future-state mechanics the board proposes - biometric login, **emergency
 triage logic** (ambulance / nearest covered hospital / 24-7 virtual doctor),
 coverage-filtered facility lookup, **doctor-initiated real-time cover**,
 **pre-filled registration**, **point-of-sale clearance** and **auto-close**, plus
-an **"Am I Covered?"** tool — are aspirational and unvalidated for SA. They
+an **"Am I Covered?"** tool - are aspirational and unvalidated for SA. They
 expose concrete gaps:
 
 - We have **no off-spine acute/emergency journey** in `design-kit/journeys/`
@@ -105,11 +105,11 @@ expose concrete gaps:
   our [[wiki/concepts/identity-and-consent]] work.
 - **After-hours availability** of pharmacist oversight, e-script transmission and
   scheme authorisation is a real SA constraint (most authorisation rails and
-  many pharmacies are not 24/7) — likely a `🔮 requires-reform` / partner
+  many pharmacies are not 24/7), likely a `🔮 requires-reform` / partner
   question, not solvable by UX alone.
 
-## Is this a candidate "complex use case"? — Verdict
-**Yes.** After-hours / emergency / out-patient acute access is a high-value
+## Is this a candidate "complex use case"? Verdict
+Yes. After-hours / emergency / out-patient acute access is a high-value
 **complex, off-spine use case** that the chronic/repeat flywheel does not cover:
 the script is *new*, the moment is *high-stress*, the customer may be acting *for
 someone else*, and funding must clear *synchronously*. It is the
@@ -121,10 +121,10 @@ emergency-pressure analogue of the cash-acute journey
 point** that should *converge* with the spine afterwards: an after-hours acute
 fill is an opportunity to (a) capture the customer into a profile, (b) reconcile
 the new medicine against any existing chronic regimen (interaction/duplication
-check — [[wiki/dispensing-practice/clinical-checks-and-mtm]]), and (c) offer
+check, see [[wiki/dispensing-practice/clinical-checks-and-mtm]]), and (c) offer
 enrolment/adherence follow-up if the acute condition becomes chronic. The spine's
 **"run ahead"** assets (known profile, stored consent, pre-validated funding)
-make the emergency path faster; conversely the emergency path is a strong
+make the emergency path faster, and conversely the emergency path is a strong
 **acquisition / first-door** moment ([[wiki/concepts/dual-journey]]).
 
 ## Open questions
@@ -138,7 +138,7 @@ make the emergency path faster; conversely the emergency path is a strong
 - Does an **emergency-supply / urgent acute** lane (vs. chronic repeat) need its
   own SA-specific blueprint, or can it be a branch of the cash-acute journey?
 - The source is Kenyan insurance-claims; what is the **SA pharmacy equivalent**
-  of "pre-auth at the point of care" — scheme PMB/chronic authorisation, or
+  of "pre-auth at the point of care": scheme PMB/chronic authorisation, or
   largely a cash transaction for after-hours acute? (Verify against
   [[wiki/medical-schemes/_index]].)
 

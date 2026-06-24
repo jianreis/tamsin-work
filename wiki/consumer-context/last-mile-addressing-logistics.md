@@ -7,17 +7,17 @@ confidence: high
 tags: [domain/consumer, region/za, topic/last-mile, topic/accessibility, journey/collect, journey/deliver]
 sources: [src-con-pargo-pudo-lastmile, src-con-pelebox, src-con-ccmdd-ndoh, src-con-loadshedding, src-con-icasa-ict-2025, src-con-spaza-township]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Last-mile: addressing, pickup networks & load-shedding
 
 Getting medicine the final few kilometres is, in South Africa, a **physical and
-infrastructural problem**, not just a logistics-optimisation one. A large share of
+infrastructural problem** as much as a logistics-optimisation one. A large share of
 the population has **no reliable street address**, home delivery is impossible or
 unreliable in informal and rural areas, and **load-shedding** intermittently breaks
-both the digital layer and the cold chain. The country has responded with a rich
-ecosystem of **pickup-point and locker networks** — and, in the public sector, with
+both the digital layer and the cold chain. The country has responded with a dense
+network of **pickup points and lockers**, and, in the public sector, with
 **CCMDD** and **Pelebox**, the strongest local precedents for collecting chronic
 medicine away from a facility. The scripting experience should default to
 **collection-at-a-known-point**, treat home delivery as a premium/where-feasible
@@ -31,13 +31,13 @@ areas**, where "inconclusive addresses and subpar infrastructure make home deliv
 impossible" [[src-con-pargo-pudo-lastmile]]. Informal settlements often lack street
 names, house numbers, and consistent postal coverage. The practical consequence is
 that **a named, findable collection point near where someone lives or shops is more
-reliable than a delivery address** — which is exactly why pickup networks and the
+reliable than a delivery address**, which is why pickup networks and the
 spaza-proximity model matter (see [[wiki/consumer-context/two-economy-affordability]])
 [[src-con-spaza-township]].
 
 ## Pickup & locker networks (the established work-around)
 
-SA consumers already use a dense click-and-collect ecosystem:
+SA consumers already use a dense click-and-collect network:
 - **Pargo:** >2,500 pickup points covering **>87% of SA postal codes**, explicitly
   extending into **informal settlements** (e.g. Silulo Ulutho partnership)
   [[src-con-pargo-pudo-lastmile]].
@@ -53,7 +53,7 @@ store footprint plus partner points is a natural collection backbone.
 ## Public-sector precedents — CCMDD and Pelebox (highly relevant)
 
 The public sector has **already proven out-of-facility chronic-medicine collection
-at national scale** — the closest existing analogue to a future scripting-and-collect
+at national scale**, the closest existing analogue to a future scripting-and-collect
 experience for the majority.
 
 **CCMDD** (Central Chronic Medicine Dispensing & Distribution): lets **clinically
@@ -65,10 +65,10 @@ chronic conditions**; **parcel collected every 2–3 months** [[src-con-ccmdd-nd
 CCMDD demonstrates that **decentralised collection works**, reduces queues, and
 that retail pharmacies are already enrolled as collection points.
 
-**Pelebox** (Technovera / Neo Hutiri): SA-built **smart lockers — a "medicine ATM"**
+**Pelebox** (Technovera / Neo Hutiri): SA-built **smart lockers, a "medicine ATM"**
 used with CCMDD. Medicine is **pre-packed and loaded**; the patient gets an **SMS
 with a one-time PIN**, enters **cellphone number + PIN** at the locker, and
-collects — **no app, no data**. It cuts collection from **~3.5 hours of queueing to
+collects, with **no app, no data**. It cuts collection from **~3.5 hours of queueing to
 under ~30 seconds** [[src-con-pelebox]]. Pelebox is the benchmark for a **low-literacy,
 no-app, private, fast** collection UX, and its neutral brown-box parcels also
 address stigma (see [[wiki/consumer-context/language-literacy-and-trust]]).
@@ -76,11 +76,11 @@ address stigma (see [[wiki/consumer-context/language-literacy-and-trust]]).
 ## Courier reliability
 
 Home delivery exists and works well for the insured/urban segment (the courier
-pharmacies dispense over a million scripts/month — [[src-courier-pharmacies-sa]]),
+pharmacies dispense over a million scripts/month - [[src-courier-pharmacies-sa]]),
 but reliability is uneven: Dis-Chem's own app reviews surface **orders cancelled or
 reversed minutes before scheduled delivery** and **multiple confusing
 address-entry steps** as recurring complaints [[src-dc-app-reviews]] (D-tier
-sentiment signal). The lesson: **set honest delivery windows, communicate status
+sentiment signal). The lesson is to **set honest delivery windows, communicate status
 proactively (over WhatsApp/SMS), and offer collection as a reliable alternative**
 when delivery can't be guaranteed.
 
@@ -88,32 +88,32 @@ when delivery can't be guaranteed.
 
 Load-shedding is the resilience constraint that touches every layer of fulfilment:
 - **Connectivity:** tower batteries **lose efficacy beyond ~Stage 4**, so **mobile
-  data itself degrades** during heavy stages — when people are home trying to
-  transact [[src-con-loadshedding]]. (Coverage is otherwise near-universal —
+  data itself degrades** during heavy stages, when people are home trying to
+  transact [[src-con-loadshedding]]. (Coverage is otherwise near-universal,
   [[src-con-icasa-ict-2025]].)
-- **Cold chain:** blackouts spoil temperature-sensitive stock — retailers cited
+- **Cold chain:** blackouts spoil temperature-sensitive stock; retailers cited
   **~R200m spoilage losses** and **>R500m** in generator costs in 2023
   [[src-con-loadshedding]]. **Cold-chain medicines (insulin, biologics, some
   vaccines)** are directly at risk in storage, lockers, and last-mile transport.
-- **Scale:** **~335 load-shedding days in 2023**, moderating to **~83 in 2024** —
+- **Scale:** **~335 load-shedding days in 2023**, moderating to **~83 in 2024**,
   better, but a **recurring risk**, not a solved problem [[src-con-loadshedding]].
 
 ## Design implications
 
-- **Default to collection at a known point** (Dis-Chem store, partner pickup,
-  locker); treat home delivery as premium/where-feasible. Don't make a reliable
+- Default to collection at a known point (Dis-Chem store, partner pickup,
+  locker) and treat home delivery as premium/where-feasible. Don't make a reliable
   home address a precondition for service.
-- **Adopt the Pelebox pattern** for collection: **SMS/WhatsApp + one-time PIN**,
+- Adopt the Pelebox pattern for collection: **SMS/WhatsApp + one-time PIN**,
   no-app, sub-minute, private. It is proven, low-literacy, and stigma-aware.
-- **Integrate with / learn from CCMDD:** retail pharmacies are already CCMDD
-  collection points; a future experience could bridge public-sector chronic
+- Integrate with and learn from CCMDD: retail pharmacies are already CCMDD
+  collection points, so a future experience could bridge public-sector chronic
   patients into retail collection and lockers.
-- **Communicate fulfilment status proactively** (WhatsApp/SMS), set honest windows,
+- Communicate fulfilment status proactively (WhatsApp/SMS), set honest windows,
   and always offer a collection fallback when delivery is uncertain.
-- **Engineer for load-shedding:** offline-tolerant, resumable digital flows;
+- Engineer for load-shedding with offline-tolerant, resumable digital flows and
   **cold-chain-resilient** storage and transport (battery/solar-backed fridges,
   monitored lockers, schedule-aware dispatch).
-- **Use familiar collection points** that match the spaza proximity expectation —
+- Use familiar collection points that match the spaza proximity expectation,
   near home or near where people already shop.
 
 ## Open questions
@@ -122,12 +122,12 @@ Load-shedding is the resilience constraint that touches every layer of fulfilmen
   (Pargo); directionally consistent with census urbanisation data but the exact
   numbers are ⚠️ UNVERIFIED against Stats SA.
 - Whether **regulation permits** dispensing-then-locker collection of scheduled
-  medicines without pharmacist presence at the locker — clinical/legal question for
+  medicines without pharmacist presence at the locker: clinical/legal question for
   [[wiki/sa-regulatory/_index]]; 🔮 may require reform. ⚠️ UNVERIFIED.
-- Real-world **cold-chain integrity** in lockers/last-mile under load-shedding — no
+- Real-world **cold-chain integrity** in lockers/last-mile under load-shedding: no
   SA-specific failure-rate data captured here. ⚠️ UNVERIFIED.
 - Current **geographic density of retail pharmacies** vs population in townships/
-  rural areas (the access-gap quantification) — to be sourced. ⚠️ UNVERIFIED.
+  rural areas (the access-gap quantification): to be sourced. ⚠️ UNVERIFIED.
 
 ## See also
 - [[wiki/consumer-context/health-seeking-behaviour]]

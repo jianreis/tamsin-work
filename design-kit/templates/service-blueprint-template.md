@@ -5,7 +5,7 @@ status: reviewed
 tags: [design-kit, template, domain/ux]
 method_ref: "[[wiki/ux-service-design/service-blueprinting-method]]"
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-17"
 ---
 
 # Service Blueprint — template & instructions
@@ -16,7 +16,7 @@ Ground every cell in the vault and cite it (e.g. `(see [[wiki/dischem/dischem-di
 
 > A **journey map** is the customer's experience over time (emotion, pains).
 > A **service blueprint** adds everything *behind the line of visibility* that
-> must happen to deliver it — systems, staff, partners, policies. Use the
+> must happen to deliver it - systems, staff, partners, policies. Use the
 > [[journey-map-template]] for the former; this for the latter.
 
 ## How to use
@@ -56,7 +56,7 @@ DISPENSE → COLLECT / DELIVER → ADHERE → REFILL / RENEW`
 ## Worked-cell example (Stage = VALIDATE & CLINICAL CHECK)
 - **Evidence:** app shows "Pharmacist reviewing your script ✓ (avg 4 min)".
 - **Customer action:** waits; can chat to pharmacist in-app.
-- **Emotion:** mild anxiety ("will it be approved / in stock?") — ⭐ moment of truth.
+- **Emotion:** mild anxiety ("will it be approved / in stock?") - ⭐ moment of truth.
 - **Frontstage:** in-app status + optional pharmacist chat.
 - **Backstage:** pharmacist performs therapeutic review & legal validity check
   (see [[wiki/dispensing-practice/dispensing-process-steps]]).
@@ -69,6 +69,6 @@ DISPENSE → COLLECT / DELIVER → ADHERE → REFILL / RENEW`
 - **Metric:** median time-to-validate; % requiring intervention.
 
 ## Output format options
-- **Wide table** (one column per stage, lanes as rows) — best for Miro/FigJam export.
-- **Per-stage blocks** (this doc's structure) — best for LLM generation & review.
+- **Wide table** (one column per stage, lanes as rows) - best for Miro/FigJam export.
+- **Per-stage blocks** (this doc's structure) - best for LLM generation & review.
 - Always end with a **summary of moments of truth, top 5 pains, top 5 opportunities, and `requires-reform` flags.**

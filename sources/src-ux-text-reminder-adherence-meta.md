@@ -46,4 +46,3 @@ justify and shape reminder/nudge patterns in the scripting journey.
 # Used in
 - [[wiki/ux-service-design/jtbd-and-behavioural-design]]
 - [[wiki/ux-service-design/pharmacy-ux-patterns]]
-</content>
