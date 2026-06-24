@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Open questions — unresolved & contradictory facts"
-updated: "2026-06-13"
+updated: "2026-06-14"
 tags: [meta]
 ---
 
@@ -62,6 +62,12 @@ and update the relevant wiki page + this list.
 | open | Whether SAPC permits remote pharmacist supervision of dispensing (tele-pharmacy / central fill) | [[pharmacy-act-sapc-gpp]] | ⚠️ UNVERIFIED; central to "central fill + local counselling" models. |
 | open | Status/scope of new 2026 POPIA health-information regulations | [[e-prescription-telehealth-popia]] | In flux; Fasken flagged April 2026. Monitor Information Regulator. |
 | open | Whether independent nurse-prescriber scope has expanded under recent NDoH PHC policy | [[medicines-act-scheduling]] | Affects who may originate S4 scripts in a digital flow. |
+| open | Scheduled-medicine "pricing variance" between Dis-Chem stores — real (dispensing-fee/co-pay/professional-fee presentation, or claim handling) or misperception under SEP? | [[pharmacy-complaints-pain-points]], [[src-dc-complaints-jan2025]] | Customer: prices "differ dramatically" store-to-store; SEP fixes the medicine price nationally. Resolve before using in pricing-transparency design. |
+| open | Do external social sentiment and internal complaint ranking agree on priority order? Separate brand/reputation noise from service-fixable signal. | [[dischem-social-sentiment-trust-journey]], [[pharmacy-complaints-pain-points]] | Both surface chronic-repeat/delivery/accuracy/ownership; sentiment % is sampling-biased (rewards-post frame, no denominators). |
+| open | App/delivery/courier-segment voice-of-customer (the 2025 IDI study was in-store self-collect only). Co-pay shock vs in-store "co-pays feel fair" is likely a population difference. | [[voice-of-customer-script-journey]], [[as-is-prescription-journey]] | Run the study's own #1 follow-up before treating either co-pay-shock or in-store-calm as the general case. |
+| open | SA equivalent of after-hours "pre-auth at point of care": is there 24/7 pharmacist oversight, e-script transmission, live scheme authorisation? | [[after-hours-emergency-acute-access]], [[src-om-kenya-outpatient-afterhours-emergency]] | If not 24/7 the straight-through emergency pattern is partly 🔮 requires-reform. Also POPIA-compliant caregiver/proxy access for a dependant without an absent principal member's OTP. |
+| open | Legal boundary of roadmap "auto-dispense … without human intervention" for eligible repeats vs pharmacist-oversight / valid-prescription rules. | [[dischem-scripting-tech-roadmap]], [[src-dc-omnichannel-scripting-roadmap]] | Board shows pharmacist "single sign-off" (human-in-loop). Possibly 🔮 requires-reform. No scheme claim/adjudication step shown between dispense and pay (BRIX) — confirm real-time switching is assumed. |
+| open | Which principle set becomes canonical pillars — board customer/dispenser principles vs `deliverables/_shared/pillars.md` (S1–S5/U1–U7)? Do NOT fork pillar ids. | [[future-state-blueprint-board-style]], `deliverables/_shared/pillars.md` | Reconcile board's Trust>Convenience>Speed + principle cards into the existing pillar set when building the deliverable. |
 
 ## Conventions
 - When a wiki page can't source a claim, it marks it `⚠️ UNVERIFIED` and adds a

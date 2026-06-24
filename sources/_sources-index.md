@@ -1,7 +1,7 @@
 ---
 type: index
 title: "Sources — index"
-updated: "2026-06-13"
+updated: "2026-06-14"
 tags: [index, sources]
 ---
 
@@ -33,6 +33,14 @@ _Populated as sources are ingested. Group by domain; show reliability tier._
 - [[src-clicks-group-results]] (B) — Clicks scale/ClubCard/UPD.
 - [[src-courier-pharmacies-sa]] (B) — Pharmacy Direct & Medipost scale.
 - [[src-retail-pharmacy-competitors]] (B) — Medirite/PnP/Mopani/Alpha Pharm.
+
+#### Primary research & internal artefacts (2025–26 Tamsin intake — Bigly/Dis-Chem)
+- [[src-dc-complaints-jan2025]] (B) — Jan-2025 C4C resolved complaints (n=360); 5 pain themes; chronic re-order dominant; root causes in digital/fulfilment surface as pharmacy complaints.
+- [[src-dc-script-journey-interviews-2025]] (B) — 10 in-store script-journey IDIs (Oct 2025): drivers, stage-by-stage pains, voice-of-customer. In-store self-collect only (digital/delivery excluded).
+- [[src-dc-store-future-interviews-2026]] (B) — Store-of-the-Future future-state dispensary interviews (n=12, Jan 2026): predictability>speed, ticketing 11/12, conditional digital, forgiving recovery.
+- [[src-dc-social-media-research-2025]] (C) — social-media listening (1,270 coded comments, Dec 2025): 65% negative pharmacy sentiment, Patient Trust Journey, defection to local pharmacies.
+- [[src-dc-omnichannel-scripting-roadmap]] (B) — internal "Script Re-imagined" Virtual Order Operational Flow board; future-state scripting tech roadmap (ROWA picker robot, AI capture/route, BRIX auto-dispense, Dashboard E2E, VC/PICCUP delivery) — planned, not yet live.
+- [[src-vn-cape-point-11]] (B) — Jian × Tamsin voice note: the SHAPE of the future-state scripting deliverable (experience-definition journey map, aspirational ~5-yr, unconstrained by current tech; OCR + ROWA signed off). Authoritative brief for deliverable #05.
 
 ### SA regulatory
 - [[src-reg-medicines-act-101-1965]] (A) — Medicines & Related Substances Act 101 of 1965; §22A/22C/22F/22G.
@@ -152,3 +160,7 @@ notes prefixed `src-consult-` (see [[wiki/ux-service-design/consultancy-pharmacy
 - [[src-con-adherence-stigma]] (B) — Adherence barriers (system/stigma); mental-health 75% treatment gap.
 - [[src-con-adjacent-digital-benchmarks]] (B) — Sixty60, Takealot, Capitec/TymeBank, loyalty expectations.
 - [[src-con-oop-health-spend]] (B) — Out-of-pocket health spend; medicines the top paid service.
+
+### Design references & cross-sector artefacts
+- [[src-bigly-blueprint-board-style]] (n/a) — Bigly future-state "board" treatment (Script Re-imagined); **design reference, not evidence** — never cite for facts.
+- [[src-om-kenya-outpatient-afterhours-emergency]] (C) — Old Mutual Kenya target-state claims CX map (Tamsin Madden); off-spine out-patient / after-hours emergency acute-access pains + future-state design signals.

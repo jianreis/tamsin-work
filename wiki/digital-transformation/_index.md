@@ -2,7 +2,7 @@
 type: index
 title: "Digital transformation — index"
 domain: digital-transformation
-updated: "2026-06-13"
+updated: "2026-06-14"
 tags: [index, domain/digital]
 status: draft
 ---
@@ -34,6 +34,12 @@ with `## Design implications` and `## Open questions`; uncertainty is marked
 - [[adherence-tech-and-digital-therapeutics]] — reminder apps, smart packaging/
   sensors, electronic monitoring, refill prediction, digital therapeutics;
   adherence-outcome evidence (proven but modest/conditional).
+- [[dischem-scripting-tech-roadmap]] — **Dis-Chem's own roadmapped scripting tech**
+  ("Script Re-imagined — Virtual Order Operational Flow"): AI capture/standardise/
+  route, single virtual queue, BRIX auto-dispense, the **ROWA** picker robot,
+  automated retrieval, QR-scan counter handover, VC consolidation + driver delivery
+  (PICCUP), Dashboard as the E2E workflow manager. 24-capability table mapped to the
+  journey spine + pillars — the technology layer the future-state journey integrates.
 
 ## Sources
 14 source notes prefixed `src-dig-` in [[sources/_sources-index|sources]] (HL7,
