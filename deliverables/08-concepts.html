@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Concepts - Script Re-imagined</title>
+<style>
+/* =============================================================================
+   DELIVERABLE #08 - THE CONCEPTS (executive primer, board treatment)
+   A clean, static one-pager that introduces the major CX concepts behind the
+   future-state journey (#05) before the audience walks the journey itself.
+   Self-contained: all CSS here, all icons inline SVG/emoji. No external requests.
+   A living document - concepts are added as the journey work progresses.
+   Palette matches deliverables/05 (design-kit board-style §4.1).
+   ============================================================================= */
+:root{
+  --brand:#1a9b4a;            /* Dis-Chem green brand band */
+  --brand-dark:#157a3b;
+  --lime:#b5d334;             /* lime "+" accent */
+  --mint:#bfe3cf;             /* moment header band */
+  --mint-deep:#9bcfb0;
+  --ink:#1d1d1d;              /* near-black */
+  --ink-soft:#2b2b2b;
+  --bg:#f6f8f6;
+  --card:#ffffff;
+  --muted:#5d6b62;
+  --muted2:#8a958d;
+  --line:#d8e2db;
+  --purple:#5b2a6b;
+  --strategic:#1a9b4a;
+  --ux:#5b2a6b;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --sp:8px; --radius:14px; --maxw:1180px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--ink); font-family:var(--font);
+  line-height:1.55; font-size:15.5px; -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 0 72px;}
+h1,h2,h3,h4{margin:0}
+.tiny{font-size:.78rem; color:var(--muted)}
+.mono{font-family:var(--mono); font-size:.82em}
+
+/* ---- header / brand band ------------------------------------------------- */
+.brandband{
+  background:var(--brand); color:#fff;
+  padding:calc(var(--sp)*2.5) calc(var(--sp)*3);
+  display:flex; flex-wrap:wrap; gap:var(--sp) calc(var(--sp)*2); align-items:center; justify-content:space-between;
+}
+.wordmark{display:flex; align-items:baseline; gap:6px; font-weight:800; font-size:1.35rem; letter-spacing:-.01em}
+.wordmark .plus{color:var(--lime); font-size:1.6rem; line-height:0}
+.brandband .kicker{font-weight:800; font-size:1.05rem}
+.brandband .co{font-size:.8rem; opacity:.92; font-weight:600; letter-spacing:.04em}
+.brandband .maptag{
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; font-weight:700;
+  border:1.5px solid rgba(255,255,255,.6); border-radius:99px; padding:4px 12px;
+}
+.ribbon{
+  display:flex; flex-wrap:wrap; gap:6px calc(var(--sp)*1.5); align-items:center;
+  background:#fff7e6; color:#8a5a00; border-bottom:1px solid #f0dca8;
+  padding:8px calc(var(--sp)*3); font-size:.82rem; font-weight:600;
+}
+.ribbon .gen{color:#9a7a30; font-weight:500}
+
+/* ---- intro --------------------------------------------------------------- */
+.intro{padding:calc(var(--sp)*3.5) calc(var(--sp)*3) 0;}
+.intro .eyebrow{font-size:.74rem; text-transform:uppercase; letter-spacing:.14em; color:var(--brand-dark); font-weight:800}
+.intro h1{font-size:1.95rem; font-weight:800; letter-spacing:-.02em; line-height:1.12; margin-top:8px; max-width:22ch}
+.intro h1 u{text-decoration-color:var(--lime); text-decoration-thickness:4px; text-underline-offset:4px}
+.intro .lede{color:var(--muted); max-width:74ch; margin-top:14px; font-size:1.05rem}
+.intro .note{
+  margin-top:18px; background:var(--card); border:1px solid var(--line); border-left:5px solid var(--brand);
+  border-radius:var(--radius); padding:14px 18px; max-width:80ch; color:var(--ink-soft); font-size:.95rem;
+}
+
+/* ---- legend -------------------------------------------------------------- */
+.legend{
+  display:flex; flex-wrap:wrap; gap:calc(var(--sp)*2); align-items:center;
+  padding:calc(var(--sp)*2.5) calc(var(--sp)*3) 0; color:var(--muted); font-size:.84rem;
+}
+.legend .key{display:inline-flex; align-items:center; gap:7px}
+.pill{
+  display:inline-flex; align-items:center; gap:5px; font-weight:700; font-size:.72rem;
+  border-radius:99px; padding:3px 9px; line-height:1.2; white-space:nowrap;
+}
+.pill.s{background:rgba(26,155,74,.12); color:var(--brand-dark); border:1px solid rgba(26,155,74,.35)}
+.pill.u{background:rgba(91,42,107,.10); color:var(--purple); border:1px solid rgba(91,42,107,.30)}
+
+/* ---- concept grid -------------------------------------------------------- */
+.grid{
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:calc(var(--sp)*3); padding:calc(var(--sp)*3) calc(var(--sp)*3) 0;
+}
+@media (max-width:860px){ .grid{grid-template-columns:1fr} }
+.concept{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  overflow:hidden; display:flex; flex-direction:column;
+  box-shadow:0 1px 2px rgba(20,40,25,.04), 0 6px 22px rgba(20,40,25,.05);
+}
+.concept .head{
+  background:var(--mint); border-bottom:1px solid var(--mint-deep);
+  padding:calc(var(--sp)*2) calc(var(--sp)*2.5);
+  display:flex; gap:calc(var(--sp)*1.5); align-items:flex-start;
+}
+.concept .ic{
+  flex:0 0 auto; width:42px; height:42px; border-radius:11px; background:#fff;
+  border:1px solid var(--mint-deep); display:grid; place-items:center;
+}
+.concept .ic svg{width:24px; height:24px}
+.concept .htext{flex:1 1 auto; min-width:0}
+.concept .num{font-size:.7rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--brand-dark); opacity:.8}
+.concept h2{font-size:1.18rem; font-weight:800; letter-spacing:-.01em; line-height:1.2; margin-top:3px; color:var(--ink)}
+.concept .alt{font-size:.8rem; color:var(--muted); margin-top:3px}
+.concept .alt b{color:var(--ink-soft); font-weight:700}
+.concept .body{padding:calc(var(--sp)*2) calc(var(--sp)*2.5) calc(var(--sp)*2.5); display:flex; flex-direction:column; gap:14px; flex:1 1 auto}
+.concept .oneliner{
+  font-size:1.04rem; font-weight:700; color:var(--ink); line-height:1.35;
+  border-left:3px solid var(--lime); padding-left:12px;
+}
+.concept .block .lbl{
+  font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; color:var(--muted2);
+  display:block; margin-bottom:4px;
+}
+.concept .block p{margin:0; color:var(--ink-soft); font-size:.95rem; line-height:1.55}
+.concept .pillars{
+  margin-top:auto; padding-top:14px; border-top:1px dashed var(--line);
+  display:flex; flex-wrap:wrap; gap:6px; align-items:center;
+}
+.concept .pillars .plbl{font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; color:var(--muted2); margin-right:2px}
+
+/* ---- footer -------------------------------------------------------------- */
+.foot{padding:calc(var(--sp)*4) calc(var(--sp)*3) 0; color:var(--muted); font-size:.85rem; max-width:80ch}
+.foot a{color:var(--brand-dark)}
+
+@media print{
+  body{background:#fff; font-size:11pt}
+  .concept{break-inside:avoid; box-shadow:none}
+  .grid{gap:14px}
+  .ribbon{position:static}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="brandband">
+    <span class="wordmark">Dis-Chem<span class="plus">+</span></span>
+    <span class="kicker">Script Re-imagined &nbsp;&middot;&nbsp; The Concepts</span>
+    <span class="co">bigly labs</span>
+    <span class="maptag">Future-State Concepts</span>
+  </header>
+
+  <div class="ribbon">
+    <span>&#9888; Concept for review - not an official Dis-Chem artefact</span>
+    <span class="gen">generated 2026-06-30 from the Bigly ground-truth vault</span>
+  </div>
+
+  <section class="intro">
+    <span class="eyebrow">Before the journey</span>
+    <h1>The ideas behind the <u>future-state</u> scripting experience</h1>
+    <p class="lede">Each concept below is a simple container for a lot of thinking - one of the
+    big customer-experience moves we want to build into the journey. Read these first, then
+    we walk the journey itself and see each concept in action.</p>
+    <p class="note">This is a living set. We start with the concepts in the household-repeat
+    journey and add to it as the work progresses. Every concept is tagged with the strategic
+    (S) and experience (U) pillars it expresses, so you can see how the same few bets recur.</p>
+  </section>
+
+  <div class="legend">
+    <span class="key"><span class="pill s">S</span> Strategic pillar - why we build it</span>
+    <span class="key"><span class="pill u">U</span> Experience pillar - how it must behave</span>
+  </div>
+
+  <main class="grid" id="grid"></main>
+
+  <section class="foot">
+    <p>Pillars are the canonical S1-S6 (strategic) and U1-U7 (experience) bets socialised across
+    Bigly and Dis-Chem. The concepts here are indicative and aspirational, framed for an
+    executive audience; the detailed mechanics, sourcing and regulatory flags live in the
+    future-state journey and the underlying vault.</p>
+  </section>
+
+</div>
+
+<script>
+/* Single embedded source of truth. Add a concept by appending to CONCEPTS;
+   the page renders from this array, so the set extends cleanly. */
+const PILLAR_NAMES = {
+  S1:"Serve both economies on one spine", S2:"Pharmacy as the health front door",
+  S3:"Compete on service, not price", S4:"Chronic-medicine flywheel = retention engine",
+  S5:"Pharmacist at top-of-licence; automate the toil",
+  S6:"From fulfilment to treatment orchestration",
+  U1:"Channel ladder: WhatsApp-first & data-frugal", U2:"Never leave them guessing",
+  U3:"Give me all the variables upfront", U4:"Design for graceful failure",
+  U5:"Dignity, privacy & language by default", U6:"Reduce the journey, don't just digitise it",
+  U7:"Adherence-as-design"
+};
+
+/* Inline SVG icons (no external requests). 24x24, currentColor stroke. */
+const ICONS = {
+  refill:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>',
+  cabinet:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 15h16M12 3v18"/></svg>',
+  transparency:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>',
+  consent:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>',
+  sync:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>',
+  pack:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5M13 4v5M18 4v5"/><circle cx="7.5" cy="14.5" r="1.2"/><circle cx="12" cy="14.5" r="1.2"/><circle cx="16.5" cy="14.5" r="1.2"/></svg>'
+};
+
+const CONCEPTS = [
+  {
+    icon:"refill",
+    title:"Auto-Refill",
+    alt:null,
+    oneLiner:"Your chronic repeat is ready before you run out, waiting wherever you want it.",
+    what:"Auto-Refill keeps a customer's regular chronic medicine flowing without them having to remember it or re-order it. The system works out when each repeat is about to run out and gets it ready ahead of time, then hands it over the way the customer prefers, either collected from a store or delivered to their door. Because the medicine is prepared before the customer thinks to ask, the old scramble of broken app menus and looping re-order flows disappears, and the customer stays on their treatment without a gap or a cold restart every month.",
+    how:"The system reads a customer's dispensing history and days-of-supply to predict when each repeat is due, then sends a low-data nudge a week ahead: same as last month, yes, change or snooze. One tap confirms it. Behind the counter, eligible repeats are prepared automatically and a robotic picker pulls the stock, so a pharmacist does the clinical check and final sign-off rather than the keying and picking. The ready order then routes to the customer's chosen handover, store collection or delivery, with honest status the whole way.",
+    pillars:["S4","S5","U6","U7"]
+  },
+  {
+    icon:"cabinet",
+    title:"The Household Medicine Cabinet",
+    alt:"Also: One Cabinet for the Whole Household",
+    oneLiner:"Every household member's medicine, what it's for and what's due, in one calm place.",
+    what:"It is a single view of every medicine in the home, set out per person: your own chronic regimen, an elderly parent's repeats, a child's occasional acute script. Today this lives in one head and a few WhatsApp notes, and each person is managed separately. Bring it onto one account and the admin drops sharply. You see at a glance who needs what and when, so a refill is never missed and nothing falls through the cracks. One person can hold the whole household calmly.",
+    how:"One account carries a profile for each member. Every medicine shows plainly what it is for, with a simple pill visual so it is recognisable at a glance, plus its refill status and a light record of what is being taken. Members are linked by recorded proxy consent, so a caregiver acts for a parent or child without re-proving authority each time. The system already holds the details, so there is no re-keying and no separate login per person. Order, pay and collect for everyone from the one place.",
+    pillars:["U6","U5","S4","U7"]
+  },
+  {
+    icon:"transparency",
+    title:"Real-Time Transparency",
+    alt:"Also: No Surprises",
+    oneLiner:"The customer sees the cost, the cover and where their order is, before they commit and while they wait.",
+    what:"This is a promise to show the customer everything that affects their decision and their nerves, up front and in real time: what the medicine costs, what their scheme covers or what the cash price is, whether it is in stock, and exactly where the order has reached. Because they see the co-pay before they commit, there is no shock at the till. Because they can watch the order move from received to ready to on the way, they stop guessing and start trusting the service. They can plan, and they can rely on us.",
+    how:"Before the customer confirms, we run the medical-scheme claim in the background and show the funded amount and any co-pay in plain language, with a funded generic offered if one exists. Cash customers see an itemised price up front: medicine plus the regulated dispensing fee, no store-to-store mystery. A live check confirms stock before they order. Then honest status follows the order at every step, received, checked, ready, on the way, all the way to a confirmed handover, never a silent \"out for delivery\" that goes nowhere.",
+    pillars:["U3","U2","S3","S1"]
+  },
+  {
+    icon:"consent",
+    title:"CarerConsent",
+    alt:"Also: Proxy Care",
+    oneLiner:"Recorded, lawful permission that lets one person manage another's medicines, captured once and easy to withdraw.",
+    what:"CarerConsent makes caregivers first-class users of the service. A daughter can run her elderly mother's chronic scripts, or a parent a child's, without re-proving who they are at every step. The person being cared for grants permission knowingly, and keeps control of their own privacy. POPIA is South Africa's data-protection law, which treats medicine and health records as especially sensitive. Because the permission is recorded against the right profile, the carer can act with confidence and the cared-for person stays in charge of who sees what.",
+    how:"The cared-for person grants permission once, recorded against their own profile. They choose what it covers, ordering, paying or collecting, and they can narrow or withdraw it at any time. From then on the carer acts on their behalf without re-explaining their authority, and every action leaves an audit trail showing who did what and when. Sensitive health data stays protected and shared only as far as each task needs. The pharmacist still validates each person's prescription, so clinical safety is never traded for convenience.",
+    pillars:["U5","U6","S2","S6"]
+  },
+  {
+    icon:"sync",
+    title:"Script Sync",
+    alt:"Also: One Date, One Pickup",
+    oneLiner:"All of a household's repeat medicines, lined up to one date and one place, ready together.",
+    what:"A household rarely runs on one medicine. There's a chronic script for one person, two for another, a parent's repeat from a different doctor, each renewing on its own date. So the family makes trip after trip, fields reminder after reminder, and still someone runs short between cycles. Script Sync lines every repeat up to a single, predictable date in one place. Everything is ready together, so the household makes one trip or takes one delivery, and is far less likely to run out of anything.",
+    how:"The pharmacy looks across every chronic script in the household and works out one shared refill date. To bring a medicine that's out of step into the cycle, it dispenses a short, one-off fill to close the gap, then from the next round everything renews together. On the agreed date the pharmacy prepares the whole household's medicines as one order. The family gets a single reminder a few days before, confirms in one tap, and collects or receives everything in one handover.",
+    pillars:["S4","S6","U6","U7"]
+  },
+  {
+    icon:"pack",
+    title:"Made-for-Me Packaging",
+    alt:"Also: Easy-to-Take directions",
+    oneLiner:"Medicine sorted by date and time, with directions in your own language, so taking it right is easy.",
+    what:"A medicine only helps if it's taken correctly, and that is where most of the real-world benefit is won or lost. When a household runs several chronic medicines at once, the daily admin of who takes what, and when, becomes the thing that breaks. This concept sorts the medicines by date and time of day into a dose pack and writes the directions in plain language, in the patient's own language. People take the right thing at the right time, the treatment actually works, and refills stay on track because the routine holds.",
+    how:"The medicines come in a dose pack organised by date and time of day, so each dose is already grouped and ready. The labels are large and written in plain language in the patient's language, easy to re-check later for dosage or side-effects. Reminders are tied to the rhythm of someone's day rather than firing at random, and they can be adjusted or switched off per household member. For anyone who prefers paper or is short on data, a printed schedule carries the same information without needing a screen.",
+    pillars:["U7","U5","U1","S5"]
+  }
+  /* CONCEPTS_APPEND_MARKER */
+];
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+
+function render(){
+  const grid = document.getElementById("grid");
+  if(!grid) return;
+  CONCEPTS.forEach((c,i)=>{
+    const card = document.createElement("section");
+    card.className = "concept";
+    const ic = ICONS[c.icon] || "";
+    const pillarPills = (c.pillars||[]).map(p=>{
+      const t = (p[0]==="S"?"s":"u");
+      const name = PILLAR_NAMES[p] || "";
+      return '<span class="pill '+t+'" title="'+esc(name)+'">'+esc(p)+'</span>';
+    }).join("");
+    const altHtml = c.alt ? '<div class="alt">'+esc(c.alt)+'</div>' : '';
+    card.innerHTML =
+      '<div class="head">'+
+        '<div class="ic">'+ic+'</div>'+
+        '<div class="htext">'+
+          '<div class="num">Concept '+(i+1).toString().padStart(2,"0")+'</div>'+
+          '<h2>'+esc(c.title)+'</h2>'+
+          altHtml+
+        '</div>'+
+      '</div>'+
+      '<div class="body">'+
+        '<div class="oneliner">'+esc(c.oneLiner)+'</div>'+
+        '<div class="block"><span class="lbl">What it is &amp; why it helps</span><p>'+esc(c.what)+'</p></div>'+
+        '<div class="block"><span class="lbl">How it works</span><p>'+esc(c.how)+'</p></div>'+
+        '<div class="pillars"><span class="plbl">Pillars</span>'+pillarPills+'</div>'+
+      '</div>';
+    grid.appendChild(card);
+  });
+}
+render();
+</script>
+</body>
+</html>
