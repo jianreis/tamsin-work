@@ -204,6 +204,14 @@ scripting experience, an agent should:
 **Constraint principle:** *Futuristic, but legal and operable today-ish.* Flag
 anything that needs regulatory change as `🔮 requires-reform`.
 
+**Concept primers** (introducing future-state concepts to an executive audience,
+e.g. `deliverables/08-concepts.html`) follow the
+[[design-kit/templates/concept-card-template|concept card template]]: one everyday
+anchor per concept, plain first-order "why", scannable proof points. Anchors are
+agreed *with the human lead first* (propose, then ask) - that step is the
+make-or-break. A deliverable's own presentation needs supersede the general prose
+rules where they conflict; see the override note in that template.
+
 ---
 
 ## 9. Maintenance etiquette for agents
