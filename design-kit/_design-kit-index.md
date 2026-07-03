@@ -29,6 +29,7 @@ Everything here must be **traceable to the wiki** (and through it, to sources).
 - [[design-kit/templates/jtbd-library|Jobs-To-Be-Done library]]
 - [[design-kit/templates/future-state-principles|Future-state design principles]]
 - [[design-kit/templates/future-state-blueprint-board-style|Future-state blueprint board — style & treatment reference]] — the Bigly "board" visual language + reusable schema for the interactive HTML future-state journey deliverable.
+- [[design-kit/templates/concept-card-template|Concept card template]] — how to write and build executive concept primers (everyday anchor → plain why → scannable proof points). Pattern behind [deliverables/08-concepts.html](../deliverables/08-concepts.html); reuse for concepts on other journeys.
 
 ## How to use (summary)
 See [[CLAUDE]] §8 - "How to USE this vault to build blueprints & journeys".
