@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero moment 05 - Script Sync</title>
+<style>
+  :root{
+    --ink:#3a3a3a;         /* primary text */
+    --ink2:#7a7a7a;        /* secondary text */
+    --line:#9c9c9c;        /* component borders */
+    --line-soft:#c9c9c9;   /* subtle rules */
+    --fill:#ececec;        /* flat component fill */
+    --fill-dark:#d6d6d6;   /* emphasised fill (active tab, button) */
+    --canvas:#ffffff;
+    --font:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  body{
+    margin:0; background:#f2f1ef; font-family:var(--font); color:var(--ink);
+    display:flex; flex-direction:column; align-items:center; padding:36px 16px 64px;
+  }
+
+  /* device frame */
+  .frame{
+    width:390px; background:var(--canvas);
+    border:2px solid var(--ink); border-radius:22px;
+    padding:26px 22px 30px; box-shadow:0 10px 30px rgba(40,40,40,.10);
+    position:relative;
+  }
+  .frame .notch{width:56px; height:5px; border-radius:3px; background:var(--fill-dark); margin:0 auto 22px}
+
+  h1{font-size:1.45rem; font-weight:700; letter-spacing:-.01em; margin:0}
+  .sub{color:var(--ink2); font-size:.85rem; margin:4px 0 16px}
+
+  .sect{font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ink2); margin:16px 0 8px}
+
+  /* selection list */
+  .sel{border:1.5px solid var(--line); border-radius:10px; background:var(--canvas)}
+  .row{display:flex; align-items:center; gap:10px; padding:10px 12px; font-size:.88rem}
+  .row + .row{border-top:1px solid var(--line-soft)}
+  .box{
+    width:18px; height:18px; flex:0 0 18px; border:1.5px solid var(--ink); border-radius:4px;
+    background:var(--fill-dark); display:flex; align-items:center; justify-content:center;
+    font-size:.75rem; font-weight:700; color:var(--ink);
+  }
+  .who{font-weight:700}
+  .duetxt{margin-left:auto; color:var(--ink2); font-size:.78rem; white-space:nowrap}
+
+  /* plan */
+  .plan{border:1.5px solid var(--line); border-radius:10px; background:var(--canvas); padding:4px 12px}
+  .step{display:flex; gap:10px; padding:9px 0; font-size:.85rem; line-height:1.35}
+  .step + .step{border-top:1px dashed var(--line-soft)}
+  .num{
+    width:20px; height:20px; flex:0 0 20px; border:1.5px solid var(--line); border-radius:99px;
+    background:var(--fill); font-size:.72rem; font-weight:700; display:flex;
+    align-items:center; justify-content:center; margin-top:1px;
+  }
+  .step.cash{background:var(--fill); margin:0 -12px; padding-left:12px; padding-right:12px}
+  .step.cash .num{background:var(--fill-dark); border-color:var(--ink)}
+  .cost{font-weight:700; white-space:nowrap}
+
+  /* calendar convergence graphic */
+  .converge{margin:16px 2px 0}
+  .converge svg{display:block; width:100%; height:auto}
+
+  /* CTA */
+  .cta{
+    margin-top:16px; border:2px solid var(--ink); border-radius:10px; background:var(--fill-dark);
+    text-align:center; padding:13px; font-weight:700; font-size:1rem;
+  }
+
+  /* annotation callout (outside the frame) */
+  .anno{
+    position:absolute; left:calc(100% + 14px); top:388px; width:150px;
+    color:var(--ink2); font-size:.8rem; line-height:1.35;
+  }
+  .anno::before{
+    content:""; position:absolute; right:100%; top:9px; width:12px;
+    border-top:1.5px dashed var(--line);
+  }
+  @media (max-width:640px){ .anno{display:none} }
+
+  .cap{max-width:560px; margin-top:22px; font-size:.85rem; color:#8a8781; line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="frame">
+  <div class="notch"></div>
+
+  <h1>Sync the family's repeats</h1>
+  <p class="sub">one renewal date, one delivery</p>
+
+  <p class="sect">Your selection</p>
+  <div class="sel">
+    <div class="row"><span class="box">&#10003;</span><span><span class="who">Grace</span> &ndash; Amlodipine</span><span class="duetxt">due 4th</span></div>
+    <div class="row"><span class="box">&#10003;</span><span><span class="who">Grace</span> &ndash; Metformin</span><span class="duetxt">due 11th</span></div>
+    <div class="row"><span class="box">&#10003;</span><span><span class="who">Sipho</span> &ndash; Salbutamol inhaler</span><span class="duetxt">due 19th</span></div>
+    <div class="row"><span class="box">&#10003;</span><span><span class="who">Lerato</span> &ndash; Eltroxin</span><span class="duetxt">due 19th</span></div>
+  </div>
+
+  <p class="sect">What happens next</p>
+  <div class="plan">
+    <div class="step"><span class="num">1</span><span>We issue a short top-up script to bring Grace's medicine in line</span></div>
+    <div class="step cash"><span class="num">2</span><span>The top-up isn't covered by your medical aid &ndash; you pay cash: <span class="cost">R124 once-off</span></span></div>
+    <div class="step"><span class="num">3</span><span>From the 25th, everything renews together</span></div>
+    <div class="step"><span class="num">4</span><span>Delivered in one drop</span></div>
+  </div>
+
+  <div class="converge">
+    <svg viewBox="0 0 340 96" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <!-- three date marks -->
+      <g font-family="Helvetica,Arial,sans-serif" text-anchor="middle">
+        <rect x="30" y="8" width="40" height="30" rx="6" fill="#ececec" stroke="#9c9c9c" stroke-width="1.5"/>
+        <text x="50" y="28" font-size="13" fill="#3a3a3a">4</text>
+        <rect x="110" y="8" width="40" height="30" rx="6" fill="#ececec" stroke="#9c9c9c" stroke-width="1.5"/>
+        <text x="130" y="28" font-size="13" fill="#3a3a3a">11</text>
+        <rect x="190" y="8" width="40" height="30" rx="6" fill="#ececec" stroke="#9c9c9c" stroke-width="1.5"/>
+        <text x="210" y="28" font-size="13" fill="#3a3a3a">19</text>
+        <!-- converging arrows -->
+        <path d="M52 40 C 60 62, 240 52, 262 62" stroke="#9c9c9c" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <path d="M132 40 C 140 58, 245 50, 262 60" stroke="#9c9c9c" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <path d="M212 40 C 222 52, 250 50, 262 58" stroke="#9c9c9c" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <path d="M262 60 l 8 3 -6 6 z" fill="#7a7a7a"/>
+        <!-- the bold 25 -->
+        <rect x="272" y="46" width="52" height="42" rx="8" fill="#d6d6d6" stroke="#3a3a3a" stroke-width="2"/>
+        <text x="298" y="74" font-size="20" font-weight="700" fill="#3a3a3a">25</text>
+        <text x="150" y="88" font-size="11" fill="#7a7a7a" text-anchor="middle">three due dates become one</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="cta">Confirm sync &ndash; Pay R124</div>
+
+  <div class="anno">the one-off cash cost is stated upfront, not discovered later</div>
+</div>
+
+<p class="cap"><b>Hero moment</b> - Concept 05 &middot; Script Sync.
+The quote you see the moment you request a sync: the plan, its one-off cash cost, and three due dates converging on one - before you commit.</p>
+
+</body>
+</html>

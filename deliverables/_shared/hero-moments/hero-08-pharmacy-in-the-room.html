@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero moment 08 - The Pharmacy in the Room</title>
+<style>
+  :root{
+    --ink:#3a3a3a;         /* primary text */
+    --ink2:#7a7a7a;        /* secondary text */
+    --line:#9c9c9c;        /* component borders */
+    --line-soft:#c9c9c9;   /* subtle rules */
+    --fill:#ececec;        /* flat component fill */
+    --fill-dark:#d6d6d6;   /* emphasised fill (active tab, button) */
+    --canvas:#ffffff;
+    --font:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  body{
+    margin:0; background:#f2f1ef; font-family:var(--font); color:var(--ink);
+    display:flex; flex-direction:column; align-items:center; padding:36px 16px 64px;
+  }
+
+  /* browser-window frame */
+  .frame{
+    width:700px; max-width:100%; background:var(--canvas);
+    border:2px solid var(--ink); border-radius:12px;
+    box-shadow:0 10px 30px rgba(40,40,40,.10);
+    position:relative;
+  }
+  .chrome{
+    display:flex; align-items:center; gap:10px;
+    padding:10px 14px; border-bottom:1.5px solid var(--line);
+    background:var(--fill); border-radius:10px 10px 0 0;
+  }
+  .dots{display:flex; gap:6px}
+  .dots span{width:10px; height:10px; border-radius:50%; background:var(--fill-dark); border:1.5px solid var(--line)}
+  .urlbar{
+    flex:1; border:1.5px solid var(--line-soft); border-radius:99px;
+    background:var(--canvas); color:var(--ink2); font-size:.78rem; padding:5px 14px;
+  }
+  .inner{padding:20px 24px 24px}
+
+  /* app top bar */
+  .appbar{
+    display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+    padding-bottom:12px; border-bottom:1.5px solid var(--line-soft); margin-bottom:14px;
+  }
+  .appbar .app{font-weight:700; font-size:1.05rem}
+  .appbar .who{color:var(--ink2); font-size:.85rem}
+
+  /* patient strip */
+  .patient{
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    border:1.5px solid var(--line); border-radius:10px; background:var(--fill);
+    padding:10px 14px; margin-bottom:16px; font-size:.9rem;
+  }
+  .patient .name{font-weight:700}
+  .patient .scheme{color:var(--ink2)}
+  .sep{color:var(--line)}
+  .alert-chip{
+    margin-left:auto; border:1.5px dashed var(--ink); border-radius:99px;
+    background:var(--canvas); padding:4px 12px;
+    font-size:.75rem; font-weight:700; letter-spacing:.02em; text-transform:uppercase;
+  }
+
+  /* prescription pane */
+  .pane{border:1.5px solid var(--line); border-radius:10px; padding:14px 16px 16px; margin-bottom:14px}
+  .pane-label{
+    font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--ink2); margin:0 0 10px;
+  }
+  .medrow{
+    display:flex; align-items:baseline; justify-content:space-between;
+    padding:8px 2px 12px; border-bottom:1.5px solid var(--line-soft);
+  }
+  .medrow .med{font-weight:700; font-size:1.05rem}
+  .medrow .qty{color:var(--ink2); font-size:.85rem}
+
+  /* comparison option rows */
+  .options{margin-top:12px; display:flex; flex-direction:column; gap:8px; position:relative}
+  .opt{
+    display:flex; align-items:center; gap:10px;
+    border:1.5px solid var(--line); border-radius:10px; padding:11px 14px; font-size:.9rem;
+    background:var(--canvas);
+  }
+  .opt.selected{background:var(--fill-dark); border:2px solid var(--ink)}
+  .opt .kind{font-weight:700}
+  .opt .detail{color:var(--ink2)}
+  .opt.selected .detail{color:var(--ink)}
+  .opt .tag{
+    margin-left:auto; font-size:.72rem; font-weight:700; letter-spacing:.02em; text-transform:uppercase;
+    border:1.5px solid var(--ink); border-radius:99px; padding:3px 10px; background:var(--canvas); white-space:nowrap;
+  }
+
+  /* live stock row */
+  .stock{display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:14px}
+  .stock .lbl{font-size:.78rem; color:var(--ink2); margin-right:2px}
+  .store{
+    border:1.5px solid var(--line); border-radius:99px; padding:5px 12px;
+    font-size:.8rem; background:var(--canvas); white-space:nowrap;
+  }
+  .store.low{border-style:dashed; color:var(--ink2)}
+
+  /* footer CTA */
+  .cta{
+    border:2px solid var(--ink); border-radius:10px; background:var(--fill-dark);
+    text-align:center; padding:13px; font-weight:700; font-size:1rem;
+  }
+
+  /* annotation callout (outside the frame) */
+  .anno{
+    position:absolute; left:calc(100% + 14px); top:308px; width:150px;
+    color:var(--ink2); font-size:.8rem; line-height:1.35;
+  }
+  .anno::before{
+    content:""; position:absolute; right:100%; top:9px; width:12px;
+    border-top:1.5px dashed var(--line);
+  }
+  @media (max-width:1060px){ .anno{display:none} }
+
+  .cap{max-width:640px; margin-top:22px; font-size:.85rem; color:#8a8781; line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="frame">
+  <div class="chrome">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <div class="urlbar">portal.dischem.co.za/e-script</div>
+  </div>
+
+  <div class="inner">
+    <div class="appbar">
+      <span class="app">Dis-Chem e-Scripting Portal</span>
+      <span class="who">Dr S. Naidoo</span>
+    </div>
+
+    <div class="patient">
+      <span class="name">Grace Mokoena</span>
+      <span class="sep">&middot;</span>
+      <span class="scheme">Discovery Health Essential</span>
+      <span class="alert-chip">Allergy: penicillin &#9888;</span>
+    </div>
+
+    <div class="pane">
+      <p class="pane-label">Prescription</p>
+      <div class="medrow">
+        <span class="med">Azithromycin 500mg</span>
+        <span class="qty">quantity: 3</span>
+      </div>
+
+      <div class="options">
+        <div class="opt selected">
+          <span class="kind">Generic - Zithro-Hexal</span>
+          <span class="detail">covered, R0 co-pay</span>
+          <span class="tag">selected</span>
+        </div>
+        <div class="opt">
+          <span class="kind">Original brand - Zithromax</span>
+          <span class="detail">R148 co-pay</span>
+        </div>
+      </div>
+
+      <div class="stock">
+        <span class="lbl">Live stock near patient:</span>
+        <span class="store">Midrand &#9679; in stock</span>
+        <span class="store">Sandton &#9679; in stock</span>
+        <span class="store low">Fourways &#9675; low</span>
+      </div>
+    </div>
+
+    <div class="cta">Sign &amp; send to pharmacy</div>
+  </div>
+
+  <div class="anno">the cost conversation happens in the consult, not at the till</div>
+</div>
+
+<p class="cap"><b>Hero moment</b> - Concept 08 &middot; The Pharmacy in the Room.
+The doctor's e-scripting screen mid-consult: cover, co-pay, generic option and live store stock are visible at the moment of prescribing, while the patient is still in the chair.</p>
+
+</body>
+</html>
