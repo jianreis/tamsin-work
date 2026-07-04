@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero moment 07 - Script Renew</title>
+<style>
+  :root{
+    --ink:#3a3a3a;         /* primary text */
+    --ink2:#7a7a7a;        /* secondary text */
+    --line:#9c9c9c;        /* component borders */
+    --line-soft:#c9c9c9;   /* subtle rules */
+    --fill:#ececec;        /* flat component fill */
+    --fill-dark:#d6d6d6;   /* emphasised fill */
+    --canvas:#ffffff;
+    --font:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  body{
+    margin:0; background:#f2f1ef; font-family:var(--font); color:var(--ink);
+    display:flex; flex-direction:column; align-items:center; padding:36px 16px 64px;
+  }
+
+  /* device frame */
+  .frame{
+    width:390px; background:var(--canvas);
+    border:2px solid var(--ink); border-radius:22px;
+    padding:26px 22px 30px; box-shadow:0 10px 30px rgba(40,40,40,.10);
+    position:relative;
+  }
+  .frame .notch{width:56px; height:5px; border-radius:3px; background:var(--fill-dark); margin:0 auto 22px}
+
+  h1{font-size:1.35rem; font-weight:700; letter-spacing:-.01em; margin:0}
+  .sub{color:var(--ink2); font-size:.85rem; margin:4px 0 18px}
+
+  /* tracker card */
+  .tracker{border:1.5px solid var(--line); border-radius:10px; background:var(--canvas); padding:18px 16px 16px}
+
+  /* vertical stepper */
+  .stepper{position:relative}
+  .st{
+    position:relative; padding:0 0 22px 34px; font-size:.88rem; line-height:1.35;
+  }
+  .st:last-child{padding-bottom:0}
+  /* connector line */
+  .st::before{
+    content:""; position:absolute; left:9px; top:20px; bottom:0; width:0;
+    border-left:1.5px solid var(--line);
+  }
+  .st.future::before{border-left-style:dashed; border-left-color:var(--line-soft)}
+  .st:last-child::before{display:none}
+  /* dot */
+  .dot{
+    position:absolute; left:0; top:1px; width:20px; height:20px; border-radius:99px;
+    border:1.5px solid var(--ink); background:var(--fill-dark);
+    display:flex; align-items:center; justify-content:center;
+    font-size:.7rem; font-weight:700; color:var(--ink);
+  }
+  .st.future .dot{background:var(--canvas); border-color:var(--line); color:var(--line)}
+  .st .txt{color:var(--ink)}
+  .st.current .txt{font-weight:700}
+  .when{display:block; color:var(--ink2); font-size:.75rem; margin-top:3px}
+
+  /* final-state banner */
+  .banner{
+    margin-top:2px; border:2px solid var(--ink); border-radius:10px; background:var(--fill-dark);
+    padding:12px 14px; font-weight:700; font-size:.95rem; text-align:center;
+  }
+
+  /* reassurance row */
+  .reassure{
+    margin-top:14px; border:1.5px dashed var(--line-soft); border-radius:10px;
+    background:var(--fill); padding:10px 12px; color:var(--ink2); font-size:.78rem; line-height:1.5;
+  }
+  .reassure b{color:var(--ink); font-weight:700}
+
+  /* annotation callout (outside the frame) */
+  .anno{
+    position:absolute; left:calc(100% + 14px); top:236px; width:150px;
+    color:var(--ink2); font-size:.8rem; line-height:1.35;
+  }
+  .anno::before{
+    content:""; position:absolute; right:100%; top:9px; width:12px;
+    border-top:1.5px dashed var(--line);
+  }
+  @media (max-width:640px){ .anno{display:none} }
+
+  .cap{max-width:560px; margin-top:22px; font-size:.85rem; color:#8a8781; line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="frame">
+  <div class="notch"></div>
+
+  <h1>Your script renewal &ndash; we're on it</h1>
+  <p class="sub">Grace &middot; Amlodipine &amp; Metformin repeat</p>
+
+  <div class="tracker">
+    <div class="stepper">
+      <div class="st done">
+        <span class="dot">&#10003;</span>
+        <span class="txt">Script expires in 14 days &ndash; spotted &#9888;</span>
+        <span class="when">Mon 08:12</span>
+      </div>
+      <div class="st done">
+        <span class="dot">&#10003;</span>
+        <span class="txt">Renewal request sent to Dr Naidoo, with your history attached</span>
+        <span class="when">Mon 08:14</span>
+      </div>
+      <div class="st done current">
+        <span class="dot">&#10003;</span>
+        <span class="txt">New script received from Dr Naidoo</span>
+        <span class="when">Wed 11:02</span>
+      </div>
+      <div class="st future">
+        <span class="dot"></span>
+        <div class="banner">Your repeat continues &ndash; nothing for you to do</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reassure">
+    <b>If it stalls:</b> quick teleconsult in the app &middot; if you're between doctors,
+    we connect you to one &middot; the pharmacist can bridge a short supply so there's no gap
+  </div>
+
+  <div class="anno">Dis-Chem does the chasing - you were never the middleman</div>
+</div>
+
+<p class="cap"><b>Hero moment</b> - Concept 07 &middot; Script Renew.
+Delivery-tracker grammar applied to admin: you watch the pharmacy chase your doctor for a new script, step by step, without lifting a finger.</p>
+
+</body>
+</html>

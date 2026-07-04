@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero moment 10 - The Named Check</title>
+<style>
+  :root{
+    --ink:#3a3a3a;         /* primary text */
+    --ink2:#7a7a7a;        /* secondary text */
+    --line:#9c9c9c;        /* component borders */
+    --line-soft:#c9c9c9;   /* subtle rules */
+    --fill:#ececec;        /* flat component fill */
+    --fill-dark:#d6d6d6;   /* emphasised fill */
+    --canvas:#ffffff;
+    --font:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  body{
+    margin:0; background:#f2f1ef; font-family:var(--font); color:var(--ink);
+    display:flex; flex-direction:column; align-items:center; padding:36px 16px 64px;
+  }
+  .stage{position:relative; width:100%; max-width:640px; display:flex; flex-direction:column; align-items:center}
+
+  /* ---------- medicine-pack label (free-floating physical artifact) ---------- */
+  .label{
+    width:560px; max-width:100%; background:var(--canvas);
+    border:2px solid var(--ink); border-radius:14px;
+    box-shadow:0 10px 30px rgba(40,40,40,.10);
+    padding:18px 24px 24px; position:relative;
+  }
+  .toprow{
+    display:flex; justify-content:space-between; align-items:baseline; gap:12px;
+    font-size:.78rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+    border-bottom:1.5px solid var(--line-soft); padding-bottom:10px; margin-bottom:14px;
+  }
+  .toprow .order{color:var(--ink2); letter-spacing:.06em}
+
+  .patient{font-size:1.15rem; font-weight:700}
+  .medline{font-size:.9rem; margin-top:3px}
+  .medline .dose{color:var(--ink2)}
+
+  /* THE STAMP - dominant element */
+  .stamp{
+    margin:22px auto 6px; width:fit-content; max-width:100%;
+    transform:rotate(-2deg);
+    border:3px double var(--ink); outline:2px solid var(--ink); outline-offset:2px;
+    border-radius:6px; padding:12px 26px; text-align:center;
+    color:var(--ink); background:var(--fill);
+  }
+  .stamp .big{font-size:1.35rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase}
+  .stamp .name{font-size:.95rem; font-weight:700; margin-top:6px}
+  .stamp .reg{font-size:.78rem; color:var(--ink2); letter-spacing:.04em; margin-top:2px}
+
+  /* ask chip beneath the label */
+  .ask{margin-top:18px; text-align:center}
+  .chip{
+    display:inline-block; border:2px solid var(--ink); border-radius:99px;
+    background:var(--fill-dark); padding:10px 22px; font-weight:700; font-size:.95rem;
+  }
+  .chipnote{color:var(--ink2); font-size:.8rem; margin-top:6px}
+
+  /* annotation callout, pointing at the stamp */
+  .anno{
+    position:absolute; left:calc(50% + 295px); top:158px; width:150px;
+    color:var(--ink2); font-size:.8rem; line-height:1.35;
+  }
+  .anno::before{
+    content:""; position:absolute; right:100%; top:9px; width:12px;
+    border-top:1.5px dashed var(--line);
+  }
+  @media (max-width:960px){ .anno{display:none} }
+
+  .cap{max-width:560px; margin-top:22px; font-size:.85rem; color:#8a8781; line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="stage">
+
+  <div class="label">
+    <div class="toprow">
+      <span>Dis-Chem Dispensary</span>
+      <span class="order">Order DC-8F3K</span>
+    </div>
+
+    <div class="patient">Grace Mokoena</div>
+    <div class="medline">Azithromycin 500mg <span class="dose">&middot; 3 tablets &middot; take one daily</span></div>
+
+    <div class="stamp">
+      <div class="big">Clinically checked &#10003;</div>
+      <div class="name">N. Mokoena &middot; Pharmacist</div>
+      <div class="reg">SAPC P-38221 &middot; today 14:32</div>
+    </div>
+  </div>
+
+  <div class="ask">
+    <span class="chip">Ask Naledi a question</span>
+    <div class="chipnote">one tap - WhatsApp works</div>
+  </div>
+
+  <div class="anno">a named professional stood behind this - by law and by design</div>
+
+</div>
+
+<p class="cap"><b>Hero moment</b> - Concept 10 &middot; The Named Check.
+The moment that matters most carries a person's name - accountability like a signature, not an anonymous process.</p>
+
+</body>
+</html>

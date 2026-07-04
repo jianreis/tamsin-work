@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero moment 04 - CarerConsent</title>
+<style>
+  :root{
+    --ink:#3a3a3a;         /* primary text */
+    --ink2:#7a7a7a;        /* secondary text */
+    --line:#9c9c9c;        /* component borders */
+    --line-soft:#c9c9c9;   /* subtle rules */
+    --fill:#ececec;        /* flat component fill */
+    --fill-dark:#d6d6d6;   /* emphasised fill (active tab, button) */
+    --canvas:#ffffff;
+    --font:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  body{
+    margin:0; background:#f2f1ef; font-family:var(--font); color:var(--ink);
+    display:flex; flex-direction:column; align-items:center; padding:36px 16px 64px;
+  }
+
+  /* free-floating mandate card: certificate meets boarding pass */
+  .pass{
+    width:420px; max-width:100%; background:var(--canvas);
+    border:2px solid var(--ink); border-radius:14px;
+    box-shadow:0 10px 30px rgba(40,40,40,.10);
+    position:relative;
+  }
+  .band{height:10px; background:var(--fill-dark); border-bottom:1.5px solid var(--line); border-radius:12px 12px 0 0}
+  .inner{padding:24px 26px 22px}
+
+  .eyebrow{
+    font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink2); text-align:center; margin-bottom:16px;
+  }
+
+  .grant{
+    text-align:center; font-size:1.22rem; font-weight:700; letter-spacing:-.01em;
+    line-height:1.3; margin-bottom:4px; white-space:nowrap;
+  }
+  .grant .arrow{color:var(--ink2); font-weight:400; padding:0 5px}
+  .roles{
+    text-align:center; color:var(--ink2); font-size:.75rem;
+    text-transform:uppercase; letter-spacing:.06em; margin-bottom:18px;
+  }
+
+  .chips{display:flex; justify-content:center; gap:10px; margin-bottom:18px}
+  .chip{
+    border:1.5px solid var(--ink); border-radius:99px; background:var(--fill);
+    padding:7px 16px; font-size:.85rem; font-weight:700;
+  }
+
+  .meta{
+    text-align:center; font-size:.85rem; color:var(--ink); line-height:1.6;
+  }
+  .meta .soft{color:var(--ink2)}
+
+  /* perforated boarding-pass divider */
+  .tear{position:relative; margin:20px -26px; border-top:2px dashed var(--line-soft)}
+  .tear::before,.tear::after{
+    content:""; position:absolute; top:-11px; width:20px; height:20px; border-radius:50%;
+    background:#f2f1ef; border:2px solid var(--ink);
+  }
+  .tear::before{left:-12px}
+  .tear::after{right:-12px}
+
+  .audit-h{
+    font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink2); margin-bottom:10px;
+  }
+  .audit{list-style:none; margin:0 0 16px; padding:0; font-size:.85rem}
+  .audit li{
+    display:flex; gap:12px; padding:6px 0; border-bottom:1px solid var(--line-soft);
+  }
+  .audit li:last-child{border-bottom:none}
+  .audit .d{color:var(--ink2); width:58px; flex:none}
+
+  .foot{
+    border:1.5px dashed var(--line); border-radius:8px; background:var(--fill);
+    padding:10px 12px; font-size:.78rem; color:var(--ink2); line-height:1.45; text-align:center;
+  }
+
+  /* annotation callout (outside the card) */
+  .anno{
+    position:absolute; left:calc(100% + 14px); top:172px; width:150px;
+    color:var(--ink2); font-size:.8rem; line-height:1.35;
+  }
+  .anno::before{
+    content:""; position:absolute; right:100%; top:9px; width:12px;
+    border-top:1.5px dashed var(--line);
+  }
+  @media (max-width:680px){ .anno{display:none} }
+
+  .cap{max-width:560px; margin-top:22px; font-size:.85rem; color:#8a8781; line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="pass">
+  <div class="band"></div>
+  <div class="inner">
+    <div class="eyebrow">CarerConsent &middot; Recorded Permission</div>
+
+    <div class="grant">Grace Mokoena <span class="arrow">&#8594;</span> Thandi Mokoena</div>
+    <div class="roles">grants scoped permission to her carer</div>
+
+    <div class="chips">
+      <span class="chip">order &#10003;</span>
+      <span class="chip">pay &#10003;</span>
+      <span class="chip">collect &#10003;</span>
+    </div>
+
+    <div class="meta">
+      Granted 12 March 2026 &middot; <span class="soft">by Grace, on her own profile</span><br>
+      <span class="soft">Withdraw or narrow at any time</span>
+    </div>
+
+    <div class="tear"></div>
+
+    <div class="audit-h">Audit trail</div>
+    <ul class="audit">
+      <li><span class="d">14 Feb</span><span>collected at Dis-Chem Midrand</span></li>
+      <li><span class="d">3 Mar</span><span>ordered refill</span></li>
+      <li><span class="d">3 Mar</span><span>paid R86</span></li>
+    </ul>
+
+    <div class="foot">Every action is logged. The pharmacist still checks each prescription.</div>
+  </div>
+
+  <div class="anno">granted by the person being cared for - not requested by the carer</div>
+</div>
+
+<p class="cap"><b>Hero moment</b> - Concept 04 &middot; CarerConsent.
+Informal caregiving made official: a recorded, scoped, revocable permission - granted on the cared-for person's own terms, with every action logged.</p>
+
+</body>
+</html>

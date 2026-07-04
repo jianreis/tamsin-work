@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero moment 12 - Snap-a-Script</title>
+<style>
+  :root{
+    --ink:#3a3a3a;         /* primary text */
+    --ink2:#7a7a7a;        /* secondary text */
+    --line:#9c9c9c;        /* component borders */
+    --line-soft:#c9c9c9;   /* subtle rules */
+    --fill:#ececec;        /* flat component fill */
+    --fill-dark:#d6d6d6;   /* emphasised fill */
+    --canvas:#ffffff;
+    --font:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  body{
+    margin:0; background:#f2f1ef; font-family:var(--font); color:var(--ink);
+    display:flex; flex-direction:column; align-items:center; padding:36px 16px 64px;
+  }
+
+  /* device frame */
+  .frame{
+    width:390px; background:var(--canvas);
+    border:2px solid var(--ink); border-radius:22px;
+    padding:26px 22px 30px; box-shadow:0 10px 30px rgba(40,40,40,.10);
+    position:relative;
+  }
+  .frame .notch{width:56px; height:5px; border-radius:3px; background:var(--fill-dark); margin:0 auto 18px}
+
+  /* chat header */
+  .chathead{
+    display:flex; justify-content:space-between; align-items:baseline;
+    border-bottom:1.5px solid var(--line-soft); padding-bottom:10px; margin-bottom:16px;
+  }
+  .chathead .who{font-weight:700; font-size:1rem}
+  .chathead .app{color:var(--ink2); font-size:.75rem; letter-spacing:.06em; text-transform:uppercase}
+
+  .thread{display:flex; flex-direction:column; gap:12px}
+  .bubble{max-width:82%; border:1.5px solid var(--line); border-radius:14px; padding:10px 12px; font-size:.85rem}
+  .out{align-self:flex-end; background:var(--fill-dark); border-radius:14px 14px 4px 14px}
+  .in{align-self:flex-start; background:var(--fill); border-radius:14px 14px 14px 4px}
+  .time{color:var(--ink2); font-size:.68rem; margin-top:5px; text-align:right}
+
+  /* beat 1: sent photo - crossed box with skewed inner paper */
+  .photo{
+    width:196px; height:140px; border:1.5px solid var(--line); border-radius:8px;
+    background:
+      linear-gradient(to top right, transparent calc(50% - .75px), var(--line-soft) 50%, transparent calc(50% + .75px)),
+      linear-gradient(to top left,  transparent calc(50% - .75px), var(--line-soft) 50%, transparent calc(50% + .75px)),
+      var(--fill);
+    position:relative; overflow:hidden;
+  }
+  .photo .paper{
+    position:absolute; left:52px; top:20px; width:88px; height:104px;
+    border:1.5px solid var(--line); background:var(--canvas); transform:rotate(6deg);
+  }
+  .photo .paper i{display:block; height:0; border-top:1.5px solid var(--line-soft); margin:12px 9px 0}
+  .photocap{color:var(--ink2); font-size:.75rem; margin-top:7px}
+
+  /* beat 3: captured-order card inside the thread */
+  .ordercard{
+    align-self:flex-start; width:100%; max-width:100%;
+    border:2px solid var(--ink); border-radius:12px; background:var(--canvas);
+    padding:14px; font-size:.85rem;
+  }
+  .ordercard .head{font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink2); margin-bottom:8px}
+  .ordercard .med{font-weight:700; margin-bottom:2px}
+  .price{
+    display:flex; justify-content:space-between; border-top:1.5px solid var(--line-soft);
+    margin-top:10px; padding-top:9px;
+  }
+  .price .pays{color:var(--ink2)}
+  .price .you{font-weight:700}
+  .verif{
+    margin-top:10px; border:1.5px dashed var(--line); border-radius:99px; background:var(--fill);
+    padding:6px 12px; font-size:.75rem; text-align:center;
+  }
+  .chips{display:flex; gap:8px; margin-top:12px}
+  .chip{
+    flex:1; text-align:center; border-radius:99px; padding:9px 6px; font-weight:700; font-size:.8rem;
+    border:2px solid var(--ink);
+  }
+  .chip.dark{background:var(--fill-dark)}
+  .chip.outline{background:var(--canvas)}
+
+  /* annotation callout (outside the frame), pointing at beat 3 */
+  .anno{
+    position:absolute; left:calc(100% + 14px); top:472px; width:150px;
+    color:var(--ink2); font-size:.8rem; line-height:1.35;
+  }
+  .anno::before{
+    content:""; position:absolute; right:100%; top:9px; width:12px;
+    border-top:1.5px dashed var(--line);
+  }
+  @media (max-width:640px){ .anno{display:none} }
+
+  .cap{max-width:560px; margin-top:22px; font-size:.85rem; color:#8a8781; line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="frame">
+  <div class="notch"></div>
+
+  <div class="chathead">
+    <span class="who">Dis-Chem Pharmacy</span>
+    <span class="app">WhatsApp</span>
+  </div>
+
+  <div class="thread">
+
+    <div class="bubble out">
+      <div class="photo"><div class="paper"><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="photocap">photo of Dr Naidoo's paper script</div>
+      <div class="time">10:02 &#10003;&#10003;</div>
+    </div>
+
+    <div class="bubble in">Got it. Reading your script now&hellip;</div>
+
+    <div class="ordercard">
+      <div class="head">We read:</div>
+      <div class="med">Amoxicillin 500mg (21)</div>
+      <div class="med">Loratadine 10mg (30)</div>
+      <div class="price"><span class="pays">Scheme pays R327</span><span class="you">You pay R42</span></div>
+      <div class="verif">Pharmacist verifying against your record &#10003;</div>
+      <div class="chips">
+        <span class="chip dark">Looks right - continue</span>
+        <span class="chip outline">Something's wrong</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="anno">the paper never dead-ends - it joins the same journey</div>
+</div>
+
+<p class="cap"><b>Hero moment</b> - Concept 12 &middot; Snap-a-Script.
+A photo of a crumpled paper script becomes a structured, priced, safety-checked order - the same fast lane as an e-script.</p>
+
+</body>
+</html>

@@ -107,16 +107,15 @@
     text-align:center; padding:13px; font-weight:700; font-size:1rem;
   }
 
-  /* annotation callout (outside the frame) */
+  /* annotation callout (inline, dashed leader up to the comparison rows) */
   .anno{
-    position:absolute; left:calc(100% + 14px); top:308px; width:150px;
-    color:var(--ink2); font-size:.8rem; line-height:1.35;
+    position:relative; margin:10px 4px 0 22px; padding-left:14px;
+    color:var(--ink2); font-size:.8rem; line-height:1.35; max-width:340px;
   }
   .anno::before{
-    content:""; position:absolute; right:100%; top:9px; width:12px;
-    border-top:1.5px dashed var(--line);
+    content:""; position:absolute; left:0; top:-6px; height:14px; width:9px;
+    border-left:1.5px dashed var(--line); border-bottom:1.5px dashed var(--line);
   }
-  @media (max-width:1060px){ .anno{display:none} }
 
   .cap{max-width:640px; margin-top:22px; font-size:.85rem; color:#8a8781; line-height:1.5}
 </style>
@@ -161,6 +160,8 @@
         </div>
       </div>
 
+      <div class="anno">the cost conversation happens in the consult, not at the till</div>
+
       <div class="stock">
         <span class="lbl">Live stock near patient:</span>
         <span class="store">Midrand &#9679; in stock</span>
@@ -171,8 +172,6 @@
 
     <div class="cta">Sign &amp; send to pharmacy</div>
   </div>
-
-  <div class="anno">the cost conversation happens in the consult, not at the till</div>
 </div>
 
 <p class="cap"><b>Hero moment</b> - Concept 08 &middot; The Pharmacy in the Room.

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero moment 06 - Made-for-Me Packaging</title>
+<style>
+  :root{
+    --ink:#3a3a3a;         /* primary text */
+    --ink2:#7a7a7a;        /* secondary text */
+    --line:#9c9c9c;        /* component borders */
+    --line-soft:#c9c9c9;   /* subtle rules */
+    --fill:#ececec;        /* flat component fill */
+    --fill-dark:#d6d6d6;   /* emphasised fill */
+    --canvas:#ffffff;
+    --font:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  body{
+    margin:0; background:#f2f1ef; font-family:var(--font); color:var(--ink);
+    display:flex; flex-direction:column; align-items:center; padding:56px 16px 64px;
+  }
+
+  /* free-floating physical artifact: dose-sachet strip */
+  .artifact{position:relative; width:640px; max-width:100%}
+  .strip{
+    display:flex; align-items:center; justify-content:center;
+    filter:drop-shadow(0 10px 24px rgba(40,40,40,.12));
+  }
+  .sachet{
+    background:var(--canvas); border:1.5px solid var(--line); border-radius:10px;
+    width:170px; padding:16px 14px 18px; text-align:center; color:var(--ink2);
+  }
+  .sachet.focus{
+    width:230px; padding:22px 18px 24px; border:2.5px solid var(--ink);
+    color:var(--ink); z-index:2;
+  }
+  /* perforation between sachets: short bridge of pack material with a dashed tear line */
+  .perf{
+    width:14px; height:140px; background:var(--fill); position:relative;
+    border-top:1.5px solid var(--line); border-bottom:1.5px solid var(--line);
+  }
+  .perf::after{
+    content:""; position:absolute; left:50%; top:6px; bottom:6px; width:0;
+    border-left:2px dashed var(--ink2);
+  }
+  .sachet .name{font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase}
+  .sachet.focus .name{font-size:.78rem}
+  .sachet .when{font-size:.85rem; margin-top:4px}
+  .sachet.focus .when{font-size:1.05rem; font-weight:700; margin-top:6px}
+
+  /* pills */
+  .pills{display:flex; align-items:center; justify-content:center; gap:10px; margin:14px 0 10px}
+  .pill-round{
+    width:26px; height:26px; border-radius:99px; background:var(--fill);
+    border:1.5px solid var(--line);
+  }
+  .pill-round.dark{background:var(--fill-dark)}
+  .pill-capsule{
+    width:38px; height:18px; border-radius:99px; border:1.5px solid var(--line);
+    background:linear-gradient(to right, var(--fill-dark) 50%, var(--canvas) 50%);
+  }
+  .pills.small{transform:scale(.72); margin:8px 0 4px}
+
+  .meds{font-size:.72rem; color:var(--ink2); line-height:1.4}
+  .sachet.focus .meds{font-size:.78rem}
+  .instruction{
+    font-size:1.05rem; font-weight:700; line-height:1.25; margin-top:12px;
+    border-top:1px solid var(--line-soft); padding-top:10px;
+  }
+  .sachet:not(.focus) .filler{
+    height:1px; background:var(--line-soft); margin:12px 18px 0;
+  }
+
+  /* note row under the strip */
+  .noterow{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    margin-top:22px; color:var(--ink2); font-size:.85rem;
+  }
+  .noterow .dot{width:4px; height:4px; border-radius:99px; background:var(--line)}
+
+  /* annotation callout */
+  .anno{
+    position:absolute; left:calc(50% + 135px); top:-42px; width:170px;
+    color:var(--ink2); font-size:.8rem; line-height:1.35;
+  }
+  .anno::after{
+    content:""; position:absolute; left:-16px; top:16px; height:34px; width:12px;
+    border-left:1.5px dashed var(--line); border-bottom:1.5px dashed var(--line);
+  }
+  @media (max-width:700px){ .anno{display:none} }
+
+  .cap{max-width:560px; margin-top:26px; font-size:.85rem; color:#8a8781; line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="artifact">
+  <div class="anno">tear off one dose - no sorting, no pillbox</div>
+
+  <div class="strip">
+    <div class="sachet">
+      <div class="name">Grace Mokoena</div>
+      <div class="when">Sunday &middot; 20:00</div>
+      <div class="pills small">
+        <span class="pill-round"></span>
+        <span class="pill-round dark"></span>
+      </div>
+      <div class="meds">Amlodipine 5mg &middot; Metformin</div>
+      <div class="filler"></div>
+    </div>
+
+    <div class="perf"></div>
+
+    <div class="sachet focus">
+      <div class="name">Grace Mokoena</div>
+      <div class="when">Monday &middot; 08:00</div>
+      <div class="pills">
+        <span class="pill-round"></span>
+        <span class="pill-round dark"></span>
+        <span class="pill-capsule"></span>
+      </div>
+      <div class="meds">Amlodipine 5mg &middot; Metformin &middot; Aspirin 81mg</div>
+      <div class="instruction">Take all 3 with breakfast</div>
+    </div>
+
+    <div class="perf"></div>
+
+    <div class="sachet">
+      <div class="name">Grace Mokoena</div>
+      <div class="when">Monday &middot; 20:00</div>
+      <div class="pills small">
+        <span class="pill-round"></span>
+        <span class="pill-round dark"></span>
+      </div>
+      <div class="meds">Amlodipine 5mg &middot; Metformin</div>
+      <div class="filler"></div>
+    </div>
+  </div>
+
+  <div class="noterow">
+    <span>labels printed in your own language</span>
+    <span class="dot"></span>
+    <span>large type</span>
+  </div>
+</div>
+
+<p class="cap"><b>Hero moment</b> - Concept 06 &middot; Made-for-Me Packaging.
+A dose-sachet strip, drawn flat: each sachet is one dose, labelled with name, day and time - the weekly pill-organiser ritual done for you before the medicine arrives.</p>
+
+</body>
+</html>
