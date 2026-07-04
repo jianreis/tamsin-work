@@ -138,6 +138,15 @@ h1,h2,h3,h4{margin:0}
 }
 .concept .pillars .plbl{font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; color:var(--muted2); margin-right:2px}
 
+/* ---- journey group headers ------------------------------------------------ */
+.grouphead{
+  grid-column:1 / -1; display:flex; align-items:baseline; gap:12px; margin-top:8px;
+}
+.grouphead:first-child{margin-top:0}
+.grouphead h2{font-size:1.05rem; font-weight:800; letter-spacing:-.01em; color:var(--ink); white-space:nowrap}
+.grouphead .gsub{font-size:.84rem; color:var(--muted)}
+.grouphead::after{content:""; flex:1 1 auto; border-bottom:2px solid var(--mint-deep); transform:translateY(-4px)}
+
 /* ---- footer -------------------------------------------------------------- */
 .foot{padding:calc(var(--sp)*4) calc(var(--sp)*3) 0; color:var(--muted); font-size:.85rem; max-width:80ch}
 .foot a{color:var(--brand-dark)}
@@ -162,7 +171,7 @@ h1,h2,h3,h4{margin:0}
 
   <div class="ribbon">
     <span>&#9888; Concept for review - not an official Dis-Chem artefact</span>
-    <span class="gen">generated 2026-07-01 from the Bigly ground-truth vault</span>
+    <span class="gen">generated 2026-07-01 · updated 2026-07-03 (acute e-scripting set) · from the Bigly ground-truth vault</span>
   </div>
 
   <section class="intro">
@@ -171,9 +180,10 @@ h1,h2,h3,h4{margin:0}
     <p class="lede">Each concept starts with something you already know from everyday life, then shows the
     Dis-Chem version of it - one of the big customer-experience moves we want to build into the journey.
     Read these first, then we walk the journey itself and see each concept in action.</p>
-    <p class="note">This is a living set. We start with the concepts in the household-repeat
-    journey and add to it as the work progresses. Every concept is tagged with the strategic
-    (S) and experience (U) pillars it expresses, so you can see how the same few bets recur.</p>
+    <p class="note">This is a living set, grouped by the journey each concept belongs to. It began
+    with the household-repeat journey and now carries the acute e-scripting journey too, and it
+    grows as the work progresses. Every concept is tagged with the strategic (S) and experience (U)
+    pillars it expresses, so you can see how the same few bets recur.</p>
   </section>
 
   <div class="legend">
@@ -222,11 +232,18 @@ const ICONS = {
   consent:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>',
   sync:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>',
   pack:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5M13 4v5M18 4v5"/><circle cx="7.5" cy="14.5" r="1.2"/><circle cx="12" cy="14.5" r="1.2"/><circle cx="16.5" cy="14.5" r="1.2"/></svg>',
-  renew:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M19 13V8l-5-5H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6"/><path d="M20.9 18.2A3.6 3.6 0 1 0 20 21"/><path d="M21 15v3h-3"/></svg>'
+  renew:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M19 13V8l-5-5H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6"/><path d="M20.9 18.2A3.6 3.6 0 1 0 20 21"/><path d="M21 15v3h-3"/></svg>',
+  room:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7.5" r="3.2"/><path d="M2.8 20c0-3.4 2.8-5.6 6.2-5.6s6.2 2.2 6.2 5.6"/><circle cx="17.5" cy="8.5" r="2.6"/><path d="M17 14.6c2.7.4 4.4 2.3 4.4 5.4"/></svg>',
+  token:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3.5v3.5H14z"/><path d="M21 14v2.5M16.5 21H21M14 20.5V21"/></svg>',
+  namedcheck:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="7.5" r="3.4"/><path d="M3.5 20c0-3.5 2.9-5.8 6.5-5.8 1.5 0 2.9.4 4 1.2"/><path d="m14.8 18 2.1 2.1 4.1-4.1"/></svg>',
+  bolt:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L9.5 22 18 10.5h-6.5L13 2Z"/></svg>',
+  snap:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="m8.5 7 1.5-3h4l1.5 3"/><circle cx="12" cy="13.2" r="3.4"/></svg>',
+  notice:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M6.5 12.2h2.6l1.5-3.6 2.9 6.9 1.5-3.3h2.5"/></svg>'
 };
 
 const CONCEPTS = [
   {
+    group:{title:"The household-repeat journey", sub:"the chronic flywheel - deliverable #05"},
     icon:"refill",
     title:"Auto-Refill",
     tagline:"Your repeat should just repeat.",
@@ -330,6 +347,99 @@ const CONCEPTS = [
       '<b>The doctor stays in charge</b> - they issue the new script; Dis-Chem just does the running.'
     ],
     pillars:["S6","S4","U6","U4"]
+  },
+  {
+    group:{title:"The acute e-scripting journey", sub:"the script from an outside doctor - deliverable #07"},
+    icon:"room",
+    title:"The Pharmacy in the Room",
+    tagline:"Your doctor and your pharmacy, finally in the same room.",
+    intro:'A good decision needs everyone in the room, and today they never are: the doctor prescribes in one room, the pharmacy fills in another, and you carry the script - and every question about cost, cover and generics - between them. The e-scripting portal puts the pharmacy in the consulting room. <span class="why">Doctor, pharmacist and patient decide the medication together - generic or brand, covered or cash, in stock nearby - while you are still in the chair.</span> You walk out with nothing left to organise.',
+    featuresLabel:"What's decided in the room",
+    features:[
+      '<b>Your record is on the doctor\'s screen</b>, with your consent - allergies, current medicine, cover - so the script is safe and suited to you.',
+      '<b>The price is known before you stand up</b> - your scheme\'s cover or an itemised cash price - so there is no surprise waiting at a till.',
+      '<b>The cheaper generic is offered at the consult</b>, with the doctor\'s advice right there, so you choose on medical guidance rather than at a counter.',
+      '<b>Stock is checked live</b> at the Dis-Chem stores near you, so the doctor prescribes what is actually on the shelf.',
+      '<b>The pharmacy already has the script</b> when you leave, so nothing depends on a piece of paper making the trip.'
+    ],
+    pillars:["S6","S3","U3","U5"]
+  },
+  {
+    icon:"token",
+    title:"The E-Script Token",
+    tagline:"Your script, like a boarding pass on your phone.",
+    intro:'You stopped printing boarding passes years ago: the airline holds your ticket, and your phone just shows the code. This is the digital version of that for your script - the signed prescription lives in one secure Dis-Chem record that cannot be lost or altered, and the token on your phone is the key, not the document. <span class="why">Nothing to print, nothing to lose, nothing to re-type - and a clear "received" the moment the pharmacy has it.</span> Because there is one central record, a token redeems exactly once, at any Dis-Chem, and every redemption is tracked.',
+    featuresLabel:"How the boarding pass works",
+    features:[
+      '<b>It arrives the moment the doctor signs</b>, on WhatsApp or the app, so the hand-over is never your job.',
+      '<b>The script lives in one secure central registry</b>, so it cannot be lost, edited or faked - the token merely unlocks it.',
+      '<b>It redeems once, at any Dis-Chem</b>, and the redemption is recorded centrally, so the same script can never be filled twice.',
+      '<b>Forward it to someone you trust</b> to collect for you, without handing over your whole profile.',
+      '<b>A plain "received ✓" confirms the pharmacy has it</b>, so you never wonder whether it arrived.',
+      '<b>SMS, USSD and a printed code work too</b>, so any phone with any data can carry it.'
+    ],
+    pillars:["S6","U1","U6","U2"]
+  },
+  {
+    icon:"namedcheck",
+    title:"The Named Check",
+    tagline:"Every script checked by a pharmacist with a name.",
+    intro:'When your Uber is on its way, you see the driver\'s name and photo, and the trip feels accountable because a person is attached to it. This is that, for the moment that matters most in a pharmacy: the clinical check. <span class="why">A registered pharmacist checks every script - the dose, the interactions, your record - and signs it with their name: "Checked by Naledi ✓".</span> Machines clear the paperwork and picking so the check is quick, and if you have a question, the person who checked your medicine is one tap away.',
+    featuresLabel:"What the check covers",
+    features:[
+      '<b>A registered pharmacist reviews every script</b> - dose, interactions, your history - before anything is dispensed, by law and by design.',
+      '<b>The check carries a name</b> - "Checked by Naledi ✓" - so you know exactly who stood behind your medicine.',
+      '<b>One tap opens a chat with the pharmacist</b>, on WhatsApp if that is all you have, so a worried question never goes unanswered.',
+      '<b>Automation clears the busywork first</b> - keying, counting, picking - so the human check is fast instead of a bottleneck.',
+      '<b>For a child, the dose is checked against their weight</b>, so a parent collects with confidence.'
+    ],
+    pillars:["S5","U2","U4"]
+  },
+  {
+    icon:"bolt",
+    title:"The 60-Minute Fill",
+    tagline:"Medicine, as fast as your groceries.",
+    intro:'You can order groceries on Sixty60 and watch them picked, packed and driven to your door within the hour. Medicine - the thing you need most urgently when you are ill - should be at least that fast. <span class="why">The 60-Minute Fill gets an acute script picked, safety-checked and into your hands quickly: delivered with a live driver map, or ready at a locker near home.</span> The status is honest the whole way, and the promised window is one we keep.',
+    featuresLabel:"What happens in the hour",
+    features:[
+      '<b>A robot picks the pack in seconds</b>, so speed never depends on the length of the queue.',
+      '<b>A barcode check verifies every item against the exact script</b>, so fast never means wrong or short.',
+      '<b>You watch it move</b> - picking, checked, ready, on the way - like a food order, so there is no silent wait.',
+      '<b>Delivery comes with a live map and a real ETA</b>, and proof of delivery at the door, so the promise is kept and verifiable.',
+      '<b>Collection works without a street address</b> - a locker near home opens with an SMS PIN, in hours that suit a shift worker.'
+    ],
+    pillars:["S3","S1","U2","U6"]
+  },
+  {
+    icon:"snap",
+    title:"Snap-a-Script",
+    tagline:"Photograph the script - we do the rest.",
+    intro:'Nobody hunts for a scanner any more: when a form needs sending, you take a photo on WhatsApp and it is done. This is the same move for a paper script. When your doctor is not on the portal, photograph the script and send it. <span class="why">The system reads it, a pharmacist verifies it, and it joins the exact same fast lane - priced, checked, tracked, delivered.</span> However the script starts, the journey never dead-ends.',
+    featuresLabel:"What happens to the photo",
+    features:[
+      '<b>Send it over WhatsApp on any phone</b> - a photo costs almost no data and needs no app or login.',
+      '<b>The script is read and captured automatically</b>, so nobody re-types what the paper already says.',
+      '<b>A pharmacist verifies it against your record</b> before anything is dispensed, so the shortcut is never a safety cut.',
+      '<b>It joins the same journey as an e-script</b> - price up front, live status, delivery or near-home collection.',
+      '<b>If something is out of stock</b>, you are offered a funded generic or another store nearby, in plain language.'
+    ],
+    pillars:["U4","S6","U1"]
+  },
+  {
+    icon:"notice",
+    title:"The Pharmacy That Notices",
+    tagline:"It notices when the same thing keeps coming back.",
+    intro:'A mother does not treat the same sore throat every three months without wondering about tonsils. She notices, because she holds the whole history. Dis-Chem holds your whole medicine history too - often a longer and clearer one than you keep yourself - and this puts it to work for you. <span class="why">When the same acute problem keeps coming back, the pharmacy notices, says so, and offers a proper path: a quick check-in and, if it is needed, ongoing managed care.</span> Instead of a fourth cold start, someone connects the dots for you.',
+    featuresLabel:"What noticing looks like",
+    features:[
+      '<b>Your dispensing history joins the dots</b> across visits, doctors and stores, so a recurring problem is visible even when each episode felt like a one-off.',
+      '<b>It asks gently</b> - "this keeps coming back, want a quick check-in?" - and you can always say no thanks.',
+      '<b>A quick teleconsult on WhatsApp</b> can renew or adjust the treatment, so ongoing care never demands another clinic trek.',
+      '<b>Expiring repeats are watched the same way</b> - flagged before they lapse, so treatment never quietly stops.',
+      '<b>Where a family qualifies for public chronic supply</b>, the same near-home collection rail serves it, so affordable care stays close by.',
+      '<b>You stay in charge</b> - it suggests, you decide, and every nudge is consented and easy to switch off.'
+    ],
+    pillars:["S6","S2","S4","U7"]
   }
   /* CONCEPTS_APPEND_MARKER */
 ];
@@ -340,6 +450,12 @@ function render(){
   const grid = document.getElementById("grid");
   if(!grid) return;
   CONCEPTS.forEach((c,i)=>{
+    if(c.group){
+      const gh = document.createElement("div");
+      gh.className = "grouphead";
+      gh.innerHTML = '<h2>'+esc(c.group.title||"")+'</h2>'+(c.group.sub?'<span class="gsub">'+esc(c.group.sub)+'</span>':'');
+      grid.appendChild(gh);
+    }
     const card = document.createElement("section");
     card.className = "concept";
     const ic = ICONS[c.icon] || "";
