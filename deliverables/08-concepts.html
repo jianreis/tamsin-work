@@ -221,7 +221,8 @@ const ICONS = {
   transparency:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>',
   consent:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>',
   sync:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>',
-  pack:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5M13 4v5M18 4v5"/><circle cx="7.5" cy="14.5" r="1.2"/><circle cx="12" cy="14.5" r="1.2"/><circle cx="16.5" cy="14.5" r="1.2"/></svg>'
+  pack:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5M13 4v5M18 4v5"/><circle cx="7.5" cy="14.5" r="1.2"/><circle cx="12" cy="14.5" r="1.2"/><circle cx="16.5" cy="14.5" r="1.2"/></svg>',
+  renew:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M19 13V8l-5-5H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6"/><path d="M20.9 18.2A3.6 3.6 0 1 0 20 21"/><path d="M21 15v3h-3"/></svg>'
 };
 
 const CONCEPTS = [
@@ -313,6 +314,22 @@ const CONCEPTS = [
       '<b>A printed schedule</b> for anyone who prefers paper or is short on data - same information, no screen needed.'
     ],
     pillars:["U7","U5","U1","S5"]
+  },
+  {
+    icon:"renew",
+    title:"Script Renew",
+    tagline:"When your script expires, we deal with the doctor.",
+    intro:'You go to collect your repeat and it is not there - the script quietly expired. Now you are the one chasing it: phone the pharmacy, phone the doctor, maybe take a morning off to be re-issued the same medicine you have taken for years. But Dis-Chem already knows when your script runs out and who your doctor is. <span class="why">So it does that legwork for you: it goes to your doctor for the new script before you run out, and handles the back-and-forth.</span> You stop being the go-between for your own medicine, and a pharmacy that is meant to look after you finally does.',
+    featuresLabel:"How it takes the chase off you",
+    features:[
+      '<b>It sees the expiry coming</b> - Dis-Chem tracks when your script runs out and how many repeats are left, so no one waits for an empty shelf to notice.',
+      '<b>It goes to your doctor for you</b> - with your say-so it sends the renewal request, your recent history attached, so re-issuing is quick.',
+      '<b>A quick online review if the doctor wants one</b> - a short message or teleconsult in the app, so a renewal never stalls on a missing appointment.',
+      '<b>No doctor to hand? We connect you to one</b> - an on-demand partner doctor can review and re-issue, so being between doctors never leaves you without medicine.',
+      '<b>You will not run out while it is sorted</b> - if the script lapses mid-renewal, the pharmacist can supply a short bridge, so there is no gap.',
+      '<b>The doctor stays in charge</b> - they issue the new script; Dis-Chem just does the running.'
+    ],
+    pillars:["S6","S4","U6","U4"]
   }
   /* CONCEPTS_APPEND_MARKER */
 ];
