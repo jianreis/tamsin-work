@@ -19,7 +19,7 @@
     margin:0; background:#f2f1ef; font-family:var(--font); color:var(--ink);
     display:flex; flex-direction:column; align-items:center; padding:36px 16px 64px;
   }
-  .stage{position:relative; width:100%; max-width:640px; display:flex; flex-direction:column; align-items:center}
+  .stage{position:relative; width:100%; max-width:640px; display:flex; flex-direction:column; align-items:center; padding-bottom:44px}
 
   /* ---------- medicine-pack label (free-floating physical artifact) ---------- */
   .label{
@@ -59,16 +59,16 @@
   }
   .chipnote{color:var(--ink2); font-size:.8rem; margin-top:6px}
 
-  /* annotation callout, pointing at the stamp */
+  /* annotation callout below the label, dashed connector rising to the stamp */
   .anno{
-    position:absolute; left:calc(50% + 295px); top:158px; width:150px;
+    position:absolute; left:calc(50% + 130px); top:300px; width:160px;
     color:var(--ink2); font-size:.8rem; line-height:1.35;
   }
   .anno::before{
-    content:""; position:absolute; right:100%; top:9px; width:12px;
-    border-top:1.5px dashed var(--line);
+    content:""; position:absolute; left:24px; bottom:100%; height:34px;
+    border-left:1.5px dashed var(--line);
   }
-  @media (max-width:960px){ .anno{display:none} }
+  @media (max-width:640px){ .anno{display:none} }
 
   .cap{max-width:560px; margin-top:22px; font-size:.85rem; color:#8a8781; line-height:1.5}
 </style>
