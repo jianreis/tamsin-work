@@ -171,7 +171,7 @@ h1,h2,h3,h4{margin:0}
 
   <div class="ribbon">
     <span>&#9888; Concept for review - not an official Dis-Chem artefact</span>
-    <span class="gen">generated 2026-07-01 · updated 2026-07-03 (acute e-scripting set) · from the Bigly ground-truth vault</span>
+    <span class="gen">generated 2026-07-01 · updated 2026-07-17 (concept 14: the standing order) · from the Bigly ground-truth vault</span>
   </div>
 
   <section class="intro">
@@ -238,7 +238,8 @@ const ICONS = {
   namedcheck:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="7.5" r="3.4"/><path d="M3.5 20c0-3.5 2.9-5.8 6.5-5.8 1.5 0 2.9.4 4 1.2"/><path d="m14.8 18 2.1 2.1 4.1-4.1"/></svg>',
   bolt:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L9.5 22 18 10.5h-6.5L13 2Z"/></svg>',
   snap:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="m8.5 7 1.5-3h4l1.5 3"/><circle cx="12" cy="13.2" r="3.4"/></svg>',
-  notice:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M6.5 12.2h2.6l1.5-3.6 2.9 6.9 1.5-3.3h2.5"/></svg>'
+  notice:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M6.5 12.2h2.6l1.5-3.6 2.9 6.9 1.5-3.3h2.5"/></svg>',
+  basket:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 9.5h15l-1.6 9.3a2 2 0 0 1-2 1.7H8.1a2 2 0 0 1-2-1.7L4.5 9.5Z"/><path d="m8 9.5 4-6.5 4 6.5"/><path d="M9.5 13v4M12 13v4M14.5 13v4"/></svg>'
 };
 
 const CONCEPTS = [
@@ -440,6 +441,23 @@ const CONCEPTS = [
       '<b>You stay in charge</b> - it suggests, you decide, and every nudge is consented and easy to switch off.'
     ],
     pillars:["S6","S2","S4","U7"]
+  },
+  {
+    group:{title:"The household-repeat journey", sub:"the order window - deliverable #05"},
+    icon:"basket",
+    title:"The Standing Order",
+    tagline:"The delivery is already coming. Add to it.",
+    intro:'Every household knows the message: "while you\'re at the shops, grab..." - sent to whoever is already going. And nobody ever went to Dis-Chem only for the pharmacy; the script trip always carried the sunscreen and the toothpaste home with it. The Standing Order is the digital version of that person already going. <span class="why">Your repeat is an open order until the evening before it arrives, and you can hand it the rest of the list.</span> The trip you no longer make still does double duty.',
+    featuresLabel:'What "while you\'re there" covers',
+    features:[
+      '<b>It opens with every repeat</b> - each cycle\'s order stays open until a clear cutoff, so there is always a window and never a special trip.',
+      '<b>It remembers what you buy</b> - specials on things from your own history surface when the window opens, so the season\'s needs find you.',
+      '<b>Everything rides one parcel</b> - added items travel with the medicine, so the week\'s small logistics collapse into a single handover.',
+      '<b>Priced as it goes in</b> - every added item shows its price immediately, so the total is never a surprise.',
+      '<b>It knows its limits</b> - locker and bank collections carry medication only, and it says so upfront, so the promise stays honest.',
+      '<b>It never blocks the medicine</b> - adding is optional and the repeat never waits on the shopping, so autopilot stays autopilot.'
+    ],
+    pillars:["S3","S4","U6","U3"]
   }
   /* CONCEPTS_APPEND_MARKER */
 ];
