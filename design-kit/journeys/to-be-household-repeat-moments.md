@@ -90,7 +90,7 @@ governs. Summary of the approved skeleton:
 
 | Phase | Need (gist of) | Activities (insured) | Activities (cash) | Key moments | Pain points (source) |
 |---|---|---|---|---|---|
-| P0 Signing up (once) | Set up once, whole household, never asked again | Start with the people · Enrol the repeats · Set how the service runs · Review and confirm | Start the conversation · Add the household · Choose collection and payment · Confirm | "I told them once how I want it" (both, on confirm) | You type it again (verbatim, sentiment) · The digital front door is broken (verbatim, complaints) |
+| P0 Signing up (once) | Set up once, on my terms, remembered every month after | I add my household · I add their medicines · I choose how it reaches us (channel only - time is proposed in each month's notice) · I choose how I pay (incl. the rejection rule: check first or charge-and-continue) · I check it once, and confirm (v3.1) | Start the conversation · Add the household · Choose collection and payment · Confirm (v3.1 pass pending) | "I told them once how I want it" (both, on confirm) | You type it again (verbatim, sentiment) · The digital front door is broken (verbatim, complaints) |
 | P1 Repeats are due | Everyone's medicine keeps flowing on its own; complete clarity on the cost | The message arrives · I see the costs, clearly broken down · It keeps going - unless I say otherwise (first-person register, v3.1) | The message arrives · I see the price before I travel · It keeps going - unless I say otherwise, with the person-in-my-language fallback on its own line (v3.1) | "My medicine ordered itself" ⭐ · "The only thing I ever bought blind - not anymore" ⭐ (both economies) | The re-order dance (verbatim, complaints) · Money is a mystery until the end (verbatim, complaints) |
 | P2 The order window | The delivery carries the rest of the list | Open the pending order · Add the household's shop | Medication only on this route (honest constraint) | "While we're here... - without going anywhere" (insured only) | none in the research - honest note instead |
 | P3 Prepared | Certainty it's exactly right, for everyone | Follow the status · Open the check · See it packed | Receive the checked status · Packed for the household | "Every check ran before it left the building" (both) | The short pack, discovered at home (verbatim, complaints) · Errors read as safety threats (sentiment) |
@@ -113,8 +113,10 @@ Made-for-Me Packaging (P5); the ∥ moment pays off the P0 payment preferences.
   chronic cover** - Nomvula sees Grace's cover and shortfall in the same
   breakdown), daughter **Zanele** (12, ADHD, chronic Schedule 6 script) and
   son **Lethabo** (7, asthma, chronic). Two children on chronic medication,
-  carried through the whole journey. Delivery preference: a two-hour morning
-  window (09:00-11:00), to home - not a weekday promise.
+  carried through the whole journey. Delivery preference: home delivery,
+  chosen as a channel at sign-up; the two-hour morning window (09:00-11:00)
+  is proposed in each month's notice, never fixed at sign-up - she can't
+  know every future morning.
 - **Philosophy:** Trust > Convenience > Speed.
 - **Economies:** insured (Nomvula) / cash (Sipho), toggled.
 - **Out of scope, signposted:** script-expiry renewal (Script Renew concept);

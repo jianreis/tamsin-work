@@ -37,10 +37,11 @@ updated: "2026-07-19"
   inhaler). Both children are on chronic medication (updated 2026-07-19, agreed
   with Tamsin). Refer to her mother as **Grace** in all deliverables - never
   "Gogo".
-- **Delivery preference:** a **two-hour morning window (09:00-11:00), to home**
-  - a time-of-month arrangement, not a weekday promise. She chose it because
-  she can reliably be there; self-selected narrow windows are the
-  research-backed exception to the broader-window preference
+- **Delivery preference:** **home delivery**, chosen as a channel at sign-up.
+  The **two-hour morning window (09:00-11:00) is proposed in each month's
+  notice**, never fixed at sign-up - she can't know every future morning.
+  Self-selected narrow windows are the research-backed exception to the
+  broader-window preference
   ([[wiki/dischem/store-of-the-future-customer-voice]]).
 - Comfortable in **English** at work but speaks **isiZulu** at home; reads
   health information fine but resents jargon.

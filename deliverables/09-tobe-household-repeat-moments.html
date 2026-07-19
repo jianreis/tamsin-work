@@ -190,7 +190,7 @@ details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #09 · SCRIPT RE-IMAGINED - THE HOUSEHOLD REPEAT, IN MOMENTS</span>
-  <span class="gen">generated 2026-07-17 · updated 2026-07-19 (v3.1: P1 first-person activities, household update - Zanele, Lethabo, Grace's own cover) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
+  <span class="gen">generated 2026-07-17 · updated 2026-07-19 (v3.1: P0-P1 first-person activities, household update - Zanele, Lethabo, Grace's own cover) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
 </div>
 
 <section class="intro">
@@ -274,19 +274,21 @@ const DATA = {
   phases: [
     {
       id:"p0", num:"P0", title:"Signing up", once:true,
-      need:'I need to set this up <b>once</b>, for the <b>whole household</b> - who I care for, how I pay, what language we speak - and <b>never be asked again</b>.',
+      need:'I need to set this up <b>once, on my terms</b> - and have it <b>remembered every month after</b>.',
       activities:{
         insured:[
-          {t:"Start with the people",
-           x:"Nomvula opens the repeat service in the Dis-Chem app and begins with her household, not a script: herself, Grace, Zanele, Lethabo. Grace's proxy consent is already recorded on her profile, so linking her mother takes one confirmation - the app shows what the consent covers (order, pay, collect) and who granted it."},
-          {t:"Enrol the repeats",
-           x:"The app reads the household's dispensing history and lists the chronic medicines eligible for the service - hers, Grace's, Zanele's ADHD script and Lethabo's asthma controller. She ticks which repeats join. Nothing is re-typed; the scripts, doctors and cover details are already on file."},
-          {t:"Set how the service runs",
-           x:"Four preferences, each pre-filled with a sensible default she can accept or change: delivery - a two-hour morning window, nine to eleven, to home; generics - she stays on the branded medicines she knows; payment - each member's scheme first (hers and the children's Discovery, Grace's own scheme), with her Visa on file for anything a scheme declines; language - English for her messages, isiZulu for Grace's pack and labels."},
-          {t:"Review and confirm",
-           x:"One summary screen reads it all back - members, medicines, day, payment order, languages. She confirms.",
+          {t:"I add my household",
+           x:"Managing so many people's medicine is overwhelming, so I sign up to Dis-Chem's repeat service in the app. I add myself, my mom, Zanele and Lethabo. My mom's consent for me to manage her medicine is already on her profile, so adding her takes one confirmation - her consent covers me managing her medicine, this service included: ordering, paying, collecting for her. Four people's medicine just became one thing to manage."},
+          {t:"I add their medicines",
+           x:"The app already knows our medicines - mine, my mom's, Zanele's ADHD script, Lethabo's asthma pump - and shows me which repeats can join the service. I select them. Nothing gets re-typed; the scripts, the doctors and the cover are already there."},
+          {t:"I choose how it reaches us",
+           x:"How it reaches us is my choice: delivered to home, or ready for collection at a store or a locker near me. I choose delivery. Then how it's made for us - I stay on the brands I know, my messages come in English, and my mom's pack and labels come in her language. My rules, not the system's defaults."},
+          {t:"I choose how I pay",
+           x:"Each person's medical aid gets charged first - mine and the kids' Discovery, my mom's own scheme. My card is on file for whatever's left. And I choose what happens if a medical aid ever rejects a medicine: check with me first, or charge my card and keep it moving. The money side is settled before it ever comes up."},
+          {t:"I check it once, and confirm",
+           x:"One screen reads it all back to me - who's in, what's included, how it reaches us, how it's paid, which languages. I confirm. From here, it remembers - and it just runs.",
            moment:{line:"I told them once how I want it", star:false,
-             why:'This is the moment the service asks everything exactly once - whose medicine she manages, which day, how to pay, what happens if the scheme baulks - and then never asks again. <span class="why">Being believed the first time is the whole experience</span>: her authority over Grace\'s care is now recorded, not re-litigated at a counter. It is the <a href="'+C08+'">CarerConsent</a> and <a href="'+C08+'">Household Medicine Cabinet</a> concepts made real - and everything after this phase runs on these answers.'}}
+             why:'This is the moment the service asks everything exactly once - whose medicine she manages, how it reaches them, how to pay, what happens if the scheme baulks - and then remembers it. <span class="why">Being believed the first time is the whole experience</span>: her authority over Grace\'s care is now recorded, not re-litigated at a counter. It is the <a href="'+C08+'">CarerConsent</a> and <a href="'+C08+'">Household Medicine Cabinet</a> concepts made real - and everything after this phase runs on these answers.'}}
         ],
         cash:[
           {t:"Start the conversation",
@@ -328,7 +330,7 @@ const DATA = {
       activities:{
         insured:[
           {t:"The message arrives",
-           x:"A week before we run out, I get one WhatsApp message: everyone's repeats are being prepared - mine, my mom's, Zanele's and Lethabo's - and it's all arriving this Friday morning between nine and eleven, exactly the window I set up. Dis-Chem remembered. I didn't have to do a thing.",
+           x:"A week before we run out, I get one WhatsApp message: everyone's repeats are being prepared - mine, my mom's, Zanele's and Lethabo's - and it's all arriving this Friday morning, nine to eleven. Dis-Chem remembered. I didn't have to do a thing.",
            moment:{line:"My medicine ordered itself", star:true,
              why:'She reads it, puts the phone down, and gets on with her day. <span class="why">The chore she has carried for years simply isn\'t hers anymore</span> - not made easier, made gone. The only feeling left is the mild surprise of noticing its absence. The <a href="'+C08+'">Auto-Refill</a> and <a href="'+C08+'">Script Sync</a> concepts doing their quiet work: prediction, assembly and one household date, with nothing asked of her.'}},
           {t:"I see the costs, clearly broken down",
@@ -455,7 +457,7 @@ const DATA = {
       activities:{
         insured:[
           {t:"Confirm the window",
-           x:"On delivery morning the nine-to-eleven window she chose at sign-up is confirmed as on track, and she acknowledges it with a tap."},
+           x:"On delivery morning, this month's nine-to-eleven window from the notice is confirmed as on track, and she acknowledges it with a tap."},
           {t:"Track it to the door",
            x:"The parcel is trackable through each stage: packed, dispatched, stops remaining, here. The driver scans the QR on her phone at the door, and that scan closes the order as proof of delivery.",
            moment:{line:"I could track it from Dis-Chem's door to mine", star:true,
