@@ -12,7 +12,7 @@ grounded_in:
   - "[[wiki/consumer-context/adjacent-digital-expectations]]"
   - "[[wiki/consumer-context/digital-access-and-whatsapp]]"
 created: "2026-06-13"
-updated: "2026-07-17"
+updated: "2026-07-19"
 ---
 
 # Nomvula Khumalo — insured chronic, multimorbid
@@ -23,15 +23,25 @@ updated: "2026-07-17"
 
 ## Demographics & context
 - **Age 54**, lives in Midrand (Gauteng suburb), works full-time as an HR
-  manager. Married; two adult children and a late-arrival 7-year-old son,
-  Lethabo.
+  manager. Married; two adult children, a 12-year-old daughter, **Zanele**,
+  and a late-arrival 7-year-old son, **Lethabo**.
 - Owns a home with a findable street address; commutes daily; chronically
   **time-pressured** between work, family and her own care.
 - **Household medicine manager:** in the future-state journey work (deliverable
   05 onwards) she also runs the medicine admin for her mother, **Grace Khumalo**
-  (76, chronic hypertension, lives with the family), and her 7-year-old son
-  **Lethabo**. Refer to her mother as **Grace** in all deliverables - never
+  (76, chronic hypertension, lives with the family, **on her own medical scheme
+  which covers her chronic meds partially** - Nomvula carries the shortfall and
+  needs it visible in the same cost breakdown), her daughter **Zanele** (12,
+  **ADHD**, on a chronic Schedule 6 methylphenidate script - repeat rules are
+  stricter) and her son **Lethabo** (7, **asthma**, on a chronic controller
+  inhaler). Both children are on chronic medication (updated 2026-07-19, agreed
+  with Tamsin). Refer to her mother as **Grace** in all deliverables - never
   "Gogo".
+- **Delivery preference:** a **two-hour morning window (09:00-11:00), to home**
+  - a time-of-month arrangement, not a weekday promise. She chose it because
+  she can reliably be there; self-selected narrow windows are the
+  research-backed exception to the broader-window preference
+  ([[wiki/dischem/store-of-the-future-customer-voice]]).
 - Comfortable in **English** at work but speaks **isiZulu** at home; reads
   health information fine but resents jargon.
 

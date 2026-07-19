@@ -190,7 +190,7 @@ details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #09 · SCRIPT RE-IMAGINED - THE HOUSEHOLD REPEAT, IN MOMENTS</span>
-  <span class="gen">generated 2026-07-17 · updated 2026-07-19 (need / activities / pain-points structure) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
+  <span class="gen">generated 2026-07-17 · updated 2026-07-19 (v3.1: P1 first-person activities, household update - Zanele, Lethabo, Grace's own cover) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
 </div>
 
 <section class="intro">
@@ -256,8 +256,8 @@ const DATA = {
       persona: {
         eyebrow: "Patient · household medicine manager · insured",
         name: "Nomvula Khumalo",
-        bio: "54 · Midrand · HR manager · Discovery member, hypertension + type-2 diabetes on the CDL · app-capable, time-pressured · manages her mother Grace's chronic meds and her 7-year-old son Lethabo's needs from one account.",
-        need: "Keep three people's medicine flowing - automatically, fully funded, with no co-pay surprise and no admin - from one place she already lives in."
+        bio: "54 · Midrand · HR manager · Discovery member, hypertension + type-2 diabetes on the CDL · app-capable, time-pressured · manages the whole household's chronic medicine from one account: her mother Grace's (partially covered by Grace's own scheme), her daughter Zanele's (12, ADHD) and her son Lethabo's (7, asthma).",
+        need: "Keep the whole household's medicine flowing - automatically, every scheme applied, with no cost surprise and no admin - from one place she already lives in."
       }
     },
     cash: {
@@ -278,11 +278,11 @@ const DATA = {
       activities:{
         insured:[
           {t:"Start with the people",
-           x:"Nomvula opens the repeat service in the Dis-Chem app and begins with her household, not a script: herself, Grace, Lethabo. Grace's proxy consent is already recorded on her profile, so linking her mother takes one confirmation - the app shows what the consent covers (order, pay, collect) and who granted it."},
+           x:"Nomvula opens the repeat service in the Dis-Chem app and begins with her household, not a script: herself, Grace, Zanele, Lethabo. Grace's proxy consent is already recorded on her profile, so linking her mother takes one confirmation - the app shows what the consent covers (order, pay, collect) and who granted it."},
           {t:"Enrol the repeats",
-           x:"The app reads her dispensing history and lists the chronic medicines eligible for the service - hers and Grace's. She ticks which repeats join. Nothing is re-typed; the scripts, doctors and cover details are already on file."},
+           x:"The app reads the household's dispensing history and lists the chronic medicines eligible for the service - hers, Grace's, Zanele's ADHD script and Lethabo's asthma controller. She ticks which repeats join. Nothing is re-typed; the scripts, doctors and cover details are already on file."},
           {t:"Set how the service runs",
-           x:"Four preferences, each pre-filled with a sensible default she can accept or change: delivery - Fridays after five, to home; generics - she stays on the branded medicines she knows; payment - Discovery first, with her Visa on file for anything the scheme declines; language - English for her messages, isiZulu for Grace's pack and labels."},
+           x:"Four preferences, each pre-filled with a sensible default she can accept or change: delivery - a two-hour morning window, nine to eleven, to home; generics - she stays on the branded medicines she knows; payment - each member's scheme first (hers and the children's Discovery, Grace's own scheme), with her Visa on file for anything a scheme declines; language - English for her messages, isiZulu for Grace's pack and labels."},
           {t:"Review and confirm",
            x:"One summary screen reads it all back - members, medicines, day, payment order, languages. She confirms.",
            moment:{line:"I told them once how I want it", star:false,
@@ -323,20 +323,20 @@ const DATA = {
       emotion:{insured:4, cash:4}
     },
     {
-      id:"p1", num:"P1", title:"The order assembles",
-      need:'I need the household\'s medicine to <b>keep itself going</b> - and to know <b>what it costs</b> before anything is committed.',
+      id:"p1", num:"P1", title:"Repeats are due",
+      need:'I need everyone\'s medicine to <b>keep flowing on its own</b> - no remembering, no re-doing admin - and <b>complete clarity on the cost</b>: what\'s covered, what comes out of my pocket, every time.',
       activities:{
         insured:[
-          {t:"Receive the notice",
-           x:"A week before run-out, a WhatsApp message arrives: what has been prepared for her and Grace, what Discovery has covered, what (if anything) she pays, and the Friday it arrives. Everything in it is already settled - the order was assembled and the claim run before the message was sent. No reply is needed.",
+          {t:"The message arrives",
+           x:"A week before we run out, I get one WhatsApp message: everyone's repeats are being prepared - mine, my mom's, Zanele's and Lethabo's - and it's all arriving this Friday morning between nine and eleven, exactly the window I set up. Dis-Chem remembered. I didn't have to do a thing.",
            moment:{line:"My medicine ordered itself", star:true,
              why:'She reads it, puts the phone down, and gets on with her day. <span class="why">The chore she has carried for years simply isn\'t hers anymore</span> - not made easier, made gone. The only feeling left is the mild surprise of noticing its absence. The <a href="'+C08+'">Auto-Refill</a> and <a href="'+C08+'">Script Sync</a> concepts doing their quiet work: prediction, assembly and one household date, with nothing asked of her.'}},
-          {t:"See the cost and the cover",
-           x:"The message itemises the money: what Discovery covers in full, and the R42 one line costs her this month - while the order is still hers to change.",
+          {t:"I see the costs, clearly broken down",
+           x:"I can see the costs clearly broken down: what my medical aid is covering, and what I need to pay out of pocket, for everyone's medication. Even my mom's medication, which is partially covered by her own medical aid, shows her cover and the shortfall in the same view. Nothing is a surprise - I know exactly what I'm paying, and what I'm getting for it.",
            moment:{line:"The only thing I ever bought blind - not anymore", star:true,
-             why:'Everything else she buys shows its price before she commits; medicine finally does the same. <span class="why">The price is in the message, not at the till</span> - the decision is hers, made at home, with the numbers in front of her. The <a href="'+C08+'">Real-Time Transparency</a> concept, applied where it stings most today.'}},
-          {t:"Change something, if needed",
-           x:"Amend, snooze or swap a line: one tap, for the months something shifts. Most months, nothing does."}
+             why:'Everything else she buys shows its price up front; medicine finally does the same. <span class="why">The price is in the message, not at the till</span> - she sees the numbers at home, for the whole household, including her mother\'s shortfall. The <a href="'+C08+'">Real-Time Transparency</a> concept, applied where it stings most today.'}},
+          {t:"It keeps going - unless I say otherwise",
+           x:"Most months I don't touch it at all: it's the same medicine, arriving at the same time each month, and it keeps itself going - it doesn't wait for my reply, and it doesn't stop because I'm quiet. But if something doesn't look right, or I want to change something this month - or even cancel the service - I have full control: I can amend my order or my preferences, pause it while I check, or ask a person in the same thread."}
         ],
         cash:[
           {t:"Receive the message",
@@ -455,7 +455,7 @@ const DATA = {
       activities:{
         insured:[
           {t:"Confirm the window",
-           x:"On Friday morning the delivery window firms up - a realistic window, not an over-precise promise - and she confirms it with a tap."},
+           x:"On delivery morning the nine-to-eleven window she chose at sign-up is confirmed as on track, and she acknowledges it with a tap."},
           {t:"Track it to the door",
            x:"The parcel is trackable through each stage: packed, dispatched, stops remaining, here. The driver scans the QR on her phone at the door, and that scan closes the order as proof of delivery.",
            moment:{line:"I could track it from Dis-Chem's door to mine", star:true,
@@ -501,7 +501,7 @@ const DATA = {
     },
     {
       id:"p5", num:"P5", title:"Taking it",
-      need:'I need taking it right to be the <b>easy part</b> - for me, my mother and my son.',
+      need:'I need taking it right to be the <b>easy part</b> - for me, my mother and my kids.',
       activities:{
         insured:[
           {t:"Unpack",

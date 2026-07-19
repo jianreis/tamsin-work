@@ -26,7 +26,7 @@ below; v2's copy is preserved in git history.
 Each phase is one section, modelled on the Need / Activity / pain reference
 layout:
 
-1. **H1 - phase name.** Strictly mechanical (Signing up · The order assembles ·
+1. **H1 - phase name.** Strictly mechanical (Signing up · Repeats are due ·
    The order window · Prepared · In hand · Taking it · ∥ When it goes wrong).
    Badges: "once, not per cycle" (P0), "parallel - any phase" (∥).
 2. **H2 Need.** The customer's stake in this phase, first person, one or two
@@ -45,6 +45,17 @@ layout:
      `08-concepts.html` (not as detached pills).
    - The activity copy carries its own "why" woven into the prose - no
      detached tags, no visible citation slugs.
+   - **First-person register (v3.1, 2026-07-19, agreed with Tamsin, applied to
+     P1 insured first and rolling out phase by phase):** each activity is
+     written from the customer's POV in customer language - never service
+     vocabulary ("swap a line" is a mockup button, not a sentence) - to the
+     formula *what I see or do, then the benefit that has for me* as a closing
+     line. Discreteness is hard: one job per activity (in P1, all money lives
+     in the costs activity; the notice activity carries none). Day-level
+     specificity is avoided where the service cannot promise it - the standing
+     arrangement is a time-of-month window, not a weekday; a concrete day may
+     appear only where a specific order's day is genuinely settled (the
+     one-week-out notice).
 4. **H2 Current-state pain points.** The today-contrast, consolidated per
    phase. **Hard rule:** every pain point has a **title**, a **description**,
    and a **verbatim quote from the research where one exists**. Pains come
@@ -77,7 +88,7 @@ governs. Summary of the approved skeleton:
 | Phase | Need (gist of) | Activities (insured) | Activities (cash) | Key moments | Pain points (source) |
 |---|---|---|---|---|---|
 | P0 Signing up (once) | Set up once, whole household, never asked again | Start with the people · Enrol the repeats · Set how the service runs · Review and confirm | Start the conversation · Add the household · Choose collection and payment · Confirm | "I told them once how I want it" (both, on confirm) | You type it again (verbatim, sentiment) · The digital front door is broken (verbatim, complaints) |
-| P1 The order assembles | Medicine keeps itself going; cost known before commitment | Receive the notice · See the cost and the cover · Change something, if needed | Receive the message · See the price before travelling · Reply only to change | "My medicine ordered itself" ⭐ · "The only thing I ever bought blind - not anymore" ⭐ (both economies) | The re-order dance (verbatim, complaints) · Money is a mystery until the end (verbatim, complaints) |
+| P1 Repeats are due | Everyone's medicine keeps flowing on its own; complete clarity on the cost | The message arrives · I see the costs, clearly broken down · It keeps going - unless I say otherwise (first-person register, v3.1) | Receive the message · See the price before travelling · Reply only to change (v3.1 pass pending) | "My medicine ordered itself" ⭐ · "The only thing I ever bought blind - not anymore" ⭐ (both economies) | The re-order dance (verbatim, complaints) · Money is a mystery until the end (verbatim, complaints) |
 | P2 The order window | The delivery carries the rest of the list | Open the pending order · Add the household's shop | Medication only on this route (honest constraint) | "While we're here... - without going anywhere" (insured only) | none in the research - honest note instead |
 | P3 Prepared | Certainty it's exactly right, for everyone | Follow the status · Open the check · See it packed | Receive the checked status · Packed for the household | "Every check ran before it left the building" (both) | The short pack, discovered at home (verbatim, complaints) · Errors read as safety threats (sentiment) |
 | P4 In hand | In hand when promised, or told early | Confirm the window · Track it to the door · If the day changes | Receive the PIN · Pay, and the locker opens · The fallback | "I could track it from Dis-Chem's door to mine" ⭐ (both) | Out for delivery - then nothing (verbatim, complaints) · Nobody picks up (verbatim, sentiment) · Too-precise promises (verbatim, SOTF) |
@@ -94,6 +105,13 @@ Made-for-Me Packaging (P5); the ∥ moment pays off the P0 payment preferences.
 - **Title:** Script Re-imagined - the household repeat, in moments
 - **Use case:** the household medicine manager. Never "Gogo" - the mother is
   **Grace Khumalo** ([[design-kit/personas/insured-chronic-multimorbid]]).
+- **Nomvula's household (updated 2026-07-19, agreed with Tamsin):** Grace
+  Khumalo (76, chronic hypertension, **her own medical scheme with partial
+  chronic cover** - Nomvula sees Grace's cover and shortfall in the same
+  breakdown), daughter **Zanele** (12, ADHD, chronic Schedule 6 script) and
+  son **Lethabo** (7, asthma, chronic). Two children on chronic medication,
+  carried through the whole journey. Delivery preference: a two-hour morning
+  window (09:00-11:00), to home - not a weekday promise.
 - **Philosophy:** Trust > Convenience > Speed.
 - **Economies:** insured (Nomvula) / cash (Sipho), toggled.
 - **Out of scope, signposted:** script-expiry renewal (Script Renew concept);
