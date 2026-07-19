@@ -55,7 +55,10 @@ layout:
      specificity is avoided where the service cannot promise it - the standing
      arrangement is a time-of-month window, not a weekday; a concrete day may
      appear only where a specific order's day is genuinely settled (the
-     one-week-out notice).
+     one-week-out notice). Language references in first-person copy are "my
+     language" (the customer wouldn't name their own language; also avoids a
+     vault-wide isiZulu/Zulu style call - scoped to this journey). A human
+     fallback gets its own line, separate from the control sentence.
 4. **H2 Current-state pain points.** The today-contrast, consolidated per
    phase. **Hard rule:** every pain point has a **title**, a **description**,
    and a **verbatim quote from the research where one exists**. Pains come
@@ -88,7 +91,7 @@ governs. Summary of the approved skeleton:
 | Phase | Need (gist of) | Activities (insured) | Activities (cash) | Key moments | Pain points (source) |
 |---|---|---|---|---|---|
 | P0 Signing up (once) | Set up once, whole household, never asked again | Start with the people · Enrol the repeats · Set how the service runs · Review and confirm | Start the conversation · Add the household · Choose collection and payment · Confirm | "I told them once how I want it" (both, on confirm) | You type it again (verbatim, sentiment) · The digital front door is broken (verbatim, complaints) |
-| P1 Repeats are due | Everyone's medicine keeps flowing on its own; complete clarity on the cost | The message arrives · I see the costs, clearly broken down · It keeps going - unless I say otherwise (first-person register, v3.1) | Receive the message · See the price before travelling · Reply only to change (v3.1 pass pending) | "My medicine ordered itself" ⭐ · "The only thing I ever bought blind - not anymore" ⭐ (both economies) | The re-order dance (verbatim, complaints) · Money is a mystery until the end (verbatim, complaints) |
+| P1 Repeats are due | Everyone's medicine keeps flowing on its own; complete clarity on the cost | The message arrives · I see the costs, clearly broken down · It keeps going - unless I say otherwise (first-person register, v3.1) | The message arrives · I see the price before I travel · It keeps going - unless I say otherwise, with the person-in-my-language fallback on its own line (v3.1) | "My medicine ordered itself" ⭐ · "The only thing I ever bought blind - not anymore" ⭐ (both economies) | The re-order dance (verbatim, complaints) · Money is a mystery until the end (verbatim, complaints) |
 | P2 The order window | The delivery carries the rest of the list | Open the pending order · Add the household's shop | Medication only on this route (honest constraint) | "While we're here... - without going anywhere" (insured only) | none in the research - honest note instead |
 | P3 Prepared | Certainty it's exactly right, for everyone | Follow the status · Open the check · See it packed | Receive the checked status · Packed for the household | "Every check ran before it left the building" (both) | The short pack, discovered at home (verbatim, complaints) · Errors read as safety threats (sentiment) |
 | P4 In hand | In hand when promised, or told early | Confirm the window · Track it to the door · If the day changes | Receive the PIN · Pay, and the locker opens · The fallback | "I could track it from Dis-Chem's door to mine" ⭐ (both) | Out for delivery - then nothing (verbatim, complaints) · Nobody picks up (verbatim, sentiment) · Too-precise promises (verbatim, SOTF) |

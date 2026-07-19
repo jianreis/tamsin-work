@@ -128,7 +128,7 @@ a{color:var(--brand-dark)}
 .actwho{font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--brand-dark); font-weight:800; margin:8px 0 2px}
 .activity{margin-top:16px; max-width:74ch}
 .activity h4{font-size:1.05rem; font-weight:800; letter-spacing:-.005em; margin-bottom:4px}
-.activity p{margin:0; color:var(--ink-soft)}
+.activity p{margin:0; color:var(--ink-soft); white-space:pre-line}
 .actnote{margin-top:14px; font-size:.85rem; color:var(--muted); max-width:74ch}
 
 /* key moment (embedded in activities) */
@@ -336,19 +336,19 @@ const DATA = {
            moment:{line:"The only thing I ever bought blind - not anymore", star:true,
              why:'Everything else she buys shows its price up front; medicine finally does the same. <span class="why">The price is in the message, not at the till</span> - she sees the numbers at home, for the whole household, including her mother\'s shortfall. The <a href="'+C08+'">Real-Time Transparency</a> concept, applied where it stings most today.'}},
           {t:"It keeps going - unless I say otherwise",
-           x:"Most months I don't touch it at all: it's the same medicine, arriving at the same time each month, and it keeps itself going - it doesn't wait for my reply, and it doesn't stop because I'm quiet. But if something doesn't look right, or I want to change something this month - or even cancel the service - I have full control: I can amend my order or my preferences, pause it while I check, or ask a person in the same thread."}
+           x:"Most months I don't touch it at all: it's the same medicine, arriving at the same time each month, and it keeps itself going - it doesn't stop if I don't reply. But if something doesn't look right, or I want to change something this month - or even cancel the service - I have full control: I can amend my order or my preferences, pause it while I check, or ask a person in the same thread."}
         ],
         cash:[
-          {t:"Receive the message",
-           x:"The same week-out message lands in isiZulu, small enough to open on any signal: his tablets and his mother's repeat, ready for the Capitec locker on payday Friday. No reply is needed.",
+          {t:"The message arrives",
+           x:"A week before our tablets run out, one WhatsApp lands in my language, small enough to open on any signal: mine and my mother's medicine is being prepared, and it'll be ready at the Capitec locker on payday. Dis-Chem remembered - I didn't have to do a thing.",
            moment:{line:"My medicine ordered itself", star:true,
              why:'He reads it and puts the phone away - nothing to install, nothing to spend, nothing to remember. <span class="why">The family\'s supply stays ahead of run-out, on the phone he already owns</span>. The <a href="'+C08+'">Auto-Refill</a> concept with no app in the way.'}},
-          {t:"See the price before travelling",
-           x:"The price is itemised in rand - tablets, dispensing fee, total - and his mother's line shows R0 on CCMDD.",
+          {t:"I see the price before I travel",
+           x:"I can see the price in rand, clearly broken down: my tablets, the dispensing fee, the total I'll pay at the counter - and my mother's line shows R0, covered by CCMDD. I know whether the trip is affordable before I spend a cent on taxi fare. Nothing is waiting to surprise me at the till.",
            moment:{line:"The only thing I ever bought blind - not anymore", star:true,
              why:'He knows whether the trip is affordable <span class="why">before he decides to travel</span> - not at the till, after the taxi fare is already spent. <a href="'+C08+'">Real-Time Transparency</a>, for the majority who pay cash.'}},
-          {t:"Reply only to change",
-           x:"One reply moves the date if payday shifts. Otherwise, silence is the correct answer."}
+          {t:"It keeps going - unless I say otherwise",
+           x:"Most months I send nothing at all: it's the same medicine, ready at the same time each month, and it keeps itself going - it doesn't stop if I don't reply. But if payday moves, or something doesn't look right, or I want to change or cancel anything, one reply in the same thread does it.\n\nAnd if I want a person, a person answers - in my language."}
         ]
       },
       pains:[
