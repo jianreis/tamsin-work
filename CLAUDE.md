@@ -212,6 +212,15 @@ agreed *with the human lead first* (propose, then ask) - that step is the
 make-or-break. A deliverable's own presentation needs supersede the general prose
 rules where they conflict; see the override note in that template.
 
+**Moments journeys** (future-state journeys for an executive audience, e.g.
+`deliverables/09-tobe-household-repeat-moments.html`) follow the
+[[design-kit/templates/moments-journey-template|moments-journey template]]: a
+plain phase spine carrying story-register activities, with the moments that
+earn their keep pulled out as memory-line cards staging today's quoted pain
+against the future state, each mapped to its concept. Moment titles are agreed
+with the human lead (propose, then ask), one card is style-proofed before the
+set, and the previous journey deliverable is preserved, never reworked in place.
+
 ---
 
 ## 9. Maintenance etiquette for agents
