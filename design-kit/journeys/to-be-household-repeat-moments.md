@@ -40,33 +40,51 @@ approved copy.
 - Moments map onto the **concepts** in `deliverables/08-concepts.html`
   wherever one exists; the moment card carries concept pills that link there.
 
-## The phase band schema (agreed)
+## The phase band schema (agreed, revised 2026-07-17)
 
-Each phase carries six bands, in order:
+> Revision note: the original schema carried a "customer need" line and a
+> snappy "gist" line per phase. In review these read as two stacked aphorisms
+> that pre-spoiled the moment cards below them (the wrapper competing with
+> the content). The schema now merges them into ONE functional orienting
+> sentence, and moves ALL snap out of the phase layer. Contrast needs a quiet
+> ground for a loud figure.
 
-1. **Number + title** - plain and mechanical; the poetry lives in the moments.
-2. **Customer need** - one line from the customer's side, true today AND in
-   the future state; only the fulfilment changes.
-3. **The gist** - one sentence for the cold reader; this is where the snappy
-   line lands.
-4. **Activities** - the customer's actions only, written as an unhurried
-   plain-language story (one or more paragraphs, not bullets, not forced-snappy).
-   Behind-the-line machinery never leaks into the story.
-5. **Economies** - the deliverable renders ONE economy at a time behind a
-   toggle (as in 05). Title/need/gist are shared; the story is written per
-   economy in that economy's channel reality. No inline economy markers.
-   (When mockups come, each economy is effectively its own journey on its own
-   channels, so content stays cleanly separable.)
-6. **Pinned moments + emotion** - which moment cards hang off the phase, plus
-   an emotion value per economy for the curve (the felt prose lives in the
-   moment cards, not here).
+Each phase carries five bands, in order:
 
-**Behind the line:** each phase has a collapsed panel - the service blueprint
-behind the story, as in 05 but relocated from moments to phases and trimmed.
-It carries frontstage/backstage actions, the capabilities with vault citations
-and 🔮 reform flags, and a regulatory line only where a non-negotiable
-genuinely constrains the phase. Metrics are deliberately dropped (blueprint
-material, not journey material).
+1. **Number + title** - strictly mechanical, a signpost ("Signing up", "The
+   order assembles", "Prepared"). Never a slogan or a claim; all the poetry
+   lives in the moments. Once-off phases are badged "once, not per cycle"; a
+   cross-cutting failure track is a **parallel band** (∥, "any phase").
+2. **Orienting sentence** - one sentence, ~25 words or fewer, functional and
+   hardworking: it tells a cold reader where they are in the journey and
+   what this phase covers, and deliberately says nothing quotable. No
+   metaphor, no inversion, no aphorism. Title + orienting sentence together
+   set the scene; that is their whole job.
+3. **Activities** - the customer's actions only, written as an unhurried
+   plain-language story: one or two short paragraphs per economy, mechanics
+   only (what arrives, what it contains, what the person does, what their
+   options are). Sequence is told honestly (pricing resolves backstage
+   BEFORE the notice). **No payoff lines**: every emotional landing belongs
+   to a moment card, and any story sentence that lands one is cut. The
+   cover test: hide the moments and the phases read as a clean, calm
+   process description; hide the phases and the moments still hit at full
+   force.
+4. **Economies** - one journey structure, two full renderings behind a
+   toggle (insured / cash), never an interleaved merge. Title and orienting
+   sentence are shared; the story is written per economy in that economy's
+   channel reality, with honest constraints stated plainly.
+5. **Pinned moments + emotion** - which moment cards hang off the phase,
+   plus one emotion value per economy for the curve.
+
+**No prelude into the moment.** The orienting sentence plus a mechanics-only
+story walk the reader to the moment's doorstep; the moment's own tag row is
+the handoff. The moment shines brightest stepping out of plain prose.
+
+**Behind the line:** unchanged - each phase has a collapsed panel with
+frontstage and backstage lanes, capability chips whose tooltips hold the
+vault citations (🔮 reform, ⚠️ assumption), and a regulatory line only where
+a non-negotiable genuinely constrains the phase. Metrics deliberately
+dropped.
 
 ## The moment card schema (agreed register)
 
@@ -101,28 +119,22 @@ contrast. If capability copy outweighs the human beat, the card is wrong.
 
 ## Phases
 
-### P0 · Set it and forget it *(once, not per cycle)*
+### P0 · Signing up *(once, not per cycle)*
 
-- **Need:** "Tell them how our household works - once - and have it stick."
-- **Gist:** Ten minutes, once: after this, the service knows the household
-  better than the counter ever did.
+- **Orienting line:** The one-time setup: who is in the household, which day suits, how to pay, and in which language - everything after runs on these answers.
 - **Nomvula:** She signs the household up for the repeat service from the app.
-  Her own chronic scripts and Grace's go in together - her authority over
-  Grace's medicine is already on record, so nothing has to be proved again.
-  Then the preferences, each with a sensible default she can simply accept:
-  delivery on Fridays after five, to home. She stays on the branded medicines
-  she knows, so no generic substitution by default. Discovery pays first, and
-  she saves a card for anything the scheme ever declines. Labels and messages
-  in English for her, isiZulu for Grace's pack. She reads the summary back,
-  agrees, and that is the last time the service asks her any of it.
+  Her own chronic scripts and Grace's go in together, under the proxy consent
+  already recorded on her profile. Then the preferences, each with a sensible
+  default: delivery on Fridays after five, to home; the branded medicines she
+  knows, so no generic substitution; Discovery first, with a card on file for
+  anything the scheme declines; English for her messages, isiZulu for Grace's
+  pack. She reviews the summary and confirms.
 - **Sipho:** He signs up in a WhatsApp conversation, in isiZulu, on the phone
   he already has - no app, no download. His blood-pressure tablets go in, and
   his mother's chronic medicine comes across from the public CCMDD programme
-  onto the same near-home arrangement. He picks the Capitec branch by the taxi
-  rank as his collection point - he is there most paydays anyway - and sets
-  collection for payday Friday. Cheaper generics by default, cash at the bank
-  counter when he collects. The whole conversation takes a few minutes, and
-  none of it ever has to be repeated at a counter.
+  onto the same arrangement. He sets collection to the locker at the Capitec
+  branch by the taxi rank, on payday Friday; cheaper generics by default;
+  cash at the bank counter when he collects.
 - **Behind the line:** repeat-service enrolment onto one household profile
   [[wiki/concepts/identity-and-consent]]; preference store (day, time-of-day,
   payment order, language per member, collection point); recorded POPIA-grade
@@ -133,25 +145,18 @@ contrast. If capability copy outweighs the human beat, the card is wrong.
   meta/punchlist.md).
 - **Moments:** M0. **Emotion:** N 4 · S 4 (trigger -> calm).
 
-### P1 · The repeat runs itself
+### P1 · The order assembles
 
-- **Need:** "Keep the household's medicine flowing without it being a job I
-  own."
-- **Gist:** Before anyone hears anything, the order has already been
-  assembled, priced and funded - the notice is a statement of fact, not a
-  request.
-- **Nomvula:** A week before her medicine runs out, a WhatsApp message
-  arrives. It tells her what has been prepared - her medicine and Grace's -
-  what Discovery has covered, and that the parcel will arrive on Friday, the
-  day she chose at setup. There is nothing she needs to confirm or fill in.
-  If something needs to change that month - skip an item, move the date -
-  she taps the message and adjusts it. Most months she reads it and puts the
-  phone away.
-- **Sipho:** The same week-out message lands in isiZulu, small enough to open
-  on any signal. It lists his tablets and his mother's repeat, the cash price
-  itemised in rand - tablets, dispensing fee, total - and her CCMDD line at
-  R0, all ready for the Capitec locker on payday Friday. He does not need to
-  reply. If the date clashes, one reply moves it.
+- **Orienting line:** A week before run-out, the order is assembled, priced and funded backstage - only then does the household hear about it.
+- **Nomvula:** A WhatsApp message arrives: what has been prepared for her and
+  Grace, what Discovery has covered, what (if anything) she pays, and the
+  Friday it arrives. No reply is needed. Amend, snooze or swap-a-line sit
+  behind one tap, for the months something changes.
+- **Sipho:** The same message lands in isiZulu, small enough to open on any
+  signal: his tablets and his mother's repeat, the cash price itemised in
+  rand - tablets, dispensing fee, total - her CCMDD line at R0, and the
+  payday Friday it will be ready at the bank. No reply is needed; one reply
+  moves the date if it clashes.
 - **Behind the line:** refill prediction from dispensing history
   [[wiki/digital-transformation/adherence-tech-and-digital-therapeutics]];
   auto-assembly of eligible repeats (BRIX)
@@ -165,22 +170,16 @@ contrast. If capability copy outweighs the human beat, the card is wrong.
 
 ### P2 · The order window
 
-- **Need:** "Let the delivery do what the trip used to do."
-- **Gist:** Until Thursday evening, Friday's parcel is an open order - the
-  household hands it the rest of the list.
-- **Nomvula:** The notice she received is also an open order. Until six on
-  Thursday evening, anything the house needs from Dis-Chem's shelves can ride
-  along with Friday's medicine. A few suggestions come with it, drawn from
-  what she actually buys - it is winter, so the effervescent vitamin C she
-  bought last year is on special and top of the list. She adds it, and
-  Lethabo's toothpaste, seeing each price as it goes in. No separate delivery
-  fee, no second parcel - it is all one order arriving on the day she already
-  chose.
-- **Sipho:** His route runs through a bank locker, and a locker carries
-  medication only - so for him there is no add-on window, and the message
-  never pretends otherwise. Nothing is dangled that his channel cannot
-  deliver. His order stays exactly what it is: the family's medicine, priced
-  upfront, ready on payday.
+- **Orienting line:** Between the notice and the evening before delivery, the pending order stays open for the rest of the household's Dis-Chem shopping.
+- **Nomvula:** Until 18:00 on Thursday, the pending order accepts additions
+  from the shop side of Dis-Chem - toiletries, vitamins, baby, cosmetics.
+  Suggestions are drawn from her own purchase history, specials first, and
+  each added item shows its price as it goes in. Everything arrives in the
+  same parcel, on the same delivery, with no separate fee.
+- **Sipho:** A bank locker carries medication only, so the window does not
+  open on his route - the message states this plainly and offers nothing it
+  cannot deliver. His order remains the family's medicine, priced upfront,
+  ready on payday.
 - **Behind the line:** open-order basket with a stated cutoff; suggestions
   drawn from the customer's own purchase history (specials-aware) ⚠️
   UNVERIFIED (retail-attach mechanics - design assumption, logged);
@@ -191,24 +190,17 @@ contrast. If capability copy outweighs the human beat, the card is wrong.
 
 ### P3 · Prepared
 
-- **Need:** "Certainty that what's coming is exactly right - for everyone in
-  the house."
-- **Gist:** Nothing leaves the building unchecked - and the checking is
-  shown, not asserted.
-- **Nomvula:** While she gets on with her week, the order's status moves on
-  its own: being prepared, checked, packed. The check is the part she can
-  actually open: interactions across the family's medicines, allergies,
-  doses, duplicates, script validity - each ticked, and signed at the bottom
-  by Naledi M., the pharmacist who stands behind it. Then the household's
-  medicine is picked and verified, packed into one pack organised by person,
-  day and time, with the vitamin C and the toothpaste in the same box. She
-  did nothing; she could have watched all of it.
-- **Sipho:** The same preparation happens for his family's order, to the same
-  standard - the robot picks, the cameras verify, a pharmacist signs. His
-  status arrives in isiZulu, short enough for any phone: checked, by name,
-  with the same list of what was looked at. His mother's tablets are packed
-  so mornings and evenings cannot be confused. How he pays has no bearing on
-  how carefully his family's medicine is handled - and now he can see that.
+- **Orienting line:** The order is now checked, picked and packed at the pharmacy - clinical checks first, then assembly into the household's pack.
+- **Nomvula:** The order's status moves on its own: being prepared, checked,
+  packed. The check is openable - interactions across the family's medicines,
+  allergies, doses, duplicates, script validity - reviewed and signed off by
+  the pharmacist on duty. The medicine is then machine-picked, verified by
+  camera against each script, and packed by person, day and time, with the
+  shop items in the same box.
+- **Sipho:** The same preparation, to the same standard: robotic pick, camera
+  verification, pharmacist sign-off. His status arrives in isiZulu, short
+  enough for any phone, with the same list of what was checked. His mother's
+  tablets are packed so that mornings and evenings stay separate.
 - **Behind the line:** AI clinical co-pilot drafts the household-wide check
   stack 🔮 [[wiki/digital-transformation/ai-in-pharmacy]]; **non-negotiable:**
   a registered pharmacist's sign-off remains the clinical gate
@@ -223,20 +215,17 @@ contrast. If capability copy outweighs the human beat, the card is wrong.
 
 ### P4 · In hand
 
-- **Need:** "The medicine actually in hand, when promised, without drama."
-- **Gist:** A promise with a window, kept - visible from their door to yours.
-- **Nomvula:** On Friday morning the day's window firms up and she confirms
-  it with a tap. From there the parcel is never out of sight: packed,
-  dispatched, a map with honest stops, two away, here. The driver scans the
-  QR on her phone and the loop closes - proof of delivery, the whole
-  household's medicine and the shopping in one box. If Friday had gone wrong,
-  pausing or switching to a locker was a tap, not a phone call.
-- **Sipho:** On payday Friday the PIN arrives on WhatsApp. At the Capitec
-  branch he pays the amount from the quote - the same number he saw before he
-  travelled - in cash at the counter, and the payment releases the locker.
-  Under a minute, a plain parcel, no address needed, no delivery van hunting
-  an unnumbered street. If the locker is ever down, the message reroutes him
-  before he travels, and the staffed pharmacy counter remains the fallback.
+- **Orienting line:** Delivery day: the parcel travels to the household by courier, or waits at the collection point near home.
+- **Nomvula:** On Friday morning the delivery window firms up and she
+  confirms it with a tap. The parcel is trackable through each stage -
+  packed, dispatched, stops remaining - until the driver scans the QR on her
+  phone at the door, which closes the order as proof of delivery. If the day
+  changes, pausing or switching to a locker is a tap in the same thread.
+- **Sipho:** The PIN arrives on WhatsApp on payday Friday. At the Capitec
+  counter he pays the quoted amount in cash, and the payment releases the
+  locker - collection and payment in one visit, with no street address
+  involved. If the locker is out of service, the reroute arrives before he
+  travels, and the staffed pharmacy counter stays available as the fallback.
 - **Behind the line:** consolidation and routing with proof-of-delivery
   (VC -> PICCUP + POD)
   [[wiki/digital-transformation/dischem-scripting-tech-roadmap]]; closed-loop
@@ -252,22 +241,19 @@ contrast. If capability copy outweighs the human beat, the card is wrong.
 
 ### P5 · Taking it
 
-- **Need:** "Taking it right, every day, without it being work."
-- **Gist:** The pack, the label and the reminder are designed so the right
-  dose is the path of least resistance.
-- **Nomvula:** At home the pack does the thinking. Grace's mornings tear off
-  in order, in isiZulu; Nomvula's twice-daily doses are grouped by day and
-  time; the directions are large, plain and re-checkable on paper or on her
-  phone. Reminders are tied to each person's routine - Grace's to mornings -
-  and stop the moment anyone asks them to. When the scripts eventually near
-  expiry, the renewal journey takes over; inside this journey, nothing ever
-  simply lapses.
-- **Sipho:** His printed label survives load-shedding, and for anything the
-  label cannot carry there is a usage guide for each medicine on WhatsApp -
-  short, in isiZulu, there when the question arises rather than only at the
-  counter. Reminders come as brief texts or voice notes timed to his routine,
-  and stop instantly if he says so. His mother's pack is organised so her
-  tablets cannot be mixed up, whoever hands them to her.
+- **Orienting line:** The medicine is home; what remains is the everyday routine of taking it - three people, three different schedules, week after week.
+- **Nomvula:** The household's medicine arrives as one pack, organised by
+  person, day and time. Each dose is grouped and labelled - Grace's in
+  isiZulu, hers in English - and the full directions are printed in the pack
+  and available on her phone. Reminders are set per person and tied to
+  routine; any of them switches off in one tap. When a script eventually
+  nears its expiry, the renewal journey takes over - nothing here lapses on
+  its own.
+- **Sipho:** His and his mother's tablets arrive pre-sorted into labelled
+  doses, directions printed in the pack. Each medicine also has a short usage
+  guide he can open on WhatsApp, in isiZulu, whenever a question comes up.
+  Reminders arrive as brief texts or voice notes timed to his routine, and
+  stop the moment he replies stop.
 - **Behind the line:** adherence dose-pack + hybrid print/digital
   instructions [[wiki/dispensing-practice/adherence-packaging]]; consented,
   opt-out-able reminders tied to routine
@@ -281,24 +267,18 @@ contrast. If capability copy outweighs the human beat, the card is wrong.
 
 ### ∥ · When it goes wrong *(parallel - any phase)*
 
-- **Need:** "When something breaks, a way through - not a dead end."
-- **Gist:** The problem arrives in the same message as its solutions - and
-  the plan never dies at the counter.
-- **Nomvula:** The month Discovery declines one line, the first she hears of
-  it is a message that already contains the way out: what was declined, why,
-  and three live choices - charge the card she saved at setup, take the
-  funded generic this once, or talk to a pharmacist now. One tap, and the
-  order carries on with its place in the flow intact. A stock-out behaves the
-  same way: take the generic, have the rest delivered now with the missing
-  item following on its own, or hold the order - her choice, made in the
-  same thread.
-- **Sipho:** When his tablets are short one month, the message offers the
-  cheaper generic he already prefers, or splits the order so his mother's
-  medicine is not held hostage to his - and his place is kept either way,
-  so nothing costs him a wasted trip. If the locker is down on collection
-  day he knows before he travels, with the reroute already arranged. And
-  behind every message is a person: a pharmacist reachable on the same
-  WhatsApp thread, in his language.
+- **Orienting line:** A claim declines, an item runs short, a locker goes down - this track is how the service responds, whatever the phase.
+- **Nomvula:** If Discovery declines a line, a message sets out what was
+  declined, why, and the choices: charge the card on file, take the funded
+  generic this once, or talk to a pharmacist. One tap resolves it and the
+  order keeps its place. A stock-out offers the same structure: take the
+  generic, split the delivery so the rest arrives now, or hold the order -
+  decided in the same thread.
+- **Sipho:** A shortage offers the generic he already prefers, or splits the
+  order so his mother's medicine arrives on time regardless; his place is
+  kept either way. A locker outage is flagged before he travels, with the
+  reroute arranged. A pharmacist is reachable in the same WhatsApp thread,
+  in isiZulu, at any point.
 - **Behind the line:** real-time decline detection at pre-adjudication
   [[wiki/medical-schemes/realtime-claims-switching]]; in-flow recovery options
   with one named owner per exception (Virtual Manager)

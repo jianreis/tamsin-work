@@ -63,31 +63,51 @@ place - preserving the previous treatment is part of the pattern.
 
 ## The phase band schema
 
-Each phase carries six bands, in order:
+**The two-register principle governs this layer:** the phases are the quiet
+ground, the moments the loud figure. The wrapper must never compete with the
+content - the first build's mistake was a "customer need" aphorism plus a
+snappy "gist" per phase, which pre-spoiled the moment cards below in weaker
+words. The cover test for the whole page: hide the moments and the phases
+read as a clean, calm process description; hide the phases and the moments
+still hit at full force.
 
-1. **Number + title** - plain and mechanical. All the poetry lives in the
-   moments. Once-off phases are badged "once, not per cycle"; a cross-cutting
-   failure track is a **parallel band** (∥, "any phase"), not a phase.
-2. **Customer need** - one line from the customer's side, phrased so it is
-   true today AND in the future state; only the fulfilment changes.
-3. **The gist** - one sentence for the cold reader. This is where the snappy
-   line lands.
-4. **Activities** - the customer's actions only, written as an unhurried
-   plain-language story: one or more short paragraphs, not bullets, not
-   forced-snappy. Sequence matters and should be told honestly (e.g. pricing
-   resolves backstage BEFORE the notice is sent, so the notice can honestly
-   say "nothing to do"). Behind-the-line machinery never leaks into the
-   story; the customer taps a message, she does not "use BRIX".
-5. **Economies** - one journey structure, two full renderings behind a
-   toggle (insured / cash), never an interleaved merge. Title, need and gist
-   are shared; the story is written per economy in that economy's channel
-   reality. Split only where the economies genuinely diverge, and state an
-   honest constraint plainly rather than mirroring (the cash locker route
-   carries medication only - say so). Downstream, each economy is
-   effectively its own journey on its own channels for mockups.
-6. **Pinned moments + emotion** - which moment cards hang off the phase,
+Each phase carries five bands, in order:
+
+1. **Number + title** - strictly mechanical, a signpost ("Signing up", "The
+   order assembles", "Prepared"). Never a slogan or a claim - if a title is
+   quotable it is a moment title in the wrong place. Once-off phases are
+   badged "once, not per cycle"; a cross-cutting failure track is a
+   **parallel band** (∥, "any phase"), not a phase.
+2. **Orienting sentence** - ONE sentence, ~25 words or fewer, functional and
+   hardworking: it tells a cold reader where they are in the journey and
+   what this phase covers, and deliberately says nothing quotable. No
+   metaphor, no inversion, no aphorism. Title + orienting sentence together
+   set the scene; that is their whole job. (This replaces the earlier
+   need + gist pair - do not reintroduce them.)
+3. **Activities** - the customer's actions only, written as an unhurried
+   plain-language story: one or two short paragraphs per economy, mechanics
+   only - what arrives, what it contains, what the person does, what their
+   options are. Sequence is told honestly (e.g. pricing resolves backstage
+   BEFORE the notice is sent). Behind-the-line machinery never leaks in; the
+   customer taps a message, she does not "use BRIX". **No payoff lines:**
+   every emotional landing belongs to a moment card, and any story sentence
+   that lands one is cut ("she puts the phone away", "the pack does the
+   thinking" - those are moment material).
+4. **Economies** - one journey structure, two full renderings behind a
+   toggle (insured / cash), never an interleaved merge. Title and orienting
+   sentence are shared; the story is written per economy in that economy's
+   channel reality. State an honest constraint plainly rather than mirroring
+   (the cash locker route carries medication only - say so). Downstream,
+   each economy is effectively its own journey on its own channels for
+   mockups.
+5. **Pinned moments + emotion** - which moment cards hang off the phase,
    plus one emotion value per economy for the curve. The felt prose lives in
    the moment cards, not here.
+
+**No prelude into the moment.** The orienting sentence plus a mechanics-only
+story walk the reader to the moment's doorstep; the moment's own tag row
+(phase · ⭐ · concept pills) is the handoff. The moment shines brightest
+stepping out of plain prose, not out of an introduction.
 
 **Behind the line:** each phase has a collapsed panel - the service blueprint
 under the story, as in the board treatment but relocated from moments to
@@ -177,7 +197,7 @@ inline, no external requests. One `DATA` object mirrors the content spec
 - **Spine overview**: one node per phase (moment count + stars, click scrolls
   to the phase) over an SVG emotion curve for the active economy.
 - **Phase sections**: mint header band (number, title, once/parallel badge),
-  need, gist, the story paragraphs for the active economy, the collapsed
+  the orienting sentence, the story paragraphs for the active economy, the collapsed
   `details.behind` panel (frontstage / backstage / regulatory flag /
   capability chips with cite tooltips), then the phase's moment cards.
 - **Moment cards**: quoted title, tag row (phase · ⭐ · concept pills linking
@@ -202,7 +222,8 @@ escaped.
    in the prose rather than a score?
 4. Are all quotes verbatim and cited - none manufactured?
 5. Do the phase stories stay on the customer's side of the line, in the
-   plain register, with the snap confined to the gist?
+   plain register, with no payoff lines - and does the page pass the cover
+   test in both directions (phases calm alone, moments full-force alone)?
 6. Does each phase's behind-the-line panel defend the phase (lanes, cited
    capability chips, regulatory non-negotiables) without metrics creep?
 7. Do concept pills resolve to real cards in `08-concepts.html`, and has any
