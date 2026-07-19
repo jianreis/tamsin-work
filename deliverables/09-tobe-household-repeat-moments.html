@@ -6,11 +6,11 @@
 <title>Script Re-imagined - the household repeat, in moments</title>
 <style>
 /* =============================================================================
-   DELIVERABLE #09 - THE HOUSEHOLD REPEAT, IN MOMENTS
-   Phase spine + pulled-out moments. Content source of truth:
-   design-kit/journeys/to-be-household-repeat-moments.md
+   DELIVERABLE #09 - THE HOUSEHOLD REPEAT, IN MOMENTS (structure v3)
+   Per phase: Need -> Activities (discrete, named; key moments embedded)
+   -> Current-state pain points (research-sourced only) -> behind the line.
+   Content source of truth: design-kit/journeys/to-be-household-repeat-moments.md
    Self-contained: all CSS/JS inline, no external requests.
-   Board palette per design-kit/templates/future-state-blueprint-board-style.md.
    ============================================================================= */
 :root{
   --brand:#1a9b4a; --brand-dark:#157a3b; --lime:#b5d334;
@@ -22,6 +22,7 @@
   --good:#1a9b4a; --good-bg:#eef7f1;
   --warn:#b9770b; --reform:#7c3aed;
   --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
   --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
   --sp:8px; --radius:12px; --maxw:1080px;
 }
@@ -29,7 +30,6 @@
 html,body{margin:0;padding:0}
 body{background:var(--bg); color:var(--ink); font-family:var(--font); line-height:1.55; font-size:15.5px; -webkit-text-size-adjust:100%;}
 .wrap{max-width:var(--maxw); margin:0 auto; padding:0 0 72px;}
-.pad{padding:0 calc(var(--sp)*3);}
 h1,h2,h3,h4{margin:0}
 .tiny{font-size:.78rem; color:var(--muted)}
 button{font:inherit; cursor:pointer}
@@ -106,19 +106,57 @@ a{color:var(--brand-dark)}
   padding:12px calc(var(--sp)*2.5); border-bottom:1px solid var(--mint-deep);}
 .phead .pnum{font-family:var(--mono); font-weight:800; font-size:.8rem; color:var(--brand-dark);
   background:#fff; border-radius:8px; padding:3px 9px;}
-.phead h2{font-size:1.3rem; font-weight:800; letter-spacing:-.01em}
+.phead h2{font-size:1.35rem; font-weight:800; letter-spacing:-.01em}
 .phead .once{font-size:.72rem; text-transform:uppercase; letter-spacing:.09em; font-weight:800; color:var(--brand-dark);
   border:1.5px solid var(--brand-dark); border-radius:99px; padding:2px 10px;}
-.pbody{padding:calc(var(--sp)*2) calc(var(--sp)*2.5) calc(var(--sp)*2.5);}
-.porient{font-size:1rem; font-weight:500; color:var(--ink-soft); max-width:68ch; line-height:1.45}
-.porient::before{content:""; display:inline-block; width:14px; height:3px; background:var(--lime); border-radius:2px; margin-right:9px; vertical-align:middle}
-.pstory{margin-top:14px; max-width:72ch}
-.pstory p{margin:0 0 12px}
-.pstory p:last-child{margin-bottom:0}
-.pstory .swho{font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--brand-dark); font-weight:800; margin-bottom:4px}
+.pbody{padding:calc(var(--sp)*2.5) calc(var(--sp)*2.5) calc(var(--sp)*2.5);}
+
+/* section heads (Need / Activities / Pain points) */
+.sechead{display:flex; align-items:center; gap:10px; margin:calc(var(--sp)*2.5) 0 10px;}
+.sechead:first-child{margin-top:0}
+.sechead .ic{width:26px; height:26px; border-radius:8px; background:var(--ink); color:#fff;
+  display:inline-flex; align-items:center; justify-content:center; font-size:.8rem}
+.sechead h3{font-size:1.02rem; font-weight:800; letter-spacing:-.005em}
+.sechead .sub{font-size:.78rem; color:var(--muted2); font-weight:500}
+
+/* need */
+.needline{font-family:var(--serif); font-size:1.22rem; line-height:1.45; max-width:62ch; color:var(--ink);}
+.needline i{font-style:italic}
+.needline b{font-weight:700}
+
+/* activities */
+.actwho{font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--brand-dark); font-weight:800; margin:8px 0 2px}
+.activity{margin-top:16px; max-width:74ch}
+.activity h4{font-size:1.05rem; font-weight:800; letter-spacing:-.005em; margin-bottom:4px}
+.activity p{margin:0; color:var(--ink-soft)}
+.actnote{margin-top:14px; font-size:.85rem; color:var(--muted); max-width:74ch}
+
+/* key moment (embedded in activities) */
+.keymoment{margin-top:12px; border:1.5px solid var(--mint-deep); border-left:7px solid var(--brand);
+  border-radius:10px; background:var(--good-bg); padding:14px 16px; max-width:74ch;
+  box-shadow:0 2px 10px rgba(21,122,59,.07);}
+.keymoment .ktag{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:6px}
+.keymoment .klabel{font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; color:var(--brand-dark)}
+.keymoment .kstar{font-size:.72rem; font-weight:800; color:#8a5a00; background:#fff3d6; border:1px solid #eeddb0; border-radius:99px; padding:1px 9px}
+.keymoment .kline{font-size:1.15rem; font-weight:800; letter-spacing:-.01em; line-height:1.25}
+.keymoment .kline::before{content:"\201C"; color:var(--mint-deep); font-size:1.5em; line-height:0; vertical-align:-.32em; margin-right:2px}
+.keymoment .kline::after{content:"\201D"; color:var(--mint-deep); font-size:1.5em; line-height:0; vertical-align:-.32em; margin-left:2px}
+.keymoment .kwhy{margin-top:8px; font-size:.93rem}
+.keymoment .kwhy .why{background:linear-gradient(transparent 55%, #d9ecc0 55%); font-weight:800}
+.keymoment .kwhy a{font-weight:700}
+
+/* pain points */
+.paingrid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:4px}
+@media (max-width:820px){ .paingrid{grid-template-columns:1fr} }
+.paincard{background:var(--pain-bg); border:1px solid var(--pain-line); border-radius:10px; padding:12px 14px;}
+.paincard h4{font-size:.95rem; font-weight:800; color:var(--pain); margin-bottom:4px}
+.paincard p{margin:0; font-size:.89rem; color:var(--ink-soft)}
+.paincard .q{display:block; margin-top:9px; font-style:italic; color:var(--pain); font-size:.9rem; border-left:3px solid var(--pain); padding-left:10px;}
+.paincard .qsrc{display:block; margin-top:6px; font-size:.72rem; color:var(--muted2); cursor:help}
+.painnone{font-size:.89rem; color:var(--muted); font-style:italic; max-width:74ch}
 
 /* behind the line */
-details.behind{margin-top:16px; border:1px dashed var(--line); border-radius:10px; background:#fafcfa;}
+details.behind{margin-top:calc(var(--sp)*2.5); border:1px dashed var(--line); border-radius:10px; background:#fafcfa;}
 details.behind summary{list-style:none; display:flex; align-items:center; gap:10px; padding:10px 14px; cursor:pointer;
   font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);}
 details.behind summary::-webkit-details-marker{display:none}
@@ -138,36 +176,6 @@ details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing
 .chip .rf{color:var(--reform); font-weight:800}
 .chip .as{color:var(--warn); font-weight:800}
 
-/* moments */
-.moments{padding:0 calc(var(--sp)*2.5) calc(var(--sp)*2.5); display:grid; gap:calc(var(--sp)*2)}
-.mcard{border:1.5px solid var(--mint-deep); border-left:7px solid var(--brand); border-radius:var(--radius);
-  background:#fff; padding:calc(var(--sp)*2.25) calc(var(--sp)*2.5); box-shadow:0 2px 10px rgba(21,122,59,.07);
-  position:relative;}
-.mcard .mtag{display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; margin-bottom:8px}
-.mcard .mkind{font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; color:var(--brand-dark)}
-.mcard .star{font-size:.74rem; font-weight:800; color:#8a5a00; background:#fff3d6; border:1px solid #eeddb0; border-radius:99px; padding:2px 10px}
-.mcard .cpill{font-size:.74rem; font-weight:700; color:var(--brand-dark); background:var(--good-bg);
-  border:1px solid var(--mint-deep); border-radius:99px; padding:2px 10px; text-decoration:none;}
-.mcard .cpill:hover{background:var(--mint)}
-.mcard h3{font-size:1.35rem; font-weight:800; letter-spacing:-.015em; line-height:1.2}
-.mcard h3::before{content:"\201C"; color:var(--mint-deep); font-size:1.6em; line-height:0; vertical-align:-.35em; margin-right:2px}
-.mcard h3::after{content:"\201D"; color:var(--mint-deep); font-size:1.6em; line-height:0; vertical-align:-.35em; margin-left:2px}
-.mblocks{display:grid; grid-template-columns:1fr 1.35fr; gap:14px; margin-top:14px}
-@media (max-width:820px){ .mblocks{grid-template-columns:1fr} }
-.mtoday{background:var(--pain-bg); border:1px solid var(--pain-line); border-radius:10px; padding:12px 14px;}
-.mtoday .mlabel{color:var(--pain)}
-.mfuture{background:var(--good-bg); border:1px solid var(--mint-deep); border-radius:10px; padding:12px 14px;}
-.mfuture .mlabel{color:var(--brand-dark)}
-.mlabel{font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; margin-bottom:6px}
-.mtoday p,.mfuture p{margin:0; font-size:.94rem}
-.mtoday .q{display:block; margin-top:10px; font-style:italic; color:var(--pain); font-size:.92rem; border-left:3px solid var(--pain); padding-left:10px;}
-.mtoday .qcite{display:block; margin-top:6px; font-size:.72rem; color:var(--muted2); font-family:var(--mono)}
-.mfuture .why{background:linear-gradient(transparent 55%, #d9ecc0 55%); font-weight:800}
-.mbehind{margin-top:12px; font-size:.78rem; color:var(--muted); display:flex; flex-wrap:wrap; gap:4px 8px; align-items:center}
-.mbehind .bl{font-weight:800; text-transform:uppercase; letter-spacing:.08em; font-size:.68rem}
-.mbehind .sep{color:var(--muted2)}
-.mbehind .toph{color:var(--brand-dark); font-weight:700; text-decoration:none}
-
 /* footer */
 .foot{margin:calc(var(--sp)*4) calc(var(--sp)*3) 0; font-size:.84rem; color:var(--muted); max-width:90ch}
 .foot b{color:var(--ink-soft)}
@@ -182,15 +190,16 @@ details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #09 · SCRIPT RE-IMAGINED - THE HOUSEHOLD REPEAT, IN MOMENTS</span>
-  <span class="gen">generated 2026-07-17 · from the Bigly ground-truth vault · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
+  <span class="gen">generated 2026-07-17 · updated 2026-07-19 (need / activities / pain-points structure) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
 </div>
 
 <section class="intro">
   <h1>The household repeat, in moments</h1>
-  <p class="lede">The same journey people already understand - a repeat chronic script, start to finish - told as
-  a familiar spine of phases, with the moments that matter pulled out. Each moment stages the contrast between
-  today's Dis-Chem and the one we aspire to build. Toggle the economy to walk the journey as an insured household
-  or a cash household; open any phase's <b>behind the line</b> for the service blueprint underneath the story.</p>
+  <p class="lede">The repeat chronic script, start to finish, told as a familiar spine of phases. Each phase opens
+  with the customer's <b>need</b>, walks the <b>activities</b> of the future state - with the moments that matter
+  called out where they happen - and closes on <b>today's pain points</b>, verbatim from the research. Toggle the
+  economy to walk it as an insured or a cash household; open any phase's <b>behind the line</b> for the service
+  blueprint underneath.</p>
   <div class="philo"><u>Trust</u> <span class="gt">&gt;</span> Convenience <span class="gt">&gt;</span> Speed <span style="font-weight:500;color:#d6e6dc">&nbsp;- predictability beats speed</span></div>
 </section>
 
@@ -214,21 +223,32 @@ details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing
 
 <main id="board"></main>
 
-<p class="foot pad" style="padding-left:0;padding-right:0">
+<p class="foot">
   <b>Scope notes.</b> Script-expiry renewal is a separate journey (see the <a href="08-concepts.html">Script Renew concept</a>);
   inside this journey nothing lapses. After-hours acute care belongs to the acute e-scripting journey (deliverable #07).
-  The previous treatment of this journey, deliverable #05, remains the deep blueprint reference - full frontstage/backstage
-  lanes, metrics and citations per stage. Moments here map onto the <a href="08-concepts.html">concept set (#08)</a>;
-  pills on each moment link there. Every capability chip names its vault source in its tooltip; 🔮 marks what needs
-  regulatory reform, ⚠️ marks design assumptions logged in meta/punchlist.md.
+  Deliverable #05 remains the deep blueprint reference. Pain points are drawn only from the research - the Jan-2025
+  resolved-complaints analysis, the Dec-2025 public social-sentiment study and the Jan-2026 Store-of-the-Future
+  interviews - never inferred; where the research records no complaint for a phase, the page says so. Concepts are
+  referenced in the copy and link to the <a href="08-concepts.html">concept set (#08)</a>. Capability chips carry their
+  vault sources in tooltips; 🔮 marks what needs regulatory reform, ⚠️ marks design assumptions logged in meta/punchlist.md.
 </p>
 
 </div>
 <script>
 /* =============================================================================
-   DATA - verbatim from design-kit/journeys/to-be-household-repeat-moments.md
+   DATA - mirrors design-kit/journeys/to-be-household-repeat-moments.md
    (the approved content spec). Edit there first, then mirror here.
+   Sources for pains: wiki/dischem/pharmacy-complaints-pain-points (C4C Jan 2025),
+   wiki/dischem/dischem-social-sentiment-trust-journey (Dec 2025),
+   wiki/dischem/store-of-the-future-customer-voice (Jan 2026).
    ============================================================================= */
+const SRC = {
+  complaints: {label:"Dis-Chem resolved-complaints analysis, Jan 2025", cite:"wiki/dischem/pharmacy-complaints-pain-points"},
+  sentiment:  {label:"public social-sentiment study, Dec 2025", cite:"wiki/dischem/dischem-social-sentiment-trust-journey"},
+  sotf:       {label:"Store-of-the-Future customer interviews, Jan 2026", cite:"wiki/dischem/store-of-the-future-customer-voice"}
+};
+const C08 = '08-concepts.html';
+
 const DATA = {
   economies: {
     insured: {
@@ -254,17 +274,41 @@ const DATA = {
   phases: [
     {
       id:"p0", num:"P0", title:"Signing up", once:true,
-      orient:"The one-time setup: who is in the household, which day suits, how to pay, and in which language - everything after runs on these answers.",
-      story:{
+      need:'I need to set this up <b>once</b>, for the <b>whole household</b> - who I care for, how I pay, what language we speak - and <b>never be asked again</b>.',
+      activities:{
         insured:[
-          "She signs the household up for the repeat service from the app. Her own chronic scripts and Grace's go in together, under the proxy consent already recorded on her profile.",
-          "Then the preferences, each with a sensible default: delivery on Fridays after five, to home; the branded medicines she knows, so no generic substitution; Discovery first, with a card on file for anything the scheme declines; English for her messages, isiZulu for Grace's pack. She reviews the summary and confirms."
+          {t:"Start with the people",
+           x:"Nomvula opens the repeat service in the Dis-Chem app and begins with her household, not a script: herself, Grace, Lethabo. Grace's proxy consent is already recorded on her profile, so linking her mother takes one confirmation - the app shows what the consent covers (order, pay, collect) and who granted it."},
+          {t:"Enrol the repeats",
+           x:"The app reads her dispensing history and lists the chronic medicines eligible for the service - hers and Grace's. She ticks which repeats join. Nothing is re-typed; the scripts, doctors and cover details are already on file."},
+          {t:"Set how the service runs",
+           x:"Four preferences, each pre-filled with a sensible default she can accept or change: delivery - Fridays after five, to home; generics - she stays on the branded medicines she knows; payment - Discovery first, with her Visa on file for anything the scheme declines; language - English for her messages, isiZulu for Grace's pack and labels."},
+          {t:"Review and confirm",
+           x:"One summary screen reads it all back - members, medicines, day, payment order, languages. She confirms.",
+           moment:{line:"I told them once how I want it", star:false,
+             why:'This is the moment the service asks everything exactly once - whose medicine she manages, which day, how to pay, what happens if the scheme baulks - and then never asks again. <span class="why">Being believed the first time is the whole experience</span>: her authority over Grace\'s care is now recorded, not re-litigated at a counter. It is the <a href="'+C08+'">CarerConsent</a> and <a href="'+C08+'">Household Medicine Cabinet</a> concepts made real - and everything after this phase runs on these answers.'}}
         ],
         cash:[
-          "He signs up in a WhatsApp conversation, in isiZulu, on the phone he already has - no app, no download. His blood-pressure tablets go in, and his mother's chronic medicine comes across from the public CCMDD programme onto the same arrangement.",
-          "He sets collection to the locker at the Capitec branch by the taxi rank, on payday Friday; cheaper generics by default; cash at the bank counter when he collects."
+          {t:"Start the conversation",
+           x:"Sipho messages the Dis-Chem WhatsApp number and picks isiZulu. The whole sign-up happens in the thread - no app, no download, replies sized for his data."},
+          {t:"Add the household",
+           x:"His blood-pressure tablets go in from his dispensing history. His mother's chronic medicine comes across from the public CCMDD programme onto the same arrangement, with her consent captured in-thread, in-language."},
+          {t:"Choose collection and payment",
+           x:"He sets collection to the locker at the Capitec branch by the taxi rank, on payday Friday. Cheaper generics by default. Payment is cash, at the bank counter, when he collects."},
+          {t:"Confirm",
+           x:"The thread reads his answers back in isiZulu; he replies 1 to confirm.",
+           moment:{line:"I told them once how I want it", star:false,
+             why:'One WhatsApp conversation, a few minutes - and <span class="why">none of it will ever have to be said again</span>: not at a counter, not to a driver, not at the bank. The <a href="'+C08+'">CarerConsent</a> concept, on the phone he already owns.'}}
         ]
       },
+      pains:[
+        {t:"You type it again, and again",
+         d:"Staff and flows ask for what the system already holds; every request starts cold because no saved profile carries across app, WhatsApp and counter.",
+         q:"Type essays even though your information is on the system.", src:"sentiment"},
+        {t:"The digital front door is broken",
+         d:"The app and WhatsApp journeys that should hold your details loop, fail and lock people out - and when they fail there is no clear path to a human.",
+         q:"Dis-Chem App is dysfunctional.", src:"complaints"}
+      ],
       behind:{
         front:["Repeat-service sign-up (app / WhatsApp)","Preference summary read back in plain language"],
         back:["One household profile carries members, consents and cycles across channels","Preference store: day, time-of-day, payment order, language per member, collection point"],
@@ -276,21 +320,45 @@ const DATA = {
           {name:"Partner-bank locker network", cite:"design assumption - see meta/punchlist.md", assume:true}
         ]
       },
-      moments:["m0"], emotion:{insured:4, cash:4}
+      emotion:{insured:4, cash:4}
     },
     {
       id:"p1", num:"P1", title:"The order assembles",
-      orient:"A week before run-out, the order is assembled, priced and funded backstage - only then does the household hear about it.",
-      story:{
+      need:'I need the household\'s medicine to <b>keep itself going</b> - and to know <b>what it costs</b> before anything is committed.',
+      activities:{
         insured:[
-          "A WhatsApp message arrives: what has been prepared for her and Grace, what Discovery has covered, what (if anything) she pays, and the Friday it arrives. No reply is needed.",
-          "Amend, snooze or swap-a-line sit behind one tap, for the months something changes."
+          {t:"Receive the notice",
+           x:"A week before run-out, a WhatsApp message arrives: what has been prepared for her and Grace, what Discovery has covered, what (if anything) she pays, and the Friday it arrives. Everything in it is already settled - the order was assembled and the claim run before the message was sent. No reply is needed.",
+           moment:{line:"My medicine ordered itself", star:true,
+             why:'She reads it, puts the phone down, and gets on with her day. <span class="why">The chore she has carried for years simply isn\'t hers anymore</span> - not made easier, made gone. The only feeling left is the mild surprise of noticing its absence. The <a href="'+C08+'">Auto-Refill</a> and <a href="'+C08+'">Script Sync</a> concepts doing their quiet work: prediction, assembly and one household date, with nothing asked of her.'}},
+          {t:"See the cost and the cover",
+           x:"The message itemises the money: what Discovery covers in full, and the R42 one line costs her this month - while the order is still hers to change.",
+           moment:{line:"The only thing I ever bought blind - not anymore", star:true,
+             why:'Everything else she buys shows its price before she commits; medicine finally does the same. <span class="why">The price is in the message, not at the till</span> - the decision is hers, made at home, with the numbers in front of her. The <a href="'+C08+'">Real-Time Transparency</a> concept, applied where it stings most today.'}},
+          {t:"Change something, if needed",
+           x:"Amend, snooze or swap a line: one tap, for the months something shifts. Most months, nothing does."}
         ],
         cash:[
-          "The same message lands in isiZulu, small enough to open on any signal: his tablets and his mother's repeat, the cash price itemised in rand - tablets, dispensing fee, total - her CCMDD line at R0, and the payday Friday it will be ready at the bank.",
-          "No reply is needed; one reply moves the date if it clashes."
+          {t:"Receive the message",
+           x:"The same week-out message lands in isiZulu, small enough to open on any signal: his tablets and his mother's repeat, ready for the Capitec locker on payday Friday. No reply is needed.",
+           moment:{line:"My medicine ordered itself", star:true,
+             why:'He reads it and puts the phone away - nothing to install, nothing to spend, nothing to remember. <span class="why">The family\'s supply stays ahead of run-out, on the phone he already owns</span>. The <a href="'+C08+'">Auto-Refill</a> concept with no app in the way.'}},
+          {t:"See the price before travelling",
+           x:"The price is itemised in rand - tablets, dispensing fee, total - and his mother's line shows R0 on CCMDD.",
+           moment:{line:"The only thing I ever bought blind - not anymore", star:true,
+             why:'He knows whether the trip is affordable <span class="why">before he decides to travel</span> - not at the till, after the taxi fare is already spent. <a href="'+C08+'">Real-Time Transparency</a>, for the majority who pay cash.'}},
+          {t:"Reply only to change",
+           x:"One reply moves the date if payday shifts. Otherwise, silence is the correct answer."}
         ]
       },
+      pains:[
+        {t:"The re-order dance",
+         d:"Re-ordering chronic medicine through the app or WhatsApp loops and dead-ends - the strongest complaint cluster in the research, with no clear path to a human when it fails.",
+         q:"I have been pulling at my hair trying to order my medication via the App or even using the WhatsApp service.", src:"complaints"},
+        {t:"Money is a mystery until the end",
+         d:"Co-payments and claims surface at the till, and scheduled-medicine pricing reads as arbitrary from store to store - a transparency failure more than a pricing one.",
+         q:"I am horrified that the pricing of scheduled medication differs so dramatically from one Dis-Chem pharmacy to another.", src:"complaints"}
+      ],
       behind:{
         front:["One notice per household: contents, cover / itemised price, arrival day","Amend / snooze / swap-a-line, one tap"],
         back:["Run-out predicted per member from dispensing history","Order assembled to the phase-0 preferences","Funding resolved BEFORE the notice: scheme pre-adjudicated or cash itemised"],
@@ -303,21 +371,27 @@ const DATA = {
           {name:"WhatsApp-first channel", cite:"wiki/consumer-context/digital-access-and-whatsapp"}
         ]
       },
-      moments:["m1","m2"], emotion:{insured:5, cash:4}
+      emotion:{insured:5, cash:4}
     },
     {
       id:"p2", num:"P2", title:"The order window",
-      orient:"Between the notice and the evening before delivery, the pending order stays open for the rest of the household's Dis-Chem shopping.",
-      story:{
+      need:'The trip used to do <b>double duty</b> - I need the delivery to carry <b>the rest of the list</b>, not just the medicine.',
+      activities:{
         insured:[
-          "Until 18:00 on Thursday, the pending order accepts additions from the shop side of Dis-Chem - toiletries, vitamins, baby, cosmetics. Suggestions are drawn from her own purchase history, specials first, and each added item shows its price as it goes in.",
-          "Everything arrives in the same parcel, on the same delivery, with no separate fee."
+          {t:"Open the pending order",
+           x:"The notice doubles as an open order: until 18:00 on Thursday, Friday's parcel accepts additions from the shop side of Dis-Chem - toiletries, vitamins, baby, cosmetics."},
+          {t:"Add the household's shop",
+           x:"Suggestions are drawn from her own purchase history, specials first - the vitamin C effervescents she bought last winter are on special as the cold sets in. She adds them, and Lethabo's toothpaste, each item showing its price as it goes in. One parcel, one delivery, no separate fee.",
+           moment:{line:"While we're here... - without going anywhere", star:false,
+             why:'The pharmacy trip always did double duty, and the delivery threatened to quietly undo that. Instead, <span class="why">the trip she no longer makes still does double duty</span>: the household hands the incoming order the rest of the list, the way it hands a list to whoever is already going to the shops. <a href="'+C08+'">The Standing Order</a> concept at work.'}}
         ],
         cash:[
-          "A bank locker carries medication only, so the window does not open on his route - the message states this plainly and offers nothing it cannot deliver.",
-          "His order remains the family's medicine, priced upfront, ready on payday."
+          {t:"Medication only on this route",
+           x:"A bank locker carries medication only, so the window does not open on Sipho's route - and the message says so plainly rather than dangling what his channel cannot deliver. His order remains the family's medicine, priced upfront, ready on payday."}
         ]
       },
+      pains:[],
+      painNote:"The research records no direct complaint here - this phase answers a lost convenience rather than a reported pain: the errand-consolidation the pharmacy trip used to provide, which a medicine-only delivery would quietly remove.",
       behind:{
         front:["Open order with a stated cutoff (\"add anything before Thursday 18:00\")","Suggestions from the customer's own history, specials-aware","Running total as items go in"],
         back:["Shop items staged against the medicine order","One consolidated parcel, one route"],
@@ -328,21 +402,39 @@ const DATA = {
           {name:"Parcel consolidation", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"}
         ]
       },
-      moments:["m3"], emotion:{insured:4, cash:3}
+      emotion:{insured:4, cash:3}
     },
     {
       id:"p3", num:"P3", title:"Prepared",
-      orient:"The order is now checked, picked and packed at the pharmacy - clinical checks first, then assembly into the household's pack.",
-      story:{
+      need:'I need to be certain that what is coming is <b>exactly right</b> - for <b>everyone</b> in the house.',
+      activities:{
         insured:[
-          "The order's status moves on its own: being prepared, checked, packed. The check is openable - interactions across the family's medicines, allergies, doses, duplicates, script validity - reviewed and signed off by the pharmacist on duty.",
-          "The medicine is then machine-picked, verified by camera against each script, and packed by person, day and time, with the shop items in the same box."
+          {t:"Follow the status",
+           x:"The order's status moves on its own: being prepared, checked, packed. Nothing is asked of her; everything is visible if she looks."},
+          {t:"Open the check",
+           x:"The \"checked\" status expands into the actual list: interactions across the family's medicines, allergies, doses, duplicates, script validity - each reviewed and signed off by the pharmacist on duty, by name.",
+           moment:{line:"Every check ran before it left the building", star:false,
+             why:'The due diligence is shown, not assumed - and signed by a person who stands behind it. <span class="why">Someone qualified did the worrying, and she can see exactly what they worried about.</span> The question that rides along with medicine - did anyone actually check this? - has an answer with a name on it. <a href="'+C08+'">The Named Check</a>, extended to the whole household.'}},
+          {t:"See it packed",
+           x:"The medicine is machine-picked, verified by camera against each script, and packed by person, day and time - with the vitamin C and the toothpaste in the same box."}
         ],
         cash:[
-          "The same preparation, to the same standard: robotic pick, camera verification, pharmacist sign-off. His status arrives in isiZulu, short enough for any phone, with the same list of what was checked.",
-          "His mother's tablets are packed so that mornings and evenings stay separate."
+          {t:"Receive the checked status",
+           x:"The same preparation, to the same standard: robotic pick, camera verification, pharmacist sign-off. His status arrives in isiZulu, short enough for any phone, with the same itemised list of what was checked.",
+           moment:{line:"Every check ran before it left the building", star:false,
+             why:'The same checks, the same standard, the same named signature. <span class="why">How he pays has no bearing on how carefully his family\'s medicine is handled</span> - and for the first time, he can see that. <a href="'+C08+'">The Named Check</a>, identical on the cash rail.'}},
+          {t:"Packed for the household",
+           x:"His mother's tablets are packed so that mornings and evenings stay separate, whoever hands them to her."}
         ]
       },
+      pains:[
+        {t:"The short pack, discovered at home",
+         d:"Wrong quantities and omitted items sometimes surface only days after leaving the store - a safety event and an adherence break in one, with no itemised handover to catch it at the counter.",
+         q:"On opening the packet a few days later, I discovered my blood pressure tablets were missing.", src:"complaints"},
+        {t:"Errors read as safety threats",
+         d:"Customers judge the pharmacy through a healthcare lens: incorrect or missing medication is experienced as potentially life-threatening and a failure of professional duty, not a retail slip - while visible double-checking by pharmacists measurably reduces the fear.",
+         src:"sentiment"}
+      ],
       behind:{
         front:["Live status: being prepared -> checked -> packed","\"Checked ✓ by Naledi M., pharmacist\" expands to the itemised check list"],
         back:["AI co-pilot drafts the household-wide check stack; the pharmacist confirms or overrides","ROWA picks eligible stock; vision verification flags look-alikes before packing","Household adherence pack assembled; shop items packed alongside"],
@@ -355,21 +447,44 @@ const DATA = {
           {name:"Adherence dose-pack", cite:"wiki/dispensing-practice/adherence-packaging"}
         ]
       },
-      moments:["m4"], emotion:{insured:4, cash:4}
+      emotion:{insured:4, cash:4}
     },
     {
       id:"p4", num:"P4", title:"In hand",
-      orient:"Delivery day: the parcel travels to the household by courier, or waits at the collection point near home.",
-      story:{
+      need:'I need it <b>in hand, when promised</b> - or to know, early, that plans have changed.',
+      activities:{
         insured:[
-          "On Friday morning the delivery window firms up and she confirms it with a tap. The parcel is trackable through each stage - packed, dispatched, stops remaining - until the driver scans the QR on her phone at the door, which closes the order as proof of delivery.",
-          "If the day changes, pausing or switching to a locker is a tap in the same thread."
+          {t:"Confirm the window",
+           x:"On Friday morning the delivery window firms up - a realistic window, not an over-precise promise - and she confirms it with a tap."},
+          {t:"Track it to the door",
+           x:"The parcel is trackable through each stage: packed, dispatched, stops remaining, here. The driver scans the QR on her phone at the door, and that scan closes the order as proof of delivery.",
+           moment:{line:"I could track it from Dis-Chem's door to mine", star:true,
+             why:'The loop only closes when the parcel is physically in her hands. <span class="why">Being stood up by a system ends when the system can\'t quietly disappear</span> - the promise has a window, and the window is kept in plain sight. <a href="'+C08+'">Real-Time Transparency</a> again, this time on the road.'}},
+          {t:"If the day changes",
+           x:"Pausing the delivery or switching it to a locker is a tap in the same thread - not a phone call."}
         ],
         cash:[
-          "The PIN arrives on WhatsApp on payday Friday. At the Capitec counter he pays the quoted amount in cash, and the payment releases the locker - collection and payment in one visit, with no street address involved.",
-          "If the locker is out of service, the reroute arrives before he travels, and the staffed pharmacy counter stays available as the fallback."
+          {t:"Receive the PIN",
+           x:"On payday Friday the collection PIN arrives on WhatsApp."},
+          {t:"Pay, and the locker opens",
+           x:"At the Capitec counter he pays the quoted amount - the same number he saw before travelling - in cash, and the payment releases the locker. One visit, under a minute, a plain parcel, no street address involved.",
+           moment:{line:"I could track it from Dis-Chem's door to mine", star:true,
+             why:'The same certainty, differently shaped: <span class="why">payment and collection in one visit, near home, with no address required</span> - and if the locker is ever down, he knows before he travels, not after.'}},
+          {t:"The fallback",
+           x:"The staffed pharmacy counter stays available if the locker route fails."}
         ]
       },
+      pains:[
+        {t:"Out for delivery - then nothing",
+         d:"Orders are approved, notified as dispatched, and never arrive - the worst failure, because the system promised. Hand-offs lose state and no closed loop confirms handover.",
+         q:"I received a notification that it has been processed on my medical aid and was out for delivery. I did not receive it.", src:"complaints"},
+        {t:"Nobody picks up",
+         d:"When something goes wrong the dispensary is unreachable, and the silence reads as organisational inability to care.",
+         q:"Called 4 different dispensaries... nobody is picking up.", src:"sentiment"},
+        {t:"Too-precise promises",
+         d:"Narrow delivery windows are distrusted; customers prefer realistic windows and judge the service on whether the promise held.",
+         q:"Waiting is fine - being unsure isn't.", src:"sotf"}
+      ],
       behind:{
         front:["Realistic window, confirmed morning-of","Tracking to actual handover; QR / PIN at the door or counter"],
         back:["Consolidation hub routes the household parcel; driver proof-of-delivery closes the loop","Locker loaded near home; cash payment at the partner counter releases it","Reroute logic runs BEFORE the customer travels"],
@@ -382,21 +497,40 @@ const DATA = {
           {name:"Cash-at-bank locker release", cite:"design assumption - see meta/punchlist.md", assume:true}
         ]
       },
-      moments:["m5"], emotion:{insured:5, cash:5}
+      emotion:{insured:5, cash:5}
     },
     {
       id:"p5", num:"P5", title:"Taking it",
-      orient:"The medicine is home; what remains is the everyday routine of taking it - three people, three different schedules, week after week.",
-      story:{
+      need:'I need taking it right to be the <b>easy part</b> - for me, my mother and my son.',
+      activities:{
         insured:[
-          "The household's medicine arrives as one pack, organised by person, day and time. Each dose is grouped and labelled - Grace's in isiZulu, hers in English - and the full directions are printed in the pack and available on her phone. Reminders are set per person and tied to routine; any of them switches off in one tap.",
-          "When a script eventually nears its expiry, the renewal journey takes over - nothing here lapses on its own."
+          {t:"Unpack",
+           x:"The household's medicine arrives as one pack, organised by person, day and time. Each dose is grouped and labelled - Grace's in isiZulu, hers in English - with the full directions printed in the pack and available on her phone.",
+           moment:{line:"Medication you can't take wrong", star:false,
+             why:'The plastic-organiser ritual is done before the parcel arrives, in the language the house actually speaks. <span class="why">Getting it wrong now requires effort; getting it right requires none.</span> The <a href="'+C08+'">Made-for-Me Packaging</a> concept, delivered to the kitchen table.'}},
+          {t:"Reminders on their terms",
+           x:"Reminders are set per person and tied to routine - Grace's to mornings. Any of them switches off in one tap, and stays off."}
         ],
         cash:[
-          "His and his mother's tablets arrive pre-sorted into labelled doses, directions printed in the pack. Each medicine also has a short usage guide he can open on WhatsApp, in isiZulu, whenever a question comes up.",
-          "Reminders arrive as brief texts or voice notes timed to his routine, and stop the moment he replies stop."
+          {t:"Use the pack and the label",
+           x:"His and his mother's tablets arrive pre-sorted into labelled doses, with the directions printed in the pack.",
+           moment:{line:"Medication you can't take wrong", star:false,
+             why:'The printed label keeps working in a power cut, and <span class="why">the pack cannot be taken in the wrong order, whoever hands it to his mother</span>. <a href="'+C08+'">Made-for-Me Packaging</a>, built for his household\'s reality.'}},
+          {t:"Ask WhatsApp, not the counter",
+           x:"Each medicine has a short usage guide he can open on WhatsApp, in isiZulu, whenever a question comes up - instead of only at the counter, at collection time."},
+          {t:"Reminders that stop when told",
+           x:"Reminders arrive as brief texts or voice notes timed to his routine, and stop the moment he replies stop."}
         ]
       },
+      actnote:"When a script eventually nears its expiry, the renewal journey takes over (the Script Renew concept) - nothing in this journey lapses on its own.",
+      pains:[
+        {t:"Help flips into harassment",
+         d:"Persistent calls, SMSes and WhatsApps - especially after the customer has tried to opt out - turn support into perceived harassment and loss of control. The same tools that reduce effort when they respect agency amplify distrust when they don't.",
+         src:"sentiment"},
+        {t:"Digital-only instructions worry people",
+         d:"Access, signal and \"where do I find it\" make screen-only dosage information feel risky; customers want digital alongside print, with print as the safety backup.",
+         src:"sotf"}
+      ],
       behind:{
         front:["Dose pack per person / day / time; large in-language labels","Per-medicine usage guide on WhatsApp","Per-member reminders tied to routine; instant opt-out"],
         back:["Schedule designed as a behaviour-change surface, not a reminder bolt-on","Hybrid print + digital instructions generated per member's language"],
@@ -407,21 +541,43 @@ const DATA = {
           {name:"WhatsApp usage guide", cite:"wiki/consumer-context/digital-access-and-whatsapp"}
         ]
       },
-      moments:["m6"], emotion:{insured:5, cash:4}
+      emotion:{insured:5, cash:4}
     },
     {
       id:"pp", num:"∥", title:"When it goes wrong", par:true,
-      orient:"A claim declines, an item runs short, a locker goes down - this track is how the service responds, whatever the phase.",
-      story:{
+      need:'When something breaks, I need <b>a way through</b> - not a dead end at a counter.',
+      activities:{
         insured:[
-          "If Discovery declines a line, a message sets out what was declined, why, and the choices: charge the card on file, take the funded generic this once, or talk to a pharmacist. One tap resolves it and the order keeps its place.",
-          "A stock-out offers the same structure: take the generic, split the delivery so the rest arrives now, or hold the order - decided in the same thread."
+          {t:"A claim declines",
+           x:"If Discovery declines a line, a message sets out what was declined, why, and the choices: charge the card on file, take the funded generic this once, or talk to a pharmacist now. One tap resolves it, and the order keeps its place in the flow.",
+           moment:{line:"Medical aid said no. Dis-Chem said 'let's make a plan.'", star:true,
+             why:'The problem arrives already accompanied by its solutions - and one of them is the card she saved at sign-up, the phase-0 preferences paying off exactly when they should. <span class="why">A rejection stops being a dead end and becomes a decision she gets to make</span> - in the same thread, with a person one tap away.'}},
+          {t:"A stock-out",
+           x:"The same structure: take the funded generic, split the delivery so the rest arrives now and the missing item follows on its own, or hold the order - decided in the same thread, with the choice explained."}
         ],
         cash:[
-          "A shortage offers the generic he already prefers, or splits the order so his mother's medicine arrives on time regardless; his place is kept either way. A locker outage is flagged before he travels, with the reroute arranged.",
-          "A pharmacist is reachable in the same WhatsApp thread, in isiZulu, at any point."
+          {t:"A shortage",
+           x:"The message offers the cheaper generic he already prefers, or splits the order so his mother's medicine arrives on time regardless. His place is kept either way - nothing costs him a wasted trip."},
+          {t:"A locker outage",
+           x:"Flagged before he travels, with the reroute to another point or the staffed counter already arranged."},
+          {t:"A person, in the thread",
+           x:"A pharmacist is reachable in the same WhatsApp conversation, in isiZulu, at any point - the exception never strands him with a machine."}
         ]
       },
+      pains:[
+        {t:"An exception kills the order",
+         d:"A disputed co-payment quietly returned a chronic delivery instead of opening a resolution path - exceptions abort orders rather than triggering recovery.",
+         q:"All he needed to do was contact Dis-Chem and verify the co-payment.", src:"complaints"},
+        {t:"No fallback, no way through",
+         d:"Digital breakdowns become hard blockers when no alternative path exists; customers who cannot locate or recover an order experience it as abandonment.",
+         src:"sentiment"},
+        {t:"A generic no one explained",
+         d:"Substitution is often read as being given the wrong medicine when it feels forced or unexplained - a counselling and consent problem, not a pricing one.",
+         src:"sentiment"},
+        {t:"After a failure, they leave",
+         d:"Trust-breaking failures end in defection: scripts moved to Clicks or local independents, with one customer willing to pay R460 more for relationship-based care.",
+         src:"sentiment"}
+      ],
       behind:{
         front:["Plain-language exception message: what, why, and the live choices","A pharmacist reachable in the same thread"],
         back:["Decline detected at pre-adjudication, before the customer is exposed","Each exception has one named owner until resolved; the order holds its place","Reroute / split-delivery arranged before anyone travels"],
@@ -433,99 +589,19 @@ const DATA = {
           {name:"Graceful failure principle", cite:"wiki/concepts/graceful-failure"}
         ]
       },
-      moments:["m7"], emotion:{insured:3, cash:3}
+      emotion:{insured:3, cash:3}
     }
-  ],
-
-  moments:{
-    m0:{
-      title:"I told them once how I want it", star:false, phase:"P0",
-      concepts:["CarerConsent","Auto-Refill","The Household Medicine Cabinet"],
-      today:"Every interaction starts from zero. She carries Grace's ID to the counter, explains again that yes, she is allowed to collect her mother's medicine, and types her details into forms that already hold them.",
-      quote:"Let me manage all of them in one place, and don't make me prove every single time that I'm allowed to collect Mama's medicine.",
-      qcite:"design-kit/personas/caregiver-proxy-collector",
-      future:'The service asks her everything exactly once - whose medicine she manages, which day suits the household, how she wants to pay and what happens if the scheme baulks - and then never asks again. <span class="why">Being believed the first time is the whole experience</span>: her authority over Grace\'s care is recorded, not re-litigated. Sipho does the same from a WhatsApp chat, in isiZulu, pointing his collections at the Capitec branch he already visits on payday. Ten minutes, once, and the service knows the household better than the counter ever did.',
-      behind:["recorded proxy consent (POPIA-grade)","repeat-service enrolment","preference store"], phaseId:"p0"
-    },
-    m1:{
-      title:"My medicine ordered itself", star:true, phase:"P1",
-      concepts:["Auto-Refill","Script Sync"],
-      today:"This is a chore she owns. She has to notice the pills running low, reopen an app flow that loops back on itself, and confirm each family member separately - every month, forever, with a hard break when the script expires.",
-      quote:"I have been pulling at my hair trying to order my medication via the App or even using the WhatsApp service.",
-      qcite:"wiki/dischem/pharmacy-complaints-pain-points",
-      future:'The message arrives before she thought of it: hers and Grace\'s medicine, assembled, funded, arriving Friday as always. She reads it, puts the phone down, and gets on with her day. <span class="why">The chore she has carried for years simply isn\'t hers anymore</span> - not made easier, made <i>gone</i>. The only feeling left is the mild surprise of noticing its absence. For Sipho the same relief lands in isiZulu, on the phone he already has, with nothing to install and nothing to spend.',
-      behind:["refill prediction","auto-assembly (BRIX)","priced-before-it-speaks","one synced household date"], phaseId:"p1"
-    },
-    m2:{
-      title:"The only thing I ever bought blind - not anymore", star:true, phase:"P1",
-      concepts:["Real-Time Transparency"],
-      today:"Medicine is the one purchase where the price is a secret until the end. She queues, hands over the script, and learns what she owes when it is too late to plan around it; he travels first and discovers at the till whether the trip was affordable.",
-      quote:"I am horrified that the pricing of scheduled medication differs so dramatically from one Dis-Chem pharmacy to another.",
-      qcite:"wiki/dischem/pharmacy-complaints-pain-points",
-      future:'The number is in the message, before anything is committed. Nomvula sees what Discovery covers and the R42 that it doesn\'t, while the order is still hers to change. Sipho sees the itemised rand amount - tablets, dispensing fee, total - and his mother\'s line at R0 on CCMDD, <i>before</i> he decides to travel. <span class="why">Medicine finally behaves like everything else they buy: the price up front, the decision theirs.</span> The till stops being a place where things are revealed.',
-      behind:["pre-adjudication before notice","SEP + fee price engine","itemised in-language quote"], phaseId:"p1"
-    },
-    m3:{
-      title:"While we're here... - without going anywhere", star:false, phase:"P2",
-      concepts:["The Standing Order"],
-      today:"The pharmacy trip did double duty - collect the script, grab the sunscreen, the toothpaste, whatever winter demands. When the medicine starts arriving by itself, that errand logic has nowhere to live: the delivery solves the trip and quietly un-solves the shopping.",
-      quote:null, qcite:null,
-      future:'Friday\'s medicine is an open order until Thursday evening, and the household treats it the way it treats anyone already going to the shops: <i>while you\'re there, grab...</i> A special on the vitamin C effervescents she\'s bought before surfaces as winter sets in; she taps it into the parcel next to Lethabo\'s toothpaste. <span class="why">The trip she no longer makes still does double duty.</span> One parcel, one handover, the week\'s small logistics quietly absorbed. For Sipho the window stays shut - a bank locker carries medication only - and the card says so plainly rather than pretending otherwise.',
-      behind:["open-order window with cutoff","history-based suggestions (specials)","one consolidated parcel"], phaseId:"p2"
-    },
-    m4:{
-      title:"Every check ran before it left the building", star:false, phase:"P3",
-      concepts:["The Named Check"],
-      today:"The safety work is invisible, so the customer only ever meets its failures. Nothing tells her whether anyone looked at the interactions between her tablets and Grace's; the first sign that something slipped is an empty space in the packet at home.",
-      quote:"On opening the packet a few days later, I discovered my blood pressure tablets were missing.",
-      qcite:"wiki/dischem/pharmacy-complaints-pain-points",
-      future:'The due diligence is shown, not assumed. Her status expands into the actual list: interactions across the family\'s medicines ✓, allergies ✓, dose ✓, no duplicates ✓, script valid ✓ - signed by Naledi M., pharmacist. <span class="why">Someone qualified did the worrying, and she can see exactly what they worried about.</span> Sipho reads the same list in isiZulu and knows his family\'s parcel passed the same checks as anyone\'s, however he pays. The fear that rides along with medicine - <i>did anyone actually check this?</i> - has an answer with a name on it.',
-      behind:["household-wide clinical check stack (AI-drafted, pharmacist-signed)","vision verification on pick","itemised check status"], phaseId:"p3"
-    },
-    m5:{
-      title:"I could track it from Dis-Chem's door to mine", star:true, phase:"P4",
-      concepts:["Real-Time Transparency"],
-      today:"The promise breaks at the worst point - after the money, before the medicine. An order goes \"out for delivery\" and then simply doesn't arrive, and chasing it means a phone that rings unanswered.",
-      quote:"I received a notification that it has been processed on my medical aid and was out for delivery. I did not receive it.",
-      qcite:"wiki/dischem/pharmacy-complaints-pain-points",
-      future:'The parcel is never out of sight between their door and hers - packed, dispatched, six stops away, two, here - and the loop only closes when it is physically in her hands. <span class="why">Being stood up by a system ends when the system can\'t quietly disappear.</span> For Sipho arrival looks different and just as certain: a WhatsApp PIN, the Capitec counter on payday, cash paid and the locker opens - payment and collection in one visit, near home, no address required, nobody\'s delivery van hunting an unnumbered street.',
-      behind:["closed-loop tracking to handover","QR / proof-of-delivery","bank-locker release on cash payment"], phaseId:"p4"
-    },
-    m6:{
-      title:"Medication you can't take wrong", star:false, phase:"P5",
-      concepts:["Made-for-Me Packaging"],
-      today:"Taking it right is the customer's problem. Someone sorts the week's pills into a plastic organiser, squints at instructions written in a second language, and hopes Grace doesn't mix up her mornings and evenings - because the label was written for a regulator, not for her.",
-      quote:null, qcite:"wiki/dischem/store-of-the-future-customer-voice",
-      future:'The pack arrives already sorted - by person, by day, by dose - with the directions in the language the house actually speaks. <span class="why">Getting it wrong now requires effort; getting it right requires none.</span> Grace\'s mornings tear off in order. Sipho\'s printed label survives load-shedding, and a WhatsApp usage guide answers "how do I take this?" whenever the question arises. The nervous ritual at the kitchen table - pills, box, guesswork - just isn\'t part of having medicine anymore.',
-      behind:["adherence dose-pack (per person, date, time)","in-language hybrid print + digital instructions","WhatsApp usage guide"], phaseId:"p5"
-    },
-    m7:{
-      title:"Medical aid said no. Dis-Chem said 'let's make a plan.'", star:true, phase:"∥",
-      concepts:[],
-      today:"A rejected claim is a verdict delivered in public, at the till, with a queue behind you and no path forward - the scheme blames the pharmacy, the pharmacy blames the scheme, and the customer goes home without the medicine. It is the failure that makes people leave.",
-      quote:"Move scripts to Clicks or local independents, willing to pay significantly more for relationship care.",
-      qcite:"wiki/dischem/dischem-social-sentiment-trust-journey",
-      future:'The problem arrives already accompanied by its solutions. The moment Discovery declines a line, Nomvula gets a plain-language message: what was declined, why, and three live options - charge the card she saved at setup, take the funded generic this once, or talk to a pharmacist now. One tap and the order carries on; nothing restarts, nothing is surrendered at a counter. <span class="why">A rejection stops being a dead end and becomes a decision she gets to make.</span> A stock-out behaves the same way: take the generic, or send the rest now and the missing item follows on its own - her place in the queue is never the thing at risk.',
-      behind:["real-time decline detection","in-flow options (card on file / generic / pharmacist)","split-delivery on stock-out","order holds its place"], phaseId:"pp"
-    }
-  }
+  ]
 };
 
 /* ============================================================================= */
 let ECO = (location.hash === "#cash") ? "cash" : "insured";
 
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
-function el(tag, attrs, kids){
-  const n = document.createElement(tag);
-  if(attrs) for(const k in attrs){ if(k==="html") n.innerHTML = attrs[k]; else n.setAttribute(k, attrs[k]); }
-  (kids||[]).forEach(k=>{ if(k==null) return; n.appendChild(typeof k==="string"?document.createTextNode(k):k); });
-  return n;
-}
 
 function renderPersona(){
   const p = DATA.economies[ECO].persona;
-  const host = document.getElementById("persona");
-  host.innerHTML =
+  document.getElementById("persona").innerHTML =
     '<div class="who"><div class="eyebrow">'+esc(p.eyebrow)+'</div><h2>'+esc(p.name)+'</h2><p class="bio">'+esc(p.bio)+'</p></div>'+
     '<div class="needbox"><div class="nlabel">The need</div>'+esc(p.need)+'</div>';
 }
@@ -534,18 +610,20 @@ function renderSpine(){
   const row = document.getElementById("spinerow");
   row.innerHTML = "";
   DATA.phases.forEach(ph=>{
-    const stars = ph.moments.filter(m=>DATA.moments[m].star).length;
-    const mcount = ph.moments.length;
-    const node = el("button", {class:"snode"+(ph.par?" par":""), "aria-label":"Go to "+ph.title}, []);
+    const acts = ph.activities[ECO];
+    const moments = acts.filter(a=>a.moment);
+    const stars = moments.filter(a=>a.moment.star).length;
+    const node = document.createElement("button");
+    node.className = "snode"+(ph.par?" par":"");
+    node.setAttribute("aria-label","Go to "+ph.title);
     node.innerHTML = '<div class="snum">'+esc(ph.num)+'</div><div class="sttl">'+esc(ph.title)+'</div>'+
-      '<div class="sm">'+mcount+' moment'+(mcount===1?"":"s")+(stars?(' · '+"⭐".repeat(stars)):"")+'</div>';
+      '<div class="sm">'+moments.length+' moment'+(moments.length===1?"":"s")+(stars?(' · '+"⭐".repeat(stars)):"")+'</div>';
     node.addEventListener("click", ()=>{ document.getElementById(ph.id).scrollIntoView({behavior:"smooth", block:"start"}); });
     row.appendChild(node);
   });
-  // emotion curve
   const n = DATA.phases.length;
   const W = 1000, H = 88, padX = W/(n*2);
-  const y = v => 22 + (5 - v) * 24;   // 5 -> top, 3 -> bottom
+  const y = v => 22 + (5 - v) * 24;
   const pts = DATA.phases.map((ph,i)=>[ padX + i*(W/n), y(ph.emotion[ECO]) ]);
   const line = pts.map(p=>p.join(",")).join(" ");
   const dots = pts.map((p,i)=>'<circle cx="'+p[0]+'" cy="'+p[1]+'" r="5" fill="#1a9b4a"/>'+
@@ -561,32 +639,37 @@ function chipHTML(c){
   return '<span class="chip" title="'+esc(c.cite)+'">'+esc(c.name)+mark+'</span>';
 }
 
-function momentHTML(id){
-  const m = DATA.moments[id];
-  const pills = m.concepts.map(c=>'<a class="cpill" href="08-concepts.html" title="Concept: '+esc(c)+' - see the concept set (#08)">'+esc(c)+'</a>').join("");
-  const star = m.star ? '<span class="star">⭐ moment of truth</span>' : "";
-  const quote = m.quote ? '<span class="q">"'+esc(m.quote)+'"</span><span class="qcite">'+esc(m.qcite)+'</span>'
-              : (m.qcite ? '<span class="qcite" style="margin-top:8px">source: '+esc(m.qcite)+'</span>' : "");
-  return '<article class="mcard" id="'+id+'">'+
-    '<div class="mtag"><span class="mkind">Moment · '+esc(m.phase)+'</span>'+star+pills+'</div>'+
-    '<h3>'+esc(m.title)+'</h3>'+
-    '<div class="mblocks">'+
-      '<div class="mtoday"><div class="mlabel">Today</div><p>'+esc(m.today)+'</p>'+quote+'</div>'+
-      '<div class="mfuture"><div class="mlabel">In the future state</div><p>'+m.future+'</p></div>'+
-    '</div>'+
-    '<div class="mbehind"><span class="bl">Behind it</span> '+
-      m.behind.map(b=>esc(b)).join(' <span class="sep">·</span> ')+
-      ' <span class="sep">→</span> <a class="toph" href="#'+m.phaseId+'">'+esc(m.phase)+' behind the line</a></div>'+
-  '</article>';
+function sechead(icon, title, sub){
+  return '<div class="sechead"><span class="ic">'+icon+'</span><h3>'+esc(title)+'</h3>'+(sub?'<span class="sub">'+esc(sub)+'</span>':"")+'</div>';
+}
+
+function activityHTML(a){
+  let h = '<div class="activity"><h4>'+esc(a.t)+'</h4><p>'+esc(a.x)+'</p></div>';
+  if(a.moment){
+    const m = a.moment;
+    h += '<div class="keymoment"><div class="ktag"><span class="klabel">Key moment</span>'+
+         (m.star?'<span class="kstar">⭐ moment of truth</span>':"")+'</div>'+
+         '<div class="kline">'+esc(m.line)+'</div>'+
+         '<div class="kwhy">'+m.why+'</div></div>';
+  }
+  return h;
+}
+
+function painHTML(p){
+  const s = SRC[p.src];
+  const q = p.q ? '<span class="q">"'+esc(p.q)+'"</span>' : "";
+  return '<div class="paincard"><h4>'+esc(p.t)+'</h4><p>'+esc(p.d)+'</p>'+q+
+    '<span class="qsrc" title="'+esc(s.cite)+'">'+(p.q?"verbatim, ":"")+esc(s.label)+'</span></div>';
 }
 
 function renderBoard(){
   const board = document.getElementById("board");
   board.innerHTML = "";
   DATA.phases.forEach(ph=>{
-    const sec = el("section", {class:"phase"+(ph.par?" par":""), id:ph.id});
+    const sec = document.createElement("section");
+    sec.className = "phase"+(ph.par?" par":"");
+    sec.id = ph.id;
     const who = DATA.economies[ECO].persona.name.split(" ")[0];
-    const story = ph.story[ECO].map(p=>'<p>'+esc(p)+'</p>').join("");
     const b = ph.behind;
     const lanes =
       '<div class="bgrid">'+
@@ -595,17 +678,24 @@ function renderBoard(){
         (b.reg?'<div class="breg">'+b.reg+'</div>':"")+
         '<div class="bcaps">'+b.caps.map(chipHTML).join("")+'</div>'+
       '</div>';
+    const pains = ph.pains.length
+      ? '<div class="paingrid">'+ph.pains.map(painHTML).join("")+'</div>'
+      : '<p class="painnone">'+esc(ph.painNote||"")+'</p>';
     sec.innerHTML =
       '<div class="phead"><span class="pnum">'+esc(ph.num)+'</span><h2>'+esc(ph.title)+'</h2>'+
         (ph.once?'<span class="once">once, not per cycle</span>':"")+
         (ph.par?'<span class="once" style="border-color:var(--reform);color:var(--reform)">parallel - any phase</span>':"")+
       '</div>'+
       '<div class="pbody">'+
-        '<div class="porient">'+esc(ph.orient)+'</div>'+
-        '<div class="pstory"><div class="swho">'+esc(who)+'</div>'+story+'</div>'+
+        sechead("♥","Need")+
+        '<div class="needline"><i>'+ph.need+'</i></div>'+
+        sechead("⚙","Activities", who+"'s journey")+
+        ph.activities[ECO].map(activityHTML).join("")+
+        (ph.actnote?'<p class="actnote">'+esc(ph.actnote)+'</p>':"")+
+        sechead("✕","Current-state pain points","from the research - never inferred")+
+        pains+
         '<details class="behind"><summary><span class="arr">▶</span> Behind the line <span class="sub">- the service blueprint under this phase</span></summary>'+lanes+'</details>'+
-      '</div>'+
-      '<div class="moments">'+ph.moments.map(momentHTML).join("")+'</div>';
+      '</div>';
     board.appendChild(sec);
   });
 }

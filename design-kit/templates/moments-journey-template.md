@@ -4,7 +4,7 @@ title: "Moments-journey template - phase spine + pulled-out moments"
 status: reviewed
 tags: [design-kit, template, domain/ux, journey/refill, topic/trust-safety]
 created: "2026-07-17"
-updated: "2026-07-17"
+updated: "2026-07-19"
 ---
 
 # Moments-journey template - phase spine + pulled-out moments
@@ -61,90 +61,64 @@ place - preserving the previous treatment is part of the pattern.
   is how Concept 14, The Standing Order, was born from the order-window
   moment).
 
-## The phase band schema
+## The phase structure (v3 - Need / Activities / Pain points)
 
-**The two-register principle governs this layer:** the phases are the quiet
-ground, the moments the loud figure. The wrapper must never compete with the
-content - the first build's mistake was a "customer need" aphorism plus a
-snappy "gist" per phase, which pre-spoiled the moment cards below in weaker
-words. The cover test for the whole page: hide the moments and the phases
-read as a clean, calm process description; hide the phases and the moments
-still hit at full force.
+**The two-register principle still governs:** the structural copy is the quiet
+ground, the key moments the loud figure. The cover test: hide the key-moment
+blocks and the page reads as a clean, calm process description; hide the
+structure and the moments still hit at full force.
 
-Each phase carries five bands, in order:
+Each phase is one section, in this order:
 
-1. **Number + title** - strictly mechanical, a signpost ("Signing up", "The
-   order assembles", "Prepared"). Never a slogan or a claim - if a title is
-   quotable it is a moment title in the wrong place. Once-off phases are
+1. **Phase name (H1-level).** Strictly mechanical, a signpost ("Signing up",
+   "The order assembles", "Prepared"). Never a slogan or a claim - a quotable
+   phase title is a moment title in the wrong place. Once-off phases are
    badged "once, not per cycle"; a cross-cutting failure track is a
    **parallel band** (∥, "any phase"), not a phase.
-2. **Orienting sentence** - ONE sentence, ~25 words or fewer, functional and
-   hardworking: it tells a cold reader where they are in the journey and
-   what this phase covers, and deliberately says nothing quotable. No
-   metaphor, no inversion, no aphorism. Title + orienting sentence together
-   set the scene; that is their whole job. (This replaces the earlier
-   need + gist pair - do not reintroduce them.)
-3. **Activities** - the customer's actions only, written as an unhurried
-   plain-language story: one or two short paragraphs per economy, mechanics
-   only - what arrives, what it contains, what the person does, what their
-   options are. Sequence is told honestly (e.g. pricing resolves backstage
-   BEFORE the notice is sent). Behind-the-line machinery never leaks in; the
-   customer taps a message, she does not "use BRIX". **No payoff lines:**
-   every emotional landing belongs to a moment card, and any story sentence
-   that lands one is cut ("she puts the phone away", "the pack does the
-   thinking" - those are moment material).
-4. **Economies** - one journey structure, two full renderings behind a
-   toggle (insured / cash), never an interleaved merge. Title and orienting
-   sentence are shared; the story is written per economy in that economy's
-   channel reality. State an honest constraint plainly rather than mirroring
-   (the cash locker route carries medication only - say so). Downstream,
-   each economy is effectively its own journey on its own channels for
-   mockups.
-5. **Pinned moments + emotion** - which moment cards hang off the phase,
-   plus one emotion value per economy for the curve. The felt prose lives in
-   the moment cards, not here.
+2. **Need (H2).** The customer's stake in this phase: first person, one or
+   two spare sentences, key phrases bolded. Together with the title it does
+   all the scene-setting for a cold reader. It is a need, not an aphorism -
+   true today and in the future state; only the fulfilment changes.
+3. **Activities (H2).** Discrete, **named** activities, each a short
+   functional description one level more concrete than narrative - what the
+   person does, what the screen or thread shows, what their options are.
+   Sequence told honestly (pricing resolves backstage BEFORE the notice).
+   Behind-the-line machinery never leaks in. Written per economy behind the
+   toggle; honest constraints stated plainly rather than mirrored.
+   - **Key moments embed in the activities.** An activity that carries a
+     moment gets a callout block directly beneath it: the memory-line title,
+     ⭐ where it is a moment of truth, and a short prose "why this is a key
+     moment" with the first-order payoff highlighted (the `.why` device) and
+     **the underlying concepts referenced inline in the copy** as links to
+     the concept set - woven into sentences, never detached pills or visible
+     citation slugs.
+   - Each activity's own "why" is woven into its prose. A moment that spans
+     the whole phase attaches to the activity where it lands (usually the
+     confirm/close step).
+4. **Current-state pain points (H2).** The today-contrast, consolidated per
+   phase. **Hard rules:**
+   - Every pain point carries a **title**, a **description**, and a
+     **verbatim quote from the research where one exists**.
+   - Pains come ONLY from research sources (complaints analyses, sentiment
+     studies, customer interviews) - **never inferred from personas, never
+     manufactured**. Attribution renders human-readable ("verbatim, Dis-Chem
+     resolved-complaints analysis, Jan 2025") with the vault path in a
+     tooltip.
+   - **Where the research records no complaint for a phase, say so honestly**
+     in a single note instead of inventing a pain.
+5. **Behind the line.** A collapsed panel per phase - the service blueprint
+   under the story: frontstage and backstage lanes, capability chips whose
+   tooltips hold the vault citations (🔮 = requires reform, ⚠️ = design
+   assumption logged in `meta/punchlist.md`), and a regulatory line only
+   where a non-negotiable genuinely constrains the phase. Metrics
+   deliberately dropped - blueprint material lives in the board deliverable.
 
-**No prelude into the moment.** The orienting sentence plus a mechanics-only
-story walk the reader to the moment's doorstep; the moment's own tag row
-(phase · ⭐ · concept pills) is the handoff. The moment shines brightest
-stepping out of plain prose, not out of an introduction.
+**Economies:** one journey structure, two full renderings behind a toggle,
+never an interleaved merge. Needs are shared; activities, moments and their
+whys are written per economy. Spine moment counts follow the active economy.
 
-**Behind the line:** each phase has a collapsed panel - the service blueprint
-under the story, as in the board treatment but relocated from moments to
-phases and trimmed. It carries frontstage and backstage lanes, capability
-chips whose tooltips hold the vault citations (🔮 = requires reform, ⚠️ =
-design assumption logged in `meta/punchlist.md`), and a regulatory line only
-where a non-negotiable genuinely constrains the phase. **Metrics are
-deliberately dropped** - blueprint material, not journey material; the old
-board deliverable keeps that depth.
-
-## The moment card schema
-
-The concept-card harness re-aimed at before/after contrast:
-
-1. **Memory-line title** - first person, the sentence retold a month later.
-   Same test as a concept tagline: repeatable after one read.
-2. **Today** - the current-state friction as lived, 2-3 sentences, carrying a
-   **verbatim quoted complaint** with its source where a genuine one exists.
-   Never manufacture a quote: a delight-moment's "today" can be a loss or an
-   errand pattern rather than a complaint (M3), and a preference signal gets
-   a cite chip instead of a quote (M6).
-3. **The future state** - the memory as it will be retold, 3-5 sentences,
-   emotion in the prose, with the first-order payoff highlighted (the `.why`
-   device). Both economies appear on the one card; where they diverge, the
-   divergence is part of the story.
-4. **Behind it** - a thin chip strip of capability names pointing at the
-   parent phase's panel. Nothing more.
-5. **Tags** - concept pills linking to `08-concepts.html`, the phase, and ⭐
-   only where earned.
-
-**The weight rule (the "M1 correction" - the make-or-break of the register):**
-the moment card is dominated by the felt contrast. The emotional response
-lives in the sentences, not in a score line; the machinery is demoted to the
-chip strip. If the capability copy outweighs the human beat, the card is
-wrong - a well-formatted capability card wearing a moment's title. Test each
-card against the definition: is this the thing the person would retell after
-the mechanics are forgotten?
+**No prelude into a key moment.** The named activity walks the reader to the
+moment's doorstep; the callout's own label is the handoff.
 
 ## The process (in order, with the human lead)
 
@@ -165,11 +139,16 @@ Content first, in text, reviewed band by band - design only at the end.
    Dis-Chem said 'let's make a plan.'"). Expect principle-level pushback, not
    just word choice - offer options built on the stated principle when a
    proposal misses.
-4. **Agree the phase band schema** with one worked phase before writing all
-   of them.
-5. **Draft ONE moment card as a style proof**, get the weight check, then
+4. **Agree the phase structure** with one worked phase before writing all
+   of them (in #09 this happened twice - the structure earned a v3 mid-build
+   when review showed the wrappers competing with the moments; expect the
+   structure itself to be challengeable, and mock ONE phase copy-complete
+   before regenerating the set).
+5. **Draft ONE key-moment block as a style proof**, get the weight check
+   (the "M1 correction": the human beat must outweigh the machinery), then
    draft the rest in the approved register.
-6. **Draft all phase bands**; review; fold in corrections (real ones from
+6. **Draft all phases** - needs, named activities, embedded key moments,
+   research-sourced pain points; review; fold in corrections (real ones from
    #09: persona details written back to the persona file, named family
    members - never "Gogo", use Grace - honest channel constraints, payment
    folded into collection).
@@ -197,20 +176,24 @@ inline, no external requests. One `DATA` object mirrors the content spec
 - **Spine overview**: one node per phase (moment count + stars, click scrolls
   to the phase) over an SVG emotion curve for the active economy.
 - **Phase sections**: mint header band (number, title, once/parallel badge),
-  the orienting sentence, the story paragraphs for the active economy, the collapsed
-  `details.behind` panel (frontstage / backstage / regulatory flag /
-  capability chips with cite tooltips), then the phase's moment cards.
-- **Moment cards**: quoted title, tag row (phase · ⭐ · concept pills linking
-  to `08-concepts.html`), a two-column Today (pain tint, quote + source) /
-  In-the-future-state (green tint, `.why` highlight) block, and the behind-it
-  strip linking to the parent phase's panel.
-- **Scope-notes footer**: what is signposted elsewhere, what #05-style
-  deliverable holds the deep blueprint, where assumptions are logged.
+  then the section stack - Need (serif, bolded key phrases), Activities
+  (named blocks for the active economy, key-moment callouts embedded beneath
+  their activities), Current-state pain points (cards: title, description,
+  verbatim quote with human-readable source attribution + tooltip path; or
+  the honest no-complaint note), and the collapsed `details.behind` panel
+  (frontstage / backstage / regulatory flag / capability chips with cite
+  tooltips).
+- **Key-moment callout**: label + ⭐ where earned, the memory line in quote
+  chrome, and the prose why with the `.why` highlight and inline concept
+  links into `08-concepts.html`.
+- **Scope-notes footer**: what is signposted elsewhere, which deliverable
+  holds the deep blueprint, the pain-point sourcing rule, where assumptions
+  are logged.
 
 Straight quotes only in source (typographic quote chrome via CSS `\201C`
 escapes). Content strings are author-trusted HTML only where the schema says
-so (`future`, lane items, reg lines); titles, stories, needs and gists are
-escaped.
+so (needs, key-moment whys, lane items, reg lines); titles, activity text,
+pain titles/descriptions/quotes are escaped.
 
 ## Self-check before handoff
 
@@ -218,16 +201,20 @@ escaped.
    unevenly across phases for honest reasons?
 2. Is every moment title a first-person memory line the human lead confirmed
    or replaced?
-3. On each card, does the human beat outweigh the machinery? Is the emotion
-   in the prose rather than a score?
-4. Are all quotes verbatim and cited - none manufactured?
-5. Do the phase stories stay on the customer's side of the line, in the
-   plain register, with no payoff lines - and does the page pass the cover
-   test in both directions (phases calm alone, moments full-force alone)?
+3. In each key-moment block, does the human beat outweigh the machinery? Is
+   the emotion in the prose rather than a score?
+4. Does every pain point trace to a research source with title + description
+   + verbatim quote where one exists - none inferred from personas, none
+   manufactured, and an honest no-complaint note where the research is
+   silent?
+5. Do the activities stay on the customer's side of the line, named and
+   functional, with no payoff lines - and does the page pass the cover test
+   in both directions (structure calm alone, moments full-force alone)?
 6. Does each phase's behind-the-line panel defend the phase (lanes, cited
    capability chips, regulatory non-negotiables) without metrics creep?
-7. Do concept pills resolve to real cards in `08-concepts.html`, and has any
-   orphan moment's new concept been drafted and committed?
+7. Are concepts referenced inline in the key-moment copy with working links
+   to `08-concepts.html`, and has any orphan moment's new concept been
+   drafted and committed?
 8. Are the economies clean full renderings (no interleaving), with honest
    divergence?
 9. Is the previous journey deliverable untouched, the content spec committed,
