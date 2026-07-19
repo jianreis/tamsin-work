@@ -23,7 +23,7 @@ The single navigable index for this ground-truth vault. **New here? Read
   - 💠 [[design-kit/journeys/to-be-blueprint-chronic-insured|To-be blueprint — the self-running repeat (Nomvula, insured chronic)]]
   - 💠 [[design-kit/journeys/to-be-journey-cash-acute|To-be journey — fast & transparent (Thabo, cash-pay acute)]]
 - Current state → [[design-kit/journeys/as-is-prescription-journey|As-is prescription journey]]
-- Templates → [[design-kit/templates/service-blueprint-template|Service Blueprint]] · [[design-kit/templates/journey-map-template|Journey Map]] · [[design-kit/templates/jtbd-library|JTBD library]] · [[design-kit/templates/future-state-principles|13 future-state principles]] · [[design-kit/templates/future-state-blueprint-board-style|Board style ref]] · [[design-kit/templates/concept-card-template|Concept card template]]
+- Templates → [[design-kit/templates/service-blueprint-template|Service Blueprint]] · [[design-kit/templates/journey-map-template|Journey Map]] · [[design-kit/templates/jtbd-library|JTBD library]] · [[design-kit/templates/future-state-principles|13 future-state principles]] · [[design-kit/templates/future-state-blueprint-board-style|Board style ref]] · [[design-kit/templates/concept-card-template|Concept card template]] · [[design-kit/templates/moments-journey-template|Moments-journey template]]
 - Personas → [[design-kit/personas/_personas-index|Personas index]] (8 research-backed)
 
 ## 📚 The wiki (synthesised knowledge)

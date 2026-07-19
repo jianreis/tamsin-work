@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Script Re-imagined - the household repeat, in moments</title>
+<style>
+/* =============================================================================
+   DELIVERABLE #09 - THE HOUSEHOLD REPEAT, IN MOMENTS (structure v3)
+   Per phase: Need -> Activities (discrete, named; key moments embedded)
+   -> Current-state pain points (research-sourced only) -> behind the line.
+   Content source of truth: design-kit/journeys/to-be-household-repeat-moments.md
+   Self-contained: all CSS/JS inline, no external requests.
+   ============================================================================= */
+:root{
+  --brand:#1a9b4a; --brand-dark:#157a3b; --lime:#b5d334;
+  --mint:#bfe3cf; --mint-deep:#9bcfb0;
+  --ink:#1d1d1d; --ink-soft:#2b2b2b;
+  --bg:#f6f8f6; --card:#ffffff;
+  --muted:#5d6b62; --muted2:#8a958d; --line:#d8e2db;
+  --pain:#c0392b; --pain-bg:#fdf1ef; --pain-line:#eccfc9;
+  --good:#1a9b4a; --good-bg:#eef7f1;
+  --warn:#b9770b; --reform:#7c3aed;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --sp:8px; --radius:12px; --maxw:1080px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg); color:var(--ink); font-family:var(--font); line-height:1.55; font-size:15.5px; -webkit-text-size-adjust:100%;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 0 72px;}
+h1,h2,h3,h4{margin:0}
+.tiny{font-size:.78rem; color:var(--muted)}
+button{font:inherit; cursor:pointer}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--brand-dark); outline-offset:2px}
+a{color:var(--brand-dark)}
+
+/* header */
+.brandband{background:var(--brand); color:#fff; padding:calc(var(--sp)*2.5) calc(var(--sp)*3);
+  display:flex; flex-wrap:wrap; gap:var(--sp) calc(var(--sp)*2); align-items:center; justify-content:space-between;}
+.wordmark{display:flex; align-items:baseline; gap:6px; font-weight:800; font-size:1.35rem; letter-spacing:-.01em}
+.wordmark .plus{color:var(--lime); font-size:1.6rem; line-height:0}
+.brandband .maptag{font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; font-weight:700;
+  border:1.5px solid rgba(255,255,255,.6); border-radius:99px; padding:4px 12px;}
+.ribbon{display:flex; flex-wrap:wrap; gap:6px calc(var(--sp)*1.5); align-items:center;
+  background:#fff7e6; color:#8a5a00; border-bottom:1px solid #f0dca8;
+  padding:8px calc(var(--sp)*3); font-size:.82rem; font-weight:600;}
+.ribbon .gen{color:#9a7a30; font-weight:500}
+.intro{padding:calc(var(--sp)*3) calc(var(--sp)*3) 0;}
+.intro h1{font-size:1.75rem; font-weight:800; letter-spacing:-.015em; line-height:1.15}
+.intro .lede{color:var(--muted); max-width:80ch; margin-top:8px}
+.philo{display:inline-flex; align-items:center; gap:10px; background:var(--ink); color:#fff;
+  border-radius:99px; margin-top:14px; padding:7px 18px; font-size:.86rem; font-weight:700;}
+.philo u{text-decoration-color:var(--lime); text-decoration-thickness:3px; text-underline-offset:3px}
+.philo span.gt{color:var(--lime)}
+
+/* toolbar */
+.toolbar{position:sticky; top:0; z-index:40; background:rgba(246,248,246,.96); backdrop-filter:saturate(1.1) blur(4px);
+  border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:var(--sp) calc(var(--sp)*2);
+  align-items:center; padding:10px calc(var(--sp)*3); margin-top:calc(var(--sp)*2.5);}
+.toolbar .label{font-size:.74rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); font-weight:700}
+.seg{display:inline-flex; border:1.5px solid var(--brand); border-radius:99px; overflow:hidden; background:#fff}
+.seg button{border:0; background:#fff; color:var(--brand-dark); padding:6px 18px; font-weight:700; font-size:.86rem}
+.seg button + button{border-left:1.5px solid var(--brand)}
+.seg button[aria-pressed="true"]{background:var(--brand); color:#fff}
+.btn{border:1.5px solid var(--line); background:#fff; color:var(--ink-soft); border-radius:99px; padding:6px 14px; font-size:.83rem; font-weight:600;}
+.btn:hover{border-color:var(--brand)}
+.legend{display:flex; flex-wrap:wrap; gap:4px 14px; font-size:.78rem; color:var(--muted); margin-left:auto}
+.legend b{font-weight:700; color:var(--ink-soft)}
+
+/* persona strip */
+.persona{display:flex; flex-wrap:wrap; gap:calc(var(--sp)*2); align-items:flex-start;
+  background:var(--ink); color:#fff; border-radius:var(--radius); margin:calc(var(--sp)*2.5) calc(var(--sp)*3) 0;
+  padding:calc(var(--sp)*2) calc(var(--sp)*2.5);}
+.persona .who{flex:1 1 300px; min-width:280px}
+.persona .eyebrow{font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--lime); font-weight:800}
+.persona h2{font-size:1.25rem; font-weight:800; margin-top:2px}
+.persona .bio{color:#cfe0d5; font-size:.88rem; margin-top:6px; max-width:70ch}
+.persona .needbox{flex:1 1 300px; min-width:280px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18);
+  border-radius:10px; padding:12px 14px; font-size:.9rem;}
+.persona .needbox .nlabel{font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; color:var(--lime); font-weight:800; margin-bottom:4px}
+
+/* spine overview */
+.spine{margin:calc(var(--sp)*3) calc(var(--sp)*3) 0; background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius); padding:calc(var(--sp)*2) calc(var(--sp)*2.5);}
+.spine .shead{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap}
+.spine h2{font-size:.95rem; font-weight:800}
+.spine .shead .tiny{margin-left:auto}
+.spinerow{display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-top:12px}
+.snode{border:1.5px solid var(--line); border-radius:10px; padding:8px 8px 6px; background:#fff; text-align:left;}
+.snode:hover{border-color:var(--brand)}
+.snode .snum{font-family:var(--mono); font-size:.68rem; color:var(--muted2); font-weight:700}
+.snode .sttl{font-size:.8rem; font-weight:800; line-height:1.2; margin-top:2px}
+.snode .sm{margin-top:4px; font-size:.72rem; color:var(--muted)}
+.snode.par{border-style:dashed}
+.curve{margin-top:10px}
+.curve svg{width:100%; height:88px; display:block}
+@media (max-width:900px){ .spinerow{grid-template-columns:repeat(4,1fr)} .curve{display:none} }
+
+/* phase sections */
+.phase{margin:calc(var(--sp)*3.5) calc(var(--sp)*3) 0; background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius); overflow:hidden;}
+.phase.par{border-style:dashed; border-width:1.5px; border-color:var(--mint-deep)}
+.phead{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; background:var(--mint);
+  padding:12px calc(var(--sp)*2.5); border-bottom:1px solid var(--mint-deep);}
+.phead .pnum{font-family:var(--mono); font-weight:800; font-size:.8rem; color:var(--brand-dark);
+  background:#fff; border-radius:8px; padding:3px 9px;}
+.phead h2{font-size:1.35rem; font-weight:800; letter-spacing:-.01em}
+.phead .once{font-size:.72rem; text-transform:uppercase; letter-spacing:.09em; font-weight:800; color:var(--brand-dark);
+  border:1.5px solid var(--brand-dark); border-radius:99px; padding:2px 10px;}
+.pbody{padding:calc(var(--sp)*2.5) calc(var(--sp)*2.5) calc(var(--sp)*2.5);}
+
+/* section heads (Need / Activities / Pain points) */
+.sechead{display:flex; align-items:center; gap:10px; margin:calc(var(--sp)*2.5) 0 10px;}
+.sechead:first-child{margin-top:0}
+.sechead .ic{width:26px; height:26px; border-radius:8px; background:var(--ink); color:#fff;
+  display:inline-flex; align-items:center; justify-content:center; font-size:.8rem}
+.sechead h3{font-size:1.02rem; font-weight:800; letter-spacing:-.005em}
+.sechead .sub{font-size:.78rem; color:var(--muted2); font-weight:500}
+
+/* need */
+.needline{font-family:var(--serif); font-size:1.22rem; line-height:1.45; max-width:62ch; color:var(--ink);}
+.needline i{font-style:italic}
+.needline b{font-weight:700}
+
+/* activities */
+.actwho{font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--brand-dark); font-weight:800; margin:8px 0 2px}
+.activity{margin-top:16px; max-width:74ch}
+.activity h4{font-size:1.05rem; font-weight:800; letter-spacing:-.005em; margin-bottom:4px}
+.activity p{margin:0; color:var(--ink-soft)}
+.actnote{margin-top:14px; font-size:.85rem; color:var(--muted); max-width:74ch}
+
+/* key moment (embedded in activities) */
+.keymoment{margin-top:12px; border:1.5px solid var(--mint-deep); border-left:7px solid var(--brand);
+  border-radius:10px; background:var(--good-bg); padding:14px 16px; max-width:74ch;
+  box-shadow:0 2px 10px rgba(21,122,59,.07);}
+.keymoment .ktag{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:6px}
+.keymoment .klabel{font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; color:var(--brand-dark)}
+.keymoment .kstar{font-size:.72rem; font-weight:800; color:#8a5a00; background:#fff3d6; border:1px solid #eeddb0; border-radius:99px; padding:1px 9px}
+.keymoment .kline{font-size:1.15rem; font-weight:800; letter-spacing:-.01em; line-height:1.25}
+.keymoment .kline::before{content:"\201C"; color:var(--mint-deep); font-size:1.5em; line-height:0; vertical-align:-.32em; margin-right:2px}
+.keymoment .kline::after{content:"\201D"; color:var(--mint-deep); font-size:1.5em; line-height:0; vertical-align:-.32em; margin-left:2px}
+.keymoment .kwhy{margin-top:8px; font-size:.93rem}
+.keymoment .kwhy .why{background:linear-gradient(transparent 55%, #d9ecc0 55%); font-weight:800}
+.keymoment .kwhy a{font-weight:700}
+
+/* pain points */
+.paingrid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:4px}
+@media (max-width:820px){ .paingrid{grid-template-columns:1fr} }
+.paincard{background:var(--pain-bg); border:1px solid var(--pain-line); border-radius:10px; padding:12px 14px;}
+.paincard h4{font-size:.95rem; font-weight:800; color:var(--pain); margin-bottom:4px}
+.paincard p{margin:0; font-size:.89rem; color:var(--ink-soft)}
+.paincard .q{display:block; margin-top:9px; font-style:italic; color:var(--pain); font-size:.9rem; border-left:3px solid var(--pain); padding-left:10px;}
+.paincard .qsrc{display:block; margin-top:6px; font-size:.72rem; color:var(--muted2); cursor:help}
+.painnone{font-size:.89rem; color:var(--muted); font-style:italic; max-width:74ch}
+
+/* behind the line */
+details.behind{margin-top:calc(var(--sp)*2.5); border:1px dashed var(--line); border-radius:10px; background:#fafcfa;}
+details.behind summary{list-style:none; display:flex; align-items:center; gap:10px; padding:10px 14px; cursor:pointer;
+  font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);}
+details.behind summary::-webkit-details-marker{display:none}
+details.behind summary .arr{transition:transform .15s; font-size:.8rem}
+details.behind[open] summary .arr{transform:rotate(90deg)}
+details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing:0; color:var(--muted2)}
+.bgrid{padding:2px 14px 14px; display:grid; grid-template-columns:1fr 1fr; gap:12px}
+@media (max-width:760px){ .bgrid{grid-template-columns:1fr} }
+.blane h4{font-size:.72rem; text-transform:uppercase; letter-spacing:.09em; color:var(--muted); font-weight:800; margin-bottom:6px}
+.blane ul{margin:0; padding-left:18px; font-size:.86rem; color:var(--ink-soft)}
+.blane li{margin-bottom:4px}
+.breg{grid-column:1/-1; border-left:4px solid var(--warn); background:#fffaf0; border-radius:6px; padding:8px 12px; font-size:.84rem;}
+.breg b{color:#8a5a00}
+.bcaps{grid-column:1/-1; display:flex; flex-wrap:wrap; gap:6px}
+.chip{display:inline-flex; align-items:center; gap:5px; border:1px solid var(--line); background:#fff;
+  border-radius:99px; padding:3px 11px; font-size:.76rem; font-weight:600; color:var(--ink-soft); cursor:help;}
+.chip .rf{color:var(--reform); font-weight:800}
+.chip .as{color:var(--warn); font-weight:800}
+
+/* footer */
+.foot{margin:calc(var(--sp)*4) calc(var(--sp)*3) 0; font-size:.84rem; color:var(--muted); max-width:90ch}
+.foot b{color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="brandband">
+  <div class="wordmark">Dis-Chem <span class="plus">+</span> <span style="font-weight:600;font-size:.95rem">Bigly Labs</span></div>
+  <div class="maptag">Future-state customer journey · to-be · aspirational</div>
+</header>
+<div class="ribbon">
+  <span>DELIVERABLE #09 · SCRIPT RE-IMAGINED - THE HOUSEHOLD REPEAT, IN MOMENTS</span>
+  <span class="gen">generated 2026-07-17 · updated 2026-07-19 (need / activities / pain-points structure) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
+</div>
+
+<section class="intro">
+  <h1>The household repeat, in moments</h1>
+  <p class="lede">The repeat chronic script, start to finish, told as a familiar spine of phases. Each phase opens
+  with the customer's <b>need</b>, walks the <b>activities</b> of the future state - with the moments that matter
+  called out where they happen - and closes on <b>today's pain points</b>, verbatim from the research. Toggle the
+  economy to walk it as an insured or a cash household; open any phase's <b>behind the line</b> for the service
+  blueprint underneath.</p>
+  <div class="philo"><u>Trust</u> <span class="gt">&gt;</span> Convenience <span class="gt">&gt;</span> Speed <span style="font-weight:500;color:#d6e6dc">&nbsp;- predictability beats speed</span></div>
+</section>
+
+<div class="toolbar">
+  <span class="label">Economy</span>
+  <div class="seg" role="group" aria-label="Choose economy">
+    <button id="eco-insured" aria-pressed="true">Insured - Nomvula</button>
+    <button id="eco-cash" aria-pressed="false">Cash - Sipho</button>
+  </div>
+  <button class="btn" id="toggle-behind">Open all behind-the-line</button>
+  <div class="legend"><span><b>⭐</b> moment of truth</span><span><b>🔮</b> requires reform</span><span><b>⚠️</b> design assumption</span></div>
+</div>
+
+<section class="persona" id="persona"></section>
+
+<section class="spine" aria-label="Journey spine">
+  <div class="shead"><h2>The spine</h2><span class="tiny">phases are the process people already know · stars mark the moments of truth · line = emotion</span></div>
+  <div class="spinerow" id="spinerow"></div>
+  <div class="curve" id="curve"></div>
+</section>
+
+<main id="board"></main>
+
+<p class="foot">
+  <b>Scope notes.</b> Script-expiry renewal is a separate journey (see the <a href="08-concepts.html">Script Renew concept</a>);
+  inside this journey nothing lapses. After-hours acute care belongs to the acute e-scripting journey (deliverable #07).
+  Deliverable #05 remains the deep blueprint reference. Pain points are drawn only from the research - the Jan-2025
+  resolved-complaints analysis, the Dec-2025 public social-sentiment study and the Jan-2026 Store-of-the-Future
+  interviews - never inferred; where the research records no complaint for a phase, the page says so. Concepts are
+  referenced in the copy and link to the <a href="08-concepts.html">concept set (#08)</a>. Capability chips carry their
+  vault sources in tooltips; 🔮 marks what needs regulatory reform, ⚠️ marks design assumptions logged in meta/punchlist.md.
+</p>
+
+</div>
+<script>
+/* =============================================================================
+   DATA - mirrors design-kit/journeys/to-be-household-repeat-moments.md
+   (the approved content spec). Edit there first, then mirror here.
+   Sources for pains: wiki/dischem/pharmacy-complaints-pain-points (C4C Jan 2025),
+   wiki/dischem/dischem-social-sentiment-trust-journey (Dec 2025),
+   wiki/dischem/store-of-the-future-customer-voice (Jan 2026).
+   ============================================================================= */
+const SRC = {
+  complaints: {label:"Dis-Chem resolved-complaints analysis, Jan 2025", cite:"wiki/dischem/pharmacy-complaints-pain-points"},
+  sentiment:  {label:"public social-sentiment study, Dec 2025", cite:"wiki/dischem/dischem-social-sentiment-trust-journey"},
+  sotf:       {label:"Store-of-the-Future customer interviews, Jan 2026", cite:"wiki/dischem/store-of-the-future-customer-voice"}
+};
+const C08 = '08-concepts.html';
+
+const DATA = {
+  economies: {
+    insured: {
+      label: "Insured - Nomvula",
+      persona: {
+        eyebrow: "Patient · household medicine manager · insured",
+        name: "Nomvula Khumalo",
+        bio: "54 · Midrand · HR manager · Discovery member, hypertension + type-2 diabetes on the CDL · app-capable, time-pressured · manages her mother Grace's chronic meds and her 7-year-old son Lethabo's needs from one account.",
+        need: "Keep three people's medicine flowing - automatically, fully funded, with no co-pay surprise and no admin - from one place she already lives in."
+      }
+    },
+    cash: {
+      label: "Cash / uninsured - Sipho",
+      persona: {
+        eyebrow: "Patient · household medicine manager · cash",
+        name: "Sipho",
+        bio: "45 · peri-urban Durban · informal income · hypertensive, on a cheap Android with intermittent signal, no street address · collects for his elderly mother (chronic, CCMDD) - cash, at the margin, near home.",
+        need: "Manage the family's medicine with whatever phone and airtime he has - clear cash price up front, collect near home, dignity intact, no app required."
+      }
+    }
+  },
+
+  phases: [
+    {
+      id:"p0", num:"P0", title:"Signing up", once:true,
+      need:'I need to set this up <b>once</b>, for the <b>whole household</b> - who I care for, how I pay, what language we speak - and <b>never be asked again</b>.',
+      activities:{
+        insured:[
+          {t:"Start with the people",
+           x:"Nomvula opens the repeat service in the Dis-Chem app and begins with her household, not a script: herself, Grace, Lethabo. Grace's proxy consent is already recorded on her profile, so linking her mother takes one confirmation - the app shows what the consent covers (order, pay, collect) and who granted it."},
+          {t:"Enrol the repeats",
+           x:"The app reads her dispensing history and lists the chronic medicines eligible for the service - hers and Grace's. She ticks which repeats join. Nothing is re-typed; the scripts, doctors and cover details are already on file."},
+          {t:"Set how the service runs",
+           x:"Four preferences, each pre-filled with a sensible default she can accept or change: delivery - Fridays after five, to home; generics - she stays on the branded medicines she knows; payment - Discovery first, with her Visa on file for anything the scheme declines; language - English for her messages, isiZulu for Grace's pack and labels."},
+          {t:"Review and confirm",
+           x:"One summary screen reads it all back - members, medicines, day, payment order, languages. She confirms.",
+           moment:{line:"I told them once how I want it", star:false,
+             why:'This is the moment the service asks everything exactly once - whose medicine she manages, which day, how to pay, what happens if the scheme baulks - and then never asks again. <span class="why">Being believed the first time is the whole experience</span>: her authority over Grace\'s care is now recorded, not re-litigated at a counter. It is the <a href="'+C08+'">CarerConsent</a> and <a href="'+C08+'">Household Medicine Cabinet</a> concepts made real - and everything after this phase runs on these answers.'}}
+        ],
+        cash:[
+          {t:"Start the conversation",
+           x:"Sipho messages the Dis-Chem WhatsApp number and picks isiZulu. The whole sign-up happens in the thread - no app, no download, replies sized for his data."},
+          {t:"Add the household",
+           x:"His blood-pressure tablets go in from his dispensing history. His mother's chronic medicine comes across from the public CCMDD programme onto the same arrangement, with her consent captured in-thread, in-language."},
+          {t:"Choose collection and payment",
+           x:"He sets collection to the locker at the Capitec branch by the taxi rank, on payday Friday. Cheaper generics by default. Payment is cash, at the bank counter, when he collects."},
+          {t:"Confirm",
+           x:"The thread reads his answers back in isiZulu; he replies 1 to confirm.",
+           moment:{line:"I told them once how I want it", star:false,
+             why:'One WhatsApp conversation, a few minutes - and <span class="why">none of it will ever have to be said again</span>: not at a counter, not to a driver, not at the bank. The <a href="'+C08+'">CarerConsent</a> concept, on the phone he already owns.'}}
+        ]
+      },
+      pains:[
+        {t:"You type it again, and again",
+         d:"Staff and flows ask for what the system already holds; every request starts cold because no saved profile carries across app, WhatsApp and counter.",
+         q:"Type essays even though your information is on the system.", src:"sentiment"},
+        {t:"The digital front door is broken",
+         d:"The app and WhatsApp journeys that should hold your details loop, fail and lock people out - and when they fail there is no clear path to a human.",
+         q:"Dis-Chem App is dysfunctional.", src:"complaints"}
+      ],
+      behind:{
+        front:["Repeat-service sign-up (app / WhatsApp)","Preference summary read back in plain language"],
+        back:["One household profile carries members, consents and cycles across channels","Preference store: day, time-of-day, payment order, language per member, collection point"],
+        reg:"<b>POPIA:</b> proxy consent recorded once, in-language, auditable; the person cared for grants it knowingly and can withdraw it.",
+        caps:[
+          {name:"Recorded proxy consent", cite:"wiki/concepts/identity-and-consent"},
+          {name:"Household profile", cite:"wiki/concepts/identity-and-consent"},
+          {name:"CCMDD-to-retail bridge", cite:"wiki/medical-schemes/courier-chronic-pharmacy-models", reform:true},
+          {name:"Partner-bank locker network", cite:"design assumption - see meta/punchlist.md", assume:true}
+        ]
+      },
+      emotion:{insured:4, cash:4}
+    },
+    {
+      id:"p1", num:"P1", title:"The order assembles",
+      need:'I need the household\'s medicine to <b>keep itself going</b> - and to know <b>what it costs</b> before anything is committed.',
+      activities:{
+        insured:[
+          {t:"Receive the notice",
+           x:"A week before run-out, a WhatsApp message arrives: what has been prepared for her and Grace, what Discovery has covered, what (if anything) she pays, and the Friday it arrives. Everything in it is already settled - the order was assembled and the claim run before the message was sent. No reply is needed.",
+           moment:{line:"My medicine ordered itself", star:true,
+             why:'She reads it, puts the phone down, and gets on with her day. <span class="why">The chore she has carried for years simply isn\'t hers anymore</span> - not made easier, made gone. The only feeling left is the mild surprise of noticing its absence. The <a href="'+C08+'">Auto-Refill</a> and <a href="'+C08+'">Script Sync</a> concepts doing their quiet work: prediction, assembly and one household date, with nothing asked of her.'}},
+          {t:"See the cost and the cover",
+           x:"The message itemises the money: what Discovery covers in full, and the R42 one line costs her this month - while the order is still hers to change.",
+           moment:{line:"The only thing I ever bought blind - not anymore", star:true,
+             why:'Everything else she buys shows its price before she commits; medicine finally does the same. <span class="why">The price is in the message, not at the till</span> - the decision is hers, made at home, with the numbers in front of her. The <a href="'+C08+'">Real-Time Transparency</a> concept, applied where it stings most today.'}},
+          {t:"Change something, if needed",
+           x:"Amend, snooze or swap a line: one tap, for the months something shifts. Most months, nothing does."}
+        ],
+        cash:[
+          {t:"Receive the message",
+           x:"The same week-out message lands in isiZulu, small enough to open on any signal: his tablets and his mother's repeat, ready for the Capitec locker on payday Friday. No reply is needed.",
+           moment:{line:"My medicine ordered itself", star:true,
+             why:'He reads it and puts the phone away - nothing to install, nothing to spend, nothing to remember. <span class="why">The family\'s supply stays ahead of run-out, on the phone he already owns</span>. The <a href="'+C08+'">Auto-Refill</a> concept with no app in the way.'}},
+          {t:"See the price before travelling",
+           x:"The price is itemised in rand - tablets, dispensing fee, total - and his mother's line shows R0 on CCMDD.",
+           moment:{line:"The only thing I ever bought blind - not anymore", star:true,
+             why:'He knows whether the trip is affordable <span class="why">before he decides to travel</span> - not at the till, after the taxi fare is already spent. <a href="'+C08+'">Real-Time Transparency</a>, for the majority who pay cash.'}},
+          {t:"Reply only to change",
+           x:"One reply moves the date if payday shifts. Otherwise, silence is the correct answer."}
+        ]
+      },
+      pains:[
+        {t:"The re-order dance",
+         d:"Re-ordering chronic medicine through the app or WhatsApp loops and dead-ends - the strongest complaint cluster in the research, with no clear path to a human when it fails.",
+         q:"I have been pulling at my hair trying to order my medication via the App or even using the WhatsApp service.", src:"complaints"},
+        {t:"Money is a mystery until the end",
+         d:"Co-payments and claims surface at the till, and scheduled-medicine pricing reads as arbitrary from store to store - a transparency failure more than a pricing one.",
+         q:"I am horrified that the pricing of scheduled medication differs so dramatically from one Dis-Chem pharmacy to another.", src:"complaints"}
+      ],
+      behind:{
+        front:["One notice per household: contents, cover / itemised price, arrival day","Amend / snooze / swap-a-line, one tap"],
+        back:["Run-out predicted per member from dispensing history","Order assembled to the phase-0 preferences","Funding resolved BEFORE the notice: scheme pre-adjudicated or cash itemised"],
+        reg:"<b>POPIA:</b> proactive contact is consented and opt-out-able; the opt-out is honoured.",
+        caps:[
+          {name:"Refill prediction", cite:"wiki/digital-transformation/adherence-tech-and-digital-therapeutics"},
+          {name:"Auto-assembly (BRIX)", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
+          {name:"Real-time pre-adjudication", cite:"wiki/medical-schemes/realtime-claims-switching"},
+          {name:"SEP + fee price engine", cite:"wiki/sa-regulatory/sep-dispensing-fee"},
+          {name:"WhatsApp-first channel", cite:"wiki/consumer-context/digital-access-and-whatsapp"}
+        ]
+      },
+      emotion:{insured:5, cash:4}
+    },
+    {
+      id:"p2", num:"P2", title:"The order window",
+      need:'The trip used to do <b>double duty</b> - I need the delivery to carry <b>the rest of the list</b>, not just the medicine.',
+      activities:{
+        insured:[
+          {t:"Open the pending order",
+           x:"The notice doubles as an open order: until 18:00 on Thursday, Friday's parcel accepts additions from the shop side of Dis-Chem - toiletries, vitamins, baby, cosmetics."},
+          {t:"Add the household's shop",
+           x:"Suggestions are drawn from her own purchase history, specials first - the vitamin C effervescents she bought last winter are on special as the cold sets in. She adds them, and Lethabo's toothpaste, each item showing its price as it goes in. One parcel, one delivery, no separate fee.",
+           moment:{line:"While we're here... - without going anywhere", star:false,
+             why:'The pharmacy trip always did double duty, and the delivery threatened to quietly undo that. Instead, <span class="why">the trip she no longer makes still does double duty</span>: the household hands the incoming order the rest of the list, the way it hands a list to whoever is already going to the shops. <a href="'+C08+'">The Standing Order</a> concept at work.'}}
+        ],
+        cash:[
+          {t:"Medication only on this route",
+           x:"A bank locker carries medication only, so the window does not open on Sipho's route - and the message says so plainly rather than dangling what his channel cannot deliver. His order remains the family's medicine, priced upfront, ready on payday."}
+        ]
+      },
+      pains:[],
+      painNote:"The research records no direct complaint here - this phase answers a lost convenience rather than a reported pain: the errand-consolidation the pharmacy trip used to provide, which a medicine-only delivery would quietly remove.",
+      behind:{
+        front:["Open order with a stated cutoff (\"add anything before Thursday 18:00\")","Suggestions from the customer's own history, specials-aware","Running total as items go in"],
+        back:["Shop items staged against the medicine order","One consolidated parcel, one route"],
+        reg:null,
+        caps:[
+          {name:"Open-order window", cite:"design assumption - see meta/punchlist.md", assume:true},
+          {name:"History-based suggestions", cite:"design assumption - see meta/punchlist.md", assume:true},
+          {name:"Parcel consolidation", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"}
+        ]
+      },
+      emotion:{insured:4, cash:3}
+    },
+    {
+      id:"p3", num:"P3", title:"Prepared",
+      need:'I need to be certain that what is coming is <b>exactly right</b> - for <b>everyone</b> in the house.',
+      activities:{
+        insured:[
+          {t:"Follow the status",
+           x:"The order's status moves on its own: being prepared, checked, packed. Nothing is asked of her; everything is visible if she looks."},
+          {t:"Open the check",
+           x:"The \"checked\" status expands into the actual list: interactions across the family's medicines, allergies, doses, duplicates, script validity - each reviewed and signed off by the pharmacist on duty, by name.",
+           moment:{line:"Every check ran before it left the building", star:false,
+             why:'The due diligence is shown, not assumed - and signed by a person who stands behind it. <span class="why">Someone qualified did the worrying, and she can see exactly what they worried about.</span> The question that rides along with medicine - did anyone actually check this? - has an answer with a name on it. <a href="'+C08+'">The Named Check</a>, extended to the whole household.'}},
+          {t:"See it packed",
+           x:"The medicine is machine-picked, verified by camera against each script, and packed by person, day and time - with the vitamin C and the toothpaste in the same box."}
+        ],
+        cash:[
+          {t:"Receive the checked status",
+           x:"The same preparation, to the same standard: robotic pick, camera verification, pharmacist sign-off. His status arrives in isiZulu, short enough for any phone, with the same itemised list of what was checked.",
+           moment:{line:"Every check ran before it left the building", star:false,
+             why:'The same checks, the same standard, the same named signature. <span class="why">How he pays has no bearing on how carefully his family\'s medicine is handled</span> - and for the first time, he can see that. <a href="'+C08+'">The Named Check</a>, identical on the cash rail.'}},
+          {t:"Packed for the household",
+           x:"His mother's tablets are packed so that mornings and evenings stay separate, whoever hands them to her."}
+        ]
+      },
+      pains:[
+        {t:"The short pack, discovered at home",
+         d:"Wrong quantities and omitted items sometimes surface only days after leaving the store - a safety event and an adherence break in one, with no itemised handover to catch it at the counter.",
+         q:"On opening the packet a few days later, I discovered my blood pressure tablets were missing.", src:"complaints"},
+        {t:"Errors read as safety threats",
+         d:"Customers judge the pharmacy through a healthcare lens: incorrect or missing medication is experienced as potentially life-threatening and a failure of professional duty, not a retail slip - while visible double-checking by pharmacists measurably reduces the fear.",
+         src:"sentiment"}
+      ],
+      behind:{
+        front:["Live status: being prepared -> checked -> packed","\"Checked ✓ by Naledi M., pharmacist\" expands to the itemised check list"],
+        back:["AI co-pilot drafts the household-wide check stack; the pharmacist confirms or overrides","ROWA picks eligible stock; vision verification flags look-alikes before packing","Household adherence pack assembled; shop items packed alongside"],
+        reg:"<b>Non-negotiable:</b> a registered pharmacist's clinical sign-off remains the gate - the AI assembles, the human authorises (GPP).",
+        caps:[
+          {name:"AI clinical co-pilot", cite:"wiki/digital-transformation/ai-in-pharmacy", reform:true},
+          {name:"Pharmacist single sign-off", cite:"wiki/sa-regulatory/pharmacy-act-sapc-gpp"},
+          {name:"ROWA automated picking", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
+          {name:"Vision verification", cite:"wiki/digital-transformation/pharmacy-automation-and-robotics"},
+          {name:"Adherence dose-pack", cite:"wiki/dispensing-practice/adherence-packaging"}
+        ]
+      },
+      emotion:{insured:4, cash:4}
+    },
+    {
+      id:"p4", num:"P4", title:"In hand",
+      need:'I need it <b>in hand, when promised</b> - or to know, early, that plans have changed.',
+      activities:{
+        insured:[
+          {t:"Confirm the window",
+           x:"On Friday morning the delivery window firms up - a realistic window, not an over-precise promise - and she confirms it with a tap."},
+          {t:"Track it to the door",
+           x:"The parcel is trackable through each stage: packed, dispatched, stops remaining, here. The driver scans the QR on her phone at the door, and that scan closes the order as proof of delivery.",
+           moment:{line:"I could track it from Dis-Chem's door to mine", star:true,
+             why:'The loop only closes when the parcel is physically in her hands. <span class="why">Being stood up by a system ends when the system can\'t quietly disappear</span> - the promise has a window, and the window is kept in plain sight. <a href="'+C08+'">Real-Time Transparency</a> again, this time on the road.'}},
+          {t:"If the day changes",
+           x:"Pausing the delivery or switching it to a locker is a tap in the same thread - not a phone call."}
+        ],
+        cash:[
+          {t:"Receive the PIN",
+           x:"On payday Friday the collection PIN arrives on WhatsApp."},
+          {t:"Pay, and the locker opens",
+           x:"At the Capitec counter he pays the quoted amount - the same number he saw before travelling - in cash, and the payment releases the locker. One visit, under a minute, a plain parcel, no street address involved.",
+           moment:{line:"I could track it from Dis-Chem's door to mine", star:true,
+             why:'The same certainty, differently shaped: <span class="why">payment and collection in one visit, near home, with no address required</span> - and if the locker is ever down, he knows before he travels, not after.'}},
+          {t:"The fallback",
+           x:"The staffed pharmacy counter stays available if the locker route fails."}
+        ]
+      },
+      pains:[
+        {t:"Out for delivery - then nothing",
+         d:"Orders are approved, notified as dispatched, and never arrive - the worst failure, because the system promised. Hand-offs lose state and no closed loop confirms handover.",
+         q:"I received a notification that it has been processed on my medical aid and was out for delivery. I did not receive it.", src:"complaints"},
+        {t:"Nobody picks up",
+         d:"When something goes wrong the dispensary is unreachable, and the silence reads as organisational inability to care.",
+         q:"Called 4 different dispensaries... nobody is picking up.", src:"sentiment"},
+        {t:"Too-precise promises",
+         d:"Narrow delivery windows are distrusted; customers prefer realistic windows and judge the service on whether the promise held.",
+         q:"Waiting is fine - being unsure isn't.", src:"sotf"}
+      ],
+      behind:{
+        front:["Realistic window, confirmed morning-of","Tracking to actual handover; QR / PIN at the door or counter"],
+        back:["Consolidation hub routes the household parcel; driver proof-of-delivery closes the loop","Locker loaded near home; cash payment at the partner counter releases it","Reroute logic runs BEFORE the customer travels"],
+        reg:"<b>Courier + locker rules:</b> scheduled-medicine delivery must meet licensing and cold-chain requirements; locker release of scheduled medicines needs oversight clarity 🔮.",
+        caps:[
+          {name:"Consolidation -> PICCUP + POD", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
+          {name:"Closed-loop QR handover", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
+          {name:"Near-home locker + PIN (Pelebox pattern)", cite:"wiki/consumer-context/last-mile-addressing-logistics"},
+          {name:"Scheduled-meds locker release", cite:"wiki/sa-regulatory/courier-online-pharmacy-rules", reform:true},
+          {name:"Cash-at-bank locker release", cite:"design assumption - see meta/punchlist.md", assume:true}
+        ]
+      },
+      emotion:{insured:5, cash:5}
+    },
+    {
+      id:"p5", num:"P5", title:"Taking it",
+      need:'I need taking it right to be the <b>easy part</b> - for me, my mother and my son.',
+      activities:{
+        insured:[
+          {t:"Unpack",
+           x:"The household's medicine arrives as one pack, organised by person, day and time. Each dose is grouped and labelled - Grace's in isiZulu, hers in English - with the full directions printed in the pack and available on her phone.",
+           moment:{line:"Medication you can't take wrong", star:false,
+             why:'The plastic-organiser ritual is done before the parcel arrives, in the language the house actually speaks. <span class="why">Getting it wrong now requires effort; getting it right requires none.</span> The <a href="'+C08+'">Made-for-Me Packaging</a> concept, delivered to the kitchen table.'}},
+          {t:"Reminders on their terms",
+           x:"Reminders are set per person and tied to routine - Grace's to mornings. Any of them switches off in one tap, and stays off."}
+        ],
+        cash:[
+          {t:"Use the pack and the label",
+           x:"His and his mother's tablets arrive pre-sorted into labelled doses, with the directions printed in the pack.",
+           moment:{line:"Medication you can't take wrong", star:false,
+             why:'The printed label keeps working in a power cut, and <span class="why">the pack cannot be taken in the wrong order, whoever hands it to his mother</span>. <a href="'+C08+'">Made-for-Me Packaging</a>, built for his household\'s reality.'}},
+          {t:"Ask WhatsApp, not the counter",
+           x:"Each medicine has a short usage guide he can open on WhatsApp, in isiZulu, whenever a question comes up - instead of only at the counter, at collection time."},
+          {t:"Reminders that stop when told",
+           x:"Reminders arrive as brief texts or voice notes timed to his routine, and stop the moment he replies stop."}
+        ]
+      },
+      actnote:"When a script eventually nears its expiry, the renewal journey takes over (the Script Renew concept) - nothing in this journey lapses on its own.",
+      pains:[
+        {t:"Help flips into harassment",
+         d:"Persistent calls, SMSes and WhatsApps - especially after the customer has tried to opt out - turn support into perceived harassment and loss of control. The same tools that reduce effort when they respect agency amplify distrust when they don't.",
+         src:"sentiment"},
+        {t:"Digital-only instructions worry people",
+         d:"Access, signal and \"where do I find it\" make screen-only dosage information feel risky; customers want digital alongside print, with print as the safety backup.",
+         src:"sotf"}
+      ],
+      behind:{
+        front:["Dose pack per person / day / time; large in-language labels","Per-medicine usage guide on WhatsApp","Per-member reminders tied to routine; instant opt-out"],
+        back:["Schedule designed as a behaviour-change surface, not a reminder bolt-on","Hybrid print + digital instructions generated per member's language"],
+        reg:"<b>Non-negotiable:</b> GPP counselling at handover; reminder contact governed by POPIA consent. Renewal is signposted to the renewal journey (Script Renew) - out of scope here.",
+        caps:[
+          {name:"Adherence dose-pack + hybrid labels", cite:"wiki/dispensing-practice/adherence-packaging"},
+          {name:"Consented routine-tied reminders", cite:"wiki/digital-transformation/adherence-tech-and-digital-therapeutics"},
+          {name:"WhatsApp usage guide", cite:"wiki/consumer-context/digital-access-and-whatsapp"}
+        ]
+      },
+      emotion:{insured:5, cash:4}
+    },
+    {
+      id:"pp", num:"∥", title:"When it goes wrong", par:true,
+      need:'When something breaks, I need <b>a way through</b> - not a dead end at a counter.',
+      activities:{
+        insured:[
+          {t:"A claim declines",
+           x:"If Discovery declines a line, a message sets out what was declined, why, and the choices: charge the card on file, take the funded generic this once, or talk to a pharmacist now. One tap resolves it, and the order keeps its place in the flow.",
+           moment:{line:"Medical aid said no. Dis-Chem said 'let's make a plan.'", star:true,
+             why:'The problem arrives already accompanied by its solutions - and one of them is the card she saved at sign-up, the phase-0 preferences paying off exactly when they should. <span class="why">A rejection stops being a dead end and becomes a decision she gets to make</span> - in the same thread, with a person one tap away.'}},
+          {t:"A stock-out",
+           x:"The same structure: take the funded generic, split the delivery so the rest arrives now and the missing item follows on its own, or hold the order - decided in the same thread, with the choice explained."}
+        ],
+        cash:[
+          {t:"A shortage",
+           x:"The message offers the cheaper generic he already prefers, or splits the order so his mother's medicine arrives on time regardless. His place is kept either way - nothing costs him a wasted trip."},
+          {t:"A locker outage",
+           x:"Flagged before he travels, with the reroute to another point or the staffed counter already arranged."},
+          {t:"A person, in the thread",
+           x:"A pharmacist is reachable in the same WhatsApp conversation, in isiZulu, at any point - the exception never strands him with a machine."}
+        ]
+      },
+      pains:[
+        {t:"An exception kills the order",
+         d:"A disputed co-payment quietly returned a chronic delivery instead of opening a resolution path - exceptions abort orders rather than triggering recovery.",
+         q:"All he needed to do was contact Dis-Chem and verify the co-payment.", src:"complaints"},
+        {t:"No fallback, no way through",
+         d:"Digital breakdowns become hard blockers when no alternative path exists; customers who cannot locate or recover an order experience it as abandonment.",
+         src:"sentiment"},
+        {t:"A generic no one explained",
+         d:"Substitution is often read as being given the wrong medicine when it feels forced or unexplained - a counselling and consent problem, not a pricing one.",
+         src:"sentiment"},
+        {t:"After a failure, they leave",
+         d:"Trust-breaking failures end in defection: scripts moved to Clicks or local independents, with one customer willing to pay R460 more for relationship-based care.",
+         src:"sentiment"}
+      ],
+      behind:{
+        front:["Plain-language exception message: what, why, and the live choices","A pharmacist reachable in the same thread"],
+        back:["Decline detected at pre-adjudication, before the customer is exposed","Each exception has one named owner until resolved; the order holds its place","Reroute / split-delivery arranged before anyone travels"],
+        reg:null,
+        caps:[
+          {name:"Real-time decline detection", cite:"wiki/medical-schemes/realtime-claims-switching"},
+          {name:"Exception ownership (Virtual Manager)", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
+          {name:"Split delivery on stock-out", cite:"design assumption - see meta/punchlist.md", assume:true},
+          {name:"Graceful failure principle", cite:"wiki/concepts/graceful-failure"}
+        ]
+      },
+      emotion:{insured:3, cash:3}
+    }
+  ]
+};
+
+/* ============================================================================= */
+let ECO = (location.hash === "#cash") ? "cash" : "insured";
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+
+function renderPersona(){
+  const p = DATA.economies[ECO].persona;
+  document.getElementById("persona").innerHTML =
+    '<div class="who"><div class="eyebrow">'+esc(p.eyebrow)+'</div><h2>'+esc(p.name)+'</h2><p class="bio">'+esc(p.bio)+'</p></div>'+
+    '<div class="needbox"><div class="nlabel">The need</div>'+esc(p.need)+'</div>';
+}
+
+function renderSpine(){
+  const row = document.getElementById("spinerow");
+  row.innerHTML = "";
+  DATA.phases.forEach(ph=>{
+    const acts = ph.activities[ECO];
+    const moments = acts.filter(a=>a.moment);
+    const stars = moments.filter(a=>a.moment.star).length;
+    const node = document.createElement("button");
+    node.className = "snode"+(ph.par?" par":"");
+    node.setAttribute("aria-label","Go to "+ph.title);
+    node.innerHTML = '<div class="snum">'+esc(ph.num)+'</div><div class="sttl">'+esc(ph.title)+'</div>'+
+      '<div class="sm">'+moments.length+' moment'+(moments.length===1?"":"s")+(stars?(' · '+"⭐".repeat(stars)):"")+'</div>';
+    node.addEventListener("click", ()=>{ document.getElementById(ph.id).scrollIntoView({behavior:"smooth", block:"start"}); });
+    row.appendChild(node);
+  });
+  const n = DATA.phases.length;
+  const W = 1000, H = 88, padX = W/(n*2);
+  const y = v => 22 + (5 - v) * 24;
+  const pts = DATA.phases.map((ph,i)=>[ padX + i*(W/n), y(ph.emotion[ECO]) ]);
+  const line = pts.map(p=>p.join(",")).join(" ");
+  const dots = pts.map((p,i)=>'<circle cx="'+p[0]+'" cy="'+p[1]+'" r="5" fill="#1a9b4a"/>'+
+    '<text x="'+p[0]+'" y="'+(p[1]-10)+'" text-anchor="middle" font-size="12" fill="#5d6b62">'+DATA.phases[i].emotion[ECO]+'</text>').join("");
+  document.getElementById("curve").innerHTML =
+    '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" aria-label="Emotion curve, '+ECO+'">'+
+    '<polyline points="'+line+'" fill="none" stroke="#9bcfb0" stroke-width="3"/>'+dots+'</svg>';
+}
+
+function chipHTML(c){
+  const mark = c.reform ? ' <span class="rf" title="requires regulatory reform">🔮</span>'
+             : c.assume ? ' <span class="as" title="design assumption - logged in meta/punchlist.md">⚠️</span>' : "";
+  return '<span class="chip" title="'+esc(c.cite)+'">'+esc(c.name)+mark+'</span>';
+}
+
+function sechead(icon, title, sub){
+  return '<div class="sechead"><span class="ic">'+icon+'</span><h3>'+esc(title)+'</h3>'+(sub?'<span class="sub">'+esc(sub)+'</span>':"")+'</div>';
+}
+
+function activityHTML(a){
+  let h = '<div class="activity"><h4>'+esc(a.t)+'</h4><p>'+esc(a.x)+'</p></div>';
+  if(a.moment){
+    const m = a.moment;
+    h += '<div class="keymoment"><div class="ktag"><span class="klabel">Key moment</span>'+
+         (m.star?'<span class="kstar">⭐ moment of truth</span>':"")+'</div>'+
+         '<div class="kline">'+esc(m.line)+'</div>'+
+         '<div class="kwhy">'+m.why+'</div></div>';
+  }
+  return h;
+}
+
+function painHTML(p){
+  const s = SRC[p.src];
+  const q = p.q ? '<span class="q">"'+esc(p.q)+'"</span>' : "";
+  return '<div class="paincard"><h4>'+esc(p.t)+'</h4><p>'+esc(p.d)+'</p>'+q+
+    '<span class="qsrc" title="'+esc(s.cite)+'">'+(p.q?"verbatim, ":"")+esc(s.label)+'</span></div>';
+}
+
+function renderBoard(){
+  const board = document.getElementById("board");
+  board.innerHTML = "";
+  DATA.phases.forEach(ph=>{
+    const sec = document.createElement("section");
+    sec.className = "phase"+(ph.par?" par":"");
+    sec.id = ph.id;
+    const who = DATA.economies[ECO].persona.name.split(" ")[0];
+    const b = ph.behind;
+    const lanes =
+      '<div class="bgrid">'+
+        '<div class="blane"><h4>Frontstage</h4><ul>'+b.front.map(x=>'<li>'+x+'</li>').join("")+'</ul></div>'+
+        '<div class="blane"><h4>Backstage</h4><ul>'+b.back.map(x=>'<li>'+x+'</li>').join("")+'</ul></div>'+
+        (b.reg?'<div class="breg">'+b.reg+'</div>':"")+
+        '<div class="bcaps">'+b.caps.map(chipHTML).join("")+'</div>'+
+      '</div>';
+    const pains = ph.pains.length
+      ? '<div class="paingrid">'+ph.pains.map(painHTML).join("")+'</div>'
+      : '<p class="painnone">'+esc(ph.painNote||"")+'</p>';
+    sec.innerHTML =
+      '<div class="phead"><span class="pnum">'+esc(ph.num)+'</span><h2>'+esc(ph.title)+'</h2>'+
+        (ph.once?'<span class="once">once, not per cycle</span>':"")+
+        (ph.par?'<span class="once" style="border-color:var(--reform);color:var(--reform)">parallel - any phase</span>':"")+
+      '</div>'+
+      '<div class="pbody">'+
+        sechead("♥","Need")+
+        '<div class="needline"><i>'+ph.need+'</i></div>'+
+        sechead("⚙","Activities", who+"'s journey")+
+        ph.activities[ECO].map(activityHTML).join("")+
+        (ph.actnote?'<p class="actnote">'+esc(ph.actnote)+'</p>':"")+
+        sechead("✕","Current-state pain points","from the research - never inferred")+
+        pains+
+        '<details class="behind"><summary><span class="arr">▶</span> Behind the line <span class="sub">- the service blueprint under this phase</span></summary>'+lanes+'</details>'+
+      '</div>';
+    board.appendChild(sec);
+  });
+}
+
+function setEco(e){
+  ECO = e;
+  document.getElementById("eco-insured").setAttribute("aria-pressed", e==="insured" ? "true":"false");
+  document.getElementById("eco-cash").setAttribute("aria-pressed", e==="cash" ? "true":"false");
+  renderPersona(); renderSpine(); renderBoard();
+}
+document.getElementById("eco-insured").addEventListener("click", ()=>setEco("insured"));
+document.getElementById("eco-cash").addEventListener("click", ()=>setEco("cash"));
+
+let behindOpen = false;
+document.getElementById("toggle-behind").addEventListener("click", function(){
+  behindOpen = !behindOpen;
+  document.querySelectorAll("details.behind").forEach(d=>{ d.open = behindOpen; });
+  this.textContent = behindOpen ? "Close all behind-the-line" : "Open all behind-the-line";
+});
+
+setEco(ECO);
+</script>
+</body>
+</html>

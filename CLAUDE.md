@@ -212,6 +212,21 @@ agreed *with the human lead first* (propose, then ask) - that step is the
 make-or-break. A deliverable's own presentation needs supersede the general prose
 rules where they conflict; see the override note in that template.
 
+**Moments journeys** (future-state journeys for an executive audience, e.g.
+`deliverables/09-tobe-household-repeat-moments.html`) follow the
+[[design-kit/templates/moments-journey-template|moments-journey template]] -
+**the canon for all journey structure and strategy**. Each phase reads: **Need**
+(customer voice, first person) → **named Activities** (functional register, per
+economy, with the key moments embedded as callouts beneath their anchor
+activity - memory-line titles, first-order why highlighted, concepts referenced
+inline as links into the 08 concept set) → **current-state pain points**
+(research-sourced ONLY: title + description + verbatim quote where one exists;
+never inferred from personas, and an honest no-complaint note where the
+research is silent) → collapsed **behind-the-line** blueprint panel. Moment
+titles are agreed with the human lead (propose, then ask), one phase is mocked
+copy-complete before the set is regenerated, and previous journey deliverables
+are preserved, never reworked in place.
+
 ---
 
 ## 9. Maintenance etiquette for agents

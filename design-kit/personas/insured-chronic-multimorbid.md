@@ -12,7 +12,7 @@ grounded_in:
   - "[[wiki/consumer-context/adjacent-digital-expectations]]"
   - "[[wiki/consumer-context/digital-access-and-whatsapp]]"
 created: "2026-06-13"
-updated: "2026-06-17"
+updated: "2026-07-17"
 ---
 
 # Nomvula Khumalo — insured chronic, multimorbid
@@ -23,9 +23,15 @@ updated: "2026-06-17"
 
 ## Demographics & context
 - **Age 54**, lives in Midrand (Gauteng suburb), works full-time as an HR
-  manager. Married, two adult children.
+  manager. Married; two adult children and a late-arrival 7-year-old son,
+  Lethabo.
 - Owns a home with a findable street address; commutes daily; chronically
   **time-pressured** between work, family and her own care.
+- **Household medicine manager:** in the future-state journey work (deliverable
+  05 onwards) she also runs the medicine admin for her mother, **Grace Khumalo**
+  (76, chronic hypertension, lives with the family), and her 7-year-old son
+  **Lethabo**. Refer to her mother as **Grace** in all deliverables - never
+  "Gogo".
 - Comfortable in **English** at work but speaks **isiZulu** at home; reads
   health information fine but resents jargon.
 

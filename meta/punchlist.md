@@ -20,6 +20,7 @@ may want to steer. Nothing here is blocking the build.
 | 6 | **"Futuristic" horizon** | Designing for ~2026–2030 (operable-soon), flagging anything needing regulatory reform as `🔮 requires-reform`. | Different horizon? |
 | 7 | **NHI assumptions** | Treating NHI as a known unknown — documenting status + scenarios, not betting the design on a timeline. | — |
 | 8 | **Output artifacts** | ✅ **Done** — two worked exemplars built: [[to-be-blueprint-chronic-insured]] (insured chronic) + [[to-be-journey-cash-acute]] (cash acute), demonstrating the [[wiki/concepts/dual-journey]]. Further blueprint/journey *production* is the next phase Tamsin/agents drive. | — |
+| 9 | **#09 moments-journey design assumptions** (2026-07-17) | Three unsourced constructs in [[to-be-household-repeat-moments]] / deliverable #09, flagged ⚠️ in the build: (a) **partner-bank locker network** (Capitec branch as collection point, cash payment at the bank counter releasing the locker); (b) **the order window** (open repeat order until cutoff, history-based specials suggestions - the Standing Order concept's mechanics); (c) **split delivery on stock-out**. All plausible extensions of sourced patterns (Pelebox, VC consolidation) but need sourcing or a feasibility read. | Source or validate; upgrade the chips when done. |
 
 ## Questions I'd genuinely like answered later
 - Who are the **priority customer segments** for the future-state pilot
