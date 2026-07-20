@@ -85,6 +85,31 @@ Each phase is one section, in this order:
    Sequence told honestly (pricing resolves backstage BEFORE the notice).
    Behind-the-line machinery never leaks in. Written per economy behind the
    toggle; honest constraints stated plainly rather than mirrored.
+   - **The v3.1 first-person register (canon from the #09 editing pass,
+     2026-07-19; the full worked rule set lives in
+     [[design-kit/journeys/to-be-household-repeat-moments]]).** Activities are
+     written in the customer's first person to the formula *what I see or do,
+     in my words, closing on the benefit for me*. The essentials: customer
+     language only (service vocabulary belongs on mockup buttons); the
+     benefit line is the customer's FELT payoff, never the business view of
+     it; one job per activity, with all money behaviour in one activity per
+     phase; each persona's motivation is their own researched constraint,
+     bridged to the action; channel texture shows in the verbs (app: I
+     select, one screen · WhatsApp: the chat asks, I reply); nothing implies
+     settings are locked ("remembered", never "never asked again") and the
+     service never stops on silence; sign-up fixes channels, never times -
+     time is proposed per cycle; consent is an already-granted fact with a
+     stated scope, never an in-flow ceremony; language and content choices
+     attach to the content, never a carrier (labels, packs, boxes - the
+     designers own the artefact); relevant detail lives in its relevant
+     activity; statuses carry their detail inline; premium mechanics are a
+     paid opt-in with money implied, never priced; failure-band activities
+     are scenarios needing a decision (detection-only failures live in their
+     phases), with the human reachable by phone where the persona would
+     want a call; economies mirror structure while content diverges
+     honestly; and run the **concept-visibility check** - a concept the
+     journey depends on must visibly happen in an activity somewhere, or a
+     step is missing.
    - **Key moments embed in the activities.** An activity that carries a
      moment gets a callout block directly beneath it: the memory-line title,
      ⭐ where it is a moment of truth, and a short prose "why this is a key

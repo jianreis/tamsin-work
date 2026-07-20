@@ -128,7 +128,7 @@ a{color:var(--brand-dark)}
 .actwho{font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--brand-dark); font-weight:800; margin:8px 0 2px}
 .activity{margin-top:16px; max-width:74ch}
 .activity h4{font-size:1.05rem; font-weight:800; letter-spacing:-.005em; margin-bottom:4px}
-.activity p{margin:0; color:var(--ink-soft)}
+.activity p{margin:0; color:var(--ink-soft); white-space:pre-line}
 .actnote{margin-top:14px; font-size:.85rem; color:var(--muted); max-width:74ch}
 
 /* key moment (embedded in activities) */
@@ -190,7 +190,7 @@ details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #09 · SCRIPT RE-IMAGINED - THE HOUSEHOLD REPEAT, IN MOMENTS</span>
-  <span class="gen">generated 2026-07-17 · updated 2026-07-19 (need / activities / pain-points structure) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
+  <span class="gen">generated 2026-07-17 · updated 2026-07-19 (v3.1: full first-person pass, all phases + ∥ · household update - Zanele, Lethabo, Grace's own cover) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
 </div>
 
 <section class="intro">
@@ -256,8 +256,8 @@ const DATA = {
       persona: {
         eyebrow: "Patient · household medicine manager · insured",
         name: "Nomvula Khumalo",
-        bio: "54 · Midrand · HR manager · Discovery member, hypertension + type-2 diabetes on the CDL · app-capable, time-pressured · manages her mother Grace's chronic meds and her 7-year-old son Lethabo's needs from one account.",
-        need: "Keep three people's medicine flowing - automatically, fully funded, with no co-pay surprise and no admin - from one place she already lives in."
+        bio: "54 · Midrand · HR manager · Discovery member, hypertension + type-2 diabetes on the CDL · app-capable, time-pressured · manages the whole household's chronic medicine from one account: her mother Grace's (partially covered by Grace's own scheme), her daughter Zanele's (12, ADHD) and her son Lethabo's (7, asthma).",
+        need: "Keep the whole household's medicine flowing - automatically, every scheme applied, with no cost surprise and no admin - from one place she already lives in."
       }
     },
     cash: {
@@ -274,31 +274,39 @@ const DATA = {
   phases: [
     {
       id:"p0", num:"P0", title:"Signing up", once:true,
-      need:'I need to set this up <b>once</b>, for the <b>whole household</b> - who I care for, how I pay, what language we speak - and <b>never be asked again</b>.',
+      need:'I need to set this up <b>once, on my terms</b> - and have it <b>remembered every month after</b>.',
       activities:{
         insured:[
-          {t:"Start with the people",
-           x:"Nomvula opens the repeat service in the Dis-Chem app and begins with her household, not a script: herself, Grace, Lethabo. Grace's proxy consent is already recorded on her profile, so linking her mother takes one confirmation - the app shows what the consent covers (order, pay, collect) and who granted it."},
-          {t:"Enrol the repeats",
-           x:"The app reads her dispensing history and lists the chronic medicines eligible for the service - hers and Grace's. She ticks which repeats join. Nothing is re-typed; the scripts, doctors and cover details are already on file."},
-          {t:"Set how the service runs",
-           x:"Four preferences, each pre-filled with a sensible default she can accept or change: delivery - Fridays after five, to home; generics - she stays on the branded medicines she knows; payment - Discovery first, with her Visa on file for anything the scheme declines; language - English for her messages, isiZulu for Grace's pack and labels."},
-          {t:"Review and confirm",
-           x:"One summary screen reads it all back - members, medicines, day, payment order, languages. She confirms.",
+          {t:"I add my household",
+           x:"Managing so many people's medicine is overwhelming, so I sign up to Dis-Chem's repeat service in the app. I add myself, my mom, Zanele and Lethabo. My mom's consent for me to manage her medicine is already on her profile, so adding her takes one confirmation - her consent covers me managing her medicine, this service included: ordering, paying, collecting for her. Four people's medicine just became one thing to manage."},
+          {t:"I add their medicines",
+           x:"The app already knows our medicines - mine, my mom's, Zanele's ADHD script, Lethabo's asthma pump - and shows me which repeats can join the service. I select them. Nothing gets re-typed; the scripts, the doctors and the cover are already there."},
+          {t:"One date for everyone",
+           x:"Our scripts don't line up - mine runs out mid-month, Zanele's at month-end, my mom's somewhere in between. The app shows me the plan to fix that: one top-up fill for Zanele this first month, with its cost shown before I agree, and from next month everyone lands on the same date. The medicine calendar I've been juggling in my head for years is gone."},
+          {t:"I choose how it reaches us",
+           x:"How it reaches us is my choice: delivered to home, or ready for collection at a store or a locker near me. I choose delivery. Then how it's made for us - I stay on the brands I know, I add the pre-sorted dose packs for the whole family, my messages come in English, and my mom gets her medicine instructions in her language. My rules, not the system's defaults."},
+          {t:"I choose how I pay",
+           x:"Each person's medical aid gets charged first - mine and the kids' Discovery, my mom's own scheme. My card is on file for whatever's left. And I choose what happens if a medical aid ever rejects a medicine: check with me first, or charge my card and keep it moving. The money side is settled before it ever comes up."},
+          {t:"I check it once, and confirm",
+           x:"One screen reads it all back to me - who's in, what's included, how it reaches us, how it's paid, which languages. I confirm. From here, it remembers - and it just runs.",
            moment:{line:"I told them once how I want it", star:false,
-             why:'This is the moment the service asks everything exactly once - whose medicine she manages, which day, how to pay, what happens if the scheme baulks - and then never asks again. <span class="why">Being believed the first time is the whole experience</span>: her authority over Grace\'s care is now recorded, not re-litigated at a counter. It is the <a href="'+C08+'">CarerConsent</a> and <a href="'+C08+'">Household Medicine Cabinet</a> concepts made real - and everything after this phase runs on these answers.'}}
+             why:'This is the moment the service asks everything exactly once - whose medicine she manages, how it reaches them, how to pay, what happens if the scheme baulks - and then remembers it. <span class="why">Being believed the first time is the whole experience</span>: her authority over Grace\'s care is now recorded, not re-litigated at a counter. It is the <a href="'+C08+'">CarerConsent</a> and <a href="'+C08+'">Household Medicine Cabinet</a> concepts made real - and everything after this phase runs on these answers.'}}
         ],
         cash:[
-          {t:"Start the conversation",
-           x:"Sipho messages the Dis-Chem WhatsApp number and picks isiZulu. The whole sign-up happens in the thread - no app, no download, replies sized for his data."},
-          {t:"Add the household",
-           x:"His blood-pressure tablets go in from his dispensing history. His mother's chronic medicine comes across from the public CCMDD programme onto the same arrangement, with her consent captured in-thread, in-language."},
-          {t:"Choose collection and payment",
-           x:"He sets collection to the locker at the Capitec branch by the taxi rank, on payday Friday. Cheaper generics by default. Payment is cash, at the bank counter, when he collects."},
-          {t:"Confirm",
-           x:"The thread reads his answers back in isiZulu; he replies 1 to confirm.",
+          {t:"I start the conversation",
+           x:"I don't have the time or the money for extra trips - medicine has to fit into the trip I already make, to the bank after payday. A repeat service that has our medicine waiting where I already go, every month, is exactly that - so I sign up for Dis-Chem's repeat service, on WhatsApp. The whole thing happens in the chat, in my own time: no app to download, no forms to fill in, no standing in a queue in store. I start by selecting my language."},
+          {t:"I add my household",
+           x:"I say it's for me and my mother - she's already given her consent for me to manage her medicine, and this service falls under it. The chat shows the repeat medicines from each of our profiles that can join - my blood-pressure tablets, her chronic medicine - and I select them. Two people's medicine just became one thing to manage."},
+          {t:"One date for everyone",
+           x:"My tablets run out at one time, my mother's at another - two trips, in today's world. The chat shows me the plan: one small top-up for her this first month, priced in rand before I say yes, and from next month both land together, ready on payday. Two medicine diaries become one, and it isn't mine to keep."},
+          {t:"I choose how it reaches us",
+           x:"The chat asks how I want it: delivered, or ready to collect at a store or a locker. There's no Dis-Chem near where I live, but there is a Capitec branch that works with them - so I choose collection from the locker at the Capitec branch by the taxi rank: near home, no street address needed. Then I choose the language each of us gets our medicine instructions in - my mother's in hers."},
+          {t:"I choose how I pay",
+           x:"Cash, at the bank counter, when I collect - paying is what opens the locker. And cheaper generics by default, so the price stays one I can plan around. The service fits how I live, not the other way around."},
+          {t:"I confirm",
+           x:"The chat reads my answers back in my language; I reply 1 to confirm. From here, it remembers - and it just runs.",
            moment:{line:"I told them once how I want it", star:false,
-             why:'One WhatsApp conversation, a few minutes - and <span class="why">none of it will ever have to be said again</span>: not at a counter, not to a driver, not at the bank. The <a href="'+C08+'">CarerConsent</a> concept, on the phone he already owns.'}}
+             why:'One WhatsApp conversation, a few minutes - and <span class="why">it\'s remembered</span>: not asked again at a counter, not to a driver, not at the bank. The <a href="'+C08+'">CarerConsent</a> concept, on the phone he already owns.'}}
         ]
       },
       pains:[
@@ -317,38 +325,39 @@ const DATA = {
           {name:"Recorded proxy consent", cite:"wiki/concepts/identity-and-consent"},
           {name:"Household profile", cite:"wiki/concepts/identity-and-consent"},
           {name:"CCMDD-to-retail bridge", cite:"wiki/medical-schemes/courier-chronic-pharmacy-models", reform:true},
-          {name:"Partner-bank locker network", cite:"design assumption - see meta/punchlist.md", assume:true}
+          {name:"Partner-bank locker network", cite:"design assumption - see meta/punchlist.md", assume:true},
+          {name:"Cycle-sync part-fills (Script Sync)", cite:"design assumption - see meta/punchlist.md; scheme early/part-fill rules unsourced", assume:true}
         ]
       },
       emotion:{insured:4, cash:4}
     },
     {
-      id:"p1", num:"P1", title:"The order assembles",
-      need:'I need the household\'s medicine to <b>keep itself going</b> - and to know <b>what it costs</b> before anything is committed.',
+      id:"p1", num:"P1", title:"Repeats are due",
+      need:'I need everyone\'s medicine to <b>keep flowing on its own</b> - no remembering, no re-doing admin - and <b>complete clarity on the cost</b>: what\'s covered, what comes out of my pocket, every time.',
       activities:{
         insured:[
-          {t:"Receive the notice",
-           x:"A week before run-out, a WhatsApp message arrives: what has been prepared for her and Grace, what Discovery has covered, what (if anything) she pays, and the Friday it arrives. Everything in it is already settled - the order was assembled and the claim run before the message was sent. No reply is needed.",
+          {t:"The message arrives",
+           x:"A week before we run out, I get one WhatsApp message: everyone's repeats are being prepared - mine, my mom's, Zanele's and Lethabo's - and it's all arriving this Friday morning, nine to eleven. Dis-Chem remembered. I didn't have to do a thing.",
            moment:{line:"My medicine ordered itself", star:true,
              why:'She reads it, puts the phone down, and gets on with her day. <span class="why">The chore she has carried for years simply isn\'t hers anymore</span> - not made easier, made gone. The only feeling left is the mild surprise of noticing its absence. The <a href="'+C08+'">Auto-Refill</a> and <a href="'+C08+'">Script Sync</a> concepts doing their quiet work: prediction, assembly and one household date, with nothing asked of her.'}},
-          {t:"See the cost and the cover",
-           x:"The message itemises the money: what Discovery covers in full, and the R42 one line costs her this month - while the order is still hers to change.",
+          {t:"I see the costs, clearly broken down",
+           x:"I can see the costs clearly broken down: what my medical aid is covering, and what I need to pay out of pocket, for everyone's medication. Even my mom's medication, which is partially covered by her own medical aid, shows her cover and the shortfall in the same view. Nothing is a surprise - I know exactly what I'm paying, and what I'm getting for it.",
            moment:{line:"The only thing I ever bought blind - not anymore", star:true,
-             why:'Everything else she buys shows its price before she commits; medicine finally does the same. <span class="why">The price is in the message, not at the till</span> - the decision is hers, made at home, with the numbers in front of her. The <a href="'+C08+'">Real-Time Transparency</a> concept, applied where it stings most today.'}},
-          {t:"Change something, if needed",
-           x:"Amend, snooze or swap a line: one tap, for the months something shifts. Most months, nothing does."}
+             why:'Everything else she buys shows its price up front; medicine finally does the same. <span class="why">The price is in the message, not at the till</span> - she sees the numbers at home, for the whole household, including her mother\'s shortfall. The <a href="'+C08+'">Real-Time Transparency</a> concept, applied where it stings most today.'}},
+          {t:"It keeps going - unless I say otherwise",
+           x:"Most months I don't touch it at all: it's the same medicine, arriving at the same time each month, and it keeps itself going - it doesn't stop if I don't reply. But if something doesn't look right, or I want to change something this month - or even cancel the service - I have full control: I can amend my order or my preferences, pause it while I check, or ask a person in the same thread."}
         ],
         cash:[
-          {t:"Receive the message",
-           x:"The same week-out message lands in isiZulu, small enough to open on any signal: his tablets and his mother's repeat, ready for the Capitec locker on payday Friday. No reply is needed.",
+          {t:"The message arrives",
+           x:"A week before our tablets run out, one WhatsApp lands in my language: mine and my mother's medicine is being prepared, and it'll be ready at the Capitec locker on payday. Dis-Chem remembered - I didn't have to do a thing.",
            moment:{line:"My medicine ordered itself", star:true,
              why:'He reads it and puts the phone away - nothing to install, nothing to spend, nothing to remember. <span class="why">The family\'s supply stays ahead of run-out, on the phone he already owns</span>. The <a href="'+C08+'">Auto-Refill</a> concept with no app in the way.'}},
-          {t:"See the price before travelling",
-           x:"The price is itemised in rand - tablets, dispensing fee, total - and his mother's line shows R0 on CCMDD.",
+          {t:"I see the price before I travel",
+           x:"I can see the price in rand, clearly broken down: my tablets, the dispensing fee, the total I'll pay at the counter - and my mother's line shows R0, covered by CCMDD. I know whether the trip is affordable before I spend a cent on taxi fare. Nothing is waiting to surprise me at the till.",
            moment:{line:"The only thing I ever bought blind - not anymore", star:true,
              why:'He knows whether the trip is affordable <span class="why">before he decides to travel</span> - not at the till, after the taxi fare is already spent. <a href="'+C08+'">Real-Time Transparency</a>, for the majority who pay cash.'}},
-          {t:"Reply only to change",
-           x:"One reply moves the date if payday shifts. Otherwise, silence is the correct answer."}
+          {t:"It keeps going - unless I say otherwise",
+           x:"Most months I send nothing at all: it's the same medicine, ready at the same time each month, and it keeps itself going - it doesn't stop if I don't reply. But if payday moves, or something doesn't look right, or I want to change or cancel anything, one reply in the same thread does it.\n\nAnd if I want a person, a person answers - in my language."}
         ]
       },
       pains:[
@@ -374,57 +383,58 @@ const DATA = {
       emotion:{insured:5, cash:4}
     },
     {
-      id:"p2", num:"P2", title:"The order window",
+      id:"p2", num:"P2", title:"Adding to the order",
       need:'The trip used to do <b>double duty</b> - I need the delivery to carry <b>the rest of the list</b>, not just the medicine.',
       activities:{
         insured:[
-          {t:"Open the pending order",
-           x:"The notice doubles as an open order: until 18:00 on Thursday, Friday's parcel accepts additions from the shop side of Dis-Chem - toiletries, vitamins, baby, cosmetics."},
-          {t:"Add the household's shop",
-           x:"Suggestions are drawn from her own purchase history, specials first - the vitamin C effervescents she bought last winter are on special as the cold sets in. She adds them, and Lethabo's toothpaste, each item showing its price as it goes in. One parcel, one delivery, no separate fee.",
+          {t:"My order stays open",
+           x:"The message that told me the medicine is coming also tells me the order is still open: until the day before delivery, anything from the shop side of Dis-Chem can ride along in the same parcel - toiletries, vitamins, the things I used to grab in the aisles. Nothing extra to arrange - the parcel just isn't sealed yet."},
+          {t:"I add the household's shop",
+           x:"It suggests from what we usually buy: the vitamin C we get every winter is on special as the cold sets in, so it goes in, along with Lethabo's toothpaste. Each item shows its price as it goes in, on the same bill, in the same parcel - no separate delivery, no separate fee. The 'while we're here' shop still happens - it just happens at my door.",
            moment:{line:"While we're here... - without going anywhere", star:false,
              why:'The pharmacy trip always did double duty, and the delivery threatened to quietly undo that. Instead, <span class="why">the trip she no longer makes still does double duty</span>: the household hands the incoming order the rest of the list, the way it hands a list to whoever is already going to the shops. <a href="'+C08+'">The Standing Order</a> concept at work.'}}
         ],
         cash:[
-          {t:"Medication only on this route",
-           x:"A bank locker carries medication only, so the window does not open on Sipho's route - and the message says so plainly rather than dangling what his channel cannot deliver. His order remains the family's medicine, priced upfront, ready on payday."}
+          {t:"I can add other medicine",
+           x:"The chat tells me the order is still open - and it is clear about what this route can carry: medicine only, no groceries. But that covers the everyday kind we'd otherwise make a special trip for - flu syrup, painkillers, the vitamins my mother takes. If we need something, I just say so in the chat. The small pharmacy trips between paydays fold into the one I already make."},
+          {t:"I add what we need, in the chat",
+           x:"First it suggests from what we usually buy, anything on special at the top - my mother's multivitamins are, so I reply with the number next to them and they're in. Then I type what else I need: \"cough mixture\". It asks me one question back - for a child or an adult? - and sends back a few options with the price of each. I pick one, the total updates in the chat, and it all rides in the same locker on payday. I still know the price before I travel."}
         ]
       },
       pains:[],
       painNote:"The research records no direct complaint here - this phase answers a lost convenience rather than a reported pain: the errand-consolidation the pharmacy trip used to provide, which a medicine-only delivery would quietly remove.",
       behind:{
-        front:["Open order with a stated cutoff (\"add anything before Thursday 18:00\")","Suggestions from the customer's own history, specials-aware","Running total as items go in"],
-        back:["Shop items staged against the medicine order","One consolidated parcel, one route"],
+        front:["Open order with a relative cutoff (until the day before delivery / collection)","Suggestions from the customer's own history, specials-aware","Chat commerce on WhatsApp: numbered picks, free-text requests, clarifying questions, priced options","Running total as items go in"],
+        back:["Shop items staged against the medicine order","One consolidated parcel, one route","Medicine-only filter on the locker route (OTC allowed, no general retail)"],
         reg:null,
         caps:[
           {name:"Open-order window", cite:"design assumption - see meta/punchlist.md", assume:true},
           {name:"History-based suggestions", cite:"design assumption - see meta/punchlist.md", assume:true},
+          {name:"OTC add-ons on the locker route", cite:"design assumption - see meta/punchlist.md", assume:true},
           {name:"Parcel consolidation", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"}
         ]
       },
-      emotion:{insured:4, cash:3}
+      emotion:{insured:4, cash:4}
     },
     {
-      id:"p3", num:"P3", title:"Prepared",
+      id:"p3", num:"P3", title:"Checked and packed",
       need:'I need to be certain that what is coming is <b>exactly right</b> - for <b>everyone</b> in the house.',
       activities:{
         insured:[
-          {t:"Follow the status",
-           x:"The order's status moves on its own: being prepared, checked, packed. Nothing is asked of her; everything is visible if she looks."},
-          {t:"Open the check",
-           x:"The \"checked\" status expands into the actual list: interactions across the family's medicines, allergies, doses, duplicates, script validity - each reviewed and signed off by the pharmacist on duty, by name.",
+          {t:"Picked and checked",
+           x:"A status arrives without me asking: our order has been picked and checked - and it lists what that means: each medicine reviewed against everything else we take, allergies, doses, the scripts themselves, for all four of us, signed off by the pharmacist by name. Someone qualified did the worrying, and I can see exactly what they worried about.",
            moment:{line:"Every check ran before it left the building", star:false,
              why:'The due diligence is shown, not assumed - and signed by a person who stands behind it. <span class="why">Someone qualified did the worrying, and she can see exactly what they worried about.</span> The question that rides along with medicine - did anyone actually check this? - has an answer with a name on it. <a href="'+C08+'">The Named Check</a>, extended to the whole household.'}},
-          {t:"See it packed",
-           x:"The medicine is machine-picked, verified by camera against each script, and packed by person, day and time - with the vitamin C and the toothpaste in the same box."}
+          {t:"Packed and sealed",
+           x:"The second status: packed and sealed - one box for the whole household, the vitamin C and the toothpaste in there too, waiting for the driver. And the moment it's sealed, the QR code that will unlock the handover at my door arrives with it. From picked to sealed, I've seen every step - without asking once."}
         ],
         cash:[
-          {t:"Receive the checked status",
-           x:"The same preparation, to the same standard: robotic pick, camera verification, pharmacist sign-off. His status arrives in isiZulu, short enough for any phone, with the same itemised list of what was checked.",
+          {t:"Picked and checked",
+           x:"A message arrives in my language: our order has been picked and checked. It lists what was checked - my tablets, my mother's medicine, the doses, the scripts - and the name of the pharmacist who signed it off. No wondering, no worrying - I've seen for myself that it was done properly.",
            moment:{line:"Every check ran before it left the building", star:false,
              why:'The same checks, the same standard, the same named signature. <span class="why">How he pays has no bearing on how carefully his family\'s medicine is handled</span> - and for the first time, he can see that. <a href="'+C08+'">The Named Check</a>, identical on the cash rail.'}},
-          {t:"Packed for the household",
-           x:"His mother's tablets are packed so that mornings and evenings stay separate, whoever hands them to her."}
+          {t:"Packed and sealed",
+           x:"The next message: packed and sealed, waiting for the courier run to the locker - and with it, the PIN that will open the locker on payday. The cough mixture I added is in the same parcel. From the shelf to the locker, nothing happens without me knowing."}
         ]
       },
       pains:[
@@ -436,7 +446,7 @@ const DATA = {
          src:"sentiment"}
       ],
       behind:{
-        front:["Live status: being prepared -> checked -> packed","\"Checked ✓ by Naledi M., pharmacist\" expands to the itemised check list"],
+        front:["Two statuses per order: picked & checked (itemised check list, named pharmacist) and packed & sealed","Handover credential (QR / locker PIN) issued at the moment of sealing"],
         back:["AI co-pilot drafts the household-wide check stack; the pharmacist confirms or overrides","ROWA picks eligible stock; vision verification flags look-alikes before packing","Household adherence pack assembled; shop items packed alongside"],
         reg:"<b>Non-negotiable:</b> a registered pharmacist's clinical sign-off remains the gate - the AI assembles, the human authorises (GPP).",
         caps:[
@@ -454,24 +464,26 @@ const DATA = {
       need:'I need it <b>in hand, when promised</b> - or to know, early, that plans have changed.',
       activities:{
         insured:[
-          {t:"Confirm the window",
-           x:"On Friday morning the delivery window firms up - a realistic window, not an over-precise promise - and she confirms it with a tap."},
-          {t:"Track it to the door",
-           x:"The parcel is trackable through each stage: packed, dispatched, stops remaining, here. The driver scans the QR on her phone at the door, and that scan closes the order as proof of delivery.",
+          {t:"The morning message",
+           x:"On delivery morning a message confirms the window is on track: this morning, nine to eleven, as the notice said. It isn't asking me for anything - it's keeping me ahead of the day. I only reply if something has changed on my side."},
+          {t:"I track it to my door",
+           x:"I can watch the parcel move: packed, dispatched, stops away, here. At the door the driver scans the QR code on my phone - the one I've had since the box was sealed - and only that scan closes the order. \"Delivered\" means in my hands, not left at a gate.",
            moment:{line:"I could track it from Dis-Chem's door to mine", star:true,
              why:'The loop only closes when the parcel is physically in her hands. <span class="why">Being stood up by a system ends when the system can\'t quietly disappear</span> - the promise has a window, and the window is kept in plain sight. <a href="'+C08+'">Real-Time Transparency</a> again, this time on the road.'}},
-          {t:"If the day changes",
-           x:"Pausing the delivery or switching it to a locker is a tap in the same thread - not a phone call."}
+          {t:"I check it, with help one tap away",
+           x:"The moment the driver leaves, a message lists everything that should be in the box, so I can check it while it's still in front of me. If anything is missing or looks wrong, I snap a photo in the same thread - and a person phones me straight away. Not a bot, not a ticket number: a person who can fix it."},
+          {t:"If the day doesn't suit me",
+           x:"The plan is mine to change until the day before delivery: a different day, a different window, or switch it to collection - one reply."}
         ],
         cash:[
-          {t:"Receive the PIN",
-           x:"On payday Friday the collection PIN arrives on WhatsApp."},
-          {t:"Pay, and the locker opens",
-           x:"At the Capitec counter he pays the quoted amount - the same number he saw before travelling - in cash, and the payment releases the locker. One visit, under a minute, a plain parcel, no street address involved.",
+          {t:"The payday reminder",
+           x:"On payday a reminder arrives: the parcel is in the locker, ready - with the PIN I've had since it was sealed, and the exact amount to pay. Everything I need for the trip is in my hand before I leave home."},
+          {t:"I pay, and the locker opens",
+           x:"At the Capitec counter I pay the amount from the message - the same number I saw before travelling. Then I enter my PIN at the locker, it opens, and the parcel is mine. One stop, a plain parcel, no address needed.",
            moment:{line:"I could track it from Dis-Chem's door to mine", star:true,
              why:'The same certainty, differently shaped: <span class="why">payment and collection in one visit, near home, with no address required</span> - and if the locker is ever down, he knows before he travels, not after.'}},
-          {t:"The fallback",
-           x:"The staffed pharmacy counter stays available if the locker route fails."}
+          {t:"I check it before I go home",
+           x:"Right there, a message lists everything that should be in the parcel - so I check it at the locker, not at home after the taxi. If something is missing or wrong, I snap a photo in the chat and a person phones me straight away, in my language, while I'm still standing there."}
         ]
       },
       pains:[
@@ -486,40 +498,43 @@ const DATA = {
          q:"Waiting is fine - being unsure isn't.", src:"sotf"}
       ],
       behind:{
-        front:["Realistic window, confirmed morning-of","Tracking to actual handover; QR / PIN at the door or counter"],
-        back:["Consolidation hub routes the household parcel; driver proof-of-delivery closes the loop","Locker loaded near home; cash payment at the partner counter releases it","Reroute logic runs BEFORE the customer travels"],
+        front:["Morning-of window confirmation - informational, reply only to change","Tracking to actual handover; QR at the door / pay-then-PIN at the locker","Post-handover contents list; photo escalation to an immediate human callback","One change rule: day, window or channel changeable until the day before delivery"],
+        back:["Consolidation hub routes the household parcel; driver proof-of-delivery closes the loop","Locker loaded near home; cash payment at the partner counter releases it","Reroute logic runs BEFORE the customer travels","Handover exceptions route to a person, not a bot queue"],
         reg:"<b>Courier + locker rules:</b> scheduled-medicine delivery must meet licensing and cold-chain requirements; locker release of scheduled medicines needs oversight clarity 🔮.",
         caps:[
           {name:"Consolidation -> PICCUP + POD", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
           {name:"Closed-loop QR handover", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
           {name:"Near-home locker + PIN (Pelebox pattern)", cite:"wiki/consumer-context/last-mile-addressing-logistics"},
           {name:"Scheduled-meds locker release", cite:"wiki/sa-regulatory/courier-online-pharmacy-rules", reform:true},
-          {name:"Cash-at-bank locker release", cite:"design assumption - see meta/punchlist.md", assume:true}
+          {name:"Cash-at-bank locker release", cite:"design assumption - see meta/punchlist.md", assume:true},
+          {name:"Photo-triggered human callback at handover", cite:"design assumption - see meta/punchlist.md", assume:true}
         ]
       },
       emotion:{insured:5, cash:5}
     },
     {
       id:"p5", num:"P5", title:"Taking it",
-      need:'I need taking it right to be the <b>easy part</b> - for me, my mother and my son.',
+      need:'I need taking it right to be the <b>easy part</b> - for me, my mother and my kids.',
       activities:{
         insured:[
-          {t:"Unpack",
-           x:"The household's medicine arrives as one pack, organised by person, day and time. Each dose is grouped and labelled - Grace's in isiZulu, hers in English - with the full directions printed in the pack and available on her phone.",
+          {t:"I unpack",
+           x:"A month of our medicine arrives already sorted: a sachet for every dose, printed with whose it is, morning or evening, and whether it goes with food. Grace's in her language, ours in English. Nobody in this house sorts pills into a plastic organiser anymore - it arrives already done.",
            moment:{line:"Medication you can't take wrong", star:false,
              why:'The plastic-organiser ritual is done before the parcel arrives, in the language the house actually speaks. <span class="why">Getting it wrong now requires effort; getting it right requires none.</span> The <a href="'+C08+'">Made-for-Me Packaging</a> concept, delivered to the kitchen table.'}},
-          {t:"Reminders on their terms",
-           x:"Reminders are set per person and tied to routine - Grace's to mornings. Any of them switches off in one tap, and stays off."}
+          {t:"A question, whenever it comes up",
+           x:"Every medicine we take is listed in our household's medicine cabinet in the app - what it's for, how to take it, side effects - there to read whenever a question comes up. And when reading isn't enough - can Zanele take this with her hay-fever tablets? - the repeat service comes with a pharmacist, reachable any time in the app or on WhatsApp."},
+          {t:"Reminders on my terms",
+           x:"Reminders go to whoever holds the dose: mine to my phone, Grace's to hers with her morning routine - and the kids' to mine, because a seven-year-old doesn't carry a phone. Any of them switches off with one tap, and stays off. It reminds because I asked it to - and stops the moment I say so."}
         ],
         cash:[
-          {t:"Use the pack and the label",
-           x:"His and his mother's tablets arrive pre-sorted into labelled doses, with the directions printed in the pack.",
+          {t:"Clear labels, and a sheet for the fridge",
+           x:"Every pack comes with a clear label that's easy to read: whose it is, when to take it, with food or without - with simple icons that make it plain at a glance, even for my mother. All of it in the language each of us reads. And for her there's a printed day-by-day sheet for the fridge, in her language. Nobody needs me standing over them.",
            moment:{line:"Medication you can't take wrong", star:false,
-             why:'The printed label keeps working in a power cut, and <span class="why">the pack cannot be taken in the wrong order, whoever hands it to his mother</span>. <a href="'+C08+'">Made-for-Me Packaging</a>, built for his household\'s reality.'}},
-          {t:"Ask WhatsApp, not the counter",
-           x:"Each medicine has a short usage guide he can open on WhatsApp, in isiZulu, whenever a question comes up - instead of only at the counter, at collection time."},
+             why:'The basics done properly: a clear label on every pack, icons that speak before words do, a sheet on the fridge, a guide on the phone. <span class="why">Taking it right isn\'t something money buys - it comes with the medicine.</span> The promise <a href="'+C08+'">Made-for-Me Packaging</a> makes at the paid end, kept at the free end too.'}},
+          {t:"I ask WhatsApp, not the counter",
+           x:"Every medicine we take can be looked up in the chat - what it's for, how to give it, what to avoid - any time, in my language. And when reading isn't enough, the repeat service comes with a pharmacist, reachable in the same thread. The answer doesn't live at a counter across town."},
           {t:"Reminders that stop when told",
-           x:"Reminders arrive as brief texts or voice notes timed to his routine, and stop the moment he replies stop."}
+           x:"My reminder comes to my phone at night. My mother's come to hers - a short message or a voice note, in her language, timed to her mornings; the fridge sheet does the rest. Reply stop, and they stop. It helps exactly as much as I want helping."}
         ]
       },
       actnote:"When a script eventually nears its expiry, the renewal journey takes over (the Script Renew concept) - nothing in this journey lapses on its own.",
@@ -532,7 +547,7 @@ const DATA = {
          src:"sotf"}
       ],
       behind:{
-        front:["Dose pack per person / day / time; large in-language labels","Per-medicine usage guide on WhatsApp","Per-member reminders tied to routine; instant opt-out"],
+        front:["Insured: month of per-dose sachets (name, time, with-food icon) - paid opt-in from sign-up","Cash: iconised clear labels + printed day-by-day fridge sheet, in-language","Household medicine cabinet entry per medicine; with-service pharmacist in app / thread","Reminders routed to the dose-holder (children's to the carer); instant opt-out"],
         back:["Schedule designed as a behaviour-change surface, not a reminder bolt-on","Hybrid print + digital instructions generated per member's language"],
         reg:"<b>Non-negotiable:</b> GPP counselling at handover; reminder contact governed by POPIA consent. Renewal is signposted to the renewal journey (Script Renew) - out of scope here.",
         caps:[
@@ -544,24 +559,32 @@ const DATA = {
       emotion:{insured:5, cash:4}
     },
     {
-      id:"pp", num:"∥", title:"When it goes wrong", par:true,
-      need:'When something breaks, I need <b>a way through</b> - not a dead end at a counter.',
+      id:"pp", num:"∥", title:"When something breaks", par:true,
+      need:'Things go wrong - <b>they always do</b>. What I need is to <b>hear it early</b>, and to <b>make a plan together</b> - never a dead end.',
       activities:{
         insured:[
-          {t:"A claim declines",
-           x:"If Discovery declines a line, a message sets out what was declined, why, and the choices: charge the card on file, take the funded generic this once, or talk to a pharmacist now. One tap resolves it, and the order keeps its place in the flow.",
+          {t:"My medical aid says no",
+           x:"If Discovery declines a line, I hear about it before it becomes a problem at any door: a message tells me what was declined, why, and what my choices are - charge the card I saved at sign-up, take the covered generic this month, or talk to a pharmacist first. One reply, and the order carries on.",
            moment:{line:"Medical aid said no. Dis-Chem said 'let's make a plan.'", star:true,
              why:'The problem arrives already accompanied by its solutions - and one of them is the card she saved at sign-up, the phase-0 preferences paying off exactly when they should. <span class="why">A rejection stops being a dead end and becomes a decision she gets to make</span> - in the same thread, with a person one tap away.'}},
-          {t:"A stock-out",
-           x:"The same structure: take the funded generic, split the delivery so the rest arrives now and the missing item follows on its own, or hold the order - decided in the same thread, with the choice explained."}
+          {t:"Out of stock",
+           x:"If something is out of stock, the message arrives with the plan already drafted: the covered generic instead, or split the delivery - the rest arrives on time, the missing item follows on its own - or hold everything. My choice, explained in plain terms, made in the same thread."},
+          {t:"The delivery fails",
+           x:"If the driver can't reach me - I'm not home, the gate won't open, the day fell apart - the parcel doesn't vanish into a depot. The message tells me where it is and what happens next: delivered again tomorrow, or waiting for me at a store, my choice. The same QR code on my phone hands it over at the counter, exactly as it would have at my door. The loop stays open until it's actually in my hands."},
+          {t:"My script runs out",
+           x:"A script never surprises anyone by expiring: weeks before my last repeat, the renewal has already started - the request is with my doctor, and I can see where it stands. If order day arrives and the new script still isn't in, I hear it early, with a plan: what the pharmacist can safely do in the meantime, and the renewal chased in the same thread - not by me, phoning a receptionist between meetings."},
+          {t:"A person, before I ask",
+           x:"Whatever has gone wrong, a pharmacist is one tap away in the same thread - not a call centre, not a new case number. And until it's fixed, it stays one conversation - I never start over."}
         ],
         cash:[
-          {t:"A shortage",
-           x:"The message offers the cheaper generic he already prefers, or splits the order so his mother's medicine arrives on time regardless. His place is kept either way - nothing costs him a wasted trip."},
-          {t:"A locker outage",
-           x:"Flagged before he travels, with the reroute to another point or the staffed counter already arranged."},
-          {t:"A person, in the thread",
-           x:"A pharmacist is reachable in the same WhatsApp conversation, in isiZulu, at any point - the exception never strands him with a machine."}
+          {t:"Out of stock",
+           x:"If something we take is out of stock, the message offers the cheaper generic I already prefer, or splits the order so my mother's medicine is ready on payday regardless and the rest follows. Nothing is decided without me - and nothing costs me a wasted trip."},
+          {t:"The locker is down",
+           x:"If the locker is out of order, I know before I leave home, with a new pickup point already arranged nearby. My taxi fare is never spent on a closed door."},
+          {t:"My script runs out",
+           x:"The chat warned me weeks ago that my mother's script was on its last repeat, and the renewal was already moving - I could see it in the thread. If payday comes and the new script isn't back, I'm told before I travel, with a plan: what the pharmacist can do in the meantime, and a person on the phone if I want one."},
+          {t:"A person phones me back",
+           x:"When something has gone wrong, I don't type my way through it: one reply - call me - and a person phones me back, in my language. The plan gets made with me, not sent to me."}
         ]
       },
       pains:[
@@ -579,11 +602,12 @@ const DATA = {
          src:"sentiment"}
       ],
       behind:{
-        front:["Plain-language exception message: what, why, and the live choices","A pharmacist reachable in the same thread"],
-        back:["Decline detected at pre-adjudication, before the customer is exposed","Each exception has one named owner until resolved; the order holds its place","Reroute / split-delivery arranged before anyone travels"],
-        reg:null,
+        front:["Plain-language exception message: what, why, and the live choices","Insured: pharmacist in the same thread, one conversation to resolution; cash: one-reply call-me-back, in language","Failed delivery re-plans with the customer (re-deliver tomorrow or store collection on the same QR) - the loop stays open to handover"],
+        back:["Decline detected at pre-adjudication, before the customer is exposed","Each exception has one named owner until resolved; the order holds its place","Reroute / split-delivery arranged before anyone travels","Expiry seen weeks ahead; renewal request initiated and tracked (Script Renew handoff)"],
+        reg:"<b>Script validity:</b> a pharmacist may only dispense against a valid prescription; what may be supplied while a renewal is pending is tightly constrained - emergency-supply provisions ⚠️ unverified, logged in meta/open-questions.md.",
         caps:[
           {name:"Real-time decline detection", cite:"wiki/medical-schemes/realtime-claims-switching"},
+          {name:"Proactive renewal orchestration (Script Renew)", cite:"wiki/sa-regulatory/prescription-requirements-repeats"},
           {name:"Exception ownership (Virtual Manager)", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
           {name:"Split delivery on stock-out", cite:"design assumption - see meta/punchlist.md", assume:true},
           {name:"Graceful failure principle", cite:"wiki/concepts/graceful-failure"}
