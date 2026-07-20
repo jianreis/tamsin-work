@@ -281,6 +281,8 @@ const DATA = {
            x:"Managing so many people's medicine is overwhelming, so I sign up to Dis-Chem's repeat service in the app. I add myself, my mom, Zanele and Lethabo. My mom's consent for me to manage her medicine is already on her profile, so adding her takes one confirmation - her consent covers me managing her medicine, this service included: ordering, paying, collecting for her. Four people's medicine just became one thing to manage."},
           {t:"I add their medicines",
            x:"The app already knows our medicines - mine, my mom's, Zanele's ADHD script, Lethabo's asthma pump - and shows me which repeats can join the service. I select them. Nothing gets re-typed; the scripts, the doctors and the cover are already there."},
+          {t:"One date for everyone",
+           x:"Our scripts don't line up - mine runs out mid-month, Zanele's at month-end, my mom's somewhere in between. The app shows me the plan to fix that: one top-up fill for Zanele this first month, with its cost shown before I agree, and from next month everyone lands on the same date. The medicine calendar I've been juggling in my head for years is gone."},
           {t:"I choose how it reaches us",
            x:"How it reaches us is my choice: delivered to home, or ready for collection at a store or a locker near me. I choose delivery. Then how it's made for us - I stay on the brands I know, I add the pre-sorted dose packs for the whole family, my messages come in English, and my mom gets her medicine instructions in her language. My rules, not the system's defaults."},
           {t:"I choose how I pay",
@@ -295,6 +297,8 @@ const DATA = {
            x:"I don't have the time or the money for extra trips - medicine has to fit into the trip I already make, to the bank after payday. A repeat service that has our medicine waiting where I already go, every month, is exactly that - so I sign up for Dis-Chem's repeat service, on WhatsApp. The whole thing happens in the chat, in my own time: no app to download, no forms to fill in, no standing in a queue in store. I start by selecting my language."},
           {t:"I add my household",
            x:"I say it's for me and my mother - she's already given her consent for me to manage her medicine, and this service falls under it. The chat shows the repeat medicines from each of our profiles that can join - my blood-pressure tablets, her chronic medicine - and I select them. Two people's medicine just became one thing to manage."},
+          {t:"One date for everyone",
+           x:"My tablets run out at one time, my mother's at another - two trips, in today's world. The chat shows me the plan: one small top-up for her this first month, priced in rand before I say yes, and from next month both land together, ready on payday. Two medicine diaries become one, and it isn't mine to keep."},
           {t:"I choose how it reaches us",
            x:"The chat asks how I want it: delivered, or ready to collect at a store or a locker. There's no Dis-Chem near where I live, but there is a Capitec branch that works with them - so I choose collection from the locker at the Capitec branch by the taxi rank: near home, no street address needed. Then I choose the language each of us gets our medicine instructions in - my mother's in hers."},
           {t:"I choose how I pay",
@@ -321,7 +325,8 @@ const DATA = {
           {name:"Recorded proxy consent", cite:"wiki/concepts/identity-and-consent"},
           {name:"Household profile", cite:"wiki/concepts/identity-and-consent"},
           {name:"CCMDD-to-retail bridge", cite:"wiki/medical-schemes/courier-chronic-pharmacy-models", reform:true},
-          {name:"Partner-bank locker network", cite:"design assumption - see meta/punchlist.md", assume:true}
+          {name:"Partner-bank locker network", cite:"design assumption - see meta/punchlist.md", assume:true},
+          {name:"Cycle-sync part-fills (Script Sync)", cite:"design assumption - see meta/punchlist.md; scheme early/part-fill rules unsourced", assume:true}
         ]
       },
       emotion:{insured:4, cash:4}
@@ -566,6 +571,8 @@ const DATA = {
            x:"If something is out of stock, the message arrives with the plan already drafted: the covered generic instead, or split the delivery - the rest arrives on time, the missing item follows on its own - or hold everything. My choice, explained in plain terms, made in the same thread."},
           {t:"The delivery fails",
            x:"If the driver can't reach me - I'm not home, the gate won't open, the day fell apart - the parcel doesn't vanish into a depot. The message tells me where it is and what happens next: delivered again tomorrow, or waiting for me at a store, my choice. The same QR code on my phone hands it over at the counter, exactly as it would have at my door. The loop stays open until it's actually in my hands."},
+          {t:"My script runs out",
+           x:"A script never surprises anyone by expiring: weeks before my last repeat, the renewal has already started - the request is with my doctor, and I can see where it stands. If order day arrives and the new script still isn't in, I hear it early, with a plan: what the pharmacist can safely do in the meantime, and the renewal chased in the same thread - not by me, phoning a receptionist between meetings."},
           {t:"A person, before I ask",
            x:"Whatever has gone wrong, a pharmacist is one tap away in the same thread - not a call centre, not a new case number. And until it's fixed, it stays one conversation - I never start over."}
         ],
@@ -574,6 +581,8 @@ const DATA = {
            x:"If something we take is out of stock, the message offers the cheaper generic I already prefer, or splits the order so my mother's medicine is ready on payday regardless and the rest follows. Nothing is decided without me - and nothing costs me a wasted trip."},
           {t:"The locker is down",
            x:"If the locker is out of order, I know before I leave home, with a new pickup point already arranged nearby. My taxi fare is never spent on a closed door."},
+          {t:"My script runs out",
+           x:"The chat warned me weeks ago that my mother's script was on its last repeat, and the renewal was already moving - I could see it in the thread. If payday comes and the new script isn't back, I'm told before I travel, with a plan: what the pharmacist can do in the meantime, and a person on the phone if I want one."},
           {t:"A person phones me back",
            x:"When something has gone wrong, I don't type my way through it: one reply - call me - and a person phones me back, in my language. The plan gets made with me, not sent to me."}
         ]
@@ -594,10 +603,11 @@ const DATA = {
       ],
       behind:{
         front:["Plain-language exception message: what, why, and the live choices","Insured: pharmacist in the same thread, one conversation to resolution; cash: one-reply call-me-back, in language","Failed delivery re-plans with the customer (re-deliver tomorrow or store collection on the same QR) - the loop stays open to handover"],
-        back:["Decline detected at pre-adjudication, before the customer is exposed","Each exception has one named owner until resolved; the order holds its place","Reroute / split-delivery arranged before anyone travels"],
-        reg:null,
+        back:["Decline detected at pre-adjudication, before the customer is exposed","Each exception has one named owner until resolved; the order holds its place","Reroute / split-delivery arranged before anyone travels","Expiry seen weeks ahead; renewal request initiated and tracked (Script Renew handoff)"],
+        reg:"<b>Script validity:</b> a pharmacist may only dispense against a valid prescription; what may be supplied while a renewal is pending is tightly constrained - emergency-supply provisions ⚠️ unverified, logged in meta/open-questions.md.",
         caps:[
           {name:"Real-time decline detection", cite:"wiki/medical-schemes/realtime-claims-switching"},
+          {name:"Proactive renewal orchestration (Script Renew)", cite:"wiki/sa-regulatory/prescription-requirements-repeats"},
           {name:"Exception ownership (Virtual Manager)", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
           {name:"Split delivery on stock-out", cite:"design assumption - see meta/punchlist.md", assume:true},
           {name:"Graceful failure principle", cite:"wiki/concepts/graceful-failure"}
