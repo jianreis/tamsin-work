@@ -282,7 +282,7 @@ const DATA = {
           {t:"I add their medicines",
            x:"The app already knows our medicines - mine, my mom's, Zanele's ADHD script, Lethabo's asthma pump - and shows me which repeats can join the service. I select them. Nothing gets re-typed; the scripts, the doctors and the cover are already there."},
           {t:"I choose how it reaches us",
-           x:"How it reaches us is my choice: delivered to home, or ready for collection at a store or a locker near me. I choose delivery. Then how it's made for us - I stay on the brands I know, my messages come in English, and my mom gets her medicine instructions in her language. My rules, not the system's defaults."},
+           x:"How it reaches us is my choice: delivered to home, or ready for collection at a store or a locker near me. I choose delivery. Then how it's made for us - I stay on the brands I know, I add the pre-sorted dose packs for the whole family, my messages come in English, and my mom gets her medicine instructions in her language. My rules, not the system's defaults."},
           {t:"I choose how I pay",
            x:"Each person's medical aid gets charged first - mine and the kids' Discovery, my mom's own scheme. My card is on file for whatever's left. And I choose what happens if a medical aid ever rejects a medicine: check with me first, or charge my card and keep it moving. The money side is settled before it ever comes up."},
           {t:"I check it once, and confirm",
@@ -512,22 +512,24 @@ const DATA = {
       need:'I need taking it right to be the <b>easy part</b> - for me, my mother and my kids.',
       activities:{
         insured:[
-          {t:"Unpack",
-           x:"The household's medicine arrives as one pack, organised by person, day and time. Each dose is grouped and labelled - Grace's in isiZulu, hers in English - with the full directions printed in the pack and available on her phone.",
+          {t:"I unpack",
+           x:"A month of our medicine arrives already sorted: a sachet for every dose, printed with whose it is, morning or evening, and whether it goes with food. Grace's in her language, ours in English. Nobody in this house sorts pills into a plastic organiser anymore - it arrives already done.",
            moment:{line:"Medication you can't take wrong", star:false,
              why:'The plastic-organiser ritual is done before the parcel arrives, in the language the house actually speaks. <span class="why">Getting it wrong now requires effort; getting it right requires none.</span> The <a href="'+C08+'">Made-for-Me Packaging</a> concept, delivered to the kitchen table.'}},
-          {t:"Reminders on their terms",
-           x:"Reminders are set per person and tied to routine - Grace's to mornings. Any of them switches off in one tap, and stays off."}
+          {t:"A question, whenever it comes up",
+           x:"Every medicine we take is listed in our household's medicine cabinet in the app - what it's for, how to take it, side effects - there to read whenever a question comes up. And when reading isn't enough - can Zanele take this with her hay-fever tablets? - the repeat service comes with a pharmacist, reachable any time in the app or on WhatsApp."},
+          {t:"Reminders on my terms",
+           x:"Reminders go to whoever holds the dose: mine to my phone, Grace's to hers with her morning routine - and the kids' to mine, because a seven-year-old doesn't carry a phone. Any of them switches off with one tap, and stays off. It reminds because I asked it to - and stops the moment I say so."}
         ],
         cash:[
-          {t:"Use the pack and the label",
-           x:"His and his mother's tablets arrive pre-sorted into labelled doses, with the directions printed in the pack.",
+          {t:"Clear labels, and a sheet for the fridge",
+           x:"Every pack comes with a clear label that's easy to read: whose it is, when to take it, with food or without - with simple icons that make it plain at a glance, even for my mother. All of it in the language each of us reads. And for her there's a printed day-by-day sheet for the fridge, in her language. Nobody needs me standing over them.",
            moment:{line:"Medication you can't take wrong", star:false,
-             why:'The printed label keeps working in a power cut, and <span class="why">the pack cannot be taken in the wrong order, whoever hands it to his mother</span>. <a href="'+C08+'">Made-for-Me Packaging</a>, built for his household\'s reality.'}},
-          {t:"Ask WhatsApp, not the counter",
-           x:"Each medicine has a short usage guide he can open on WhatsApp, in isiZulu, whenever a question comes up - instead of only at the counter, at collection time."},
+             why:'The basics done properly: a clear label on every pack, icons that speak before words do, a sheet on the fridge, a guide on the phone. <span class="why">Taking it right isn\'t something money buys - it comes with the medicine.</span> The promise <a href="'+C08+'">Made-for-Me Packaging</a> makes at the paid end, kept at the free end too.'}},
+          {t:"I ask WhatsApp, not the counter",
+           x:"Every medicine we take can be looked up in the chat - what it's for, how to give it, what to avoid - any time, in my language. And when reading isn't enough, the repeat service comes with a pharmacist, reachable in the same thread. The answer doesn't live at a counter across town."},
           {t:"Reminders that stop when told",
-           x:"Reminders arrive as brief texts or voice notes timed to his routine, and stop the moment he replies stop."}
+           x:"My reminder comes to my phone at night. My mother's come to hers - a short message or a voice note, in her language, timed to her mornings; the fridge sheet does the rest. Reply stop, and they stop. It helps exactly as much as I want helping."}
         ]
       },
       actnote:"When a script eventually nears its expiry, the renewal journey takes over (the Script Renew concept) - nothing in this journey lapses on its own.",
@@ -540,7 +542,7 @@ const DATA = {
          src:"sotf"}
       ],
       behind:{
-        front:["Dose pack per person / day / time; large in-language labels","Per-medicine usage guide on WhatsApp","Per-member reminders tied to routine; instant opt-out"],
+        front:["Insured: month of per-dose sachets (name, time, with-food icon) - paid opt-in from sign-up","Cash: iconised clear labels + printed day-by-day fridge sheet, in-language","Household medicine cabinet entry per medicine; with-service pharmacist in app / thread","Reminders routed to the dose-holder (children's to the carer); instant opt-out"],
         back:["Schedule designed as a behaviour-change surface, not a reminder bolt-on","Hybrid print + digital instructions generated per member's language"],
         reg:"<b>Non-negotiable:</b> GPP counselling at handover; reminder contact governed by POPIA consent. Renewal is signposted to the renewal journey (Script Renew) - out of scope here.",
         caps:[
