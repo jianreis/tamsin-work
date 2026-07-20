@@ -565,7 +565,7 @@ const DATA = {
           {t:"Out of stock",
            x:"If something is out of stock, the message arrives with the plan already drafted: the covered generic instead, or split the delivery - the rest arrives on time, the missing item follows on its own - or hold everything. My choice, explained in plain terms, made in the same thread."},
           {t:"The delivery fails",
-           x:"If the driver can't reach me - I'm not home, the gate won't open, the day fell apart - the parcel doesn't vanish into a depot. The message tells me where it is and what happens next: a new window tomorrow, or a locker nearby, my choice. The loop stays open until it's actually in my hands."},
+           x:"If the driver can't reach me - I'm not home, the gate won't open, the day fell apart - the parcel doesn't vanish into a depot. The message tells me where it is and what happens next: delivered again tomorrow, or waiting for me at a store, my choice. The same QR code on my phone hands it over at the counter, exactly as it would have at my door. The loop stays open until it's actually in my hands."},
           {t:"A person, before I ask",
            x:"Whatever has gone wrong, a pharmacist is one tap away in the same thread - not a call centre, not a new case number. And until it's fixed, it stays one conversation - I never start over."}
         ],
@@ -593,7 +593,7 @@ const DATA = {
          src:"sentiment"}
       ],
       behind:{
-        front:["Plain-language exception message: what, why, and the live choices","Insured: pharmacist in the same thread, one conversation to resolution; cash: one-reply call-me-back, in language","Failed delivery re-plans with the customer (new window or locker) - the loop stays open to handover"],
+        front:["Plain-language exception message: what, why, and the live choices","Insured: pharmacist in the same thread, one conversation to resolution; cash: one-reply call-me-back, in language","Failed delivery re-plans with the customer (re-deliver tomorrow or store collection on the same QR) - the loop stays open to handover"],
         back:["Decline detected at pre-adjudication, before the customer is exposed","Each exception has one named owner until resolved; the order holds its place","Reroute / split-delivery arranged before anyone travels"],
         reg:null,
         caps:[
