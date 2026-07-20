@@ -190,7 +190,7 @@ details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #09 · SCRIPT RE-IMAGINED - THE HOUSEHOLD REPEAT, IN MOMENTS</span>
-  <span class="gen">generated 2026-07-17 · updated 2026-07-19 (v3.1: P0-P1 first-person activities, household update - Zanele, Lethabo, Grace's own cover) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
+  <span class="gen">generated 2026-07-17 · updated 2026-07-19 (v3.1: full first-person pass, all phases + ∥ · household update - Zanele, Lethabo, Grace's own cover) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
 </div>
 
 <section class="intro">
@@ -554,24 +554,28 @@ const DATA = {
       emotion:{insured:5, cash:4}
     },
     {
-      id:"pp", num:"∥", title:"When it goes wrong", par:true,
-      need:'When something breaks, I need <b>a way through</b> - not a dead end at a counter.',
+      id:"pp", num:"∥", title:"When something breaks", par:true,
+      need:'Things go wrong - <b>they always do</b>. What I need is to <b>hear it early</b>, and to <b>make a plan together</b> - never a dead end.',
       activities:{
         insured:[
-          {t:"A claim declines",
-           x:"If Discovery declines a line, a message sets out what was declined, why, and the choices: charge the card on file, take the funded generic this once, or talk to a pharmacist now. One tap resolves it, and the order keeps its place in the flow.",
+          {t:"My medical aid says no",
+           x:"If Discovery declines a line, I hear about it before it becomes a problem at any door: a message tells me what was declined, why, and what my choices are - charge the card I saved at sign-up, take the covered generic this month, or talk to a pharmacist first. One reply, and the order carries on.",
            moment:{line:"Medical aid said no. Dis-Chem said 'let's make a plan.'", star:true,
              why:'The problem arrives already accompanied by its solutions - and one of them is the card she saved at sign-up, the phase-0 preferences paying off exactly when they should. <span class="why">A rejection stops being a dead end and becomes a decision she gets to make</span> - in the same thread, with a person one tap away.'}},
-          {t:"A stock-out",
-           x:"The same structure: take the funded generic, split the delivery so the rest arrives now and the missing item follows on its own, or hold the order - decided in the same thread, with the choice explained."}
+          {t:"Out of stock",
+           x:"If something is out of stock, the message arrives with the plan already drafted: the covered generic instead, or split the delivery - the rest arrives on time, the missing item follows on its own - or hold everything. My choice, explained in plain terms, made in the same thread."},
+          {t:"The delivery fails",
+           x:"If the driver can't reach me - I'm not home, the gate won't open, the day fell apart - the parcel doesn't vanish into a depot. The message tells me where it is and what happens next: a new window tomorrow, or a locker nearby, my choice. The loop stays open until it's actually in my hands."},
+          {t:"A person, before I ask",
+           x:"Whatever has gone wrong, a pharmacist is one tap away in the same thread - not a call centre, not a new case number. And until it's fixed, it stays one conversation - I never start over."}
         ],
         cash:[
-          {t:"A shortage",
-           x:"The message offers the cheaper generic he already prefers, or splits the order so his mother's medicine arrives on time regardless. His place is kept either way - nothing costs him a wasted trip."},
-          {t:"A locker outage",
-           x:"Flagged before he travels, with the reroute to another point or the staffed counter already arranged."},
-          {t:"A person, in the thread",
-           x:"A pharmacist is reachable in the same WhatsApp conversation, in isiZulu, at any point - the exception never strands him with a machine."}
+          {t:"Out of stock",
+           x:"If something we take is out of stock, the message offers the cheaper generic I already prefer, or splits the order so my mother's medicine is ready on payday regardless and the rest follows. Nothing is decided without me - and nothing costs me a wasted trip."},
+          {t:"The locker is down",
+           x:"If the locker is out of order, I know before I leave home, with a new pickup point already arranged nearby. My taxi fare is never spent on a closed door."},
+          {t:"A person phones me back",
+           x:"When something has gone wrong, I don't type my way through it: one reply - call me - and a person phones me back, in my language. The plan gets made with me, not sent to me."}
         ]
       },
       pains:[
@@ -589,7 +593,7 @@ const DATA = {
          src:"sentiment"}
       ],
       behind:{
-        front:["Plain-language exception message: what, why, and the live choices","A pharmacist reachable in the same thread"],
+        front:["Plain-language exception message: what, why, and the live choices","Insured: pharmacist in the same thread, one conversation to resolution; cash: one-reply call-me-back, in language","Failed delivery re-plans with the customer (new window or locker) - the loop stays open to handover"],
         back:["Decline detected at pre-adjudication, before the customer is exposed","Each exception has one named owner until resolved; the order holds its place","Reroute / split-delivery arranged before anyone travels"],
         reg:null,
         caps:[
