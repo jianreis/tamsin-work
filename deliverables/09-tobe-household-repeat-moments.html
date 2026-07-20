@@ -412,26 +412,24 @@ const DATA = {
       emotion:{insured:4, cash:4}
     },
     {
-      id:"p3", num:"P3", title:"Prepared",
+      id:"p3", num:"P3", title:"Checked and packed",
       need:'I need to be certain that what is coming is <b>exactly right</b> - for <b>everyone</b> in the house.',
       activities:{
         insured:[
-          {t:"Follow the status",
-           x:"The order's status moves on its own: being prepared, checked, packed. Nothing is asked of her; everything is visible if she looks."},
-          {t:"Open the check",
-           x:"The \"checked\" status expands into the actual list: interactions across the family's medicines, allergies, doses, duplicates, script validity - each reviewed and signed off by the pharmacist on duty, by name.",
+          {t:"Picked and checked",
+           x:"A status arrives without me asking: our order has been picked and checked - and it lists what that means: each medicine reviewed against everything else we take, allergies, doses, the scripts themselves, for all four of us, signed off by the pharmacist by name. Someone qualified did the worrying, and I can see exactly what they worried about.",
            moment:{line:"Every check ran before it left the building", star:false,
              why:'The due diligence is shown, not assumed - and signed by a person who stands behind it. <span class="why">Someone qualified did the worrying, and she can see exactly what they worried about.</span> The question that rides along with medicine - did anyone actually check this? - has an answer with a name on it. <a href="'+C08+'">The Named Check</a>, extended to the whole household.'}},
-          {t:"See it packed",
-           x:"The medicine is machine-picked, verified by camera against each script, and packed by person, day and time - with the vitamin C and the toothpaste in the same box."}
+          {t:"Packed and sealed",
+           x:"The second status: packed and sealed - one box for the whole household, the vitamin C and the toothpaste in there too, waiting for the driver. And the moment it's sealed, the QR code that will unlock the handover at my door arrives with it. From picked to sealed, I've seen every step - without asking once."}
         ],
         cash:[
-          {t:"Receive the checked status",
-           x:"The same preparation, to the same standard: robotic pick, camera verification, pharmacist sign-off. His status arrives in isiZulu, short enough for any phone, with the same itemised list of what was checked.",
+          {t:"Picked and checked",
+           x:"A message arrives in my language: our order has been picked and checked. It lists what was checked - my tablets, my mother's medicine, the doses, the scripts - and the name of the pharmacist who signed it off. No wondering, no worrying - I've seen for myself that it was done properly.",
            moment:{line:"Every check ran before it left the building", star:false,
              why:'The same checks, the same standard, the same named signature. <span class="why">How he pays has no bearing on how carefully his family\'s medicine is handled</span> - and for the first time, he can see that. <a href="'+C08+'">The Named Check</a>, identical on the cash rail.'}},
-          {t:"Packed for the household",
-           x:"His mother's tablets are packed so that mornings and evenings stay separate, whoever hands them to her."}
+          {t:"Packed and sealed",
+           x:"The next message: packed and sealed, waiting for the courier run to the locker - and with it, the PIN that will open the locker on payday. The cough mixture I added is in the same parcel. From the shelf to the locker, nothing happens without me knowing."}
         ]
       },
       pains:[
@@ -443,7 +441,7 @@ const DATA = {
          src:"sentiment"}
       ],
       behind:{
-        front:["Live status: being prepared -> checked -> packed","\"Checked ✓ by Naledi M., pharmacist\" expands to the itemised check list"],
+        front:["Two statuses per order: picked & checked (itemised check list, named pharmacist) and packed & sealed","Handover credential (QR / locker PIN) issued at the moment of sealing"],
         back:["AI co-pilot drafts the household-wide check stack; the pharmacist confirms or overrides","ROWA picks eligible stock; vision verification flags look-alikes before packing","Household adherence pack assembled; shop items packed alongside"],
         reg:"<b>Non-negotiable:</b> a registered pharmacist's clinical sign-off remains the gate - the AI assembles, the human authorises (GPP).",
         caps:[
@@ -471,8 +469,8 @@ const DATA = {
            x:"Pausing the delivery or switching it to a locker is a tap in the same thread - not a phone call."}
         ],
         cash:[
-          {t:"Receive the PIN",
-           x:"On payday Friday the collection PIN arrives on WhatsApp."},
+          {t:"The payday reminder",
+           x:"On payday a reminder arrives: the parcel is in the locker, ready - with the PIN I've had since it was sealed."},
           {t:"Pay, and the locker opens",
            x:"At the Capitec counter he pays the quoted amount - the same number he saw before travelling - in cash, and the payment releases the locker. One visit, under a minute, a plain parcel, no street address involved.",
            moment:{line:"I could track it from Dis-Chem's door to mine", star:true,
