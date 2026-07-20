@@ -27,7 +27,7 @@ Each phase is one section, modelled on the Need / Activity / pain reference
 layout:
 
 1. **H1 - phase name.** Strictly mechanical (Signing up · Repeats are due ·
-   The order window · Prepared · In hand · Taking it · ∥ When it goes wrong).
+   Adding to the order · Prepared · In hand · Taking it · ∥ When it goes wrong).
    Badges: "once, not per cycle" (P0), "parallel - any phase" (∥).
 2. **H2 Need.** The customer's stake in this phase, first person, one or two
    spare sentences with the key phrases bolded. This replaces v2's orienting
@@ -110,7 +110,7 @@ governs. Summary of the approved skeleton:
 |---|---|---|---|---|---|
 | P0 Signing up (once) | Set up once, on my terms, remembered every month after | I add my household · I add their medicines · I choose how it reaches us (channel only - time is proposed in each month's notice) · I choose how I pay (incl. the rejection rule: check first or charge-and-continue) · I check it once, and confirm (v3.1) | I start the conversation · I add my household · I choose how it reaches us (locker at Capitec - no Dis-Chem nearby; instruction language per member) · I choose how I pay (cash on collection opens the locker) · I confirm (v3.1) | "I told them once how I want it" (both, on confirm) | You type it again (verbatim, sentiment) · The digital front door is broken (verbatim, complaints) |
 | P1 Repeats are due | Everyone's medicine keeps flowing on its own; complete clarity on the cost | The message arrives · I see the costs, clearly broken down · It keeps going - unless I say otherwise (first-person register, v3.1) | The message arrives · I see the price before I travel · It keeps going - unless I say otherwise, with the person-in-my-language fallback on its own line (v3.1) | "My medicine ordered itself" ⭐ · "The only thing I ever bought blind - not anymore" ⭐ (both economies) | The re-order dance (verbatim, complaints) · Money is a mystery until the end (verbatim, complaints) |
-| P2 The order window | The delivery carries the rest of the list | Open the pending order · Add the household's shop | Medication only on this route (honest constraint) | "While we're here... - without going anywhere" (insured only) | none in the research - honest note instead |
+| P2 Adding to the order | The delivery carries the rest of the list | My order stays open · I add the household's shop (v3.1) | I can add other medicine (medicine incl. OTC only - no general retail; honest constraint) · I add what we need, in the chat (chat-commerce demo: numbered picks, free entry, clarifying question, priced options; v3.1) | "While we're here... - without going anywhere" (insured only; the cash addition agreed to carry no moment) | none in the research - honest note instead |
 | P3 Prepared | Certainty it's exactly right, for everyone | Follow the status · Open the check · See it packed | Receive the checked status · Packed for the household | "Every check ran before it left the building" (both) | The short pack, discovered at home (verbatim, complaints) · Errors read as safety threats (sentiment) |
 | P4 In hand | In hand when promised, or told early | Confirm the window · Track it to the door · If the day changes | Receive the PIN · Pay, and the locker opens · The fallback | "I could track it from Dis-Chem's door to mine" ⭐ (both) | Out for delivery - then nothing (verbatim, complaints) · Nobody picks up (verbatim, sentiment) · Too-precise promises (verbatim, SOTF) |
 | P5 Taking it | Taking it right is the easy part | Unpack · Reminders on their terms (+ renewal signpost note) | Use the pack and the label · Ask WhatsApp, not the counter · Reminders that stop when told | "Medication you can't take wrong" (both) | Help flips into harassment (sentiment) · Digital-only instructions worry people (SOTF) |
@@ -143,8 +143,9 @@ Made-for-Me Packaging (P5); the ∥ moment pays off the P0 payment preferences.
 ## Open questions
 
 - Partner-bank locker (Capitec) with cash-payment release, the order window's
-  retail-attach mechanics, split delivery on stock-out: design assumptions,
-  ⚠️-flagged in the build, logged in `meta/punchlist.md` item 9.
+  retail-attach mechanics, split delivery on stock-out, and OTC add-ons on the
+  locker route (with chat-commerce free entry and price-before-travel): design
+  assumptions, ⚠️-flagged in the build, logged in `meta/punchlist.md` item 9.
 - The cash economy's ∥ track carries no key moment (the moment's title is
   medical-aid-specific). If a cash recovery moment earns its keep later, it
   needs its own agreed memory line first.

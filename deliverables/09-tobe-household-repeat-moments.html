@@ -378,35 +378,38 @@ const DATA = {
       emotion:{insured:5, cash:4}
     },
     {
-      id:"p2", num:"P2", title:"The order window",
+      id:"p2", num:"P2", title:"Adding to the order",
       need:'The trip used to do <b>double duty</b> - I need the delivery to carry <b>the rest of the list</b>, not just the medicine.',
       activities:{
         insured:[
-          {t:"Open the pending order",
-           x:"The notice doubles as an open order: until 18:00 on Thursday, Friday's parcel accepts additions from the shop side of Dis-Chem - toiletries, vitamins, baby, cosmetics."},
-          {t:"Add the household's shop",
-           x:"Suggestions are drawn from her own purchase history, specials first - the vitamin C effervescents she bought last winter are on special as the cold sets in. She adds them, and Lethabo's toothpaste, each item showing its price as it goes in. One parcel, one delivery, no separate fee.",
+          {t:"My order stays open",
+           x:"The message that told me the medicine is coming also tells me the order is still open: until the evening before delivery, anything from the shop side of Dis-Chem can ride along in the same parcel - toiletries, vitamins, the things I used to grab in the aisles. Nothing extra to arrange - the parcel just isn't sealed yet."},
+          {t:"I add the household's shop",
+           x:"It suggests from what we usually buy: the vitamin C we get every winter is on special as the cold sets in, so it goes in, along with Lethabo's toothpaste. Each item shows its price as it goes in, on the same bill, in the same parcel - no separate delivery, no separate fee. The 'while we're here' shop still happens - it just happens at my door.",
            moment:{line:"While we're here... - without going anywhere", star:false,
              why:'The pharmacy trip always did double duty, and the delivery threatened to quietly undo that. Instead, <span class="why">the trip she no longer makes still does double duty</span>: the household hands the incoming order the rest of the list, the way it hands a list to whoever is already going to the shops. <a href="'+C08+'">The Standing Order</a> concept at work.'}}
         ],
         cash:[
-          {t:"Medication only on this route",
-           x:"A bank locker carries medication only, so the window does not open on Sipho's route - and the message says so plainly rather than dangling what his channel cannot deliver. His order remains the family's medicine, priced upfront, ready on payday."}
+          {t:"I can add other medicine",
+           x:"The chat tells me the order is still open - and it is clear about what this route can carry: medicine only, no groceries. But that covers the everyday kind we'd otherwise make a special trip for - flu syrup, painkillers, the vitamins my mother takes. If we need something, I just say so in the chat. The small pharmacy trips between paydays fold into the one I already make."},
+          {t:"I add what we need, in the chat",
+           x:"First it suggests from what we usually buy, anything on special at the top - my mother's multivitamins are, so I reply with the number next to them and they're in. Then I type what else I need: \"cough mixture\". It asks me one question back - for a child or an adult? - and sends back a few options with the price of each. I pick one, the total updates in the chat, and it all rides in the same locker on payday. I still know the price before I travel."}
         ]
       },
       pains:[],
       painNote:"The research records no direct complaint here - this phase answers a lost convenience rather than a reported pain: the errand-consolidation the pharmacy trip used to provide, which a medicine-only delivery would quietly remove.",
       behind:{
-        front:["Open order with a stated cutoff (\"add anything before Thursday 18:00\")","Suggestions from the customer's own history, specials-aware","Running total as items go in"],
-        back:["Shop items staged against the medicine order","One consolidated parcel, one route"],
+        front:["Open order with a relative cutoff (until the evening before delivery / collection)","Suggestions from the customer's own history, specials-aware","Chat commerce on WhatsApp: numbered picks, free-text requests, clarifying questions, priced options","Running total as items go in"],
+        back:["Shop items staged against the medicine order","One consolidated parcel, one route","Medicine-only filter on the locker route (OTC allowed, no general retail)"],
         reg:null,
         caps:[
           {name:"Open-order window", cite:"design assumption - see meta/punchlist.md", assume:true},
           {name:"History-based suggestions", cite:"design assumption - see meta/punchlist.md", assume:true},
+          {name:"OTC add-ons on the locker route", cite:"design assumption - see meta/punchlist.md", assume:true},
           {name:"Parcel consolidation", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"}
         ]
       },
-      emotion:{insured:4, cash:3}
+      emotion:{insured:4, cash:4}
     },
     {
       id:"p3", num:"P3", title:"Prepared",
