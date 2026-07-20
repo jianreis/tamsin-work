@@ -383,7 +383,7 @@ const DATA = {
       activities:{
         insured:[
           {t:"My order stays open",
-           x:"The message that told me the medicine is coming also tells me the order is still open: until the evening before delivery, anything from the shop side of Dis-Chem can ride along in the same parcel - toiletries, vitamins, the things I used to grab in the aisles. Nothing extra to arrange - the parcel just isn't sealed yet."},
+           x:"The message that told me the medicine is coming also tells me the order is still open: until the day before delivery, anything from the shop side of Dis-Chem can ride along in the same parcel - toiletries, vitamins, the things I used to grab in the aisles. Nothing extra to arrange - the parcel just isn't sealed yet."},
           {t:"I add the household's shop",
            x:"It suggests from what we usually buy: the vitamin C we get every winter is on special as the cold sets in, so it goes in, along with Lethabo's toothpaste. Each item shows its price as it goes in, on the same bill, in the same parcel - no separate delivery, no separate fee. The 'while we're here' shop still happens - it just happens at my door.",
            moment:{line:"While we're here... - without going anywhere", star:false,
@@ -399,7 +399,7 @@ const DATA = {
       pains:[],
       painNote:"The research records no direct complaint here - this phase answers a lost convenience rather than a reported pain: the errand-consolidation the pharmacy trip used to provide, which a medicine-only delivery would quietly remove.",
       behind:{
-        front:["Open order with a relative cutoff (until the evening before delivery / collection)","Suggestions from the customer's own history, specials-aware","Chat commerce on WhatsApp: numbered picks, free-text requests, clarifying questions, priced options","Running total as items go in"],
+        front:["Open order with a relative cutoff (until the day before delivery / collection)","Suggestions from the customer's own history, specials-aware","Chat commerce on WhatsApp: numbered picks, free-text requests, clarifying questions, priced options","Running total as items go in"],
         back:["Shop items staged against the medicine order","One consolidated parcel, one route","Medicine-only filter on the locker route (OTC allowed, no general retail)"],
         reg:null,
         caps:[
@@ -459,24 +459,26 @@ const DATA = {
       need:'I need it <b>in hand, when promised</b> - or to know, early, that plans have changed.',
       activities:{
         insured:[
-          {t:"Confirm the window",
-           x:"On delivery morning, this month's nine-to-eleven window from the notice is confirmed as on track, and she acknowledges it with a tap."},
-          {t:"Track it to the door",
-           x:"The parcel is trackable through each stage: packed, dispatched, stops remaining, here. The driver scans the QR on her phone at the door, and that scan closes the order as proof of delivery.",
+          {t:"The morning message",
+           x:"On delivery morning a message confirms the window is on track: this morning, nine to eleven, as the notice said. It isn't asking me for anything - it's keeping me ahead of the day. I only reply if something has changed on my side."},
+          {t:"I track it to my door",
+           x:"I can watch the parcel move: packed, dispatched, stops away, here. At the door the driver scans the QR code on my phone - the one I've had since the box was sealed - and only that scan closes the order. \"Delivered\" means in my hands, not left at a gate.",
            moment:{line:"I could track it from Dis-Chem's door to mine", star:true,
              why:'The loop only closes when the parcel is physically in her hands. <span class="why">Being stood up by a system ends when the system can\'t quietly disappear</span> - the promise has a window, and the window is kept in plain sight. <a href="'+C08+'">Real-Time Transparency</a> again, this time on the road.'}},
-          {t:"If the day changes",
-           x:"Pausing the delivery or switching it to a locker is a tap in the same thread - not a phone call."}
+          {t:"I check it, with help one tap away",
+           x:"The moment the driver leaves, a message lists everything that should be in the box, so I can check it while it's still in front of me. If anything is missing or looks wrong, I snap a photo in the same thread - and a person phones me straight away. Not a bot, not a ticket number: a person who can fix it."},
+          {t:"If the day doesn't suit me",
+           x:"The plan is mine to change until the day before delivery: a different day, a different window, or switch it to collection - one reply."}
         ],
         cash:[
           {t:"The payday reminder",
-           x:"On payday a reminder arrives: the parcel is in the locker, ready - with the PIN I've had since it was sealed."},
-          {t:"Pay, and the locker opens",
-           x:"At the Capitec counter he pays the quoted amount - the same number he saw before travelling - in cash, and the payment releases the locker. One visit, under a minute, a plain parcel, no street address involved.",
+           x:"On payday a reminder arrives: the parcel is in the locker, ready - with the PIN I've had since it was sealed, and the exact amount to pay. Everything I need for the trip is in my hand before I leave home."},
+          {t:"I pay, and the locker opens",
+           x:"At the Capitec counter I pay the amount from the message - the same number I saw before travelling. Then I enter my PIN at the locker, it opens, and the parcel is mine. One stop, a plain parcel, no address needed.",
            moment:{line:"I could track it from Dis-Chem's door to mine", star:true,
              why:'The same certainty, differently shaped: <span class="why">payment and collection in one visit, near home, with no address required</span> - and if the locker is ever down, he knows before he travels, not after.'}},
-          {t:"The fallback",
-           x:"The staffed pharmacy counter stays available if the locker route fails."}
+          {t:"I check it before I go home",
+           x:"Right there, a message lists everything that should be in the parcel - so I check it at the locker, not at home after the taxi. If something is missing or wrong, I snap a photo in the chat and a person phones me straight away, in my language, while I'm still standing there."}
         ]
       },
       pains:[
@@ -491,15 +493,16 @@ const DATA = {
          q:"Waiting is fine - being unsure isn't.", src:"sotf"}
       ],
       behind:{
-        front:["Realistic window, confirmed morning-of","Tracking to actual handover; QR / PIN at the door or counter"],
-        back:["Consolidation hub routes the household parcel; driver proof-of-delivery closes the loop","Locker loaded near home; cash payment at the partner counter releases it","Reroute logic runs BEFORE the customer travels"],
+        front:["Morning-of window confirmation - informational, reply only to change","Tracking to actual handover; QR at the door / pay-then-PIN at the locker","Post-handover contents list; photo escalation to an immediate human callback","One change rule: day, window or channel changeable until the day before delivery"],
+        back:["Consolidation hub routes the household parcel; driver proof-of-delivery closes the loop","Locker loaded near home; cash payment at the partner counter releases it","Reroute logic runs BEFORE the customer travels","Handover exceptions route to a person, not a bot queue"],
         reg:"<b>Courier + locker rules:</b> scheduled-medicine delivery must meet licensing and cold-chain requirements; locker release of scheduled medicines needs oversight clarity 🔮.",
         caps:[
           {name:"Consolidation -> PICCUP + POD", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
           {name:"Closed-loop QR handover", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
           {name:"Near-home locker + PIN (Pelebox pattern)", cite:"wiki/consumer-context/last-mile-addressing-logistics"},
           {name:"Scheduled-meds locker release", cite:"wiki/sa-regulatory/courier-online-pharmacy-rules", reform:true},
-          {name:"Cash-at-bank locker release", cite:"design assumption - see meta/punchlist.md", assume:true}
+          {name:"Cash-at-bank locker release", cite:"design assumption - see meta/punchlist.md", assume:true},
+          {name:"Photo-triggered human callback at handover", cite:"design assumption - see meta/punchlist.md", assume:true}
         ]
       },
       emotion:{insured:5, cash:5}
