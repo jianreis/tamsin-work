@@ -142,7 +142,17 @@ comment at the end of the array. Each object:
 
 `intro` and `features` entries are author-trusted HTML (they carry the `.why`
 highlight and bold lead-ins); the `title`, `tagline` and `featuresLabel` are
-escaped. Palette and card chrome match the board style in
+escaped.
+
+**Superseding a concept (added 2026-07-26):** concepts are never deleted or
+renamed in place. When a concept outgrows its card (Made-for-Me Packaging →
+Made-for-Me Medicine), the new concept is appended as a **new card** and the
+old one stays visible with `archived: true` plus an `archiveNote` (trusted
+HTML) naming and linking its successor - the card renders dimmed with an
+Archive badge. Every card gets an `id` of `c<number>` so archive notes and
+external references can deep-link. Journeys that referenced the superseded
+concept repoint their inline links to the live card (spec first, then the
+`DATA` mirror) - a journey should never cite an archived concept. Palette and card chrome match the board style in
 [[design-kit/templates/future-state-blueprint-board-style]]. Self-contained: all
 CSS and icons inline, no external requests.
 
@@ -159,6 +169,16 @@ worked exemplar of the pattern, and note how each anchor is an everyday thing:
 | 4 | CarerConsent | You already manage their medicine. This makes it official. | already running a parent's or child's medication |
 | 5 | Script Sync | One date, one pickup - the whole family's repeats together. | one shop with everything in the basket, not five trips |
 | 6 | Made-for-Me Packaging | A pill organiser, done for you. | the plastic pillbox you sort yourself each week |
+
+(2026-07-26: concept 6 is **archived**, superseded by **Made-for-Me Medicine**
+- tagline *"Made to be taken right."*, anchor the meal kit with everything
+measured - which carries the whole ladder from free iconised in-language
+labels and when-and-how guides up to the paid dose sachets. Its sibling from
+the same pass is **The Pharmacist Who Stays** - anchor the doctor who phones
+the day after - the accompaniment concept: check-ins, course-length reminders,
+plain-words side effects, a pharmacist on standby. Boundary: everything *made
+before the medicine reaches you* is Made-for-Me Medicine; everything that
+*happens over the days after* is The Pharmacist Who Stays.)
 
 ## Self-check before handoff
 

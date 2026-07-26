@@ -137,7 +137,12 @@ governs. Summary of the approved skeleton:
 Concepts referenced inline in the key-moment copy: CarerConsent, Household
 Medicine Cabinet (P0); Auto-Refill, Script Sync, Real-Time Transparency (P1);
 The Standing Order (P2); The Named Check (P3); Real-Time Transparency (P4);
-Made-for-Me Packaging (P5); the ∥ moment pays off the P0 payment preferences.
+Made-for-Me Medicine (P5); the ∥ moment pays off the P0 payment preferences.
+(2026-07-26, agreed with Tamsin during the #10 concept pass: Made-for-Me
+Packaging was archived in `08-concepts.html` and superseded by the broader
+**Made-for-Me Medicine** - the ladder from free in-language labels/guides up
+to paid dose sachets. This journey's P5 inline links repointed to the live
+concept; the P5 copy itself is unchanged.)
 
 ## Journey metadata
 

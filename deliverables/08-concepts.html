@@ -138,6 +138,20 @@ h1,h2,h3,h4{margin:0}
 }
 .concept .pillars .plbl{font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; color:var(--muted2); margin-right:2px}
 
+/* ---- archived concepts ---------------------------------------------------- */
+.concept.archived{opacity:.62; border-style:dashed}
+.concept.archived .head{background:#e9ede9; border-bottom-color:var(--line)}
+.archbadge{
+  display:inline-block; margin-left:8px; font-size:.6rem; font-weight:800; letter-spacing:.12em;
+  text-transform:uppercase; color:#8a5a00; background:#fff7e6; border:1px solid #f0dca8;
+  border-radius:99px; padding:1px 8px; vertical-align:middle;
+}
+.archnote{
+  font-size:.84rem; color:var(--muted); background:#f2f5f2;
+  border:1px dashed var(--line); border-radius:8px; padding:8px 12px;
+}
+.archnote a{color:var(--brand-dark)}
+
 /* ---- journey group headers ------------------------------------------------ */
 .grouphead{
   grid-column:1 / -1; display:flex; align-items:baseline; gap:12px; margin-top:8px;
@@ -171,7 +185,7 @@ h1,h2,h3,h4{margin:0}
 
   <div class="ribbon">
     <span>&#9888; Concept for review - not an official Dis-Chem artefact</span>
-    <span class="gen">generated 2026-07-01 · updated 2026-07-17 (concept 14: the standing order) · from the Bigly ground-truth vault</span>
+    <span class="gen">generated 2026-07-01 · updated 2026-07-26 (concepts 15-16: made-for-me medicine, the pharmacist who stays; concept 06 archived) · from the Bigly ground-truth vault</span>
   </div>
 
   <section class="intro">
@@ -239,7 +253,9 @@ const ICONS = {
   bolt:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L9.5 22 18 10.5h-6.5L13 2Z"/></svg>',
   snap:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="m8.5 7 1.5-3h4l1.5 3"/><circle cx="12" cy="13.2" r="3.4"/></svg>',
   notice:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M6.5 12.2h2.6l1.5-3.6 2.9 6.9 1.5-3.3h2.5"/></svg>',
-  basket:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 9.5h15l-1.6 9.3a2 2 0 0 1-2 1.7H8.1a2 2 0 0 1-2-1.7L4.5 9.5Z"/><path d="m8 9.5 4-6.5 4 6.5"/><path d="M9.5 13v4M12 13v4M14.5 13v4"/></svg>'
+  basket:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 9.5h15l-1.6 9.3a2 2 0 0 1-2 1.7H8.1a2 2 0 0 1-2-1.7L4.5 9.5Z"/><path d="m8 9.5 4-6.5 4 6.5"/><path d="M9.5 13v4M12 13v4M14.5 13v4"/></svg>',
+  madefor:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h5"/><path d="m9 16.5 2 2 4-4"/></svg>',
+  stays:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-3-.4-4.2-1L3 20l1-5.3A8.5 8.5 0 1 1 21 11.5Z"/><path d="M12 8v7M8.5 11.5h7"/></svg>'
 };
 
 const CONCEPTS = [
@@ -331,7 +347,9 @@ const CONCEPTS = [
       '<b>Reminders tied to your day</b>, not random times - adjustable or off, per person.',
       '<b>A printed schedule</b> for anyone who prefers paper or is short on data - same information, no screen needed.'
     ],
-    pillars:["U7","U5","U1","S5"]
+    pillars:["U7","U5","U1","S5"],
+    archived:true,
+    archiveNote:'Archived 2026-07-26 - superseded by <a href="#c15">Made-for-Me Medicine</a> (concept 15), which carries the whole ladder from free in-language labels and guides up to these dose sachets. Kept here for reference.'
   },
   {
     icon:"renew",
@@ -458,6 +476,37 @@ const CONCEPTS = [
       '<b>It never blocks the medicine</b> - adding is optional and the repeat never waits on the shopping, so autopilot stays autopilot.'
     ],
     pillars:["S3","S4","U6","U3"]
+  },
+  {
+    group:{title:"The acute journey, in moments", sub:"adherence as experience - deliverable #10"},
+    icon:"madefor",
+    title:"Made-for-Me Medicine",
+    tagline:"Made to be taken right.",
+    intro:'A meal-kit dinner is hard to ruin: every ingredient arrives measured, every step pictured, nothing left to weigh or guess. This is your medicine, made that way. <span class="why">Made-for-Me Medicine builds the taking-it-right into the medicine itself - your doses, your language, your eyes - so there is nothing left to work out and no easy way to get it wrong.</span> The purest version is a month of dose sachets you open and take; the everyday version is free with every script: clear iconised labels, plain instructions in your own language, a simple when-and-how guide. Whichever you get, the wrong way has been designed out before the medicine reaches you.',
+    featuresLabel:"What's in the kit",
+    features:[
+      '<b>Dose sachets, sorted by day and time</b> - each dose pre-grouped and labelled, open and take, so there is nothing to sort and nothing to mix up. An optional extra, done for you.',
+      '<b>Labels you can read at a glance</b> - icons plus large plain text in your own language, on every pack, free, so the label works for every pair of eyes in the house.',
+      '<b>A when-and-how guide</b> - with food or without, morning or evening, what to do if you miss one - so the questions are answered before you have them.',
+      "<b>The scroll, translated</b> - the leaflet's need-to-knows in plain words, short enough to actually read, so what matters is never buried in fine print.",
+      '<b>Paper when you want it</b> - the schedule and guide printed as easily as sent, so none of this needs a screen or data.'
+    ],
+    pillars:["U7","U5","U1","S5"]
+  },
+  {
+    icon:"stays",
+    title:"The Pharmacist Who Stays",
+    tagline:"Your pharmacist stays until you are better.",
+    intro:'A good doctor phones the day after: "how are you feeling?" People retell that call for years, because almost nobody makes it. This is that call, built into every script - the pharmacist who checked your medicine does not disappear when it is handed over. <span class="why">Check-ins track your course, tell you what to expect and when you should start feeling better, and a pharmacist is on standby the moment something feels wrong.</span> This is probably medicine you have never taken before; you should not have to figure it out alone.',
+    featuresLabel:"What staying looks like",
+    features:[
+      '<b>A check-in that knows your course</b> - "day three: you should be starting to feel better - tell us if not" - so your recovery is watched, not assumed.',
+      '<b>Reminders that last exactly as long as the course</b> - through the final antibiotic dose, then they stop, so finishing is the easy path and the silence after is earned.',
+      '<b>What to expect, in plain words</b> - the side effects worth knowing about, explained the way a person would say them, so a scary leaflet never becomes a scary evening.',
+      '<b>A pharmacist on standby</b> - worried about a side effect? Message or phone, and a pharmacist answers, so a worry never has to wait for morning.',
+      "<b>It knows when to let go</b> - the check-ins end when the course does; and if you are not better by the day you should be, it says so and helps you back to the doctor."
+    ],
+    pillars:["S5","U7","U4","U2"]
   }
   /* CONCEPTS_APPEND_MARKER */
 ];
@@ -475,7 +524,8 @@ function render(){
       grid.appendChild(gh);
     }
     const card = document.createElement("section");
-    card.className = "concept";
+    card.className = "concept" + (c.archived ? " archived" : "");
+    card.id = "c" + (i+1);
     const ic = ICONS[c.icon] || "";
     const pillarPills = (c.pillars||[]).map(p=>{
       const t = (p[0]==="S"?"s":"u");
@@ -487,12 +537,13 @@ function render(){
       '<div class="head">'+
         '<div class="ic">'+ic+'</div>'+
         '<div class="htext">'+
-          '<div class="num">Concept '+(i+1).toString().padStart(2,"0")+'</div>'+
+          '<div class="num">Concept '+(i+1).toString().padStart(2,"0")+(c.archived?'<span class="archbadge">Archive</span>':'')+'</div>'+
           '<h2>'+esc(c.title)+'</h2>'+
         '</div>'+
       '</div>'+
       '<div class="body">'+
         '<div class="tagline">'+esc(c.tagline)+'</div>'+
+        (c.archiveNote?'<div class="archnote">'+c.archiveNote+'</div>':'')+
         '<p class="lead">'+c.intro+'</p>'+
         '<div class="features"><span class="lbl">'+esc(c.featuresLabel)+'</span><ul>'+feats+'</ul></div>'+
         '<div class="pillars"><span class="plbl">Pillars</span>'+pillarPills+'</div>'+
