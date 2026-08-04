@@ -172,9 +172,18 @@ On top of the full v3.1 rule set from #09:
   pharmacist processes the script at the dispensary counter.
 - **Received-confirmations are explicit beats**: insured - "Dis-Chem has
   received your script from Dr [name]" before she is up from the chair, then
-  "Your pharmacist [name] is checking your script" while paying; cash - an
+  "Your pharmacist is checking your script" while paying; cash - an
   immediate "we have it, someone will come back to you shortly" on the snap,
   then the full read-back + price + generic reply inside 15 minutes.
+- **The pharmacist is named only at the final check** (P3's sign-off status:
+  "Checked by Naledi ✓" / "Checked by Sindi ✓", with the checks listed);
+  earlier statuses say "your pharmacist", unnamed. The dispensing process
+  holds as: PBQ/pharmacist capture-and-first-check -> pick (scan-verified
+  per item) -> pharmacist's FINAL check of the picked pack against the
+  original script (the sign-off gate) -> seal, code issue, digital
+  instructions push. The collection/order QR (the e-token's redemption
+  face) is issued at sealing on BOTH sides - express-zone scan for cash,
+  driver-handover proof and switch-to-collect key for insured.
 - **Concepts are referenced inline only where the reader watches them work**
   (the E-Script Token rule above generalised).
 
@@ -273,9 +282,10 @@ chair, my phone buzzes: "Dis-Chem has received your script from Dr Naidoo."
 **A4 · It's with my pharmacist before I reach reception** - The doctor
 signs, and we're done - there's no paper to take and nothing for me to send
 anywhere; Dis-Chem already has it. While I'm paying for the consult, the
-status moves: "Your pharmacist Naledi is checking your script." The only
-decision left is how I want to receive it, and that can wait until I'm in
-the car.
+status moves: "Your pharmacist is checking your script." The only decision
+left is how I want to receive it, and that can wait until I'm in the car.
+*(Name ripple, 2026-07-26: the pharmacist is named only at the P3 final
+check - P1 statuses stay unnamed.)*
 
 **M1 (under A4) ⭐ "My pharmacist was busy before I'd even left the
 doctor's"** - Every doctor's visit Aisha has ever made ended the same way:
@@ -497,6 +507,118 @@ collect. If I say nothing, nothing is added.
   OTC attach ⚠️ (wiki/concepts/omnichannel-fulfilment) · WhatsApp numbered
   picks (wiki/consumer-context/digital-access-and-whatsapp) · tokenised
   saved card (wiki/concepts/identity-and-consent).
+
+## Approved copy - P3: Checked and filled (signed off by Tamsin, 2026-07-26)
+
+### Need (shared)
+
+I need to **trust that what we get is exactly what the doctor ordered** -
+right medicine, right dose, **safe for us** - and I need to **see that it
+was checked**, not just hope it was.
+
+### Activities - insured (Aisha)
+
+**A1 · Picked against my script** - By the time I'm home and on the couch,
+the status has moved: my medicine and the add-ons are being picked at the
+store doing my delivery, and every item is scanned against the script
+itself. I don't do anything - I can just see it moving.
+
+**A2 · The final check, with a name** - Then: "Checked by Naledi ✓ - dose,
+interactions, against your record." A pharmacist looked at exactly what was
+picked, checked it against the original script, and put her name to it
+before anything was sealed. If I have a question, her line is one tap away
+in the same thread.
+
+**M3-insured (under A2) "Every check ran before it left the building"** -
+The checking used to be the invisible part - a silent backstage wait, with
+mistakes surfacing only at home when the packet was opened. Now it runs in
+the time Aisha spends driving home, and it shows its work: picked, scanned
+against the script, and a named pharmacist's sign-off on the finished pack
+before anything sealed. [why] Fast never means unchecked - the speed came
+from removing the waiting, not the care. [/why] That is The Named Check
+(inline link): the moment that matters most in a pharmacy, carried out by a
+person with a name, one tap away.
+
+**A3 · Sealed, and I already know how to take it** - The parcel seals and
+the confirmation lands: on track for my 2-4pm slot, with my order's QR code
+attached - if my afternoon changes, that same code fetches it at the counter
+instead. The when-and-how guide is already on my app - with food, morning
+and evening, all seven days - and the same plain instructions are on the
+pack labels. By the time it reaches me, I'll already know what to do with
+it.
+
+### Activities - cash (Thabo)
+
+**A1 · Picked at my store** - The thread tells me his medicine is being made
+up at my store - the antibiotic, the cough syrup, the fever syrup I added -
+each one scanned against the script the doctor wrote. I'm at work; I don't
+have to watch it, but it's there when I look.
+
+**A2 · The final check, named, for his weight** - Then, in my language:
+"Checked by Sindi ✓ - the dose is right for his weight, checked against the
+script." A pharmacist I can name looked at my son's medicine after it was
+picked, and signed for it. If something worries me, I ask her in the chat -
+no phoning a dispensary that doesn't pick up.
+
+**M3-cash (under A2) "Every check ran before it left the building"** - For a
+child's medicine, a mistake isn't an inconvenience - it's the thing a parent
+lies awake about. Today that safety runs invisibly, and any gap shows up at
+home, too late. Here it runs while Thabo works his shift, and it shows
+itself: picked at his store, scanned against the doctor's script, and a
+named pharmacist confirming the dose against his son's weight before
+signing. [why] Someone with a name stood behind his boy's medicine - and he
+watched it happen. [/why] That is The Named Check (inline link), made for
+the person with the most to lose from an anonymous mistake.
+
+**A3 · Ready, with my code** - The ready message comes before my shift ends:
+"Ready - express pickup zone, show this code." The same code works at the
+after-hours point outside the store if I'm late. His dosing guide is already
+in the WhatsApp thread, in my language, and the same instructions are on the
+labels.
+
+### Current-state pain points
+
+1. **The mistake you find at home.** Accuracy gaps surface only when the
+   packet is opened - after the trip, past the point of easy return. Quote:
+   "On opening the packet a few days later, I discovered my blood pressure
+   tablets were missing." - verbatim,
+   [[wiki/dischem/pharmacy-complaints-pain-points]].
+2. **Errors read as safety threats, not service slips.** In the public
+   sentiment, dispensing mistakes and near-misses are talked about as danger
+   - the fear is about what the system didn't catch. -
+   [[wiki/dischem/dischem-social-sentiment-trust-journey]] (no single
+   verbatim; theme-level).
+3. **Nobody's name on it.** When something goes wrong there is no
+   accountable person anywhere in the experience - and the anonymous service
+   can turn hostile at exactly the wrong moment. Quote: "Rudeness of
+   pharmacy manager and pharmacist." - verbatim,
+   [[wiki/dischem/pharmacy-complaints-pain-points]].
+
+### Behind the line (P3 panel)
+
+- Frontstage: live statuses (being picked -> "Checked by [name] ✓" with the
+  checks listed -> sealed/ready) · one-tap question line to the named
+  pharmacist (app / WhatsApp) · digital when-and-how guide pushed at sealing
+  (app / WhatsApp, in-language) · order/collection QR issued at sealing on
+  both sides.
+- Backstage: script captured and first-checked by PBQ/pharmacist (started at
+  P1) · picking at the fulfilling store, automation where fitted ·
+  independent barcode/NAPPI scan-verify per item · pharmacist's FINAL check
+  of the picked pack against the original script - the sign-off gate;
+  nothing releases without it · paediatric dose-for-weight verification
+  (weight carried on the script; the pharmacist asks in-thread only if
+  unclear) · seal, code issue, digital-instructions push · printed
+  instructions available for whoever wants paper.
+- Regulatory: dispensing under the personal supervision of a registered
+  pharmacist, with the pharmacist's final sign-off gating release; fully
+  autonomous dispensing of scheduled medicine remains 🔮 requires-reform.
+- Chips (cites): BRIX dispensing + ROWA picking
+  (wiki/digital-transformation/dischem-scripting-tech-roadmap) ·
+  scan-verified accuracy (wiki/dispensing-practice/error-prevention-and-safety) ·
+  workflow manager (wiki/digital-transformation/dischem-scripting-tech-roadmap) ·
+  named-check status (wiki/dischem/store-of-the-future-customer-voice) ·
+  paediatric dose check (wiki/dispensing-practice/clinical-checks-and-mtm) ·
+  in-language guides (wiki/consumer-context/language-literacy-and-trust).
 
 ## Open items
 
