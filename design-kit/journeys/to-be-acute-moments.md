@@ -178,6 +178,34 @@ On top of the full v3.1 rule set from #09:
 - **Concepts are referenced inline only where the reader watches them work**
   (the E-Script Token rule above generalised).
 
+**Process rules for every phase pass (encoded after the P1 retrospective,
+2026-07-26 - P2 onwards):**
+
+1. **Walk the service logic first.** Each phase pass STARTS with a short
+   "how it actually works" sequence - system and human, in true order -
+   presented to Tamsin for correction BEFORE any activities are written.
+   Activities are then derived from the corrected walkthrough.
+2. **The transcription test.** Every activity sentence must survive: "could
+   this person have said this to a friend, tired, that evening?" If it
+   sounds written, rewrite it. Crafted, performing lines live in moment
+   blocks only ("Two options, both real" / "One word; it's set." are the
+   failure modes to catch).
+3. **The message thread is reconstructable.** Every notification is named,
+   worded and placed exactly where it fires - a reader could rebuild the
+   phone screen from the copy.
+4. **Commit where the service can commit; stay general where detail invites
+   nitpicking.** Concrete times, holds and read-backs build credibility
+   (inside 15 minutes, held until closing); internal mechanics stay vague.
+5. **Possessives and pacing.** Personal ("my son's", never "his"),
+   unhurried context lines, one thought per sentence when the person is
+   unwell.
+6. **Self-audit before serving.** Before any draft reaches Tamsin, check:
+   no crafted lines in activities · no benefit line without value added ·
+   concrete what-I-see/do throughout · needs include "I need" · counter
+   never till · concepts only where watched · money in one activity per
+   phase · sequence honest · possessives personal · suffering texture where
+   the person is sick.
+
 ## Pain-point sources (hard rule: research only)
 
 Titles + descriptions + verbatim quotes ONLY from:
