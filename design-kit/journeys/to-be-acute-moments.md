@@ -966,22 +966,103 @@ The honest no-complaint note renders instead of cards.*
   (wiki/consumer-context/language-literacy-and-trust) · repeat-service
   handover (design-kit/journeys/to-be-household-repeat-moments).
 
-## Agreed ∥ scenario set (2026-07-26 - service failures only; copy to be drafted)
+## Approved copy - ∥: When something breaks (signed off by Tamsin, 2026-07-26)
 
-1. Out of stock after the go-ahead (both) - the plan arrives with the bad
-   news: another store on the same promise, a covered generic swap, or
-   delivery from a store that has it.
-2. The delivery fails (insured) - re-deliver in a new honest window or
-   switch to collect on the same code; a person calls, not a status.
-3. My phone is dead at the counter (cash) - ID-based fallback at the
-   express counter; the code was for speed, not a lock.
-4. The money isn't there today (cash) - held at the counter without
-   ceremony; the dignity scenario.
-5. The medical aid's answer changes (insured) - the final claim differs
-   from the consult's dry-run promise: told before the parcel moves, plain
-   language + rand difference, options (pay it / covered generic / a
-   pharmacist takes it up with the scheme while the medicine holds).
-   Kinship with #09's "let's make a plan" ⭐, no moment here.
+Parallel band, any phase. Service failures ONLY (the clinical story lives in
+P5/P6). No moment - the scenarios carry the band. Every scenario ends with
+the customer holding the decision; bad news always arrives with the plan
+attached.
+
+### Need (shared)
+
+Things go wrong - stock runs out, deliveries fail, weeks cost more than
+they should. I need to **hear it early, with a way through already
+attached** - **never silence, never a dead end** - because today I don't
+have the strength to fight a system.
+
+### Scenarios - insured (Aisha)
+
+**S1 · Out of stock, after everything was promised** - The store filling my
+order hits a gap the stock check didn't catch. The message that tells me
+carries the plan with it: another store nearby has it and my slot moves out
+by an hour - or the covered generic is on their shelf right now, same
+active ingredient, and a pharmacist has already confirmed the swap is
+clinically sound. I pick one, in one tap. The order never quietly dies; I
+was never the one who had to discover it.
+
+**S2 · The delivery fails** - The driver can't find the complex, or the
+slot collapses on their side. Before I've even noticed the window sliding,
+a person phones - not a status update, a voice with options: re-deliver
+this evening in a window they can actually keep, or I collect at the
+counter tonight on the same code from my phone. The failure was theirs, so
+the fixing is theirs; all I supply is a preference.
+
+**S3 · My medical aid's answer changes** - The consult said R0; the final
+claim comes back different - a benefit that ran dry that same week, a limit
+the dry-run couldn't see. I'm told before the parcel moves: what changed,
+in plain words, and the exact rand difference. My choices are real ones -
+pay the difference; switch to the fully covered generic, a pharmacist
+confirming it does the same job; or let a pharmacist take it up with the
+scheme while my medicine waits, held for me. What never happens is
+discovering it at my door.
+
+### Scenarios - cash (Thabo)
+
+**S1 · Out of stock - told before the taxi, never after** - If my store's
+stock fails after the go-ahead, the message reaches me before I've spent a
+rand travelling: the next-nearest store with his medicine, on the same code
+and the same price - or delivery this once, with its cost shown, if the
+distance isn't worth it. The wasted trip is the one thing they never let
+happen.
+
+**S2 · My phone is dead at the counter** - A twelve-hour shift and the
+battery didn't make it. At the express counter my ID is enough - the pack
+is under his name, and the order is mine, not my phone's. The code was for
+speed, never a lock.
+
+**S3 · The money isn't there today** - The total hasn't changed - the week
+did. One reply: "hold it for me." It's held at the counter, price
+unchanged, no questions asked when I come on Friday - and no one at that
+counter knows anything except that a pack is waiting for its person. The
+medicine doesn't get cancelled because payday moved; it waits, the way a
+neighbour would hold something for you.
+
+### Current-state pain points
+
+1. **An exception kills the order.** Today a single snag - stock, a claim,
+   an address - ends the whole attempt, silently. Verbatim category,
+   [[wiki/dischem/pharmacy-complaints-pain-points]].
+2. **No fallback, no way through.** Quote: "Digital breakdowns (app/online
+   failures) become hard blockers when no alternative path exists." -
+   verbatim, [[wiki/dischem/dischem-social-sentiment-trust-journey]].
+3. **After a failure, they leave.** A single unrecovered failure is where
+   customers defect. -
+   [[wiki/dischem/dischem-social-sentiment-trust-journey]] (theme-level).
+
+### Behind the line (∥ panel)
+
+- Frontstage: failure messages that carry the recovery options inside them
+  (never bare bad news) · a person phones on delivery failure (insured) and
+  on anything touching money or the child (cash) · one-tap / one-reply
+  decisions · ID fallback at the express counter · hold-at-counter reply.
+- Backstage: stock-gap detection at pick time with reroute options computed
+  before the customer is told · claim-delta detection between dry-run and
+  final adjudication, gating dispatch ⚠️ · pharmacist-confirmed generic
+  swaps (lawful substitution) · same-token redemption across stores and
+  routes · held-order shelf with price lock ⚠️ · failure-triggered outbound
+  calls, not inbound queues.
+- Regulatory: generic substitution lawful with prescriber primacy and
+  patient choice; identity verification for scheduled handover satisfied by
+  ID where the code fails; scheme disputes handled pharmacy-to-scheme with
+  the patient's consent.
+- Chips (cites): graceful-failure patterns (wiki/concepts/graceful-failure) ·
+  reroute + stores-with-stock
+  (wiki/digital-transformation/dischem-scripting-tech-roadmap) · claim
+  delta detection (wiki/medical-schemes/realtime-claims-switching ⚠️) ·
+  substitution rules (wiki/medical-schemes/dsp-formularies-copayments) ·
+  token cross-redemption (wiki/concepts/e-prescription-token) ·
+  hold-at-counter ⚠️ (punchlist 10g) · outbound-call recovery
+  (wiki/dischem/dischem-social-sentiment-trust-journey).
 
 ## Open items
 
