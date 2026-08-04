@@ -726,6 +726,126 @@ same counter, and done. The number I planned for is the number I pay.
   counselling at handover (wiki/dispensing-practice/counselling-and-health-literacy) ·
   contents-confirmation callback (punchlist 9(e) mechanism).
 
+## Approved copy - P5: Taking it (signed off by Tamsin, 2026-07-26)
+
+**Phase decisions (Tamsin):** no pushed reminders on either economy (business
+cost + annoyance) - the day-3 check-in is the single touch; on the app,
+reminders exist only as something the customer sets themselves. No
+course-end message. The "not better / something feels wrong" reply shows
+the door in P5 (a pharmacist picks it up); the full recovery fork (stop /
+switch / back to the doctor) is the ∥ band's scenario. The Pharmacist Who
+Stays concept card keeps course-length reminders as a capability; this
+journey stages the check-in only.
+
+### Need (shared)
+
+The medicine is in the house; now it has to work. I need to **give it
+right, every time, to the last day** - and I need to know **someone is
+still there** if something doesn't look right.
+
+### Activities - insured (Aisha)
+
+**A1 · The first dose, without the leaflet** - That afternoon I take the
+first tablet - with food, morning and evening, seven days, exactly as the
+label and the guide on my app say. The what-to-expect is written like a
+person would say it: what's normal in the first days, what isn't, when to
+say something. If I want reminding, the app lets me set my own - my phone,
+my choice. I never unfold the scroll in the box.
+
+**M5-insured (under A1) "Medication you can't take wrong"** - New medicine
+has always come with homework at the worst time: tissue-paper leaflets in
+legal language, decoded at the kitchen table while you feel terrible.
+Aisha's came ready to take - the label says what it is and why she's taking
+it, the guide says how and what to expect, in plain words. [why] Taking it
+right needed no figuring out - the understanding arrived with the medicine.
+[/why] That is Made-for-Me Medicine (inline link): made to be taken right,
+before it ever reached her hands.
+
+**A2 · Day three: they ask about me** - A message: "You should be starting
+to feel better around now - are you?" One tap answers it. Mine says yes -
+and the reply is glad, and clear about the part that matters: finish all
+seven days, because stopping early is how infections come back harder. If
+my answer had been "no", or "something feels wrong", a pharmacist would
+have picked it up right there in the thread.
+
+**M6-insured (under A2) ⭐ "The pharmacy didn't disappear after the
+handover"** - Every pharmacy Aisha has ever used went silent the moment the
+medicine left the counter - recovery was hers to manage alone, with Google
+at midnight for company. On day three, Dis-Chem asked how she was doing.
+One question, perfectly timed. [why] Someone who knows medicine is watching
+her recovery with her - she is not doing this alone. [/why] That is The
+Pharmacist Who Stays (inline link): the doctor who phones the day after,
+built into every script - check-ins that know the course, plain answers
+about what's normal, and a pharmacist on standby the moment something feels
+wrong.
+
+### Activities - cash (Thabo)
+
+**A1 · His dose, in my language** - That evening I give him the first dose
+- the syringe marked at his line, the label and the guide in my language,
+the fever syrup with its own plain line: only if the fever is up. Seven
+days, morning and evening, even when he seems better - it says so where I
+can't miss it. Nothing at my kitchen table needs decoding.
+
+**M5-cash (under A1) "Medication you can't take wrong"** - Dosing a sick
+child from instructions in your second language is a quiet, common danger -
+and tonight it isn't one. The syringe is marked, the words are his father's
+own language, the pictures carry what words might miss. [why] Getting it
+right required nothing from Thabo except being there. [/why] That is
+Made-for-Me Medicine (inline link) at its free floor - the can't-take-wrong
+ladder that comes with every script, no matter who is paying.
+
+**A2 · Day three: they ask about him** - A message, in my language: "He
+should be coughing less by now - is he?" I answer in one word between
+shifts. The reply is glad, and firm about the last days: all seven, even
+though he's already chasing his sister again. If I'd said something was
+wrong - a rash, the cough worse - a pharmacist would have phoned me. For my
+son, a voice, not a chatbot.
+
+**M6-cash (under A2) ⭐ "The pharmacy didn't disappear after the handover"**
+- Nobody has ever asked Thabo whether his child's medicine is working.
+Clinics don't call back; pharmacies forget you at the door; day three is
+where every parent is alone with their judgement. This time, day three
+brought a question in his own language - and behind it, a pharmacist who
+would have phoned if anything was wrong. [why] Someone is watching his son
+get better with him. [/why] That is The Pharmacist Who Stays (inline link),
+reaching the parent with the most to carry and the least help carrying it.
+
+### Current-state pain points
+
+1. **Help flips into harassment.** Unconsented, unstoppable comms are a
+   named trust-breaker - the line between care and spam is consent and
+   timing. - [[wiki/dischem/dischem-social-sentiment-trust-journey]]
+   (theme-level).
+2. **Digital-only instructions worry people.** Customers want the paper and
+   the person available, not replaced - instructions that live only on a
+   screen feel fragile. - [[wiki/dischem/store-of-the-future-customer-voice]]
+   (theme-level).
+
+### Behind the line (P5 panel)
+
+- Frontstage: in-language labels, marked dosing syringe, plain
+  what-to-expect with the guide (app / WhatsApp; paper on request) ·
+  self-set reminders in the app (customer's own, never pushed) · the single
+  day-3 check-in with one-tap / one-word replies · pharmacist pickup on a
+  worried reply (thread for insured; phone-back for cash) - the full
+  recovery fork lives in the ∥ band.
+- Backstage: check-in timed from the course profile (day 3 of 7 for this
+  antibiotic) · reply triage: "better" -> finish-the-course line; "worse /
+  something wrong" -> routed to a pharmacist with the record in view · AMR
+  stewardship framing on the finish-it line · no pushed reminder machinery -
+  one check-in per course by design.
+- Regulatory: the check-in and any follow-up are consented within the
+  service's granted scope (POPIA); counselling remains a pharmacist act,
+  never automated away.
+- Chips (cites): course-profile check-in
+  (wiki/digital-transformation/adherence-tech-and-digital-therapeutics) ·
+  in-language + pictogram dosing
+  (wiki/consumer-context/language-literacy-and-trust) · AMR stewardship
+  (wiki/dispensing-practice/counselling-and-health-literacy) · pharmacist
+  triage line (wiki/digital-transformation/telepharmacy-and-omnichannel) ·
+  what-to-expect plain-words sheet (Made-for-Me Medicine, concept 15).
+
 ## Open items
 
 - ∥ scenarios: to be defined with Tamsin at that phase pass (acute-native;
