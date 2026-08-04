@@ -73,9 +73,16 @@ for a sick one.
 ## Phase set (agreed; P2 renamed 2026-07-26 during the P1 pass)
 
 P1 **At the doctor** · P2 **Choosing how I get it** · P3 **Checked and
-filled** · P4 **In hand** · P5 **Taking it** · P6 **If it comes back**
-(badged "later, only if it recurs") · ∥ **When something breaks** (parallel
-band).
+filled** · P4 **In hand** · P5 **Taking it** · P6 **When I don't get
+better** (badged "not part of every journey") · ∥ **When something breaks**
+(parallel band - service failures only; the clinical
+not-getting-better story lives in P5/P6).
+
+(P6 renamed from "If it comes back", 2026-07-26: one phase, one truth - the
+medicine was supposed to end with me better and didn't - told at each
+economy's honest timescale: Aisha across a year (the pattern picked up at
+the third script's final check), Thabo on day three-to-five (the check-in
+escalating into action).)
 
 P2 was "The script lands" until the P1 pass established (Tamsin) that BOTH
 economies leave the clinic with the price known and the script already in
@@ -101,7 +108,14 @@ machinery stays behind the line in P6 (🔮 where applicable).
 | M4b | P4 | "The counter was expecting me" | ⭐ | cash | The 60-Minute Fill + The E-Script Token |
 | M5 | P5 | "Medication you can't take wrong" | | both | Made-for-Me Medicine |
 | M6 | P5 | "The pharmacy didn't disappear after the handover" | ⭐ | both | The Pharmacist Who Stays |
-| M7 | P6 | "They noticed it kept coming back - before I did" | | both | The Pharmacy That Notices |
+| M7 | P6 | "They noticed it kept coming back - before I did" | | insured only | The Pharmacy That Notices |
+
+(M6-cash absorbs the escalation, 2026-07-26: on the cash side the day-3
+check-in's answer is "he isn't better" and the moment includes the
+pharmacist's phone-back and the same-day/next-morning clinic booking - the
+asking and the doing-something-about-it are one story. M7 is therefore
+Aisha's alone; Thabo's P6 carries no moment - it is the quiet aftermath of a
+moment that already happened.)
 
 - ∥ carries **no moment** (agreed): its scenarios do the work, and they must
   be **acute-native, defined with Tamsin at that phase pass** - what actually
@@ -795,21 +809,27 @@ right required nothing from Thabo except being there. [/why] That is
 Made-for-Me Medicine (inline link) at its free floor - the can't-take-wrong
 ladder that comes with every script, no matter who is paying.
 
-**A2 · Day three: they ask about him** - A message, in my language: "He
-should be coughing less by now - is he?" I answer in one word between
-shifts. The reply is glad, and firm about the last days: all seven, even
-though he's already chasing his sister again. If I'd said something was
-wrong - a rash, the cough worse - a pharmacist would have phoned me. For my
-son, a voice, not a chatbot.
+**A2 · Day three: they ask about him - and my answer changes things**
+*(amended 2026-07-26: the cash render's truth is that the boy is NOT
+better - the check-in escalates)* - A message, in my language: "He should
+be coughing less by now - is he?" He isn't. I say so, and ask if someone
+can call me. The pharmacist phones after six - a voice, not a chatbot -
+asks about the cough, the fever, how he's sleeping. Then she says it
+straight: three days on the antibiotic without improvement means a doctor
+should see him, and the Dis-Chem clinic near home can do it tomorrow
+morning - she books it while we talk, and tells me the price before I say
+yes.
 
 **M6-cash (under A2) ⭐ "The pharmacy didn't disappear after the handover"**
-- Nobody has ever asked Thabo whether his child's medicine is working.
-Clinics don't call back; pharmacies forget you at the door; day three is
-where every parent is alone with their judgement. This time, day three
-brought a question in his own language - and behind it, a pharmacist who
-would have phoned if anything was wrong. [why] Someone is watching his son
-get better with him. [/why] That is The Pharmacist Who Stays (inline link),
-reaching the parent with the most to carry and the least help carrying it.
+- Nobody has ever asked Thabo whether his child's medicine is working -
+day three is where every parent is alone with their judgement. This time
+day three brought a question in his own language, and when his answer was
+"no", it didn't bounce off a chatbot: a pharmacist phoned, listened, and
+turned his worry into a booked appointment with a price he knew first.
+[why] Someone asked if his boy was getting better - and when he wasn't,
+they did something about it. [/why] That is The Pharmacist Who Stays
+(inline link) earning its name: the check-in that becomes a plan the
+moment the answer is wrong.
 
 ### Current-state pain points
 
@@ -845,6 +865,123 @@ reaching the parent with the most to carry and the least help carrying it.
   (wiki/dispensing-practice/counselling-and-health-literacy) · pharmacist
   triage line (wiki/digital-transformation/telepharmacy-and-omnichannel) ·
   what-to-expect plain-words sheet (Made-for-Me Medicine, concept 15).
+
+## Approved copy - P6: When I don't get better (signed off by Tamsin, 2026-07-26)
+
+**Badge:** "not part of every journey". One phase, one truth - the medicine
+was supposed to end with me better and didn't - at two timescales: Aisha
+across the year, Thabo this week. The cash side carries NO moment (his
+moment happened in P5); the clinical fork lives here and in P5 - the ∥ band
+is service failures only.
+
+### Need (shared)
+
+The medicine was supposed to end with me **better**. If it doesn't - **this
+week, or across the year** - I need someone to **notice, and help me find
+out why**, not just hand me another round.
+
+### Activities - insured (Aisha)
+
+**A1 · It comes back** - Months later, the same thing - a different doctor
+this time, as it happens. The journey is the same short story it was in
+March: seen, scripted, delivered to the couch. Then, near the end of
+winter, a third script for the same thing. *(context - no benefit line)*
+
+**A2 · This time, the pharmacist checking it worries** - The third script
+is being prepared like the others - but at the final check, the pharmacist
+is looking at the year, not just the script. That evening my phone rings,
+and she introduces herself: she's the pharmacist who checked my
+prescription today, and she's calling to ask how I'm doing - because this
+is the third one this year, and that's worth more attention than a fourth
+script one day. Nothing about the call is trying to sell me anything; it's
+the kind of call you'd want and never get.
+
+**M7 (under A2) "They noticed it kept coming back - before I did"**
+(insured only) - Aisha never connected the three episodes - different
+months, different doctors, each just another bad week she got through. But
+the pharmacist checking her third script saw the year in one view, and did
+what a person does with a whole history in front of them: worried, and then
+called - courteously, at a time that suited Aisha, about her health and
+nothing else. [why] Someone connected the dots she was too busy living to
+see, and told her like a human being, not a notification. [/why] That is
+The Pharmacy That Notices (inline link): it noticed, a person said so, and
+she decides what happens next.
+
+**A3 · What "getting ahead of it" actually means** - She's plain about the
+medicine of it: recurring UTIs usually have a reason, and finding it means
+tests, not another antibiotic. It may be worth going back to my own doctor,
+she says - or, if it's easier, the Dis-Chem clinic can take the urine
+sample and draw the bloods, and one of their virtual doctors reviews the
+results with me. She can book either for me while we're talking, or just
+leave it with me. I take the clinic slot for Saturday; with my say-so, the
+year's history goes along. If ongoing medicine ever comes out of it, the
+repeat service picks it up from there.
+
+### Activities - cash (Thabo)
+
+**A1 · The clinic sees him the next morning** - No 5am queue, no lost shift
+- the appointment is the appointment. The clinic sister examines him with
+the week's story already on screen: the script, the check-in, what I told
+the pharmacist. A virtual doctor joins on the screen for the decision I
+couldn't afford to chase across town: a different antibiotic, and a test to
+see what's actually going on.
+
+**A2 · The new script rides the same rails** - The new script goes from the
+clinic straight into the same journey we already know - checked, made up at
+my store, ready before the afternoon is out. Nothing starts over; everyone
+already knows us. By the weekend, he's chasing his sister again.
+
+### Current-state pain points
+
+*The research records no complaint for this phase - nobody has ever
+expected a pharmacy to notice a pattern across months, or to act on a
+mid-course "he isn't better", so the absence is never reported as a pain.
+The honest no-complaint note renders instead of cards.*
+
+### Behind the line (P6 panel)
+
+- Frontstage: the pharmacist's courtesy call (health check-in first;
+  doctor-first advice; clinic/virtual-doctor as the convenient route to the
+  same tests; she can book it or leave it) · same-day/next-morning clinic
+  appointments off a pharmacist escalation · clinic consult with the
+  episode's history on screen; virtual doctor joins for the clinical
+  decision · prices stated before booking on the cash side · new scripts
+  flow back into the same fulfilment rails.
+- Backstage: recurrence flag surfaces at the FINAL CHECK of the recurring
+  script (clinically set thresholds - e.g. third same-indication script in
+  a year - flag for the pharmacist; a person decides to call) · check-in
+  escalation path: worried reply -> pharmacist phone-back -> clinic slot
+  hold · outcome routing on the customer's say-so only; repeat-service
+  handover if ongoing medicine follows · one courtesy call per pattern -
+  never repeated on a no.
+- Regulatory: pattern review within the service's granted POPIA scope -
+  pharmacist-initiated clinical courtesy, suggest-only; virtual-doctor
+  consults lawful where assessment matches face-to-face standards; clinic
+  sister's scope of practice respected (virtual doctor/referral beyond it).
+- Chips (cites): recurrence flag at final check
+  (wiki/concepts/chronic-medicine-flywheel +
+  wiki/dispensing-practice/clinical-checks-and-mtm) · Dis-Chem clinics
+  (wiki/dischem/dischem-dispensary-services) · virtual doctors
+  (wiki/sa-regulatory/e-prescription-telehealth-popia) · in-language call
+  (wiki/consumer-context/language-literacy-and-trust) · repeat-service
+  handover (design-kit/journeys/to-be-household-repeat-moments).
+
+## Agreed ∥ scenario set (2026-07-26 - service failures only; copy to be drafted)
+
+1. Out of stock after the go-ahead (both) - the plan arrives with the bad
+   news: another store on the same promise, a covered generic swap, or
+   delivery from a store that has it.
+2. The delivery fails (insured) - re-deliver in a new honest window or
+   switch to collect on the same code; a person calls, not a status.
+3. My phone is dead at the counter (cash) - ID-based fallback at the
+   express counter; the code was for speed, not a lock.
+4. The money isn't there today (cash) - held at the counter without
+   ceremony; the dignity scenario.
+5. The medical aid's answer changes (insured) - the final claim differs
+   from the consult's dry-run promise: told before the parcel moves, plain
+   language + rand difference, options (pay it / covered generic / a
+   pharmacist takes it up with the scheme while the medicine holds).
+   Kinship with #09's "let's make a plan" ⭐, no moment here.
 
 ## Open items
 
