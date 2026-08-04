@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Script Re-imagined - the acute script, in moments</title>
+<style>
+/* =============================================================================
+   DELIVERABLE #09 - THE HOUSEHOLD REPEAT, IN MOMENTS (structure v3)
+   Per phase: Need -> Activities (discrete, named; key moments embedded)
+   -> Current-state pain points (research-sourced only) -> behind the line.
+   Content source of truth: design-kit/journeys/to-be-household-repeat-moments.md
+   Self-contained: all CSS/JS inline, no external requests.
+   ============================================================================= */
+:root{
+  --brand:#1a9b4a; --brand-dark:#157a3b; --lime:#b5d334;
+  --mint:#bfe3cf; --mint-deep:#9bcfb0;
+  --ink:#1d1d1d; --ink-soft:#2b2b2b;
+  --bg:#f6f8f6; --card:#ffffff;
+  --muted:#5d6b62; --muted2:#8a958d; --line:#d8e2db;
+  --pain:#c0392b; --pain-bg:#fdf1ef; --pain-line:#eccfc9;
+  --good:#1a9b4a; --good-bg:#eef7f1;
+  --warn:#b9770b; --reform:#7c3aed;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --sp:8px; --radius:12px; --maxw:1080px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg); color:var(--ink); font-family:var(--font); line-height:1.55; font-size:15.5px; -webkit-text-size-adjust:100%;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 0 72px;}
+h1,h2,h3,h4{margin:0}
+.tiny{font-size:.78rem; color:var(--muted)}
+button{font:inherit; cursor:pointer}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--brand-dark); outline-offset:2px}
+a{color:var(--brand-dark)}
+
+/* header */
+.brandband{background:var(--brand); color:#fff; padding:calc(var(--sp)*2.5) calc(var(--sp)*3);
+  display:flex; flex-wrap:wrap; gap:var(--sp) calc(var(--sp)*2); align-items:center; justify-content:space-between;}
+.wordmark{display:flex; align-items:baseline; gap:6px; font-weight:800; font-size:1.35rem; letter-spacing:-.01em}
+.wordmark .plus{color:var(--lime); font-size:1.6rem; line-height:0}
+.brandband .maptag{font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; font-weight:700;
+  border:1.5px solid rgba(255,255,255,.6); border-radius:99px; padding:4px 12px;}
+.ribbon{display:flex; flex-wrap:wrap; gap:6px calc(var(--sp)*1.5); align-items:center;
+  background:#fff7e6; color:#8a5a00; border-bottom:1px solid #f0dca8;
+  padding:8px calc(var(--sp)*3); font-size:.82rem; font-weight:600;}
+.ribbon .gen{color:#9a7a30; font-weight:500}
+.intro{padding:calc(var(--sp)*3) calc(var(--sp)*3) 0;}
+.intro h1{font-size:1.75rem; font-weight:800; letter-spacing:-.015em; line-height:1.15}
+.intro .lede{color:var(--muted); max-width:80ch; margin-top:8px}
+.philo{display:inline-flex; align-items:center; gap:10px; background:var(--ink); color:#fff;
+  border-radius:99px; margin-top:14px; padding:7px 18px; font-size:.86rem; font-weight:700;}
+.philo u{text-decoration-color:var(--lime); text-decoration-thickness:3px; text-underline-offset:3px}
+.philo span.gt{color:var(--lime)}
+
+/* toolbar */
+.toolbar{position:sticky; top:0; z-index:40; background:rgba(246,248,246,.96); backdrop-filter:saturate(1.1) blur(4px);
+  border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:var(--sp) calc(var(--sp)*2);
+  align-items:center; padding:10px calc(var(--sp)*3); margin-top:calc(var(--sp)*2.5);}
+.toolbar .label{font-size:.74rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); font-weight:700}
+.seg{display:inline-flex; border:1.5px solid var(--brand); border-radius:99px; overflow:hidden; background:#fff}
+.seg button{border:0; background:#fff; color:var(--brand-dark); padding:6px 18px; font-weight:700; font-size:.86rem}
+.seg button + button{border-left:1.5px solid var(--brand)}
+.seg button[aria-pressed="true"]{background:var(--brand); color:#fff}
+.btn{border:1.5px solid var(--line); background:#fff; color:var(--ink-soft); border-radius:99px; padding:6px 14px; font-size:.83rem; font-weight:600;}
+.btn:hover{border-color:var(--brand)}
+.legend{display:flex; flex-wrap:wrap; gap:4px 14px; font-size:.78rem; color:var(--muted); margin-left:auto}
+.legend b{font-weight:700; color:var(--ink-soft)}
+
+/* persona strip */
+.persona{display:flex; flex-wrap:wrap; gap:calc(var(--sp)*2); align-items:flex-start;
+  background:var(--ink); color:#fff; border-radius:var(--radius); margin:calc(var(--sp)*2.5) calc(var(--sp)*3) 0;
+  padding:calc(var(--sp)*2) calc(var(--sp)*2.5);}
+.persona .who{flex:1 1 300px; min-width:280px}
+.persona .eyebrow{font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--lime); font-weight:800}
+.persona h2{font-size:1.25rem; font-weight:800; margin-top:2px}
+.persona .bio{color:#cfe0d5; font-size:.88rem; margin-top:6px; max-width:70ch}
+.persona .needbox{flex:1 1 300px; min-width:280px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18);
+  border-radius:10px; padding:12px 14px; font-size:.9rem;}
+.persona .needbox .nlabel{font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; color:var(--lime); font-weight:800; margin-bottom:4px}
+
+/* spine overview */
+.spine{margin:calc(var(--sp)*3) calc(var(--sp)*3) 0; background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius); padding:calc(var(--sp)*2) calc(var(--sp)*2.5);}
+.spine .shead{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap}
+.spine h2{font-size:.95rem; font-weight:800}
+.spine .shead .tiny{margin-left:auto}
+.spinerow{display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-top:12px}
+.snode{border:1.5px solid var(--line); border-radius:10px; padding:8px 8px 6px; background:#fff; text-align:left;}
+.snode:hover{border-color:var(--brand)}
+.snode .snum{font-family:var(--mono); font-size:.68rem; color:var(--muted2); font-weight:700}
+.snode .sttl{font-size:.8rem; font-weight:800; line-height:1.2; margin-top:2px}
+.snode .sm{margin-top:4px; font-size:.72rem; color:var(--muted)}
+.snode.par{border-style:dashed}
+.curve{margin-top:10px}
+.curve svg{width:100%; height:88px; display:block}
+@media (max-width:900px){ .spinerow{grid-template-columns:repeat(4,1fr)} .curve{display:none} }
+
+/* phase sections */
+.phase{margin:calc(var(--sp)*3.5) calc(var(--sp)*3) 0; background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius); overflow:hidden;}
+.phase.par{border-style:dashed; border-width:1.5px; border-color:var(--mint-deep)}
+.phead{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; background:var(--mint);
+  padding:12px calc(var(--sp)*2.5); border-bottom:1px solid var(--mint-deep);}
+.phead .pnum{font-family:var(--mono); font-weight:800; font-size:.8rem; color:var(--brand-dark);
+  background:#fff; border-radius:8px; padding:3px 9px;}
+.phead h2{font-size:1.35rem; font-weight:800; letter-spacing:-.01em}
+.phead .once{font-size:.72rem; text-transform:uppercase; letter-spacing:.09em; font-weight:800; color:var(--brand-dark);
+  border:1.5px solid var(--brand-dark); border-radius:99px; padding:2px 10px;}
+.pbody{padding:calc(var(--sp)*2.5) calc(var(--sp)*2.5) calc(var(--sp)*2.5);}
+
+/* section heads (Need / Activities / Pain points) */
+.sechead{display:flex; align-items:center; gap:10px; margin:calc(var(--sp)*2.5) 0 10px;}
+.sechead:first-child{margin-top:0}
+.sechead .ic{width:26px; height:26px; border-radius:8px; background:var(--ink); color:#fff;
+  display:inline-flex; align-items:center; justify-content:center; font-size:.8rem}
+.sechead h3{font-size:1.02rem; font-weight:800; letter-spacing:-.005em}
+.sechead .sub{font-size:.78rem; color:var(--muted2); font-weight:500}
+
+/* need */
+.needline{font-family:var(--serif); font-size:1.22rem; line-height:1.45; max-width:62ch; color:var(--ink);}
+.needline i{font-style:italic}
+.needline b{font-weight:700}
+
+/* activities */
+.actwho{font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--brand-dark); font-weight:800; margin:8px 0 2px}
+.activity{margin-top:16px; max-width:74ch}
+.activity h4{font-size:1.05rem; font-weight:800; letter-spacing:-.005em; margin-bottom:4px}
+.activity p{margin:0; color:var(--ink-soft); white-space:pre-line}
+.actnote{margin-top:14px; font-size:.85rem; color:var(--muted); max-width:74ch}
+
+/* key moment (embedded in activities) */
+.keymoment{margin-top:12px; border:1.5px solid var(--mint-deep); border-left:7px solid var(--brand);
+  border-radius:10px; background:var(--good-bg); padding:14px 16px; max-width:74ch;
+  box-shadow:0 2px 10px rgba(21,122,59,.07);}
+.keymoment .ktag{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:6px}
+.keymoment .klabel{font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; color:var(--brand-dark)}
+.keymoment .kstar{font-size:.72rem; font-weight:800; color:#8a5a00; background:#fff3d6; border:1px solid #eeddb0; border-radius:99px; padding:1px 9px}
+.keymoment .kline{font-size:1.15rem; font-weight:800; letter-spacing:-.01em; line-height:1.25}
+.keymoment .kline::before{content:"\201C"; color:var(--mint-deep); font-size:1.5em; line-height:0; vertical-align:-.32em; margin-right:2px}
+.keymoment .kline::after{content:"\201D"; color:var(--mint-deep); font-size:1.5em; line-height:0; vertical-align:-.32em; margin-left:2px}
+.keymoment .kwhy{margin-top:8px; font-size:.93rem}
+.keymoment .kwhy .why{background:linear-gradient(transparent 55%, #d9ecc0 55%); font-weight:800}
+.keymoment .kwhy a{font-weight:700}
+
+/* pain points */
+.paingrid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:4px}
+@media (max-width:820px){ .paingrid{grid-template-columns:1fr} }
+.paincard{background:var(--pain-bg); border:1px solid var(--pain-line); border-radius:10px; padding:12px 14px;}
+.paincard h4{font-size:.95rem; font-weight:800; color:var(--pain); margin-bottom:4px}
+.paincard p{margin:0; font-size:.89rem; color:var(--ink-soft)}
+.paincard .q{display:block; margin-top:9px; font-style:italic; color:var(--pain); font-size:.9rem; border-left:3px solid var(--pain); padding-left:10px;}
+.paincard .qsrc{display:block; margin-top:6px; font-size:.72rem; color:var(--muted2); cursor:help}
+.painnone{font-size:.89rem; color:var(--muted); font-style:italic; max-width:74ch}
+
+/* behind the line */
+details.behind{margin-top:calc(var(--sp)*2.5); border:1px dashed var(--line); border-radius:10px; background:#fafcfa;}
+details.behind summary{list-style:none; display:flex; align-items:center; gap:10px; padding:10px 14px; cursor:pointer;
+  font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);}
+details.behind summary::-webkit-details-marker{display:none}
+details.behind summary .arr{transition:transform .15s; font-size:.8rem}
+details.behind[open] summary .arr{transform:rotate(90deg)}
+details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing:0; color:var(--muted2)}
+.bgrid{padding:2px 14px 14px; display:grid; grid-template-columns:1fr 1fr; gap:12px}
+@media (max-width:760px){ .bgrid{grid-template-columns:1fr} }
+.blane h4{font-size:.72rem; text-transform:uppercase; letter-spacing:.09em; color:var(--muted); font-weight:800; margin-bottom:6px}
+.blane ul{margin:0; padding-left:18px; font-size:.86rem; color:var(--ink-soft)}
+.blane li{margin-bottom:4px}
+.breg{grid-column:1/-1; border-left:4px solid var(--warn); background:#fffaf0; border-radius:6px; padding:8px 12px; font-size:.84rem;}
+.breg b{color:#8a5a00}
+.bcaps{grid-column:1/-1; display:flex; flex-wrap:wrap; gap:6px}
+.chip{display:inline-flex; align-items:center; gap:5px; border:1px solid var(--line); background:#fff;
+  border-radius:99px; padding:3px 11px; font-size:.76rem; font-weight:600; color:var(--ink-soft); cursor:help;}
+.chip .rf{color:var(--reform); font-weight:800}
+.chip .as{color:var(--warn); font-weight:800}
+
+/* footer */
+.foot{margin:calc(var(--sp)*4) calc(var(--sp)*3) 0; font-size:.84rem; color:var(--muted); max-width:90ch}
+.foot b{color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="brandband">
+  <div class="wordmark">Dis-Chem <span class="plus">+</span> <span style="font-weight:600;font-size:.95rem">Bigly Labs</span></div>
+  <div class="maptag">Future-state customer journey · to-be · aspirational</div>
+</header>
+<div class="ribbon">
+  <span>DELIVERABLE #10 · SCRIPT RE-IMAGINED - THE ACUTE SCRIPT, IN MOMENTS</span>
+  <span class="gen">generated 2026-07-26 · content spec: design-kit/journeys/to-be-acute-moments.md · previous acute treatment (#07) preserved</span>
+</div>
+
+<section class="intro">
+  <h1>The acute script, in moments</h1>
+  <p class="lede">You shouldn't have to be well to get your medicine. Today's acute journey is designed for a
+  healthy person to navigate - this one is designed for a sick one. From the moment the doctor decides what you
+  need, everything between you and the first dose is Dis-Chem's job, not yours: <b>decided in the room</b>,
+  <b>priced before you commit</b>, <b>checked by name</b>, <b>ready before you are or arriving just after you</b> -
+  and never alone with new medicine. Toggle the economy to walk it as Aisha (insured, her own illness) or Thabo
+  (cash, his son's); open any phase's <b>behind the line</b> for the service blueprint underneath.</p>
+  <div class="philo"><u>Trust</u> <span class="gt">&gt;</span> Convenience <span class="gt">&gt;</span> Speed <span style="font-weight:500;color:#d6e6dc">&nbsp;- speed as evidence of care: the burden moves, that's the promise</span></div>
+</section>
+
+<div class="toolbar">
+  <span class="label">Economy</span>
+  <div class="seg" role="group" aria-label="Choose economy">
+    <button id="eco-insured" aria-pressed="true">Insured - Aisha</button>
+    <button id="eco-cash" aria-pressed="false">Cash - Thabo</button>
+  </div>
+  <button class="btn" id="toggle-behind">Open all behind-the-line</button>
+  <div class="legend"><span><b>⭐</b> moment of truth</span><span><b>🔮</b> requires reform</span><span><b>⚠️</b> design assumption</span></div>
+</div>
+
+<section class="persona" id="persona"></section>
+
+<section class="spine" aria-label="Journey spine">
+  <div class="shead"><h2>The spine</h2><span class="tiny">phases are the process people already know · stars mark the moments of truth · line = emotion</span></div>
+  <div class="spinerow" id="spinerow"></div>
+  <div class="curve" id="curve"></div>
+</section>
+
+<main id="board"></main>
+
+<p class="foot">
+  <b>Scope notes.</b> Standing repeats live in the household-repeat journey
+  (<a href="09-tobe-household-repeat-moments.html">deliverable #09</a>); script-expiry renewal is the
+  <a href="08-concepts.html#c7">Script Renew</a> concept's job; after-hours emergency care is a different journey,
+  not covered here. Deliverable #07 remains the previous acute treatment and deep reference. Pain points are drawn
+  only from the research - verbatim where quotes exist - never inferred; one card is honestly attributed to
+  dispensing-practice safety literature under a documented exception, and where the research records no complaint,
+  the page says so. Concepts are referenced in the copy and link to the <a href="08-concepts.html">concept set
+  (#08)</a>. Capability chips carry their vault sources in tooltips; 🔮 marks what needs regulatory reform, ⚠️ marks
+  design assumptions logged in meta/punchlist.md (item 10).</p>
+
+</div>
+<script>
+/* =============================================================================
+   DATA - mirrors design-kit/journeys/to-be-acute-moments.md (the approved
+   content spec). Edit there first, then mirror here.
+   Pain sources: wiki/dischem/pharmacy-complaints-pain-points (C4C Jan 2025),
+   wiki/dischem/dischem-social-sentiment-trust-journey (Dec 2025),
+   wiki/dischem/store-of-the-future-customer-voice (Jan 2026),
+   wiki/consumer-context/voice-of-customer-script-journey (Oct 2025),
+   plus one practice-literature card under the documented exception
+   (wiki/dispensing-practice/error-prevention-and-safety).
+   ============================================================================= */
+const SRC = {
+  complaints: {label:"Dis-Chem resolved-complaints analysis, Jan 2025", cite:"wiki/dischem/pharmacy-complaints-pain-points"},
+  sentiment:  {label:"public social-sentiment study, Dec 2025", cite:"wiki/dischem/dischem-social-sentiment-trust-journey"},
+  sotf:       {label:"Store-of-the-Future customer interviews, Jan 2026", cite:"wiki/dischem/store-of-the-future-customer-voice"},
+  voc:        {label:"script-journey customer interviews, Oct 2025", cite:"wiki/consumer-context/voice-of-customer-script-journey"},
+  svc:        {label:"script-journey interviews, Oct 2025 · delivery facts: dispensary-services page + stakeholder confirmation", cite:"wiki/consumer-context/voice-of-customer-script-journey + wiki/dischem/dischem-dispensary-services"},
+  practice:   {label:"dispensing-practice safety literature (no customer-voice record - documented exception)", cite:"wiki/dispensing-practice/error-prevention-and-safety"}
+};
+const C08 = '08-concepts.html';
+
+const DATA = {
+  economies: {
+    insured: {
+      label: "Insured - Aisha",
+      persona: {
+        eyebrow: "Patient · her own illness · insured",
+        name: "Aisha Patel",
+        bio: "33 · Sandton · insured city professional · expectations set by the best retail she already uses. Today: a UTI that flared overnight.",
+        need: "To start getting better with as little effort as possible - she has none to spare."
+      }
+    },
+    cash: {
+      label: "Cash - Thabo",
+      persona: {
+        eyebrow: "Caregiver · his son's illness · cash",
+        name: "Thabo Mokoena",
+        bio: "31 · Tembisa · uninsured, pays cash at the margin · WhatsApp on prepaid data is his whole internet. Today: his 6-year-old's chest infection, and a paper script from the clinic.",
+        need: "“Just tell me the price on WhatsApp. If it's too much, show me a cheaper one that works - I'm not made of money and my child is sick now, not next week.”"
+      }
+    }
+  },
+
+  phases: [
+    {
+      id:"p1", num:"P1", title:"At the doctor",
+      need:'One of us is sick <b>today</b>, and I have exactly one job: <b>start getting better</b>. I need everything between the doctor\'s decision and the first dose to happen with <b>as little effort from me as possible</b> - I don\'t have much to spare.',
+      activities:{
+        insured:[
+          {t:"I see the doctor",
+           x:"What I suspect is a UTI has been building for two days, and overnight it got bad enough that I can't push through. I book an appointment at my usual doctor for later that morning. The doctor examines me and confirms it - a urinary tract infection. I'm sore, tired and fed up; all I want is to get home and start getting better."},
+          {t:"“Shall I send it to Dis-Chem?”",
+           x:"When it's time for the script, the doctor asks if he can send it to Dis-Chem. I nod; an OTP arrives on my phone and he enters it. Now my medication record is open in front of him - what I take, what I'm allergic to - for this consult only. I've used the service before, so that's all it takes: one code, and he's prescribing with my history in view instead of my memory of it."},
+          {t:"We choose the medicine together",
+           x:"He wants to prescribe a particular UTI antibiotic. As he looks it up, the system shows it's in stock at my closest Dis-Chem - but my medical aid won't cover it. A generic that is covered comes up alongside, and we talk it through: same active ingredient, fully funded against a co-pay on the brand, cash prices visible too. We decide together, and I choose the generic. By the time it's on the script I know exactly what it will cost me - and before I'm up from the chair, my phone buzzes: “Dis-Chem has received your script from Dr Naidoo.”"},
+          {t:"It's with my pharmacist before I reach reception",
+           x:"The doctor signs, and we're done - there's no paper to take and nothing for me to send anywhere; Dis-Chem already has it. While I'm paying for the consult, the status moves: “Your pharmacist is checking your script.” The only decision left is how I want to receive it, and that can wait until I'm in the car.",
+           moment:{line:"My pharmacist was busy before I'd even left the doctor's", star:true,
+             why:'Every doctor\'s visit Aisha has ever made ended the same way: with homework. Carry the slip, find a pharmacy, hope about stock, brace at the counter. This one ends with the work already moving - a pharmacist has her script and is checking it while she is still paying the doctor. <span class="why">She is one minute out of the consult, and getting better is already someone else\'s job.</span> That is <a href="'+C08+'#c8">The Pharmacy in the Room</a> doing what it was built for - doctor, record, price and pharmacy in one conversation.'}}
+        ],
+        cash:[
+          {t:"The clinic sees my son",
+           x:"My son's cough went to his chest last night, and neither of us slept much. I take the morning off shift and we wait our turn at the clinic - he's hot, tired and quiet, which isn't like him. After examining and weighing him, the doctor diagnoses a chest infection and suggests an antibiotic."},
+          {t:"The script is written on paper",
+           x:"The clinic isn't on Dis-Chem's system, so the doctor writes the script by hand - an antibiotic and a syrup for the cough - and explains it to me once: how much, how often, for how many days. The paper goes into my jacket pocket."},
+          {t:"I send the script through while I wait to pay",
+           x:"While I'm waiting to pay for the consult, I photograph the script and send it through to Dis-Chem on WhatsApp. The reply is immediate: they have it, and someone will come back to me shortly. One photo, almost no data - and the job is already out of my hands."},
+          {t:"The answer comes back before we reach the gate",
+           x:"The reply comes inside 15 minutes, while my boy and I are walking to the gate: they've read the script back to me so I can see they have it right, the price is there in rands - and there's a cheaper generic the doctor would approve, with the exact saving shown. I pick it right there. Nothing is riding on the paper in my pocket anymore, and I know the number before we've spent a cent on a taxi.",
+           moment:{line:"I knew the price before I left the clinic gate", star:true,
+             why:'Thabo has done this trip before, the old way: the taxi to a pharmacy with the week\'s money in his pocket and no idea if it\'s enough, the queue with a sick child, the counter where the number is finally said out loud - and the walk away, in front of everyone, if it\'s too much. This time the number came to him, standing at the clinic, before anything was spent. <span class="why">He knows the price - and that he can afford it - before his son takes another step.</span> Nobody made him ask; the price was simply offered, with the cheaper generic presented as the smart choice it is. That is <a href="'+C08+'#c12">Snap-a-Script</a> meeting him exactly where he stands - one photo, on the phone he already has.'}}
+        ]
+      },
+      pains:[
+        {t:"The price is a mystery until the counter",
+         d:"Cost is discovered only when the pharmacist processes the script in the system at the counter - after the travel and the queue - and identical scheduled medicine is priced differently store to store.",
+         q:"I am horrified that the pricing of scheduled medication differs so dramatically from one Dis-Chem pharmacy to another.", src:"complaints"},
+        {t:"The script is yours to carry - with no proof it arrived",
+         d:"The consult ends and the hand-off becomes the patient's problem: nearly everyone still leaves with paper, and even a digital hand-over gives no confirmation.",
+         q:"When doctors email/fax a script, customers can't tell if Dis-Chem received it, causing double trips and calls, and there is no confirmation system for digital hand-overs.", src:"voc"},
+        {t:"Re-typed at the counter",
+         d:"Even when the information is already on the system, the counter asks again - profile hunts, surname variants, forms.",
+         q:"Type essays even though your information is on the system.", src:"sentiment"},
+        {t:"The unclear script stalls behind the counter",
+         d:"A handwritten script that's ambiguous or illegible can't legally be dispensed until the pharmacy reaches the prescriber to confirm it - the patient waits on a phone call between professionals.",
+         src:"practice"}
+      ],
+      behind:{
+        front:["The doctor's Dis-Chem e-scripting portal (authenticated partner access)","OTP access prompt on the patient's phone (per-consult, expiring)","Live stock, cover and price panel in the prescribing screen","Received + “pharmacist checking” statuses","WhatsApp snap line with read-back, price and generic offer (cash)"],
+        back:["Identity matched on SA ID (EMPI)","Standing service consent on record; per-consult record access granted by OTP, logged and expiring","Real-time claim pre-adjudication (dry-run) for the scheme answer","SEP + capped-fee engine for the cash price","Digitally signed e-script lodged in the Dis-Chem registry (the token is the key)","Photo-captured script read, standardised and priced; pharmacist verification before dispense (cash)"],
+        reg:"<b>POPIA / Medicines Act:</b> record access needs explicit, specific, in-language consent; AES-signed e-scripts carry full legal force (ECTA + General Regulations); a photographed paper script requires pharmacist verification before dispensing; medicine price is fixed by SEP with a capped dispensing fee - transparency is lawful, never a discount.",
+        caps:[
+          {name:"Unified patient profile (EMPI)", cite:"wiki/digital-transformation/interoperability-identity-records"},
+          {name:"Consent & audit (OTP access)", cite:"wiki/concepts/identity-and-consent"},
+          {name:"Real-time pre-adjudication", cite:"wiki/medical-schemes/realtime-claims-switching"},
+          {name:"SEP + fee price engine", cite:"wiki/sa-regulatory/sep-dispensing-fee"},
+          {name:"Live stock to prescriber", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap", reform:true},
+          {name:"Ubiquitous prescriber AES", cite:"wiki/sa-regulatory/e-prescription-telehealth-popia", reform:true},
+          {name:"E-script registry", cite:"wiki/concepts/e-prescription-token"},
+          {name:"OCR capture + pharmacist verification", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"}
+        ]
+      },
+      emotion:{insured:5, cash:5}
+    },
+    {
+      id:"p2", num:"P2", title:"Choosing how I get it",
+      need:'The script is already in; now the medicine has to reach us. I need Dis-Chem to <b>run ahead of me</b> - <b>ready before I get there, or arriving just after I do</b> - so my day stays about getting better.',
+      activities:{
+        insured:[
+          {t:"The question waits for me in the car",
+           x:"By the time I'm in the car, the message is there: my script is already being prepared - how would I like it? Collect at the Dis-Chem on my way home - ready within 30 minutes, handed over by a pharmacist who'll run me through it. Or delivery, in a slot I choose, with the instructions in the parcel and a pharmacist a message away if anything is unclear. It doesn't expire while I think, and the preparing doesn't wait for me either."},
+          {t:"I choose a delivery slot",
+           x:"I want my couch more than anything, so I pick delivery and take the early-afternoon slot. The confirmation shows the slot and the address it already knows. I can change either of them up until packing starts - it says so right there."},
+          {t:"“These can help while it works”",
+           x:"Under the confirmation there's a short list: things that help the symptoms while the antibiotic does its job - a urinary alkaliniser, a probiotic for during the course, rehydration sachets - each with its price. I add the probiotic and the sachets; they ride in the same parcel and go onto my saved card when it's packed. If I skip the list, nothing about my medicine changes."}
+        ],
+        cash:[
+          {t:"The same thread asks me how",
+           x:"Right after I pick the generic, the chat asks how I'd like it. I can name my Dis-Chem, share my location to see stores close to where I'm standing, or give an address to see what delivery would cost. I name my store - the one near home - and the reply confirms they have his medicine. Collection costs nothing, and it's on my way after work. Easy."},
+          {t:"I say go ahead",
+           x:"I reply “1 - go ahead”. That's the yes they need from me before medicine can be made up in my son's name, and everything was standing ready for it. The confirmation tells me: ready from this afternoon in the express pickup zone, where the pharmacist hands it over and runs me through his dose. It's held until closing - and if my shift runs late, there's an after-hours pickup point outside the store where my code still works."},
+          {t:"What I'll pay, and what else helps",
+           x:"The chat offers a short numbered list for a chest like his - paracetamol syrup for the fever, saline drops for his nose - each with a price. I reply “2”; the syrup is added and the new total comes straight back. Everything is one amount - the price I saw at the clinic plus what I've added - paid once, at the counter, when I collect. If I say nothing, nothing is added."}
+        ]
+      },
+      pains:[
+        {t:"Today's delivery can't reach a sick person in time",
+         d:"Delivery exists, but for medicine on a script it's next-day only - the ~60-minute service carries front-shop products, not scripts. No help when you're ill now. So the realistic option is the store, and you queue however you feel: month-end surges push dispensary waits to 25-30 minutes.",
+         q:"when you're not feeling well", src:"svc"},
+        {t:"The digital alternative that should exist is broken",
+         d:"Where a digital route is offered at all, it fails at the basics - logins, uploads, reliability - so people fall back to the queue.",
+         q:"Dis-Chem App is dysfunctional.", src:"complaints"}
+      ],
+      behind:{
+        front:["How-would-you-like-it message (collect: named store, ready within 30 · delivery: slot picker)","Store choice by name / shared location (stores near where I stand) / address for delivery cost - stores-with-stock returned (cash)","Go-ahead reply gate","Confirmation with express-zone readiness, hold-until-close and the after-hours pickup code","Priced symptom add-on list (taps / numbered replies)","Counselling on both routes: pharmacist at handover; instructions + reachable pharmacist on delivery"],
+        back:["Dispensing starts at sign-off - clinical check first, staging on the routing choice","Preparation runs ahead of the go-ahead; release (dispatch or express-zone staging) gated on the confirmed yes","Stock model: the regulated cash price is national, stock is local - the routing reply returns nearest stores with stock","Slot capacity engine keeps delivery slots honest","Add-ons attach until packing starts, never gating the medicine","Saved card charged at packing (insured); one pay-at-counter total (cash)"],
+        reg:"<b>Release & counselling:</b> dispensing in a patient's name proceeds on their confirmed instruction; couriered scheduled medicine stays under pharmacy accountability with proof of handover; counselling access preserved on every route; unattended after-hours release from an external point requires a pharmacist-oversight model - 🔮 requires reform.",
+        caps:[
+          {name:"Slot engine", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
+          {name:"DeliverD / last-mile TMS", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
+          {name:"Express pickup zone", cite:"design assumption - see meta/punchlist.md item 10(a)", assume:true},
+          {name:"After-hours external pickup", cite:"wiki/sa-regulatory/pharmacy-act-sapc-gpp - see meta/open-questions.md", reform:true},
+          {name:"Stores-with-stock routing", cite:"design assumption - see meta/punchlist.md item 10(e)", assume:true},
+          {name:"Acute symptom add-on attach", cite:"design assumption - see meta/punchlist.md item 10(c)", assume:true},
+          {name:"WhatsApp numbered picks", cite:"wiki/consumer-context/digital-access-and-whatsapp"},
+          {name:"Tokenised saved card", cite:"wiki/concepts/identity-and-consent"}
+        ]
+      },
+      emotion:{insured:4, cash:4}
+    },
+    {
+      id:"p3", num:"P3", title:"Checked and filled",
+      need:'I need to <b>trust that what we get is exactly what the doctor ordered</b> - right medicine, right dose, <b>safe for us</b> - and I need to <b>see that it was checked</b>, not just hope it was.',
+      activities:{
+        insured:[
+          {t:"Picked against my script",
+           x:"By the time I'm home and on the couch, the status has moved: my medicine and the add-ons are being picked at the store doing my delivery, and every item is scanned against the script itself. I don't do anything - I can just see it moving."},
+          {t:"The final check, with a name",
+           x:"Then: “Checked by Naledi ✓ - dose, interactions, against your record.” A pharmacist looked at exactly what was picked, checked it against the original script, and put her name to it before anything was sealed. If I have a question, her line is one tap away in the same thread.",
+           moment:{line:"Every check ran before it left the building", star:false,
+             why:'The checking used to be the invisible part - a silent backstage wait, with mistakes surfacing only at home when the packet was opened. Now it runs in the time Aisha spends driving home, and it shows its work: picked, scanned against the script, and a named pharmacist\'s sign-off on the finished pack before anything sealed. <span class="why">Fast never means unchecked - the speed came from removing the waiting, not the care.</span> That is <a href="'+C08+'#c10">The Named Check</a>: the moment that matters most in a pharmacy, carried out by a person with a name, one tap away.'}},
+          {t:"Sealed, and I already know how to take it",
+           x:"The parcel seals and the confirmation lands: on track for my 2-4pm slot, with my order's QR code attached - if my afternoon changes, that same code fetches it at the counter instead. The when-and-how guide is already on my app - with food, morning and evening, all seven days - and the same plain instructions are on the pack labels. By the time it reaches me, I'll already know what to do with it."}
+        ],
+        cash:[
+          {t:"Picked at my store",
+           x:"The thread tells me his medicine is being made up at my store - the antibiotic, the cough syrup, the fever syrup I added - each one scanned against the script the doctor wrote. I'm at work; I don't have to watch it, but it's there when I look."},
+          {t:"The final check, named, for his weight",
+           x:"Then, in my language: “Checked by Sindi ✓ - the dose is right for his weight, checked against the script.” A pharmacist I can name looked at my son's medicine after it was picked, and signed for it. If something worries me, I ask her in the chat - no phoning a dispensary that doesn't pick up.",
+           moment:{line:"Every check ran before it left the building", star:false,
+             why:'For a child\'s medicine, a mistake isn\'t an inconvenience - it\'s the thing a parent lies awake about. Today that safety runs invisibly, and any gap shows up at home, too late. Here it runs while Thabo works his shift, and it shows itself: picked at his store, scanned against the doctor\'s script, and a named pharmacist confirming the dose against his son\'s weight before signing. <span class="why">Someone with a name stood behind his boy\'s medicine - and he watched it happen.</span> That is <a href="'+C08+'#c10">The Named Check</a>, made for the person with the most to lose from an anonymous mistake.'}},
+          {t:"Ready, with my code",
+           x:"The ready message comes before my shift ends: “Ready - express pickup zone, show this code.” The same code works at the after-hours point outside the store if I'm late. His dosing guide is already in the WhatsApp thread, in my language, and the same instructions are on the labels."}
+        ]
+      },
+      pains:[
+        {t:"The mistake you find at home",
+         d:"Accuracy gaps surface only when the packet is opened - after the trip, past the point of easy return.",
+         q:"On opening the packet a few days later, I discovered my blood pressure tablets were missing.", src:"complaints"},
+        {t:"Errors read as safety threats, not service slips",
+         d:"In the public sentiment, dispensing mistakes and near-misses are talked about as danger - the fear is about what the system didn't catch.",
+         src:"sentiment"},
+        {t:"Nobody's name on it",
+         d:"When something goes wrong there is no accountable person anywhere in the experience - and the anonymous service can turn hostile at exactly the wrong moment.",
+         q:"Rudeness of pharmacy manager and pharmacist.", src:"complaints"}
+      ],
+      behind:{
+        front:["Live statuses: being picked → “Checked by [name] ✓” with the checks listed → sealed / ready","One-tap question line to the named pharmacist (app / WhatsApp)","Digital when-and-how guide pushed at sealing (app / WhatsApp, in-language)","Order / collection QR issued at sealing on both sides"],
+        back:["Script captured and first-checked by PBQ / pharmacist (started at P1)","Picking at the fulfilling store, automation where fitted","Independent barcode / NAPPI scan-verify per item","Pharmacist's FINAL check of the picked pack against the original script - the sign-off gate; nothing releases without it","Paediatric dose-for-weight verification (weight carried on the script; the pharmacist asks in-thread only if unclear)","Seal, code issue, digital-instructions push; printed instructions for whoever wants paper"],
+        reg:"<b>Pharmacist sign-off:</b> dispensing under the personal supervision of a registered pharmacist, with the final check gating release; fully autonomous dispensing of scheduled medicine remains 🔮 requires-reform.",
+        caps:[
+          {name:"BRIX dispensing + ROWA picking", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
+          {name:"Scan-verified accuracy", cite:"wiki/dispensing-practice/error-prevention-and-safety"},
+          {name:"Workflow manager", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
+          {name:"Named-check status", cite:"wiki/dischem/store-of-the-future-customer-voice"},
+          {name:"Paediatric dose check", cite:"wiki/dispensing-practice/clinical-checks-and-mtm"},
+          {name:"In-language guides", cite:"wiki/consumer-context/language-literacy-and-trust"}
+        ]
+      },
+      emotion:{insured:4, cash:4}
+    },
+    {
+      id:"p4", num:"P4", title:"In hand",
+      need:'The medicine is ready; now it has to actually reach my hands. I need the <b>promise kept as made</b> - <b>no chasing, no wondering, no wasted trip</b> - because today I have nothing spare to absorb a let-down.',
+      activities:{
+        insured:[
+          {t:"It's on its way",
+           x:"Mid-afternoon the thread moves: “On its way - arriving around 15:10”, with a live map if I feel like watching. If the time slips, I'm told early and given a new one. I never have to wonder, and I never have to chase."},
+          {t:"The knock at the door",
+           x:"The driver checks it against the order code on my phone, and the parcel is in my hands - everything inside already checked and signed for. If anything looks off, Naledi's line is still one tap away in the same thread.",
+           moment:{line:"Saw the doc. Went straight home.", star:true,
+             why:'Every doctor\'s trip in South Africa ends with the same message home: “Saw the doc. Getting meds on the way back. See you soon.” Aisha\'s message today had no second clause - she saw the doctor, and she went straight home. <span class="why">The errand that has always been welded to being ill simply never happened</span> - the medicine made its own way to her couch, arriving inside the slot she chose, while she did the one thing a sick person should be doing: resting. That is <a href="'+C08+'#c11">The 60-Minute Fill</a> with the stop deleted - and the live map was just how she watched it come.'}},
+          {t:"I check it, and they check on me",
+           x:"A message follows the knock: here's what should be in your parcel - the antibiotic, the probiotic, the rehydration sachets - is everything there and as you expected? One tap says yes; anything wrong or missing, and a person takes it from there in the same thread. My instructions are on the app and on the labels, and a pharmacist is on call if any of it is unclear. Handing it over wasn't the end of their job."}
+        ],
+        cash:[
+          {t:"The express counter, not the queue",
+           x:"After my shift I stop at my store. The express pickup zone is signposted right at the front - the dispensary queue is somebody else's afternoon. I show my code, and the pack comes out with my son's name on it. No forms, no retelling the story. (If my shift had run late, the outside pickup point takes the same code.)",
+           moment:{line:"The counter was expecting me", star:true,
+             why:'Thabo knows the other version of this stop: the month-end dispensary queue, twenty-five minutes deep, after a full shift, with a sick boy waiting at home. This time the counter was expecting him - the pack made up, named, waiting - and he was through it in minutes. <span class="why">The stop still happens; it just stopped costing him an afternoon he didn\'t have.</span> That is <a href="'+C08+'#c11">The 60-Minute Fill</a> shaped for collection - and the code he showed is <a href="'+C08+'#c9">The E-Script Token</a> doing its quiet work: his son\'s whole script riding one code, redeemable exactly once, by him.'}},
+          {t:"The pharmacist walks me through his dose",
+           x:"The pharmacist at the counter opens the pack with me: the syringe marked at his line, the labels in my language, finish all seven days even when he seems better. I ask what I want to ask while I'm standing there."},
+          {t:"I pay what I already knew",
+           x:"One total - the script and the fever syrup - the same number I've known since the clinic. Cash or card, at the same counter, and done. The number I planned for is the number I pay."}
+        ]
+      },
+      pains:[
+        {t:"The delivery promise that dies silently",
+         d:"The worst failure in the complaints record: notified, then nothing - no arrival, no update, no recovery.",
+         q:"I received a notification that it has been processed on my medical aid and was out for delivery. I did not receive it.", src:"complaints"},
+        {t:"Chasing it means phoning into a void",
+         d:"When the handover goes wrong, there is no one to reach.",
+         q:"called 4 different dispensaries[…] nobody is picking up", src:"sentiment"},
+        {t:"Promises too precise to keep",
+         d:"Customers distrust tight promises that break; a realistic window kept beats a tight one missed.",
+         src:"sotf"}
+      ],
+      behind:{
+        front:["Dispatch status + live map + honest ETA, early re-time on slip","Driver handover verified against the order QR (proof of delivery)","Post-delivery contents confirmation with escalation to a person","Express pickup zone with code scan and named pack","Counter counselling: show-and-tell, marked syringe, in-language labels","One pay-at-counter total","After-hours pickup point on the same code"],
+        back:["Slot-run dispatch and routing","POD capture against the token","Express-zone staging under name + code, single redemption enforced","Pay-at-counter reconciliation against the quoted total","Counselling logged as given; reachable-pharmacist line stays open on the delivery route"],
+        reg:"<b>Handover:</b> scheduled-medicine delivery stays under pharmacy accountability with recorded proof of handover; counselling access preserved on both routes; unattended after-hours release 🔮 requires-reform.",
+        caps:[
+          {name:"DeliverD / last-mile TMS + POD", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
+          {name:"Live tracking", cite:"wiki/global-benchmarks/patterns-deep-dive"},
+          {name:"Express pickup zone", cite:"design assumption - see meta/punchlist.md item 10(a)", assume:true},
+          {name:"Token single-redemption", cite:"wiki/concepts/e-prescription-token"},
+          {name:"Realistic-windows principle", cite:"wiki/dischem/store-of-the-future-customer-voice"},
+          {name:"Counselling at handover", cite:"wiki/dispensing-practice/counselling-and-health-literacy"},
+          {name:"Contents-confirmation callback", cite:"design assumption - see meta/punchlist.md item 9(e)", assume:true}
+        ]
+      },
+      emotion:{insured:5, cash:5}
+    },
+    {
+      id:"p5", num:"P5", title:"Taking it",
+      need:'The medicine is in the house; now it has to work. I need to <b>give it right, every time, to the last day</b> - and I need to know <b>someone is still there</b> if something doesn\'t look right.',
+      activities:{
+        insured:[
+          {t:"The first dose, without the leaflet",
+           x:"That afternoon I take the first tablet - with food, morning and evening, seven days, exactly as the label and the guide on my app say. The what-to-expect is written like a person would say it: what's normal in the first days, what isn't, when to say something. If I want reminding, the app lets me set my own - my phone, my choice. I never unfold the scroll in the box.",
+           moment:{line:"Medication you can't take wrong", star:false,
+             why:'New medicine has always come with homework at the worst time: tissue-paper leaflets in legal language, decoded at the kitchen table while you feel terrible. Aisha\'s came ready to take - the label says what it is and why she\'s taking it, the guide says how and what to expect, in plain words. <span class="why">Taking it right needed no figuring out - the understanding arrived with the medicine.</span> That is <a href="'+C08+'#c15">Made-for-Me Medicine</a>: made to be taken right, before it ever reached her hands.'}},
+          {t:"Day three: they ask about me",
+           x:"A message: “You should be starting to feel better around now - are you?” One tap answers it. Mine says yes - and the reply is glad, and clear about the part that matters: finish all seven days, because stopping early is how infections come back harder. If my answer had been “no”, or “something feels wrong”, a pharmacist would have picked it up right there in the thread.",
+           moment:{line:"The pharmacy didn't disappear after the handover", star:true,
+             why:'Every pharmacy Aisha has ever used went silent the moment the medicine left the counter - recovery was hers to manage alone, with Google at midnight for company. On day three, Dis-Chem asked how she was doing. One question, perfectly timed. <span class="why">Someone who knows medicine is watching her recovery with her - she is not doing this alone.</span> That is <a href="'+C08+'#c16">The Pharmacist Who Stays</a>: the doctor who phones the day after, built into every script - check-ins that know the course, plain answers about what\'s normal, and a pharmacist on standby the moment something feels wrong.'}}
+        ],
+        cash:[
+          {t:"His dose, in my language",
+           x:"That evening I give him the first dose - the syringe marked at his line, the label and the guide in my language, the fever syrup with its own plain line: only if the fever is up. Seven days, morning and evening, even when he seems better - it says so where I can't miss it. Nothing at my kitchen table needs decoding.",
+           moment:{line:"Medication you can't take wrong", star:false,
+             why:'Dosing a sick child from instructions in your second language is a quiet, common danger - and tonight it isn\'t one. The syringe is marked, the words are his father\'s own language, the pictures carry what words might miss. <span class="why">Getting it right required nothing from Thabo except being there.</span> That is <a href="'+C08+'#c15">Made-for-Me Medicine</a> at its free floor - the can\'t-take-wrong ladder that comes with every script, no matter who is paying.'}},
+          {t:"Day three: they ask about him - and my answer changes things",
+           x:"A message, in my language: “He should be coughing less by now - is he?” He isn't. I say so, and ask if someone can call me. The pharmacist phones after six - a voice, not a chatbot - asks about the cough, the fever, how he's sleeping. Then she says it straight: three days on the antibiotic without improvement means a doctor should see him, and the Dis-Chem clinic near home can do it tomorrow morning - she books it while we talk, and tells me the price before I say yes.",
+           moment:{line:"The pharmacy didn't disappear after the handover", star:true,
+             why:'Nobody has ever asked Thabo whether his child\'s medicine is working - day three is where every parent is alone with their judgement. This time day three brought a question in his own language, and when his answer was “no”, it didn\'t bounce off a chatbot: a pharmacist phoned, listened, and turned his worry into a booked appointment with a price he knew first. <span class="why">Someone asked if his boy was getting better - and when he wasn\'t, they did something about it.</span> That is <a href="'+C08+'#c16">The Pharmacist Who Stays</a> earning its name: the check-in that becomes a plan the moment the answer is wrong.'}}
+        ]
+      },
+      pains:[
+        {t:"Help flips into harassment",
+         d:"Unconsented, unstoppable comms are a named trust-breaker - the line between care and spam is consent and timing.",
+         src:"sentiment"},
+        {t:"Digital-only instructions worry people",
+         d:"Customers want the paper and the person available, not replaced - instructions that live only on a screen feel fragile.",
+         src:"sotf"}
+      ],
+      behind:{
+        front:["In-language labels, marked dosing syringe, plain what-to-expect with the guide (app / WhatsApp; paper on request)","Self-set reminders in the app - the customer's own, never pushed","The single day-3 check-in with one-tap / one-word replies","Pharmacist pickup on a worried reply: thread (insured) / phone-back (cash) - the full recovery fork lives in the ∥ band"],
+        back:["Check-in timed from the course profile (day 3 of 7 for this antibiotic)","Reply triage: “better” → finish-the-course line; “worse / something wrong” → routed to a pharmacist with the record in view","AMR stewardship framing on the finish-it line","No pushed reminder machinery - one check-in per course by design"],
+        reg:"<b>POPIA:</b> the check-in and any follow-up are consented within the service's granted scope; counselling remains a pharmacist act, never automated away.",
+        caps:[
+          {name:"Course-profile check-in", cite:"wiki/digital-transformation/adherence-tech-and-digital-therapeutics"},
+          {name:"In-language + pictogram dosing", cite:"wiki/consumer-context/language-literacy-and-trust"},
+          {name:"AMR stewardship", cite:"wiki/dispensing-practice/counselling-and-health-literacy"},
+          {name:"Pharmacist triage line", cite:"wiki/digital-transformation/telepharmacy-and-omnichannel"},
+          {name:"What-to-expect plain-words sheet", cite:"Made-for-Me Medicine - 08-concepts.html (concept 15)"}
+        ]
+      },
+      emotion:{insured:5, cash:3}
+    },
+    {
+      id:"p6", num:"P6", title:"When I don't get better", badge:"not part of every journey",
+      need:'The medicine was supposed to end with me <b>better</b>. If it doesn\'t - <b>this week, or across the year</b> - I need someone to <b>notice, and help me find out why</b>, not just hand me another round.',
+      activities:{
+        insured:[
+          {t:"It comes back",
+           x:"Months later, the same thing - a different doctor this time, as it happens. The journey is the same short story it was in March: seen, scripted, delivered to the couch. Then, near the end of winter, a third script for the same thing."},
+          {t:"This time, the pharmacist checking it worries",
+           x:"The third script is being prepared like the others - but at the final check, the pharmacist is looking at the year, not just the script. That evening my phone rings, and she introduces herself: she's the pharmacist who checked my prescription today, and she's calling to ask how I'm doing - because this is the third one this year, and that's worth more attention than a fourth script one day. Nothing about the call is trying to sell me anything; it's the kind of call you'd want and never get.",
+           moment:{line:"They noticed it kept coming back - before I did", star:false,
+             why:'Aisha never connected the three episodes - different months, different doctors, each just another bad week she got through. But the pharmacist checking her third script saw the year in one view, and did what a person does with a whole history in front of them: worried, and then called - courteously, at a time that suited her, about her health and nothing else. <span class="why">Someone connected the dots she was too busy living to see, and told her like a human being, not a notification.</span> That is <a href="'+C08+'#c13">The Pharmacy That Notices</a>: it noticed, a person said so, and she decides what happens next.'}},
+          {t:"What “getting ahead of it” actually means",
+           x:"She's plain about the medicine of it: recurring UTIs usually have a reason, and finding it means tests, not another antibiotic. It may be worth going back to my own doctor, she says - or, if it's easier, the Dis-Chem clinic can take the urine sample and draw the bloods, and one of their virtual doctors reviews the results with me. She can book either for me while we're talking, or just leave it with me. I take the clinic slot for Saturday; with my say-so, the year's history goes along. If ongoing medicine ever comes out of it, the repeat service picks it up from there."}
+        ],
+        cash:[
+          {t:"The clinic sees him the next morning",
+           x:"No 5am queue, no lost shift - the appointment is the appointment. The clinic sister examines him with the week's story already on screen: the script, the check-in, what I told the pharmacist. A virtual doctor joins on the screen for the decision I couldn't afford to chase across town: a different antibiotic, and a test to see what's actually going on."},
+          {t:"The new script rides the same rails",
+           x:"The new script goes from the clinic straight into the same journey we already know - checked, made up at my store, ready before the afternoon is out. Nothing starts over; everyone already knows us. By the weekend, he's chasing his sister again."}
+        ]
+      },
+      pains:[],
+      painNote:"The research records no complaint for this phase - nobody has ever expected a pharmacy to notice a pattern across months, or to act on a mid-course “he isn't better”, so the absence is never reported as a pain. The moments here exist precisely because the expectation doesn't.",
+      behind:{
+        front:["The pharmacist's courtesy call: health check-in first, doctor-first advice, clinic / virtual doctor as the convenient route to the same tests - book it or leave it","Same-day / next-morning clinic appointments off a pharmacist escalation","Clinic consult with the episode's history on screen; virtual doctor joins for the clinical decision","Prices stated before booking on the cash side","New scripts flow back into the same fulfilment rails"],
+        back:["Recurrence flag surfaces at the FINAL CHECK of the recurring script (clinically set thresholds; a person decides to call)","Check-in escalation path: worried reply → pharmacist phone-back → clinic slot hold","Outcome routing on the customer's say-so only; repeat-service handover if ongoing medicine follows","One courtesy call per pattern - never repeated on a no"],
+        reg:"<b>POPIA / scope of practice:</b> pattern review within the service's granted scope - a pharmacist-initiated clinical courtesy, suggest-only; virtual-doctor consults are lawful telehealth where the assessment matches face-to-face standards; the clinic sister's scope of practice is respected.",
+        caps:[
+          {name:"Recurrence flag at final check", cite:"wiki/concepts/chronic-medicine-flywheel + wiki/dispensing-practice/clinical-checks-and-mtm"},
+          {name:"Dis-Chem clinics", cite:"wiki/dischem/dischem-dispensary-services"},
+          {name:"Virtual doctors", cite:"wiki/sa-regulatory/e-prescription-telehealth-popia"},
+          {name:"In-language call", cite:"wiki/consumer-context/language-literacy-and-trust"},
+          {name:"Repeat-service handover", cite:"design-kit/journeys/to-be-household-repeat-moments"}
+        ]
+      },
+      emotion:{insured:4, cash:4}
+    },
+    {
+      id:"pp", num:"∥", title:"When something breaks", par:true,
+      need:'Things go wrong - stock runs out, deliveries fail, weeks cost more than they should. I need to <b>hear it early, with a way through already attached</b> - <b>never silence, never a dead end</b> - because today I don\'t have the strength to fight a system.',
+      activities:{
+        insured:[
+          {t:"Out of stock, after everything was promised",
+           x:"The store filling my order hits a gap the stock check didn't catch. The message that tells me carries the plan with it: another store nearby has it and my slot moves out by an hour - or the covered generic is on their shelf right now, same active ingredient, and a pharmacist has already confirmed the swap is clinically sound. I pick one, in one tap. The order never quietly dies; I was never the one who had to discover it."},
+          {t:"The delivery fails",
+           x:"The driver can't find the complex, or the slot collapses on their side. Before I've even noticed the window sliding, a person phones - not a status update, a voice with options: re-deliver this evening in a window they can actually keep, or I collect at the counter tonight on the same code from my phone. The failure was theirs, so the fixing is theirs; all I supply is a preference."},
+          {t:"My medical aid's answer changes",
+           x:"The consult said R0; the final claim comes back different - a benefit that ran dry that same week, a limit the dry-run couldn't see. I'm told before the parcel moves: what changed, in plain words, and the exact rand difference. My choices are real ones - pay the difference; switch to the fully covered generic, a pharmacist confirming it does the same job; or let a pharmacist take it up with the scheme while my medicine waits, held for me. What never happens is discovering it at my door."}
+        ],
+        cash:[
+          {t:"Out of stock - told before the taxi, never after",
+           x:"If my store's stock fails after the go-ahead, the message reaches me before I've spent a rand travelling: the next-nearest store with his medicine, on the same code and the same price - or delivery this once, with its cost shown, if the distance isn't worth it. The wasted trip is the one thing they never let happen."},
+          {t:"My phone is dead at the counter",
+           x:"A twelve-hour shift and the battery didn't make it. At the express counter my ID is enough - the pack is under his name, and the order is mine, not my phone's. The code was for speed, never a lock."},
+          {t:"The money isn't there today",
+           x:"The total hasn't changed - the week did. One reply: “hold it for me.” It's held at the counter, price unchanged, no questions asked when I come on Friday - and no one at that counter knows anything except that a pack is waiting for its person. The medicine doesn't get cancelled because payday moved; it waits, the way a neighbour would hold something for you."}
+        ]
+      },
+      pains:[
+        {t:"An exception kills the order",
+         d:"Today a single snag - stock, a claim, an address - ends the whole attempt, silently. Exceptions abort orders rather than triggering recovery.",
+         src:"complaints"},
+        {t:"No fallback, no way through",
+         d:"When a channel breaks there is no alternative path, and the breakdown becomes a hard blocker.",
+         q:"Digital breakdowns (app/online failures) become hard blockers when no alternative path exists.", src:"sentiment"},
+        {t:"After a failure, they leave",
+         d:"A single unrecovered failure is where customers defect - the relationship rarely survives the second attempt that never came.",
+         src:"sentiment"}
+      ],
+      behind:{
+        front:["Failure messages that carry the recovery options inside them - never bare bad news","A person phones on delivery failure (insured) and on anything touching money or the child (cash)","One-tap / one-reply decisions","ID fallback at the express counter","Hold-at-counter reply"],
+        back:["Stock-gap detection at pick time with reroute options computed before the customer is told","Claim-delta detection between dry-run and final adjudication, gating dispatch","Pharmacist-confirmed generic swaps (lawful substitution)","Same-token redemption across stores and routes","Held-order shelf with price lock","Failure-triggered outbound calls, not inbound queues"],
+        reg:"<b>Substitution & handover:</b> generic substitution is lawful with the prescriber's clinical primacy and the patient's choice preserved; identity verification for scheduled-medicine handover is satisfied by ID where the code fails; scheme disputes are handled pharmacy-to-scheme with the patient's consent.",
+        caps:[
+          {name:"Graceful-failure patterns", cite:"wiki/concepts/graceful-failure"},
+          {name:"Reroute + stores-with-stock", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
+          {name:"Claim-delta detection", cite:"design assumption - see meta/punchlist.md item 10(h)", assume:true},
+          {name:"Substitution rules", cite:"wiki/medical-schemes/dsp-formularies-copayments"},
+          {name:"Token cross-redemption", cite:"wiki/concepts/e-prescription-token"},
+          {name:"Hold-at-counter price lock", cite:"design assumption - see meta/punchlist.md item 10(g)", assume:true},
+          {name:"ID fallback at the counter", cite:"design assumption - see meta/punchlist.md item 10(i)", assume:true},
+          {name:"Outbound-call recovery", cite:"wiki/dischem/dischem-social-sentiment-trust-journey"}
+        ]
+      },
+      emotion:{insured:3, cash:3}
+    }
+  ]
+};
+
+/* ============================================================================= */
+let ECO = (location.hash === "#cash") ? "cash" : "insured";
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+
+function renderPersona(){
+  const p = DATA.economies[ECO].persona;
+  document.getElementById("persona").innerHTML =
+    '<div class="who"><div class="eyebrow">'+esc(p.eyebrow)+'</div><h2>'+esc(p.name)+'</h2><p class="bio">'+esc(p.bio)+'</p></div>'+
+    '<div class="needbox"><div class="nlabel">The need</div>'+esc(p.need)+'</div>';
+}
+
+function renderSpine(){
+  const row = document.getElementById("spinerow");
+  row.innerHTML = "";
+  DATA.phases.forEach(ph=>{
+    const acts = ph.activities[ECO];
+    const moments = acts.filter(a=>a.moment);
+    const stars = moments.filter(a=>a.moment.star).length;
+    const node = document.createElement("button");
+    node.className = "snode"+(ph.par?" par":"");
+    node.setAttribute("aria-label","Go to "+ph.title);
+    node.innerHTML = '<div class="snum">'+esc(ph.num)+'</div><div class="sttl">'+esc(ph.title)+'</div>'+
+      '<div class="sm">'+moments.length+' moment'+(moments.length===1?"":"s")+(stars?(' · '+"⭐".repeat(stars)):"")+'</div>';
+    node.addEventListener("click", ()=>{ document.getElementById(ph.id).scrollIntoView({behavior:"smooth", block:"start"}); });
+    row.appendChild(node);
+  });
+  const n = DATA.phases.length;
+  const W = 1000, H = 88, padX = W/(n*2);
+  const y = v => 22 + (5 - v) * 24;
+  const pts = DATA.phases.map((ph,i)=>[ padX + i*(W/n), y(ph.emotion[ECO]) ]);
+  const line = pts.map(p=>p.join(",")).join(" ");
+  const dots = pts.map((p,i)=>'<circle cx="'+p[0]+'" cy="'+p[1]+'" r="5" fill="#1a9b4a"/>'+
+    '<text x="'+p[0]+'" y="'+(p[1]-10)+'" text-anchor="middle" font-size="12" fill="#5d6b62">'+DATA.phases[i].emotion[ECO]+'</text>').join("");
+  document.getElementById("curve").innerHTML =
+    '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" aria-label="Emotion curve, '+ECO+'">'+
+    '<polyline points="'+line+'" fill="none" stroke="#9bcfb0" stroke-width="3"/>'+dots+'</svg>';
+}
+
+function chipHTML(c){
+  const mark = c.reform ? ' <span class="rf" title="requires regulatory reform">🔮</span>'
+             : c.assume ? ' <span class="as" title="design assumption - logged in meta/punchlist.md">⚠️</span>' : "";
+  return '<span class="chip" title="'+esc(c.cite)+'">'+esc(c.name)+mark+'</span>';
+}
+
+function sechead(icon, title, sub){
+  return '<div class="sechead"><span class="ic">'+icon+'</span><h3>'+esc(title)+'</h3>'+(sub?'<span class="sub">'+esc(sub)+'</span>':"")+'</div>';
+}
+
+function activityHTML(a){
+  let h = '<div class="activity"><h4>'+esc(a.t)+'</h4><p>'+esc(a.x)+'</p></div>';
+  if(a.moment){
+    const m = a.moment;
+    h += '<div class="keymoment"><div class="ktag"><span class="klabel">Key moment</span>'+
+         (m.star?'<span class="kstar">⭐ moment of truth</span>':"")+'</div>'+
+         '<div class="kline">'+esc(m.line)+'</div>'+
+         '<div class="kwhy">'+m.why+'</div></div>';
+  }
+  return h;
+}
+
+function painHTML(p){
+  const s = SRC[p.src];
+  const q = p.q ? '<span class="q">"'+esc(p.q)+'"</span>' : "";
+  return '<div class="paincard"><h4>'+esc(p.t)+'</h4><p>'+esc(p.d)+'</p>'+q+
+    '<span class="qsrc" title="'+esc(s.cite)+'">'+(p.q?"verbatim, ":"")+esc(s.label)+'</span></div>';
+}
+
+function renderBoard(){
+  const board = document.getElementById("board");
+  board.innerHTML = "";
+  DATA.phases.forEach(ph=>{
+    const sec = document.createElement("section");
+    sec.className = "phase"+(ph.par?" par":"");
+    sec.id = ph.id;
+    const who = DATA.economies[ECO].persona.name.split(" ")[0];
+    const b = ph.behind;
+    const lanes =
+      '<div class="bgrid">'+
+        '<div class="blane"><h4>Frontstage</h4><ul>'+b.front.map(x=>'<li>'+x+'</li>').join("")+'</ul></div>'+
+        '<div class="blane"><h4>Backstage</h4><ul>'+b.back.map(x=>'<li>'+x+'</li>').join("")+'</ul></div>'+
+        (b.reg?'<div class="breg">'+b.reg+'</div>':"")+
+        '<div class="bcaps">'+b.caps.map(chipHTML).join("")+'</div>'+
+      '</div>';
+    const pains = ph.pains.length
+      ? '<div class="paingrid">'+ph.pains.map(painHTML).join("")+'</div>'
+      : '<p class="painnone">'+esc(ph.painNote||"")+'</p>';
+    sec.innerHTML =
+      '<div class="phead"><span class="pnum">'+esc(ph.num)+'</span><h2>'+esc(ph.title)+'</h2>'+
+        (ph.once?'<span class="once">once, not per cycle</span>':"")+
+        (ph.badge?'<span class="once">'+esc(ph.badge)+'</span>':"")+
+        (ph.par?'<span class="once" style="border-color:var(--reform);color:var(--reform)">parallel - any phase</span>':"")+
+      '</div>'+
+      '<div class="pbody">'+
+        sechead("♥","Need")+
+        '<div class="needline"><i>'+ph.need+'</i></div>'+
+        sechead("⚙","Activities", who+"'s journey")+
+        ph.activities[ECO].map(activityHTML).join("")+
+        (ph.actnote?'<p class="actnote">'+esc(ph.actnote)+'</p>':"")+
+        sechead("✕","Current-state pain points","from the research - never inferred")+
+        pains+
+        '<details class="behind"><summary><span class="arr">▶</span> Behind the line <span class="sub">- the service blueprint under this phase</span></summary>'+lanes+'</details>'+
+      '</div>';
+    board.appendChild(sec);
+  });
+}
+
+function setEco(e){
+  ECO = e;
+  document.getElementById("eco-insured").setAttribute("aria-pressed", e==="insured" ? "true":"false");
+  document.getElementById("eco-cash").setAttribute("aria-pressed", e==="cash" ? "true":"false");
+  renderPersona(); renderSpine(); renderBoard();
+}
+document.getElementById("eco-insured").addEventListener("click", ()=>setEco("insured"));
+document.getElementById("eco-cash").addEventListener("click", ()=>setEco("cash"));
+
+let behindOpen = false;
+document.getElementById("toggle-behind").addEventListener("click", function(){
+  behindOpen = !behindOpen;
+  document.querySelectorAll("details.behind").forEach(d=>{ d.open = behindOpen; });
+  this.textContent = behindOpen ? "Close all behind-the-line" : "Open all behind-the-line";
+});
+
+setEco(ECO);
+</script>
+</body>
+</html>
