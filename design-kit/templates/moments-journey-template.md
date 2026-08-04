@@ -12,11 +12,16 @@ updated: "2026-07-19"
 How to build a **moments journey**: a future-state customer journey told as a
 familiar spine of phases with the emotionally significant **moments pulled
 out**, each staging a stark contrast between today's Dis-Chem and the future
-state. The worked exemplar is
+state. The worked exemplars are
 [deliverables/09-tobe-household-repeat-moments.html](../../deliverables/09-tobe-household-repeat-moments.html)
-(content spec: [[design-kit/journeys/to-be-household-repeat-moments]]); this
-page is the pattern behind it, so the same structure, register and process
-carry to other journeys (acute e-scripting next).
+(content spec: [[design-kit/journeys/to-be-household-repeat-moments]] - the
+v3.1 register rule set) and
+[deliverables/10-tobe-acute-moments.html](../../deliverables/10-tobe-acute-moments.html)
+(content spec: [[design-kit/journeys/to-be-acute-moments]] - the register
+additions and the six process rules from the acute pass); this page is the
+pattern behind both, so the same structure, register and process carry to
+other journeys. **Read both specs' rule sections before drafting a new
+journey - they are the accumulated canon.**
 
 Read alongside [[design-kit/templates/concept-card-template]] (the harness the
 moment card adapts), [[tamsins-voice]] and [[writing-style-guide]]. The
@@ -144,6 +149,76 @@ whys are written per economy. Spine moment counts follow the active economy.
 
 **No prelude into a key moment.** The named activity walks the reader to the
 moment's doorstep; the callout's own label is the handoff.
+
+### The #10 additions (canon from the acute pass, 2026-07-26; full worked
+### rule set with rationale in [[design-kit/journeys/to-be-acute-moments]])
+
+Register rules on top of v3.1:
+
+- **No benefit line where the service isn't actively adding value** -
+  context activities (the clinic visit, the paper script) stay plain.
+- **Where the person is suffering, the copy carries how they feel**; the
+  emotional charge scales with how sick they are.
+- **Fixed activity anatomy:** name -> functional what -> felt benefit
+  (where earned). Crafted, performing lines live in moment blocks ONLY -
+  catch copywriting in activities ("the ten minutes go on my body") and
+  claim language ("two options, both real").
+- **Needs include the words "I need"** and stay plain - explain the need in
+  one line a customer would say.
+- **Context lines are personal** ("my son's cough", never "his"), unhurried,
+  one thought per sentence.
+- **Technology appears only when relevant** (the portal at script time, not
+  during diagnosis); **price is native to choosing**, never a receipt
+  afterwards - and the service provides transparency, never the cover
+  guarantee.
+- **Consent refinement:** standing service relationship = the granted fact;
+  per-consult record access by expiring OTP.
+- **Word-level SA ground truth:** "counter", never "till"; the human rituals
+  anchor the moments ("Saw doc. Getting meds on the way back. See you
+  soon.").
+- **Every notification is named, worded and placed** - the thread is
+  reconstructable; people are named only at the final check.
+- **Concepts are referenced inline only where the reader watches them
+  work** (a token cited in a phase whose activities never show one is a
+  bug).
+- **Pain cards: don't surface pains that don't exist** - the honest
+  no-complaint note is a feature; a practice-literature pain may stand only
+  clearly attributed as such (documented exception, the human lead's call).
+
+Process rules for every phase pass (the P1 retrospective):
+
+1. **Walk the service logic first** - a short "how it actually works"
+   sequence, in true order, corrected by the human lead BEFORE activities
+   are drafted from it. The single most productive move of the pass.
+2. **The transcription test** - every activity sentence must survive "could
+   this person have said this to a friend, tired, that evening?"
+3. **The message thread is reconstructable.**
+4. **Commit where the service can commit** (inside 15 minutes, held until
+   closing); stay general where detail invites nitpicking.
+5. **Possessives and pacing** as above.
+6. **Self-audit against the full checklist before serving any draft.**
+
+Ways of working confirmed in the acute pass (how the human lead co-creates):
+
+- **Moments are agreed one at a time**: first "what this moment is about"
+  (scene, why, today-contrast, star rationale) - THEN title candidates. Never
+  ask for a title before the moment is understood.
+- **Iterate titles from the closest candidate** ("d is closest, iterate from
+  there"), expect mid-iteration insight to redefine the moment itself, and
+  expect signature titles to be deliberately reused across journeys.
+- **Expect structural challenges mid-build** (a moment demoted after its
+  full block was drafted; a phase renamed; a moment absorbed into another's
+  escalation) - moment sets stay negotiable until the build.
+- **When codes pile up (P6s, M7s), stop and recap in plain English** -
+  narrate people and stories, not labels.
+- **Balance human moments against salesiness**: courtesy calls open on the
+  person's health, never a booking; relevance = triggered by a live event
+  (the third script), not a cold pattern.
+- **Page-level copy (title, standfirst, persona strips, scope notes,
+  curves) is approved before the build** - nothing unreviewed enters the
+  HTML, ever.
+- **Commit and push per pass**; spec first, HTML mirrored; previous
+  deliverables never touched.
 
 ## The process (in order, with the human lead)
 
