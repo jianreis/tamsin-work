@@ -70,11 +70,21 @@ for a sick one.
   doctor NOT on the portal - he enters by Snap-a-Script from the clinic
   gate. A new face after Sipho carried #07 and #09.
 
-## Phase set (agreed)
+## Phase set (agreed; P2 renamed 2026-07-26 during the P1 pass)
 
-P1 **At the doctor** · P2 **The script lands** · P3 **Checked and filled** ·
-P4 **In hand** · P5 **Taking it** · P6 **If it comes back** (badged "later,
-only if it recurs") · ∥ **When something breaks** (parallel band).
+P1 **At the doctor** · P2 **Choosing how I get it** · P3 **Checked and
+filled** · P4 **In hand** · P5 **Taking it** · P6 **If it comes back**
+(badged "later, only if it recurs") · ∥ **When something breaks** (parallel
+band).
+
+P2 was "The script lands" until the P1 pass established (Tamsin) that BOTH
+economies leave the clinic with the price known and the script already in
+Dis-Chem's hands - Thabo's snap and his ⭐ moved into P1, and P2 became the
+routing phase: the how-do-you-want-it ask, the two care-shaped options
+(collect on the way home with the pharmacist explaining at handover, or
+delivery with usage instructions and a reachable pharmacist), and the
+symptom-relief add-on suggestions where the order confirms. P2 carries no
+moments - a deliberately quiet phase.
 
 Signposted out: repeats -> #09; script-expiry renewal -> Script Renew;
 after-hours emergency -> footer scope note. #07's acute->chronic CCMDD
@@ -84,11 +94,11 @@ machinery stays behind the line in P6 (🔮 where applicable).
 
 | # | Phase | Title (memory line) | ⭐ | Economies | Concept(s) inline |
 |---|---|---|---|---|---|
-| M1 | P1 | "My pharmacist was busy before I'd even left the doctor's" | ⭐ | insured only | The Pharmacy in the Room (+ The E-Script Token where natural) |
-| M2 | P2 | "I knew the price before I left the clinic gate" | ⭐ | cash only | Snap-a-Script + The E-Script Token |
+| M1 | P1 | "My pharmacist was busy before I'd even left the doctor's" | ⭐ | insured only | The Pharmacy in the Room |
+| M2 | P1 | "I knew the price before I left the clinic gate" | ⭐ | cash only | Snap-a-Script |
 | M3 | P3 | "Every check ran before it left the building" | | both | The Named Check |
 | M4a | P4 | "Saw the doc. Went straight home." | ⭐ | insured | The 60-Minute Fill |
-| M4b | P4 | "The counter was expecting me" | ⭐ | cash | The 60-Minute Fill |
+| M4b | P4 | "The counter was expecting me" | ⭐ | cash | The 60-Minute Fill + The E-Script Token |
 | M5 | P5 | "Medication you can't take wrong" | | both | Made-for-Me Medicine |
 | M6 | P5 | "The pharmacy didn't disappear after the handover" | ⭐ | both | The Pharmacist Who Stays |
 | M7 | P6 | "They noticed it kept coming back - before I did" | | both | The Pharmacy That Notices |
@@ -96,10 +106,13 @@ machinery stays behind the line in P6 (🔮 where applicable).
 - ∥ carries **no moment** (agreed): its scenarios do the work, and they must
   be **acute-native, defined with Tamsin at that phase pass** - what actually
   goes wrong in an hours-long acute fill, not #09 hand-me-downs.
-- P2 has **no insured moment** (the token-received + how-do-you-want-it beat
-  was deliberately demoted to activities in both economies): Aisha's
-  experience is won in the room, Thabo's at the clinic gate. Uneven on
-  purpose.
+- P1 carries **both stars, symmetrically**: each economy's price-certainty
+  moment of truth, delivered the way its reality allows (Aisha's in the
+  chair, Thabo's at the clinic gate). P2 carries **no moments at all**.
+- **The E-Script Token is referenced inline only where the reader watches it
+  being used** - M4b's QR scan at the express counter (agreed after Tamsin
+  caught it cited in P1 blocks whose activities never show a token). Its P1
+  surface is the received-notifications; the registry stays behind the line.
 - "Every check ran before it left the building" and "Medication you can't
   take wrong" are **signature lines reused from #09 deliberately** - the
   same promise landing in a second journey.
@@ -126,6 +139,45 @@ activities; m6 became the split M4a/M4b under the deleted-stop / express-stop
 reframe; m7 adherence expanded into P5's two moments; m9 softened into M7
 with CCMDD backstage. #07 itself is preserved untouched.
 
+## Register rules added in the P1 pass (2026-07-26, agreed with Tamsin; apply to all phases)
+
+On top of the full v3.1 rule set from #09:
+
+- **No benefit line where Dis-Chem isn't actively adding value.** Context
+  activities (the clinic visit, the paper script) stay plain - a benefit
+  line only exists where the service earns it.
+- **Where the person is suffering, the activity carries how they feel**
+  (sore, tired and fed up; hot, tired and quiet, which isn't like him). The
+  emotional charge scales with how sick the person is.
+- **Activity anatomy is fixed:** name -> functional what (what I do, what
+  the screen or thread shows, what my options are - concrete, honest
+  sequence) -> closing FELT benefit line (where earned). The activities are
+  the quiet ground; crafted, performing lines belong only in moment blocks
+  (the "ten minutes go on my body, not my admin" failure mode - copywriting
+  in an activity - is the thing to catch).
+- **Context lines open a phase's first activity** ("My son's cough went to
+  his chest last night") - personal ("my son's", never "his"), scene-setting
+  in one or two sentences, booking and diagnosis as separate sentences, no
+  compression for its own sake.
+- **The portal becomes relevant only when a script needs generating** -
+  before that it is diagnosis, no screens.
+- **Consent refinement:** the standing relationship with Dis-Chem is the
+  already-granted fact; per-consult record access is granted by an OTP the
+  patient receives and the doctor enters - lightweight, logged, expiring.
+  Not a consent ceremony.
+- **Price is native to choosing, never a receipt afterwards** - cover and
+  cash price appear in the conversation where the medicine is chosen.
+  Dis-Chem provides the transparency; it never guarantees the cover.
+- **"Counter", never "till"** - in SA the price reveal happens when the
+  pharmacist processes the script at the dispensary counter.
+- **Received-confirmations are explicit beats**: insured - "Dis-Chem has
+  received your script from Dr [name]" before she is up from the chair, then
+  "Your pharmacist [name] is checking your script" while paying; cash - an
+  immediate "we have it, someone will come back to you shortly" on the snap,
+  then the full read-back + price + generic reply inside 15 minutes.
+- **Concepts are referenced inline only where the reader watches them work**
+  (the E-Script Token rule above generalised).
+
 ## Pain-point sources (hard rule: research only)
 
 Titles + descriptions + verbatim quotes ONLY from:
@@ -136,12 +188,16 @@ Titles + descriptions + verbatim quotes ONLY from:
 - acute/after-hours pages where relevant (e.g. [[wiki/dispensing-practice/after-hours-emergency-acute-access]])
 
 Never inferred from personas, never manufactured; honest no-complaint note
-where the research is silent. **P1 additions requested by Tamsin:** (a) the
-unclear-script clarification call (pharmacy phones the doctor while the
-patient waits) and (b) the counter re-key / profile hunt - both to be
-anchored to the research pages at the P1 draft; if a pain is evidenced
-without a verbatim quote, the card carries title + description + source and
-no quote.
+where the research is silent.
+
+**Documented exception (Tamsin, 2026-07-26, P1 pass):** a pain evidenced in
+**practice literature** rather than customer voice may stand as its own card
+when it is clearly and honestly attributed (e.g. "dispensing-practice safety
+literature - no customer-voice record"). Precedent: P1's clarification-call
+card, anchored on [[wiki/dispensing-practice/error-prevention-and-safety]]
+(illegible/ambiguous prescriptions as a named error root cause). Cards with
+customer quotes remain the default; the exception is never a licence to
+infer.
 
 ## Concept-set changes made for this journey (done, 2026-07-26)
 
@@ -152,6 +208,150 @@ no quote.
   doctor-who-phones-the-next-day anchor). Boundary: made-before-it-reaches-
   you vs happens-over-the-days-after. #09's P5 links repointed.
 
+## Approved copy - P1: At the doctor (signed off by Tamsin, 2026-07-26)
+
+### Need (shared)
+
+One of us is sick **today**, and I have exactly one job: **start getting
+better**. I need everything between the doctor's decision and the first dose
+to happen with **as little effort from me as possible** - I don't have much
+to spare.
+
+### Activities - insured (Aisha)
+
+**A1 · I see the doctor** - What I suspect is a UTI has been building for
+two days, and overnight it got bad enough that I can't push through. I book
+an appointment at my usual doctor for later that morning. The doctor
+examines me and confirms it - a urinary tract infection. I'm sore, tired and
+fed up; all I want is to get home and start getting better. *(context - no
+benefit line)*
+
+**A2 · "Shall I send it to Dis-Chem?"** - When it's time for the script, the
+doctor asks if he can send it to Dis-Chem. I nod; an OTP arrives on my phone
+and he enters it. Now my medication record is open in front of him - what I
+take, what I'm allergic to - for this consult only. I've used the service
+before, so that's all it takes: one code, and he's prescribing with my
+history in view instead of my memory of it.
+
+**A3 · We choose the medicine together** - He wants to prescribe a
+particular UTI antibiotic. As he looks it up, the system shows it's in stock
+at my closest Dis-Chem - but my medical aid won't cover it. A generic that
+is covered comes up alongside, and we talk it through: same active
+ingredient, fully funded against a co-pay on the brand, cash prices visible
+too. We decide together, and I choose the generic. By the time it's on the
+script I know exactly what it will cost me - and before I'm up from the
+chair, my phone buzzes: "Dis-Chem has received your script from Dr Naidoo."
+
+**A4 · It's with my pharmacist before I reach reception** - The doctor
+signs, and we're done - there's no paper to take and nothing for me to send
+anywhere; Dis-Chem already has it. While I'm paying for the consult, the
+status moves: "Your pharmacist Naledi is checking your script." The only
+decision left is how I want to receive it, and that can wait until I'm in
+the car.
+
+**M1 (under A4) ⭐ "My pharmacist was busy before I'd even left the
+doctor's"** - Every doctor's visit Aisha has ever made ended the same way:
+with homework. Carry the slip, find a pharmacy, hope about stock, brace at
+the counter. This one ends with the work already moving - a pharmacist has
+her script and is checking it while she is still paying the doctor. [why]
+She is one minute out of the consult, and getting better is already someone
+else's job. [/why] That is The Pharmacy in the Room (inline link) doing what
+it was built for - doctor, record, price and pharmacy in one conversation.
+
+### Activities - cash (Thabo)
+
+**A1 · The clinic sees my son** - My son's cough went to his chest last
+night, and neither of us slept much. I take the morning off shift and we
+wait our turn at the clinic - he's hot, tired and quiet, which isn't like
+him. After examining and weighing him, the doctor diagnoses a chest
+infection and suggests an antibiotic. *(context - no benefit line)*
+
+**A2 · The script is written on paper** - The clinic isn't on Dis-Chem's
+system, so the doctor writes the script by hand - an antibiotic and a syrup
+for the cough - and explains it to me once: how much, how often, for how
+many days. The paper goes into my jacket pocket. *(context - no benefit
+line)*
+
+**A3 · I send the script through while I wait to pay** - While I'm waiting
+to pay for the consult, I photograph the script and send it through to
+Dis-Chem on WhatsApp. The reply is immediate: they have it, and someone will
+come back to me shortly. One photo, almost no data - and the job is already
+out of my hands.
+
+**A4 · The answer comes back before we reach the gate** - The reply comes
+inside 15 minutes, while my boy and I are walking to the gate: they've read
+the script back to me so I can see they have it right, the price is there in
+rands - and there's a cheaper generic the doctor would approve, with the
+exact saving shown. I pick it right there. Nothing is riding on the paper in
+my pocket anymore, and I know the number before we've spent a cent on a
+taxi.
+
+**M2 (under A4) ⭐ "I knew the price before I left the clinic gate"** -
+Thabo has done this trip before, the old way: the taxi to a pharmacy with
+the week's money in his pocket and no idea if it's enough, the queue with a
+sick child, the counter where the number is finally said out loud - and the
+walk away, in front of everyone, if it's too much. This time the number came
+to him, standing at the clinic, before anything was spent. [why] He knows
+the price - and that he can afford it - before his son takes another step.
+[/why] Nobody made him ask; the price was simply offered, with the cheaper
+generic presented as the smart choice it is. That is Snap-a-Script (inline
+link) meeting him exactly where he stands - one photo, on the phone he
+already has.
+
+### Current-state pain points (shared per phase)
+
+1. **The price is a mystery until the counter.** Cost is discovered only
+   when the pharmacist processes the script in the system at the counter -
+   after the travel and the queue - and identical scheduled medicine is
+   priced differently store to store. Quote: "I am horrified that the
+   pricing of scheduled medication differs so dramatically from one Dis-Chem
+   pharmacy to another." - verbatim, [[wiki/dischem/pharmacy-complaints-pain-points]].
+2. **The script is yours to carry - with no proof it arrived.** The consult
+   ends and the hand-off becomes the patient's problem: nearly everyone
+   still leaves with paper, and even a digital hand-over gives no
+   confirmation. Quote: "When doctors email/fax a script, customers can't
+   tell if Dis-Chem received it, causing double trips and calls, and there
+   is no confirmation system for digital hand-overs." - verbatim,
+   [[wiki/consumer-context/voice-of-customer-script-journey]].
+3. **Re-typed at the counter.** Even when the information is already on the
+   system, the counter asks again - profile hunts, surname variants, forms.
+   Quote: "Type essays even though your information is on the system." -
+   verbatim, [[wiki/dischem/dischem-social-sentiment-trust-journey]].
+4. **The unclear script stalls behind the counter.** A handwritten script
+   that's ambiguous or illegible can't legally be dispensed until the
+   pharmacy reaches the prescriber to confirm it - the patient waits on a
+   phone call between professionals. No customer-voice quote exists;
+   attributed honestly to dispensing-practice safety literature
+   ([[wiki/dispensing-practice/error-prevention-and-safety]]) under the
+   documented exception above.
+
+### Behind the line (P1 panel)
+
+- Frontstage: the doctor's Dis-Chem e-scripting portal (authenticated
+  partner access) · the OTP access prompt on the patient's phone
+  (per-consult, expiring) · live stock, cover and price panel in the
+  prescribing screen · received + "pharmacist checking" statuses · the
+  WhatsApp snap line with read-back, price and generic offer (cash).
+- Backstage: identity matched on SA ID (EMPI) · standing service consent on
+  record; per-consult record access granted by OTP, logged and expiring ·
+  real-time claim pre-adjudication (dry-run) · SEP + capped-fee cash price
+  engine · live dispensary inventory exposed to the prescriber 🔮 · digitally
+  signed e-script lodged in the Dis-Chem registry (the token is the key) ·
+  photo-captured script read, standardised and priced; pharmacist
+  verification before dispense (cash).
+- Regulatory: POPIA consent for record access (explicit, specific,
+  in-language); AES-signed e-scripts carry full legal force (ECTA + Medicines
+  Act General Regulations); a photographed paper script requires pharmacist
+  verification before dispensing; SEP + capped dispensing fee.
+- Chips (cites): EMPI (wiki/digital-transformation/interoperability-identity-records) ·
+  consent & audit (wiki/concepts/identity-and-consent) · pre-adjudication
+  (wiki/medical-schemes/realtime-claims-switching) · price engine
+  (wiki/sa-regulatory/sep-dispensing-fee) · live stock to prescriber
+  (wiki/digital-transformation/dischem-scripting-tech-roadmap 🔮) · ubiquitous
+  prescriber AES (wiki/sa-regulatory/e-prescription-telehealth-popia 🔮) ·
+  e-script registry (wiki/concepts/e-prescription-token) · OCR capture +
+  pharmacist verification (wiki/digital-transformation/dischem-scripting-tech-roadmap).
+
 ## Open items
 
 - ∥ scenarios: to be defined with Tamsin at that phase pass (acute-native;
@@ -159,10 +359,10 @@ no quote.
   distinct from M6's proactive check-in).
 - Express pickup counter (scan QR, priority handover, no dispensary queue):
   design assumption - ⚠️ + `meta/punchlist.md` entry when P4 is drafted.
-- P1 clarification-call pain: verify research anchor at the P1 draft.
-- Emotion curves, needs, and all activity copy: drafted phase by phase,
-  reviewed by Tamsin before entering spec or build (P1 mocked copy-complete
-  first; one key-moment block style-proofed before the rest).
+- Emotion curves: values set at build time.
+- P2-P6 and ∥ copy: drafted phase by phase, reviewed by Tamsin before
+  entering the spec (P1 above is the approved pattern; M1 and M2 blocks are
+  the style proofs).
 
 ## See also
 
