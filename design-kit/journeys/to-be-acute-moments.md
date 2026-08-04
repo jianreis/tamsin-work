@@ -620,6 +620,112 @@ labels.
   paediatric dose check (wiki/dispensing-practice/clinical-checks-and-mtm) ·
   in-language guides (wiki/consumer-context/language-literacy-and-trust).
 
+## Approved copy - P4: In hand (signed off by Tamsin, 2026-07-26)
+
+### Need (shared)
+
+The medicine is ready; now it has to actually reach my hands. I need the
+**promise kept as made** - **no chasing, no wondering, no wasted trip** -
+because today I have nothing spare to absorb a let-down.
+
+### Activities - insured (Aisha)
+
+**A1 · It's on its way** - Mid-afternoon the thread moves: "On its way -
+arriving around 15:10", with a live map if I feel like watching. If the time
+slips, I'm told early and given a new one. I never have to wonder, and I
+never have to chase.
+
+**A2 · The knock at the door** - The driver checks it against the order code
+on my phone, and the parcel is in my hands - everything inside already
+checked and signed for. If anything looks off, Naledi's line is still one
+tap away in the same thread.
+
+**M4a (under A2) ⭐ "Saw the doc. Went straight home."** - Every doctor's
+trip in South Africa ends with the same message home: "Saw the doc. Getting
+meds on the way back. See you soon." Aisha's message today had no second
+clause - she saw the doctor, and she went straight home. [why] The errand
+that has always been welded to being ill simply never happened [/why] - the
+medicine made its own way to her couch, arriving inside the slot she chose,
+while she did the one thing a sick person should be doing: resting. That is
+The 60-Minute Fill (inline link) with the stop deleted - and the live map
+was just how she watched it come.
+
+**A3 · I check it, and they check on me** - A message follows the knock:
+here's what should be in your parcel - the antibiotic, the probiotic, the
+rehydration sachets - is everything there and as you expected? One tap says
+yes; anything wrong or missing, and a person takes it from there in the same
+thread. My instructions are on the app and on the labels, and a pharmacist
+is on call if any of it is unclear. Handing it over wasn't the end of their
+job. *(Delivery-route counselling equivalence: the mechanism echoes #09's
+photo-triggered callback, punchlist 9(e).)*
+
+### Activities - cash (Thabo)
+
+**A1 · The express counter, not the queue** - After my shift I stop at my
+store. The express pickup zone is signposted right at the front - the
+dispensary queue is somebody else's afternoon. I show my code, and the pack
+comes out with my son's name on it. No forms, no retelling the story. (If my
+shift had run late, the outside pickup point takes the same code.)
+
+**M4b (under A1) ⭐ "The counter was expecting me"** - Thabo knows the other
+version of this stop: the month-end dispensary queue, twenty-five minutes
+deep, after a full shift, with a sick boy waiting at home. This time the
+counter was expecting him - the pack made up, named, waiting - and he was
+through it in minutes. [why] The stop still happens; it just stopped costing
+him an afternoon he didn't have. [/why] That is The 60-Minute Fill (inline
+link) shaped for collection - and the code he showed is The E-Script Token
+(inline link) doing its quiet work: his son's whole script riding one code,
+redeemable exactly once, by him.
+
+**A2 · The pharmacist walks me through his dose** - The pharmacist at the
+counter opens the pack with me: the syringe marked at his line, the labels
+in my language, finish all seven days even when he seems better. I ask what
+I want to ask while I'm standing there. *(Named checker Sindi stays in the
+thread; the counter handover is the duty pharmacist - agreed.)*
+
+**A3 · I pay what I already knew** - One total - the script and the fever
+syrup - the same number I've known since the clinic. Cash or card, at the
+same counter, and done. The number I planned for is the number I pay.
+
+### Current-state pain points
+
+1. **The delivery promise that dies silently.** Notified, then nothing - no
+   arrival, no update, no recovery. Quote: "I received a notification that
+   it has been processed on my medical aid and was out for delivery. I did
+   not receive it." - verbatim, [[wiki/dischem/pharmacy-complaints-pain-points]].
+2. **Chasing it means phoning into a void.** When the handover goes wrong,
+   there is no one to reach. Quote: "called 4 different dispensaries[…]
+   nobody is picking up" - verbatim,
+   [[wiki/dischem/dischem-social-sentiment-trust-journey]].
+3. **Promises too precise to keep.** Customers distrust tight promises that
+   break; a realistic window kept beats a tight one missed. -
+   [[wiki/dischem/store-of-the-future-customer-voice]] (theme-level).
+
+### Behind the line (P4 panel)
+
+- Frontstage: dispatch status + live map + honest ETA, early re-time on
+  slip · driver handover verified against the order QR (proof of delivery) ·
+  post-delivery contents confirmation with escalation to a person · express
+  pickup zone with code scan and named pack · counter counselling
+  (show-and-tell: marked syringe, in-language labels) · one pay-at-counter
+  total · after-hours pickup point on the same code 🔮.
+- Backstage: slot-run dispatch and routing · POD capture against the token ·
+  express-zone staging under name + code, single-redemption enforced ·
+  pay-at-counter reconciliation against the quoted total · counselling
+  logged as given; reachable-pharmacist line stays open on the delivery
+  route.
+- Regulatory: scheduled-medicine delivery under pharmacy accountability with
+  recorded proof of handover; counselling access preserved on both routes;
+  unattended after-hours release 🔮 requires-reform.
+- Chips (cites): DeliverD / last-mile TMS + POD
+  (wiki/digital-transformation/dischem-scripting-tech-roadmap) · live
+  tracking (wiki/global-benchmarks/patterns-deep-dive) · express pickup zone
+  ⚠️ (wiki/dischem/store-of-the-future-customer-voice; punchlist 10a) ·
+  token single-redemption (wiki/concepts/e-prescription-token) ·
+  realistic-windows principle (wiki/dischem/store-of-the-future-customer-voice) ·
+  counselling at handover (wiki/dispensing-practice/counselling-and-health-literacy) ·
+  contents-confirmation callback (punchlist 9(e) mechanism).
+
 ## Open items
 
 - ∥ scenarios: to be defined with Tamsin at that phase pass (acute-native;
