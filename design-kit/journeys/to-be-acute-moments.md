@@ -380,6 +380,124 @@ already has.
   e-script registry (wiki/concepts/e-prescription-token) · OCR capture +
   pharmacist verification (wiki/digital-transformation/dischem-scripting-tech-roadmap).
 
+## Approved copy - P2: Choosing how I get it (signed off by Tamsin, 2026-07-26)
+
+**Phase principle:** Dis-Chem runs ahead of the customer - preparation starts
+at sign-off/go-ahead and the medicine is ready before they are (express
+pickup) or arriving just after them (same-day delivery slot). No moments in
+this phase.
+
+**The stock/price logic (spec note):** the regulated cash price (SEP +
+capped fee) is national, so a price can be quoted from a photo before any
+store is chosen; stock is local, so the routing ask and the stock answer are
+the same step. Cash routing returns nearest stores *with stock* (own store
+flagged), never a yes/no on one store. Sharing a location finds stores near
+where the customer is standing; delivery needs an address - the two are
+never conflated. Insured/portal stock draws from a radius around the
+patient's profile anchors (home, usual store), which is what P1's "in stock
+at my closest Dis-Chem" honestly means. Release of made-up medicine
+(dispatch or express-zone staging) is gated on the customer's confirmed
+go-ahead (legal/operational); preparation runs ahead of it.
+
+### Need (shared)
+
+The script is already in; now the medicine has to reach us. I need Dis-Chem
+to **run ahead of me** - **ready before I get there, or arriving just after
+I do** - so my day stays about getting better.
+
+### Activities - insured (Aisha)
+
+**A1 · The question waits for me in the car** - By the time I'm in the car,
+the message is there: my script is already being prepared - how would I like
+it? Collect at the Dis-Chem on my way home - ready within 30 minutes, handed
+over by a pharmacist who'll run me through it. Or delivery, in a slot I
+choose, with the instructions in the parcel and a pharmacist a message away
+if anything is unclear. It doesn't expire while I think, and the preparing
+doesn't wait for me either.
+
+**A2 · I choose a delivery slot** - I want my couch more than anything, so I
+pick delivery and take the early-afternoon slot. The confirmation shows the
+slot and the address it already knows. I can change either of them up until
+packing starts - it says so right there.
+
+**A3 · "These can help while it works"** - Under the confirmation there's a
+short list: things that help the symptoms while the antibiotic does its job
+- a urinary alkaliniser, a probiotic for during the course, rehydration
+sachets - each with its price. I add the probiotic and the sachets; they
+ride in the same parcel and go onto my saved card when it's packed. If I
+skip the list, nothing about my medicine changes.
+
+### Activities - cash (Thabo)
+
+**A1 · The same thread asks me how** - Right after I pick the generic, the
+chat asks how I'd like it. I can name my Dis-Chem, share my location to see
+stores close to where I'm standing, or give an address to see what delivery
+would cost. I name my store - the one near home - and the reply confirms
+they have his medicine. Collection costs nothing, and it's on my way after
+work. Easy.
+
+**A2 · I say go ahead** - I reply "1 - go ahead". That's the yes they need
+from me before medicine can be made up in my son's name, and everything was
+standing ready for it. The confirmation tells me: ready from this afternoon
+in the express pickup zone, where the pharmacist hands it over and runs me
+through his dose. It's held until closing - and if my shift runs late,
+there's an after-hours pickup point outside the store where my code still
+works.
+
+**A3 · What I'll pay, and what else helps** - The chat offers a short
+numbered list for a chest like his - paracetamol syrup for the fever, saline
+drops for his nose - each with a price. I reply "2"; the syrup is added and
+the new total comes straight back. Everything is one amount - the price I
+saw at the clinic plus what I've added - paid once, at the counter, when I
+collect. If I say nothing, nothing is added.
+
+### Current-state pain points
+
+1. **Today's delivery can't reach a sick person in time.** Delivery exists,
+   but for medicine on a script it's next-day only - the ~60-minute service
+   carries front-shop products, not scripts. No help when you're ill now. So
+   the realistic option is the store, and you queue however you feel:
+   month-end surges push dispensary waits to 25-30 minutes, felt acutely
+   "when you're not feeling well". Service facts:
+   [[wiki/dischem/dischem-dispensary-services]] + stakeholder confirmation
+   (Tamsin, 2026-07-26); queue + quote:
+   [[wiki/consumer-context/voice-of-customer-script-journey]].
+2. **The digital alternative that should exist is broken.** Where a digital
+   route is offered at all, it fails at the basics - logins, uploads,
+   reliability - so people fall back to the queue. Quote: "Dis-Chem App is
+   dysfunctional." - verbatim,
+   [[wiki/dischem/pharmacy-complaints-pain-points]].
+
+### Behind the line (P2 panel)
+
+- Frontstage: the how-would-you-like-it message (collect: named store,
+  ready-within-30 · delivery: slot picker) · store choice by name / shared
+  location (stores near where I stand) / address for delivery cost, with
+  stores-with-stock returned (cash) · go-ahead reply gate · confirmation
+  with express-zone readiness, hold-until-close and the after-hours pickup
+  code · priced symptom add-on list (taps / numbered replies) · counselling
+  on both routes (pharmacist at handover; instructions + reachable
+  pharmacist on delivery).
+- Backstage: dispensing starts at sign-off - clinical check first, staging
+  on the routing choice · preparation runs ahead of the go-ahead; release
+  gated on the confirmed yes · stock model per the spec note above · slot
+  capacity engine keeps delivery slots honest · add-ons attach until packing
+  starts, never gating the medicine ⚠️ · saved card charged at packing
+  (insured); one pay-at-counter total (cash) · after-hours external pickup
+  point 🔮.
+- Regulatory: dispensing in a patient's name proceeds on their confirmed
+  instruction; couriered scheduled medicine stays under pharmacy
+  accountability with proof of handover; counselling access preserved on
+  every route; unattended after-hours release of scheduled medicine from an
+  external point requires a pharmacist-oversight model - 🔮 requires-reform.
+- Chips (cites): slot engine + DeliverD/TMS + stores-with-stock routing
+  (wiki/digital-transformation/dischem-scripting-tech-roadmap) · express
+  pickup zone ⚠️ (wiki/dischem/store-of-the-future-customer-voice) ·
+  after-hours external pickup 🔮 (wiki/sa-regulatory/pharmacy-act-sapc-gpp) ·
+  OTC attach ⚠️ (wiki/concepts/omnichannel-fulfilment) · WhatsApp numbered
+  picks (wiki/consumer-context/digital-access-and-whatsapp) · tokenised
+  saved card (wiki/concepts/identity-and-consent).
+
 ## Open items
 
 - ∥ scenarios: to be defined with Tamsin at that phase pass (acute-native;

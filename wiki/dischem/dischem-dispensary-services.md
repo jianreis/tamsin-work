@@ -62,6 +62,10 @@ For scripts/orders submitted online [[src-dc-dispensary-services]]:
 - **Click-and-collect (~2 hours):** submit online → collect at a Dis-Chem
   pharmacy, presenting **order number + ID**.
 - **Standard courier (~24 hours):** doorstep delivery within 24 hours.
+- **Scripted-medicine delivery is next-day only** (the ~60-minute DeliverD
+  service carries front-shop/OTC products, not scripted orders) - Dis-Chem
+  stakeholder confirmation via Tamsin, 2026-07-26. There is no same-day
+  delivery route for an acute script today.
 
 ## DeliverD (on-demand ~60-minute delivery)
 **DeliverD**, launched July 2021 via the Dis-Chem app, is an **on-demand

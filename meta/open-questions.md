@@ -71,6 +71,8 @@ and update the relevant wiki page + this list.
 | open | What may a pharmacist legally supply while a chronic-script renewal is pending (expired / repeats exhausted)? Emergency-supply provisions (Medicines Act s22A ambit, quantity/schedule limits) ⚠️ UNVERIFIED. | [[prescription-requirements-repeats]], [[to-be-household-repeat-moments]] | #09 ∥ "My script runs out" deliberately says "what the pharmacist can safely do" without specifics until this is sourced. |
 | open | Do scheme rules permit the early/part-fills needed to sync a household's chronic cycles onto one date (Script Sync), and who bears the part-fill cost? | [[dsp-formularies-copayments]], [[to-be-household-repeat-moments]] | #09 P0 "One date for everyone" shows a costed top-up fill; mechanism ⚠️ in punchlist item 9(f). |
 
+| open | Under what pharmacist-oversight model may scheduled medicine be released from an **unattended after-hours pickup point outside a store** (code-opened, post-closing)? | [[pharmacy-act-sapc-gpp]], [[to-be-acute-moments]] | #10 P2 offers an after-hours external pickup as the cash safety net - 🔮 requires-reform, ⚠️ punchlist item 10(b). Same family as locker release but on Dis-Chem's own premises after hours. |
+
 ## Conventions
 - When a wiki page can't source a claim, it marks it `⚠️ UNVERIFIED` and adds a
   row here.
