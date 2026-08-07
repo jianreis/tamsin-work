@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sipho's repeat, as a WhatsApp conversation - P1 pass</title>
+<style>
+/* =============================================================================
+   DELIVERABLE #11 - SIPHO'S REPEAT AS A WHATSAPP CONVERSATION (P1 pass)
+   Annotated phone-frame mock of the #09 cash journey, phase P1 copy-complete.
+   Content source of truth: design-kit/journeys/sipho-whatsapp-flow.md
+   Self-contained: all CSS/JS inline, no external requests.
+   ============================================================================= */
+:root{
+  --brand:#1a9b4a; --brand-dark:#157a3b; --lime:#b5d334;
+  --mint:#bfe3cf; --mint-deep:#9bcfb0;
+  --ink:#1d1d1d; --ink-soft:#2b2b2b;
+  --bg:#f6f8f6; --card:#ffffff;
+  --muted:#5d6b62; --muted2:#8a958d; --line:#d8e2db;
+  --good:#1a9b4a; --good-bg:#eef7f1;
+  --warn:#b9770b; --reform:#7c3aed;
+  /* WhatsApp surface */
+  --wa-header:#008069; --wa-wall:#efe7dd; --wa-out:#d9fdd3; --wa-in:#ffffff;
+  --wa-link:#00a5f4; --wa-tick:#53bdeb; --wa-meta:#667781;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --sp:8px; --radius:12px; --maxw:1120px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg); color:var(--ink); font-family:var(--font); line-height:1.55; font-size:15.5px; -webkit-text-size-adjust:100%;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 0 72px;}
+h1,h2,h3,h4{margin:0}
+.tiny{font-size:.78rem; color:var(--muted)}
+button{font:inherit; cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid var(--brand-dark); outline-offset:2px}
+a{color:var(--brand-dark)}
+
+/* header + chrome (deliverable family) */
+.brandband{background:var(--brand); color:#fff; padding:calc(var(--sp)*2.5) calc(var(--sp)*3);
+  display:flex; flex-wrap:wrap; gap:var(--sp) calc(var(--sp)*2); align-items:center; justify-content:space-between;}
+.wordmark{display:flex; align-items:baseline; gap:6px; font-weight:800; font-size:1.35rem; letter-spacing:-.01em}
+.wordmark .plus{color:var(--lime); font-size:1.6rem; line-height:0}
+.brandband .maptag{font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; font-weight:700;
+  border:1.5px solid rgba(255,255,255,.6); border-radius:99px; padding:4px 12px;}
+.ribbon{display:flex; flex-wrap:wrap; gap:6px calc(var(--sp)*1.5); align-items:center;
+  background:#fff7e6; color:#8a5a00; border-bottom:1px solid #f0dca8;
+  padding:8px calc(var(--sp)*3); font-size:.82rem; font-weight:600;}
+.ribbon .gen{color:#9a7a30; font-weight:500}
+.intro{padding:calc(var(--sp)*3) calc(var(--sp)*3) 0;}
+.intro h1{font-size:1.75rem; font-weight:800; letter-spacing:-.015em; line-height:1.15}
+.intro .lede{color:var(--muted); max-width:82ch; margin-top:8px}
+.philo{display:inline-flex; align-items:center; gap:10px; background:var(--ink); color:#fff;
+  border-radius:99px; margin-top:14px; padding:7px 18px; font-size:.86rem; font-weight:700;}
+.philo u{text-decoration-color:var(--lime); text-decoration-thickness:3px; text-underline-offset:3px}
+.philo span.gt{color:var(--lime)}
+
+/* persona strip */
+.persona{display:flex; flex-wrap:wrap; gap:calc(var(--sp)*2); align-items:flex-start;
+  background:var(--ink); color:#fff; border-radius:var(--radius); margin:calc(var(--sp)*2.5) calc(var(--sp)*3) 0;
+  padding:calc(var(--sp)*2) calc(var(--sp)*2.5);}
+.persona .who{flex:1 1 300px; min-width:280px}
+.persona .eyebrow{font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--lime); font-weight:800}
+.persona h2{font-size:1.25rem; font-weight:800; margin-top:2px}
+.persona .bio{color:#cfe0d5; font-size:.88rem; margin-top:6px; max-width:70ch}
+.persona .needbox{flex:1 1 300px; min-width:280px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18);
+  border-radius:10px; padding:12px 14px; font-size:.9rem;}
+.persona .needbox .nlabel{font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; color:var(--lime); font-weight:800; margin-bottom:4px}
+
+/* spine: phases x mechanics */
+.spine{margin:calc(var(--sp)*3) calc(var(--sp)*3) 0; background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius); padding:calc(var(--sp)*2) calc(var(--sp)*2.5);}
+.spine .shead{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap}
+.spine h2{font-size:.95rem; font-weight:800}
+.spine .shead .tiny{margin-left:auto}
+.spinerow{display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-top:12px}
+@media (max-width:900px){ .spinerow{grid-template-columns:repeat(2,1fr)} }
+.snode{border:1.5px solid var(--line); border-radius:10px; padding:8px 9px 8px; background:#fff;}
+.snode .snum{font-family:var(--mono); font-size:.68rem; color:var(--muted2); font-weight:700}
+.snode .sttl{font-size:.8rem; font-weight:800; line-height:1.2; margin-top:2px}
+.snode .sm{margin-top:5px; font-size:.71rem; color:var(--muted); line-height:1.4}
+.snode.live{border-color:var(--brand); border-width:2px; background:var(--good-bg); box-shadow:0 2px 10px rgba(21,122,59,.08)}
+.snode.live .snum{color:var(--brand-dark)}
+.snode .livepill{display:inline-block; margin-top:5px; font-size:.64rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em;
+  color:#fff; background:var(--brand); border-radius:99px; padding:1px 8px;}
+.snode .stubpill{display:inline-block; margin-top:5px; font-size:.64rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+  color:var(--muted2); border:1px solid var(--line); border-radius:99px; padding:1px 8px;}
+
+/* the P1 stage: phone + rail */
+.stage{margin:calc(var(--sp)*3.5) calc(var(--sp)*3) 0; background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius); overflow:hidden;}
+.phead{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; background:var(--mint);
+  padding:12px calc(var(--sp)*2.5); border-bottom:1px solid var(--mint-deep);}
+.phead .pnum{font-family:var(--mono); font-weight:800; font-size:.8rem; color:var(--brand-dark);
+  background:#fff; border-radius:8px; padding:3px 9px;}
+.phead h2{font-size:1.35rem; font-weight:800; letter-spacing:-.01em}
+.phead .once{font-size:.72rem; text-transform:uppercase; letter-spacing:.09em; font-weight:800; color:var(--brand-dark);
+  border:1.5px solid var(--brand-dark); border-radius:99px; padding:2px 10px;}
+.stagegrid{display:grid; grid-template-columns:minmax(340px,430px) 1fr; gap:calc(var(--sp)*3); padding:calc(var(--sp)*3) calc(var(--sp)*2.5);}
+@media (max-width:880px){ .stagegrid{grid-template-columns:1fr} }
+.stagecontrols{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:12px}
+.btn{border:1.5px solid var(--line); background:#fff; color:var(--ink-soft); border-radius:99px; padding:6px 14px; font-size:.83rem; font-weight:600;}
+.btn:hover{border-color:var(--brand)}
+.hint{font-size:.78rem; color:var(--muted2)}
+
+/* phone frame */
+.phone{width:100%; max-width:400px; margin:0 auto; background:#111; border-radius:34px; padding:10px;
+  box-shadow:0 14px 40px rgba(0,0,0,.22);}
+.screen{border-radius:26px; overflow:hidden; background:var(--wa-wall); position:relative; display:flex; flex-direction:column;}
+.statusbar{background:var(--wa-header); color:#d5efe9; font-size:.66rem; display:flex; justify-content:space-between; padding:5px 16px 0; font-family:var(--mono)}
+.wahead{background:var(--wa-header); color:#fff; display:flex; align-items:center; gap:10px; padding:8px 12px 10px;}
+.wahead .back{font-size:1.1rem; line-height:1; opacity:.9}
+.avatar{width:36px; height:36px; border-radius:50%; background:var(--brand); color:#fff; font-weight:800; font-size:.8rem;
+  display:flex; align-items:center; justify-content:center; flex:none; border:2px solid rgba(255,255,255,.55)}
+.wahead .names{flex:1; min-width:0; line-height:1.2}
+.wahead .biz{font-weight:700; font-size:.95rem; display:flex; align-items:center; gap:5px}
+.wahead .badge{display:inline-flex; width:14px; height:14px; border-radius:50%; background:#25d366; color:#fff;
+  font-size:.6rem; align-items:center; justify-content:center; font-weight:900; flex:none}
+.wahead .sub{font-size:.7rem; opacity:.85}
+.wahead .hicons{display:flex; gap:14px; font-size:1rem; opacity:.9}
+/* thread */
+.thread{padding:10px 8px 12px; display:flex; flex-direction:column; gap:6px; min-height:520px;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255,255,255,.35) 0 2px, transparent 3px),
+    radial-gradient(circle at 70% 45%, rgba(255,255,255,.3) 0 2px, transparent 3px),
+    radial-gradient(circle at 40% 80%, rgba(255,255,255,.3) 0 2px, transparent 3px),
+    var(--wa-wall);}
+.syspill{align-self:center; background:#fdf3c7; color:#5c5340; font-size:.66rem; border-radius:8px; padding:4px 10px;
+  max-width:82%; text-align:center; box-shadow:0 1px 1px rgba(0,0,0,.06)}
+.datepill{align-self:center; background:#fff; color:var(--wa-meta); font-size:.66rem; font-weight:700; border-radius:8px;
+  padding:3px 10px; box-shadow:0 1px 1px rgba(0,0,0,.06)}
+.msgrow{display:flex; align-items:flex-start; gap:6px}
+.msgrow.out{justify-content:flex-end}
+.marker{flex:none; margin-top:4px; width:22px; height:22px; border-radius:50%; background:var(--ink); color:var(--lime);
+  font-size:.62rem; font-weight:800; display:flex; align-items:center; justify-content:center; font-family:var(--mono);
+  cursor:help;}
+.msgrow.out .marker{order:2}
+.bubble{position:relative; max-width:82%; border-radius:10px; padding:7px 9px 6px; font-size:.83rem; line-height:1.42;
+  box-shadow:0 1px 1px rgba(0,0,0,.08); white-space:pre-line;}
+.bubble.in{background:var(--wa-in); border-top-left-radius:2px}
+.bubble.out{background:var(--wa-out); border-top-right-radius:2px}
+.bubble .meta{display:block; text-align:right; font-size:.62rem; color:var(--wa-meta); margin-top:3px}
+.bubble .ticks{color:var(--wa-tick); letter-spacing:-2px}
+.bubble b{font-weight:700}
+.bubble .sect{display:block; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--wa-meta); margin-top:6px}
+.bubble .amt{font-family:var(--mono); font-size:.8rem}
+/* quick-reply buttons under a bubble */
+.qrwrap{display:flex; flex-direction:column; gap:3px; max-width:82%; width:100%; margin-left:28px}
+.qr{background:#fff; border:0; border-radius:8px; color:var(--wa-link); font-weight:600; font-size:.83rem;
+  padding:8px 10px; text-align:center; box-shadow:0 1px 1px rgba(0,0,0,.08);}
+.qr:disabled{color:#9fb6c0; cursor:default}
+/* list-message bubble */
+.listbtn{display:flex; align-items:center; justify-content:center; gap:7px; border-top:1px solid #e6e6e6; margin-top:7px; padding-top:7px;
+  color:var(--wa-link); font-weight:600; font-size:.83rem; cursor:pointer; user-select:none}
+/* bottom sheet */
+.sheet{position:absolute; left:0; right:0; bottom:0; background:#fff; border-radius:16px 16px 0 0; box-shadow:0 -6px 30px rgba(0,0,0,.25);
+  padding:12px 14px 16px; z-index:5; display:none}
+.sheet.open{display:block}
+.sheet .grab{width:36px; height:4px; border-radius:4px; background:#d0d5d3; margin:0 auto 10px}
+.sheet h4{font-size:.9rem; font-weight:700; margin-bottom:6px}
+.sheet .row{display:flex; align-items:center; gap:10px; padding:9px 2px; border-bottom:1px solid #f0f2f1; font-size:.85rem}
+.sheet .row:last-of-type{border-bottom:0}
+.sheet .radio{width:16px; height:16px; border-radius:50%; border:2px solid #b0bab5; flex:none}
+.sheet .close{margin-top:10px; width:100%; border:0; background:var(--wa-header); color:#fff; border-radius:99px; padding:8px; font-weight:700}
+/* input bar */
+.inputbar{display:flex; align-items:center; gap:8px; padding:8px}
+.inputbar .field{flex:1; background:#fff; border-radius:99px; padding:8px 14px; color:#9aa5a0; font-size:.85rem;
+  box-shadow:0 1px 1px rgba(0,0,0,.08)}
+.inputbar .mic{width:38px; height:38px; border-radius:50%; background:var(--wa-header); color:#fff; display:flex;
+  align-items:center; justify-content:center; font-size:1rem; flex:none}
+/* tap-to-send affordance */
+.sendhint{align-self:flex-end; margin-right:28px; border:1.5px dashed var(--brand); background:#fff; color:var(--brand-dark);
+  border-radius:99px; padding:5px 12px; font-size:.75rem; font-weight:700;}
+
+/* annotation rail */
+.rail h3{font-size:1.02rem; font-weight:800; margin-bottom:2px}
+.rail .railsub{font-size:.8rem; color:var(--muted2); margin-bottom:12px}
+.callout{display:flex; gap:10px; border:1px solid var(--line); border-radius:10px; background:#fafcfa; padding:10px 12px; margin-bottom:8px;}
+.callout .cmark{flex:none; width:22px; height:22px; border-radius:50%; background:var(--ink); color:var(--lime);
+  font-size:.62rem; font-weight:800; display:flex; align-items:center; justify-content:center; font-family:var(--mono); margin-top:2px}
+.callout .cbody{font-size:.85rem; color:var(--ink-soft)}
+.callout .cbody .feat{display:inline-block; font-size:.7rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em;
+  color:var(--brand-dark); background:var(--good-bg); border:1px solid var(--mint-deep); border-radius:99px; padding:1px 9px; margin-bottom:4px}
+.callout .cbody .flag{color:var(--warn); font-weight:800; cursor:help}
+.callout.dim{opacity:.45}
+.callout.dim .feat{filter:grayscale(1)}
+/* key moments (family style) */
+.keymoment{margin:14px 0 8px; border:1.5px solid var(--mint-deep); border-left:7px solid var(--brand);
+  border-radius:10px; background:var(--good-bg); padding:14px 16px;
+  box-shadow:0 2px 10px rgba(21,122,59,.07);}
+.keymoment .ktag{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:6px}
+.keymoment .klabel{font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; color:var(--brand-dark)}
+.keymoment .kstar{font-size:.72rem; font-weight:800; color:#8a5a00; background:#fff3d6; border:1px solid #eeddb0; border-radius:99px; padding:1px 9px}
+.keymoment .kwhere{font-size:.7rem; font-family:var(--mono); font-weight:700; color:var(--muted2)}
+.keymoment .kline{font-size:1.1rem; font-weight:800; letter-spacing:-.01em; line-height:1.25}
+.keymoment .kline::before{content:"\201C"; color:var(--mint-deep); font-size:1.5em; line-height:0; vertical-align:-.32em; margin-right:2px}
+.keymoment .kline::after{content:"\201D"; color:var(--mint-deep); font-size:1.5em; line-height:0; vertical-align:-.32em; margin-left:2px}
+.keymoment .kwhy{margin-top:8px; font-size:.9rem}
+.keymoment .kwhy .why{background:linear-gradient(transparent 55%, #d9ecc0 55%); font-weight:800}
+.keymoment .kwhy a{font-weight:700}
+
+/* stub cards for the other phases */
+.stubs{margin:calc(var(--sp)*3.5) calc(var(--sp)*3) 0;}
+.stubs h2{font-size:1.05rem; font-weight:800; margin-bottom:4px}
+.stubs .tiny{margin-bottom:12px; display:block}
+.stubgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+@media (max-width:900px){ .stubgrid{grid-template-columns:1fr 1fr} }
+@media (max-width:640px){ .stubgrid{grid-template-columns:1fr} }
+.stub{border:1.5px dashed var(--line); border-radius:10px; background:#fff; padding:12px 14px;}
+.stub .snum{font-family:var(--mono); font-size:.68rem; color:var(--muted2); font-weight:700}
+.stub h3{font-size:.95rem; font-weight:800; margin:2px 0 6px}
+.stub ul{margin:0; padding-left:16px; font-size:.82rem; color:var(--ink-soft)}
+.stub li{margin-bottom:3px}
+.stub .await{display:inline-block; margin-top:8px; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em;
+  color:var(--muted2); border:1px solid var(--line); border-radius:99px; padding:2px 9px}
+
+.foot{margin:calc(var(--sp)*4) calc(var(--sp)*3) 0; font-size:.84rem; color:var(--muted); max-width:92ch}
+.foot b{color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="brandband">
+  <div class="wordmark">Dis-Chem <span class="plus">+</span> <span style="font-weight:600;font-size:.95rem">Bigly Labs</span></div>
+  <div class="maptag">Channel mock · to-be · WhatsApp</div>
+</header>
+<div class="ribbon">
+  <span>DELIVERABLE #11 · SIPHO'S REPEAT, AS A WHATSAPP CONVERSATION</span>
+  <span class="gen">generated 2026-08-07 · P1 pass for review (remaining phases stubbed) · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
+</div>
+
+<section class="intro">
+  <h1>Sipho's repeat, as a WhatsApp conversation</h1>
+  <p class="lede">The cash track of the <a href="09-tobe-household-repeat-moments.html#cash">household repeat journey (#09)</a>,
+  rendered as the literal WhatsApp thread on Sipho's phone. Every message uses a real mechanic of the WhatsApp
+  Business Platform - templates, reply buttons, list sheets, voice notes - and every mechanic is chosen to honour
+  his constraints: prepaid data, an entry-level Android, no app, no street address. The phone is live: tap the
+  buttons to walk the branches. The rail alongside explains what each message is doing and why. The thread renders
+  here in English for this audience; in production it arrives in the language Sipho chose at sign-up.</p>
+  <div class="philo"><u>Trust</u> <span class="gt">&gt;</span> Convenience <span class="gt">&gt;</span> Speed <span style="font-weight:500;color:#d6e6dc">&nbsp;- predictability beats speed</span></div>
+</section>
+
+<section class="persona">
+  <div class="who">
+    <div class="eyebrow">Patient · household medicine manager · cash</div>
+    <h2>Sipho</h2>
+    <p class="bio">45 · peri-urban Durban · informal income · hypertensive, on a cheap Android with intermittent
+    signal, no street address · collects for his elderly mother (chronic, CCMDD) - cash, at the margin, near home.</p>
+  </div>
+  <div class="needbox">
+    <div class="nlabel">The need</div>
+    Manage the family's medicine with whatever phone and airtime he has - clear cash price up front, collect near
+    home, dignity intact, no app required.
+  </div>
+</section>
+
+<section class="spine" aria-label="Phases and their WhatsApp mechanics">
+  <div class="shead"><h2>The seven phases, and the WhatsApp mechanics proposed for each</h2>
+  <span class="tiny">mapping proposed for in-situ review · P1 built first, per the agreed process</span></div>
+  <div class="spinerow">
+    <div class="snode"><div class="snum">P0</div><div class="sttl">Signing up</div>
+      <div class="sm">Click-to-chat entry · list message for language · WhatsApp Flow for household + preferences · read-back confirm</div>
+      <span class="stubpill">stub below</span></div>
+    <div class="snode live"><div class="snum">P1</div><div class="sttl">Repeats are due</div>
+      <div class="sm">Utility template · itemised price in-bubble · reply buttons (max 3) · list sheet · call-me-back</div>
+      <span class="livepill">live - this pass</span></div>
+    <div class="snode"><div class="snum">P2</div><div class="sttl">Adding to the order</div>
+      <div class="sm">Numbered picks · free text + one clarifying question · priced options as a list · running total</div>
+      <span class="stubpill">stub below</span></div>
+    <div class="snode"><div class="snum">P3</div><div class="sttl">Checked and packed</div>
+      <div class="sm">Two status templates · checks listed inline · named pharmacist · PIN issued at sealing</div>
+      <span class="stubpill">stub below</span></div>
+    <div class="snode"><div class="snum">P4</div><div class="sttl">In hand</div>
+      <div class="sm">Payday reminder (amount + PIN) · contents list after handover · photo reply escalates to a call</div>
+      <span class="stubpill">stub below</span></div>
+    <div class="snode"><div class="snum">P5</div><div class="sttl">Taking it</div>
+      <div class="sm">List message as the medicine cabinet · free-text Q&amp;A · voice notes both ways · STOP honoured</div>
+      <span class="stubpill">stub below</span></div>
+    <div class="snode"><div class="snum">∥</div><div class="sttl">When something breaks</div>
+      <div class="sm">Exception templates carrying the plan · choices as buttons · one-tap call-me · no dead ends</div>
+      <span class="stubpill">stub below</span></div>
+  </div>
+</section>
+
+<section class="stage" id="p1">
+  <div class="phead"><span class="pnum">P1</span><h2>Repeats are due</h2>
+    <span class="once">the monthly heartbeat - most months, Sipho sends nothing</span></div>
+  <div class="stagegrid">
+
+    <div>
+      <div class="stagecontrols">
+        <button class="btn" id="reset">Reset the thread</button>
+        <span class="hint">tap the blue buttons in the phone to walk each branch</span>
+      </div>
+      <div class="phone">
+        <div class="screen">
+          <div class="statusbar"><span>08:12</span><span>▂▄▆ 🔋 41%</span></div>
+          <div class="wahead">
+            <span class="back">‹</span>
+            <span class="avatar">DC</span>
+            <div class="names">
+              <div class="biz">Dis-Chem Repeats <span class="badge">✓</span></div>
+              <div class="sub">Official business account</div>
+            </div>
+            <div class="hicons"><span>📞</span><span>⋮</span></div>
+          </div>
+          <div class="thread" id="thread"></div>
+          <div class="sheet" id="sheet" aria-label="Change something - options">
+            <div class="grab"></div>
+            <h4>What would you like to change for August?</h4>
+            <div class="row"><span class="radio"></span> Move the ready date</div>
+            <div class="row"><span class="radio"></span> Change the pickup point</div>
+            <div class="row"><span class="radio"></span> Add medicine to this order</div>
+            <div class="row"><span class="radio"></span> Change my language</div>
+            <div class="row"><span class="radio"></span> Skip my tablets this month</div>
+            <div class="row"><span class="radio"></span> Cancel the repeat service</div>
+            <div class="row"><span class="radio"></span> Something else - just type it</div>
+            <button class="close" id="sheetclose">Close</button>
+          </div>
+          <div class="inputbar"><div class="field">Message</div><div class="mic">🎤</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rail">
+      <h3>What each message is doing</h3>
+      <p class="railsub">markers in the thread (A0-A5) match the callouts here · feature chips name the WhatsApp mechanic · ⚠️ marks claims awaiting a vault source</p>
+
+      <div class="callout"><span class="cmark">A0</span><div class="cbody">
+        <span class="feat">Language</span><br>
+        Standing note for the whole thread: production renders every message in the language Sipho chose at
+        sign-up, with his mother's medicine instructions in hers. English is shown here for this audience only.
+      </div></div>
+
+      <div class="callout"><span class="cmark">A1</span><div class="cbody">
+        <span class="feat">Utility template · business-initiated</span><br>
+        The one-week-out notice. Text only - no image header, no PDF - because on a prepaid balance every download
+        costs real money (small-bundle data carries a poverty premium per MB). It names the day because this
+        order's day is genuinely settled, and it closes on the golden path: nothing to do.
+      </div></div>
+
+      <div class="keymoment">
+        <div class="ktag"><span class="klabel">Key moment</span><span class="kstar">⭐ moment of truth</span><span class="kwhere">at A1</span></div>
+        <div class="kline">My medicine ordered itself</div>
+        <div class="kwhy">He reads it and puts the phone away - nothing to install, nothing to spend, nothing to
+        remember. <span class="why">The family's supply stays ahead of run-out, on the phone he already owns</span>.
+        The <a href="08-concepts.html">Auto-Refill</a> concept with no app in the way.</div>
+      </div>
+
+      <div class="callout"><span class="cmark">A2</span><div class="cbody">
+        <span class="feat">Itemised price · in-bubble text</span><br>
+        The price lives in the message, not at the till. His mother's CCMDD parcel shows as R0.00 in the same
+        breakdown - covered is stated, never hidden. Amounts shown are illustrative, not sourced SEP
+        calculations <span class="flag" title="illustrative pricing - logged in meta/punchlist.md item 11">⚠️</span>.
+      </div></div>
+
+      <div class="keymoment">
+        <div class="ktag"><span class="klabel">Key moment</span><span class="kstar">⭐ moment of truth</span><span class="kwhere">at A2</span></div>
+        <div class="kline">The only thing I ever bought blind - not anymore</div>
+        <div class="kwhy">He knows whether the trip is affordable <span class="why">before he decides to travel</span> -
+        not at the till, after the taxi fare is already spent. <a href="08-concepts.html">Real-Time Transparency</a>,
+        for the majority who pay cash.</div>
+      </div>
+
+      <div class="callout"><span class="cmark">A3</span><div class="cbody">
+        <span class="feat">Interactive reply buttons · max 3</span><br>
+        WhatsApp allows exactly three quick-reply buttons, and the design spends them on change, pause, person.
+        There is no confirm button on purpose: silence is the golden path, and the order carries on by itself
+        <span class="flag" title="platform capability from Meta developer docs - vault source note pending, punchlist item 11">⚠️</span>.
+      </div></div>
+
+      <div class="callout dim" id="co-a4"><span class="cmark">A4</span><div class="cbody">
+        <span class="feat">List message · up to 10 rows</span><br>
+        Behind "Change something": a native list sheet - menu depth without menu typing. The last row keeps free
+        text first-class, so the flow never traps him in options that don't fit. "Add medicine to this order" is
+        P2's doorway, present here only as a row
+        <span class="flag" title="platform capability from Meta developer docs - vault source note pending, punchlist item 11">⚠️</span>.
+        <em style="color:var(--muted2)">(tap Change something in the phone to see it)</em>
+      </div></div>
+
+      <div class="callout dim" id="co-a5"><span class="cmark">A5</span><div class="cbody">
+        <span class="feat">Keyword reply + phone-back</span><br>
+        Escalation ends in a phone call, not a chat queue: one reply, and a person phones him in his language,
+        free of charge. The closing line matters most on prepaid - he can let his data lapse, because the call
+        comes to him. <em style="color:var(--muted2)">(tap Talk to a person in the phone to see it)</em>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="stubs">
+  <h2>The other six phases - mapped, awaiting the P1 verdict</h2>
+  <span class="tiny">each is scripted to the same rules once the P1 pass is signed off · mechanics below are the proposal under review</span>
+  <div class="stubgrid">
+    <div class="stub"><div class="snum">P0</div><h3>Signing up</h3>
+      <ul><li>Entry by click-to-chat poster or saved number</li>
+      <li>Language pick as the first list message</li>
+      <li>WhatsApp Flow (native multi-screen form) for household, medicines and preferences - the one place a form beats chat</li>
+      <li>Consent read-back in plain text; reply 1 to confirm</li></ul>
+      <span class="await">built after the P1 pass</span></div>
+    <div class="stub"><div class="snum">P2</div><h3>Adding to the order</h3>
+      <ul><li>Suggestions from his own history, specials first, as numbered picks</li>
+      <li>Free text in ("cough mixture"), one clarifying question back</li>
+      <li>Priced options as a list sheet; running total re-stated in the thread</li></ul>
+      <span class="await">built after the P1 pass</span></div>
+    <div class="stub"><div class="snum">P3</div><h3>Checked and packed</h3>
+      <ul><li>Picked-and-checked status listing the checks, pharmacist named</li>
+      <li>Packed-and-sealed status carrying the locker PIN, issued at sealing</li>
+      <li>Everything inline - no link that costs data to open</li></ul>
+      <span class="await">built after the P1 pass</span></div>
+    <div class="stub"><div class="snum">P4</div><h3>In hand</h3>
+      <ul><li>Payday reminder: amount and PIN restated in one message</li>
+      <li>Contents list right after handover, checked at the locker</li>
+      <li>Photo reply in the same thread brings a person to the phone</li></ul>
+      <span class="await">built after the P1 pass</span></div>
+    <div class="stub"><div class="snum">P5</div><h3>Taking it</h3>
+      <ul><li>The household's medicines as a list-message cabinet</li>
+      <li>Free-text questions; voice notes both directions</li>
+      <li>Reminders that stop the moment he replies STOP</li></ul>
+      <span class="await">built after the P1 pass</span></div>
+    <div class="stub"><div class="snum">∥</div><h3>When something breaks</h3>
+      <ul><li>Exception templates that arrive carrying the plan</li>
+      <li>The choices as reply buttons; never a dead end</li>
+      <li>"Call me" one reply away, answered in his language</li></ul>
+      <span class="await">built after the P1 pass</span></div>
+  </div>
+</section>
+
+<p class="foot">
+  <b>Scope notes.</b> Copy derives from the approved #09 cash journey
+  (<a href="09-tobe-household-repeat-moments.html#cash">deliverable #09</a>, spec:
+  design-kit/journeys/to-be-household-repeat-moments.md); this page decides only what the chat literally looks
+  like. Rand amounts are illustrative ⚠️. WhatsApp platform capabilities (reply-button and list-row limits,
+  Flows, template categories) are cited from Meta developer documentation and await a proper vault source note -
+  logged in meta/punchlist.md item 11. In-chat payment is deliberately absent: WhatsApp payments are not live in
+  South Africa, and the cash-at-the-Capitec-counter step needs no channel payment - the constraint and the
+  design agree. The thread renders in English here; production renders it in the customer's chosen language.
+  Deliverables #05-#10 are untouched.
+</p>
+
+</div>
+<script>
+/* Thread renderer - P1 spine on load, branches on tap. Copy mirrors the spec:
+   design-kit/journeys/sipho-whatsapp-flow.md (edit there first). */
+const thread = document.getElementById("thread");
+const sheet = document.getElementById("sheet");
+let branchDone = {A:false, B:false};
+
+function el(html){ const d=document.createElement("div"); d.innerHTML=html; return d.firstElementChild; }
+function marker(id){ return '<span class="marker" title="see callout '+id+' in the rail">'+id+'</span>'; }
+function inMsg(id, body, time){
+  return el('<div class="msgrow">'+ (id?marker(id):'<span style="width:22px;flex:none"></span>') +
+    '<div class="bubble in">'+body+'<span class="meta">'+time+'</span></div></div>');
+}
+function outMsg(body, time){
+  return el('<div class="msgrow out"><span style="width:22px;flex:none"></span>'+
+    '<div class="bubble out">'+body+'<span class="meta">'+time+' <span class="ticks">✓✓</span></span></div></div>');
+}
+
+function renderSpine(){
+  thread.innerHTML = "";
+  branchDone = {A:false, B:false};
+  document.getElementById("co-a4").classList.add("dim");
+  document.getElementById("co-a5").classList.add("dim");
+  thread.appendChild(el('<div class="syspill">🔒 Messages and calls are end-to-end encrypted.</div>'));
+  thread.appendChild(el('<div class="datepill">FRI, 21 AUG</div>'));
+  thread.appendChild(inMsg("A1",
+    'Hello Sipho. Your family\'s repeat medicine for August is being prepared:\n\n• <b>Your blood-pressure tablets</b>\n• <b>Your mother\'s chronic medicine</b>\n\nIt will be ready at the <b>Capitec locker at the taxi rank</b> on <b>Friday 28 August</b> - payday.\n\nYou don\'t need to do anything. If nothing changes, it will be waiting.',
+    "08:12"));
+  thread.appendChild(inMsg("A2",
+    'Here is the price, so you know before you travel.'+
+    '<span class="sect">Your tablets</span><span class="amt">Amlodipine 5 mg, 28 tablets (generic)  R64.40\nDispensing fee  R36.20</span>'+
+    '<span class="sect">Your mother\'s medicine</span><span class="amt">CCMDD chronic parcel  R0.00</span>\n\n<b>Total to pay: <span class="amt">R100.60</span></b>\nCash or instant EFT at the Capitec counter. Paying is what opens the locker.',
+    "08:12"));
+  thread.appendChild(inMsg("A3",
+    'Happy with this? Then there\'s nothing to do - your order carries on by itself, this month and every month.',
+    "08:13"));
+  const qr = el('<div class="qrwrap" role="group" aria-label="Quick replies">'+
+    '<button class="qr" id="qr-change">✎ Change something</button>'+
+    '<button class="qr" id="qr-pause">❚❚ Pause this month</button>'+
+    '<button class="qr" id="qr-person">☎ Talk to a person</button></div>');
+  thread.appendChild(qr);
+  qr.querySelector("#qr-change").addEventListener("click", branchChange);
+  qr.querySelector("#qr-pause").addEventListener("click", branchPause);
+  qr.querySelector("#qr-person").addEventListener("click", branchPerson);
+}
+
+function scrollEnd(){ thread.lastElementChild && thread.lastElementChild.scrollIntoView({block:"nearest"}); }
+
+function branchChange(){
+  if(branchDone.A) { sheet.classList.add("open"); return; }
+  branchDone.A = true;
+  thread.appendChild(outMsg("Change something","08:14"));
+  const lm = inMsg("A4",
+    'No problem. What would you like to change for August?', "08:14");
+  lm.querySelector(".bubble").appendChild(el('<div class="listbtn" id="openlist">☰ Choose an option</div>'));
+  thread.appendChild(lm);
+  lm.querySelector("#openlist").addEventListener("click", ()=>sheet.classList.add("open"));
+  document.getElementById("co-a4").classList.remove("dim");
+  sheet.classList.add("open");
+  scrollEnd();
+}
+
+function branchPause(){
+  thread.appendChild(outMsg("Pause this month","08:14"));
+  thread.appendChild(inMsg(null,
+    'Done - August is paused for your tablets. Your mother\'s medicine still arrives as planned. We\'ll be back to normal in September; reply RESUME any time to restart sooner.',
+    "08:14"));
+  scrollEnd();
+}
+
+function branchPerson(){
+  if(branchDone.B) return;
+  branchDone.B = true;
+  thread.appendChild(outMsg("Talk to a person","08:15"));
+  thread.appendChild(inMsg("A5",
+    'Of course. Reply <b>CALL ME</b> and a pharmacy team member will phone you back today, in your language, free of charge.\n\nOr send a voice note - we listen to those too.',
+    "08:15"));
+  const hint = el('<button class="sendhint" id="sendcall">tap to send: CALL ME</button>');
+  thread.appendChild(hint);
+  hint.addEventListener("click", ()=>{
+    hint.remove();
+    thread.appendChild(outMsg("CALL ME","08:16"));
+    thread.appendChild(inMsg(null,
+      'Thank you Sipho. Someone will phone you on this number <b>before 17:00 today</b>.\n\nYou don\'t need to keep data on - the call comes to you.',
+      "08:16"));
+    scrollEnd();
+  });
+  document.getElementById("co-a5").classList.remove("dim");
+  scrollEnd();
+}
+
+document.getElementById("sheetclose").addEventListener("click", ()=>sheet.classList.remove("open"));
+document.getElementById("reset").addEventListener("click", renderSpine);
+renderSpine();
+</script>
+</body>
+</html>
