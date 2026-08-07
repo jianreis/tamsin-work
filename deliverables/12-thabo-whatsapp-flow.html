@@ -218,20 +218,17 @@ a{color:var(--brand-dark)}
 .keymoment .kwhy .why{background:linear-gradient(transparent 55%, #d9ecc0 55%); font-weight:800}
 .keymoment .kwhy a{font-weight:700}
 
-/* stub cards for the other phases */
-.stubs{margin:calc(var(--sp)*3.5) calc(var(--sp)*3) 0;}
-.stubs h2{font-size:1.05rem; font-weight:800; margin-bottom:4px}
-.stubs .tiny{margin-bottom:12px; display:block}
-.stubgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
-@media (max-width:900px){ .stubgrid{grid-template-columns:1fr 1fr} }
-@media (max-width:640px){ .stubgrid{grid-template-columns:1fr} }
-.stub{border:1.5px dashed var(--line); border-radius:10px; background:#fff; padding:12px 14px;}
-.stub .snum{font-family:var(--mono); font-size:.68rem; color:var(--muted2); font-weight:700}
-.stub h3{font-size:.95rem; font-weight:800; margin:2px 0 6px}
-.stub ul{margin:0; padding-left:16px; font-size:.82rem; color:var(--ink-soft)}
-.stub li{margin-bottom:3px}
-.stub .await{display:inline-block; margin-top:8px; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em;
-  color:var(--muted2); border:1px solid var(--line); border-radius:99px; padding:2px 9px}
+/* off-channel panel (P4 - no phone by design) */
+.offpanel{border:1.5px dashed var(--mint-deep); border-radius:16px; background:#fbfdfb; padding:16px 18px;
+  font-size:.9rem; color:var(--ink-soft); max-width:400px; margin:0 auto;}
+.offpanel .otag{display:inline-block; font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em;
+  color:var(--brand-dark); background:var(--good-bg); border:1px solid var(--mint-deep); border-radius:99px;
+  padding:2px 10px; margin-bottom:8px;}
+.offpanel p{margin:8px 0}
+.offpanel .obeat{display:flex; gap:10px; margin:10px 0}
+.offpanel .obeat .omark{flex:none; width:22px; height:22px; border-radius:50%; background:var(--ink); color:var(--lime);
+  font-size:.6rem; font-weight:800; display:flex; align-items:center; justify-content:center; font-family:var(--mono); margin-top:2px}
+.offpanel .onote{font-size:.78rem; color:var(--muted2); font-style:italic; margin-top:12px}
 
 .foot{margin:calc(var(--sp)*4) calc(var(--sp)*3) 0; font-size:.84rem; color:var(--muted); max-width:92ch}
 .foot b{color:var(--ink-soft)}
@@ -246,7 +243,7 @@ a{color:var(--brand-dark)}
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #12 · THABO'S ACUTE SCRIPT, AS A WHATSAPP CONVERSATION</span>
-  <span class="gen">generated 2026-08-07 · P1 pass for review (remaining phases stubbed) · content spec: design-kit/journeys/thabo-whatsapp-flow.md</span>
+  <span class="gen">generated 2026-08-07 · v2: all seven phases live (P1 pass approved same day) · content spec: design-kit/journeys/thabo-whatsapp-flow.md</span>
 </div>
 
 <section class="intro">
@@ -256,10 +253,11 @@ a{color:var(--brand-dark)}
   queue to the day-3 check-in that turns into a booked appointment. Every message uses a real mechanic of the
   WhatsApp Business Platform, and every mechanic is chosen to honour his constraints: prepaid data, an entry-level
   Android, no app, no account, a sick 6-year-old at his side. The chat lives in <b>Dis-Chem Pharmacy</b> - not the
-  repeat service; his entry is a photo, not a subscription. The phone is live: tap the highlighted buttons and
-  dashed pills to walk it. What happens away from the phone - the clinic room, the express counter - is told beside
-  the phone, never manufactured as chat. The thread renders here in English for this audience; production renders
-  it in the customer's chosen language.</p>
+  repeat service; his entry is a photo, not a subscription. The phones are live: tap the highlighted buttons and
+  dashed pills to walk each conversation. What happens away from the phone - the clinic room, the express counter,
+  the pharmacist's call - is told beside the phone, never manufactured as chat; P4 carries no phone at all, because
+  its whole scene is a counter. The threads render here in English for this audience; production renders them in
+  the customer's chosen language.</p>
   <div class="philo"><u>Trust</u> <span class="gt">&gt;</span> Convenience <span class="gt">&gt;</span> Speed <span style="font-weight:500;color:#d6e6dc">&nbsp;- speed as evidence of care: the burden moves, that's the promise</span></div>
 </section>
 
@@ -279,29 +277,29 @@ a{color:var(--brand-dark)}
 
 <section class="spine" aria-label="Phases and their WhatsApp mechanics">
   <div class="shead"><h2>The seven phases, and the WhatsApp mechanics carrying each</h2>
-  <span class="tiny">tap a phase to jump · stars mark the moments of truth · one phase is live in this pass</span></div>
+  <span class="tiny">tap a phase to jump to its phone · stars mark the moments of truth</span></div>
   <div class="spinerow">
-    <button class="snode live" data-goto="p1"><div class="snum">P1</div><div class="sttl">At the doctor</div>
+    <button class="snode" data-goto="p1"><div class="snum">P1</div><div class="sttl">At the doctor</div>
       <div class="sm">Photo of the script in · ack · read-back + price + generic inside 15 min</div>
-      <div class="stars">1 moment · ⭐</div><span class="livepill">live below</span></button>
-    <button class="snode" data-goto="stubs"><div class="snum">P2</div><div class="sttl">Choosing how I get it</div>
-      <div class="sm">Route buttons · the go-ahead gate · priced symptom add-ons</div>
-      <div class="stars">no moment (by design)</div><span class="stubpill">stub</span></button>
-    <button class="snode" data-goto="stubs"><div class="snum">P3</div><div class="sttl">Checked and filled</div>
+      <div class="stars">1 moment · ⭐</div></button>
+    <button class="snode" data-goto="p2"><div class="snum">P2</div><div class="sttl">Choosing how I get it</div>
+      <div class="sm">Route ask · the go-ahead gate · priced symptom add-ons</div>
+      <div class="stars">no moment (by design)</div></button>
+    <button class="snode" data-goto="p3"><div class="snum">P3</div><div class="sttl">Checked and filled</div>
       <div class="sm">Status templates · Sindi's named weight-check · code + dosing guide</div>
-      <div class="stars">1 moment</div><span class="stubpill">stub</span></button>
-    <button class="snode" data-goto="stubs"><div class="snum">P4</div><div class="sttl">In hand</div>
-      <div class="sm">The express counter - off-channel by design</div>
-      <div class="stars">1 moment · ⭐</div><span class="stubpill">stub</span></button>
-    <button class="snode" data-goto="stubs"><div class="snum">P5</div><div class="sttl">Taking it</div>
+      <div class="stars">1 moment</div></button>
+    <button class="snode" data-goto="p4"><div class="snum">P4</div><div class="sttl">In hand</div>
+      <div class="sm">The express counter - off-channel, no phone by design</div>
+      <div class="stars">1 moment · ⭐</div></button>
+    <button class="snode" data-goto="p5"><div class="snum">P5</div><div class="sttl">Taking it</div>
       <div class="sm">The single day-3 check-in · escalation to a phone call</div>
-      <div class="stars">2 moments · ⭐</div><span class="stubpill">stub</span></button>
-    <button class="snode" data-goto="stubs"><div class="snum">P6</div><div class="sttl">When I don't get better</div>
+      <div class="stars">2 moments · ⭐</div></button>
+    <button class="snode" data-goto="p6"><div class="snum">P6</div><div class="sttl">When I don't get better</div>
       <div class="sm">The new script rides the same rails · not part of every journey</div>
-      <div class="stars">no moment (cash)</div><span class="stubpill">stub</span></button>
-    <button class="snode" data-goto="stubs"><div class="snum">∥</div><div class="sttl">When something breaks</div>
+      <div class="stars">no moment (cash)</div></button>
+    <button class="snode" data-goto="ppar"><div class="snum">∥</div><div class="sttl">When something breaks</div>
       <div class="sm">Told before the taxi · hold it for me · ID fallback</div>
-      <div class="stars">no moment (by design)</div><span class="stubpill">stub</span></button>
+      <div class="stars">no moment (by design)</div></button>
   </div>
 </section>
 
@@ -387,45 +385,335 @@ a{color:var(--brand-dark)}
   </div>
 </section>
 
-<!-- ======================= stubs ======================= -->
-<section class="stubs" id="stubs">
-  <h2>The other six phases - mapped, awaiting the P1 verdict</h2>
-  <span class="tiny">each is scripted to the same rules once the P1 pass is signed off · mechanics below are the proposal under review</span>
-  <div class="stubgrid">
-    <div class="stub"><div class="snum">P2</div><h3>Choosing how I get it</h3>
-      <ul><li>Route ask as reply buttons: name my store, share my location, or an address for the delivery cost</li>
-      <li>"1 - go ahead" typed reply as the release gate - the journey's one mid-flow confirmation; nothing is
-      dispensed in his son's name without it</li>
-      <li>Priced symptom add-ons as numbered picks (paracetamol syrup, saline drops); the one total restated</li></ul>
-      <span class="await">built after the P1 pass</span></div>
-    <div class="stub"><div class="snum">P3</div><h3>Checked and filled</h3>
-      <ul><li>Being-made-up status, each item scanned against the script</li>
-      <li>"Checked by Sindi ✓ - the dose is right for his weight" - the named final check</li>
-      <li>Ready before shift end: order code as a text line + the dosing guide in his language, all inline</li></ul>
-      <span class="await">built after the P1 pass</span></div>
-    <div class="stub"><div class="snum">P4</div><h3>In hand</h3>
-      <ul><li>The express counter is off-channel by design: code shown, pack handed over, counselling at the
-      counter, pay what he already knew</li>
-      <li>No chat is manufactured for it - the scene is told as page prose beside P3's ready message</li>
-      <li>Whether P3 and P4 share one phone on this surface is parked for the full-set review</li></ul>
-      <span class="await">built after the P1 pass</span></div>
-    <div class="stub"><div class="snum">P5</div><h3>Taking it</h3>
-      <ul><li>The single day-3 check-in - "He should be coughing less by now - is he?" - one tap to answer;
-      no pushed reminders anywhere</li>
-      <li>"He isn't better" escalates: a pharmacist phones after six (off-channel), and the booked clinic visit
-      lands back in the thread with its price first</li></ul>
-      <span class="await">built after the P1 pass</span></div>
-    <div class="stub"><div class="snum">P6</div><h3>When I don't get better</h3>
-      <ul><li>Badged "not part of every journey" - and no moment on the cash side, by design</li>
-      <li>The clinic sees him the next morning; the new script rides the same rails - a compressed echo of
-      P1-P3's messages, no new mechanic</li></ul>
-      <span class="await">built after the P1 pass</span></div>
-    <div class="stub"><div class="snum">∥</div><h3>When something breaks</h3>
-      <ul><li>Out of stock told before the taxi - the plan as buttons: next-nearest store on the same code, or
-      delivery with its cost shown</li>
-      <li>"Hold it for me" - held at the counter, price locked, no questions on Friday</li>
-      <li>The dead phone at the counter has no thread presence: ID is enough - noted in the rail, not mocked</li></ul>
-      <span class="await">built after the P1 pass</span></div>
+<!-- ======================= P2 ======================= -->
+<section class="stage" id="p2">
+  <div class="phead"><span class="pnum">P2</span><h2>Choosing how I get it</h2><span class="once">the same morning · Tue 8 Sep, 09:56-10:04</span></div>
+  <div class="stagegrid">
+    <div>
+      <div class="stagecontrols"><button class="btn" data-reset="p2">Reset the thread</button>
+        <span class="hint">tap the dashed pills to send Thabo's replies</span></div>
+      <div class="phone"><div class="screen">
+        <div class="statusbar"><span>09:56</span><span>▂▄▆ 🔋 51%</span></div>
+        <div class="wahead"><span class="back">‹</span><span class="avatar">DC</span>
+          <div class="names"><div class="biz">Dis-Chem Pharmacy <span class="badge">✓</span></div><div class="sub">Official business account</div></div>
+          <div class="hicons"><span>📞</span><span>⋮</span></div></div>
+        <div class="thread" id="thread-p2"></div>
+        <div class="sheet" id="sheet-p2"></div>
+        <div class="inputbar"><div class="field">Message</div><div class="mic">🎤</div></div>
+      </div></div>
+    </div>
+    <div class="rail">
+      <h3>What each message is doing</h3>
+      <p class="railsub">markers (C1-C4) match the callouts</p>
+      <div class="callout"><span class="cmark">C1</span><div class="cbody">
+        <span class="feat">Route ask · typed answer first-class</span><br>
+        Three honest ways to answer, none of them a form: name the store, share a location to see stores near
+        where he stands, or an address only if he wants a delivery cost - the two never conflated. The reply
+        confirms his store has the medicine before he commits, because the routing ask and the stock answer are
+        the same step <span class="flag" title="stores-with-stock routing - punchlist item 10(e)">⚠️</span>.
+      </div></div>
+      <div class="callout"><span class="cmark">C2</span><div class="cbody">
+        <span class="feat">"1 - go ahead" · the release gate</span><br>
+        The journey's one mid-flow confirmation, and the message says why it exists: nothing is made up in his
+        son's name until this lands - the legal and operational release (#10 P2 rule), the acute counterpart of
+        #11's sign-up read-back. Nothing starts without it, and nothing expires while he thinks.
+      </div></div>
+      <div class="callout"><span class="cmark">C3</span><div class="cbody">
+        <span class="feat">Confirmation · everything the day needs</span><br>
+        Express pickup zone, ready from this afternoon, held until closing, and the after-hours point on the
+        same code if the shift runs late
+        <span class="flag" title="express pickup zone - punchlist 10(a); after-hours external pickup - 10(b), also 🔮">⚠️</span>.
+        The whole plan is on the phone before he goes back to work.
+      </div></div>
+      <div class="callout"><span class="cmark">C4</span><div class="cbody">
+        <span class="feat">Numbered symptom add-ons · silence adds nothing</span><br>
+        Diagnosis-led suggestions for a chest like his, each priced, answered with one digit - and the total is
+        restated the moment anything changes, so price-before-travel survives the additions
+        <span class="flag" title="acute symptom add-on attach - punchlist 10(c); amounts illustrative - item 12">⚠️</span>.
+        Add-ons never gate the medicine; if he says nothing, nothing is added.
+      </div></div>
+      <p class="railnote">No key moment in this phase by design - #10 keeps P2 deliberately quiet. Dis-Chem runs
+      ahead of the customer: preparation starts at the go-ahead, and the medicine is ready before he is.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= P3 ======================= -->
+<section class="stage" id="p3">
+  <div class="phead"><span class="pnum">P3</span><h2>Checked and filled</h2><span class="once">during his shift · Tue 8 Sep, 12:10-15:05</span></div>
+  <div class="stagegrid">
+    <div>
+      <div class="stagecontrols"><button class="btn" data-reset="p3">Reset the thread</button>
+        <span class="hint">the statuses arrive on their own - nothing to tap</span></div>
+      <div class="phone"><div class="screen">
+        <div class="statusbar"><span>15:05</span><span>▂▄▆ 🔋 38%</span></div>
+        <div class="wahead"><span class="back">‹</span><span class="avatar">DC</span>
+          <div class="names"><div class="biz">Dis-Chem Pharmacy <span class="badge">✓</span></div><div class="sub">Official business account</div></div>
+          <div class="hicons"><span>📞</span><span>⋮</span></div></div>
+        <div class="thread" id="thread-p3"></div>
+        <div class="sheet" id="sheet-p3"></div>
+        <div class="inputbar"><div class="field">Message</div><div class="mic">🎤</div></div>
+      </div></div>
+    </div>
+    <div class="rail">
+      <h3>What each message is doing</h3>
+      <p class="railsub">markers (D1-D4) match the callouts</p>
+      <div class="callout"><span class="cmark">D1</span><div class="cbody">
+        <span class="feat">Status template · detail inline</span><br>
+        The status arrives without being asked and carries its content in the message - each item scanned against
+        the doctor's script - never "open a link to see more", because a link is a download and a download is
+        money. He's at work; he doesn't have to watch it, but it's there when he looks.
+      </div></div>
+      <div class="callout"><span class="cmark">D2</span><div class="cbody">
+        <span class="feat">The named check · for his weight</span><br>
+        The pharmacist is named only at the final check (the #10 name rule), and the check that gets named is the
+        one a parent cares about: the dose against his son's weight, off the script. Her line stays open in the
+        same thread - no phoning a dispensary that doesn't pick up.
+      </div></div>
+      <div class="keymoment">
+        <div class="ktag"><span class="klabel">Key moment</span><span class="kwhere">at D2</span></div>
+        <div class="kline">Every check ran before it left the building</div>
+        <div class="kwhy">For a child's medicine, a mistake isn't an inconvenience - it's the thing a parent lies
+        awake about. Today that safety runs invisibly, and any gap shows up at home, too late. Here it runs while
+        Thabo works his shift, and it shows itself: picked at his store, scanned against the doctor's script, and
+        a named pharmacist confirming the dose against his son's weight before signing.
+        <span class="why">Someone with a name stood behind his boy's medicine - and he watched it happen.</span>
+        That is <a href="08-concepts.html">The Named Check</a>, made for the person with the most to lose from an
+        anonymous mistake.</div>
+      </div>
+      <div class="callout"><span class="cmark">D3</span><div class="cbody">
+        <span class="feat">Ready + the order code as text</span><br>
+        Ready before the shift ends, with the code as a plain text line the counter can key or scan - not a
+        barcode image to download. The same code works at the after-hours point outside the store
+        <span class="flag" title="after-hours external pickup - punchlist 10(b), also 🔮">⚠️</span>.
+        (#10 speaks of a QR at the express counter; the text render keeps the service's downloads at zero -
+        flagged in the spec's open questions.)
+      </div></div>
+      <div class="callout"><span class="cmark">D4</span><div class="cbody">
+        <span class="feat">The dosing guide, ahead of his hands</span><br>
+        His son's dose in his language, on the phone before the medicine is in them - so the counter walkthrough
+        confirms what he's already read instead of introducing it. The same instructions ride on the labels.
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= P4 ======================= -->
+<section class="stage" id="p4">
+  <div class="phead"><span class="pnum">P4</span><h2>In hand</h2><span class="once">after the shift · Tue 8 Sep, about 17:40</span></div>
+  <p class="scenenote"><b>No phone in this phase, by design:</b> the express counter has no WhatsApp traffic, so no
+  thread is mocked (ground rule 2). Everything Thabo needs - the code, the total, the dosing guide - has been on
+  his phone since 15:05. The scene below is the approved #10 copy, told where it happens: at the counter.</p>
+  <div class="stagegrid">
+    <div>
+      <div class="offpanel">
+        <span class="otag">off-channel · the express counter</span>
+        <div class="obeat"><span class="omark">E1</span><p>After his shift Thabo stops at his store. The express
+        pickup zone is signposted right at the front - the dispensary queue is somebody else's afternoon. He shows
+        his code, and the pack comes out with his son's name on it. No forms, no retelling the story.</p></div>
+        <div class="obeat"><span class="omark">E2</span><p>The pharmacist at the counter opens the pack with him:
+        the syringe marked at his line, the labels in his language, finish all seven days even when he seems
+        better. He asks what he wants to ask while he's standing there.</p></div>
+        <div class="obeat"><span class="omark">E3</span><p>One total - the script and the paracetamol syrup - the
+        same number he's known since the clinic: <b>R208.90</b>. Cash or card, at the same counter, and done.</p></div>
+        <p class="onote">The thread stays silent through all of it - and nothing needs to be sent. If his phone
+        had died on the way, the ∥ band covers that: his ID is enough.</p>
+      </div>
+    </div>
+    <div class="rail">
+      <h3>What the counter is doing</h3>
+      <p class="railsub">markers (E1-E3) match the beats in the panel</p>
+      <div class="callout"><span class="cmark">E1</span><div class="cbody">
+        <span class="feat">The code at handover</span><br>
+        The code he shows is the E-Script Token's redemption face: his son's whole script riding one code,
+        redeemable exactly once, by him. The pack was staged under name and code when it sealed
+        <span class="flag" title="express pickup zone mechanics - punchlist item 10(a)">⚠️</span>.
+      </div></div>
+      <div class="keymoment">
+        <div class="ktag"><span class="klabel">Key moment</span><span class="kstar">⭐ moment of truth</span><span class="kwhere">at E1</span></div>
+        <div class="kline">The counter was expecting me</div>
+        <div class="kwhy">Thabo knows the other version of this stop: the month-end dispensary queue, twenty-five
+        minutes deep, after a full shift, with a sick boy waiting at home. This time the counter was expecting
+        him - the pack made up, named, waiting - and he was through it in minutes. <span class="why">The stop
+        still happens; it just stopped costing him an afternoon he didn't have.</span> That is
+        <a href="08-concepts.html">The 60-Minute Fill</a> shaped for collection - and the code he showed is
+        <a href="08-concepts.html">The E-Script Token</a> doing its quiet work: his son's whole script riding one
+        code, redeemable exactly once, by him.</div>
+      </div>
+      <div class="callout"><span class="cmark">E2</span><div class="cbody">
+        <span class="feat">Counselling worked into the handover</span><br>
+        The walkthrough is part of the handover, not a queue away from it - the duty pharmacist at the counter,
+        the marked syringe, the in-language labels. (Sindi, who signed the check, stays reachable in the thread -
+        the #10 agreement.)
+      </div></div>
+      <div class="callout"><span class="cmark">E3</span><div class="cbody">
+        <span class="feat">Pay what he already knew</span><br>
+        The number planned at the clinic gate is the number paid at the counter - one amount, once, cash or card.
+        Paying cash is a completely normal way to buy medicine here; nothing about this counter treats it as an
+        error state.
+      </div></div>
+      <p class="railnote">Whether P3 and P4 want to share one phone on this surface (the ready message is the
+      last thing the channel says before the counter) is parked in the spec's open questions for this review.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= P5 ======================= -->
+<section class="stage" id="p5">
+  <div class="phead"><span class="pnum">P5</span><h2>Taking it</h2><span class="once">that evening, then day 3 · Fri 11 Sep</span></div>
+  <p class="scenenote"><b>The first dose happens at home, off the phone:</b> that evening Thabo gives it - the
+  syringe marked at his line, the label and the guide in his language, the fever syrup with its own plain line:
+  only if the fever is up. Seven days, morning and evening, even when he seems better - it says so where he can't
+  miss it. Nothing at his kitchen table needs decoding. The thread carries only what the channel really does in
+  this phase: the single day-3 check-in - and what happens when the answer is no.</p>
+  <div class="stagegrid">
+    <div>
+      <div class="stagecontrols"><button class="btn" data-reset="p5">Reset the thread</button>
+        <span class="hint">tap the highlighted button, then the dashed pill</span></div>
+      <div class="phone"><div class="screen">
+        <div class="statusbar"><span>16:30</span><span>▂▄▆ 🔋 44%</span></div>
+        <div class="wahead"><span class="back">‹</span><span class="avatar">DC</span>
+          <div class="names"><div class="biz">Dis-Chem Pharmacy <span class="badge">✓</span></div><div class="sub">Official business account</div></div>
+          <div class="hicons"><span>📞</span><span>⋮</span></div></div>
+        <div class="thread" id="thread-p5"></div>
+        <div class="sheet" id="sheet-p5"></div>
+        <div class="inputbar"><div class="field">Message</div><div class="mic">🎤</div></div>
+      </div></div>
+    </div>
+    <div class="rail">
+      <h3>What each message is doing</h3>
+      <p class="railsub">markers (F1-F3) match the callouts</p>
+      <div class="keymoment">
+        <div class="ktag"><span class="klabel">Key moment</span><span class="kwhere">off-channel · the first dose</span></div>
+        <div class="kline">Medication you can't take wrong</div>
+        <div class="kwhy">Dosing a sick child from instructions in your second language is a quiet, common danger -
+        and tonight it isn't one. The syringe is marked, the words are his father's own language, the pictures
+        carry what words might miss. <span class="why">Getting it right required nothing from Thabo except being
+        there.</span> That is <a href="08-concepts.html">Made-for-Me Medicine</a> at its free floor - the
+        can't-take-wrong ladder that comes with every script, no matter who is paying.</div>
+      </div>
+      <div class="callout"><span class="cmark">F1</span><div class="cbody">
+        <span class="feat">The day-3 check-in · the single touch</span><br>
+        One message, timed from the course profile, answered in one tap - and it is the only thing this journey
+        ever pushes. No dose reminders, no course-end message, nothing unasked (#10 phase decision): the research
+        is blunt that help flips into harassment the moment agency is lost.
+      </div></div>
+      <div class="callout"><span class="cmark">F2</span><div class="cbody">
+        <span class="feat">Escalation · a person, by phone</span><br>
+        When the answer is "he isn't better", the next step is a voice, not a chatbot - a pharmacist phones after
+        his shift, in his language, free, and his data can lapse because the call comes to him. The call itself
+        happens off the channel; the thread holds only its arrangement and its outcome.
+      </div></div>
+      <div class="keymoment">
+        <div class="ktag"><span class="klabel">Key moment</span><span class="kstar">⭐ moment of truth</span><span class="kwhere">at F1-F3</span></div>
+        <div class="kline">The pharmacy didn't disappear after the handover</div>
+        <div class="kwhy">Nobody has ever asked Thabo whether his child's medicine is working - day three is where
+        every parent is alone with their judgement. This time day three brought a question in his own language,
+        and when his answer was "no", it didn't bounce off a chatbot: a pharmacist phoned, listened, and turned
+        his worry into a booked appointment with a price he knew first. <span class="why">Someone asked if his
+        boy was getting better - and when he wasn't, they did something about it.</span> That is
+        <a href="08-concepts.html">The Pharmacist Who Stays</a> earning its name: the check-in that becomes a plan
+        the moment the answer is wrong.</div>
+      </div>
+      <div class="callout"><span class="cmark">F3</span><div class="cbody">
+        <span class="feat">The booking, in writing, price first</span><br>
+        The pharmacist gave the price on the phone before Thabo said yes; the written confirmation restates it so
+        the plan lives on the phone, not in his memory of a call
+        <span class="flag" title="clinic price illustrative - punchlist item 12; written confirmation proposed at this pass - spec open questions">⚠️</span>.
+        The week's story travels with the booking - he will not retell it at the clinic.
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= P6 ======================= -->
+<section class="stage" id="p6">
+  <div class="phead"><span class="pnum">P6</span><h2>When I don't get better</h2><span class="once">not part of every journey · Sat 12 Sep</span></div>
+  <p class="scenenote"><b>The clinic visit is off the phone:</b> no 5am queue, no lost shift - the appointment is
+  the appointment. The clinic sister examines his son with the week's story already on screen: the script, the
+  check-in, what Thabo told the pharmacist. A virtual doctor joins on the screen for the decision he couldn't
+  afford to chase across town: a different antibiotic, and a test to see what's actually going on. The thread
+  below is everything the channel adds - the new script riding the same rails, compressed because the reader has
+  already watched every part of it work. By the weekend, he's chasing his sister again.</p>
+  <div class="stagegrid">
+    <div>
+      <div class="stagecontrols"><button class="btn" data-reset="p6">Reset the thread</button>
+        <span class="hint">tap the dashed pill - the rest arrives on its own</span></div>
+      <div class="phone"><div class="screen">
+        <div class="statusbar"><span>09:48</span><span>▂▄▆ 🔋 81%</span></div>
+        <div class="wahead"><span class="back">‹</span><span class="avatar">DC</span>
+          <div class="names"><div class="biz">Dis-Chem Pharmacy <span class="badge">✓</span></div><div class="sub">Official business account</div></div>
+          <div class="hicons"><span>📞</span><span>⋮</span></div></div>
+        <div class="thread" id="thread-p6"></div>
+        <div class="sheet" id="sheet-p6"></div>
+        <div class="inputbar"><div class="field">Message</div><div class="mic">🎤</div></div>
+      </div></div>
+    </div>
+    <div class="rail">
+      <h3>What each message is doing</h3>
+      <p class="railsub">markers (G1-G2) match the callouts</p>
+      <div class="callout"><span class="cmark">G1</span><div class="cbody">
+        <span class="feat">The new script · no photo needed this time</span><br>
+        The clinic is on the rails, so the script comes straight through - nothing for him to send, nothing
+        starting over; everyone already knows them. The price still arrives before anything else happens, and the
+        go-ahead is still the gate - the one mechanic that never compresses.
+      </div></div>
+      <div class="callout"><span class="cmark">G2</span><div class="cbody">
+        <span class="feat">Same rails, compressed</span><br>
+        The named check, the code, the express zone - machinery the reader has watched all page, arriving in one
+        message because nothing about it is new. That is the point of this phase: the second script costs him
+        nothing to learn.
+      </div></div>
+      <p class="railnote">No key moment on the cash side, by #10 design - his moment already happened at the day-3
+      check-in. This phase is the quiet aftermath: the visit, the new script, the weekend.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ∥ ======================= -->
+<section class="stage par" id="ppar">
+  <div class="phead"><span class="pnum">∥</span><h2>When something breaks</h2><span class="once purple">parallel - another version of the day</span></div>
+  <div class="stagegrid">
+    <div>
+      <div class="stagecontrols"><button class="btn" data-reset="ppar">Reset the thread</button>
+        <span class="hint">two scenarios in one thread - tap the buttons, then the pill</span></div>
+      <div class="phone"><div class="screen">
+        <div class="statusbar"><span>15:12</span><span>▂▄▆ 🔋 29%</span></div>
+        <div class="wahead"><span class="back">‹</span><span class="avatar">DC</span>
+          <div class="names"><div class="biz">Dis-Chem Pharmacy <span class="badge">✓</span></div><div class="sub">Official business account</div></div>
+          <div class="hicons"><span>📞</span><span>⋮</span></div></div>
+        <div class="thread" id="thread-ppar"></div>
+        <div class="sheet" id="sheet-ppar"></div>
+        <div class="inputbar"><div class="field">Message</div><div class="mic">🎤</div></div>
+      </div></div>
+    </div>
+    <div class="rail">
+      <h3>What each message is doing</h3>
+      <p class="railsub">markers (H1-H3) match the callouts · scenarios, not steps - each is a different version of the day</p>
+      <div class="callout"><span class="cmark">H1</span><div class="cbody">
+        <span class="feat">Exception template · the plan attached</span><br>
+        Bad news never arrives alone: the stock failure reaches him before a rand goes to a taxi, carrying its two
+        ways through as buttons - the next-nearest store on the same code and price, or delivery with its cost
+        shown honestly <span class="flag" title="stores-with-stock routing - punchlist 10(e); delivery cost illustrative - item 12">⚠️</span>.
+        The wasted trip is the one thing never allowed to happen.
+      </div></div>
+      <div class="callout"><span class="cmark">H2</span><div class="cbody">
+        <span class="feat">"Hold it for me" · price locked</span><br>
+        When the week costs more than it should, one reply holds the pack at the counter with the price unchanged
+        - no re-order, no questions on the day he comes, and nobody at that counter knows anything except that a
+        pack is waiting for its person
+        <span class="flag" title="hold-at-counter with price lock - punchlist item 10(g); dignity mechanics ours">⚠️</span>.
+      </div></div>
+      <div class="callout"><span class="cmark">H3</span><div class="cbody">
+        <span class="feat">The dead phone · no thread presence</span><br>
+        A twelve-hour shift kills a battery. There is deliberately no message to show for it: at the express
+        counter his ID is enough - the pack is under his son's name, and the order is his, not his phone's
+        <span class="flag" title="ID fallback at the express counter - punchlist item 10(i)">⚠️</span>.
+        The code was for speed, never a lock.
+      </div></div>
+      <p class="railnote">No key moment, by #10 design - the scenarios carry the band. Every one ends with Thabo
+      holding the decision, and bad news always arrives with the plan attached.</p>
+    </div>
   </div>
 </section>
 
@@ -605,9 +893,105 @@ const P1 = () => [
     body:'Done - the generic antibiotic and the cough syrup. <b>Total: <span class="amt">R176.40</span>.</b>\n\nNothing is made up in your son\'s name until you say go ahead - the next message asks how you want to get it.'}}
 ];
 
+/* ---------- P2 ---------- */
+const P2 = () => [
+  {sys:"🔒 Messages and calls are end-to-end encrypted."},
+  {date:"TUE, 8 SEP"},
+  {inm:{id:"C1", time:"09:56",
+    body:'How would you like to get his medicine? You can:\n• Name your Dis-Chem store\n• Share your location 📍 to see stores close to where you\'re standing\n• Or send an address to see what delivery would cost\n\nWhatever is easiest.'}},
+  {tap:{send:"Dis-Chem Tembisa", time:"09:58"}},
+  {inm:{id:"C2", time:"09:58",
+    body:'Dis-Chem Tembisa has his medicine in stock, and collection costs nothing.\n\nWhen you\'re ready, reply <b>1 - go ahead</b>. That\'s the yes we need before anything is made up in your son\'s name - nothing starts without it, and nothing expires while you think.'}},
+  {tap:{send:"1 - go ahead", time:"10:01"}},
+  {inm:{id:"C3", time:"10:01",
+    body:'Go-ahead received - his medicine is being made up now.\n\nReady from this afternoon at the <b>express pickup zone</b>, Dis-Chem Tembisa, where the pharmacist hands it over and runs you through his dose.\n\nHeld until closing - and if your shift runs late, the after-hours pickup point outside the store takes the same code.'}},
+  {inm:{id:"C4", time:"10:03",
+    body:'For a chest like his, these can help alongside the antibiotic - only if you want them:\n<b>1.</b> Saline nose drops - <span class="amt">R24.90</span>\n<b>2.</b> Paracetamol syrup, for the fever - <span class="amt">R32.50</span>\n\nReply with a number to add one. If you say nothing, nothing is added.'}},
+  {tap:{send:"2", time:"10:04"}},
+  {inm:{time:"10:04",
+    body:'Added: paracetamol syrup, <span class="amt">R32.50</span>.\nYour total is now <b><span class="amt">R208.90</span></b> - paid once, at the counter, when you collect.'}}
+];
+
+/* ---------- P3 ---------- */
+const P3 = () => [
+  {sys:"🔒 Messages and calls are end-to-end encrypted."},
+  {date:"TUE, 8 SEP"},
+  {inm:{id:"D1", time:"12:10",
+    body:'His medicine is being made up at Dis-Chem Tembisa - the antibiotic, the cough syrup and the paracetamol syrup - each one scanned against the script the doctor wrote.\n\nNothing for you to do - it\'s here when you look.'}},
+  {inm:{id:"D2", time:"14:26",
+    body:'<b>Checked by Sindi ✓</b>\n\nThe dose is right for his weight - <b>21 kg</b>, checked against the script. A pharmacist looked at your son\'s medicine after it was picked, and signed for it.\n\nIf something worries you, ask her here - no phoning a dispensary that doesn\'t pick up.'}},
+  {inm:{id:"D3", time:"15:05",
+    body:'Ready - <b>express pickup zone</b>, Dis-Chem Tembisa. Show this code:\n<b><span class="amt">THB 4172</span></b>\n\nThe same code works at the after-hours point outside the store if you\'re late. Held until closing.'}},
+  {inm:{id:"D4", time:"15:05",
+    body:'His dosing guide, on your phone before it\'s in your hands:\n• <b>Antibiotic</b> - 5 ml, morning, midday and night, all 7 days, even when he seems better\n• <b>Cough syrup</b> - 5 ml at night\n• <b>Paracetamol syrup</b> - only if the fever is up\n\nThe same instructions are on the labels, in your language.'}}
+];
+
+/* ---------- P5 ---------- */
+const P5 = () => [
+  {sys:"🔒 Messages and calls are end-to-end encrypted."},
+  {date:"FRI, 11 SEP · DAY 3"},
+  {inm:{id:"F1", time:"16:30",
+    body:'He should be coughing less by now - is he?\n\nOne tap answers, and a pharmacist sees your reply.'}},
+  {qr:{buttons:[
+    {label:"He's better", send:"He's better", time:"16:32", steps:[
+      {inm:{time:"16:32", body:'That\'s good news. Keep going to the last day - all 7 days, even when he seems better; stopping early is how infections come back harder.'}}
+    ]},
+    {label:"He isn't better", send:"He isn't better", time:"16:32", main:true},
+    {label:"Something feels wrong", send:"Something feels wrong", time:"16:32", steps:[
+      {inm:{time:"16:32", body:'Tell us what you\'re seeing - or reply <b>CALL ME</b> and a pharmacist phones you straight away.'}}
+    ]}
+  ]}},
+  {tap:{send:"Can someone call me?", time:"16:33"}},
+  {inm:{id:"F2", time:"16:33",
+    body:'Yes - a pharmacist will phone you after 18:00 today, on this number, free.\n\nYou don\'t need data for the call to reach you.'}},
+  {sys:"After six, the pharmacist phones - a voice, not a chatbot. She asks about the cough, the fever, how he's sleeping - and says it straight: three days on the antibiotic without improvement means a doctor should see him. The Dis-Chem clinic near home can do it tomorrow morning; she books it while they talk, and gives the price before Thabo says yes. (F2)"},
+  {inm:{id:"F3", time:"18:41",
+    body:'Booked: <b>Dis-Chem clinic, Tembisa - tomorrow (Saturday) 09:00</b>, for your son.\n\nThe visit costs <b><span class="amt">R150.00</span></b>, paid at the clinic - the price the pharmacist gave you on the phone.\n\nThe week\'s story goes with him: the script, this check-in, what you told her.'}}
+];
+
+/* ---------- P6 ---------- */
+const P6 = () => [
+  {sys:"🔒 Messages and calls are end-to-end encrypted."},
+  {date:"SAT, 12 SEP"},
+  {inm:{id:"G1", time:"09:48",
+    body:'We have the new script from the clinic - a different antibiotic for your son. Nothing for you to send this time; it came straight through.\n\nHere is the price: <b>Total: <span class="amt">R98.40</span></b> (the generic, as before).\n\nReply <b>1 - go ahead</b> when you\'re ready.'}},
+  {tap:{send:"1 - go ahead", time:"09:52"}},
+  {inm:{id:"G2", time:"12:15",
+    body:'<b>Checked by Sindi ✓</b> - the dose is right for his weight, checked against the new script.\n\nReady - express pickup zone, show this code: <b><span class="amt">THB 4718</span></b>. Held until closing.'}}
+];
+
+/* ---------- ∥ ---------- */
+const PPAR = () => [
+  {sys:"🔒 Messages and calls are end-to-end encrypted."},
+  {sys:"Scenario - out of stock, told before the taxi"},
+  {inm:{id:"H1", time:"15:12",
+    body:'Before you spend anything on a taxi: your store\'s stock of his antibiotic failed after the go-ahead. Two ways through - you choose:\n\n<b>1.</b> Dis-Chem Kempton Gate has it - <b>same code, same price</b>, ready now\n<b>2.</b> Delivery this once - <span class="amt">R35.00</span> on top, to where you are\n\nNothing is decided without you.'}},
+  {qr:{anyMain:true, buttons:[
+    {label:"Nearest store", send:"Nearest store", time:"15:16", steps:[
+      {inm:{time:"15:16", body:'Done - Dis-Chem Kempton Gate, express pickup zone, same code <b><span class="amt">THB 4172</span></b>, same total <b><span class="amt">R208.90</span></b>.'}}
+    ]},
+    {label:"Deliver it - R35.00", send:"Deliver it", time:"15:16", steps:[
+      {inm:{time:"15:16", body:'Done - delivery today, <span class="amt">R35.00</span> added: total <b><span class="amt">R243.90</span></b>. We\'ll message before the driver leaves.'}}
+    ]},
+    {label:"☎ Call me", send:"Call me", time:"15:16", steps:[
+      {inm:{time:"15:16", body:'A person will phone you back within the hour, in your language.'}}
+    ]}
+  ]}},
+  {sys:"Scenario - the money isn't there today"},
+  {tap:{send:"Hold it for me", time:"17:55"}},
+  {inm:{id:"H2", time:"17:55",
+    body:'Done - held at the counter, price unchanged: <b><span class="amt">R208.90</span></b>. Come when it suits you, no questions.\n\nNobody at that counter knows anything except that a pack is waiting for its person.'}},
+  {sys:"Scenario - the dead phone at the counter: nothing to show here, and that is the point. His ID is enough; the order is his, not his phone's. (H3)"}
+];
+
 /* ---------- boot ---------- */
 const PHONES = {
-  p1: makePhone("p1", P1)
+  p1: makePhone("p1", P1),
+  p2: makePhone("p2", P2),
+  p3: makePhone("p3", P3),
+  p5: makePhone("p5", P5),
+  p6: makePhone("p6", P6),
+  ppar: makePhone("ppar", PPAR)
 };
 Object.values(PHONES).forEach(p=>p.reset());
 document.querySelectorAll("[data-reset]").forEach(b=>{
