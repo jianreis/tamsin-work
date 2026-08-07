@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thabo's acute script, as a WhatsApp conversation</title>
+<style>
+/* =============================================================================
+   DELIVERABLE #12 - THABO'S ACUTE SCRIPT AS A WHATSAPP CONVERSATION (P1 pass)
+   Annotated phone-frame mock of the #10 acute journey's cash track.
+   Content source of truth: design-kit/journeys/thabo-whatsapp-flow.md
+   Chrome + engine: deliverable #11 (sipho-whatsapp-flow), unchanged.
+   Self-contained: all CSS/JS inline, no external requests.
+   ============================================================================= */
+:root{
+  --brand:#1a9b4a; --brand-dark:#157a3b; --lime:#b5d334;
+  --mint:#bfe3cf; --mint-deep:#9bcfb0;
+  --ink:#1d1d1d; --ink-soft:#2b2b2b;
+  --bg:#f6f8f6; --card:#ffffff;
+  --muted:#5d6b62; --muted2:#8a958d; --line:#d8e2db;
+  --good:#1a9b4a; --good-bg:#eef7f1;
+  --warn:#b9770b; --reform:#7c3aed;
+  /* WhatsApp surface */
+  --wa-header:#008069; --wa-wall:#efe7dd; --wa-out:#d9fdd3; --wa-in:#ffffff;
+  --wa-link:#00a5f4; --wa-tick:#53bdeb; --wa-meta:#667781;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --sp:8px; --radius:12px; --maxw:1120px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg); color:var(--ink); font-family:var(--font); line-height:1.55; font-size:15.5px; -webkit-text-size-adjust:100%;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 0 72px;}
+h1,h2,h3,h4{margin:0}
+.tiny{font-size:.78rem; color:var(--muted)}
+button{font:inherit; cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid var(--brand-dark); outline-offset:2px}
+a{color:var(--brand-dark)}
+
+/* header + chrome (deliverable family) */
+.brandband{background:var(--brand); color:#fff; padding:calc(var(--sp)*2.5) calc(var(--sp)*3);
+  display:flex; flex-wrap:wrap; gap:var(--sp) calc(var(--sp)*2); align-items:center; justify-content:space-between;}
+.wordmark{display:flex; align-items:baseline; gap:6px; font-weight:800; font-size:1.35rem; letter-spacing:-.01em}
+.wordmark .plus{color:var(--lime); font-size:1.6rem; line-height:0}
+.brandband .maptag{font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; font-weight:700;
+  border:1.5px solid rgba(255,255,255,.6); border-radius:99px; padding:4px 12px;}
+.ribbon{display:flex; flex-wrap:wrap; gap:6px calc(var(--sp)*1.5); align-items:center;
+  background:#fff7e6; color:#8a5a00; border-bottom:1px solid #f0dca8;
+  padding:8px calc(var(--sp)*3); font-size:.82rem; font-weight:600;}
+.ribbon .gen{color:#9a7a30; font-weight:500}
+.intro{padding:calc(var(--sp)*3) calc(var(--sp)*3) 0;}
+.intro h1{font-size:1.75rem; font-weight:800; letter-spacing:-.015em; line-height:1.15}
+.intro .lede{color:var(--muted); max-width:82ch; margin-top:8px}
+.philo{display:inline-flex; align-items:center; gap:10px; background:var(--ink); color:#fff;
+  border-radius:99px; margin-top:14px; padding:7px 18px; font-size:.86rem; font-weight:700;}
+.philo u{text-decoration-color:var(--lime); text-decoration-thickness:3px; text-underline-offset:3px}
+.philo span.gt{color:var(--lime)}
+
+/* persona strip */
+.persona{display:flex; flex-wrap:wrap; gap:calc(var(--sp)*2); align-items:flex-start;
+  background:var(--ink); color:#fff; border-radius:var(--radius); margin:calc(var(--sp)*2.5) calc(var(--sp)*3) 0;
+  padding:calc(var(--sp)*2) calc(var(--sp)*2.5);}
+.persona .who{flex:1 1 300px; min-width:280px}
+.persona .eyebrow{font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--lime); font-weight:800}
+.persona h2{font-size:1.25rem; font-weight:800; margin-top:2px}
+.persona .bio{color:#cfe0d5; font-size:.88rem; margin-top:6px; max-width:70ch}
+.persona .needbox{flex:1 1 300px; min-width:280px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18);
+  border-radius:10px; padding:12px 14px; font-size:.9rem;}
+.persona .needbox .nlabel{font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; color:var(--lime); font-weight:800; margin-bottom:4px}
+
+/* spine: phases x mechanics */
+.spine{margin:calc(var(--sp)*3) calc(var(--sp)*3) 0; background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius); padding:calc(var(--sp)*2) calc(var(--sp)*2.5);}
+.spine .shead{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap}
+.spine h2{font-size:.95rem; font-weight:800}
+.spine .shead .tiny{margin-left:auto}
+.spinerow{display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-top:12px}
+@media (max-width:900px){ .spinerow{grid-template-columns:repeat(2,1fr)} }
+.snode{border:1.5px solid var(--line); border-radius:10px; padding:8px 9px 8px; background:#fff; text-align:left;}
+.snode:hover{border-color:var(--brand)}
+.snode .snum{font-family:var(--mono); font-size:.68rem; color:var(--muted2); font-weight:700}
+.snode.live{border-color:var(--brand)}
+.snode.live .snum{color:var(--brand-dark)}
+.snode .sttl{font-size:.8rem; font-weight:800; line-height:1.2; margin-top:2px}
+.snode .sm{margin-top:5px; font-size:.71rem; color:var(--muted); line-height:1.4}
+.snode .stars{margin-top:4px; font-size:.72rem}
+.snode .livepill{display:inline-block; margin-top:5px; font-size:.64rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em;
+  color:#fff; background:var(--brand); border-radius:99px; padding:1px 8px;}
+.snode .stubpill{display:inline-block; margin-top:5px; font-size:.64rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+  color:var(--muted2); border:1px solid var(--line); border-radius:99px; padding:1px 8px;}
+
+/* the phase stages: phone + rail */
+.stage{margin:calc(var(--sp)*3.5) calc(var(--sp)*3) 0; background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius); overflow:hidden;}
+.phead{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; background:var(--mint);
+  padding:12px calc(var(--sp)*2.5); border-bottom:1px solid var(--mint-deep);}
+.phead .pnum{font-family:var(--mono); font-weight:800; font-size:.8rem; color:var(--brand-dark);
+  background:#fff; border-radius:8px; padding:3px 9px;}
+.phead h2{font-size:1.35rem; font-weight:800; letter-spacing:-.01em}
+.phead .once{font-size:.72rem; text-transform:uppercase; letter-spacing:.09em; font-weight:800; color:var(--brand-dark);
+  border:1.5px solid var(--brand-dark); border-radius:99px; padding:2px 10px;}
+.scenenote{margin:0; padding:12px calc(var(--sp)*2.5); background:#fbfdfb; border-bottom:1px solid var(--line);
+  font-size:.88rem; color:var(--muted); max-width:none;}
+.scenenote b{color:var(--ink-soft)}
+.stagegrid{display:grid; grid-template-columns:minmax(340px,430px) 1fr; gap:calc(var(--sp)*3); padding:calc(var(--sp)*3) calc(var(--sp)*2.5);}
+@media (max-width:880px){ .stagegrid{grid-template-columns:1fr} }
+.stagecontrols{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:12px}
+.btn{border:1.5px solid var(--line); background:#fff; color:var(--ink-soft); border-radius:99px; padding:6px 14px; font-size:.83rem; font-weight:600;}
+.btn:hover{border-color:var(--brand)}
+.hint{font-size:.78rem; color:var(--muted2)}
+
+/* phone frame */
+.phone{width:100%; max-width:400px; margin:0 auto; background:#111; border-radius:34px; padding:10px;
+  box-shadow:0 14px 40px rgba(0,0,0,.22);}
+.screen{border-radius:26px; overflow:hidden; background:var(--wa-wall); position:relative; display:flex; flex-direction:column;}
+.statusbar{background:var(--wa-header); color:#d5efe9; font-size:.66rem; display:flex; justify-content:space-between; padding:5px 16px 0; font-family:var(--mono)}
+.wahead{background:var(--wa-header); color:#fff; display:flex; align-items:center; gap:10px; padding:8px 12px 10px;}
+.wahead .back{font-size:1.1rem; line-height:1; opacity:.9}
+.avatar{width:36px; height:36px; border-radius:50%; background:var(--brand); color:#fff; font-weight:800; font-size:.8rem;
+  display:flex; align-items:center; justify-content:center; flex:none; border:2px solid rgba(255,255,255,.55)}
+.wahead .names{flex:1; min-width:0; line-height:1.2}
+.wahead .biz{font-weight:700; font-size:.95rem; display:flex; align-items:center; gap:5px}
+.wahead .badge{display:inline-flex; width:14px; height:14px; border-radius:50%; background:#25d366; color:#fff;
+  font-size:.6rem; align-items:center; justify-content:center; font-weight:900; flex:none}
+.wahead .sub{font-size:.7rem; opacity:.85}
+.wahead .hicons{display:flex; gap:14px; font-size:1rem; opacity:.9}
+/* thread */
+.thread{padding:10px 8px 12px; display:flex; flex-direction:column; gap:6px; min-height:480px;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255,255,255,.35) 0 2px, transparent 3px),
+    radial-gradient(circle at 70% 45%, rgba(255,255,255,.3) 0 2px, transparent 3px),
+    radial-gradient(circle at 40% 80%, rgba(255,255,255,.3) 0 2px, transparent 3px),
+    var(--wa-wall);}
+.syspill{align-self:center; background:#fdf3c7; color:#5c5340; font-size:.66rem; border-radius:8px; padding:4px 10px;
+  max-width:86%; text-align:center; box-shadow:0 1px 1px rgba(0,0,0,.06)}
+.datepill{align-self:center; background:#fff; color:var(--wa-meta); font-size:.66rem; font-weight:700; border-radius:8px;
+  padding:3px 10px; box-shadow:0 1px 1px rgba(0,0,0,.06)}
+.msgrow{display:flex; align-items:flex-start; gap:6px}
+.msgrow.out{justify-content:flex-end}
+.marker{flex:none; margin-top:4px; width:22px; height:22px; border-radius:50%; background:var(--ink); color:var(--lime);
+  font-size:.6rem; font-weight:800; display:flex; align-items:center; justify-content:center; font-family:var(--mono);
+  cursor:help;}
+.msgrow.out .marker{order:2}
+.bubble{position:relative; max-width:82%; border-radius:10px; padding:7px 9px 6px; font-size:.83rem; line-height:1.42;
+  box-shadow:0 1px 1px rgba(0,0,0,.08); white-space:pre-line;}
+.bubble.in{background:var(--wa-in); border-top-left-radius:2px}
+.bubble.out{background:var(--wa-out); border-top-right-radius:2px}
+.bubble .meta{display:block; text-align:right; font-size:.62rem; color:var(--wa-meta); margin-top:3px}
+.bubble .ticks{color:var(--wa-tick); letter-spacing:-2px}
+.bubble b{font-weight:700}
+.bubble .sect{display:block; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--wa-meta); margin-top:6px}
+.bubble .amt{font-family:var(--mono); font-size:.8rem}
+.bubble .photo{display:block; width:180px; height:120px; border-radius:8px; margin-bottom:3px;
+  background:linear-gradient(135deg,#c9d6cc,#a9bfae 55%,#8fae96); position:relative}
+.bubble .photo::after{content:"📦"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:2rem; opacity:.8}
+.bubble .photo.script{background:linear-gradient(160deg,#f7f4ea,#e9e2cd 60%,#d9d0b6)}
+.bubble .photo.script::after{content:"📄"}
+/* quick-reply buttons under a bubble */
+.qrwrap{display:flex; flex-direction:column; gap:3px; max-width:82%; width:100%; margin-left:28px}
+.qr{background:#fff; border:0; border-radius:8px; color:var(--wa-link); font-weight:600; font-size:.83rem;
+  padding:8px 10px; text-align:center; box-shadow:0 1px 1px rgba(0,0,0,.08);}
+.qr.done{color:#9fb6c0}
+/* list-message button inside bubble */
+.listbtn{display:flex; align-items:center; justify-content:center; gap:7px; border-top:1px solid #e6e6e6; margin-top:7px; padding-top:7px;
+  color:var(--wa-link); font-weight:600; font-size:.83rem; cursor:pointer; user-select:none}
+/* bottom sheet (list messages + flow screens) */
+.sheet{position:absolute; left:0; right:0; bottom:0; background:#fff; border-radius:16px 16px 0 0; box-shadow:0 -6px 30px rgba(0,0,0,.25);
+  padding:12px 14px 16px; z-index:5; display:none; max-height:80%; overflow:auto}
+.sheet.open{display:block}
+.sheet .grab{width:36px; height:4px; border-radius:4px; background:#d0d5d3; margin:0 auto 10px}
+.sheet h4{font-size:.9rem; font-weight:700; margin-bottom:6px}
+.sheet .row{display:flex; align-items:center; gap:10px; padding:9px 2px; border-bottom:1px solid #f0f2f1; font-size:.85rem}
+.sheet .row:last-of-type{border-bottom:0}
+.sheet .row.walk{font-weight:700; cursor:pointer}
+.sheet .row.walk .go{margin-left:auto; color:var(--brand-dark); font-size:.72rem; font-weight:800; flex:none}
+.sheet .radio{width:16px; height:16px; border-radius:50%; border:2px solid #b0bab5; flex:none}
+.sheet .check{width:16px; height:16px; border-radius:4px; background:var(--wa-header); color:#fff; font-size:.65rem;
+  display:flex; align-items:center; justify-content:center; font-weight:800; flex:none}
+.sheet .rownote{font-size:.7rem; color:var(--muted2); display:block}
+.sheet .close{margin-top:10px; width:100%; border:0; background:var(--wa-header); color:#fff; border-radius:99px; padding:8px; font-weight:700}
+.sheet .flowfoot{font-size:.66rem; color:var(--muted2); text-align:center; margin-top:8px}
+/* input bar */
+.inputbar{display:flex; align-items:center; gap:8px; padding:8px}
+.inputbar .field{flex:1; background:#fff; border-radius:99px; padding:8px 14px; color:#9aa5a0; font-size:.85rem;
+  box-shadow:0 1px 1px rgba(0,0,0,.08)}
+.inputbar .mic{width:38px; height:38px; border-radius:50%; background:var(--wa-header); color:#fff; display:flex;
+  align-items:center; justify-content:center; font-size:1rem; flex:none}
+/* tap-to-send affordance */
+.sendhint{align-self:flex-end; margin-right:28px; border:1.5px dashed var(--brand); background:#fff; color:var(--brand-dark);
+  border-radius:99px; padding:5px 12px; font-size:.75rem; font-weight:700;}
+
+/* annotation rail */
+.rail h3{font-size:1.02rem; font-weight:800; margin-bottom:2px}
+.rail .railsub{font-size:.8rem; color:var(--muted2); margin-bottom:12px}
+.callout{display:flex; gap:10px; border:1px solid var(--line); border-radius:10px; background:#fafcfa; padding:10px 12px; margin-bottom:8px;}
+.callout .cmark{flex:none; width:22px; height:22px; border-radius:50%; background:var(--ink); color:var(--lime);
+  font-size:.6rem; font-weight:800; display:flex; align-items:center; justify-content:center; font-family:var(--mono); margin-top:2px}
+.callout .cbody{font-size:.85rem; color:var(--ink-soft)}
+.callout .cbody .feat{display:inline-block; font-size:.7rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em;
+  color:var(--brand-dark); background:var(--good-bg); border:1px solid var(--mint-deep); border-radius:99px; padding:1px 9px; margin-bottom:4px}
+.callout .cbody .flag{color:var(--warn); font-weight:800; cursor:help}
+.callout.dim{opacity:.45}
+.railnote{font-size:.82rem; color:var(--muted); font-style:italic; margin:10px 0 8px; max-width:64ch}
+/* key moments (family style) */
+.keymoment{margin:14px 0 8px; border:1.5px solid var(--mint-deep); border-left:7px solid var(--brand);
+  border-radius:10px; background:var(--good-bg); padding:14px 16px;
+  box-shadow:0 2px 10px rgba(21,122,59,.07);}
+.keymoment .ktag{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:6px}
+.keymoment .klabel{font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; color:var(--brand-dark)}
+.keymoment .kstar{font-size:.72rem; font-weight:800; color:#8a5a00; background:#fff3d6; border:1px solid #eeddb0; border-radius:99px; padding:1px 9px}
+.keymoment .kwhere{font-size:.7rem; font-family:var(--mono); font-weight:700; color:var(--muted2)}
+.keymoment .kline{font-size:1.1rem; font-weight:800; letter-spacing:-.01em; line-height:1.25}
+.keymoment .kline::before{content:"\201C"; color:var(--mint-deep); font-size:1.5em; line-height:0; vertical-align:-.32em; margin-right:2px}
+.keymoment .kline::after{content:"\201D"; color:var(--mint-deep); font-size:1.5em; line-height:0; vertical-align:-.32em; margin-left:2px}
+.keymoment .kwhy{margin-top:8px; font-size:.9rem}
+.keymoment .kwhy .why{background:linear-gradient(transparent 55%, #d9ecc0 55%); font-weight:800}
+.keymoment .kwhy a{font-weight:700}
+
+/* stub cards for the other phases */
+.stubs{margin:calc(var(--sp)*3.5) calc(var(--sp)*3) 0;}
+.stubs h2{font-size:1.05rem; font-weight:800; margin-bottom:4px}
+.stubs .tiny{margin-bottom:12px; display:block}
+.stubgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+@media (max-width:900px){ .stubgrid{grid-template-columns:1fr 1fr} }
+@media (max-width:640px){ .stubgrid{grid-template-columns:1fr} }
+.stub{border:1.5px dashed var(--line); border-radius:10px; background:#fff; padding:12px 14px;}
+.stub .snum{font-family:var(--mono); font-size:.68rem; color:var(--muted2); font-weight:700}
+.stub h3{font-size:.95rem; font-weight:800; margin:2px 0 6px}
+.stub ul{margin:0; padding-left:16px; font-size:.82rem; color:var(--ink-soft)}
+.stub li{margin-bottom:3px}
+.stub .await{display:inline-block; margin-top:8px; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em;
+  color:var(--muted2); border:1px solid var(--line); border-radius:99px; padding:2px 9px}
+
+.foot{margin:calc(var(--sp)*4) calc(var(--sp)*3) 0; font-size:.84rem; color:var(--muted); max-width:92ch}
+.foot b{color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="brandband">
+  <div class="wordmark">Dis-Chem <span class="plus">+</span> <span style="font-weight:600;font-size:.95rem">Bigly Labs</span></div>
+  <div class="maptag">Channel mock · to-be · WhatsApp</div>
+</header>
+<div class="ribbon">
+  <span>DELIVERABLE #12 · THABO'S ACUTE SCRIPT, AS A WHATSAPP CONVERSATION</span>
+  <span class="gen">generated 2026-08-07 · P1 pass for review (remaining phases stubbed) · content spec: design-kit/journeys/thabo-whatsapp-flow.md</span>
+</div>
+
+<section class="intro">
+  <h1>Thabo's acute script, as a WhatsApp conversation</h1>
+  <p class="lede">The cash track of the <a href="10-tobe-acute-moments.html">acute journey (#10)</a>, rendered as the
+  literal WhatsApp thread on Thabo's phone across one sick day - from the photo of the paper script in the clinic
+  queue to the day-3 check-in that turns into a booked appointment. Every message uses a real mechanic of the
+  WhatsApp Business Platform, and every mechanic is chosen to honour his constraints: prepaid data, an entry-level
+  Android, no app, no account, a sick 6-year-old at his side. The chat lives in <b>Dis-Chem Pharmacy</b> - not the
+  repeat service; his entry is a photo, not a subscription. The phone is live: tap the highlighted buttons and
+  dashed pills to walk it. What happens away from the phone - the clinic room, the express counter - is told beside
+  the phone, never manufactured as chat. The thread renders here in English for this audience; production renders
+  it in the customer's chosen language.</p>
+  <div class="philo"><u>Trust</u> <span class="gt">&gt;</span> Convenience <span class="gt">&gt;</span> Speed <span style="font-weight:500;color:#d6e6dc">&nbsp;- speed as evidence of care: the burden moves, that's the promise</span></div>
+</section>
+
+<section class="persona">
+  <div class="who">
+    <div class="eyebrow">Caregiver · his son's illness · cash</div>
+    <h2>Thabo Mokoena</h2>
+    <p class="bio">31 · Tembisa · uninsured, pays cash at the margin · WhatsApp on prepaid data is his whole
+    internet. Today: his 6-year-old's chest infection, and a paper script from the clinic.</p>
+  </div>
+  <div class="needbox">
+    <div class="nlabel">The need</div>
+    “Just tell me the price on WhatsApp. If it's too much, show me a cheaper one that works - I'm not made of money
+    and my child is sick now, not next week.”
+  </div>
+</section>
+
+<section class="spine" aria-label="Phases and their WhatsApp mechanics">
+  <div class="shead"><h2>The seven phases, and the WhatsApp mechanics carrying each</h2>
+  <span class="tiny">tap a phase to jump · stars mark the moments of truth · one phase is live in this pass</span></div>
+  <div class="spinerow">
+    <button class="snode live" data-goto="p1"><div class="snum">P1</div><div class="sttl">At the doctor</div>
+      <div class="sm">Photo of the script in · ack · read-back + price + generic inside 15 min</div>
+      <div class="stars">1 moment · ⭐</div><span class="livepill">live below</span></button>
+    <button class="snode" data-goto="stubs"><div class="snum">P2</div><div class="sttl">Choosing how I get it</div>
+      <div class="sm">Route buttons · the go-ahead gate · priced symptom add-ons</div>
+      <div class="stars">no moment (by design)</div><span class="stubpill">stub</span></button>
+    <button class="snode" data-goto="stubs"><div class="snum">P3</div><div class="sttl">Checked and filled</div>
+      <div class="sm">Status templates · Sindi's named weight-check · code + dosing guide</div>
+      <div class="stars">1 moment</div><span class="stubpill">stub</span></button>
+    <button class="snode" data-goto="stubs"><div class="snum">P4</div><div class="sttl">In hand</div>
+      <div class="sm">The express counter - off-channel by design</div>
+      <div class="stars">1 moment · ⭐</div><span class="stubpill">stub</span></button>
+    <button class="snode" data-goto="stubs"><div class="snum">P5</div><div class="sttl">Taking it</div>
+      <div class="sm">The single day-3 check-in · escalation to a phone call</div>
+      <div class="stars">2 moments · ⭐</div><span class="stubpill">stub</span></button>
+    <button class="snode" data-goto="stubs"><div class="snum">P6</div><div class="sttl">When I don't get better</div>
+      <div class="sm">The new script rides the same rails · not part of every journey</div>
+      <div class="stars">no moment (cash)</div><span class="stubpill">stub</span></button>
+    <button class="snode" data-goto="stubs"><div class="snum">∥</div><div class="sttl">When something breaks</div>
+      <div class="sm">Told before the taxi · hold it for me · ID fallback</div>
+      <div class="stars">no moment (by design)</div><span class="stubpill">stub</span></button>
+  </div>
+</section>
+
+<!-- ======================= P1 ======================= -->
+<section class="stage" id="p1">
+  <div class="phead"><span class="pnum">P1</span><h2>At the doctor</h2><span class="once">one sick day · Tue 8 Sep, from 09:41</span></div>
+  <p class="scenenote"><b>Before the phone:</b> his son's cough went to his chest last night, and neither of them
+  slept much. Thabo takes the morning off shift; the clinic doctor examines and weighs the boy, diagnoses a chest
+  infection, and writes the script by hand - an antibiotic and a syrup for the cough - explaining it once. The
+  paper goes into his jacket pocket. None of that happens on WhatsApp, so none of it is mocked as chat. The thread
+  starts where the channel genuinely enters: in the queue to pay, when Thabo photographs the script and sends it to
+  the number on the clinic's poster.</p>
+  <div class="stagegrid">
+    <div>
+      <div class="stagecontrols"><button class="btn" data-reset="p1">Reset the thread</button>
+        <span class="hint">tap the dashed pill, then the blue buttons, to walk it</span></div>
+      <div class="phone"><div class="screen">
+        <div class="statusbar"><span>09:41</span><span>▂▄▆ 🔋 53%</span></div>
+        <div class="wahead"><span class="back">‹</span><span class="avatar">DC</span>
+          <div class="names"><div class="biz">Dis-Chem Pharmacy <span class="badge">✓</span></div><div class="sub">Official business account</div></div>
+          <div class="hicons"><span>📞</span><span>⋮</span></div></div>
+        <div class="thread" id="thread-p1"></div>
+        <div class="sheet" id="sheet-p1"></div>
+        <div class="inputbar"><div class="field">Message</div><div class="mic">🎤</div></div>
+      </div></div>
+    </div>
+    <div class="rail">
+      <h3>What each message is doing</h3>
+      <p class="railsub">markers (B1-B5) match the callouts · A0 applies to every phase on this page · ⚠️ marks claims awaiting a vault source</p>
+      <div class="callout"><span class="cmark">A0</span><div class="cbody">
+        <span class="feat">Language · standing note</span><br>
+        Production renders this thread in the language Thabo chooses. There is no sign-up on the acute path, so
+        where that choice happens is an open question in the spec - English is shown here for this audience only.
+      </div></div>
+      <div class="callout"><span class="cmark">B1</span><div class="cbody">
+        <span class="feat">Outgoing media message · the whole front door</span><br>
+        The entry is a photo, not a subscription: no account, no app, no forms - a number from the clinic poster
+        and the script he was already holding. The journey's one media message travels in the direction he chose
+        to spend; everything the service sends back is text, because on prepaid every download costs real money.
+      </div></div>
+      <div class="callout"><span class="cmark">B2</span><div class="cbody">
+        <span class="feat">Text ack · proof it arrived</span><br>
+        The received-confirmation beat: today the hand-off is the patient's problem, with no way to tell a script
+        arrived. One immediate line kills that pain - and "you don't need to reply or stay online" is written for
+        a prepaid balance that can lapse without losing his place.
+      </div></div>
+      <div class="callout"><span class="cmark">B3</span><div class="cbody">
+        <span class="feat">Read-back · so he can check it's right</span><br>
+        The script read back in plain words, with his son's weight from the script shown - because a child's dose
+        is checked against weight before anything is made up. The paper in his pocket stops being the only copy
+        that matters.
+      </div></div>
+      <div class="callout"><span class="cmark">B4</span><div class="cbody">
+        <span class="feat">Price before travel · inside 15 minutes</span><br>
+        The full price in rand, itemised, with the generic saving shown exactly - offered, never asked for. The
+        dignity thread of #10 runs through this message: the generic is the smart choice, and nobody at a counter
+        hears the question. The 15-minute snap-to-price reply is a design assumption
+        <span class="flag" title="punchlist item 10(f) - 15-minute snap-to-price reply on WhatsApp">⚠️</span>;
+        amounts are illustrative <span class="flag" title="illustrative pricing - logged in meta/punchlist.md item 12">⚠️</span>.
+      </div></div>
+      <div class="keymoment">
+        <div class="ktag"><span class="klabel">Key moment</span><span class="kstar">⭐ moment of truth</span><span class="kwhere">at B4</span></div>
+        <div class="kline">I knew the price before I left the clinic gate</div>
+        <div class="kwhy">Thabo has done this trip before, the old way: the taxi to a pharmacy with the week's
+        money in his pocket and no idea if it's enough, the queue with a sick child, the counter where the number
+        is finally said out loud - and the walk away, in front of everyone, if it's too much. This time the number
+        came to him, standing at the clinic, before anything was spent. <span class="why">He knows the price - and
+        that he can afford it - before his son takes another step.</span> Nobody made him ask; the price was simply
+        offered, with the cheaper generic presented as the smart choice it is. That is
+        <a href="08-concepts.html">Snap-a-Script</a> meeting him exactly where he stands - one photo, on the phone
+        he already has.</div>
+      </div>
+      <div class="callout"><span class="cmark">B5</span><div class="cbody">
+        <span class="feat">Interactive reply buttons · max 3</span><br>
+        The choice is his, in one tap: the generic, the branded as written, or a person. The branded option stays
+        real - it plays a price, not a lecture - and "Talk to a person" ends in a free phone call in his language,
+        not a chat queue
+        <span class="flag" title="platform capability from Meta developer docs - vault source note pending, punchlist item 11">⚠️</span>.
+        Nothing expires while he thinks, and nothing is made up in his son's name until his go-ahead lands - that
+        gate is P2's job.
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= stubs ======================= -->
+<section class="stubs" id="stubs">
+  <h2>The other six phases - mapped, awaiting the P1 verdict</h2>
+  <span class="tiny">each is scripted to the same rules once the P1 pass is signed off · mechanics below are the proposal under review</span>
+  <div class="stubgrid">
+    <div class="stub"><div class="snum">P2</div><h3>Choosing how I get it</h3>
+      <ul><li>Route ask as reply buttons: name my store, share my location, or an address for the delivery cost</li>
+      <li>"1 - go ahead" typed reply as the release gate - the journey's one mid-flow confirmation; nothing is
+      dispensed in his son's name without it</li>
+      <li>Priced symptom add-ons as numbered picks (paracetamol syrup, saline drops); the one total restated</li></ul>
+      <span class="await">built after the P1 pass</span></div>
+    <div class="stub"><div class="snum">P3</div><h3>Checked and filled</h3>
+      <ul><li>Being-made-up status, each item scanned against the script</li>
+      <li>"Checked by Sindi ✓ - the dose is right for his weight" - the named final check</li>
+      <li>Ready before shift end: order code as a text line + the dosing guide in his language, all inline</li></ul>
+      <span class="await">built after the P1 pass</span></div>
+    <div class="stub"><div class="snum">P4</div><h3>In hand</h3>
+      <ul><li>The express counter is off-channel by design: code shown, pack handed over, counselling at the
+      counter, pay what he already knew</li>
+      <li>No chat is manufactured for it - the scene is told as page prose beside P3's ready message</li>
+      <li>Whether P3 and P4 share one phone on this surface is parked for the full-set review</li></ul>
+      <span class="await">built after the P1 pass</span></div>
+    <div class="stub"><div class="snum">P5</div><h3>Taking it</h3>
+      <ul><li>The single day-3 check-in - "He should be coughing less by now - is he?" - one tap to answer;
+      no pushed reminders anywhere</li>
+      <li>"He isn't better" escalates: a pharmacist phones after six (off-channel), and the booked clinic visit
+      lands back in the thread with its price first</li></ul>
+      <span class="await">built after the P1 pass</span></div>
+    <div class="stub"><div class="snum">P6</div><h3>When I don't get better</h3>
+      <ul><li>Badged "not part of every journey" - and no moment on the cash side, by design</li>
+      <li>The clinic sees him the next morning; the new script rides the same rails - a compressed echo of
+      P1-P3's messages, no new mechanic</li></ul>
+      <span class="await">built after the P1 pass</span></div>
+    <div class="stub"><div class="snum">∥</div><h3>When something breaks</h3>
+      <ul><li>Out of stock told before the taxi - the plan as buttons: next-nearest store on the same code, or
+      delivery with its cost shown</li>
+      <li>"Hold it for me" - held at the counter, price locked, no questions on Friday</li>
+      <li>The dead phone at the counter has no thread presence: ID is enough - noted in the rail, not mocked</li></ul>
+      <span class="await">built after the P1 pass</span></div>
+  </div>
+</section>
+
+<p class="foot">
+  <b>Scope notes.</b> Copy derives from the approved #10 acute journey, cash track
+  (<a href="10-tobe-acute-moments.html">deliverable #10</a>, spec: design-kit/journeys/to-be-acute-moments.md);
+  this page decides only what the chat literally looks like across one sick day. The thread lives in "Dis-Chem
+  Pharmacy" (agreed 2026-08-07) - the acute entry needs no service membership, and this page invents none. Scenes
+  with no genuine WhatsApp traffic (the clinic room, the express counter, the dead-phone recovery) are told as
+  page prose, never manufactured as chat (agreed 2026-08-07). Rand amounts are illustrative ⚠️. WhatsApp platform
+  capabilities are cited from Meta developer documentation and await a proper vault source note - logged in
+  meta/punchlist.md items 11 and 12. In-chat payment is deliberately absent: WhatsApp payments are not live in
+  South Africa, and the pay-once-at-the-counter step needs no channel payment. Walkthrough convention: highlighted
+  ▶ rows and dashed pills mark the scripted path; other rows are real UI, inert in the mock. The thread renders in
+  English here; production renders it in the customer's chosen language. Repeats belong to #09/#11;
+  script-expiry renewal to Script Renew; after-hours emergency to the #10 scope note. Deliverables #05-#11 are
+  untouched.
+</p>
+
+</div>
+<script>
+/* =============================================================================
+   Script engine (deliverable #11, unchanged) + the P1 script. Copy mirrors the
+   spec: design-kit/journeys/thabo-whatsapp-flow.md (edit there first).
+   Step types: sys, date, inm, outm, undim, tap (dashed send pill),
+   photoTap, list (in-bubble + bottom sheet), qr (reply buttons).
+   ============================================================================= */
+function el(html){ const d=document.createElement("div"); d.innerHTML=html; return d.firstElementChild; }
+function marker(id){ return '<span class="marker" title="see callout '+id+' in the rail">'+id+'</span>'; }
+function spacer(){ return '<span style="width:22px;flex:none"></span>'; }
+
+const DIMS = {};
+
+function makePhone(pid, steps){
+  const thread = document.getElementById("thread-"+pid);
+  const sheet  = document.getElementById("sheet-"+pid);
+
+  function inMsg(id, body, time){
+    return el('<div class="msgrow">'+(id?marker(id):spacer())+
+      '<div class="bubble in">'+body+'<span class="meta">'+time+'</span></div></div>');
+  }
+  function outMsg(body, time, id){
+    return el('<div class="msgrow out">'+(id?marker(id):spacer())+
+      '<div class="bubble out">'+body+'<span class="meta">'+time+' <span class="ticks">✓✓</span></span></div></div>');
+  }
+  function scrollEnd(){ thread.lastElementChild && thread.lastElementChild.scrollIntoView({block:"nearest"}); }
+
+  function openSheet(cfg, onPick){
+    let h = '<div class="grab"></div><h4>'+cfg.title+'</h4>';
+    cfg.rows.forEach((r,ix)=>{
+      const lead = cfg.flow ? '<span class="check">✓</span>' : '<span class="radio"></span>';
+      h += '<div class="row'+(r.walk?" walk":"")+'" data-ix="'+ix+'">'+lead+'<span>'+r.label+
+           (r.note?'<span class="rownote">'+r.note+'</span>':'')+'</span>'+(r.walk?'<span class="go">tap ▶</span>':'')+'</div>';
+    });
+    h += cfg.flow
+      ? '<button class="close" data-cta="1">'+(cfg.cta||"Continue")+'</button><div class="flowfoot">Managed by Dis-Chem · WhatsApp Flow</div>'
+      : '<button class="close">Close</button>';
+    sheet.innerHTML = h;
+    sheet.classList.add("open");
+    sheet.querySelectorAll(".row.walk").forEach(row=>{
+      row.addEventListener("click", ()=>{
+        const r = cfg.rows[+row.dataset.ix];
+        sheet.classList.remove("open");
+        onPick && onPick(r);
+      });
+    });
+    sheet.querySelector(".close").addEventListener("click", function(){
+      sheet.classList.remove("open");
+      if(this.dataset.cta && cfg.flow){ onPick && onPick(null); }
+    });
+  }
+
+  function handle(s, cont){
+    if(s.sys){ thread.appendChild(el('<div class="syspill">'+s.sys+'</div>')); cont(); return; }
+    if(s.date){ thread.appendChild(el('<div class="datepill">'+s.date+'</div>')); cont(); return; }
+    if(s.inm){ thread.appendChild(inMsg(s.inm.id, s.inm.body, s.inm.time)); scrollEnd(); cont(); return; }
+    if(s.outm){ thread.appendChild(outMsg(s.outm.body, s.outm.time, s.outm.id)); scrollEnd(); cont(); return; }
+    if(s.undim){ const c=document.getElementById(s.undim); c && c.classList.remove("dim"); cont(); return; }
+    if(s.tap){
+      const hint = el('<button class="sendhint">tap to send: '+s.tap.send+'</button>');
+      thread.appendChild(hint); scrollEnd();
+      hint.addEventListener("click", ()=>{ hint.remove(); thread.appendChild(outMsg(s.tap.send, s.tap.time)); scrollEnd(); cont(); });
+      return;
+    }
+    if(s.photoTap){
+      const label = s.photoTap.label || "📷 a photo";
+      const cls = s.photoTap.cls ? " "+s.photoTap.cls : "";
+      const hint = el('<button class="sendhint">tap to send: '+label+'</button>');
+      thread.appendChild(hint); scrollEnd();
+      hint.addEventListener("click", ()=>{
+        hint.remove();
+        thread.appendChild(outMsg('<span class="photo'+cls+'"></span>', s.photoTap.time, s.photoTap.id)); scrollEnd(); cont();
+      });
+      return;
+    }
+    if(s.list){
+      const m = inMsg(s.list.id, s.list.body, s.list.time);
+      const btn = el('<div class="listbtn">☰ '+s.list.btn+'</div>');
+      m.querySelector(".bubble").appendChild(btn);
+      thread.appendChild(m); scrollEnd();
+      let done = false;
+      btn.addEventListener("click", ()=>{
+        openSheet(s.list.sheet, (row)=>{
+          if(done) return; done = true;
+          if(row && row.send){ thread.appendChild(outMsg(row.send, row.echoTime)); scrollEnd(); }
+          cont();
+        });
+      });
+      if(s.list.autoOpen){ btn.click(); }
+      return;
+    }
+    if(s.qr){
+      const wrap = el('<div class="qrwrap" role="group" aria-label="Quick replies"></div>');
+      let continued = false;
+      s.qr.buttons.forEach(bcfg=>{
+        const b = el('<button class="qr">'+bcfg.label+'</button>');
+        let played = false;
+        b.addEventListener("click", ()=>{
+          if(played && !bcfg.reopen) return;
+          if(played && bcfg.reopen){ bcfg.reopen(); return; }
+          played = true; b.classList.add("done");
+          thread.appendChild(outMsg(bcfg.send||bcfg.label, bcfg.time)); scrollEnd();
+          const after = ()=>{ if((bcfg.main || s.qr.anyMain) && !continued){ continued = true; cont(); } };
+          if(bcfg.steps && bcfg.steps.length){ play(bcfg.steps, after); } else { after(); }
+        });
+        wrap.appendChild(b);
+      });
+      thread.appendChild(wrap); scrollEnd();
+      /* all side branches and no anyMain gate: main flow continues immediately */
+      if(!s.qr.anyMain && !s.qr.buttons.some(b=>b.main)){ cont(); }
+      return;
+    }
+    cont();
+  }
+
+  function play(list, done){
+    let i = 0;
+    (function step(){
+      if(i >= list.length){ done && done(); return; }
+      const s = list[i++];
+      handle(s, step);
+    })();
+  }
+
+  function reset(){
+    thread.innerHTML = "";
+    sheet.classList.remove("open");
+    (DIMS[pid]||[]).forEach(id=>{ const c=document.getElementById(id); c && c.classList.add("dim"); });
+    play(steps(), null);
+  }
+  return { reset };
+}
+
+/* ---------- P1 ---------- */
+const P1 = () => [
+  {sys:"🔒 Messages and calls are end-to-end encrypted."},
+  {date:"TUE, 8 SEP"},
+  {photoTap:{id:"B1", label:"📷 the paper script", cls:"script", time:"09:41"}},
+  {inm:{id:"B2", time:"09:41",
+    body:'We have your script. A pharmacist is reading it now and will come back to you here - usually inside 15 minutes, with the price.\n\nYou don\'t need to reply or stay online.'}},
+  {inm:{id:"B3", time:"09:53",
+    body:'Your script, read back so you can check we have it right.\n\nFor your son, age 6 - weight on the script: <b>21 kg</b>\n• <b>Amoxicillin syrup</b> - the antibiotic. 5 ml three times a day, for 7 days\n• <b>Cough syrup</b> - 5 ml at night\n\nA pharmacist checks his dose against his weight before anything is made up.'}},
+  {inm:{id:"B4", time:"09:53",
+    body:'Here is the price, so you know before you travel.'+
+      '<span class="sect">As the doctor wrote it (branded)</span><span class="amt">Antibiotic syrup 100 ml  R136.50\nCough syrup 100 ml  R42.90\nDispensing fees  R64.60</span>\n<b>Total: <span class="amt">R244.00</span></b>'+
+      '<span class="sect">With the generic antibiotic</span>Same active ingredient, same strength - the script allows it.\n<b>Total: <span class="amt">R176.40</span> - you save <span class="amt">R67.60</span></b>\n\nNothing to pay now; you pay once, when you collect.'}},
+  {qr:{buttons:[
+    {label:"Use the generic", send:"Use the generic", time:"09:55", main:true},
+    {label:"Keep the branded", send:"Keep the branded", time:"09:55", steps:[
+      {inm:{time:"09:55", body:'Also fine - the branded antibiotic, total <b><span class="amt">R244.00</span></b>. You can change your mind any time before it\'s made up.'}}
+    ]},
+    {label:"☎ Talk to a person", send:"Talk to a person", time:"09:55", steps:[
+      {inm:{time:"09:55", body:'Reply <b>CALL ME</b> and a pharmacy team member phones you back, in your language, free. Or send a voice note - we listen to those too.'}}
+    ]}
+  ]}},
+  {inm:{id:"B5", time:"09:55",
+    body:'Done - the generic antibiotic and the cough syrup. <b>Total: <span class="amt">R176.40</span>.</b>\n\nNothing is made up in your son\'s name until you say go ahead - the next message asks how you want to get it.'}}
+];
+
+/* ---------- boot ---------- */
+const PHONES = {
+  p1: makePhone("p1", P1)
+};
+Object.values(PHONES).forEach(p=>p.reset());
+document.querySelectorAll("[data-reset]").forEach(b=>{
+  b.addEventListener("click", ()=>PHONES[b.dataset.reset].reset());
+});
+document.querySelectorAll("[data-goto]").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    document.getElementById(b.dataset.goto).scrollIntoView({behavior:"smooth", block:"start"});
+  });
+});
+</script>
+</body>
+</html>
