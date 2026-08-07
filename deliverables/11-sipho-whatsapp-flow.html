@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sipho's repeat, as a WhatsApp conversation - P1 pass</title>
+<title>Sipho's repeat, as a WhatsApp conversation</title>
 <style>
 /* =============================================================================
-   DELIVERABLE #11 - SIPHO'S REPEAT AS A WHATSAPP CONVERSATION (P1 pass)
-   Annotated phone-frame mock of the #09 cash journey, phase P1 copy-complete.
+   DELIVERABLE #11 - SIPHO'S REPEAT AS A WHATSAPP CONVERSATION (all 7 phases)
+   Annotated phone-frame mock of the #09 cash journey, one phone per phase.
    Content source of truth: design-kit/journeys/sipho-whatsapp-flow.md
    Self-contained: all CSS/JS inline, no external requests.
    ============================================================================= */
@@ -29,6 +29,7 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{background:var(--bg); color:var(--ink); font-family:var(--font); line-height:1.55; font-size:15.5px; -webkit-text-size-adjust:100%;}
 .wrap{max-width:var(--maxw); margin:0 auto; padding:0 0 72px;}
 h1,h2,h3,h4{margin:0}
@@ -76,20 +77,17 @@ a{color:var(--brand-dark)}
 .spine .shead .tiny{margin-left:auto}
 .spinerow{display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-top:12px}
 @media (max-width:900px){ .spinerow{grid-template-columns:repeat(2,1fr)} }
-.snode{border:1.5px solid var(--line); border-radius:10px; padding:8px 9px 8px; background:#fff;}
+.snode{border:1.5px solid var(--line); border-radius:10px; padding:8px 9px 8px; background:#fff; text-align:left;}
+.snode:hover{border-color:var(--brand)}
 .snode .snum{font-family:var(--mono); font-size:.68rem; color:var(--muted2); font-weight:700}
 .snode .sttl{font-size:.8rem; font-weight:800; line-height:1.2; margin-top:2px}
 .snode .sm{margin-top:5px; font-size:.71rem; color:var(--muted); line-height:1.4}
-.snode.live{border-color:var(--brand); border-width:2px; background:var(--good-bg); box-shadow:0 2px 10px rgba(21,122,59,.08)}
-.snode.live .snum{color:var(--brand-dark)}
-.snode .livepill{display:inline-block; margin-top:5px; font-size:.64rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em;
-  color:#fff; background:var(--brand); border-radius:99px; padding:1px 8px;}
-.snode .stubpill{display:inline-block; margin-top:5px; font-size:.64rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
-  color:var(--muted2); border:1px solid var(--line); border-radius:99px; padding:1px 8px;}
+.snode .stars{margin-top:4px; font-size:.72rem}
 
-/* the P1 stage: phone + rail */
+/* the phase stages: phone + rail */
 .stage{margin:calc(var(--sp)*3.5) calc(var(--sp)*3) 0; background:var(--card); border:1px solid var(--line);
   border-radius:var(--radius); overflow:hidden;}
+.stage.par{border-style:dashed; border-width:1.5px; border-color:var(--mint-deep)}
 .phead{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; background:var(--mint);
   padding:12px calc(var(--sp)*2.5); border-bottom:1px solid var(--mint-deep);}
 .phead .pnum{font-family:var(--mono); font-weight:800; font-size:.8rem; color:var(--brand-dark);
@@ -97,6 +95,7 @@ a{color:var(--brand-dark)}
 .phead h2{font-size:1.35rem; font-weight:800; letter-spacing:-.01em}
 .phead .once{font-size:.72rem; text-transform:uppercase; letter-spacing:.09em; font-weight:800; color:var(--brand-dark);
   border:1.5px solid var(--brand-dark); border-radius:99px; padding:2px 10px;}
+.phead .once.purple{border-color:var(--reform); color:var(--reform)}
 .stagegrid{display:grid; grid-template-columns:minmax(340px,430px) 1fr; gap:calc(var(--sp)*3); padding:calc(var(--sp)*3) calc(var(--sp)*2.5);}
 @media (max-width:880px){ .stagegrid{grid-template-columns:1fr} }
 .stagecontrols{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:12px}
@@ -120,20 +119,20 @@ a{color:var(--brand-dark)}
 .wahead .sub{font-size:.7rem; opacity:.85}
 .wahead .hicons{display:flex; gap:14px; font-size:1rem; opacity:.9}
 /* thread */
-.thread{padding:10px 8px 12px; display:flex; flex-direction:column; gap:6px; min-height:520px;
+.thread{padding:10px 8px 12px; display:flex; flex-direction:column; gap:6px; min-height:480px;
   background:
     radial-gradient(circle at 20% 15%, rgba(255,255,255,.35) 0 2px, transparent 3px),
     radial-gradient(circle at 70% 45%, rgba(255,255,255,.3) 0 2px, transparent 3px),
     radial-gradient(circle at 40% 80%, rgba(255,255,255,.3) 0 2px, transparent 3px),
     var(--wa-wall);}
 .syspill{align-self:center; background:#fdf3c7; color:#5c5340; font-size:.66rem; border-radius:8px; padding:4px 10px;
-  max-width:82%; text-align:center; box-shadow:0 1px 1px rgba(0,0,0,.06)}
+  max-width:86%; text-align:center; box-shadow:0 1px 1px rgba(0,0,0,.06)}
 .datepill{align-self:center; background:#fff; color:var(--wa-meta); font-size:.66rem; font-weight:700; border-radius:8px;
   padding:3px 10px; box-shadow:0 1px 1px rgba(0,0,0,.06)}
 .msgrow{display:flex; align-items:flex-start; gap:6px}
 .msgrow.out{justify-content:flex-end}
 .marker{flex:none; margin-top:4px; width:22px; height:22px; border-radius:50%; background:var(--ink); color:var(--lime);
-  font-size:.62rem; font-weight:800; display:flex; align-items:center; justify-content:center; font-family:var(--mono);
+  font-size:.6rem; font-weight:800; display:flex; align-items:center; justify-content:center; font-family:var(--mono);
   cursor:help;}
 .msgrow.out .marker{order:2}
 .bubble{position:relative; max-width:82%; border-radius:10px; padding:7px 9px 6px; font-size:.83rem; line-height:1.42;
@@ -145,24 +144,33 @@ a{color:var(--brand-dark)}
 .bubble b{font-weight:700}
 .bubble .sect{display:block; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--wa-meta); margin-top:6px}
 .bubble .amt{font-family:var(--mono); font-size:.8rem}
+.bubble .photo{display:block; width:180px; height:120px; border-radius:8px; margin-bottom:3px;
+  background:linear-gradient(135deg,#c9d6cc,#a9bfae 55%,#8fae96); position:relative}
+.bubble .photo::after{content:"📦"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:2rem; opacity:.8}
 /* quick-reply buttons under a bubble */
 .qrwrap{display:flex; flex-direction:column; gap:3px; max-width:82%; width:100%; margin-left:28px}
 .qr{background:#fff; border:0; border-radius:8px; color:var(--wa-link); font-weight:600; font-size:.83rem;
   padding:8px 10px; text-align:center; box-shadow:0 1px 1px rgba(0,0,0,.08);}
-.qr:disabled{color:#9fb6c0; cursor:default}
-/* list-message bubble */
+.qr.done{color:#9fb6c0}
+/* list-message button inside bubble */
 .listbtn{display:flex; align-items:center; justify-content:center; gap:7px; border-top:1px solid #e6e6e6; margin-top:7px; padding-top:7px;
   color:var(--wa-link); font-weight:600; font-size:.83rem; cursor:pointer; user-select:none}
-/* bottom sheet */
+/* bottom sheet (list messages + flow screens) */
 .sheet{position:absolute; left:0; right:0; bottom:0; background:#fff; border-radius:16px 16px 0 0; box-shadow:0 -6px 30px rgba(0,0,0,.25);
-  padding:12px 14px 16px; z-index:5; display:none}
+  padding:12px 14px 16px; z-index:5; display:none; max-height:80%; overflow:auto}
 .sheet.open{display:block}
 .sheet .grab{width:36px; height:4px; border-radius:4px; background:#d0d5d3; margin:0 auto 10px}
 .sheet h4{font-size:.9rem; font-weight:700; margin-bottom:6px}
 .sheet .row{display:flex; align-items:center; gap:10px; padding:9px 2px; border-bottom:1px solid #f0f2f1; font-size:.85rem}
 .sheet .row:last-of-type{border-bottom:0}
+.sheet .row.walk{font-weight:700; cursor:pointer}
+.sheet .row.walk .go{margin-left:auto; color:var(--brand-dark); font-size:.72rem; font-weight:800; flex:none}
 .sheet .radio{width:16px; height:16px; border-radius:50%; border:2px solid #b0bab5; flex:none}
+.sheet .check{width:16px; height:16px; border-radius:4px; background:var(--wa-header); color:#fff; font-size:.65rem;
+  display:flex; align-items:center; justify-content:center; font-weight:800; flex:none}
+.sheet .rownote{font-size:.7rem; color:var(--muted2); display:block}
 .sheet .close{margin-top:10px; width:100%; border:0; background:var(--wa-header); color:#fff; border-radius:99px; padding:8px; font-weight:700}
+.sheet .flowfoot{font-size:.66rem; color:var(--muted2); text-align:center; margin-top:8px}
 /* input bar */
 .inputbar{display:flex; align-items:center; gap:8px; padding:8px}
 .inputbar .field{flex:1; background:#fff; border-radius:99px; padding:8px 14px; color:#9aa5a0; font-size:.85rem;
@@ -178,13 +186,13 @@ a{color:var(--brand-dark)}
 .rail .railsub{font-size:.8rem; color:var(--muted2); margin-bottom:12px}
 .callout{display:flex; gap:10px; border:1px solid var(--line); border-radius:10px; background:#fafcfa; padding:10px 12px; margin-bottom:8px;}
 .callout .cmark{flex:none; width:22px; height:22px; border-radius:50%; background:var(--ink); color:var(--lime);
-  font-size:.62rem; font-weight:800; display:flex; align-items:center; justify-content:center; font-family:var(--mono); margin-top:2px}
+  font-size:.6rem; font-weight:800; display:flex; align-items:center; justify-content:center; font-family:var(--mono); margin-top:2px}
 .callout .cbody{font-size:.85rem; color:var(--ink-soft)}
 .callout .cbody .feat{display:inline-block; font-size:.7rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em;
   color:var(--brand-dark); background:var(--good-bg); border:1px solid var(--mint-deep); border-radius:99px; padding:1px 9px; margin-bottom:4px}
 .callout .cbody .flag{color:var(--warn); font-weight:800; cursor:help}
 .callout.dim{opacity:.45}
-.callout.dim .feat{filter:grayscale(1)}
+.railnote{font-size:.82rem; color:var(--muted); font-style:italic; margin:10px 0 8px; max-width:64ch}
 /* key moments (family style) */
 .keymoment{margin:14px 0 8px; border:1.5px solid var(--mint-deep); border-left:7px solid var(--brand);
   border-radius:10px; background:var(--good-bg); padding:14px 16px;
@@ -200,21 +208,6 @@ a{color:var(--brand-dark)}
 .keymoment .kwhy .why{background:linear-gradient(transparent 55%, #d9ecc0 55%); font-weight:800}
 .keymoment .kwhy a{font-weight:700}
 
-/* stub cards for the other phases */
-.stubs{margin:calc(var(--sp)*3.5) calc(var(--sp)*3) 0;}
-.stubs h2{font-size:1.05rem; font-weight:800; margin-bottom:4px}
-.stubs .tiny{margin-bottom:12px; display:block}
-.stubgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
-@media (max-width:900px){ .stubgrid{grid-template-columns:1fr 1fr} }
-@media (max-width:640px){ .stubgrid{grid-template-columns:1fr} }
-.stub{border:1.5px dashed var(--line); border-radius:10px; background:#fff; padding:12px 14px;}
-.stub .snum{font-family:var(--mono); font-size:.68rem; color:var(--muted2); font-weight:700}
-.stub h3{font-size:.95rem; font-weight:800; margin:2px 0 6px}
-.stub ul{margin:0; padding-left:16px; font-size:.82rem; color:var(--ink-soft)}
-.stub li{margin-bottom:3px}
-.stub .await{display:inline-block; margin-top:8px; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em;
-  color:var(--muted2); border:1px solid var(--line); border-radius:99px; padding:2px 9px}
-
 .foot{margin:calc(var(--sp)*4) calc(var(--sp)*3) 0; font-size:.84rem; color:var(--muted); max-width:92ch}
 .foot b{color:var(--ink-soft)}
 </style>
@@ -228,17 +221,19 @@ a{color:var(--brand-dark)}
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #11 · SIPHO'S REPEAT, AS A WHATSAPP CONVERSATION</span>
-  <span class="gen">generated 2026-08-07 · P1 pass for review (remaining phases stubbed) · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
+  <span class="gen">generated 2026-08-07 · v2: all seven phases live (P1 pass approved same day) · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
 </div>
 
 <section class="intro">
   <h1>Sipho's repeat, as a WhatsApp conversation</h1>
   <p class="lede">The cash track of the <a href="09-tobe-household-repeat-moments.html#cash">household repeat journey (#09)</a>,
-  rendered as the literal WhatsApp thread on Sipho's phone. Every message uses a real mechanic of the WhatsApp
-  Business Platform - templates, reply buttons, list sheets, voice notes - and every mechanic is chosen to honour
-  his constraints: prepaid data, an entry-level Android, no app, no street address. The phone is live: tap the
-  buttons to walk the branches. The rail alongside explains what each message is doing and why. The thread renders
-  here in English for this audience; in production it arrives in the language Sipho chose at sign-up.</p>
+  rendered as the literal WhatsApp thread on Sipho's phone - one phone per phase, from sign-up in July through a full
+  August cycle to the months when something breaks. Every message uses a real mechanic of the WhatsApp Business
+  Platform - templates, reply buttons, list sheets, a Flow, voice notes - and every mechanic is chosen to honour his
+  constraints: prepaid data, an entry-level Android, no app, no street address. The phones are live: tap the
+  highlighted rows and dashed pills to walk each conversation. The rail alongside each phone explains what the
+  messages are doing and why. The threads render here in English for this audience; in production they arrive in the
+  language Sipho chose at sign-up.</p>
   <div class="philo"><u>Trust</u> <span class="gt">&gt;</span> Convenience <span class="gt">&gt;</span> Speed <span style="font-weight:500;color:#d6e6dc">&nbsp;- predictability beats speed</span></div>
 </section>
 
@@ -257,90 +252,116 @@ a{color:var(--brand-dark)}
 </section>
 
 <section class="spine" aria-label="Phases and their WhatsApp mechanics">
-  <div class="shead"><h2>The seven phases, and the WhatsApp mechanics proposed for each</h2>
-  <span class="tiny">mapping proposed for in-situ review · P1 built first, per the agreed process</span></div>
+  <div class="shead"><h2>The seven phases, and the WhatsApp mechanics carrying each</h2>
+  <span class="tiny">tap a phase to jump to its phone · stars mark the moments of truth</span></div>
   <div class="spinerow">
-    <div class="snode"><div class="snum">P0</div><div class="sttl">Signing up</div>
-      <div class="sm">Click-to-chat entry · list message for language · WhatsApp Flow for household + preferences · read-back confirm</div>
-      <span class="stubpill">stub below</span></div>
-    <div class="snode live"><div class="snum">P1</div><div class="sttl">Repeats are due</div>
-      <div class="sm">Utility template · itemised price in-bubble · reply buttons (max 3) · list sheet · call-me-back</div>
-      <span class="livepill">live - this pass</span></div>
-    <div class="snode"><div class="snum">P2</div><div class="sttl">Adding to the order</div>
-      <div class="sm">Numbered picks · free text + one clarifying question · priced options as a list · running total</div>
-      <span class="stubpill">stub below</span></div>
-    <div class="snode"><div class="snum">P3</div><div class="sttl">Checked and packed</div>
-      <div class="sm">Two status templates · checks listed inline · named pharmacist · PIN issued at sealing</div>
-      <span class="stubpill">stub below</span></div>
-    <div class="snode"><div class="snum">P4</div><div class="sttl">In hand</div>
-      <div class="sm">Payday reminder (amount + PIN) · contents list after handover · photo reply escalates to a call</div>
-      <span class="stubpill">stub below</span></div>
-    <div class="snode"><div class="snum">P5</div><div class="sttl">Taking it</div>
-      <div class="sm">List message as the medicine cabinet · free-text Q&amp;A · voice notes both ways · STOP honoured</div>
-      <span class="stubpill">stub below</span></div>
-    <div class="snode"><div class="snum">∥</div><div class="sttl">When something breaks</div>
-      <div class="sm">Exception templates carrying the plan · choices as buttons · one-tap call-me · no dead ends</div>
-      <span class="stubpill">stub below</span></div>
+    <button class="snode" data-goto="p0"><div class="snum">P0</div><div class="sttl">Signing up</div>
+      <div class="sm">Click-to-chat · language list · WhatsApp Flow · read-back confirm</div><div class="stars">1 moment</div></button>
+    <button class="snode" data-goto="p1"><div class="snum">P1</div><div class="sttl">Repeats are due</div>
+      <div class="sm">Utility template · itemised price · 3 reply buttons · list sheet</div><div class="stars">2 moments · ⭐⭐</div></button>
+    <button class="snode" data-goto="p2"><div class="snum">P2</div><div class="sttl">Adding to the order</div>
+      <div class="sm">Numbered picks · free text + one question · running total</div><div class="stars">no moment (by design)</div></button>
+    <button class="snode" data-goto="p3"><div class="snum">P3</div><div class="sttl">Checked and packed</div>
+      <div class="sm">Two status templates · named pharmacist · PIN at sealing</div><div class="stars">1 moment</div></button>
+    <button class="snode" data-goto="p4"><div class="snum">P4</div><div class="sttl">In hand</div>
+      <div class="sm">Payday reminder · pay-then-PIN · photo escalation</div><div class="stars">1 moment · ⭐</div></button>
+    <button class="snode" data-goto="p5"><div class="snum">P5</div><div class="sttl">Taking it</div>
+      <div class="sm">Medicine-cabinet list · voice notes · STOP honoured</div><div class="stars">1 moment</div></button>
+    <button class="snode" data-goto="ppar"><div class="snum">∥</div><div class="sttl">When something breaks</div>
+      <div class="sm">Exception templates carrying the plan · call-me</div><div class="stars">no moment (by design)</div></button>
   </div>
 </section>
 
-<section class="stage" id="p1">
-  <div class="phead"><span class="pnum">P1</span><h2>Repeats are due</h2>
-    <span class="once">the monthly heartbeat - most months, Sipho sends nothing</span></div>
+<!-- ======================= P0 ======================= -->
+<section class="stage" id="p0">
+  <div class="phead"><span class="pnum">P0</span><h2>Signing up</h2><span class="once">once, not per cycle · Mon 13 Jul</span></div>
   <div class="stagegrid">
-
     <div>
-      <div class="stagecontrols">
-        <button class="btn" id="reset">Reset the thread</button>
-        <span class="hint">tap the blue buttons in the phone to walk each branch</span>
-      </div>
-      <div class="phone">
-        <div class="screen">
-          <div class="statusbar"><span>08:12</span><span>▂▄▆ 🔋 41%</span></div>
-          <div class="wahead">
-            <span class="back">‹</span>
-            <span class="avatar">DC</span>
-            <div class="names">
-              <div class="biz">Dis-Chem Repeats <span class="badge">✓</span></div>
-              <div class="sub">Official business account</div>
-            </div>
-            <div class="hicons"><span>📞</span><span>⋮</span></div>
-          </div>
-          <div class="thread" id="thread"></div>
-          <div class="sheet" id="sheet" aria-label="Change something - options">
-            <div class="grab"></div>
-            <h4>What would you like to change for August?</h4>
-            <div class="row"><span class="radio"></span> Move the ready date</div>
-            <div class="row"><span class="radio"></span> Change the pickup point</div>
-            <div class="row"><span class="radio"></span> Add medicine to this order</div>
-            <div class="row"><span class="radio"></span> Change my language</div>
-            <div class="row"><span class="radio"></span> Skip my tablets this month</div>
-            <div class="row"><span class="radio"></span> Cancel the repeat service</div>
-            <div class="row"><span class="radio"></span> Something else - just type it</div>
-            <button class="close" id="sheetclose">Close</button>
-          </div>
-          <div class="inputbar"><div class="field">Message</div><div class="mic">🎤</div></div>
-        </div>
-      </div>
+      <div class="stagecontrols"><button class="btn" data-reset="p0">Reset the thread</button>
+        <span class="hint">tap the highlighted rows and dashed pills to walk it</span></div>
+      <div class="phone"><div class="screen">
+        <div class="statusbar"><span>17:05</span><span>▂▄▆ 🔋 64%</span></div>
+        <div class="wahead"><span class="back">‹</span><span class="avatar">DC</span>
+          <div class="names"><div class="biz">Dis-Chem Repeats <span class="badge">✓</span></div><div class="sub">Official business account</div></div>
+          <div class="hicons"><span>📞</span><span>⋮</span></div></div>
+        <div class="thread" id="thread-p0"></div>
+        <div class="sheet" id="sheet-p0"></div>
+        <div class="inputbar"><div class="field">Message</div><div class="mic">🎤</div></div>
+      </div></div>
     </div>
-
     <div class="rail">
       <h3>What each message is doing</h3>
-      <p class="railsub">markers in the thread (A0-A5) match the callouts here · feature chips name the WhatsApp mechanic · ⚠️ marks claims awaiting a vault source</p>
-
+      <p class="railsub">markers (B1-B5) match the callouts · A0 applies to every phase on this page</p>
       <div class="callout"><span class="cmark">A0</span><div class="cbody">
-        <span class="feat">Language</span><br>
-        Standing note for the whole thread: production renders every message in the language Sipho chose at
-        sign-up, with his mother's medicine instructions in hers. English is shown here for this audience only.
+        <span class="feat">Language · standing note</span><br>
+        Production renders every thread on this page in the language Sipho picks in this phase, with his mother's
+        medicine instructions in hers. English is shown here for this audience only.
       </div></div>
+      <div class="callout"><span class="cmark">B1</span><div class="cbody">
+        <span class="feat">Click-to-chat entry</span><br>
+        A poster QR at the clinic or a saved number - the opening "Hi" is prefilled, so sign-up starts with zero
+        typing, no app store, no account.
+      </div></div>
+      <div class="callout"><span class="cmark">B2</span><div class="cbody">
+        <span class="feat">List message · language first</span><br>
+        Before anything else is asked, the thread's language becomes his - one sheet, one tap, six languages.
+      </div></div>
+      <div class="callout"><span class="cmark">B3</span><div class="cbody">
+        <span class="feat">WhatsApp Flow · native form</span><br>
+        The one place a form beats chat: household and medicines on a native sheet, no webview, no data-heavy page.
+        Multi-screen in production; one screen shown here
+        <span class="flag" title="platform capability from Meta developer docs - vault source note pending, punchlist item 11">⚠️</span>.
+        Consent is an already-granted fact whose scope is stated - ordering, paying, collecting - never an in-flow
+        event (POPIA: recorded once, in-language, auditable).
+      </div></div>
+      <div class="callout"><span class="cmark">B4</span><div class="cbody">
+        <span class="feat">Costed sync plan</span><br>
+        Script Sync made visible: the one top-up that lands both cycles on payday is priced in rand before he says
+        yes - never charged into an agreement <span class="flag" title="amount illustrative - punchlist item 11; part-fill mechanics are punchlist 9(f)">⚠️</span>.
+      </div></div>
+      <div class="callout"><span class="cmark">B5</span><div class="cbody">
+        <span class="feat">Read-back + reply-1 confirm</span><br>
+        Everything he chose, read back in plain language, confirmed with a single character - the only confirmation
+        gate in the whole journey, because it is the consent moment.
+      </div></div>
+      <div class="keymoment">
+        <div class="ktag"><span class="klabel">Key moment</span><span class="kwhere">at B5</span></div>
+        <div class="kline">I told them once how I want it</div>
+        <div class="kwhy">One WhatsApp conversation, a few minutes - and <span class="why">it's remembered</span>:
+        not asked again at a counter, not to a driver, not at the bank. The
+        <a href="08-concepts.html">CarerConsent</a> concept, on the phone he already owns.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ======================= P1 ======================= -->
+<section class="stage" id="p1">
+  <div class="phead"><span class="pnum">P1</span><h2>Repeats are due</h2>
+    <span class="once">the monthly heartbeat · Fri 21 Aug - most months, Sipho sends nothing</span></div>
+  <div class="stagegrid">
+    <div>
+      <div class="stagecontrols"><button class="btn" data-reset="p1">Reset the thread</button>
+        <span class="hint">tap the blue buttons in the phone to walk each branch</span></div>
+      <div class="phone"><div class="screen">
+        <div class="statusbar"><span>08:12</span><span>▂▄▆ 🔋 41%</span></div>
+        <div class="wahead"><span class="back">‹</span><span class="avatar">DC</span>
+          <div class="names"><div class="biz">Dis-Chem Repeats <span class="badge">✓</span></div><div class="sub">Official business account</div></div>
+          <div class="hicons"><span>📞</span><span>⋮</span></div></div>
+        <div class="thread" id="thread-p1"></div>
+        <div class="sheet" id="sheet-p1"></div>
+        <div class="inputbar"><div class="field">Message</div><div class="mic">🎤</div></div>
+      </div></div>
+    </div>
+    <div class="rail">
+      <h3>What each message is doing</h3>
+      <p class="railsub">markers (A1-A5) match the callouts · feature chips name the WhatsApp mechanic · ⚠️ marks claims awaiting a vault source</p>
       <div class="callout"><span class="cmark">A1</span><div class="cbody">
         <span class="feat">Utility template · business-initiated</span><br>
         The one-week-out notice. Text only - no image header, no PDF - because on a prepaid balance every download
         costs real money (small-bundle data carries a poverty premium per MB). It names the day because this
         order's day is genuinely settled, and it closes on the golden path: nothing to do.
       </div></div>
-
       <div class="keymoment">
         <div class="ktag"><span class="klabel">Key moment</span><span class="kstar">⭐ moment of truth</span><span class="kwhere">at A1</span></div>
         <div class="kline">My medicine ordered itself</div>
@@ -348,14 +369,12 @@ a{color:var(--brand-dark)}
         remember. <span class="why">The family's supply stays ahead of run-out, on the phone he already owns</span>.
         The <a href="08-concepts.html">Auto-Refill</a> concept with no app in the way.</div>
       </div>
-
       <div class="callout"><span class="cmark">A2</span><div class="cbody">
         <span class="feat">Itemised price · in-bubble text</span><br>
         The price lives in the message, not at the till. His mother's CCMDD parcel shows as R0.00 in the same
         breakdown - covered is stated, never hidden. Amounts shown are illustrative, not sourced SEP
         calculations <span class="flag" title="illustrative pricing - logged in meta/punchlist.md item 11">⚠️</span>.
       </div></div>
-
       <div class="keymoment">
         <div class="ktag"><span class="klabel">Key moment</span><span class="kstar">⭐ moment of truth</span><span class="kwhere">at A2</span></div>
         <div class="kline">The only thing I ever bought blind - not anymore</div>
@@ -363,15 +382,13 @@ a{color:var(--brand-dark)}
         not at the till, after the taxi fare is already spent. <a href="08-concepts.html">Real-Time Transparency</a>,
         for the majority who pay cash.</div>
       </div>
-
       <div class="callout"><span class="cmark">A3</span><div class="cbody">
         <span class="feat">Interactive reply buttons · max 3</span><br>
         WhatsApp allows exactly three quick-reply buttons, and the design spends them on change, pause, person.
         There is no confirm button on purpose: silence is the golden path, and the order carries on by itself
         <span class="flag" title="platform capability from Meta developer docs - vault source note pending, punchlist item 11">⚠️</span>.
       </div></div>
-
-      <div class="callout dim" id="co-a4"><span class="cmark">A4</span><div class="cbody">
+      <div class="callout dim" id="co-p1-a4"><span class="cmark">A4</span><div class="cbody">
         <span class="feat">List message · up to 10 rows</span><br>
         Behind "Change something": a native list sheet - menu depth without menu typing. The last row keeps free
         text first-class, so the flow never traps him in options that don't fit. "Add medicine to this order" is
@@ -379,53 +396,256 @@ a{color:var(--brand-dark)}
         <span class="flag" title="platform capability from Meta developer docs - vault source note pending, punchlist item 11">⚠️</span>.
         <em style="color:var(--muted2)">(tap Change something in the phone to see it)</em>
       </div></div>
-
-      <div class="callout dim" id="co-a5"><span class="cmark">A5</span><div class="cbody">
+      <div class="callout dim" id="co-p1-a5"><span class="cmark">A5</span><div class="cbody">
         <span class="feat">Keyword reply + phone-back</span><br>
         Escalation ends in a phone call, not a chat queue: one reply, and a person phones him in his language,
         free of charge. The closing line matters most on prepaid - he can let his data lapse, because the call
         comes to him. <em style="color:var(--muted2)">(tap Talk to a person in the phone to see it)</em>
       </div></div>
     </div>
-
   </div>
 </section>
 
-<section class="stubs">
-  <h2>The other six phases - mapped, awaiting the P1 verdict</h2>
-  <span class="tiny">each is scripted to the same rules once the P1 pass is signed off · mechanics below are the proposal under review</span>
-  <div class="stubgrid">
-    <div class="stub"><div class="snum">P0</div><h3>Signing up</h3>
-      <ul><li>Entry by click-to-chat poster or saved number</li>
-      <li>Language pick as the first list message</li>
-      <li>WhatsApp Flow (native multi-screen form) for household, medicines and preferences - the one place a form beats chat</li>
-      <li>Consent read-back in plain text; reply 1 to confirm</li></ul>
-      <span class="await">built after the P1 pass</span></div>
-    <div class="stub"><div class="snum">P2</div><h3>Adding to the order</h3>
-      <ul><li>Suggestions from his own history, specials first, as numbered picks</li>
-      <li>Free text in ("cough mixture"), one clarifying question back</li>
-      <li>Priced options as a list sheet; running total re-stated in the thread</li></ul>
-      <span class="await">built after the P1 pass</span></div>
-    <div class="stub"><div class="snum">P3</div><h3>Checked and packed</h3>
-      <ul><li>Picked-and-checked status listing the checks, pharmacist named</li>
-      <li>Packed-and-sealed status carrying the locker PIN, issued at sealing</li>
-      <li>Everything inline - no link that costs data to open</li></ul>
-      <span class="await">built after the P1 pass</span></div>
-    <div class="stub"><div class="snum">P4</div><h3>In hand</h3>
-      <ul><li>Payday reminder: amount and PIN restated in one message</li>
-      <li>Contents list right after handover, checked at the locker</li>
-      <li>Photo reply in the same thread brings a person to the phone</li></ul>
-      <span class="await">built after the P1 pass</span></div>
-    <div class="stub"><div class="snum">P5</div><h3>Taking it</h3>
-      <ul><li>The household's medicines as a list-message cabinet</li>
-      <li>Free-text questions; voice notes both directions</li>
-      <li>Reminders that stop the moment he replies STOP</li></ul>
-      <span class="await">built after the P1 pass</span></div>
-    <div class="stub"><div class="snum">∥</div><h3>When something breaks</h3>
-      <ul><li>Exception templates that arrive carrying the plan</li>
-      <li>The choices as reply buttons; never a dead end</li>
-      <li>"Call me" one reply away, answered in his language</li></ul>
-      <span class="await">built after the P1 pass</span></div>
+<!-- ======================= P2 ======================= -->
+<section class="stage" id="p2">
+  <div class="phead"><span class="pnum">P2</span><h2>Adding to the order</h2><span class="once">order open until Wed 26 Aug · Sat 22 Aug</span></div>
+  <div class="stagegrid">
+    <div>
+      <div class="stagecontrols"><button class="btn" data-reset="p2">Reset the thread</button>
+        <span class="hint">tap the dashed pills to send Sipho's replies</span></div>
+      <div class="phone"><div class="screen">
+        <div class="statusbar"><span>09:40</span><span>▂▄▆ 🔋 58%</span></div>
+        <div class="wahead"><span class="back">‹</span><span class="avatar">DC</span>
+          <div class="names"><div class="biz">Dis-Chem Repeats <span class="badge">✓</span></div><div class="sub">Official business account</div></div>
+          <div class="hicons"><span>📞</span><span>⋮</span></div></div>
+        <div class="thread" id="thread-p2"></div>
+        <div class="sheet" id="sheet-p2"></div>
+        <div class="inputbar"><div class="field">Message</div><div class="mic">🎤</div></div>
+      </div></div>
+    </div>
+    <div class="rail">
+      <h3>What each message is doing</h3>
+      <p class="railsub">markers (C1-C4) match the callouts</p>
+      <div class="callout"><span class="cmark">C1</span><div class="cbody">
+        <span class="feat">Numbered picks · specials first</span><br>
+        Suggestions come from his own buying history with anything on special at the top - and they're answered by
+        typing a digit. A number works on any handset, at any literacy level, and costs one character of airtime.
+      </div></div>
+      <div class="callout"><span class="cmark">C2</span><div class="cbody">
+        <span class="feat">Free text · one clarifying question</span><br>
+        Typing "cough mixture" is as good as any menu. The service asks exactly one question back - child or
+        adult - as reply buttons, then returns priced options. Never a form, never a dead end.
+      </div></div>
+      <div class="callout"><span class="cmark">C3</span><div class="cbody">
+        <span class="feat">Running total · restated every change</span><br>
+        Price-before-travel survives the additions: after every item the total he'll pay at the Capitec counter is
+        restated in full <span class="flag" title="amounts illustrative - punchlist item 11">⚠️</span>.
+      </div></div>
+      <div class="callout"><span class="cmark">C4</span><div class="cbody">
+        <span class="feat">Honest constraint · medicine only</span><br>
+        The locker route carries medicine only, no groceries - stated plainly up front, exactly as #09 requires,
+        instead of discovered at the locker.
+      </div></div>
+      <p class="railnote">No key moment in this phase by design - #09 agreed the cash addition carries none. The
+      value is quieter: the small pharmacy trips between paydays fold into the one he already makes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= P3 ======================= -->
+<section class="stage" id="p3">
+  <div class="phead"><span class="pnum">P3</span><h2>Checked and packed</h2><span class="once">Wed 26 + Thu 27 Aug</span></div>
+  <div class="stagegrid">
+    <div>
+      <div class="stagecontrols"><button class="btn" data-reset="p3">Reset the thread</button>
+        <span class="hint">two statuses arrive on their own - nothing to tap</span></div>
+      <div class="phone"><div class="screen">
+        <div class="statusbar"><span>15:48</span><span>▂▄▆ 🔋 77%</span></div>
+        <div class="wahead"><span class="back">‹</span><span class="avatar">DC</span>
+          <div class="names"><div class="biz">Dis-Chem Repeats <span class="badge">✓</span></div><div class="sub">Official business account</div></div>
+          <div class="hicons"><span>📞</span><span>⋮</span></div></div>
+        <div class="thread" id="thread-p3"></div>
+        <div class="sheet" id="sheet-p3"></div>
+        <div class="inputbar"><div class="field">Message</div><div class="mic">🎤</div></div>
+      </div></div>
+    </div>
+    <div class="rail">
+      <h3>What each message is doing</h3>
+      <p class="railsub">markers (D1-D3) match the callouts</p>
+      <div class="callout"><span class="cmark">D1</span><div class="cbody">
+        <span class="feat">Status templates · detail inline</span><br>
+        Both statuses arrive without being asked, and carry their content in the message itself - never "open a
+        link to see more", because a link is a download and a download is money.
+      </div></div>
+      <div class="callout"><span class="cmark">D2</span><div class="cbody">
+        <span class="feat">The named check</span><br>
+        The checks are listed and the pharmacist who signed them off is named at the final check - the #10 name
+        rule, applied on the cash rail. (Name used here is new to the journey set - flagged in the spec's open
+        questions.)
+      </div></div>
+      <div class="callout"><span class="cmark">D3</span><div class="cbody">
+        <span class="feat">PIN issued at sealing</span><br>
+        The handover credential exists from the moment the parcel does, exactly where #09 issues it - and it's a
+        four-digit code in plain text, not a barcode image to download.
+      </div></div>
+      <div class="keymoment">
+        <div class="ktag"><span class="klabel">Key moment</span><span class="kwhere">at D2</span></div>
+        <div class="kline">Every check ran before it left the building</div>
+        <div class="kwhy">The same checks, the same standard, the same named signature.
+        <span class="why">How he pays has no bearing on how carefully his family's medicine is handled</span> - and
+        for the first time, he can see that. <a href="08-concepts.html">The Named Check</a>, identical on the cash rail.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= P4 ======================= -->
+<section class="stage" id="p4">
+  <div class="phead"><span class="pnum">P4</span><h2>In hand</h2><span class="once">payday · Fri 28 Aug</span></div>
+  <div class="stagegrid">
+    <div>
+      <div class="stagecontrols"><button class="btn" data-reset="p4">Reset the thread</button>
+        <span class="hint">the handover happens at the bank - the chat only equips and then checks it</span></div>
+      <div class="phone"><div class="screen">
+        <div class="statusbar"><span>06:45</span><span>▂▄▆ 🔋 92%</span></div>
+        <div class="wahead"><span class="back">‹</span><span class="avatar">DC</span>
+          <div class="names"><div class="biz">Dis-Chem Repeats <span class="badge">✓</span></div><div class="sub">Official business account</div></div>
+          <div class="hicons"><span>📞</span><span>⋮</span></div></div>
+        <div class="thread" id="thread-p4"></div>
+        <div class="sheet" id="sheet-p4"></div>
+        <div class="inputbar"><div class="field">Message</div><div class="mic">🎤</div></div>
+      </div></div>
+    </div>
+    <div class="rail">
+      <h3>What each message is doing</h3>
+      <p class="railsub">markers (E1-E3) match the callouts</p>
+      <div class="callout"><span class="cmark">E1</span><div class="cbody">
+        <span class="feat">Reminder template · the whole trip in one message</span><br>
+        Amount and PIN restated together, before he leaves home - so the trip needs nothing further from the
+        network. If signal fades at the rank, the message is already on the phone.
+      </div></div>
+      <div class="callout"><span class="cmark">E2</span><div class="cbody">
+        <span class="feat">Pay-then-PIN · off-channel by design</span><br>
+        The handover itself never touches the chat: cash at the Capitec counter releases the locker on his PIN -
+        the Pelebox pattern near home, no street address required. The partner-counter release is a design
+        assumption <span class="flag" title="punchlist item 9(a) - partner-bank locker network">⚠️</span>. In-chat
+        payment is deliberately absent: WhatsApp payments aren't live in South Africa, and cash needs no channel.
+      </div></div>
+      <div class="callout dim" id="co-p4-e3"><span class="cmark">E3</span><div class="cbody">
+        <span class="feat">Photo reply -> a person phones</span><br>
+        The contents list lands right after handover so the parcel is checked at the locker, not at home after the
+        taxi. A photo in the same thread brings a person to the phone at once
+        <span class="flag" title="punchlist item 9(e) - photo-triggered human callback">⚠️</span>.
+        <em style="color:var(--muted2)">(tap the photo pill in the phone to see it)</em>
+      </div></div>
+      <div class="keymoment">
+        <div class="ktag"><span class="klabel">Key moment</span><span class="kstar">⭐ moment of truth</span><span class="kwhere">at E2</span></div>
+        <div class="kline">I could track it from Dis-Chem's door to mine</div>
+        <div class="kwhy">The same certainty, differently shaped: <span class="why">payment and collection in one
+        visit, near home, with no address required</span> - and if the locker is ever down, he knows before he
+        travels, not after.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= P5 ======================= -->
+<section class="stage" id="p5">
+  <div class="phead"><span class="pnum">P5</span><h2>Taking it</h2><span class="once">Sat 29 Aug onward</span></div>
+  <div class="stagegrid">
+    <div>
+      <div class="stagecontrols"><button class="btn" data-reset="p5">Reset the thread</button>
+        <span class="hint">tap the highlighted row and the dashed pill</span></div>
+      <div class="phone"><div class="screen">
+        <div class="statusbar"><span>09:15</span><span>▂▄▆ 🔋 66%</span></div>
+        <div class="wahead"><span class="back">‹</span><span class="avatar">DC</span>
+          <div class="names"><div class="biz">Dis-Chem Repeats <span class="badge">✓</span></div><div class="sub">Official business account</div></div>
+          <div class="hicons"><span>📞</span><span>⋮</span></div></div>
+        <div class="thread" id="thread-p5"></div>
+        <div class="sheet" id="sheet-p5"></div>
+        <div class="inputbar"><div class="field">Message</div><div class="mic">🎤</div></div>
+      </div></div>
+    </div>
+    <div class="rail">
+      <h3>What each message is doing</h3>
+      <p class="railsub">markers (F1-F4) match the callouts</p>
+      <div class="callout"><span class="cmark">F1</span><div class="cbody">
+        <span class="feat">List message · the medicine cabinet</span><br>
+        Every medicine the family takes, one sheet away - what it's for, how to take it - with zero downloads.
+        The answer no longer lives at a counter across town.
+      </div></div>
+      <div class="callout"><span class="cmark">F2</span><div class="cbody">
+        <span class="feat">Voice notes · both directions</span><br>
+        When reading isn't enough, he asks in the thread - typed or spoken. Voice carries the literacy range, and
+        it's his mother's channel as much as his: her reminders arrive on her phone as short voice notes in her
+        language.
+      </div></div>
+      <div class="callout"><span class="cmark">F3</span><div class="cbody">
+        <span class="feat">STOP · honoured instantly</span><br>
+        One keyword ends the reminders, completely and immediately. The research is blunt about why: the same
+        tools that reduce effort flip into harassment the moment agency is lost.
+      </div></div>
+      <div class="callout"><span class="cmark">F4</span><div class="cbody">
+        <span class="feat">The free floor lives in the parcel</span><br>
+        Iconised labels, the printed day-by-day fridge sheet, instructions in each person's language - the
+        adherence basics ride with the medicine, not the phone. The chat carries only the look-up and the
+        pharmacist.
+      </div></div>
+      <div class="keymoment">
+        <div class="ktag"><span class="klabel">Key moment</span><span class="kwhere">at F4</span></div>
+        <div class="kline">Medication you can't take wrong</div>
+        <div class="kwhy">The basics done properly: a clear label on every pack, icons that speak before words do,
+        a sheet on the fridge, a guide on the phone. <span class="why">Taking it right isn't something money
+        buys - it comes with the medicine.</span> The promise <a href="08-concepts.html">Made-for-Me Medicine</a>
+        makes at the paid end, kept at the free end too.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ∥ ======================= -->
+<section class="stage par" id="ppar">
+  <div class="phead"><span class="pnum">∥</span><h2>When something breaks</h2><span class="once purple">parallel - any month</span></div>
+  <div class="stagegrid">
+    <div>
+      <div class="stagecontrols"><button class="btn" data-reset="ppar">Reset the thread</button>
+        <span class="hint">three scenarios in one thread - tap the buttons on the first</span></div>
+      <div class="phone"><div class="screen">
+        <div class="statusbar"><span>07:58</span><span>▂▄▆ 🔋 49%</span></div>
+        <div class="wahead"><span class="back">‹</span><span class="avatar">DC</span>
+          <div class="names"><div class="biz">Dis-Chem Repeats <span class="badge">✓</span></div><div class="sub">Official business account</div></div>
+          <div class="hicons"><span>📞</span><span>⋮</span></div></div>
+        <div class="thread" id="thread-ppar"></div>
+        <div class="sheet" id="sheet-ppar"></div>
+        <div class="inputbar"><div class="field">Message</div><div class="mic">🎤</div></div>
+      </div></div>
+    </div>
+    <div class="rail">
+      <h3>What each message is doing</h3>
+      <p class="railsub">markers (G1-G4) match the callouts · scenarios, not steps - each is a different month</p>
+      <div class="callout"><span class="cmark">G1</span><div class="cbody">
+        <span class="feat">Exception template · the plan attached</span><br>
+        Bad news never arrives alone: the message carries the live choices as reply buttons, and nothing is
+        decided without him. An exception opens a path - it never kills the order.
+      </div></div>
+      <div class="callout"><span class="cmark">G2</span><div class="cbody">
+        <span class="feat">Told before travelling</span><br>
+        The taxi-fare rule: anything knowable before he travels - a broken locker, a stock-out, a waiting
+        renewal - is told before he travels. His fare is never spent on a closed door.
+      </div></div>
+      <div class="callout"><span class="cmark">G3</span><div class="cbody">
+        <span class="feat">Script Renew · signposted</span><br>
+        The renewal journey starts weeks before the script runs dry, visibly, in the same thread - and chasing it
+        costs him nothing. The full renewal flow is its own journey (the Script Renew concept), out of scope here.
+      </div></div>
+      <div class="callout"><span class="cmark">G4</span><div class="cbody">
+        <span class="feat">A person, by phone</span><br>
+        When things truly break, the human comes by phone, one reply away, in his language - the loud
+        human-not-bot beat the sentiment research demands.
+      </div></div>
+      <p class="railnote">No key moment on the cash track by design: #09's ∥ moment of truth is medical-aid-specific
+      and insured-only. The cash recovery paths carry the same care without a separate memory line.</p>
+    </div>
   </div>
 </section>
 
@@ -433,109 +653,346 @@ a{color:var(--brand-dark)}
   <b>Scope notes.</b> Copy derives from the approved #09 cash journey
   (<a href="09-tobe-household-repeat-moments.html#cash">deliverable #09</a>, spec:
   design-kit/journeys/to-be-household-repeat-moments.md); this page decides only what the chat literally looks
-  like. Rand amounts are illustrative ⚠️. WhatsApp platform capabilities (reply-button and list-row limits,
-  Flows, template categories) are cited from Meta developer documentation and await a proper vault source note -
-  logged in meta/punchlist.md item 11. In-chat payment is deliberately absent: WhatsApp payments are not live in
-  South Africa, and the cash-at-the-Capitec-counter step needs no channel payment - the constraint and the
-  design agree. The thread renders in English here; production renders it in the customer's chosen language.
-  Deliverables #05-#10 are untouched.
+  like, phase by phase, across one August 2026 cycle. Rand amounts are illustrative ⚠️. WhatsApp platform
+  capabilities (reply-button and list-row limits, Flows, template categories) are cited from Meta developer
+  documentation and await a proper vault source note - logged in meta/punchlist.md item 11. In-chat payment is
+  deliberately absent: WhatsApp payments are not live in South Africa, and the cash-at-the-Capitec-counter step
+  needs no channel payment - the constraint and the design agree. Walkthrough convention: highlighted ▶ rows and
+  dashed pills mark the scripted path; other rows are real UI, inert in the mock. The threads render in English
+  here; production renders them in the customer's chosen language. Script-expiry renewal (Script Renew) appears
+  only as its ∥ signpost; after-hours acute belongs to #10. Deliverables #05-#10 are untouched.
 </p>
 
 </div>
 <script>
-/* Thread renderer - P1 spine on load, branches on tap. Copy mirrors the spec:
-   design-kit/journeys/sipho-whatsapp-flow.md (edit there first). */
-const thread = document.getElementById("thread");
-const sheet = document.getElementById("sheet");
-let branchDone = {A:false, B:false};
-
+/* =============================================================================
+   Script engine + per-phase scripts. Copy mirrors the spec:
+   design-kit/journeys/sipho-whatsapp-flow.md (edit there first).
+   Step types: sys, date, inm, outm, undim, tap (dashed send pill),
+   photoTap, list (in-bubble + bottom sheet), qr (reply buttons).
+   ============================================================================= */
 function el(html){ const d=document.createElement("div"); d.innerHTML=html; return d.firstElementChild; }
 function marker(id){ return '<span class="marker" title="see callout '+id+' in the rail">'+id+'</span>'; }
-function inMsg(id, body, time){
-  return el('<div class="msgrow">'+ (id?marker(id):'<span style="width:22px;flex:none"></span>') +
-    '<div class="bubble in">'+body+'<span class="meta">'+time+'</span></div></div>');
-}
-function outMsg(body, time){
-  return el('<div class="msgrow out"><span style="width:22px;flex:none"></span>'+
-    '<div class="bubble out">'+body+'<span class="meta">'+time+' <span class="ticks">✓✓</span></span></div></div>');
+function spacer(){ return '<span style="width:22px;flex:none"></span>'; }
+
+const DIMS = { p1:["co-p1-a4","co-p1-a5"], p4:["co-p4-e3"] };
+
+function makePhone(pid, steps){
+  const thread = document.getElementById("thread-"+pid);
+  const sheet  = document.getElementById("sheet-"+pid);
+
+  function inMsg(id, body, time){
+    return el('<div class="msgrow">'+(id?marker(id):spacer())+
+      '<div class="bubble in">'+body+'<span class="meta">'+time+'</span></div></div>');
+  }
+  function outMsg(body, time){
+    return el('<div class="msgrow out">'+spacer()+
+      '<div class="bubble out">'+body+'<span class="meta">'+time+' <span class="ticks">✓✓</span></span></div></div>');
+  }
+  function scrollEnd(){ thread.lastElementChild && thread.lastElementChild.scrollIntoView({block:"nearest"}); }
+
+  function openSheet(cfg, onPick){
+    let h = '<div class="grab"></div><h4>'+cfg.title+'</h4>';
+    cfg.rows.forEach((r,ix)=>{
+      const lead = cfg.flow ? '<span class="check">✓</span>' : '<span class="radio"></span>';
+      h += '<div class="row'+(r.walk?" walk":"")+'" data-ix="'+ix+'">'+lead+'<span>'+r.label+
+           (r.note?'<span class="rownote">'+r.note+'</span>':'')+'</span>'+(r.walk?'<span class="go">tap ▶</span>':'')+'</div>';
+    });
+    h += cfg.flow
+      ? '<button class="close" data-cta="1">'+(cfg.cta||"Continue")+'</button><div class="flowfoot">Managed by Dis-Chem · WhatsApp Flow</div>'
+      : '<button class="close">Close</button>';
+    sheet.innerHTML = h;
+    sheet.classList.add("open");
+    sheet.querySelectorAll(".row.walk").forEach(row=>{
+      row.addEventListener("click", ()=>{
+        const r = cfg.rows[+row.dataset.ix];
+        sheet.classList.remove("open");
+        onPick && onPick(r);
+      });
+    });
+    sheet.querySelector(".close").addEventListener("click", function(){
+      sheet.classList.remove("open");
+      if(this.dataset.cta && cfg.flow){ onPick && onPick(null); }
+    });
+  }
+
+  function handle(s, cont){
+    if(s.sys){ thread.appendChild(el('<div class="syspill">'+s.sys+'</div>')); cont(); return; }
+    if(s.date){ thread.appendChild(el('<div class="datepill">'+s.date+'</div>')); cont(); return; }
+    if(s.inm){ thread.appendChild(inMsg(s.inm.id, s.inm.body, s.inm.time)); scrollEnd(); cont(); return; }
+    if(s.outm){ thread.appendChild(outMsg(s.outm.body, s.outm.time)); scrollEnd(); cont(); return; }
+    if(s.undim){ const c=document.getElementById(s.undim); c && c.classList.remove("dim"); cont(); return; }
+    if(s.tap){
+      const hint = el('<button class="sendhint">tap to send: '+s.tap.send+'</button>');
+      thread.appendChild(hint); scrollEnd();
+      hint.addEventListener("click", ()=>{ hint.remove(); thread.appendChild(outMsg(s.tap.send, s.tap.time)); scrollEnd(); cont(); });
+      return;
+    }
+    if(s.photoTap){
+      const hint = el('<button class="sendhint">tap to send: 📷 a photo of the parcel</button>');
+      thread.appendChild(hint); scrollEnd();
+      hint.addEventListener("click", ()=>{
+        hint.remove();
+        thread.appendChild(outMsg('<span class="photo"></span>', s.photoTap.time)); scrollEnd(); cont();
+      });
+      return;
+    }
+    if(s.list){
+      const m = inMsg(s.list.id, s.list.body, s.list.time);
+      const btn = el('<div class="listbtn">☰ '+s.list.btn+'</div>');
+      m.querySelector(".bubble").appendChild(btn);
+      thread.appendChild(m); scrollEnd();
+      let done = false;
+      btn.addEventListener("click", ()=>{
+        openSheet(s.list.sheet, (row)=>{
+          if(done) return; done = true;
+          if(row && row.send){ thread.appendChild(outMsg(row.send, row.echoTime)); scrollEnd(); }
+          cont();
+        });
+      });
+      if(s.list.autoOpen){ btn.click(); }
+      return;
+    }
+    if(s.qr){
+      const wrap = el('<div class="qrwrap" role="group" aria-label="Quick replies"></div>');
+      let continued = false;
+      s.qr.buttons.forEach(bcfg=>{
+        const b = el('<button class="qr">'+bcfg.label+'</button>');
+        let played = false;
+        b.addEventListener("click", ()=>{
+          if(played && !bcfg.reopen) return;
+          if(played && bcfg.reopen){ bcfg.reopen(); return; }
+          played = true; b.classList.add("done");
+          thread.appendChild(outMsg(bcfg.send||bcfg.label, bcfg.time)); scrollEnd();
+          const after = ()=>{ if((bcfg.main || s.qr.anyMain) && !continued){ continued = true; cont(); } };
+          if(bcfg.steps && bcfg.steps.length){ play(bcfg.steps, after); } else { after(); }
+        });
+        wrap.appendChild(b);
+      });
+      thread.appendChild(wrap); scrollEnd();
+      /* all side branches and no anyMain gate: main flow continues immediately */
+      if(!s.qr.anyMain && !s.qr.buttons.some(b=>b.main)){ cont(); }
+      return;
+    }
+    cont();
+  }
+
+  function play(list, done){
+    let i = 0;
+    (function step(){
+      if(i >= list.length){ done && done(); return; }
+      const s = list[i++];
+      handle(s, step);
+    })();
+  }
+
+  function reset(){
+    thread.innerHTML = "";
+    sheet.classList.remove("open");
+    (DIMS[pid]||[]).forEach(id=>{ const c=document.getElementById(id); c && c.classList.add("dim"); });
+    play(steps(), null);
+  }
+  return { reset };
 }
 
-function renderSpine(){
-  thread.innerHTML = "";
-  branchDone = {A:false, B:false};
-  document.getElementById("co-a4").classList.add("dim");
-  document.getElementById("co-a5").classList.add("dim");
-  thread.appendChild(el('<div class="syspill">🔒 Messages and calls are end-to-end encrypted.</div>'));
-  thread.appendChild(el('<div class="datepill">FRI, 21 AUG</div>'));
-  thread.appendChild(inMsg("A1",
-    'Hello Sipho. Your family\'s repeat medicine for August is being prepared:\n\n• <b>Your blood-pressure tablets</b>\n• <b>Your mother\'s chronic medicine</b>\n\nIt will be ready at the <b>Capitec locker at the taxi rank</b> on <b>Friday 28 August</b> - payday.\n\nYou don\'t need to do anything. If nothing changes, it will be waiting.',
-    "08:12"));
-  thread.appendChild(inMsg("A2",
-    'Here is the price, so you know before you travel.'+
-    '<span class="sect">Your tablets</span><span class="amt">Amlodipine 5 mg, 28 tablets (generic)  R64.40\nDispensing fee  R36.20</span>'+
-    '<span class="sect">Your mother\'s medicine</span><span class="amt">CCMDD chronic parcel  R0.00</span>\n\n<b>Total to pay: <span class="amt">R100.60</span></b>\nCash or instant EFT at the Capitec counter. Paying is what opens the locker.',
-    "08:12"));
-  thread.appendChild(inMsg("A3",
-    'Happy with this? Then there\'s nothing to do - your order carries on by itself, this month and every month.',
-    "08:13"));
-  const qr = el('<div class="qrwrap" role="group" aria-label="Quick replies">'+
-    '<button class="qr" id="qr-change">✎ Change something</button>'+
-    '<button class="qr" id="qr-pause">❚❚ Pause this month</button>'+
-    '<button class="qr" id="qr-person">☎ Talk to a person</button></div>');
-  thread.appendChild(qr);
-  qr.querySelector("#qr-change").addEventListener("click", branchChange);
-  qr.querySelector("#qr-pause").addEventListener("click", branchPause);
-  qr.querySelector("#qr-person").addEventListener("click", branchPerson);
-}
+/* ---------- P0 ---------- */
+const P0 = () => [
+  {sys:"🔒 Messages and calls are end-to-end encrypted."},
+  {date:"MON, 13 JUL"},
+  {outm:{body:"Hi", time:"17:05"}},
+  {list:{id:"B2", time:"17:05", btn:"Choose my language",
+    body:'Welcome to Dis-Chem Repeats. We get your family\'s medicine ready every month, close to home - no app, no forms, no queue in store.\n\nFirst: which language should we speak?',
+    sheet:{title:"Choose my language", rows:[
+      {label:"isiZulu", walk:true, send:"isiZulu", echoTime:"17:06"},
+      {label:"isiXhosa"},{label:"Sesotho"},{label:"English"},{label:"Afrikaans"},{label:"Setswana"}
+    ]}}},
+  {list:{id:"B3", time:"17:06", btn:"Set up my family",
+    body:'Who is this service for? You can add family you care for - if they\'ve given their consent for you to manage their medicine, it covers this service too: ordering, paying and collecting.',
+    sheet:{title:"Dis-Chem Repeats - your family", flow:true, cta:"Continue", rows:[
+      {label:"Sipho (you)", note:"blood-pressure tablets - repeat script on your profile"},
+      {label:"Your mother", note:"chronic medicine (CCMDD) - her consent is on her profile; one tap confirms"}
+    ]}}},
+  {inm:{id:"B4", time:"17:08",
+    body:'Both added. Two people\'s medicine is now one thing to manage.\n\nYour tablets run out around the 20th; your mother\'s at month-end. The plan to bring them together: one small top-up for her this first month - <b><span class="amt">R23.80</span></b> - and from September, both are ready together on payday.\n\nReply <b>1</b> to accept the plan.'}},
+  {tap:{send:"1", time:"17:09"}},
+  {inm:{time:"17:09",
+    body:'How should your medicine reach you each month?'}},
+  {qr:{buttons:[
+    {label:"📍 Collect near me", send:"Collect near me", time:"17:10", main:true},
+    {label:"🚚 Deliver to me", send:"Deliver to me", time:"17:10", steps:[
+      {inm:{time:"17:10", body:'We can deliver where couriers reach - though most people near you choose the locker: no street address needed. Tap "Collect near me" to see the points close to home.'}}
+    ]}
+  ]}},
+  {list:{time:"17:11", btn:"Choose a point",
+    body:'Closest collection points to home:',
+    sheet:{title:"Collection points near you", rows:[
+      {label:"Capitec branch, taxi rank - locker", note:"open bank hours · pay at the counter", walk:true, send:"Capitec locker, taxi rank", echoTime:"17:11"},
+      {label:"Dis-Chem store", note:"14 km away"}
+    ]}}},
+  {inm:{time:"17:12",
+    body:'Done - the locker at the Capitec branch by the taxi rank. No street address needed.\n\nYou\'ll get everything here in isiZulu, and your mother\'s medicine instructions come printed in her language.'}},
+  {inm:{time:"17:12",
+    body:'Paying: cash or instant EFT at the Capitec counter when you collect - paying is what opens the locker.\n\nAnd we use cheaper generics unless you tell us otherwise, so the price stays one you can plan around.'}},
+  {inm:{id:"B5", time:"17:13",
+    body:'Here is everything, read back:\n• You + your mother\n• Ready together on payday, every month\n• Collect: Capitec locker, taxi rank\n• Pay: cash at the counter · generics by default\n• isiZulu here · her instructions in her language\n\nReply <b>1</b> to confirm - and from here, it\'s remembered.'}},
+  {tap:{send:"1", time:"17:14"}},
+  {inm:{time:"17:14",
+    body:'Done, Sipho. Your first order will be ready on <b>Friday 28 August</b> - payday. We\'ll message you a week before with the price.\n\nThat\'s it - it just runs.'}}
+];
 
-function scrollEnd(){ thread.lastElementChild && thread.lastElementChild.scrollIntoView({block:"nearest"}); }
+/* ---------- P1 (approved pass, unchanged copy) ---------- */
+const P1 = () => [
+  {sys:"🔒 Messages and calls are end-to-end encrypted."},
+  {date:"FRI, 21 AUG"},
+  {inm:{id:"A1", time:"08:12",
+    body:'Hello Sipho. Your family\'s repeat medicine for August is being prepared:\n\n• <b>Your blood-pressure tablets</b>\n• <b>Your mother\'s chronic medicine</b>\n\nIt will be ready at the <b>Capitec locker at the taxi rank</b> on <b>Friday 28 August</b> - payday.\n\nYou don\'t need to do anything. If nothing changes, it will be waiting.'}},
+  {inm:{id:"A2", time:"08:12",
+    body:'Here is the price, so you know before you travel.'+
+      '<span class="sect">Your tablets</span><span class="amt">Amlodipine 5 mg, 28 tablets (generic)  R64.40\nDispensing fee  R36.20</span>'+
+      '<span class="sect">Your mother\'s medicine</span><span class="amt">CCMDD chronic parcel  R0.00</span>\n\n<b>Total to pay: <span class="amt">R100.60</span></b>\nCash or instant EFT at the Capitec counter. Paying is what opens the locker.'}},
+  {inm:{id:"A3", time:"08:13",
+    body:'Happy with this? Then there\'s nothing to do - your order carries on by itself, this month and every month.'}},
+  {qr:{buttons:[
+    {label:"✎ Change something", send:"Change something", time:"08:14", steps:[
+      {list:{id:"A4", time:"08:14", btn:"Choose an option", autoOpen:true,
+        body:'No problem. What would you like to change for August?',
+        sheet:{title:"What would you like to change for August?", rows:[
+          {label:"Move the ready date"},{label:"Change the pickup point"},{label:"Add medicine to this order"},
+          {label:"Change my language"},{label:"Skip my tablets this month"},{label:"Cancel the repeat service"},
+          {label:"Something else - just type it"}
+        ]}}},
+      {undim:"co-p1-a4"}
+    ]},
+    {label:"❚❚ Pause this month", send:"Pause this month", time:"08:14", steps:[
+      {inm:{time:"08:14",
+        body:'Done - August is paused for your tablets. Your mother\'s medicine still arrives as planned. We\'ll be back to normal in September; reply RESUME any time to restart sooner.'}}
+    ]},
+    {label:"☎ Talk to a person", send:"Talk to a person", time:"08:15", steps:[
+      {inm:{id:"A5", time:"08:15",
+        body:'Of course. Reply <b>CALL ME</b> and a pharmacy team member will phone you back today, in your language, free of charge.\n\nOr send a voice note - we listen to those too.'}},
+      {undim:"co-p1-a5"},
+      {tap:{send:"CALL ME", time:"08:16"}},
+      {inm:{time:"08:16",
+        body:'Thank you Sipho. Someone will phone you on this number <b>before 17:00 today</b>.\n\nYou don\'t need to keep data on - the call comes to you.'}}
+    ]}
+  ]}}
+];
 
-function branchChange(){
-  if(branchDone.A) { sheet.classList.add("open"); return; }
-  branchDone.A = true;
-  thread.appendChild(outMsg("Change something","08:14"));
-  const lm = inMsg("A4",
-    'No problem. What would you like to change for August?', "08:14");
-  lm.querySelector(".bubble").appendChild(el('<div class="listbtn" id="openlist">☰ Choose an option</div>'));
-  thread.appendChild(lm);
-  lm.querySelector("#openlist").addEventListener("click", ()=>sheet.classList.add("open"));
-  document.getElementById("co-a4").classList.remove("dim");
-  sheet.classList.add("open");
-  scrollEnd();
-}
+/* ---------- P2 ---------- */
+const P2 = () => [
+  {sys:"🔒 Messages and calls are end-to-end encrypted."},
+  {date:"SAT, 22 AUG"},
+  {inm:{id:"C1", time:"09:40",
+    body:'Your August order is still open until <b>Wednesday 26 August</b>. This route carries medicine only - no groceries - but the everyday kind is covered: flu syrup, painkillers, vitamins.\n\nFrom what you usually buy:\n<b>1.</b> Multivitamins (your mother\'s) - ON SPECIAL <span class="amt">R49.90</span>\n<b>2.</b> Panado, 24 tablets - <span class="amt">R24.50</span>\n\nReply with a number, or type what you need.'}},
+  {tap:{send:"1", time:"09:42"}},
+  {inm:{id:"C3", time:"09:42",
+    body:'Added: multivitamins, <span class="amt">R49.90</span>.\nNew total to pay: <b><span class="amt">R150.50</span></b>.'}},
+  {tap:{send:"cough mixture", time:"09:44"}},
+  {inm:{id:"C2", time:"09:44", body:'For a child or an adult?'}},
+  {qr:{buttons:[
+    {label:"For an adult", time:"09:45", main:true},
+    {label:"For a child", time:"09:45", steps:[
+      {inm:{time:"09:45", body:'For a child we ask their age and weight first - a pharmacist checks every children\'s medicine before it\'s added.'}}
+    ]}
+  ]}},
+  {inm:{time:"09:45",
+    body:'Three options, all in stock:\n<b>1.</b> Cough syrup (generic), 100 ml - <span class="amt">R38.50</span>\n<b>2.</b> Benylin wet cough, 100 ml - <span class="amt">R62.95</span>\n<b>3.</b> ACC 200 sachets, 10 - <span class="amt">R89.00</span>\n\nReply with a number.'}},
+  {tap:{send:"1", time:"09:46"}},
+  {inm:{id:"C4", time:"09:46",
+    body:'Added: cough syrup, <span class="amt">R38.50</span>.\n\nYour total at the Capitec counter is now <b><span class="amt">R189.00</span></b>. Everything rides in the same locker on Friday - nothing else to arrange.'}}
+];
 
-function branchPause(){
-  thread.appendChild(outMsg("Pause this month","08:14"));
-  thread.appendChild(inMsg(null,
-    'Done - August is paused for your tablets. Your mother\'s medicine still arrives as planned. We\'ll be back to normal in September; reply RESUME any time to restart sooner.',
-    "08:14"));
-  scrollEnd();
-}
+/* ---------- P3 ---------- */
+const P3 = () => [
+  {sys:"🔒 Messages and calls are end-to-end encrypted."},
+  {date:"WED, 26 AUG"},
+  {inm:{id:"D2", time:"11:05",
+    body:'<b>Picked and checked ✓</b>\n\nYour family\'s order was checked today, all of it together:\n• your tablets against your mother\'s medicine and everything else you both take\n• allergies and doses\n• the scripts themselves\n\nSigned off by pharmacist <b>Nomsa Dlamini</b>.'}},
+  {date:"THU, 27 AUG"},
+  {inm:{id:"D3", time:"15:48",
+    body:'<b>Packed and sealed 📦</b>\n\nOne parcel: your tablets, your mother\'s medicine, the multivitamins and the cough syrup - waiting for the courier run to the locker.\n\nYour locker PIN: <b><span class="amt">4729</span></b>\nKeep it - it opens the locker on Friday, after you\'ve paid.'}}
+];
 
-function branchPerson(){
-  if(branchDone.B) return;
-  branchDone.B = true;
-  thread.appendChild(outMsg("Talk to a person","08:15"));
-  thread.appendChild(inMsg("A5",
-    'Of course. Reply <b>CALL ME</b> and a pharmacy team member will phone you back today, in your language, free of charge.\n\nOr send a voice note - we listen to those too.',
-    "08:15"));
-  const hint = el('<button class="sendhint" id="sendcall">tap to send: CALL ME</button>');
-  thread.appendChild(hint);
-  hint.addEventListener("click", ()=>{
-    hint.remove();
-    thread.appendChild(outMsg("CALL ME","08:16"));
-    thread.appendChild(inMsg(null,
-      'Thank you Sipho. Someone will phone you on this number <b>before 17:00 today</b>.\n\nYou don\'t need to keep data on - the call comes to you.',
-      "08:16"));
-    scrollEnd();
+/* ---------- P4 ---------- */
+const P4 = () => [
+  {sys:"🔒 Messages and calls are end-to-end encrypted."},
+  {date:"FRI, 28 AUG · PAYDAY"},
+  {inm:{id:"E1", time:"06:45",
+    body:'Payday - and your parcel is in the locker at <b>Capitec, taxi rank</b>. Ready now.\n\nTo collect:\n<b>1.</b> Pay <b><span class="amt">R189.00</span></b> at the counter - cash or instant EFT\n<b>2.</b> Enter PIN <b><span class="amt">4729</span></b> at the locker\n\nThe same amount you saw before. Nothing has changed.'}},
+  {sys:"At the bank: Sipho pays R189.00 at the counter and the locker opens on his PIN. Nothing happens in the chat - and nothing needs to. (E2)"},
+  {inm:{id:"E3", time:"10:32",
+    body:'In your parcel:\n• Amlodipine, 28 tablets (yours)\n• Your mother\'s CCMDD parcel\n• Multivitamins\n• Cough syrup\n\nCheck it now, at the locker - before the taxi. If anything is missing or wrong, send a photo here and a person will phone you straight away, in your language.'}},
+  {photoTap:{time:"10:34"}},
+  {undim:"co-p4-e3"},
+  {inm:{time:"10:34",
+    body:'Thank you - a pharmacy team member is phoning you now, while you\'re still there.'}}
+];
+
+/* ---------- P5 ---------- */
+const P5 = () => [
+  {sys:"🔒 Messages and calls are end-to-end encrypted."},
+  {date:"SAT, 29 AUG"},
+  {list:{id:"F1", time:"09:15", btn:"My medicines",
+    body:'Your family\'s medicine, whenever you want to look something up:',
+    sheet:{title:"Your family's medicine cabinet", rows:[
+      {label:"Amlodipine - your tablets", walk:true, send:"Amlodipine - your tablets", echoTime:"09:15"},
+      {label:"Your mother's chronic parcel"},{label:"Cough syrup"},{label:"Multivitamins"}
+    ]}}},
+  {inm:{id:"F2", time:"09:15",
+    body:'<b>Amlodipine 5 mg</b> - your blood-pressure tablets.\n• One tablet every morning\n• With or without food\n• Keep taking them even when you feel fine - that\'s the medicine working\n\nIf reading isn\'t enough, just ask here - a pharmacist reads this thread. Or send a voice note; we listen to those too.'}},
+  {inm:{id:"F4", time:"09:16",
+    body:'Reminders: yours comes here at 20:00. Your mother\'s go to her phone - a short voice note in her language, timed to her mornings. Her printed day-by-day sheet is in the parcel, for the fridge.\n\nReply <b>STOP</b> to any reminder and it stops.'}},
+  {date:"THAT EVENING"},
+  {inm:{id:"F3", time:"20:00", body:'Time for your tablet, Sipho.'}},
+  {tap:{send:"STOP", time:"20:02"}},
+  {inm:{time:"20:02",
+    body:'Done - no more daily reminders. Everything else stays exactly the same.'}}
+];
+
+/* ---------- ∥ ---------- */
+const PPAR = () => [
+  {sys:"🔒 Messages and calls are end-to-end encrypted."},
+  {sys:"Scenario - out of stock (another month)"},
+  {inm:{id:"G1", time:"07:58",
+    body:'One of your tablets is out of stock this month. Here is the plan - you choose:\n\n<b>1.</b> The cheaper generic you already prefer - ready on payday, same price\n<b>2.</b> Split the order: your mother\'s medicine ready on payday regardless, yours follows a few days later, same locker\n\nNothing is decided without you.'}},
+  {qr:{anyMain:true, buttons:[
+    {label:"Use the generic", time:"08:03", steps:[
+      {inm:{time:"08:03", body:'Done - the generic will be ready on payday. Same price, same locker.'}}
+    ]},
+    {label:"Split the order", time:"08:03", steps:[
+      {inm:{time:"08:03", body:'Done - your mother\'s parcel is ready on payday; yours follows, and we\'ll message the day it lands - before you travel.'}}
+    ]},
+    {label:"☎ Call me", send:"Call me", time:"08:03", steps:[
+      {inm:{id:"G4", time:"08:03", body:'A person will phone you back before 17:00 today, in your language.'}}
+    ]}
+  ]}},
+  {sys:"Scenario - the locker is down"},
+  {inm:{id:"G2", time:"06:50",
+    body:'Before you travel today: the locker at Capitec is out of order. Your parcel is already at the pickup point nearby - <b>same amount, same PIN</b> - and we\'ll tell you the moment the locker is fixed.\n\nYour taxi fare is never spent on a closed door.'}},
+  {sys:"Scenario - the script runs out"},
+  {inm:{id:"G3", time:"09:20",
+    body:'Your mother\'s script has one repeat left after this month. We\'ve already sent the renewal request to her clinic - you\'ll see it move here, and it costs you nothing to chase.\n\nIf payday comes before the new script is back, we\'ll tell you before you travel - with a plan from the pharmacist, and a person on the phone if you want one.'}}
+];
+
+/* ---------- boot ---------- */
+const PHONES = {
+  p0: makePhone("p0", P0),
+  p1: makePhone("p1", P1),
+  p2: makePhone("p2", P2),
+  p3: makePhone("p3", P3),
+  p4: makePhone("p4", P4),
+  p5: makePhone("p5", P5),
+  ppar: makePhone("ppar", PPAR)
+};
+Object.values(PHONES).forEach(p=>p.reset());
+document.querySelectorAll("[data-reset]").forEach(b=>{
+  b.addEventListener("click", ()=>PHONES[b.dataset.reset].reset());
+});
+document.querySelectorAll("[data-goto]").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    document.getElementById(b.dataset.goto).scrollIntoView({behavior:"smooth", block:"start"});
   });
-  document.getElementById("co-a5").classList.remove("dim");
-  scrollEnd();
-}
-
-document.getElementById("sheetclose").addEventListener("click", ()=>sheet.classList.remove("open"));
-document.getElementById("reset").addEventListener("click", renderSpine);
-renderSpine();
+});
 </script>
 </body>
 </html>
