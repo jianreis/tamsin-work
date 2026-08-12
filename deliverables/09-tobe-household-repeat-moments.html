@@ -190,7 +190,7 @@ details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #09 · SCRIPT RE-IMAGINED - THE HOUSEHOLD REPEAT, IN MOMENTS</span>
-  <span class="gen">generated 2026-07-17 · updated 2026-08-12 (v3.2: P5 reminder agency · v3.3: P0 sync anchors on Zanele's cycle, top-up moves to Nomvula + Grace · v3.4: cash sync declined for payday, journey follows his collection, CCMDD parcel honesty pass) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
+  <span class="gen">generated 2026-07-17 · updated 2026-08-12 (v3.2: P5 reminder agency · v3.3: P0 sync anchors on Zanele's cycle, top-up moves to Nomvula + Grace · v3.4: cash sync declined for payday, journey follows his collection, CCMDD parcel honesty pass · v3.5: whole store open in P2, QR re-timed to delivery morning with how-to + backup PIN, Fulfilment flexibility into P3) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
 </div>
 
 <section class="intro">
@@ -390,7 +390,7 @@ const DATA = {
           {t:"My order stays open",
            x:"The message that told me the medicine is coming also tells me the order is still open: until the day before delivery, anything from the shop side of Dis-Chem can ride along in the same parcel - toiletries, vitamins, the things I used to grab in the aisles. Nothing extra to arrange - the parcel just isn't sealed yet."},
           {t:"I add the household's shop",
-           x:"It suggests from what we usually buy: the vitamin C we get every winter is on special as the cold sets in, so it goes in, along with Lethabo's toothpaste. Each item shows its price as it goes in, on the same bill, in the same parcel - no separate delivery, no separate fee. The 'while we're here' shop still happens - it just happens at my door.",
+           x:"Anything on Dis-Chem's shelves can ride along - I can browse or search the whole store right from the order. It also does the remembering for me: it suggests from what we usually buy, specials flagged - the vitamin C we get every winter is on special as the cold sets in, so it goes in, along with Lethabo's toothpaste. Each item shows its price as it goes in, on the same bill, in the same parcel - no separate delivery, no separate fee. The 'while we're here' shop still happens - it just happens at my door.",
            moment:{line:"While we're here... - without going anywhere", star:false,
              why:'The pharmacy trip always did double duty, and the delivery threatened to quietly undo that. Instead, <span class="why">the trip she no longer makes still does double duty</span>: the household hands the incoming order the rest of the list, the way it hands a list to whoever is already going to the shops. <a href="'+C08+'">The Standing Order</a> concept at work.'}}
         ],
@@ -426,7 +426,9 @@ const DATA = {
            moment:{line:"Every check ran before it left the building", star:false,
              why:'The due diligence is shown, not assumed - and signed by a person who stands behind it. <span class="why">Someone qualified did the worrying, and she can see exactly what they worried about.</span> The question that rides along with medicine - did anyone actually check this? - has an answer with a name on it. <a href="'+C08+'">The Named Check</a>, extended to the whole household.'}},
           {t:"Packed and sealed",
-           x:"The second status: packed and sealed - one box for the whole household, the vitamin C and the toothpaste in there too, waiting for the driver. And the moment it's sealed, the QR code that will unlock the handover at my door arrives with it. From picked to sealed, I've seen every step - without asking once."}
+           x:"The second status: packed and sealed - one box for the whole household, the vitamin C and the toothpaste in there too, waiting for the driver. From picked to sealed, I've seen every step - without asking once."},
+          {t:"Fulfilment flexibility",
+           x:"Even packed, the plan stays mine until the day before it arrives: shift the delivery to another day, pick a different window, or switch to collection at a store or locker if that suits the week better. One reply in the same thread, and the parcel follows the new plan."}
         ],
         cash:[
           {t:"Picked and checked",
@@ -446,7 +448,7 @@ const DATA = {
          src:"sentiment"}
       ],
       behind:{
-        front:["Two statuses per order: picked & checked (itemised check list, named pharmacist) and packed & sealed","Handover credential (QR / locker PIN) issued at the moment of sealing"],
+        front:["Two statuses per order: picked & checked (itemised check list, named pharmacist) and packed & sealed","Locker PIN issued at sealing (cash); delivery QR held back for the morning-of message (insured)","Change rule surfaced in-phase: day, window or channel changeable until the day before delivery"],
         back:["AI co-pilot drafts the household-wide check stack; the pharmacist confirms or overrides","ROWA picks eligible stock; vision verification flags look-alikes before packing","Household adherence pack assembled; shop items packed alongside"],
         reg:"<b>Non-negotiable:</b> a registered pharmacist's clinical sign-off remains the gate - the AI assembles, the human authorises (GPP).",
         caps:[
@@ -465,15 +467,13 @@ const DATA = {
       activities:{
         insured:[
           {t:"The morning message",
-           x:"On delivery morning a message confirms the window is on track: this morning, nine to eleven, as the notice said. It isn't asking me for anything - it's keeping me ahead of the day. I only reply if something has changed on my side."},
+           x:"On delivery morning a message confirms the window is on track: this morning, nine to eleven, as the notice said - and it brings the QR code for the handover, with how it works spelled out: show it to the driver to scan, and there's a backup PIN if the scan won't work. Everything is already paid, so the door is a scan and a handover, nothing more. I only reply if something has changed on my side."},
           {t:"I track it to my door",
-           x:"I can watch the parcel move: packed, dispatched, stops away, here. At the door the driver scans the QR code on my phone - the one I've had since the box was sealed - and only that scan closes the order. \"Delivered\" means in my hands, not left at a gate.",
+           x:"I can watch the parcel move: packed, dispatched, stops away, here. At the door the driver scans the QR code on my phone - the one from this morning's message - and only that scan closes the order. \"Delivered\" means in my hands, not left at a gate.",
            moment:{line:"I could track it from Dis-Chem's door to mine", star:true,
              why:'The loop only closes when the parcel is physically in her hands. <span class="why">Being stood up by a system ends when the system can\'t quietly disappear</span> - the promise has a window, and the window is kept in plain sight. <a href="'+C08+'">Real-Time Transparency</a> again, this time on the road.'}},
           {t:"I check it, with help one tap away",
            x:"The moment the driver leaves, a message lists everything that should be in the box, so I can check it while it's still in front of me. If anything is missing or looks wrong, I snap a photo in the same thread - and a person phones me straight away. Not a bot, not a ticket number: a person who can fix it."},
-          {t:"If the day doesn't suit me",
-           x:"The plan is mine to change until the day before delivery: a different day, a different window, or switch it to collection - one reply."}
         ],
         cash:[
           {t:"The payday reminder",
@@ -498,7 +498,7 @@ const DATA = {
          q:"Waiting is fine - being unsure isn't.", src:"sotf"}
       ],
       behind:{
-        front:["Morning-of window confirmation - informational, reply only to change","Tracking to actual handover; QR at the door / pay-then-PIN at the locker","Post-handover contents list; photo escalation to an immediate human callback","One change rule: day, window or channel changeable until the day before delivery"],
+        front:["Morning-of window confirmation carrying the handover QR, the how-to and a backup PIN","Tracking to actual handover; QR scan at the door / pay-then-PIN at the locker","Post-handover contents list; photo escalation to an immediate human callback"],
         back:["Consolidation hub routes the household parcel; driver proof-of-delivery closes the loop","Locker loaded near home; cash payment at the partner counter releases it","Reroute logic runs BEFORE the customer travels","Handover exceptions route to a person, not a bot queue"],
         reg:"<b>Courier + locker rules:</b> scheduled-medicine delivery must meet licensing and cold-chain requirements; locker release of scheduled medicines needs oversight clarity 🔮.",
         caps:[
