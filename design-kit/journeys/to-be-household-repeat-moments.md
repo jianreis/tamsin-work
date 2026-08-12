@@ -9,7 +9,7 @@ confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, journey/refill, journey/submit, journey/dispense, journey/collect, journey/deliver, journey/adhere, topic/chronic, region/za]
 sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026]
 created: "2026-07-17"
-updated: "2026-07-19"
+updated: "2026-08-12"
 ---
 
 # To-be journey (v3) - the household repeat, in moments
@@ -19,7 +19,11 @@ Deliverable 05 stays untouched as the deep blueprint reference. **The approved
 copy lives in the deliverable's `DATA` object and is mirrored from here - edit
 here first.** Structure v3 (2026-07-19, agreed with Tamsin) replaced the
 phase-story + pulled-out-moment-cards layout with the reference structure
-below; v2's copy is preserved in git history.
+below; v2's copy is preserved in git history. v3.2 (2026-08-12, agreed with
+Tamsin): P5 reminder agency corrected to match the CarerConsent principle
+that *it steps too far only if the carer drives it* - an adult under
+CarerConsent (Grace; Sipho's mother) sets and stops her own reminders; the
+carer's off-switch covers only his or her own and the children's.
 
 ## The phase structure (v3)
 
@@ -131,7 +135,7 @@ governs. Summary of the approved skeleton:
 | P2 Adding to the order | The delivery carries the rest of the list | My order stays open · I add the household's shop (v3.1) | I can add other medicine (medicine incl. OTC only - no general retail; honest constraint) · I add what we need, in the chat (chat-commerce demo: numbered picks, free entry, clarifying question, priced options; v3.1) | "While we're here... - without going anywhere" (insured only; the cash addition agreed to carry no moment) | none in the research - honest note instead |
 | P3 Checked and packed | Certainty it's exactly right, for everyone | Picked and checked (status lists the checks itself, named pharmacist; moment here) · Packed and sealed (QR issued at sealing; v3.1) | Picked and checked (mirrors insured; moment here) · Packed and sealed (locker PIN issued at sealing; v3.1 - P4 opener becomes a payday reminder) | "Every check ran before it left the building" (both) | The short pack, discovered at home (verbatim, complaints) · Errors read as safety threats (sentiment) |
 | P4 In hand | In hand when promised, or told early | The morning message (informational, reply only to change) · I track it to my door ⭐ · I check it, with help one tap away (contents list; photo -> immediate human callback) · If the day doesn't suit me (one rule: changeable until the day before delivery - shared with the P2 additions cutoff) (v3.1) | The payday reminder · I pay, and the locker opens ⭐ (pay at counter, then PIN opens locker) · I check it before I go home (photo -> human callback, in language; locker outage lives in the ∥ band, fallback activity dropped) (v3.1) | "I could track it from Dis-Chem's door to mine" ⭐ (both) | Out for delivery - then nothing (verbatim, complaints) · Nobody picks up (verbatim, sentiment) · Too-precise promises (verbatim, SOTF) |
-| P5 Taking it | Taking it right is the easy part | I unpack (month of per-dose sachets - paid opt-in added to P0 A3; moment) · A question, whenever it comes up (household medicine cabinet + with-service pharmacist) · Reminders on my terms (routed to the dose-holder; children's to the carer) (+ renewal signpost note; v3.1) | Clear labels, and a sheet for the fridge (iconised labels + in-language fridge sheet; adherence without the price tag; moment, why reworked - no sachets on cash) · I ask WhatsApp, not the counter (the cabinet, channel-shaped) · Reminders that stop when told (voice notes for his mother; fridge sheet primary) (v3.1) | "Medication you can't take wrong" (both) | Help flips into harassment (sentiment) · Digital-only instructions worry people (SOTF) |
+| P5 Taking it | Taking it right is the easy part | I unpack (month of per-dose sachets - paid opt-in added to P0 A3; moment) · A question, whenever it comes up (household medicine cabinet + with-service pharmacist) · Reminders on my terms (routed to the dose-holder; children's to the carer; Grace's are hers to set and stop - the carer never drives an adult's reminders, v3.2) (+ renewal signpost note; v3.1) | Clear labels, and a sheet for the fridge (iconised labels + in-language fridge sheet; adherence without the price tag; moment, why reworked - no sachets on cash) · I ask WhatsApp, not the counter (the cabinet, channel-shaped) · Reminders that stop when told (voice notes for his mother; fridge sheet primary; her stop is hers, his is his, v3.2) (v3.1) | "Medication you can't take wrong" (both) | Help flips into harassment (sentiment) · Digital-only instructions worry people (SOTF) |
 | ∥ When something breaks | Things always go wrong; hear it early, make a plan together - never a dead end | My medical aid says no ⭐ · Out of stock · The delivery fails (new scenario: re-deliver tomorrow or collect at a STORE, same QR at the counter) · My script runs out (Script Renew handoff: renewal started weeks early; pharmacist's pending-renewal options deliberately unspecified - reg ⚠️ in open-questions) · A person, before I ask (v3.1) | Out of stock (never "short" - implies a half-supply) · The locker is down · My script runs out (mirrors insured, told before travelling) · A person phones me back (call-me-back, not chat - when things break, a human phones) (v3.1) | "Medical aid said no. Dis-Chem said 'let's make a plan.'" ⭐ (insured only - the cash economy has no medical aid; its recovery paths carry no separate moment) | An exception kills the order (verbatim, complaints) · No fallback, no way through (sentiment) · A generic no one explained (sentiment) · After a failure, they leave (sentiment, R460) |
 
 Concepts referenced inline in the key-moment copy: CarerConsent, Household
