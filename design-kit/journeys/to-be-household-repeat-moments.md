@@ -23,7 +23,12 @@ below; v2's copy is preserved in git history. v3.2 (2026-08-12, agreed with
 Tamsin): P5 reminder agency corrected to match the CarerConsent principle
 that *it steps too far only if the carer drives it* - an adult under
 CarerConsent (Grace; Sipho's mother) sets and stops her own reminders; the
-carer's off-switch covers only his or her own and the children's.
+carer's off-switch covers only his or her own and the children's. v3.3
+(2026-08-12, agreed with Tamsin): P0 insured "One date for everyone" carries
+the Script Sync anchor - the plan knows which medicine can't move; Zanele's
+stays on its cycle (the pharmacist's call, no legal claim made in-journey)
+and the top-up moves to Nomvula + Grace, fixing the earlier copy that
+topped up Zanele herself.
 
 ## The phase structure (v3)
 
@@ -130,7 +135,7 @@ governs. Summary of the approved skeleton:
 
 | Phase | Need (gist of) | Activities (insured) | Activities (cash) | Key moments | Pain points (source) |
 |---|---|---|---|---|---|
-| P0 Signing up (once) | Set up once, on my terms, remembered every month after | I add my household · I add their medicines · One date for everyone (Script Sync made visible: costed first-month top-up fill converges the cycles) · I choose how it reaches us (channel only - time is proposed in each month's notice; incl. the Made-for-Me dose-pack opt-in) · I choose how I pay (incl. the rejection rule: check first or charge-and-continue) · I check it once, and confirm (v3.1) | I start the conversation · I add my household · One date for everyone (both land together on payday) · I choose how it reaches us (locker at Capitec - no Dis-Chem nearby; instruction language per member) · I choose how I pay (cash on collection opens the locker) · I confirm (v3.1) | "I told them once how I want it" (both, on confirm) | You type it again (verbatim, sentiment) · The digital front door is broken (verbatim, complaints) |
+| P0 Signing up (once) | Set up once, on my terms, remembered every month after | I add my household · I add their medicines · One date for everyone (Script Sync made visible: the plan anchors on Zanele's cycle - the pharmacist's call - and the costed first-month top-up moves to Nomvula + Grace, v3.3) · I choose how it reaches us (channel only - time is proposed in each month's notice; incl. the Made-for-Me dose-pack opt-in) · I choose how I pay (incl. the rejection rule: check first or charge-and-continue) · I check it once, and confirm (v3.1) | I start the conversation · I add my household · One date for everyone (both land together on payday) · I choose how it reaches us (locker at Capitec - no Dis-Chem nearby; instruction language per member) · I choose how I pay (cash on collection opens the locker) · I confirm (v3.1) | "I told them once how I want it" (both, on confirm) | You type it again (verbatim, sentiment) · The digital front door is broken (verbatim, complaints) |
 | P1 Repeats are due | Everyone's medicine keeps flowing on its own; complete clarity on the cost | The message arrives · I see the costs, clearly broken down · It keeps going - unless I say otherwise (first-person register, v3.1) | The message arrives · I see the price before I travel · It keeps going - unless I say otherwise, with the person-in-my-language fallback on its own line (v3.1) | "My medicine ordered itself" ⭐ · "The only thing I ever bought blind - not anymore" ⭐ (both economies) | The re-order dance (verbatim, complaints) · Money is a mystery until the end (verbatim, complaints) |
 | P2 Adding to the order | The delivery carries the rest of the list | My order stays open · I add the household's shop (v3.1) | I can add other medicine (medicine incl. OTC only - no general retail; honest constraint) · I add what we need, in the chat (chat-commerce demo: numbered picks, free entry, clarifying question, priced options; v3.1) | "While we're here... - without going anywhere" (insured only; the cash addition agreed to carry no moment) | none in the research - honest note instead |
 | P3 Checked and packed | Certainty it's exactly right, for everyone | Picked and checked (status lists the checks itself, named pharmacist; moment here) · Packed and sealed (QR issued at sealing; v3.1) | Picked and checked (mirrors insured; moment here) · Packed and sealed (locker PIN issued at sealing; v3.1 - P4 opener becomes a payday reminder) | "Every check ran before it left the building" (both) | The short pack, discovered at home (verbatim, complaints) · Errors read as safety threats (sentiment) |
