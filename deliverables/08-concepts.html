@@ -185,7 +185,7 @@ h1,h2,h3,h4{margin:0}
 
   <div class="ribbon">
     <span>&#9888; Concept for review - not an official Dis-Chem artefact</span>
-    <span class="gen">generated 2026-07-01 · updated 2026-07-26 (concepts 15-16: made-for-me medicine, the pharmacist who stays; concept 06 archived) · from the Bigly ground-truth vault</span>
+    <span class="gen">generated 2026-07-01 · updated 2026-08-12 (concept 02: cabinet holds medicine from anywhere, privacy mode, digital pillbox · concept 04: graded helper visibility + shared adherence · concept 05: the sync anchor + when sync is offered · concept 15: intro reworked around the kitchen-counter anchor · concept 14: the remembering line made plain) · from the Bigly ground-truth vault</span>
   </div>
 
   <section class="intro">
@@ -286,7 +286,10 @@ const CONCEPTS = [
       '<b>What each medicine is for</b>, in plain words, not just its name - so you know what everyone is taking and why.',
       '<b>A picture of each pill</b>, so it is recognisable at a glance.',
       '<b>Covered or not covered</b>, shown against each medicine, so there is no surprise about what the scheme pays.',
-      '<b>What is due, and when</b>, per person, so a refill is never missed.'
+      '<b>What is due, and when</b>, per person, so a refill is never missed.',
+      '<b>The whole cabinet, not just the Dis-Chem shelf</b> - scan the barcode or snap a pic to add medicine from anywhere in seconds, understand it in plain words, and reorder it here when it runs out.',
+      '<b>Some medicine is nobody else\'s business</b> - mark it private and you choose exactly who sees it; to everyone else it simply isn\'t there, in any view, reminder or message. The pharmacist\'s safety check is the one place nothing hides, so the household stays private and safe at once.',
+      '<b>A digital pillbox, if you want one</b> - a reminder when a dose is due, a tick when you\'ve taken it, and your own picture of how the week is going. Yours to use, ignore - or share.'
     ],
     pillars:["U6","U5","S4","U7"]
   },
@@ -314,6 +317,8 @@ const CONCEPTS = [
     features:[
       '<b>Granted once</b> by the person being cared for, recorded against their own profile.',
       '<b>They set what it covers</b> - ordering, paying, collecting - and can narrow or withdraw it at any time.',
+      '<b>They see only what you share</b> - whoever collects for you can be shown just a parcel name and a code, with your medicines, history and conditions staying yours alone.',
+      '<b>Let them worry less, on your terms</b> - you mark your doses taken in your own time; if you grant it, your carer sees how the week went, not a running commentary. Peace of mind for them, no watchtower over you.',
       '<b>You stop re-explaining</b> - from then on you act on their behalf without re-proving your authority.',
       '<b>Every action is logged</b>, so it is always clear who did what and when.',
       '<b>The pharmacist still checks</b> each person\'s prescription, so safety is never traded for convenience.'
@@ -329,6 +334,8 @@ const CONCEPTS = [
     features:[
       '<b>One shared refill date</b> - the pharmacy looks across every repeat in the family and lines them up.',
       '<b>A short top-up fill</b> brings any out-of-step medicine into line, then everything renews together from the next round.',
+      '<b>It knows what can\'t move</b> - a contraceptive\'s fixed 28-day cycle, a scheduled medicine the law only lets a pharmacy fill month by month, a clinic programme that sets its own collection dates. The plan anchors on the medicine that must stay put, shifts only what can, and a pharmacist signs it off - so lining up never bends the medicine.',
+      '<b>A new medicine earns its place first</b> - a first script runs on its own for a cycle or two while the dose settles; once it\'s steady, one message offers the family date. Renewals of what you already take fall in step on their own.',
       '<b>One order on the date</b> - the whole family\'s medicine is prepared together.',
       '<b>One reminder, one tap</b> a few days before to confirm.',
       '<b>One handover</b> - collect or receive everything at once.'
@@ -469,7 +476,7 @@ const CONCEPTS = [
     featuresLabel:'What "while you\'re there" covers',
     features:[
       '<b>It opens with every repeat</b> - each cycle\'s order stays open until a clear cutoff, so there is always a window and never a special trip.',
-      '<b>It remembers what you buy</b> - specials on things from your own history surface when the window opens, so the season\'s needs find you.',
+      '<b>It remembers what you buy</b> - your usual shopping, your seasonal buys, and what\'s on special across both, offered when the window opens - so the list half-writes itself.',
       '<b>Everything rides one parcel</b> - added items travel with the medicine, so the week\'s small logistics collapse into a single handover.',
       '<b>Priced as it goes in</b> - every added item shows its price immediately, so the total is never a surprise.',
       '<b>It knows its limits</b> - locker and bank collections carry medication only, and it says so upfront, so the promise stays honest.',
@@ -482,7 +489,7 @@ const CONCEPTS = [
     icon:"madefor",
     title:"Made-for-Me Medicine",
     tagline:"Made to be taken right.",
-    intro:'A meal-kit dinner is hard to ruin: every ingredient arrives measured, every step pictured, nothing left to weigh or guess. This is your medicine, made that way. <span class="why">Made-for-Me Medicine builds the taking-it-right into the medicine itself - your doses, your language, your eyes - so there is nothing left to work out and no easy way to get it wrong.</span> The purest version is a month of dose sachets you open and take; the everyday version is free with every script: clear iconised labels, plain instructions in your own language, a simple when-and-how guide. Whichever you get, the wrong way has been designed out before the medicine reaches you.',
+    intro:'Every house that lives on chronic medicine invents some version of the same system: the cluster of pill bottles on the kitchen counter, sticky notes or spreadsheets on the fridge tracking which pill goes when, a large pill box sorted each week, a moon or sun drawn in marker on a pill-bottle cap, because the label was made for a pharmacist and not for the grandmother. That homemade system is the household finishing the pharmacy\'s job. <span class="why">Made-for-Me Medicine finishes the job before the medicine arrives.</span> The purest version is a month of daily dose sachets you open and take; the everyday version is free with every script: clear iconised labels, plain instructions in your own language, a simple when-and-how guide. Whichever you get, the wrong way has been designed out before the medicine reaches you.',
     featuresLabel:"What's in the kit",
     features:[
       '<b>Dose sachets, sorted by day and time</b> - each dose pre-grouped and labelled, open and take, so there is nothing to sort and nothing to mix up. An optional extra, done for you.',
