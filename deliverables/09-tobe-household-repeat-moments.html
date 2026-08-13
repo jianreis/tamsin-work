@@ -190,7 +190,7 @@ details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #09 · SCRIPT RE-IMAGINED - THE HOUSEHOLD REPEAT, IN MOMENTS</span>
-  <span class="gen">generated 2026-07-17 · updated 2026-08-12 (v3.2: P5 reminder agency · v3.3: P0 sync anchors on Zanele's cycle, top-up moves to Nomvula + Grace · v3.4: cash sync declined for payday, journey follows his collection, CCMDD parcel honesty pass · v3.5: whole store open in P2, QR re-timed to delivery morning with how-to + backup PIN, Fulfilment flexibility into P3) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
+  <span class="gen">generated 2026-07-17 · updated 2026-08-12 (v3.2: P5 reminder agency · v3.3: P0 sync anchors on Zanele's cycle, top-up moves to Nomvula + Grace · v3.4: cash sync declined for payday, journey follows his collection, CCMDD parcel honesty pass · v3.5: whole store open in P2, QR re-timed to delivery morning with how-to + backup PIN, Fulfilment flexibility into P3 · v3.6: cash origin story, counter dignity in the P1 moment, PIN re-timed to locker arrival with pay-then-PIN activation, cash Fulfilment flexibility, P4 locker moment strengthened) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
 </div>
 
 <section class="intro">
@@ -294,13 +294,13 @@ const DATA = {
         ],
         cash:[
           {t:"I start the conversation",
-           x:"I don't have the time or the money for extra trips - medicine has to fit into the trip I already make, to the bank after payday. A repeat service that has our medicine waiting where I already go, every month, is exactly that - so I sign up for Dis-Chem's repeat service, on WhatsApp. The whole thing happens in the chat, in my own time: no app to download, no forms to fill in, no standing in a queue in store. I start by selecting my language."},
+           x:"The last time I collected our tablets in store, a WhatsApp arrived afterwards: the same medicine, every month, without the queue - reply if you'd like to know more. I ask about it at the counter on my next visit, and the pharmacist tells me I can sign up right there in the chat. So I do, in my own time: no app to download, no forms to fill in, no standing in a queue. I start by selecting my language."},
           {t:"I add my household",
            x:"I say it's for me and my mother - she's already given her consent for me to manage her medicine, and this service falls under it. The chat shows the repeat medicines from each of our profiles that can join - my blood-pressure tablets, her chronic medicine - and I select them. Two people's medicine just became one thing to manage."},
           {t:"Two dates, one memory",
            x:"My tablets run out at one time, my mother's at another - two trips, in today's world. The chat offers to line us up, and it's straight with me about the one way that can work: her medicine comes from the clinic's programme, on the programme's date, and that date can't move - so the only sync is mine moving to hers. Hers lands in the week before payday. I say no. I keep my tablets on payday, when I know the money is there; hers is free to collect, so her stop needs no money at all. The chat keeps both dates for me instead - it reminds me of each, and neither is mine to remember anymore."},
           {t:"I choose how it reaches us",
-           x:"The chat asks how I want it: delivered, or ready to collect at a store or a locker. There's no Dis-Chem near where I live, but there is a Capitec branch that works with them - so I choose collection from the locker at the Capitec branch by the taxi rank: near home, no street address needed. Then I choose the language each of us gets our medicine instructions in - my mother's in hers."},
+           x:"The chat asks how I want it: delivered, or ready to collect at a store or a locker. I don't have the time or the money for extra trips - medicine has to fit into the trip I already make, to the bank after payday. There's no Dis-Chem near where I live, but there is a Capitec branch that works with them - so I choose the locker at the Capitec branch by the taxi rank: where I already go, near home, no street address needed. Then I choose the language each of us gets our medicine instructions in - my mother's in hers."},
           {t:"I choose how I pay",
            x:"Cash, at the bank counter, when I collect - paying is what opens the locker. And cheaper generics by default, so the price stays one I can plan around. The service fits how I live, not the other way around."},
           {t:"I confirm",
@@ -355,7 +355,7 @@ const DATA = {
           {t:"I see the price before I travel",
            x:"I can see the price in rand, clearly broken down: my tablets, the dispensing fee, the total I'll pay at the counter. I know whether the trip is affordable before I spend a cent on taxi fare. Nothing is waiting to surprise me at the till.",
            moment:{line:"The only thing I ever bought blind - not anymore", star:true,
-             why:'He knows whether the trip is affordable <span class="why">before he decides to travel</span> - not at the till, after the taxi fare is already spent. <a href="'+C08+'">Real-Time Transparency</a>, for the majority who pay cash.'}},
+             why:'He knows whether the trip is affordable <span class="why">before he decides to travel</span> - not at the counter, with the taxi fare already spent and a queue behind him watching him find out the money isn\'t enough. That walk away from the till is an indignity this message deletes. <a href="'+C08+'">Real-Time Transparency</a>, for the majority who pay cash.'}},
           {t:"It keeps going - unless I say otherwise",
            x:"Most months I send nothing at all: it's the same medicine, ready at the same time each month, and it keeps itself going - it doesn't stop if I don't reply. But if payday moves, or something doesn't look right, or I want to change or cancel anything, one reply in the same thread does it.\n\nAnd if I want a person, a person answers - in my language."}
         ]
@@ -436,7 +436,9 @@ const DATA = {
            moment:{line:"Every check ran before it left the building", star:false,
              why:'The same checks, the same standard, the same named signature. <span class="why">How he pays has no bearing on how carefully his medicine is handled</span> - and for the first time, he can see that. <a href="'+C08+'">The Named Check</a>, identical on the cash rail.'}},
           {t:"Packed and sealed",
-           x:"The next message: packed and sealed, waiting for the courier run to the locker - and with it, the PIN that will open the locker on payday. The cough mixture I added is in the same parcel. From the shelf to the locker, nothing happens without me knowing."}
+           x:"The next message: packed and sealed, waiting for the courier run to the locker. The cough mixture I added is in the same parcel. From the shelf to the locker, nothing happens without me knowing."},
+          {t:"Fulfilment flexibility",
+           x:"Until the day before it's due, the plan bends without a phone call: shift the date if payday moves, switch to a store or a different locker, or ask what delivery would cost, priced in the chat before I choose. One reply, and the parcel follows the new plan."}
         ]
       },
       pains:[
@@ -448,7 +450,7 @@ const DATA = {
          src:"sentiment"}
       ],
       behind:{
-        front:["Two statuses per order: picked & checked (itemised check list, named pharmacist) and packed & sealed","Locker PIN issued at sealing (cash); delivery QR held back for the morning-of message (insured)","Change rule surfaced in-phase: day, window or channel changeable until the day before delivery"],
+        front:["Two statuses per order: picked & checked (itemised check list, named pharmacist) and packed & sealed","Handover credentials held back for arrival: delivery QR with the morning-of message (insured); locker PIN when the parcel lands in the locker (cash)","Change rule surfaced in-phase: day, window or channel changeable until the day before delivery"],
         back:["AI co-pilot drafts the household-wide check stack; the pharmacist confirms or overrides","ROWA picks eligible stock; vision verification flags look-alikes before packing","Household adherence pack assembled; shop items packed alongside"],
         reg:"<b>Non-negotiable:</b> a registered pharmacist's clinical sign-off remains the gate - the AI assembles, the human authorises (GPP).",
         caps:[
@@ -476,12 +478,12 @@ const DATA = {
            x:"The moment the driver leaves, a message lists everything that should be in the box, so I can check it while it's still in front of me. If anything is missing or looks wrong, I snap a photo in the same thread - and a person phones me straight away. Not a bot, not a ticket number: a person who can fix it."},
         ],
         cash:[
-          {t:"The payday reminder",
-           x:"On payday a reminder arrives: the parcel is in the locker, ready - with the PIN I've had since it was sealed, and the exact amount to pay. Everything I need for the trip is in my hand before I leave home."},
+          {t:"The parcel is in the locker",
+           x:"The message comes the moment the parcel is actually in the locker, ready for payday - with my PIN and how the pickup works: pay the exact amount at the Capitec counter first, then enter the PIN at the locker. The amount is in the same message, the same number I've been planning around. Everything I need for the trip is in my hand before I leave home."},
           {t:"I pay, and the locker opens",
-           x:"At the Capitec counter I pay the amount from the message - the same number I saw before travelling. Then I enter my PIN at the locker, it opens, and the parcel is mine. One stop, a plain parcel, no address needed.",
+           x:"At the Capitec counter I pay the amount from the message - the same number I saw before travelling. Then I enter my PIN at the locker - paying is what switched it on - it opens, and the parcel is mine. One stop, a plain parcel, no address needed.",
            moment:{line:"I could track it from Dis-Chem's door to mine", star:true,
-             why:'The same certainty, differently shaped: <span class="why">payment and collection in one visit, near home, with no address required</span> - and if the locker is ever down, he knows before he travels, not after.'}},
+             why:'He watched the parcel move from the dispensary shelf to the locker, so <span class="why">he travels knowing it is there - never on a hope that costs taxi fare</span>. Payment and collection in one visit, near home, no address required - and if the locker is ever down, he knows before he leaves home, not after.'}},
           {t:"I check it before I go home",
            x:"Right there, a message lists everything that should be in the parcel - so I check it at the locker, not at home after the taxi. If something is missing or wrong, I snap a photo in the chat and a person phones me straight away, in my language, while I'm still standing there."}
         ]
@@ -498,7 +500,7 @@ const DATA = {
          q:"Waiting is fine - being unsure isn't.", src:"sotf"}
       ],
       behind:{
-        front:["Morning-of window confirmation carrying the handover QR, the how-to and a backup PIN","Tracking to actual handover; QR scan at the door / pay-then-PIN at the locker","Post-handover contents list; photo escalation to an immediate human callback"],
+        front:["Morning-of window confirmation carrying the handover QR, the how-to and a backup PIN (insured)","In-locker message with the PIN and the retrieval steps; counter payment activates the PIN (cash)","Tracking to actual handover; QR scan at the door / pay-then-PIN at the locker","Post-handover contents list; photo escalation to an immediate human callback"],
         back:["Consolidation hub routes the household parcel; driver proof-of-delivery closes the loop","Locker loaded near home; cash payment at the partner counter releases it","Reroute logic runs BEFORE the customer travels","Handover exceptions route to a person, not a bot queue"],
         reg:"<b>Courier + locker rules:</b> scheduled-medicine delivery must meet licensing and cold-chain requirements; locker release of scheduled medicines needs oversight clarity 🔮.",
         caps:[
