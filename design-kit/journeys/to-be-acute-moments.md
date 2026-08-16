@@ -102,13 +102,13 @@ machinery stays behind the line in P6 (🔮 where applicable).
 | # | Phase | Title (memory line) | ⭐ | Economies | Concept(s) inline |
 |---|---|---|---|---|---|
 | M1 | P1 | "My pharmacist was busy before I'd even left the doctor's" | ⭐ | insured only | The Pharmacy in the Room |
-| M2 | P1 | "I knew the price before I left the clinic gate" | ⭐ | cash only | Snap-a-Script |
+| M2 | P1 | "I knew the price before I left the clinic gate" | ⭐ | cash only | Real-Time Transparency (was Snap-a-Script, archived 2026-08-16) |
 | M3 | P3 | "Every check ran before it left the building" | | both | The Named Check |
 | M4a | P4 | "Saw the doc. Went straight home." | ⭐ | insured | The 30/60 Fill |
 | M4b | P4 | "The counter was expecting me" | ⭐ | cash | The 30/60 Fill |
+| M4c | P4 | "In and out, and I never spoke to anyone" | | insured, COLLECTED route | Express Collect (+ The 30/60 Fill) |
 | M5 | P5 | "Medication you can't take wrong" | | both | Made-for-Me Medicine |
 | M6 | P5 | "The pharmacy didn't disappear after the handover" | ⭐ | both | The Pharmacist Who Stays |
-| M4c | P4 | "In and out, and I never spoke to anyone" | | insured, COLLECTED route | The 30/60 Fill (express-collect concept pending) |
 | M7 | P6 | "They noticed it kept coming back - before I did" | | insured only | The Pharmacy That Notices |
 
 (M6-cash absorbs the escalation, 2026-07-26: on the cash side the day-3
@@ -124,11 +124,22 @@ moment that already happened.)
 - P1 carries **both stars, symmetrically**: each economy's price-certainty
   moment of truth, delivered the way its reality allows (Aisha's in the
   chair, Thabo's at the clinic gate). P2 carries **no moments at all**.
+- **The Snap-a-Script concept was archived 2026-08-16** (agreed with Tamsin):
+  photographing a script and sending it already exists in the Dis-Chem app, so it
+  described a submission channel rather than a big move. The idea worth promising
+  was the guarantee that a fast answer is never a wrong one, which moved to
+  **Real-Time Transparency** as the read-back plus Tamsin's caveat - transparency
+  is not "you always get an instant answer" but "you always know where you stand,
+  immediately", so an unreadable script expresses the promise rather than
+  excepting it. M2 therefore cites Real-Time Transparency, which fits the moment
+  better anyway: Thabo's memory is the price arriving before he travelled, and his
+  activity already shows the script being read back to him.
 - **The E-Script Token concept was archived 2026-08-16** (agreed with Tamsin):
   it described infrastructure, not an experience - what the reader ever watches
   is a collection code. Its promises moved to The Pharmacy in the Room
   (received ✓; one record that cannot be lost, altered or filled twice), The
-  30/60 Fill (send someone you trust) and Snap-a-Script (any phone). M4b
+  30/60 Fill (send someone you trust) and Snap-a-Script (any phone - itself
+  since archived, see below). M4b
   therefore cites The 30/60 Fill alone; the registry stays behind the line
   as a capability chip, which is where it always belonged.
 - "Every check ran before it left the building" and "Medication you can't
@@ -351,7 +362,7 @@ walk away, in front of everyone, if it's too much. This time the number came
 to him, standing at the clinic, before anything was spent. [why] He knows
 the price - and that he can afford it - before his son takes another step.
 [/why] Nobody made him ask; the price was simply offered, with the cheaper
-generic presented as the smart choice it is. That is Snap-a-Script (inline
+generic presented as the smart choice it is. That is Real-Time Transparency (inline
 link) meeting him exactly where he stands - one photo, on the phone he
 already has.
 
