@@ -34,3 +34,4 @@ synthesise and point rather than duplicate domain detail. Each ends with
 ### Commercial & legal
 - [[wiki/concepts/identity-and-consent|Identity & consent]] — verifying the patient and lawful consent for health data (POPIA), incl. proxy/caregiver authority.
 - [[wiki/concepts/price-transparency|Price transparency]] — SEP means no price competition on the medicine; compete on service and show cost (SEP + dispensing fee + co-pay) before commit.
+- [[wiki/concepts/remote-collection-points|Remote collection points]] — collecting away from a pharmacy: the access gap, the SAPC conflict, fail-closed release, and why cold chain stays off the rail.

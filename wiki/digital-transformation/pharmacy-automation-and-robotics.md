@@ -92,6 +92,35 @@ medication** (predictable, high-volume, courier/locker-delivered), in-store
 contactless collection - leaving in-store pharmacists for acute scripts and
 counselling.
 
+## Remote and automated dispensing units in SA regulation and practice
+
+Researched 2026-08-16; synthesis in [[wiki/concepts/remote-collection-points]].
+
+- **SA pharmacy law already carries a pattern for a dispensing machine remote
+  from a counter.** SAPC's minimum standards include a **remote automated
+  dispensing unit** rule - but it is written for **institutional public
+  pharmacy**, not retail community pharmacy [[src-coldchain-sapc-minimum-standards]].
+  A retail locker rail either fits that standard, fits the mobile-unit standard,
+  or lands in a gap needing Council engagement.
+- **The published ADU conditions are restrictive on who may receive.** The unit
+  delivers scheduled medicines **to the pharmacist**, with access limited to
+  pharmacist, intern and assistant - the patient is not listed
+  [[src-reg-sapc-automated-dispensing-unit-application]].
+- **Right ePharmacy Collect&Go** is the instructive local deployment: lockers with
+  **built-in air conditioning and remote temperature monitoring**, requiring mains
+  power but no data connectivity, **335,544 prescriptions in two years across 39
+  Gauteng sites**, supporting CCMDD - which excludes insulin
+  [[src-coldchain-rightepharmacy-collectandgo]].
+- **The same operator's medication ATM kept a live pharmacist at handover by
+  audio-video link** [[src-reg-pharmacy-dispensing-unit-telepharmacy]]. SA's
+  showcase automation chose presence-by-video over absence, which is the strongest
+  available signal about what Council would accept.
+- **Refrigerated lockers are a real product category** - 2-8°C compartments
+  alongside ambient, roughly EUR 8,000-18,000 per unit - and US hospitals dispense
+  refrigerated medicines through will-call lockers, though always on-site, on
+  hospital power, with a pharmacist metres away
+  [[src-coldchain-refrigerated-locker-vendors]] [[src-coldchain-us-hospital-locker-fridge]].
+
 ## Design implications
 
 - **Split the flow by predictability.** Route chronic/repeat scripts to a
@@ -115,6 +144,9 @@ counselling.
   regulated dispensing fee? (Modelling gap - cross-link to `medical-schemes`.)
 - ⚠️ UNVERIFIED: Real-world (not lab) accuracy of vision verification on the SA
   product range, including local generics and packaging variants.
+- **Partly answered 2026-08-16** (see the section above and
+  [[wiki/concepts/remote-collection-points]]): the governing instruments conflict
+  and the question needs an SAPC determination. Original framing retained below.
 - ⚠️ Are pharmacist-supervised smart lockers compliant with SAPC hand-over /
   counselling requirements without a pharmacist present? 🔮 may require-reform or
   a telepharmacy counselling link.

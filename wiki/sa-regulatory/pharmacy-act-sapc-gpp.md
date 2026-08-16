@@ -58,6 +58,43 @@ requirement as a valid regulation of the profession
 [[src-reg-affordable-medicines-concourt-2006]]. This is the legal basis for keeping
 **prescribing and dispensing functionally separate** unless a licence bridges them.
 
+## Handover away from the pharmacy - the unresolved conflict
+
+Researched 2026-08-16 for [[wiki/concepts/remote-collection-points]]. **No SA
+provision found addresses handover at a remote collection point in either
+direction** - none uses "collection point", "locker" or "pick-up point". The
+question turns on **Medicines Act s22A(5)**, which restricts the *sale* of
+scheduled substances to a pharmacist or assistant under personal supervision, and
+on where the sale is deemed to conclude [[src-reg-handover-medicines-act-s22a-sale]].
+Nothing found resolves it.
+
+Two Council instruments point opposite ways:
+
+- **Permissive:** the **GPP mail and courier standard** contemplates supply
+  "to a patient or to a person who receives medicine on behalf of the patient",
+  conditioned only on protective packaging, delay detection, a report-back system
+  and a PIL - **no pharmacist presence and no counselling at receipt**. GPP
+  separately contemplates a locked, unattended prescription receiving box
+  [[src-reg-gpp-courier-mail-delivery-standard]].
+- **Restrictive:** the published **automated dispensing unit conditions** specify
+  the unit delivers scheduled medicines **to the pharmacist**, access limited to
+  pharmacist, intern and assistant - **the patient is not listed**
+  [[src-reg-sapc-automated-dispensing-unit-application]].
+
+Both are Council instruments, so the conflict reads as **requiring an SAPC
+determination rather than statutory reform**, and Council has a demonstrated route
+- minimum standards added to GPP by board notice
+[[src-reg-sapc-unit-dose-dispensing-bn99]]. ⚠️ The UK needed **new legislation**
+for the same question [[src-reg-uk-supervision-order-2025]], so the reform risk is
+real. ⚠️ Rule numbers and wording are search-extracted, not read from the primary
+PDFs; confirm before citing.
+
+**On counselling:** GPP requires provision of information to ensure optimum use of
+medicine but **specifies no channel**, no synchronicity and no co-location with
+handover [[src-reg-gpp-dispensing-phases-counselling]]. Remote counselling by a
+named pharmacist therefore over-delivers against the courier standard, which
+substitutes a leaflet.
+
 ## Design implications / constraints
 - **A pharmacist must remain in the loop for dispensing.** An e-script can be
   generated and routed digitally, but the *dispensing act* and the *clinical check
