@@ -1103,6 +1103,29 @@ M4b moment is the pharmacist walking him through his son's dose, and that stays.
 Renamed through P2-cash, P4-cash and ∥-cash. The after-hours external point is
 unchanged and still 🔮 requires-reform.
 
+**Regulatory stance on express collect (decided with Tamsin 2026-08-16, option 2).**
+The silent, nobody-present unit is **kept as drafted and flagged 🔮
+requires-reform**, rather than redesigned to the lawful-today shape. The rule is
+now known exactly: GPP 1.9.3(b) bars a patient receiving directly from an
+in-pharmacy automated unit, and patient-facing units live under **SAPC rule 1.11
+(RADU)** - which already permits this pattern, but for **chronic** medicine, in
+**institutional public pharmacy**, with a pharmacist performing phases 1 and 3
+"through the audio-visual interface, at the time of dispensing" (1.11.5(a))
+[[src-reg-sapc-rules-s35a-radu-courier]]. The version shown therefore needs two
+extensions of an existing standard - to community pharmacy, and to release
+without a live pharmacist - which is a narrower ask than it appears. The
+lawful-today alternative, recorded here and not built: the same unit, with a
+pharmacist greeting the customer on screen before the door opens. M4c's memory
+line ("In and out, and I never spoke to anyone") is the specific thing the reform
+would unlock.
+
+**A second 🔮 raised the same day, on the delivery route.** SAPC rule 1.9.7(e)
+provides that medicines prescribed for acute conditions "shall not be delivered
+to patients by mail/courier". Aisha's delivered antibiotic and The 30/60 Fill's
+whole delivery half rest on whether a pharmacy's own same-metro service is
+"mail/courier" within that rule - ⚠️ unresolved, punchlist 10(k), and it needs a
+legal read before this journey travels to a regulator.
+
 **Counselling on the express route.** Choosing express collect is choosing not
 to *speak* to a pharmacist, never choosing to go without counselling: the notes
 go to WhatsApp or print at the point of collection, and a named pharmacist stays
