@@ -1,6 +1,6 @@
 ---
 type: source
-title: "CCMDD Standard Operating Procedure and programme documentation — handover of parcels at pick-up points"
+title: "CCMDD Standard Operating Procedure and programme documentation - handover of parcels at pick-up points"
 url: "https://www.health.gov.za/wp-content/uploads/2021/09/ccmdd-SOP-2.pdf"
 author: "National Department of Health (South Africa)"
 publisher: "National Department of Health; CCMDD programme; peer-reviewed evaluations"

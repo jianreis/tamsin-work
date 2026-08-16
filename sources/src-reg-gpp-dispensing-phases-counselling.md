@@ -1,6 +1,6 @@
 ---
 type: source
-title: "SAPC Rules relating to Good Pharmacy Practice — rule 2.7, the three phases of the dispensing process and the provision of information to the patient"
+title: "SAPC Rules relating to Good Pharmacy Practice - rule 2.7, the three phases of the dispensing process and the provision of information to the patient"
 url: "https://pharmcouncil.co.za/media/default/documents/Good_Pharmacy_Practice_(2004)_Consolidated.pdf"
 author: "South African Pharmacy Council"
 publisher: "South African Pharmacy Council / Juta"
@@ -11,7 +11,7 @@ reliability: A
 tags: [domain/regulatory, domain/dispensing, journey/dispense, journey/collect, region/za]
 ---
 
-# GPP rule 2.7 — dispensing has three phases, and the third is counselling
+# GPP rule 2.7 - dispensing has three phases, and the third is counselling
 
 ## Summary
 

@@ -1,6 +1,6 @@
 ---
 type: source
-title: "Collect&Go smart lockers — Right ePharmacy"
+title: "Collect&Go smart lockers - Right ePharmacy"
 url: "https://rightepharmacy.co.za/solutions/collect-and-go-smart-lockers/"
 author: "Right ePharmacy (Right to Care)"
 publisher: "Right ePharmacy; BBD Software; Gauteng Department of Health"

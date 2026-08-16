@@ -1,6 +1,6 @@
 ---
 type: source
-title: "SAPC Rules relating to Good Pharmacy Practice — standard for selling, supplying or delivering medicine by or through the mail or courier"
+title: "SAPC Rules relating to Good Pharmacy Practice - standard for selling, supplying or delivering medicine by or through the mail or courier"
 url: "https://pharmcouncil.co.za/Media/Default/Documents/Rules%20published%20in%20terms%20of%20section%2035A%20of%20the%20Pharmacy%20Act%2053%20of%201974.pdf"
 author: "South African Pharmacy Council"
 publisher: "South African Pharmacy Council / Government Gazette"

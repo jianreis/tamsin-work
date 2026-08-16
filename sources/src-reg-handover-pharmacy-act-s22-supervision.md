@@ -1,6 +1,6 @@
 ---
 type: source
-title: "Pharmacy Act 53 of 1974, section 22 — a pharmacy shall be conducted under the continuous personal supervision of a pharmacist"
+title: "Pharmacy Act 53 of 1974, section 22 - a pharmacy shall be conducted under the continuous personal supervision of a pharmacist"
 url: "https://pharmcouncil.co.za/Media/Default/Pharmacy%20Act/Pharmacy%20Act%2053%20of%201974.pdf"
 author: "Parliament of South Africa"
 publisher: "South African Pharmacy Council / Government of South Africa"
@@ -11,7 +11,7 @@ reliability: A
 tags: [domain/regulatory, journey/dispense, journey/collect, region/za, topic/automation]
 ---
 
-# Pharmacy Act s22 — continuous personal supervision
+# Pharmacy Act s22 - continuous personal supervision
 
 ## Summary
 

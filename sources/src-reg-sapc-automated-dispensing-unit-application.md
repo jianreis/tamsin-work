@@ -23,8 +23,7 @@ thinks about pharmacy automation, and both point away from a patient-facing
 locker. The unit **delivers scheduled medicines to the pharmacist**, and
 **access is limited to an authorised pharmacist, pharmacist intern or
 pharmacist's assistant**. The machine is an instrument inside the professional
-loop. It is not a substitute for the person at the end of it, and the patient is
-not among the parties permitted to open it.
+loop, and the patient is not among the parties permitted to open it.
 
 That is the single most directly adverse finding for a bank-branch locker
 released on a PIN to a patient. It is not a prohibition of lockers, because an

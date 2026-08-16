@@ -13,16 +13,17 @@ tags: [domain/schemes, domain/dispensing, journey/collect, topic/chronic, region
 
 ## Summary
 
-The load-bearing South African finding for the cold-chain scope question. In a
+The decisive South African finding for the cold-chain scope question. In a
 peer-reviewed study of type 2 diabetes patients in CCMDD, the authors state
 plainly that insulin cannot be distributed through the programme, and that this is
 why patients on type 1 or failed type 2 regimens cannot be enrolled at all.
 
 South Africa's largest decentralised repeat-medicine rail, serving millions of
 patients through thousands of external pick-up points, already runs on a
-shelf-stable-only rule. The exclusion is not a stated design preference in the
-paper, it is a hard eligibility boundary with a clinical consequence: the patients
-with the highest-acuity diabetes are the ones sent back to the clinic queue.
+shelf-stable-only rule. The paper frames the exclusion as a hard eligibility
+boundary rather than a design preference, and it carries a clinical consequence:
+the patients with the highest-acuity diabetes are the ones sent back to the clinic
+queue.
 
 > Direct fetch blocked: `phcfm.org` and `pmc.ncbi.nlm.nih.gov` are denied by this
 > session's network egress proxy (2026-08-16). The quoted sentence was returned

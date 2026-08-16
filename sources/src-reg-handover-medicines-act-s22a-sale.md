@@ -1,6 +1,6 @@
 ---
 type: source
-title: "Medicines and Related Substances Act 101 of 1965, section 22A — control of the sale of Schedule 2 to Schedule 6 substances"
+title: "Medicines and Related Substances Act 101 of 1965, section 22A - control of the sale of Schedule 2 to Schedule 6 substances"
 url: "https://www.sahpra.org.za/wp-content/uploads/2019/09/Medicines-and-Related-Substances-Act_101-of-1965_Act_GG-40869_2017-05-26.pdf"
 author: "Parliament of South Africa"
 publisher: "SAHPRA / Government Gazette 40869"
@@ -11,7 +11,7 @@ reliability: A
 tags: [domain/regulatory, topic/scheduling, journey/dispense, journey/collect, region/za]
 ---
 
-# Medicines Act s22A — who may sell a scheduled substance
+# Medicines Act s22A - who may sell a scheduled substance
 
 ## Summary
 
