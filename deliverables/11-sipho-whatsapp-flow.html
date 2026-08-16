@@ -180,6 +180,20 @@ a{color:var(--brand-dark)}
 /* tap-to-send affordance */
 .sendhint{align-self:flex-end; margin-right:28px; border:1.5px dashed var(--brand); background:#fff; color:var(--brand-dark);
   border-radius:99px; padding:5px 12px; font-size:.75rem; font-weight:700;}
+/* template footer (60-char small print under the body) */
+.bubble .tfoot{display:block; border-top:1px solid #ececec; margin-top:7px; padding-top:5px; font-size:.66rem; color:var(--wa-meta)}
+/* catalogue product card (rung 2 of the visual ladder) */
+.prodcard{display:flex; align-items:center; gap:8px; border:1px solid #ececec; border-radius:8px; padding:6px; margin-top:6px; background:#fff}
+.prodcard .pthumb{width:44px; height:44px; border-radius:6px; background:linear-gradient(135deg,#e8f2ea,#cfe3d4);
+  display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex:none}
+.prodcard .pinfo{flex:1; min-width:0; line-height:1.25}
+.prodcard .pinfo b{font-size:.78rem; display:block}
+.prodcard .pprice{font-size:.72rem; color:var(--muted); font-family:var(--mono)}
+.prodcard .pprice em{color:var(--warn); font-style:normal; font-weight:800}
+.prodcard .padd{border:0; background:none; color:var(--wa-link); font-weight:700; font-size:.72rem; padding:4px 6px; flex:none}
+.prodcard.walk{border-color:var(--brand)}
+.prodcard.walk .padd::after{content:" ▶"}
+.prodcard .padd.done{color:#9fb6c0}
 
 /* annotation rail */
 .rail h3{font-size:1.02rem; font-weight:800; margin-bottom:2px}
@@ -221,7 +235,7 @@ a{color:var(--brand-dark)}
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #11 · SIPHO'S REPEAT, AS A WHATSAPP CONVERSATION</span>
-  <span class="gen">generated 2026-08-07 · v2: all seven phases live (P1 pass approved same day) · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
+  <span class="gen">generated 2026-08-07 · v3 2026-08-16: re-synced to #09 v3.4-v3.8 and re-cut to the sourced conversational-design canon (wiki: conversational-design-whatsapp) · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
 </div>
 
 <section class="intro">
@@ -256,17 +270,17 @@ a{color:var(--brand-dark)}
   <span class="tiny">tap a phase to jump to its phone · stars mark the moments of truth</span></div>
   <div class="spinerow">
     <button class="snode" data-goto="p0"><div class="snum">P0</div><div class="sttl">Signing up</div>
-      <div class="sm">Click-to-chat · language list · WhatsApp Flow · read-back confirm</div><div class="stars">1 moment</div></button>
+      <div class="sm">Invite template · WhatsApp Flow · costed date-move · read-back confirm</div><div class="stars">1 moment</div></button>
     <button class="snode" data-goto="p1"><div class="snum">P1</div><div class="sttl">Repeats are due</div>
-      <div class="sm">Utility template · itemised price · 3 reply buttons · list sheet</div><div class="stars">2 moments · ⭐⭐</div></button>
+      <div class="sm">Utility template + CHANGE footer · price breakdown · three doors</div><div class="stars">2 moments · ⭐⭐</div></button>
     <button class="snode" data-goto="p2"><div class="snum">P2</div><div class="sttl">Adding to the order</div>
-      <div class="sm">Numbered picks · free text + one question · running total</div><div class="stars">no moment (by design)</div></button>
+      <div class="sm">User-pulled · product cards · browse · one question back</div><div class="stars">no moment (by design)</div></button>
     <button class="snode" data-goto="p3"><div class="snum">P3</div><div class="sttl">Checked and packed</div>
-      <div class="sm">Two status templates · named pharmacist · PIN at sealing</div><div class="stars">1 moment</div></button>
+      <div class="sm">Two status templates · the named check · CHANGE demo</div><div class="stars">1 moment</div></button>
     <button class="snode" data-goto="p4"><div class="snum">P4</div><div class="sttl">In hand</div>
-      <div class="sm">Payday reminder · pay-then-PIN · photo escalation</div><div class="stars">1 moment · ⭐</div></button>
+      <div class="sm">PIN on locker arrival · pay-then-PIN · photo escalation</div><div class="stars">1 moment · ⭐</div></button>
     <button class="snode" data-goto="p5"><div class="snum">P5</div><div class="sttl">Taking it</div>
-      <div class="sm">Medicine-cabinet list · voice notes · STOP honoured</div><div class="stars">1 moment</div></button>
+      <div class="sm">Cabinet by real names · voice notes · STOP honoured</div><div class="stars">1 moment</div></button>
     <button class="snode" data-goto="ppar"><div class="snum">∥</div><div class="sttl">When something breaks</div>
       <div class="sm">Exception templates carrying the plan · call-me</div><div class="stars">no moment (by design)</div></button>
   </div>
@@ -280,7 +294,7 @@ a{color:var(--brand-dark)}
       <div class="stagecontrols"><button class="btn" data-reset="p0">Reset the thread</button>
         <span class="hint">tap the highlighted rows and dashed pills to walk it</span></div>
       <div class="phone"><div class="screen">
-        <div class="statusbar"><span>17:05</span><span>▂▄▆ 🔋 64%</span></div>
+        <div class="statusbar"><span>17:02</span><span>▂▄▆ 🔋 64%</span></div>
         <div class="wahead"><span class="back">‹</span><span class="avatar">DC</span>
           <div class="names"><div class="biz">Dis-Chem Repeats <span class="badge">✓</span></div><div class="sub">Official business account</div></div>
           <div class="hicons"><span>📞</span><span>⋮</span></div></div>
@@ -298,9 +312,11 @@ a{color:var(--brand-dark)}
         medicine instructions in hers. English is shown here for this audience only.
       </div></div>
       <div class="callout"><span class="cmark">B1</span><div class="cbody">
-        <span class="feat">Click-to-chat entry</span><br>
-        A poster QR at the clinic or a saved number - the opening "Hi" is prefilled, so sign-up starts with zero
-        typing, no app store, no account.
+        <span class="feat">Invite template · the origin story</span><br>
+        The entry is an invitation: after an in-store collection, the service message arrives with the value
+        proposition as its headline - which is also what the notification preview shows, so the hook lands before
+        the chat is even opened. The pharmacist who mentioned it stays unnamed; a poster QR remains the
+        alternative route in. Sign-up starts with one tap, no app store, no account.
       </div></div>
       <div class="callout"><span class="cmark">B2</span><div class="cbody">
         <span class="feat">List message · language first</span><br>
@@ -309,20 +325,24 @@ a{color:var(--brand-dark)}
       <div class="callout"><span class="cmark">B3</span><div class="cbody">
         <span class="feat">WhatsApp Flow · native form</span><br>
         The one place a form beats chat: household and medicines on a native sheet, no webview, no data-heavy page.
-        Multi-screen in production; one screen shown here
-        <span class="flag" title="platform capability from Meta developer docs - vault source note pending, punchlist item 11">⚠️</span>.
-        Consent is an already-granted fact whose scope is stated - ordering, paying, collecting - never an in-flow
-        event (POPIA: recorded once, in-language, auditable).
+        His row is a dispensing record - plain handle, molecule and strength, monthly quantity. Her row is
+        described by origin (the programme fills and labels her parcel), because Dis-Chem never opens what it never
+        dispenses. Consent is an already-granted fact whose scope is read back - order, collect, manage - never an
+        in-flow event (POPIA: recorded once, in-language, auditable), and her medicine-list share is her own
+        revocable grant.
       </div></div>
       <div class="callout"><span class="cmark">B4</span><div class="cbody">
-        <span class="feat">Costed sync plan</span><br>
-        Script Sync made visible: the one top-up that lands both cycles on payday is priced in rand before he says
-        yes - never charged into an agreement <span class="flag" title="amount illustrative - punchlist item 11; part-fill mechanics are punchlist 9(f)">⚠️</span>.
+        <span class="feat">The date-move exchange · one decision per turn</span><br>
+        Script Sync made visible, then repurposed: the sync offer, its cost, the own-day pick and the read-back
+        each arrive as their own turn, exploration labels until the single commitment button. Every price lands
+        before a decision is asked for <span class="flag" title="amounts illustrative - punchlist item 11">⚠️</span>.
+        And the rail carries what the chat never asks: he picks the 28th because it sits after month-end payday -
+        his reasoning, never the service's data.
       </div></div>
       <div class="callout"><span class="cmark">B5</span><div class="cbody">
         <span class="feat">Read-back + reply-1 confirm</span><br>
-        Everything he chose, read back in plain language, confirmed with a single character - the only confirmation
-        gate in the whole journey, because it is the consent moment.
+        Everything he chose, read back in plain language, confirmed with a single character - the consent gate.
+        The same read-back-then-yes rule guards every later change to money, medicine or dates.
       </div></div>
       <div class="keymoment">
         <div class="ktag"><span class="klabel">Key moment</span><span class="kwhere">at B5</span></div>
@@ -358,9 +378,11 @@ a{color:var(--brand-dark)}
       <p class="railsub">markers (A1-A5) match the callouts · feature chips name the WhatsApp mechanic · ⚠️ marks claims awaiting a vault source</p>
       <div class="callout"><span class="cmark">A1</span><div class="cbody">
         <span class="feat">Utility template · business-initiated</span><br>
-        The one-week-out notice. Text only - no image header, no PDF - because on a prepaid balance every download
-        costs real money (small-bundle data carries a poverty premium per MB). It names the day because this
-        order's day is genuinely settled, and it closes on the golden path: nothing to do.
+        The one-week-out notice: his order only - her programme parcel landed on Tuesday and is tracked, never
+        managed. No image header, no PDF - on a prepaid balance every download costs real money. It names the day
+        (never "payday" - what the 28th means is his business), and it closes on the golden path: nothing to do.
+        The small grey footer under this and every service message is the standing change surface: reply CHANGE,
+        anywhere, any time, until the day before.
       </div></div>
       <div class="keymoment">
         <div class="ktag"><span class="klabel">Key moment</span><span class="kstar">⭐ moment of truth</span><span class="kwhere">at A1</span></div>
@@ -370,10 +392,11 @@ a{color:var(--brand-dark)}
         The <a href="08-concepts.html">Auto-Refill</a> concept with no app in the way.</div>
       </div>
       <div class="callout"><span class="cmark">A2</span><div class="cbody">
-        <span class="feat">Itemised price · in-bubble text</span><br>
-        The price lives in the message, not at the till. His mother's CCMDD parcel shows as R0.00 in the same
-        breakdown - covered is stated, never hidden. Amounts shown are illustrative, not sourced SEP
-        calculations <span class="flag" title="illustrative pricing - logged in meta/punchlist.md item 11">⚠️</span>.
+        <span class="feat">Formatted price breakdown · in-bubble</span><br>
+        The price lives in the message, not at the till - one line per item, emoji as anchors (rung 1 of the
+        visual ladder: characters, not downloads). His tablets and the fee only: there is no CCMDD line, because
+        there is nothing to pay on hers (v3.4). Amounts and product names are illustrative
+        <span class="flag" title="illustrative pricing and product names - logged in meta/punchlist.md item 11">⚠️</span>.
       </div></div>
       <div class="keymoment">
         <div class="ktag"><span class="klabel">Key moment</span><span class="kstar">⭐ moment of truth</span><span class="kwhere">at A2</span></div>
@@ -384,16 +407,17 @@ a{color:var(--brand-dark)}
       </div>
       <div class="callout"><span class="cmark">A3</span><div class="cbody">
         <span class="feat">Interactive reply buttons · max 3</span><br>
-        WhatsApp allows exactly three quick-reply buttons, and the design spends them on change, pause, person.
-        There is no confirm button on purpose: silence is the golden path, and the order carries on by itself
-        <span class="flag" title="platform capability from Meta developer docs - vault source note pending, punchlist item 11">⚠️</span>.
+        WhatsApp allows exactly three quick-reply buttons (sourced: 3 buttons, 20-character titles), and the
+        design spends them on doors: add, change, person. There is no confirm button on purpose - silence is the
+        golden path, and the order carries on by itself. "Add to my order" is P2's doorway: the suggestions arrive
+        only if he knocks. Pause lives inside the change menu now, not on a button.
       </div></div>
       <div class="callout dim" id="co-p1-a4"><span class="cmark">A4</span><div class="cbody">
-        <span class="feat">List message · up to 10 rows</span><br>
-        Behind "Change something": a native list sheet - menu depth without menu typing. The last row keeps free
-        text first-class, so the flow never traps him in options that don't fit. "Add medicine to this order" is
-        P2's doorway, present here only as a row
-        <span class="flag" title="platform capability from Meta developer docs - vault source note pending, punchlist item 11">⚠️</span>.
+        <span class="feat">The one change menu · 9 rows</span><br>
+        Behind "Change something" and the CHANGE keyword alike: one list sheet (sourced limit: 10 rows),
+        frequency-ordered - money moves first (date, skip), preference tweaks in the middle (payment, generic or
+        brand), admin then destructive last (personal details, cancel - which ends with a person), and free text
+        always the final row. The date row asks its own follow-up: just this month, or every month.
         <em style="color:var(--muted2)">(tap Change something in the phone to see it)</em>
       </div></div>
       <div class="callout dim" id="co-p1-a5"><span class="cmark">A5</span><div class="cbody">
@@ -425,26 +449,39 @@ a{color:var(--brand-dark)}
     </div>
     <div class="rail">
       <h3>What each message is doing</h3>
-      <p class="railsub">markers (C1-C4) match the callouts</p>
+      <p class="railsub">markers (C1-C5) match the callouts</p>
       <div class="callout"><span class="cmark">C1</span><div class="cbody">
-        <span class="feat">Numbered picks · specials first</span><br>
-        Suggestions come from his own buying history with anything on special at the top - and they're answered by
-        typing a digit. A number works on any handset, at any literacy level, and costs one character of airtime.
+        <span class="feat">User-pulled · an answer, not an ambush</span><br>
+        Nothing here arrives unprompted: he tapped "Add to my order" in the P1 phone, on Saturday morning, when it
+        suited him. The suggestions are a reply because he asked - and his tap opens the 24-hour service window,
+        so none of this needs a marketing template. The honest constraint is stated up front: medicine only, no
+        groceries - and the browse view is scoped the same way, so it cannot un-say it.
       </div></div>
       <div class="callout"><span class="cmark">C2</span><div class="cbody">
-        <span class="feat">Free text · one clarifying question</span><br>
-        Typing "cough mixture" is as good as any menu. The service asks exactly one question back - child or
-        adult - as reply buttons, then returns priced options. Never a form, never a dead end.
+        <span class="feat">Product cards · rung 2 of the visual ladder</span><br>
+        Catalogue cards carry the shelf photo, the name, the price and add-to-order in one block. At every
+        literacy level, recognising the box beats reading its name - the thumbnail is an accessibility device, not
+        decoration, and it is the one place the mock spends pixels. No owner is guessed: the suggestions say "from
+        what you usually buy", never whose they are - a till slip has no owner
+        <span class="flag" title="catalogue / cart / product-card mechanics await the commerce-docs verify - punchlist item 11">⚠️</span>.
       </div></div>
       <div class="callout"><span class="cmark">C3</span><div class="cbody">
-        <span class="feat">Running total · restated every change</span><br>
-        Price-before-travel survives the additions: after every item the total he'll pay at the Capitec counter is
-        restated in full <span class="flag" title="amounts illustrative - punchlist item 11">⚠️</span>.
+        <span class="feat">Browse medicines · the in-WhatsApp catalogue</span><br>
+        For the person who'd rather look around than type: the catalogue is WhatsApp's own browsable surface -
+        no website, no webview - and the cart lands back in this thread as an order, where the running total
+        lives. Thumbnails load as he scrolls, so browsing is data he chooses to spend.
+        <em style="color:var(--muted2)">(tap Browse medicines in the phone)</em>
       </div></div>
       <div class="callout"><span class="cmark">C4</span><div class="cbody">
-        <span class="feat">Honest constraint · medicine only</span><br>
-        The locker route carries medicine only, no groceries - stated plainly up front, exactly as #09 requires,
-        instead of discovered at the locker.
+        <span class="feat">Free text · one clarifying question</span><br>
+        Typing "cough mixture" is as good as any card. The service asks exactly one question back - child or
+        adult - as reply buttons, then returns priced options as cards. For a child, the dose is checked against
+        their weight by a pharmacist, so a parent collects with confidence. Never a form, never a dead end.
+      </div></div>
+      <div class="callout"><span class="cmark">C5</span><div class="cbody">
+        <span class="feat">Running total · restated every change</span><br>
+        Price-before-travel survives the additions: after every item the total he'll pay at the Capitec counter is
+        restated in full <span class="flag" title="amounts and product names illustrative - punchlist item 11">⚠️</span>.
       </div></div>
       <p class="railnote">No key moment in this phase by design - #09 agreed the cash addition carries none. The
       value is quieter: the small pharmacy trips between paydays fold into the one he already makes.</p>
@@ -458,7 +495,7 @@ a{color:var(--brand-dark)}
   <div class="stagegrid">
     <div>
       <div class="stagecontrols"><button class="btn" data-reset="p3">Reset the thread</button>
-        <span class="hint">two statuses arrive on their own - nothing to tap</span></div>
+        <span class="hint">the statuses arrive on their own - then try the CHANGE pill</span></div>
       <div class="phone"><div class="screen">
         <div class="statusbar"><span>15:48</span><span>▂▄▆ 🔋 77%</span></div>
         <div class="wahead"><span class="back">‹</span><span class="avatar">DC</span>
@@ -471,22 +508,33 @@ a{color:var(--brand-dark)}
     </div>
     <div class="rail">
       <h3>What each message is doing</h3>
-      <p class="railsub">markers (D1-D3) match the callouts</p>
+      <p class="railsub">markers (D1-D4) match the callouts</p>
       <div class="callout"><span class="cmark">D1</span><div class="cbody">
         <span class="feat">Status templates · detail inline</span><br>
         Both statuses arrive without being asked, and carry their content in the message itself - never "open a
         link to see more", because a link is a download and a download is money.
       </div></div>
       <div class="callout"><span class="cmark">D2</span><div class="cbody">
-        <span class="feat">The named check</span><br>
-        The checks are listed and the pharmacist who signed them off is named at the final check - the #10 name
-        rule, applied on the cash rail. (Name used here is new to the journey set - flagged in the spec's open
-        questions.)
+        <span class="feat">The named check · plain lines</span><br>
+        Each line answers "checked what?" in words a customer can carry: right medicine and dose, nothing
+        clashes, the script and his history. The clash line teaches by example - his order really does hold the
+        one interaction a pharmacist watches for (decongestant syrups against blood-pressure tablets). His order
+        only: the programme's parcel is the programme's check (v3.4) - the pharmacist checks what Dis-Chem
+        dispenses plus what the household has shared. The pharmacist is named at the final check - the #10 name
+        rule. (Name is a placeholder - spec open questions.)
       </div></div>
       <div class="callout"><span class="cmark">D3</span><div class="cbody">
-        <span class="feat">PIN issued at sealing</span><br>
-        The handover credential exists from the moment the parcel does, exactly where #09 issues it - and it's a
-        four-digit code in plain text, not a barcode image to download.
+        <span class="feat">Nothing issued at sealing</span><br>
+        Packed-and-sealed is a pure status: no PIN. The credential belongs to the moment the parcel is physically
+        in the locker (v3.6) - P4's message first-issues it, because a code on the phone is a promise, and this
+        service only promises what already exists.
+      </div></div>
+      <div class="callout dim" id="co-p3-d4"><span class="cmark">D4</span><div class="cbody">
+        <span class="feat">CHANGE · used, never offered</span><br>
+        Fulfilment flexibility is reply-shaped: no message body offers to change the plan, but the footer stands
+        under every status, and one keyword opens the same menu from anywhere - shift the date if the money moves,
+        switch locker, store or costed delivery, until the day before. The demo branch shows it working; the mock
+        then returns to Friday. <em style="color:var(--muted2)">(tap the CHANGE pill in the phone to see it)</em>
       </div></div>
       <div class="keymoment">
         <div class="ktag"><span class="klabel">Key moment</span><span class="kwhere">at D2</span></div>
@@ -501,7 +549,7 @@ a{color:var(--brand-dark)}
 
 <!-- ======================= P4 ======================= -->
 <section class="stage" id="p4">
-  <div class="phead"><span class="pnum">P4</span><h2>In hand</h2><span class="once">payday · Fri 28 Aug</span></div>
+  <div class="phead"><span class="pnum">P4</span><h2>In hand</h2><span class="once">his chosen day · Fri 28 Aug</span></div>
   <div class="stagegrid">
     <div>
       <div class="stagecontrols"><button class="btn" data-reset="p4">Reset the thread</button>
@@ -520,9 +568,11 @@ a{color:var(--brand-dark)}
       <h3>What each message is doing</h3>
       <p class="railsub">markers (E1-E3) match the callouts</p>
       <div class="callout"><span class="cmark">E1</span><div class="cbody">
-        <span class="feat">Reminder template · the whole trip in one message</span><br>
-        Amount and PIN restated together, before he leaves home - so the trip needs nothing further from the
-        network. If signal fades at the rank, the message is already on the phone.
+        <span class="feat">PIN issued on locker arrival</span><br>
+        The message comes the moment the parcel is physically in the locker - the PIN's first issue, not a
+        restatement (v3.6), with the two retrieval steps in order because the counter payment is what activates
+        the PIN. Amount and code travel together, loaded onto the phone before he leaves signal - the whole trip
+        in one message. The chat says "the 28th", never "payday": the day is his, and so is what it means.
       </div></div>
       <div class="callout"><span class="cmark">E2</span><div class="cbody">
         <span class="feat">Pay-then-PIN · off-channel by design</span><br>
@@ -571,8 +621,12 @@ a{color:var(--brand-dark)}
       <p class="railsub">markers (F1-F4) match the callouts</p>
       <div class="callout"><span class="cmark">F1</span><div class="cbody">
         <span class="feat">List message · the medicine cabinet</span><br>
-        Every medicine the family takes, one sheet away - what it's for, how to take it - with zero downloads.
-        The answer no longer lives at a counter across town.
+        Every medicine the family takes, one sheet away, by its real name - so phone, pack and shelf match word
+        for word. The cabinet convention: dispensed medicine carries its owner, her clinic medicines appear
+        because she granted the see-dial of CarerConsent ("from her clinic script" is the provenance - a told-us
+        record the pharmacist can use but never vouches for), and OTC purchases are (Household) unless someone
+        assigns them - the service never guesses. Product names illustrative
+        <span class="flag" title="real SA products used illustratively - punchlist item 11">⚠️</span>.
       </div></div>
       <div class="callout"><span class="cmark">F2</span><div class="cbody">
         <span class="feat">Voice notes · both directions</span><br>
@@ -588,7 +642,8 @@ a{color:var(--brand-dark)}
       <div class="callout"><span class="cmark">F4</span><div class="cbody">
         <span class="feat">The free floor lives in the parcel</span><br>
         Iconised labels, the printed day-by-day fridge sheet, instructions in each person's language - the
-        adherence basics ride with the medicine, not the phone. The chat carries only the look-up and the
+        adherence basics ride with the medicine, not the phone. The chat's dose lines mirror the pack's icons
+        (🌅 🍽 ✔), so the two surfaces speak the same visual language; the chat carries only the look-up and the
         pharmacist.
       </div></div>
       <div class="keymoment">
@@ -626,7 +681,8 @@ a{color:var(--brand-dark)}
       <div class="callout"><span class="cmark">G1</span><div class="cbody">
         <span class="feat">Exception template · the plan attached</span><br>
         Bad news never arrives alone: the message carries the live choices as reply buttons, and nothing is
-        decided without him. An exception opens a path - it never kills the order.
+        decided without him. An exception opens a path - it never kills the order. His order only: a stock-out
+        never touches the programme parcel, so the split offers "the rest of your order", not her medicine (v3.4).
       </div></div>
       <div class="callout"><span class="cmark">G2</span><div class="cbody">
         <span class="feat">Told before travelling</span><br>
@@ -634,9 +690,10 @@ a{color:var(--brand-dark)}
         renewal - is told before he travels. His fare is never spent on a closed door.
       </div></div>
       <div class="callout"><span class="cmark">G3</span><div class="cbody">
-        <span class="feat">Script Renew · signposted</span><br>
-        The renewal journey starts weeks before the script runs dry, visibly, in the same thread - and chasing it
-        costs him nothing. The full renewal flow is its own journey (the Script Renew concept), out of scope here.
+        <span class="feat">Script Renew · his own script</span><br>
+        The script that runs out is his - his mother's belongs to the clinic and its programme (v3.4). The renewal
+        starts weeks before it runs dry, visibly, in the same thread, and chasing it costs him nothing. The full
+        renewal flow is its own journey (the Script Renew concept), out of scope here.
       </div></div>
       <div class="callout"><span class="cmark">G4</span><div class="cbody">
         <span class="feat">A person, by phone</span><br>
@@ -650,17 +707,20 @@ a{color:var(--brand-dark)}
 </section>
 
 <p class="foot">
-  <b>Scope notes.</b> Copy derives from the approved #09 cash journey
+  <b>Scope notes.</b> Copy derives from the approved #09 cash journey at v3.8
   (<a href="09-tobe-household-repeat-moments.html#cash">deliverable #09</a>, spec:
   design-kit/journeys/to-be-household-repeat-moments.md); this page decides only what the chat literally looks
-  like, phase by phase, across one August 2026 cycle. Rand amounts are illustrative ⚠️. WhatsApp platform
-  capabilities (reply-button and list-row limits, Flows, template categories) are cited from Meta developer
-  documentation and await a proper vault source note - logged in meta/punchlist.md item 11. In-chat payment is
+  like, phase by phase, across sign-up in July and one August 2026 cycle. Rand amounts and product names are
+  illustrative ⚠️. WhatsApp platform capabilities (reply-button and list-row limits, Flows, template categories,
+  footers) are sourced in the vault as of 2026-08-16 (wiki: conversational-design-whatsapp; re-verify on the live
+  Meta pages and the commerce docs is logged in meta/punchlist.md item 11). Every service message carries the
+  standing footer "Reply CHANGE any time" - change is ever-present, never offered. In-chat payment is
   deliberately absent: WhatsApp payments are not live in South Africa, and the cash-at-the-Capitec-counter step
-  needs no channel payment - the constraint and the design agree. Walkthrough convention: highlighted ▶ rows and
-  dashed pills mark the scripted path; other rows are real UI, inert in the mock. The threads render in English
-  here; production renders them in the customer's chosen language. Script-expiry renewal (Script Renew) appears
-  only as its ∥ signpost; after-hours acute belongs to #10. Deliverables #05-#10 are untouched.
+  needs no channel payment - the constraint and the design agree. Walkthrough convention: highlighted ▶ rows,
+  cards and dashed pills mark the scripted path; other rows are real UI, inert in the mock; optional branches
+  (the photo, the CHANGE demo) play without rewriting the story. The threads render in English here; production
+  renders them in the customer's chosen language. Script-expiry renewal (Script Renew) appears only as its ∥
+  signpost; after-hours acute belongs to #10. Deliverables #05-#10 are untouched (bar #09's own v3.8 pass).
 </p>
 
 </div>
@@ -675,7 +735,25 @@ function el(html){ const d=document.createElement("div"); d.innerHTML=html; retu
 function marker(id){ return '<span class="marker" title="see callout '+id+' in the rail">'+id+'</span>'; }
 function spacer(){ return '<span style="width:22px;flex:none"></span>'; }
 
-const DIMS = { p1:["co-p1-a4","co-p1-a5"], p4:["co-p4-e3"] };
+const DIMS = { p1:["co-p1-a4","co-p1-a5"], p3:["co-p3-d4"], p4:["co-p4-e3"] };
+
+/* standing template footer (rule 5 in the spec: change is ever-present, never offered) */
+const FOOT = '<span class="tfoot">Reply CHANGE any time - date, place, anything.</span>';
+
+/* the one change menu (P1 branches + the P3 CHANGE demo render the same rows) */
+function changeRows(walkDate){
+  return [
+    {label:"Change the date", note:"just this month, or every month", walk:!!walkDate, send:"Change the date", echoTime:walkDate},
+    {label:"Skip this month", note:"your repeat waits; nothing is cancelled"},
+    {label:"Add medicine", note:"rides in the same order"},
+    {label:"Collect or deliver", note:"locker, store or delivery"},
+    {label:"How I pay", note:"at the counter, or other ways"},
+    {label:"Generic or brand", note:"per medicine, either way"},
+    {label:"Personal details", note:"language, my info, my family"},
+    {label:"Cancel the service", note:"stops everything; a person will confirm"},
+    {label:"Something else", note:"just type it"}
+  ];
+}
 
 function makePhone(pid, steps){
   const thread = document.getElementById("thread-"+pid);
@@ -712,7 +790,8 @@ function makePhone(pid, steps){
     });
     sheet.querySelector(".close").addEventListener("click", function(){
       sheet.classList.remove("open");
-      if(this.dataset.cta && cfg.flow){ onPick && onPick(null); }
+      const hasWalk = cfg.rows.some(r=>r.walk);
+      if(cfg.flow ? this.dataset.cta : !hasWalk){ onPick && onPick(null); }
     });
   }
 
@@ -751,6 +830,38 @@ function makePhone(pid, steps){
         });
       });
       if(s.list.autoOpen){ btn.click(); }
+      return;
+    }
+    if(s.cards){
+      /* catalogue product cards inside an in-bubble message; the ▶ card continues the walkthrough */
+      let html = (s.cards.body||"");
+      s.cards.items.forEach((it,ix)=>{
+        html += '<div class="prodcard'+(it.walk?" walk":"")+'" data-ix="'+ix+'">'+
+          '<span class="pthumb">'+it.emoji+'</span><div class="pinfo"><b>'+it.name+'</b>'+
+          '<span class="pprice">'+it.price+'</span></div><button class="padd">Add to order</button></div>';
+      });
+      if(s.cards.tail){ html += s.cards.tail; }
+      const m = inMsg(s.cards.id, html, s.cards.time);
+      if(s.cards.browse){
+        const bb = el('<div class="listbtn">🔎 Browse medicines</div>');
+        m.querySelector(".bubble").appendChild(bb);
+        let played = false;
+        bb.addEventListener("click", ()=>{
+          if(played) return; played = true;
+          thread.appendChild(el('<div class="syspill">'+s.cards.browse+'</div>')); scrollEnd();
+        });
+      }
+      thread.appendChild(m); scrollEnd();
+      let continued = false;
+      m.querySelectorAll(".prodcard").forEach(card=>{
+        const it = s.cards.items[+card.dataset.ix];
+        card.querySelector(".padd").addEventListener("click", function(){
+          if(!it.walk || this.classList.contains("done")) return;
+          this.classList.add("done");
+          thread.appendChild(outMsg("🛒 "+it.name, it.echoTime)); scrollEnd();
+          if(!continued){ continued = true; cont(); }
+        });
+      });
       return;
     }
     if(s.qr){
@@ -799,75 +910,104 @@ function makePhone(pid, steps){
 const P0 = () => [
   {sys:"🔒 Messages and calls are end-to-end encrypted."},
   {date:"MON, 13 JUL"},
-  {outm:{body:"Hi", time:"17:05"}},
+  {inm:{id:"B1", time:"17:02",
+    body:'<b>Same medicine, every month, without the queue.</b>\n\nDis-Chem Repeats prepares your medicine for you automatically, every month - delivered to your home, or ready to collect close by. No effort from you: we get it ready, tell you the price, and tell you when it\'s there.\n\nFree to use - you pay only for your medicine.'}},
+  {qr:{buttons:[
+    {label:"Set up my repeats", time:"17:05", main:true},
+    {label:"Tell me more", time:"17:03", steps:[
+      {inm:{time:"17:03",
+        body:'How it works:\n<b>1.</b> Set up once - who it\'s for, where it reaches you, how you pay.\n<b>2.</b> Each month we prepare your repeat and message you the price first.\n<b>3.</b> Collect close by, or have it delivered - you pay when you receive it.\n<b>4.</b> Change, pause or add family any month - their medicine comes in the same order.\n\nA pharmacist checks every order, and you can ask them anything here, any time.'}}
+    ]}
+  ]}},
   {list:{id:"B2", time:"17:05", btn:"Choose my language",
-    body:'Welcome to Dis-Chem Repeats. We get your family\'s medicine ready every month, close to home - no app, no forms, no queue in store.\n\nFirst: which language should we speak?',
+    body:'Let\'s set you up - a few minutes, right here. First: which language should we speak?',
     sheet:{title:"Choose my language", rows:[
       {label:"isiZulu", walk:true, send:"isiZulu", echoTime:"17:06"},
       {label:"isiXhosa"},{label:"Sesotho"},{label:"English"},{label:"Afrikaans"},{label:"Setswana"}
     ]}}},
   {list:{id:"B3", time:"17:06", btn:"Set up my family",
-    body:'Who is this service for? You can add family you care for - if they\'ve given their consent for you to manage their medicine, it covers this service too: ordering, paying and collecting.',
+    body:'Who is this service for? You can add family you care for - if they\'ve given their consent for you to manage their medicine, it covers this service too.',
     sheet:{title:"Dis-Chem Repeats - your family", flow:true, cta:"Continue", rows:[
-      {label:"Sipho (you)", note:"blood-pressure tablets - repeat script on your profile"},
-      {label:"Your mother", note:"chronic medicine (CCMDD) - her consent is on her profile; one tap confirms"}
+      {label:"Sipho (you)", note:"Blood-pressure tablets - Amlodipine 5 mg · 28 tablets, one month at a time"},
+      {label:"Your mother", note:"Chronic medicine parcel - packed by her clinic's programme (CCMDD) · collected monthly; the programme fills and labels it · you manage her medicine - consent recorded: order, collect and manage on her behalf · her medicine list is shared with you - her choice, and she can change it · one tap confirms"}
     ]}}},
-  {inm:{id:"B4", time:"17:08",
-    body:'Both added. Two people\'s medicine is now one thing to manage.\n\nYour tablets run out around the 20th; your mother\'s at month-end. The plan to bring them together: one small top-up for her this first month - <b><span class="amt">R23.80</span></b> - and from September, both are ready together on payday.\n\nReply <b>1</b> to accept the plan.'}},
-  {tap:{send:"1", time:"17:09"}},
-  {inm:{time:"17:09",
-    body:'How should your medicine reach you each month?'}},
+  {inm:{time:"17:08", body:'Both added.'}},
+  {inm:{time:"17:08",
+    body:'Your tablets and your mother\'s medicine are ready at different times of the month. We could line them up - one trip instead of two.\n\nWant to see how that would work?'}},
   {qr:{buttons:[
-    {label:"📍 Collect near me", send:"Collect near me", time:"17:10", main:true},
-    {label:"🚚 Deliver to me", send:"Deliver to me", time:"17:10", steps:[
-      {inm:{time:"17:10", body:'We can deliver where couriers reach - though most people near you choose the locker: no street address needed. Tap "Collect near me" to see the points close to home.'}}
+    {label:"How would it work?", time:"17:09", main:true},
+    {label:"Keep them apart", time:"17:09", steps:[
+      {inm:{time:"17:09", body:'No problem - nothing changes unless you choose it. Tap "How would it work?" to see the plan first; Sipho\'s story goes that way.'}}
     ]}
   ]}},
-  {list:{time:"17:11", btn:"Choose a point",
+  {inm:{id:"B4", time:"17:09",
+    body:'Your mother\'s date can\'t move - her parcel comes from her clinic\'s programme, around the 18th, at no cost to you.\n\nYours can move to the 18th. That takes a once-off top-up of extra tablets: <b><span class="amt">R66.70</span></b>.\n\nMove your tablets to the 18th?'}},
+  {qr:{buttons:[
+    {label:"Move to the 18th", time:"17:10", steps:[
+      {inm:{time:"17:10", body:'That would work too - the supply stretch from the 20th of July to the 18th of August is what the once-off <span class="amt">R66.70</span> buys. In Sipho\'s story the money isn\'t there before month-end: tap "Keep them apart" to continue.'}}
+    ]},
+    {label:"Keep them apart", time:"17:10", main:true}
+  ]}},
+  {inm:{time:"17:10",
+    body:'No problem - yours stays around the 20th, the day of your first fill. If another day suits you better, you can move it the same way, with a small once-off top-up.\n\nWhich day should your tablets be ready? Reply with a day, like 25 - or KEEP.'}},
+  {tap:{send:"28", time:"17:11"}},
+  {inm:{time:"17:11",
+    body:'The 28th: a once-off top-up of <b><span class="amt">R18.40</span></b>, in your first order. From August, your tablets are ready on the 28th of every month.\n\nShall I move it?'}},
+  {qr:{buttons:[
+    {label:"Yes, the 28th", time:"17:11", main:true},
+    {label:"Keep the 20th", time:"17:11", steps:[
+      {inm:{time:"17:11", body:'Also fine - nothing moves unless you say so. Sipho\'s story takes "Yes, the 28th": the day the money is there.'}}
+    ]}
+  ]}},
+  {inm:{time:"17:12",
+    body:'Done - two dates, one chat.\n• Hers: around the 18th, nothing to pay\n• Yours: the 28th of every month\n\nYour first order is ready <b>Monday 20 July</b>, with the once-off top-up included. We remember both dates, so you don\'t have to.'}},
+  {inm:{time:"17:12",
+    body:'How should your medicine reach you each month?'}},
+  {qr:{buttons:[
+    {label:"Collect near me", send:"Collect near me", time:"17:13", main:true},
+    {label:"Deliver to me", send:"Deliver to me", time:"17:13", steps:[
+      {inm:{time:"17:13", body:'We can deliver where couriers reach - though most people near you choose the locker: no street address needed. Tap "Collect near me" to see the points close to home.'}}
+    ]}
+  ]}},
+  {list:{time:"17:13", btn:"Choose a point",
     body:'Closest collection points to home:',
     sheet:{title:"Collection points near you", rows:[
-      {label:"Capitec branch, taxi rank - locker", note:"open bank hours · pay at the counter", walk:true, send:"Capitec locker, taxi rank", echoTime:"17:11"},
+      {label:"Capitec branch, taxi rank - locker", note:"open bank hours · pay at the counter", walk:true, send:"Capitec locker, taxi rank", echoTime:"17:14"},
       {label:"Dis-Chem store", note:"14 km away"}
     ]}}},
-  {inm:{time:"17:12",
-    body:'Done - the locker at the Capitec branch by the taxi rank. No street address needed.\n\nYou\'ll get everything here in isiZulu, and your mother\'s medicine instructions come printed in her language.'}},
-  {inm:{time:"17:12",
-    body:'Paying: cash or instant EFT at the Capitec counter when you collect - paying is what opens the locker.\n\nAnd we use cheaper generics unless you tell us otherwise, so the price stays one you can plan around.'}},
-  {inm:{id:"B5", time:"17:13",
-    body:'Here is everything, read back:\n• You + your mother\n• Ready together on payday, every month\n• Collect: Capitec locker, taxi rank\n• Pay: cash at the counter · generics by default\n• isiZulu here · her instructions in her language\n\nReply <b>1</b> to confirm - and from here, it\'s remembered.'}},
-  {tap:{send:"1", time:"17:14"}},
   {inm:{time:"17:14",
-    body:'Done, Sipho. Your first order will be ready on <b>Friday 28 August</b> - payday. We\'ll message you a week before with the price.\n\nThat\'s it - it just runs.'}}
+    body:'Done - the locker at the Capitec branch by the taxi rank. No street address needed.\n\nYou\'ll get everything here in isiZulu, and your mother\'s medicine instructions come printed in her language.'}},
+  {inm:{time:"17:14",
+    body:'Paying: cash or instant EFT at the Capitec counter when you collect - paying is what opens the locker.\n\nAnd we use cheaper generics unless you tell us otherwise, so the price stays one you can plan around.'}},
+  {inm:{id:"B5", time:"17:15",
+    body:'Here is everything, read back:\n• You + your mother\n• Two dates: her parcel around the 18th (nothing to pay) · yours on the 28th\n• Collect: Capitec locker, taxi rank\n• Pay: cash at the counter · generics by default\n• isiZulu here · her instructions in her language\n\nReply <b>1</b> to confirm - and from here, it\'s remembered.'}},
+  {tap:{send:"1", time:"17:15"}},
+  {inm:{time:"17:16",
+    body:'Done, Sipho. It just runs from here: your first order is ready <b>Monday 20 July</b>, and we message you a week before every order with the price.'}}
 ];
 
-/* ---------- P1 (approved pass, unchanged copy) ---------- */
+/* ---------- P1 ---------- */
 const P1 = () => [
   {sys:"🔒 Messages and calls are end-to-end encrypted."},
   {date:"FRI, 21 AUG"},
   {inm:{id:"A1", time:"08:12",
-    body:'Hello Sipho. Your family\'s repeat medicine for August is being prepared:\n\n• <b>Your blood-pressure tablets</b>\n• <b>Your mother\'s chronic medicine</b>\n\nIt will be ready at the <b>Capitec locker at the taxi rank</b> on <b>Friday 28 August</b> - payday.\n\nYou don\'t need to do anything. If nothing changes, it will be waiting.'}},
+    body:'Hello Sipho. Your repeat order for August is being prepared: your blood-pressure tablets (<b>Adco-Amlodipine 5 mg</b>).\n\nIt will be ready at the <b>Capitec locker at the taxi rank</b> on <b>Friday 28 August</b>.\n\nYour mother\'s parcel arrived from her programme on Tuesday - both dates, one thread.\n\nYou don\'t need to do anything. If nothing changes, it will be waiting.'+FOOT}},
   {inm:{id:"A2", time:"08:12",
-    body:'Here is the price, so you know before you travel.'+
-      '<span class="sect">Your tablets</span><span class="amt">Amlodipine 5 mg, 28 tablets (generic)  R64.40\nDispensing fee  R36.20</span>'+
-      '<span class="sect">Your mother\'s medicine</span><span class="amt">CCMDD chronic parcel  R0.00</span>\n\n<b>Total to pay: <span class="amt">R100.60</span></b>\nCash or instant EFT at the Capitec counter. Paying is what opens the locker.'}},
+    body:'Here is the price, so you know before you travel 🧾'+
+      '<span class="sect">Your tablets</span><span class="amt">Adco-Amlodipine 5 mg, 28 tablets (generic)  R64.40\nDispensing fee  R36.20</span>\n\n<b>Total to pay: <span class="amt">R100.60</span></b> 💵\nCash or instant EFT at the Capitec counter - paying is what opens the locker 🔓'+FOOT}},
   {inm:{id:"A3", time:"08:13",
-    body:'Happy with this? Then there\'s nothing to do - your order carries on by itself, this month and every month.'}},
+    body:'Happy with this? Then there\'s nothing to do - your order carries on by itself, this month and every month.'+FOOT}},
   {qr:{buttons:[
-    {label:"✎ Change something", send:"Change something", time:"08:14", steps:[
+    {label:"Add to my order", send:"Add to my order", time:"08:14", steps:[
+      {sys:"Continues in the P2 phone below - Sipho taps this on Saturday morning, when it suits him."}
+    ]},
+    {label:"Change something", send:"Change something", time:"08:14", steps:[
       {list:{id:"A4", time:"08:14", btn:"Choose an option", autoOpen:true,
-        body:'No problem. What would you like to change for August?',
-        sheet:{title:"What would you like to change for August?", rows:[
-          {label:"Move the ready date"},{label:"Change the pickup point"},{label:"Add medicine to this order"},
-          {label:"Change my language"},{label:"Skip my tablets this month"},{label:"Cancel the repeat service"},
-          {label:"Something else - just type it"}
-        ]}}},
+        body:'No problem. What would you like to change?',
+        sheet:{title:"What would you like to change?", rows:changeRows(null)}}},
       {undim:"co-p1-a4"}
     ]},
-    {label:"❚❚ Pause this month", send:"Pause this month", time:"08:14", steps:[
-      {inm:{time:"08:14",
-        body:'Done - August is paused for your tablets. Your mother\'s medicine still arrives as planned. We\'ll be back to normal in September; reply RESUME any time to restart sooner.'}}
-    ]},
-    {label:"☎ Talk to a person", send:"Talk to a person", time:"08:15", steps:[
+    {label:"Talk to a person", send:"Talk to a person", time:"08:15", steps:[
       {inm:{id:"A5", time:"08:15",
         body:'Of course. Reply <b>CALL ME</b> and a pharmacy team member will phone you back today, in your language, free of charge.\n\nOr send a voice note - we listen to those too.'}},
       {undim:"co-p1-a5"},
@@ -882,24 +1022,35 @@ const P1 = () => [
 const P2 = () => [
   {sys:"🔒 Messages and calls are end-to-end encrypted."},
   {date:"SAT, 22 AUG"},
-  {inm:{id:"C1", time:"09:40",
-    body:'Your August order is still open until <b>Wednesday 26 August</b>. This route carries medicine only - no groceries - but the everyday kind is covered: flu syrup, painkillers, vitamins.\n\nFrom what you usually buy:\n<b>1.</b> Multivitamins (your mother\'s) - ON SPECIAL <span class="amt">R49.90</span>\n<b>2.</b> Panado, 24 tablets - <span class="amt">R24.50</span>\n\nReply with a number, or type what you need.'}},
-  {tap:{send:"1", time:"09:42"}},
-  {inm:{id:"C3", time:"09:42",
-    body:'Added: multivitamins, <span class="amt">R49.90</span>.\nNew total to pay: <b><span class="amt">R150.50</span></b>.'}},
+  {sys:"Saturday morning - Sipho opens the door M3 left ajar (the [Add to my order] button in the P1 phone above)."},
+  {outm:{body:"Add to my order", time:"09:40"}},
+  {cards:{id:"C1", time:"09:40",
+    body:'What would you like to add? Anything in before <b>Wednesday 26 August</b> rides in the same parcel. This route carries medicine only - no groceries - but the everyday kind is covered 💊\n\nFrom what you usually buy:',
+    items:[
+      {emoji:"🍊", name:"Biogen Multivitamin 30s", price:'R49.90 · <em>ON SPECIAL</em>', walk:true, echoTime:"09:42"},
+      {emoji:"💊", name:"Panado, 24 tablets", price:"R24.50"}
+    ],
+    tail:'\nOr browse, or just type what you need.',
+    browse:"Opens Dis-Chem's in-WhatsApp medicine catalogue - browse, add to cart, and the cart lands back in this thread as an order. Scoped to what this route carries: medicine and everyday OTC only."}},
+  {inm:{id:"C5", time:"09:42",
+    body:'Added: Biogen Multivitamin 30s - <span class="amt">R49.90</span>.\nNew total to pay: <b><span class="amt">R150.50</span></b>.'}},
   {tap:{send:"cough mixture", time:"09:44"}},
-  {inm:{id:"C2", time:"09:44", body:'For a child or an adult?'}},
+  {inm:{id:"C4", time:"09:44", body:'For a child or an adult?'}},
   {qr:{buttons:[
     {label:"For an adult", time:"09:45", main:true},
     {label:"For a child", time:"09:45", steps:[
-      {inm:{time:"09:45", body:'For a child we ask their age and weight first - a pharmacist checks every children\'s medicine before it\'s added.'}}
+      {inm:{time:"09:45", body:'For a child we ask their age and weight first - the dose is checked against their weight by a pharmacist, so you collect with confidence.'}}
     ]}
   ]}},
-  {inm:{time:"09:45",
-    body:'Three options, all in stock:\n<b>1.</b> Cough syrup (generic), 100 ml - <span class="amt">R38.50</span>\n<b>2.</b> Benylin wet cough, 100 ml - <span class="amt">R62.95</span>\n<b>3.</b> ACC 200 sachets, 10 - <span class="amt">R89.00</span>\n\nReply with a number.'}},
-  {tap:{send:"1", time:"09:46"}},
-  {inm:{id:"C4", time:"09:46",
-    body:'Added: cough syrup, <span class="amt">R38.50</span>.\n\nYour total at the Capitec counter is now <b><span class="amt">R189.00</span></b>. Everything rides in the same locker on Friday - nothing else to arrange.'}}
+  {cards:{id:"C2", time:"09:45",
+    body:'Three options, all in stock - tap one to add:',
+    items:[
+      {emoji:"🧴", name:"Borstol Cough Syrup, 100 ml", price:"R38.50", walk:true, echoTime:"09:46"},
+      {emoji:"🧴", name:"Benylin wet cough, 100 ml", price:"R62.95"},
+      {emoji:"📦", name:"ACC 200 sachets, 10", price:"R89.00"}
+    ]}},
+  {inm:{time:"09:46",
+    body:'Added: Borstol Cough Syrup - <span class="amt">R38.50</span>.\n\nYour total at the Capitec counter is now <b><span class="amt">R189.00</span></b>. Everything comes in the same locker on Friday - nothing else to arrange.'+FOOT}}
 ];
 
 /* ---------- P3 ---------- */
@@ -907,21 +1058,36 @@ const P3 = () => [
   {sys:"🔒 Messages and calls are end-to-end encrypted."},
   {date:"WED, 26 AUG"},
   {inm:{id:"D2", time:"11:05",
-    body:'<b>Picked and checked ✓</b>\n\nYour family\'s order was checked today, all of it together:\n• your tablets against your mother\'s medicine and everything else you both take\n• allergies and doses\n• the scripts themselves\n\nSigned off by pharmacist <b>Nomsa Dlamini</b>.'}},
+    body:'✅ <b>Picked and checked</b>\n\nA registered pharmacist checked your order today:\n💊 The right medicine, at the right dose\n🔁 Nothing clashes - your cough syrup was checked against your blood-pressure tablets\n📋 Your script, and your history with us\n\nSigned off by pharmacist <b>Nomsa Dlamini</b>.'+FOOT}},
   {date:"THU, 27 AUG"},
   {inm:{id:"D3", time:"15:48",
-    body:'<b>Packed and sealed 📦</b>\n\nOne parcel: your tablets, your mother\'s medicine, the multivitamins and the cough syrup - waiting for the courier run to the locker.\n\nYour locker PIN: <b><span class="amt">4729</span></b>\nKeep it - it opens the locker on Friday, after you\'ve paid.'}}
+    body:'📦 <b>Packed and sealed</b>\n\nOne parcel: your tablets, the multivitamins and the cough syrup - waiting for the courier run to the locker.'+FOOT}},
+  {tap:{send:"CHANGE", time:"16:20"}},
+  {list:{time:"16:20", btn:"Choose an option", autoOpen:true,
+    body:'No problem. What would you like to change?',
+    sheet:{title:"What would you like to change?", rows:changeRows("16:21")}}},
+  {inm:{time:"16:21", body:'Just this month, or every month?'}},
+  {qr:{buttons:[
+    {label:"This month", time:"16:21", main:true},
+    {label:"Every month", time:"16:21", steps:[
+      {inm:{time:"16:21", body:'That would move your standing day - read back and confirmed the same way. The demo takes "This month".'}}
+    ]}
+  ]}},
+  {inm:{id:"D4", time:"16:22",
+    body:'Done - your parcel will be ready <b>Monday 31 August</b> instead. Same locker, same amount.'}},
+  {undim:"co-p3-d4"},
+  {sys:"Demonstration branch - the story returns to Friday 28 August; reset the thread to replay."}
 ];
 
 /* ---------- P4 ---------- */
 const P4 = () => [
   {sys:"🔒 Messages and calls are end-to-end encrypted."},
-  {date:"FRI, 28 AUG · PAYDAY"},
+  {date:"FRI, 28 AUG"},
   {inm:{id:"E1", time:"06:45",
-    body:'Payday - and your parcel is in the locker at <b>Capitec, taxi rank</b>. Ready now.\n\nTo collect:\n<b>1.</b> Pay <b><span class="amt">R189.00</span></b> at the counter - cash or instant EFT\n<b>2.</b> Enter PIN <b><span class="amt">4729</span></b> at the locker\n\nThe same amount you saw before. Nothing has changed.'}},
+    body:'Your parcel is in the locker at <b>Capitec, taxi rank</b> - ready now.\n\nTo collect:\n<b>1.</b> Pay <b><span class="amt">R189.00</span></b> at the counter - cash or instant EFT 💵\n<b>2.</b> Enter PIN <b><span class="amt">4729</span></b> at the locker 🔓\n\nThe same amount you saw before. Nothing has changed.'+FOOT}},
   {sys:"At the bank: Sipho pays R189.00 at the counter and the locker opens on his PIN. Nothing happens in the chat - and nothing needs to. (E2)"},
   {inm:{id:"E3", time:"10:32",
-    body:'In your parcel:\n• Amlodipine, 28 tablets (yours)\n• Your mother\'s CCMDD parcel\n• Multivitamins\n• Cough syrup\n\nCheck it now, at the locker - before the taxi. If anything is missing or wrong, send a photo here and a person will phone you straight away, in your language.'}},
+    body:'In your parcel:\n• Adco-Amlodipine 5 mg, 28 tablets\n• Biogen Multivitamin 30s\n• Borstol Cough Syrup\n\nCheck it now, at the locker - before the taxi. If anything is missing or wrong, send a photo here and a person will phone you straight away, in your language.'}},
   {photoTap:{time:"10:34"}},
   {undim:"co-p4-e3"},
   {inm:{time:"10:34",
@@ -935,11 +1101,14 @@ const P5 = () => [
   {list:{id:"F1", time:"09:15", btn:"My medicines",
     body:'Your family\'s medicine, whenever you want to look something up:',
     sheet:{title:"Your family's medicine cabinet", rows:[
-      {label:"Amlodipine - your tablets", walk:true, send:"Amlodipine - your tablets", echoTime:"09:15"},
-      {label:"Your mother's chronic parcel"},{label:"Cough syrup"},{label:"Multivitamins"}
+      {label:"Adco-Amlodipine 5 mg", note:"(Sipho) Blood pressure - 1 every morning", walk:true, send:"Adco-Amlodipine 5 mg", echoTime:"09:15"},
+      {label:"Enalapril 10 mg", note:"(Your mother) Blood pressure - from her clinic script"},
+      {label:"Hydrochlorothiazide 12.5 mg", note:"(Your mother) Blood pressure - from her clinic script"},
+      {label:"Biogen Multivitamin 30s", note:"(Household)"},
+      {label:"Borstol Cough Syrup", note:"(Household) Wet cough - 100 ml"}
     ]}}},
   {inm:{id:"F2", time:"09:15",
-    body:'<b>Amlodipine 5 mg</b> - your blood-pressure tablets.\n• One tablet every morning\n• With or without food\n• Keep taking them even when you feel fine - that\'s the medicine working\n\nIf reading isn\'t enough, just ask here - a pharmacist reads this thread. Or send a voice note; we listen to those too.'}},
+    body:'<b>Adco-Amlodipine 5 mg</b> (amlodipine) - your blood-pressure tablets.\n🌅 One tablet, every morning\n🍽 With or without food\n✔ Keep taking them when you feel fine - that\'s the medicine working\n\nIf reading isn\'t enough, just ask here - a pharmacist reads this thread. Or send a voice note; we listen to those too.'}},
   {inm:{id:"F4", time:"09:16",
     body:'Reminders: yours comes here at 20:00. Your mother\'s go to her phone - a short voice note in her language, timed to her mornings. Her printed day-by-day sheet is in the parcel, for the fridge.\n\nReply <b>STOP</b> to any reminder and it stops.'}},
   {date:"THAT EVENING"},
@@ -954,24 +1123,24 @@ const PPAR = () => [
   {sys:"🔒 Messages and calls are end-to-end encrypted."},
   {sys:"Scenario - out of stock (another month)"},
   {inm:{id:"G1", time:"07:58",
-    body:'One of your tablets is out of stock this month. Here is the plan - you choose:\n\n<b>1.</b> The cheaper generic you already prefer - ready on payday, same price\n<b>2.</b> Split the order: your mother\'s medicine ready on payday regardless, yours follows a few days later, same locker\n\nNothing is decided without you.'}},
+    body:'One of your medicines - your blood-pressure tablets - is out of stock this month. Here is the plan, you choose:\n\n<b>1.</b> A different generic of the same medicine - ready on the 28th, same price\n<b>2.</b> Split the order: the rest of your order is ready on the 28th, the tablets follow a few days later, same locker\n\nNothing is decided without you.'+FOOT}},
   {qr:{anyMain:true, buttons:[
     {label:"Use the generic", time:"08:03", steps:[
-      {inm:{time:"08:03", body:'Done - the generic will be ready on payday. Same price, same locker.'}}
+      {inm:{time:"08:03", body:'Done - the other generic will be ready on the 28th. Same medicine, same price, same locker.'}}
     ]},
     {label:"Split the order", time:"08:03", steps:[
-      {inm:{time:"08:03", body:'Done - your mother\'s parcel is ready on payday; yours follows, and we\'ll message the day it lands - before you travel.'}}
+      {inm:{time:"08:03", body:'Done - the rest of your order is ready on the 28th; the tablets follow, and we\'ll message the day they land - before you travel.'}}
     ]},
-    {label:"☎ Call me", send:"Call me", time:"08:03", steps:[
+    {label:"Call me", send:"Call me", time:"08:03", steps:[
       {inm:{id:"G4", time:"08:03", body:'A person will phone you back before 17:00 today, in your language.'}}
     ]}
   ]}},
   {sys:"Scenario - the locker is down"},
   {inm:{id:"G2", time:"06:50",
-    body:'Before you travel today: the locker at Capitec is out of order. Your parcel is already at the pickup point nearby - <b>same amount, same PIN</b> - and we\'ll tell you the moment the locker is fixed.\n\nYour taxi fare is never spent on a closed door.'}},
+    body:'Before you travel today: the locker at Capitec is out of order. Your parcel is already at the pickup point nearby - <b>same amount, same PIN</b> - and we\'ll tell you the moment the locker is fixed.\n\nYour taxi fare is never spent on a closed door.'+FOOT}},
   {sys:"Scenario - the script runs out"},
   {inm:{id:"G3", time:"09:20",
-    body:'Your mother\'s script has one repeat left after this month. We\'ve already sent the renewal request to her clinic - you\'ll see it move here, and it costs you nothing to chase.\n\nIf payday comes before the new script is back, we\'ll tell you before you travel - with a plan from the pharmacist, and a person on the phone if you want one.'}}
+    body:'Your script has one repeat left after this month. We\'ve already sent the renewal request to your doctor - you\'ll see it move here, and it costs you nothing to chase.\n\nIf your ready date comes before the new script is back, we\'ll tell you before you travel - with a plan from the pharmacist, and a person on the phone if you want one.'+FOOT}}
 ];
 
 /* ---------- boot ---------- */
