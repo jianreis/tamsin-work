@@ -152,6 +152,17 @@ h1,h2,h3,h4{margin:0}
 }
 .archnote a{color:var(--brand-dark)}
 
+/* ---- live note (regulatory / status callout on a non-archived card) -------- */
+.cnote{
+  font-size:.86rem; color:var(--ink-soft); background:#fff9ec;
+  border:1px solid #f0dca8; border-left:4px solid #d9a441; border-radius:8px; padding:10px 13px;
+}
+.cnote .cnlbl{
+  display:block; font-size:.62rem; text-transform:uppercase; letter-spacing:.12em;
+  font-weight:800; color:#8a5a00; margin-bottom:5px;
+}
+.cnote a{color:var(--brand-dark); font-weight:700}
+
 /* ---- journey group headers ------------------------------------------------ */
 .grouphead{
   grid-column:1 / -1; display:flex; align-items:baseline; gap:12px; margin-top:8px;
@@ -185,7 +196,7 @@ h1,h2,h3,h4{margin:0}
 
   <div class="ribbon">
     <span>&#9888; Concept for review - not an official Dis-Chem artefact</span>
-    <span class="gen">generated 2026-07-01 · updated 2026-08-16 (concept 09 The E-Script Token archived as infrastructure, its promises redistributed to concepts 08, 11 and 12 · concept 11 reworked as The 30/60 Fill, anchored on the stop you make on the way home from the doctor) · concept 17 Express Collect added (self-checkout anchor, the acute P4 collected route) · concept 03 gains the read-back and the never-speed-before-accuracy caveat · concept 12 Snap-a-Script archived as a channel rather than a concept) · previously 2026-08-12 (concept 02: cabinet holds medicine from anywhere, privacy mode, digital pillbox · concept 04: graded helper visibility + shared adherence · concept 05: the sync anchor + when sync is offered · concept 15: intro reworked around the kitchen-counter anchor · concept 14: the remembering line made plain) · from the Bigly ground-truth vault</span>
+    <span class="gen">generated 2026-07-01 · updated 2026-08-16 (concept 09 The E-Script Token archived as infrastructure, its promises redistributed to concepts 08, 11 and 12 · concept 11 reworked as The 30/60 Fill, anchored on the stop you make on the way home from the doctor) · concept 17 Express Collect added (self-checkout anchor, the acute P4 collected route) · concept 03 gains the read-back and the never-speed-before-accuracy caveat · concept 12 Snap-a-Script archived as a channel rather than a concept · concept 16 gains seamless clinic booking · concept 17 carries a regulatory note) · previously 2026-08-12 (concept 02: cabinet holds medicine from anywhere, privacy mode, digital pillbox · concept 04: graded helper visibility + shared adherence · concept 05: the sync anchor + when sync is offered · concept 15: intro reworked around the kitchen-counter anchor · concept 14: the remembering line made plain) · from the Bigly ground-truth vault</span>
   </div>
 
   <section class="intro">
@@ -523,6 +534,7 @@ const CONCEPTS = [
       '<b>Reminders that last exactly as long as the course</b> - through the final antibiotic dose, then they stop, so finishing is the easy path and the silence after is earned.',
       '<b>What to expect, in plain words</b> - the side effects worth knowing about, explained the way a person would say them, so a scary leaflet never becomes a scary evening.',
       '<b>A pharmacist on standby</b> - worried about a side effect? Message or phone, and a pharmacist answers, so a worry never has to wait for morning.',
+      '<b>If you need to be seen, the appointment is made while you talk</b> - a teleconsult on WhatsApp or a slot at the Dis-Chem clinic near you, booked inside the same conversation with the price said before you agree, so being told to see someone never becomes another errand to arrange.',
       "<b>It knows when to let go</b> - the check-ins end when the course does; and if you are not better by the day you should be, it says so and helps you back to the doctor."
     ],
     pillars:["S5","U7","U4","U2"]
@@ -541,7 +553,8 @@ const CONCEPTS = [
       '<b>A pharmacist is a few steps or one tap away</b> - the collections counter is right there and the pharmacist who checked your medicine is in the thread, so you are choosing speed, never less care.',
       '<b>Someone you trust can fetch it</b> - forward the code and they collect on your behalf, without ever seeing your medicines or your history.'
     ],
-    pillars:["U6","U5","S3","S5"]
+    pillars:["U6","U5","S3","S5"],
+    note:'<b>A collection unit nobody staffs is not permitted in a community pharmacy today.</b> The rule that would allow it already exists and already covers this exact use - SAPC\'s Remote Automated Dispensing Unit standard, written to "improve access to medicines", for chronic medicine, with a pharmacist completing the handover over an audio-visual link. It is restricted to public-sector pharmacy, so this concept asks Council to extend a standard rather than write a new one. The version shown here, with nobody on the line at all, is the further step. <a href="https://github.com/jianreis/tamsin-work/blob/main/wiki/concepts/unmanned-collection-points.md" target="_blank" rel="noopener">Read the full regulatory position</a> - the rules, the three possible designs and what to ask Council for.'
   }
   /* CONCEPTS_APPEND_MARKER */
 ];
@@ -579,6 +592,7 @@ function render(){
       '<div class="body">'+
         '<div class="tagline">'+esc(c.tagline)+'</div>'+
         (c.archiveNote?'<div class="archnote">'+c.archiveNote+'</div>':'')+
+        (c.note?'<div class="cnote"><span class="cnlbl">Where this stands</span>'+c.note+'</div>':'')+
         '<p class="lead">'+c.intro+'</p>'+
         '<div class="features"><span class="lbl">'+esc(c.featuresLabel)+'</span><ul>'+feats+'</ul></div>'+
         '<div class="pillars"><span class="plbl">Pillars</span>'+pillarPills+'</div>'+
