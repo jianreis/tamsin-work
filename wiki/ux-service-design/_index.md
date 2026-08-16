@@ -2,7 +2,7 @@
 type: index
 title: "UX & service design — index"
 domain: ux-service-design
-updated: "2026-06-17"
+updated: "2026-08-16"
 tags: [index, domain/ux]
 status: draft
 ---
@@ -41,6 +41,11 @@ reference** the design-kit blueprint/journey templates cite - see
   low-vision, low-literacy), low-data / feature-phone / **USSD / WhatsApp / SMS**
   channel ladder, multilingual design, and intermittent-connectivity /
   load-shedding resilience - the SA-critical page.
+- [[conversational-design-whatsapp]] — conversation-design principles for the
+  WhatsApp channel (one decision per turn, choice load, exploration vs
+  commitment button language, read-backs, repair, when a Flow beats chat) plus
+  the sourced WhatsApp Business Platform limits (3 buttons, 10 list rows,
+  template anatomy) and the applied checklist for the #11 message scripts.
 - [[pharmacy-ux-patterns]] — concrete scripting interaction patterns: Rx capture
   (photo/scan/e-token), identity & consent, refill & auto-refill, funding/price
   transparency, status/tracking, reminders/adherence nudges, and graceful

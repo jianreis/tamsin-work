@@ -9,7 +9,7 @@ confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, journey/refill, journey/submit, journey/dispense, journey/collect, journey/deliver, journey/adhere, topic/chronic, region/za]
 sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026]
 created: "2026-07-17"
-updated: "2026-08-12"
+updated: "2026-08-16"
 ---
 
 # To-be journey (v3) - the household repeat, in moments
@@ -62,7 +62,18 @@ Tamsin, insured side): the Script Sync top-up cost threaded through the
 money messaging - the P0 confirm read-back includes what the first month
 costs with the one-off top-up next to the normal month, and the P1 cost
 breakdown carries the first-month top-up as its own line item. Cash needs
-nothing (declined sync, no top-up).
+nothing (declined sync, no top-up). v3.8 (2026-08-16, agreed with Tamsin,
+cash side, driven by the #11 channel pass): the sync offer generalises to a
+date-move mechanic - his own dispensed tablets can move to any day of the
+month via a small once-off costed top-up that stretches his supply, priced
+before he decides, never touching the programme parcel. He declines the
+programme-date sync (it sits in the week before payday and costs more to
+bridge) and uses the same mechanic to move his day from his first-fill date
+to the 28th, after payday - buying affordability with the offer he was made.
+Payday leaves all customer-facing service copy: the service works only in
+days the customer chooses and is never told what the date means; payday
+remains his own reasoning, in his voice and in the journey's conceptual
+frame.
 
 ## The phase structure (v3)
 
@@ -169,7 +180,7 @@ governs. Summary of the approved skeleton:
 
 | Phase | Need (gist of) | Activities (insured) | Activities (cash) | Key moments | Pain points (source) |
 |---|---|---|---|---|---|
-| P0 Signing up (once) | Set up once, on my terms, remembered every month after | I add my household · I add their medicines · One date for everyone (Script Sync made visible: the plan anchors on Zanele's cycle - the pharmacist's call - and the costed first-month top-up moves to Nomvula + Grace, v3.3) · I choose how it reaches us (channel only - time is proposed in each month's notice; incl. the Made-for-Me dose-pack opt-in) · I choose how I pay (incl. the rejection rule: check first or charge-and-continue) · I check it once, and confirm (read-back includes the first month's cost with the one-off top-up, v3.7) (v3.1) | I start the conversation (origin story: invited by message after an in-store collection, pharmacist points to WhatsApp, v3.6) · I add my household · Two dates, one memory (sync offered and declined, v3.4: her CCMDD date can't move and sits in the week before payday, so he keeps his tablets on payday; hers is free to collect; the chat tracks both dates) · I choose how it reaches us (locker at Capitec - no Dis-Chem nearby; bank-trip logic moved here from the opener, v3.6; instruction language per member) · I choose how I pay (cash on collection opens the locker) · I confirm (v3.1) | "I told them once how I want it" (both, on confirm) | You type it again (verbatim, sentiment) · The digital front door is broken (verbatim, complaints) |
+| P0 Signing up (once) | Set up once, on my terms, remembered every month after | I add my household · I add their medicines · One date for everyone (Script Sync made visible: the plan anchors on Zanele's cycle - the pharmacist's call - and the costed first-month top-up moves to Nomvula + Grace, v3.3) · I choose how it reaches us (channel only - time is proposed in each month's notice; incl. the Made-for-Me dose-pack opt-in) · I choose how I pay (incl. the rejection rule: check first or charge-and-continue) · I check it once, and confirm (read-back includes the first month's cost with the one-off top-up, v3.7) (v3.1) | I start the conversation (origin story: invited by message after an in-store collection, pharmacist points to WhatsApp, v3.6) · I add my household · Two dates, one memory (sync offered, v3.4/v3.8: her CCMDD date can't move - the programme delivers around the 18th; his own dispensed medicine can move to any day via a small once-off costed top-up - never the programme parcel - priced before he decides, v3.8; he passes over the 18th and moves his day to the 28th, after payday, buying affordability with the same mechanic; the chat tracks both dates, and payday stays his logic, never a date the service is told, v3.8) · I choose how it reaches us (locker at Capitec - no Dis-Chem nearby; bank-trip logic moved here from the opener, v3.6; instruction language per member) · I choose how I pay (cash on collection opens the locker) · I confirm (v3.1) | "I told them once how I want it" (both, on confirm) | You type it again (verbatim, sentiment) · The digital front door is broken (verbatim, complaints) |
 | P1 Repeats are due | Everyone's medicine keeps flowing on its own; complete clarity on the cost | The message arrives · I see the costs, clearly broken down (first-month top-up as its own line in the breakdown, v3.7) · It keeps going - unless I say otherwise (first-person register, v3.1) | The message arrives (opens a few days after her programme parcel; his order only, v3.4) · I see the price before I travel (his tablets only - no CCMDD line, v3.4; moment why carries the counter dignity, v3.6) · It keeps going - unless I say otherwise, with the person-in-my-language fallback on its own line (v3.1) | "My medicine ordered itself" ⭐ · "The only thing I ever bought blind - not anymore" ⭐ (both economies) | The re-order dance (verbatim, complaints) · Money is a mystery until the end (verbatim, complaints) |
 | P2 Adding to the order | The delivery carries the rest of the list | My order stays open · I add the household's shop (whole store browsable/searchable; suggestions + specials as the helper, not the boundary, v3.5) | I can add other medicine (medicine incl. OTC only - no general retail; honest constraint) · I add what we need, in the chat (chat-commerce demo: numbered picks, free entry, clarifying question, priced options; v3.1) | "While we're here... - without going anywhere" (insured only; the cash addition agreed to carry no moment) | none in the research - honest note instead |
 | P3 Checked and packed | Certainty it's exactly right, for everyone | Picked and checked (status lists the checks itself, named pharmacist; moment here) · Packed and sealed (no credential at sealing, v3.5) · Fulfilment flexibility (until the day before: shift day/window or switch to collection; moved from P4's "If the day doesn't suit me", v3.5) | Picked and checked (his order only - the programme packs hers, v3.4; moment here) · Packed and sealed (no PIN at sealing, v3.6) · Fulfilment flexibility (shift the date if payday moves, switch locker / store / costed delivery, until the day before, v3.6) | "Every check ran before it left the building" (both) | The short pack, discovered at home (verbatim, complaints) · Errors read as safety threats (sentiment) |

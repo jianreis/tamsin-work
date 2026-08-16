@@ -141,6 +141,18 @@ notes prefixed `src-consult-` (see [[wiki/ux-service-design/consultancy-pharmacy
 - [[src-consult-cvs-scriptpath-adler]] (B) — CVS ScriptPath (Deborah Adler); the script/label/schedule as a design surface.
 - [[src-consult-designit-ustwo-smartdesign]] (C) — Designit/ustwo/Smart Design: no firm-specific pharmacy-scripting case found (honest gap); inclusive-design method.
 
+Conversational design + WhatsApp platform (ingested 2026-08-16 for [[conversational-design-whatsapp]]):
+- [[src-ux-google-conversation-design]] (B) - Google conversation design: Grice's maxims, implicit/explicit confirmation, rapid-reprompt repair.
+- [[src-ux-nng-chatbot-ux]] (B) - NN/g chatbot usability study: linear flows break on deviation; interaction cost; repair.
+- [[src-ux-hall-conversational-design]] (B) - Erika Hall's nine principles; write the no-interface conversation first.
+- [[src-ux-deibel-evanhoe-conversations-with-things]] (B) - Deibel & Evanhoe: turn-taking, repair, prompt craft.
+- [[src-ux-hicks-law-choice-load]] (C) - Hick's law + progressive disclosure applied to choices per chat turn.
+- [[src-wa-cloud-api-interactive]] (A) - Meta Cloud API: 3 reply buttons / 20-char titles; 10 list rows; body 1,024 / footer 60.
+- [[src-wa-message-templates]] (A) - Meta templates: utility/marketing/authentication; header 60 / body 1,024 / footer 60; 24-h window.
+- [[src-wa-flows]] (A) - WhatsApp Flows: native multi-screen forms in chat, structured answers back to the thread.
+- [[src-wa-click-to-chat]] (A) - wa.me click-to-chat links with URL-encoded pre-filled first message.
+- [[src-wa-business-messaging-best-practices]] (B) - BSP-documented Meta policy: short messages, opt-in/STOP, quality rating.
+
 ### Consumer context
 - [[src-con-icasa-ict-2025]] (A) — ICASA State of ICT 2025: smartphone/data penetration, coverage, broadband, prepaid.
 - [[src-con-datareportal-digital-2024]] (B) — Digital 2024 SA: internet penetration 74.7%, WhatsApp #1 channel.
