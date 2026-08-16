@@ -7,7 +7,7 @@ confidence: high
 tags: [domain/consumer, domain/digital, region/za, topic/accessibility, topic/last-mile]
 sources: [src-con-icasa-ict-2025, src-con-datareportal-digital-2024, src-con-ramp-data-prices, src-con-zero-rating-ussd, src-con-loadshedding]
 created: "2026-06-13"
-updated: "2026-06-17"
+updated: "2026-08-16"
 ---
 
 # Digital access & WhatsApp as the default channel
@@ -141,6 +141,7 @@ people are home and trying to transact [[src-con-loadshedding]]. Flows must be
   [[wiki/consumer-context/language-literacy-and-trust]]).
 
 ## See also
+- [[conversational-design-whatsapp]] - how to write the WhatsApp turns themselves (choice load, button language, platform limits)
 - [[wiki/consumer-context/two-economy-affordability]]
 - [[wiki/consumer-context/last-mile-addressing-logistics]]
 - [[wiki/consumer-context/language-literacy-and-trust]]

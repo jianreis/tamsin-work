@@ -7,7 +7,7 @@ confidence: high
 tags: [domain/ux, domain/consumer, topic/accessibility, region/za, journey/submit, journey/collect]
 sources: [src-ux-wcag-older-users-accessibility, src-ux-sa-data-cost-digital-divide, src-ux-momconnect-ussd-whatsapp, src-ux-sa-whatsapp-conversational-commerce, src-ux-ahrq-health-literacy-teachback, src-ux-nhs-govuk-design-principles, src-ux-east-behavioural-insights]
 created: "2026-06-13"
-updated: "2026-06-17"
+updated: "2026-08-16"
 ---
 
 # Inclusive & low-bandwidth design for South Africa
@@ -139,6 +139,7 @@ to **WCAG 2.x AA** (Perceivable, Operable, Understandable, Robust):
   SA: see [[wiki/digital-transformation/_index]].
 
 ## See also
+- [[conversational-design-whatsapp]] - conversation-design rules and sourced platform limits for the WhatsApp channel this page puts on the ladder
 - [[pharmacy-ux-patterns]] · [[healthcare-service-design-patterns]] ·
   [[journey-mapping-method]] · [[jtbd-and-behavioural-design]] ·
   [[wiki/consumer-context/_index|SA consumer context]]
