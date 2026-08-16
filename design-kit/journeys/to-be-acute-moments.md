@@ -9,7 +9,7 @@ confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, journey/submit, journey/validate, journey/dispense, journey/pay, journey/collect, journey/deliver, journey/adhere, topic/acute, topic/e-prescription, region/za]
 sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026, src-dc-script-journey-interviews-2025]
 created: "2026-07-26"
-updated: "2026-07-26"
+updated: "2026-08-16"
 ---
 
 # To-be journey - the acute script, in moments
@@ -67,8 +67,10 @@ for a sick one.
   her own acute illness (UTI flared overnight). Her GP is a portal partner.
 - **Cash: Thabo Mokoena** ([[design-kit/personas/cash-pay-acute-customer]]),
   a one-off antibiotic + paediatric syrup for his sick 6-year-old, clinic
-  doctor NOT on the portal - he enters by Snap-a-Script from the clinic
-  gate. A new face after Sipho carried #07 and #09.
+  doctor NOT on the portal - he enters by photographing the script to the
+  WhatsApp line from the clinic gate (the snap channel; its concept card,
+  Snap-a-Script, was archived 2026-08-16). A new face after Sipho carried
+  #07 and #09.
 
 ## Phase set (agreed; P2 renamed 2026-07-26 during the P1 pass)
 
@@ -211,8 +213,10 @@ On top of the full v3.1 rule set from #09:
   per item) -> pharmacist's FINAL check of the picked pack against the
   original script (the sign-off gate) -> seal, code issue, digital
   instructions push. The collection/order QR (the redemption face of the
-  central e-script record) is issued at sealing on BOTH sides - express-zone
-  scan for cash, driver-handover proof and switch-to-collect key for insured.
+  central e-script record) is issued at sealing on BOTH sides -
+  collections-counter scan for cash, driver-handover proof and
+  switch-to-collect key for insured. *(Naming updated 2026-08-16 - see the
+  terminology table below.)*
 - **Concepts are referenced inline only where the reader watches them work**
   (generalised from the E-Script Token rule above, which is what eventually
   retired that concept: nothing in the journey ever watches a token).
@@ -362,9 +366,11 @@ walk away, in front of everyone, if it's too much. This time the number came
 to him, standing at the clinic, before anything was spent. [why] He knows
 the price - and that he can afford it - before his son takes another step.
 [/why] Nobody made him ask; the price was simply offered, with the cheaper
-generic presented as the smart choice it is. That is Real-Time Transparency (inline
-link) meeting him exactly where he stands - one photo, on the phone he
-already has.
+generic presented as the smart choice it is. That is Real-Time Transparency
+(inline link) reaching him where he actually stands - one photo from the
+phone he already has, read back to him before a single number was quoted.
+*(Closing sentence reworded in the 2026-08-16 relink, when the read-back
+moved into Real-Time Transparency - mirrored back from the deliverable.)*
 
 ### Current-state pain points (shared per phase)
 
@@ -423,8 +429,8 @@ already has.
 ## Approved copy - P2: Choosing how I get it (signed off by Tamsin, 2026-07-26)
 
 **Phase principle:** Dis-Chem runs ahead of the customer - preparation starts
-at sign-off/go-ahead and the medicine is ready before they are (express
-pickup) or arriving just after them (same-day delivery slot). No moments in
+at sign-off/go-ahead and the medicine is ready before they are (collection)
+or arriving just after them (same-day delivery slot). No moments in
 this phase.
 
 **The stock/price logic (spec note):** the regulated cash price (SEP +
@@ -436,7 +442,7 @@ where the customer is standing; delivery needs an address - the two are
 never conflated. Insured/portal stock draws from a radius around the
 patient's profile anchors (home, usual store), which is what P1's "in stock
 at my closest Dis-Chem" honestly means. Release of made-up medicine
-(dispatch or express-zone staging) is gated on the customer's confirmed
+(dispatch or collection staging) is gated on the customer's confirmed
 go-ahead (legal/operational); preparation runs ahead of it.
 
 ### Need (shared)
@@ -449,11 +455,15 @@ I do** - so my day stays about getting better.
 
 **A1 · The question waits for me in the car** - By the time I'm in the car,
 the message is there: my script is already being prepared - how would I like
-it? Collect at the Dis-Chem on my way home - ready within 30 minutes, handed
-over by a pharmacist who'll run me through it. Or delivery, in a slot I
-choose, with the instructions in the parcel and a pharmacist a message away
-if anything is unclear. It doesn't expire while I think, and the preparing
-doesn't wait for me either.
+it? Collect at the Dis-Chem on my way home, ready within 30 minutes, and I
+choose how I take it: express collect, where I scan a code and the pack
+comes out without my speaking to anyone, or the collections counter, where a
+pharmacist hands it over and runs me through it. Either way the notes come
+to me, on WhatsApp or printed. Or delivery, in a slot I choose, with the
+instructions in the parcel and a pharmacist a message away if anything is
+unclear. It doesn't expire while I think, and the preparing doesn't wait for
+me either. *(Reworded 2026-08-16 with the P4 route fork - P2 names the fork
+in one line; mirrored back from the deliverable.)*
 
 **A2 · I choose a delivery slot** - I want my couch more than anything, so I
 pick delivery and take the early-afternoon slot. The confirmation shows the
@@ -479,7 +489,7 @@ work. Easy.
 **A2 · I say go ahead** - I reply "1 - go ahead". That's the yes they need
 from me before medicine can be made up in my son's name, and everything was
 standing ready for it. The confirmation tells me: ready from this afternoon
-in the express pickup zone, where the pharmacist hands it over and runs me
+at the collections counter, where the pharmacist hands it over and runs me
 through his dose. It's held until closing - and if my shift runs late,
 there's an after-hours pickup point outside the store where my code still
 works.
@@ -514,10 +524,10 @@ collect. If I say nothing, nothing is added.
   ready-within-30 · delivery: slot picker) · store choice by name / shared
   location (stores near where I stand) / address for delivery cost, with
   stores-with-stock returned (cash) · go-ahead reply gate · confirmation
-  with express-zone readiness, hold-until-close and the after-hours pickup
-  code · priced symptom add-on list (taps / numbered replies) · counselling
-  on both routes (pharmacist at handover; instructions + reachable
-  pharmacist on delivery).
+  with collections-counter readiness, hold-until-close and the after-hours
+  pickup code · priced symptom add-on list (taps / numbered replies) ·
+  counselling on both routes (pharmacist at handover; instructions +
+  reachable pharmacist on delivery).
 - Backstage: dispensing starts at sign-off - clinical check first, staging
   on the routing choice · preparation runs ahead of the go-ahead; release
   gated on the confirmed yes · stock model per the spec note above · slot
@@ -530,13 +540,23 @@ collect. If I say nothing, nothing is added.
   accountability with proof of handover; counselling access preserved on
   every route; unattended after-hours release of scheduled medicine from an
   external point requires a pharmacist-oversight model - 🔮 requires-reform.
+  Delivering an acute script is itself 🔮 requires-reform on the current
+  rules (added 2026-08-16): SAPC rule 1.9.7(e) provides that "medicines
+  which are prescribed for acute ailments or conditions (i.e. immediate
+  need, not repeatable and non-chronic conditions) shall not be delivered
+  to patients by mail/courier". Whether a pharmacy's own same-metro
+  delivery is "mail/courier" within that rule is ⚠️ unresolved and needs a
+  legal read - punchlist 10(k). The delivery route shown is drawn on the
+  assumption it is distinguishable.
 - Chips (cites): slot engine + DeliverD/TMS + stores-with-stock routing
-  (wiki/digital-transformation/dischem-scripting-tech-roadmap) · express
-  pickup zone ⚠️ (wiki/dischem/store-of-the-future-customer-voice) ·
-  after-hours external pickup 🔮 (wiki/sa-regulatory/pharmacy-act-sapc-gpp) ·
-  OTC attach ⚠️ (wiki/concepts/omnichannel-fulfilment) · WhatsApp numbered
-  picks (wiki/consumer-context/digital-access-and-whatsapp) · tokenised
-  saved card (wiki/concepts/identity-and-consent).
+  (wiki/digital-transformation/dischem-scripting-tech-roadmap) · acute
+  script delivered 🔮 (SAPC rule 1.9.7(e) - punchlist 10(k)) · collections
+  counter ⚠️ (wiki/dischem/store-of-the-future-customer-voice; punchlist
+  10(a)) · after-hours external pickup 🔮
+  (wiki/sa-regulatory/pharmacy-act-sapc-gpp) · OTC attach ⚠️
+  (wiki/concepts/omnichannel-fulfilment) · WhatsApp numbered picks
+  (wiki/consumer-context/digital-access-and-whatsapp) · tokenised saved
+  card (wiki/concepts/identity-and-consent).
 
 ## Approved copy - P3: Checked and filled (signed off by Tamsin, 2026-07-26)
 
@@ -601,7 +621,7 @@ watched it happen. [/why] That is The Named Check (inline link), made for
 the person with the most to lose from an anonymous mistake.
 
 **A3 · Ready, with my code** - The ready message comes before my shift ends:
-"Ready - express pickup zone, show this code." The same code works at the
+"Ready - collections counter, show this code." The same code works at the
 after-hours point outside the store if I'm late. His dosing guide is already
 in the WhatsApp thread, in my language, and the same instructions are on the
 labels.
@@ -650,7 +670,7 @@ labels.
   paediatric dose check (wiki/dispensing-practice/clinical-checks-and-mtm) ·
   in-language guides (wiki/consumer-context/language-literacy-and-trust).
 
-## Approved copy - P4: In hand (signed off by Tamsin, 2026-07-26)
+## Approved copy - P4: In hand (signed off by Tamsin, 2026-07-26; insured route fork added 2026-08-16 - see the P4 route fork section below)
 
 ### Need (shared)
 
@@ -658,7 +678,7 @@ The medicine is ready; now it has to actually reach my hands. I need the
 **promise kept as made** - **no chasing, no wondering, no wasted trip** -
 because today I have nothing spare to absorb a let-down.
 
-### Activities - insured (Aisha)
+### Activities - insured (Aisha - delivered route, the spine)
 
 **A1 · It's on its way** - Mid-afternoon the thread moves: "On its way -
 arriving around 15:10", with a live map if I feel like watching. If the time
@@ -689,10 +709,48 @@ is on call if any of it is unclear. Handing it over wasn't the end of their
 job. *(Delivery-route counselling equivalence: the mechanism echoes #09's
 photo-triggered callback, punchlist 9(e).)*
 
+### Activities - insured (Aisha - collected route, added 2026-08-16)
+
+*(Drafted and agreed in the 2026-08-16 concepts session, built straight into
+the deliverable; back-filled here 2026-08-16 so the spec stays the source of
+truth. The route toggle is scoped to P4 alone; P3 is identical on both
+routes.)*
+
+**A1 · I pull in on the way home** - The ready message came through while I
+was still paying the doctor: thirty minutes, express collect, at the store I
+drive past anyway. So I drive home the way I always do - past the Dis-Chem I
+have stopped at a hundred times with a script in my hand and an hour to
+spare. Tonight there is nothing in my hand and nothing to hand over.
+
+**A2 · The wall hands it over** - Express collect sits on the outside wall,
+before the doors. I hold my phone to the scanner, a door opens, and my pack
+is there with my name on it. No queue, no counter, nobody to explain myself
+to. I am back in the car in under a minute, and the dispensary is somebody
+else's evening.
+
+**M4c (under A2) "In and out, and I never spoke to anyone"** (unstarred) -
+The dispensary queue is where being ill gets slowest - you stand among other
+unwell people, at your own worst, waiting for a counter to call your name.
+Aisha never went inside. [why] The stop she was always going to make cost
+her a minute in the car park instead of an afternoon in the queue. [/why]
+And the quiet was her choice, not the design's: the collections counter was
+right there, with a pharmacist ready to talk her through it. She chose not
+to speak to anyone, and nothing about her care got smaller for it. That is
+Express Collect (inline link) - the stop made instant rather than deleted,
+which is the half of The 30/60 Fill (inline link) the journey has never
+shown.
+
+**A3 · The notes come with it** - Before I have pulled out of the bay, the
+counselling notes land on WhatsApp: with food, morning and evening, seven
+days, and what to watch for. I could have had them printed at the machine
+instead - the choice was on the screen. And if I would rather hear it from a
+person, Naledi's line is one tap away in the same thread. I just did not
+have to stand in a queue to be offered it.
+
 ### Activities - cash (Thabo)
 
-**A1 · The express counter, not the queue** - After my shift I stop at my
-store. The express pickup zone is signposted right at the front - the
+**A1 · The collections counter, not the queue** - After my shift I stop at
+my store. The collections counter is signposted right at the front - the
 dispensary queue is somebody else's afternoon. I show my code, and the pack
 comes out with my son's name on it. No forms, no retelling the story. (If my
 shift had run late, the outside pickup point takes the same code.)
@@ -732,25 +790,47 @@ same counter, and done. The number I planned for is the number I pay.
 
 ### Behind the line (P4 panel)
 
+*(Rewritten 2026-08-16 with the route fork; mirrored back from the
+deliverable so the spec stays the source of truth.)*
+
 - Frontstage: dispatch status + live map + honest ETA, early re-time on
   slip · driver handover verified against the order QR (proof of delivery) ·
-  post-delivery contents confirmation with escalation to a person · express
-  pickup zone with code scan and named pack · counter counselling
-  (show-and-tell: marked syringe, in-language labels) · one pay-at-counter
-  total · after-hours pickup point on the same code 🔮.
+  post-delivery contents confirmation with escalation to a person · two
+  collection routes offered at P2: express collect (scan, unattended, no
+  counter) or the collections counter (pharmacist handover) · express-collect
+  unit sited on the outside wall - code scan, named pack, works after hours ·
+  counselling notes delivered on the express route: WhatsApp or printed at
+  the unit, named pharmacist one tap away · counter counselling on the
+  staffed route (show-and-tell: marked syringe, in-language labels) · one
+  pay-at-counter total · after-hours pickup point on the same code.
 - Backstage: slot-run dispatch and routing · POD capture against the token ·
-  express-zone staging under name + code, single-redemption enforced ·
+  staging under name + code for both collection routes, single-redemption
+  enforced · route choice recorded at P2 and carried to staging - express
+  bay vs counter · counselling pack generated at sealing and released to the
+  chosen channel; declining the conversation never suppresses the notes ·
   pay-at-counter reconciliation against the quoted total · counselling
-  logged as given; reachable-pharmacist line stays open on the delivery
-  route.
+  logged as given or as offered-and-declined; reachable-pharmacist line
+  stays open on every route.
 - Regulatory: scheduled-medicine delivery under pharmacy accountability with
-  recorded proof of handover; counselling access preserved on both routes;
-  unattended after-hours release 🔮 requires-reform.
+  recorded proof of handover; counselling *access* preserved on every route,
+  with GPP putting physical presence for counselling as *preferred* rather
+  than required (rule 2.7.1.3.1(a)). Express collect as shown is 🔮
+  requires-reform, and the rule is now known exactly: GPP 1.9.3(b) bars a
+  patient receiving directly from an in-pharmacy automated unit;
+  patient-facing units live under SAPC rule 1.11 (RADU), which permits
+  precisely this for chronic medicine in institutional public pharmacy with
+  a pharmacist on the audio-visual interface at dispensing (1.11.5(a)). The
+  silent version needs two extensions of rule 1.11: to community pharmacy,
+  and to release without a live pharmacist. Unattended after-hours release
+  compounds this. Whether a patient may decline face-to-face counselling
+  remains ⚠️ unsourced (punchlist 10(j)).
 - Chips (cites): DeliverD / last-mile TMS + POD
   (wiki/digital-transformation/dischem-scripting-tech-roadmap) · live
-  tracking (wiki/global-benchmarks/patterns-deep-dive) · express pickup zone
-  ⚠️ (wiki/dischem/store-of-the-future-customer-voice; punchlist 10a) ·
-  token single-redemption (wiki/concepts/e-prescription-token) ·
+  tracking (wiki/global-benchmarks/patterns-deep-dive) · collections counter
+  (staffed) ⚠️ (punchlist 10(a)) · express collect (unattended unit) 🔮
+  (SAPC rules 1.9.3(b) + 1.11 - wiki/concepts/remote-collection-points) ·
+  counselling opt-out with notes ⚠️ (punchlist 10(j)) · token
+  single-redemption (wiki/concepts/e-prescription-token) ·
   realistic-windows principle (wiki/dischem/store-of-the-future-customer-voice) ·
   counselling at handover (wiki/dispensing-practice/counselling-and-health-literacy) ·
   contents-confirmation callback (punchlist 9(e) mechanism).
@@ -1031,9 +1111,9 @@ distance isn't worth it. The wasted trip is the one thing they never let
 happen.
 
 **S2 · My phone is dead at the counter** - A twelve-hour shift and the
-battery didn't make it. At the express counter my ID is enough - the pack
-is under his name, and the order is mine, not my phone's. The code was for
-speed, never a lock.
+battery didn't make it. At the collections counter my ID is enough - the
+pack is under his name, and the order is mine, not my phone's. The code was
+for speed, never a lock.
 
 **S3 · The money isn't there today** - The total hasn't changed - the week
 did. One reply: "hold it for me." It's held at the counter, price
@@ -1059,7 +1139,7 @@ neighbour would hold something for you.
 - Frontstage: failure messages that carry the recovery options inside them
   (never bare bad news) · a person phones on delivery failure (insured) and
   on anything touching money or the child (cash) · one-tap / one-reply
-  decisions · ID fallback at the express counter · hold-at-counter reply.
+  decisions · ID fallback at the collections counter · hold-at-counter reply.
 - Backstage: stock-gap detection at pick time with reroute options computed
   before the customer is told · claim-delta detection between dry-run and
   final adjudication, gating dispatch ⚠️ · pharmacist-confirmed generic
@@ -1101,7 +1181,11 @@ identical on both routes and is not toggled.
 Consequence: **Thabo uses the collections counter**, not express collect - his
 M4b moment is the pharmacist walking him through his son's dose, and that stays.
 Renamed through P2-cash, P4-cash and ∥-cash. The after-hours external point is
-unchanged and still 🔮 requires-reform.
+unchanged and still 🔮 requires-reform. *(2026-08-16, journey-comments sweep:
+the first rename pass missed P3-cash's ready message, ∥-cash's dead-phone
+scenario and the P2/∥ frontstage lanes in the built page, and had not been
+mirrored into this spec's approved-copy sections at all - both completed
+through spec and deliverable.)*
 
 **Regulatory stance on express collect (decided with Tamsin 2026-08-16, option 2).**
 The silent, nobody-present unit is **kept as drafted and flagged 🔮
@@ -1139,8 +1223,10 @@ the vault**; logged as punchlist item 10(j) and an open question.
 - ∥ scenarios: to be defined with Tamsin at that phase pass (acute-native;
   includes "I'm worried about a side effect" - reactive, needs a decision -
   distinct from M6's proactive check-in).
-- Express pickup counter (scan QR, priority handover, no dispensary queue):
-  design assumption - ⚠️ + `meta/punchlist.md` entry when P4 is drafted.
+- ~~Express pickup counter (scan QR, priority handover, no dispensary queue):
+  design assumption - ⚠️ + `meta/punchlist.md` entry when P4 is drafted.~~
+  Done: logged as punchlist 10(a) and renamed **the collections counter**
+  2026-08-16.
 - Emotion curves: values set at build time.
 - P2-P6 and ∥ copy: drafted phase by phase, reviewed by Tamsin before
   entering the spec (P1 above is the approved pattern; M1 and M2 blocks are
@@ -1150,5 +1236,6 @@ the vault**; logged as punchlist item 10(j) and an open question.
 
 - [[design-kit/templates/moments-journey-template]] - the canon
 - [[design-kit/journeys/to-be-household-repeat-moments]] - the v3.1 register rule set
-- `deliverables/08-concepts.html` - the concept set (now 16)
+- `deliverables/08-concepts.html` - the concept set (now 17: 14 live, 3
+  archived in place - card ids are array positions, never renumber)
 - `deliverables/07-tobe-acute-escripting-journey.html` - the previous acute treatment (preserved)

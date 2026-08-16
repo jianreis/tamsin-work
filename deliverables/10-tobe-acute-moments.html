@@ -197,7 +197,7 @@ details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #10 · SCRIPT RE-IMAGINED - THE ACUTE SCRIPT, IN MOMENTS</span>
-  <span class="gen">generated 2026-07-26 · updated 2026-08-16 (P4 gains Aisha's collected route + express collect; naming resolved - collections counter is staffed, express collect is not; regulatory position verified against the primary SAPC rules and two 🔮 flags raised) · content spec: design-kit/journeys/to-be-acute-moments.md · previous acute treatment (#07) preserved</span>
+  <span class="gen">generated 2026-07-26 · updated 2026-08-16 (P4 gains Aisha's collected route + express collect; naming resolved - collections counter is staffed, express collect is not; regulatory position verified against the primary SAPC rules and two 🔮 flags raised; concept-set implications swept later the same day - the collections-counter rename completed through P3-cash, ∥-cash and the P2/∥ lanes, and the fork copy mirrored back into the spec) · content spec: design-kit/journeys/to-be-acute-moments.md · previous acute treatment (#07) preserved</span>
 </div>
 
 <section class="intro">
@@ -377,14 +377,14 @@ const DATA = {
          q:"Dis-Chem App is dysfunctional.", src:"complaints"}
       ],
       behind:{
-        front:["How-would-you-like-it message (collect: named store, ready within 30 · delivery: slot picker)","Store choice by name / shared location (stores near where I stand) / address for delivery cost - stores-with-stock returned (cash)","Go-ahead reply gate","Confirmation with express-zone readiness, hold-until-close and the after-hours pickup code","Priced symptom add-on list (taps / numbered replies)","Counselling on both routes: pharmacist at handover; instructions + reachable pharmacist on delivery"],
+        front:["How-would-you-like-it message (collect: named store, ready within 30 · delivery: slot picker)","Store choice by name / shared location (stores near where I stand) / address for delivery cost - stores-with-stock returned (cash)","Go-ahead reply gate","Confirmation with collections-counter readiness, hold-until-close and the after-hours pickup code","Priced symptom add-on list (taps / numbered replies)","Counselling on both routes: pharmacist at handover; instructions + reachable pharmacist on delivery"],
         back:["Dispensing starts at sign-off - clinical check first, staging on the routing choice","Preparation runs ahead of the go-ahead; release (dispatch or express-zone staging) gated on the confirmed yes","Stock model: the regulated cash price is national, stock is local - the routing reply returns nearest stores with stock","Slot capacity engine keeps delivery slots honest","Add-ons attach until packing starts, never gating the medicine","Saved card charged at packing (insured); one pay-at-counter total (cash)"],
         reg:"<b>Release & counselling:</b> dispensing in a patient's name proceeds on their confirmed instruction; couriered scheduled medicine stays under pharmacy accountability with proof of handover; counselling access preserved on every route; unattended after-hours release from an external point requires a pharmacist-oversight model - 🔮 requires reform. <b>Delivering an acute script is itself 🔮 requires-reform on the current rules:</b> SAPC rule 1.9.7(e) provides that \"medicines which are prescribed for acute ailments or conditions (i.e. immediate need, not repeatable and non-chronic conditions) shall not be delivered to patients by mail/courier\". Whether a pharmacy's own same-metro delivery is \"mail/courier\" within that rule is ⚠️ unresolved and needs a legal read - punchlist 10(k). The delivery route shown here is drawn on the assumption it is distinguishable.",
         caps:[
           {name:"Slot engine", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
           {name:"Acute script delivered", cite:"SAPC rule 1.9.7(e) bars mail/courier delivery of acute medicines; whether a pharmacy's own delivery falls within it is unresolved - punchlist 10(k)", reform:true},
           {name:"DeliverD / last-mile TMS", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
-          {name:"Express pickup zone", cite:"design assumption - see meta/punchlist.md item 10(a)", assume:true},
+          {name:"Collections counter (staffed)", cite:"design assumption - see meta/punchlist.md item 10(a)", assume:true},
           {name:"After-hours external pickup", cite:"wiki/sa-regulatory/pharmacy-act-sapc-gpp - see meta/open-questions.md", reform:true},
           {name:"Stores-with-stock routing", cite:"design assumption - see meta/punchlist.md item 10(e)", assume:true},
           {name:"Acute symptom add-on attach", cite:"design assumption - see meta/punchlist.md item 10(c)", assume:true},
@@ -416,7 +416,7 @@ const DATA = {
            moment:{line:"Every check ran before it left the building", star:false,
              why:'For a child\'s medicine, a mistake isn\'t an inconvenience - it\'s the thing a parent lies awake about. Today that safety runs invisibly, and any gap shows up at home, too late. Here it runs while Thabo works his shift, and it shows itself: picked at his store, scanned against the doctor\'s script, and a named pharmacist confirming the dose against his son\'s weight before signing. <span class="why">Someone with a name stood behind his boy\'s medicine - and he watched it happen.</span> That is <a href="'+C08+'#c10">The Named Check</a>, made for the person with the most to lose from an anonymous mistake.'}},
           {t:"Ready, with my code",
-           x:"The ready message comes before my shift ends: “Ready - express pickup zone, show this code.” The same code works at the after-hours point outside the store if I'm late. His dosing guide is already in the WhatsApp thread, in my language, and the same instructions are on the labels."}
+           x:"The ready message comes before my shift ends: “Ready - collections counter, show this code.” The same code works at the after-hours point outside the store if I'm late. His dosing guide is already in the WhatsApp thread, in my language, and the same instructions are on the labels."}
         ]
       },
       pains:[
@@ -612,7 +612,7 @@ const DATA = {
           {t:"Out of stock - told before the taxi, never after",
            x:"If my store's stock fails after the go-ahead, the message reaches me before I've spent a rand travelling: the next-nearest store with his medicine, on the same code and the same price - or delivery this once, with its cost shown, if the distance isn't worth it. The wasted trip is the one thing they never let happen."},
           {t:"My phone is dead at the counter",
-           x:"A twelve-hour shift and the battery didn't make it. At the express counter my ID is enough - the pack is under his name, and the order is mine, not my phone's. The code was for speed, never a lock."},
+           x:"A twelve-hour shift and the battery didn't make it. At the collections counter my ID is enough - the pack is under his name, and the order is mine, not my phone's. The code was for speed, never a lock."},
           {t:"The money isn't there today",
            x:"The total hasn't changed - the week did. One reply: “hold it for me.” It's held at the counter, price unchanged, no questions asked when I come on Friday - and no one at that counter knows anything except that a pack is waiting for its person. The medicine doesn't get cancelled because payday moved; it waits, the way a neighbour would hold something for you."}
         ]
@@ -629,7 +629,7 @@ const DATA = {
          src:"sentiment"}
       ],
       behind:{
-        front:["Failure messages that carry the recovery options inside them - never bare bad news","A person phones on delivery failure (insured) and on anything touching money or the child (cash)","One-tap / one-reply decisions","ID fallback at the express counter","Hold-at-counter reply"],
+        front:["Failure messages that carry the recovery options inside them - never bare bad news","A person phones on delivery failure (insured) and on anything touching money or the child (cash)","One-tap / one-reply decisions","ID fallback at the collections counter","Hold-at-counter reply"],
         back:["Stock-gap detection at pick time with reroute options computed before the customer is told","Claim-delta detection between dry-run and final adjudication, gating dispatch","Pharmacist-confirmed generic swaps (lawful substitution)","Same-token redemption across stores and routes","Held-order shelf with price lock","Failure-triggered outbound calls, not inbound queues"],
         reg:"<b>Substitution & handover:</b> generic substitution is lawful with the prescriber's clinical primacy and the patient's choice preserved; identity verification for scheduled-medicine handover is satisfied by ID where the code fails; scheme disputes are handled pharmacy-to-scheme with the patient's consent.",
         caps:[
