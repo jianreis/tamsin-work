@@ -185,7 +185,7 @@ h1,h2,h3,h4{margin:0}
 
   <div class="ribbon">
     <span>&#9888; Concept for review - not an official Dis-Chem artefact</span>
-    <span class="gen">generated 2026-07-01 · updated 2026-08-16 (concept 09 The E-Script Token archived as infrastructure, its promises redistributed to concepts 08, 11 and 12) · previously 2026-08-12 (concept 02: cabinet holds medicine from anywhere, privacy mode, digital pillbox · concept 04: graded helper visibility + shared adherence · concept 05: the sync anchor + when sync is offered · concept 15: intro reworked around the kitchen-counter anchor · concept 14: the remembering line made plain) · from the Bigly ground-truth vault</span>
+    <span class="gen">generated 2026-07-01 · updated 2026-08-16 (concept 09 The E-Script Token archived as infrastructure, its promises redistributed to concepts 08, 11 and 12 · concept 11 reworked as The 30/60 Fill, anchored on the stop you make on the way home from the doctor) · previously 2026-08-12 (concept 02: cabinet holds medicine from anywhere, privacy mode, digital pillbox · concept 04: graded helper visibility + shared adherence · concept 05: the sync anchor + when sync is offered · concept 15: intro reworked around the kitchen-counter anchor · concept 14: the remembering line made plain) · from the Bigly ground-truth vault</span>
   </div>
 
   <section class="intro">
@@ -408,7 +408,7 @@ const CONCEPTS = [
     ],
     pillars:["S6","U1","U6","U2"],
     archived:true,
-    archiveNote:'Archived 2026-08-16 - this was infrastructure, not a customer experience. What people actually see is a collection code; the central e-script registry underneath it is carried as a capability in the journey blueprints, where it belongs. Its promises now live in <a href="#c8">The Pharmacy in the Room</a> (the "received ✓", and one record that cannot be lost, altered or filled twice), <a href="#c11">The 60-Minute Fill</a> (send someone you trust to fetch it) and <a href="#c12">Snap-a-Script</a> (any phone, any data). Kept here for reference.'
+    archiveNote:'Archived 2026-08-16 - this was infrastructure, not a customer experience. What people actually see is a collection code; the central e-script registry underneath it is carried as a capability in the journey blueprints, where it belongs. Its promises now live in <a href="#c8">The Pharmacy in the Room</a> (the "received ✓", and one record that cannot be lost, altered or filled twice), <a href="#c11">The 30/60 Fill</a> (send someone you trust to fetch it) and <a href="#c12">Snap-a-Script</a> (any phone, any data). Kept here for reference.'
   },
   {
     icon:"namedcheck",
@@ -427,17 +427,18 @@ const CONCEPTS = [
   },
   {
     icon:"bolt",
-    title:"The 60-Minute Fill",
-    tagline:"Medicine, as fast as your groceries.",
-    intro:'You can order groceries on Sixty60 and watch them picked, packed and driven to your door within the hour. Medicine - the thing you need most urgently when you are ill - should be at least that fast. <span class="why">The 60-Minute Fill gets an acute script picked, safety-checked and into your hands quickly: delivered with a live driver map, or ready at a locker near home.</span> The status is honest the whole way, and the promised window is one we keep.',
-    featuresLabel:"What happens in the hour",
+    title:"The 30/60 Fill",
+    tagline:"Ready before you get there. Or home before you are.",
+    intro:'Every doctor\'s visit in this country ends the same way: you stop at Dis-Chem on the way home. It is the errand welded onto being ill - made while you feel your worst, in a dispensary queue you have to stand in when you should be in bed. <span class="why">The 30/60 Fill makes that stop instant, or unnecessary. Your script reaches the pharmacy from the consulting room, so it is being prepared while you are still paying the doctor: by the time you pull in it is ready and waiting - thirty minutes, no queue - or it comes to your door inside the hour and you never stop at all.</span> Dis-Chem has run an hour-delivery rail since 2021; today it carries shampoo, not scripts.',
+    featuresLabel:"What happens to the stop",
     features:[
+      '<b>The clock starts at the script, not at your order</b> - it reaches the pharmacy the moment the doctor signs, or the moment you photograph it, so the work is already underway before you start travelling.',
+      '<b>The stop you were making anyway, made instant</b> - ready at an express counter in thirty minutes, so pulling in on the way home costs you a minute instead of an afternoon in the queue. Forward the code and someone you trust can fetch it, without ever seeing your medicines or your history.',
+      '<b>Or no stop at all</b> - delivered to your door inside the hour, with a live map, a real ETA and proof of delivery, so the promise is both kept and verifiable.',
       '<b>A robot picks the pack in seconds</b>, so speed never depends on the length of the queue.',
       '<b>The script is reviewed and captured once</b>, with the automation carrying the keying, the counting and the picking - the dispenser is left holding the one job that matters, the checking, so fast never means wrong or short.',
       '<b>You watch it move</b> - picking, checked, ready, on the way - like a food order, so there is no silent wait.',
-      '<b>Delivery comes with a live map and a real ETA</b>, and proof of delivery at the door, so the promise is kept and verifiable.',
-      '<b>Collection works without a street address</b> - a locker near home opens with an SMS PIN, in hours that suit a shift worker.',
-      '<b>Send someone you trust to fetch it</b> - forward the collection code and they hand it over on your behalf, without ever seeing your medicines or your history.'
+      '<b>Where the hour cannot be kept, you are told before you choose</b> - the distance, the hours and the stores it covers are stated upfront, because a realistic promise kept beats a tight one missed.'
     ],
     pillars:["S3","S1","U2","U6"]
   },

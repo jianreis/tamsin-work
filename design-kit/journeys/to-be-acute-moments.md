@@ -104,8 +104,8 @@ machinery stays behind the line in P6 (🔮 where applicable).
 | M1 | P1 | "My pharmacist was busy before I'd even left the doctor's" | ⭐ | insured only | The Pharmacy in the Room |
 | M2 | P1 | "I knew the price before I left the clinic gate" | ⭐ | cash only | Snap-a-Script |
 | M3 | P3 | "Every check ran before it left the building" | | both | The Named Check |
-| M4a | P4 | "Saw the doc. Went straight home." | ⭐ | insured | The 60-Minute Fill |
-| M4b | P4 | "The counter was expecting me" | ⭐ | cash | The 60-Minute Fill |
+| M4a | P4 | "Saw the doc. Went straight home." | ⭐ | insured | The 30/60 Fill |
+| M4b | P4 | "The counter was expecting me" | ⭐ | cash | The 30/60 Fill |
 | M5 | P5 | "Medication you can't take wrong" | | both | Made-for-Me Medicine |
 | M6 | P5 | "The pharmacy didn't disappear after the handover" | ⭐ | both | The Pharmacist Who Stays |
 | M7 | P6 | "They noticed it kept coming back - before I did" | | insured only | The Pharmacy That Notices |
@@ -127,8 +127,8 @@ moment that already happened.)
   it described infrastructure, not an experience - what the reader ever watches
   is a collection code. Its promises moved to The Pharmacy in the Room
   (received ✓; one record that cannot be lost, altered or filled twice), The
-  60-Minute Fill (send someone you trust) and Snap-a-Script (any phone). M4b
-  therefore cites The 60-Minute Fill alone; the registry stays behind the line
+  30/60 Fill (send someone you trust) and Snap-a-Script (any phone). M4b
+  therefore cites The 30/60 Fill alone; the registry stays behind the line
   as a capability chip, which is where it always belonged.
 - "Every check ran before it left the building" and "Medication you can't
   take wrong" are **signature lines reused from #09 deliberately** - the
@@ -665,7 +665,7 @@ clause - she saw the doctor, and she went straight home. [why] The errand
 that has always been welded to being ill simply never happened [/why] - the
 medicine made its own way to her couch, arriving inside the slot she chose,
 while she did the one thing a sick person should be doing: resting. That is
-The 60-Minute Fill (inline link) with the stop deleted - and the live map
+The 30/60 Fill (inline link) with the stop deleted - and the live map
 was just how she watched it come.
 
 **A3 · I check it, and they check on me** - A message follows the knock:
@@ -690,7 +690,7 @@ version of this stop: the month-end dispensary queue, twenty-five minutes
 deep, after a full shift, with a sick boy waiting at home. This time the
 counter was expecting him - the pack made up, named, waiting - and he was
 through it in minutes. [why] The stop still happens; it just stopped costing
-him an afternoon he didn't have. [/why] That is The 60-Minute Fill (inline
+him an afternoon he didn't have. [/why] That is The 30/60 Fill (inline
 link) shaped for collection - his son's whole order riding one code, handed
 over exactly once, to him.
 
