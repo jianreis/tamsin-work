@@ -5,7 +5,7 @@ domain: concept
 status: draft
 confidence: medium
 tags: [concept, topic/last-mile, topic/accessibility, journey/collect, domain/regulatory, domain/digital, domain/consumer, region/za]
-sources: [src-access-ward-pharmacy-equity-2014, src-access-moodley-suleman-ownership-2020, src-access-sa-community-pharmacy-sector-2023, src-access-last-kilometre-delivery-2021, src-capitec-dha-smart-id-partnership, src-capitec-branch-atm-footprint-2026, src-capitec-dischem-tlc-small-town-reach, src-reg-gpp-courier-mail-delivery-standard, src-reg-sapc-automated-dispensing-unit-application, src-reg-ccmdd-pickup-point-handover, src-reg-uk-supervision-order-2025, src-reg-us-nc-direct-to-patient-delivery-systems, src-coldchain-ccmdd-insulin-exclusion, src-coldchain-rightepharmacy-collectandgo, src-coldchain-japha-mail-transit-excursions, src-coldchain-usp-659-storage-temperatures]
+sources: [src-reg-sapc-rules-s35a-radu-courier, src-reg-gpp-consolidated-verified, src-access-ward-pharmacy-equity-2014, src-access-moodley-suleman-ownership-2020, src-access-sa-community-pharmacy-sector-2023, src-access-last-kilometre-delivery-2021, src-capitec-dha-smart-id-partnership, src-capitec-branch-atm-footprint-2026, src-capitec-dischem-tlc-small-town-reach, src-reg-gpp-courier-mail-delivery-standard, src-reg-sapc-automated-dispensing-unit-application, src-reg-ccmdd-pickup-point-handover, src-reg-uk-supervision-order-2025, src-reg-us-nc-direct-to-patient-delivery-systems, src-coldchain-ccmdd-insulin-exclusion, src-coldchain-rightepharmacy-collectandgo, src-coldchain-japha-mail-transit-excursions, src-coldchain-usp-659-storage-temperatures]
 created: "2026-08-16"
 updated: "2026-08-16"
 ---
@@ -24,11 +24,16 @@ This page is the synthesis hub for that idea. It separates the two problems
 remote collection is asked to solve, sets out what the evidence supports, and
 records the one design decision that determines whether the model is lawful.
 
-**Reliability caveat on this whole page.** The research behind it was gathered
-under an egress policy that blocked direct retrieval of every regulator,
-publisher and company document. Figures and rule wording come from search
-indexes and abstracts, not primary PDFs. Each source note names what must be
-verified. Treat this as a well-triangulated map, not a citable legal position.
+**Reliability, in two tiers.** The **regulatory position is now verified against
+primary documents** - Tamsin supplied the GPP consolidated rules, the SAPC
+automated dispensing unit application, the SAPC e-Note on control over the sale of
+scheduled medicines, the NDoH CCMDD standard operating procedure and the GPhC
+distance-services guidance on 2026-08-16, all read directly and archived under
+`sources/pdfs/`. Where those readings overturned earlier conclusions, the
+corrections are marked in place. The **market, footprint and cold-chain figures
+remain search-extracted**, gathered under an egress policy that blocked publisher
+and company hosts; each source note names what still needs verifying. Treat the
+law here as citable and the numbers as directional.
 
 ## Two problems, not one
 
@@ -96,19 +101,47 @@ Two Council instruments point opposite ways:
   receipt.** GPP separately contemplates a locked, unattended prescription
   receiving box, so the rules already accommodate unattended infrastructure
   [[src-reg-gpp-courier-mail-delivery-standard]].
-- **Restrictive - the SAPC automated dispensing unit conditions.** The published
-  conditions specify that the unit delivers scheduled medicines **to the
-  pharmacist**, with access limited to pharmacist, intern and pharmacist's
-  assistant. **The patient is not on that list**
-  [[src-reg-sapc-automated-dispensing-unit-application]].
+- **Restrictive - GPP Rule 1.9.3(b), and it is explicit.** Verified against the
+  primary text on 2026-08-16: *"The installation and the location of the ADU must
+  be such that medicines and medical devices are not accessed and/or received
+  directly by the patient or his or her caregiver or agent."* A customer-facing
+  automated unit is **prohibited today**, not merely unprovided for - which is a
+  correction to this page's first draft. Rule 1.9.4(a) additionally requires
+  phases 1 and 3 of dispensing, phase 3 being the provision of information to the
+  patient, to be performed by a pharmacist or pharmacy support personnel; 1.9.4(d)
+  requires every ADU prescription to be **signed in person**
+  [[src-reg-gpp-consolidated-verified]].
+- **Restrictive - GPP Rule 2.7.5(d), which reaches beyond automation.** *"In the
+  absence of an adult (a person above 14 years) to receive the medicine, it must
+  be taken back to the pharmacy."* A locker is not an adult, so this bears on
+  every unattended handover, mechanised or not
+  [[src-reg-gpp-consolidated-verified]].
+- **Permissive, and previously missed - GPP Rule 1.10, the drive-through
+  standard.** South Africa has permitted a pharmacy to serve a patient **through
+  an opening in its exterior wall**, without the patient entering, since BN 12 of
+  2006. The conditions are two porticos, **two-way visual and auditory
+  communication**, and counselling delivered without losing that contact. The
+  country already has a lawful wall-side service pattern; what it has never had is
+  one with nobody on the other side [[src-reg-gpp-consolidated-verified]].
 
-Because both are Council instruments, this reads as a matter **requiring an
+Note that Rule 1.9's scope is **not** institutional-only - its stated purpose
+covers community pharmacies expressly, correcting an earlier reading here.
+
+Because these are all Council instruments, this reads as a matter **requiring an
 SAPC determination rather than statutory reform** - and SAPC has a demonstrated
 mechanism for absorbing new dispensing technology, adding minimum standards to
 GPP by board notice [[src-reg-sapc-unit-dose-dispensing-bn99]].
 
-**The sobering comparator.** The United Kingdom asked this exact question and
-needed **new legislation**: until 7 January 2026 handing a checked prescription
+**The comparator, corrected.** The United Kingdom **already permits** prescription
+collection units - an automated collection machine or locker is a named, regulated
+service category under Regulation 248 of the Human Medicines Regulations, with
+GPhC requiring a secure access code released only to the right person, tracking to
+confirm it reaches that person, packaging assessed for tamper-proofing and
+temperature control, and specific risk assessment for refrigerated medicines and
+controlled drugs [[src-reg-uk-gphc-distance-services-2025]]. This page's earlier
+claim that Britain needed new legislation for collection units was wrong: the 2025
+Order addressed a different question, supervision of handover **inside** the
+pharmacy. The UK is therefore a permissive template, not a cautionary tale: until 7 January 2026 handing a checked prescription
 to a patient in the pharmacist's absence was unlawful, and even after the
 Human Medicines Order 2025 the handover must be performed by a competent member
 of the pharmacy team - **not by a machine** [[src-reg-uk-supervision-order-2025]].
@@ -137,10 +170,54 @@ live pharmacist at handover by audio-video link**. South Africa's showcase
 automation chose presence-by-video over absence
 [[src-reg-pharmacy-dispensing-unit-telepharmacy]].
 
+## Rule 1.11: the concept already has a written standard
+
+**This is the most important finding in the set.** SAPC publishes a minimum
+standard for a **Remote Automated Dispensing Unit** - an automated unit "remotely
+operated from a pharmacy" that dispenses **chronic medicine** to a patient far
+from any pharmacist. Council's own stated rationale is the concept's rationale:
+innovation "to improve access to pharmaceutical services", given workforce
+shortage and disease burden, "to alleviate the patient burden on public
+facilities" [[src-reg-sapc-rules-s35a-radu-courier]].
+
+Every design condition the earlier research proposed is already mandated text:
+
+| Design recommendation | Rule 1.11 |
+|---|---|
+| Fail-closed pharmacist availability | 1.11.5(f) a pharmacist must be accessible to respond to all enquiries; 1.11.5(g) a designated pharmacist available for emergency supply where the unit is not 24-hour |
+| A live link rather than a phone number | 1.11.5(a) **phases 1 and 3 performed only by a pharmacist through the audio-visual interface, at the time of dispensing** |
+| Chronic repeats only | 1.11.4(b) medicines and devices for long-term therapy |
+| Identity and accountability | 1.11.5(c) every prescription signed by the pharmacist; 1.11.5(d) labels carry the RADU's own address |
+| Connectivity you can rely on | 1.11.6(c) an ISP assessment certificate proving adequate connectivity for patient-to-pharmacist communication, filed with Council |
+| A refused handover handled safely | 1.11.5(e) refused medicine locked in a secure cabinet, not re-dispensed until checked |
+
+**The catch is in the heading: "institutional public pharmacy".** The standard is
+written for the public sector. So the ask of Council is not to invent a category
+but to **extend an existing standard to community pharmacy** - narrower, better
+precedented and far more winnable than a request to permit lockers in principle.
+It also explains the apparent conflict elsewhere on this page: Rule 1.9.3(b) bars
+patient access to an in-pharmacy ADU precisely because Rule 1.11 is where
+patient-facing units live.
+
+**Consequence for the design.** A silent, nobody-present collection unit is not
+what Council has ever contemplated. The lawful shape is a **pharmacist on an
+audio-visual link at the moment of handover** - which keeps the queue-free,
+no-entry benefit while losing "I never spoke to anyone".
+
 ## The design decision that determines lawfulness
 
 **Make pharmacist availability a release condition, not an after-the-fact
 courtesy: if no pharmacist is reachable, the unit does not open.**
+
+The verified rules make this stronger than a design preference. **Rule 1.9.4(c)
+already requires** that the pharmacist be accessible to respond to enquiries about
+anything an ADU dispenses, and **Rule 1.10.2(c) and (e) already require** two-way
+visual and auditory contact with a counselling pharmacist for wall-side service.
+The compliant design is therefore not a novel ask but a **synthesis of two
+existing standards**: Rule 1.10's live two-way contact applied to a Rule 1.9 unit,
+so that the patient may receive directly where a pharmacist is present by link.
+That is a far narrower request of Council than "please permit lockers", and both
+standards were themselves added by board notice.
 
 This is the pattern regulators elsewhere have actually required. North Carolina's
 direct-to-patient delivery-system rule obliges the operator to convey the offer
@@ -170,6 +247,25 @@ identity by something stronger than a PIN alone.
 correctly so. At a store the pharmacist must be *available and declinable* -
 the customer may choose not to speak to anyone. At a remote point the pharmacist
 must be *available or nothing opens*.
+
+## Two courier restrictions that reach the acute journey
+
+Rule 1.9.7 governs indirect supply by mail or courier. It contemplates supply
+"to a person who receives medicine on behalf of the patient" under four
+conditions - protective packaging through the delivery process, a control system
+to detect and correct delay, a report-back system, and a patient information
+leaflet where available. But it carries two hard exclusions
+[[src-reg-sapc-rules-s35a-radu-courier]]:
+
+- **1.9.7(e): acute medicines may not be couriered.** *"medicines which are
+  prescribed for acute ailments or conditions (i.e. immediate need, not
+  repeatable and non-chronic conditions) shall not be delivered to patients by
+  mail/courier"*. This bears directly on
+  [[design-kit/journeys/to-be-acute-moments|the acute journey]], whose insured
+  route delivers an antibiotic to the door - ⚠️ flag raised, see
+  `meta/punchlist.md` item 10(k).
+- **1.9.7(f): sub-8°C medicines may not be couriered unless cold chain is
+  ensured** - which independently confirms the shelf-stable scope rule below.
 
 ## Cold chain: shelf-stable only, and shelf-stable is not "no requirement"
 
@@ -272,9 +368,13 @@ the merchant tier, which is a matter for the two companies' commercial teams.
   pharmacy** - the actual desert figure. Does not exist in the literature.
 - Towns with a Capitec branch but no Dis-Chem or TLC pharmacy. Requires both
   store locators.
-- The full text of SAPC's automated dispensing unit conditions and the GPP
-  courier standard's rule number and exact wording. Blocked at retrieval;
-  **needs a person to open the PDFs**, and is the highest-value gap in this set.
+- ~~The full text of SAPC's ADU conditions and the GPP courier standard.~~
+  **Closed 2026-08-16** - primary documents supplied and read; see
+  [[src-reg-gpp-consolidated-verified]]. One thread remains: the GPP mail and
+  courier standard quoted in [[src-reg-gpp-courier-mail-delivery-standard]] was
+  not located at that wording in the consolidated manual, whose delivery rule is
+  **2.7.5**. Confirm whether the courier text sits in a later board notice or
+  whether the earlier search extract conflated sources.
 - Whether Pargo and PUDO formally accept or refuse prescription medicines.
   Pargo prohibits all liquids and excludes perishables but does not name
   medicines, and **Dis-Chem already operates Pargo pickup points**

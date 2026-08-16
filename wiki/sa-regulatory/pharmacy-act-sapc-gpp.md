@@ -76,22 +76,38 @@ Two Council instruments point opposite ways:
   and a PIL - **no pharmacist presence and no counselling at receipt**. GPP
   separately contemplates a locked, unattended prescription receiving box
   [[src-reg-gpp-courier-mail-delivery-standard]].
-- **Restrictive:** the published **automated dispensing unit conditions** specify
-  the unit delivers scheduled medicines **to the pharmacist**, access limited to
-  pharmacist, intern and assistant - **the patient is not listed**
-  [[src-reg-sapc-automated-dispensing-unit-application]].
+- **Restrictive, and now verified as an express prohibition:** **GPP Rule
+  1.9.3(b)** - *"The installation and the location of the ADU must be such that
+  medicines and medical devices are not accessed and/or received directly by the
+  patient or his or her caregiver or agent."* Rule 1.9.4(a) reserves phases 1 and
+  3 of dispensing to a pharmacist or pharmacy support personnel, and 1.9.4(d)
+  requires in-person signature. Rule 1.9's purpose covers **community** pharmacies
+  expressly, so it is not institutional-only
+  [[src-reg-gpp-consolidated-verified]].
+- **Restrictive beyond automation: Rule 2.7.5(d)** - in the absence of an adult
+  over 14 to receive delivered medicine, it must be returned to the pharmacy. A
+  locker is not an adult [[src-reg-gpp-consolidated-verified]].
+- **Permissive, and the route through: Rule 1.10, the drive-through standard**
+  (BN 12 of 2006). A pharmacy may serve a patient through **a window or other
+  opening in its exterior wall**, without the patient entering, given two
+  porticos, **two-way visual and auditory communication**, and counselling
+  delivered without losing that contact. Wall-side service is already lawful; only
+  the unattended version is not [[src-reg-gpp-consolidated-verified]].
 
 Both are Council instruments, so the conflict reads as **requiring an SAPC
 determination rather than statutory reform**, and Council has a demonstrated route
 - minimum standards added to GPP by board notice
 [[src-reg-sapc-unit-dose-dispensing-bn99]]. ⚠️ The UK needed **new legislation**
 for the same question [[src-reg-uk-supervision-order-2025]], so the reform risk is
-real. ⚠️ Rule numbers and wording are search-extracted, not read from the primary
-PDFs; confirm before citing.
+real. **Verified 2026-08-16** against the primary consolidated GPP PDF, archived at
+`sources/pdfs/`. Rule numbers and wording above are quoted directly.
 
-**On counselling:** GPP requires provision of information to ensure optimum use of
-medicine but **specifies no channel**, no synchronicity and no co-location with
-handover [[src-reg-gpp-dispensing-phases-counselling]]. Remote counselling by a
+**On counselling, verified:** Rule 2.7.1.3.1(a) requires advising the patient or
+their agent to be carried out by a pharmacist or other authorised person, with
+**physical presence "preferred"** rather than required - so remote counselling is
+not barred. Rule 2.7.5(a) nonetheless requires that all efforts be made to enable
+face-to-face counselling, and 2.7.5(b) requires comprehensive written instructions
+and a PIL where a non-pharmacist delivers [[src-reg-gpp-consolidated-verified]]. Remote counselling by a
 named pharmacist therefore over-delivers against the courier standard, which
 substitutes a leaflet.
 

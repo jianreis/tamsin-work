@@ -73,3 +73,24 @@ for the listed purposes without a Director-General permit.
 ## Used in
 - Not yet cited. Candidate pages: [[pharmacy-act-sapc-gpp]],
   [[medicines-act-scheduling]], [[dispensing-process-steps]].
+
+
+## VERIFIED against the primary PDF (2026-08-16)
+
+Archived at `sources/pdfs/sapc-enote-control-over-sale.pdf`. **It does not address
+where a sale concludes**, which is what it was sought for - the s22A(5)
+handover question remains open. Its subject is Rule 1.9.5, medicine misuse.
+
+Verbatim, and directly relevant to an unattended handover:
+
+> A pharmacist must exercise professional judgment to prevent the supply of unnecessary and excessive quantities of medicines and other products, particularly those that are liable to be misused or abused.
+
+> A pharmacist should be alert to the possibility of medicine dependency in health care professionals and patients, and should make enquiries to ensure that such medicines are to be used responsibly and should refuse to dispense these medicines when circumstances warrant such refusal.
+
+> Requests for such products should be dealt with personally by the pharmacist and sale should be refused if it is apparent that the purchase is not for a genuine medicinal purpose or if the frequency of purchase suggests overuse.
+
+**Consequence for a remote collection point.** Council places an active,
+judgement-bearing duty on the pharmacist to *enquire* and to *refuse*. A code-opened
+door can do neither. This is the Council instrument that most directly supports
+excluding abuse-liable medicines - S5 and S6 - from any unattended rail, and it
+strengthens the case for fail-closed release on everything else.

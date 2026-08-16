@@ -72,3 +72,53 @@ administrative answer rather than a legislative one.
 ## Used in
 - Not yet cited. Candidate pages: [[wiki/digital-transformation/pharmacy-automation]],
   [[courier-online-pharmacy-rules]], [[pharmacy-act-sapc-gpp]].
+
+
+## VERIFIED against the primary PDF (2026-08-16)
+
+Tamsin supplied the form; the full text was read directly. Archived at
+`sources/pdfs/sapc-application-adu-2025.pdf`. The earlier snippet-derived reading
+was correct on the conditions but **wrong about what the instrument is for**.
+
+**What it actually regulates.** The title is "APPLICATION FOR INSTALLATION OF AN
+AUTOMATED DISPENSING UNIT **IN A PHARMACY**". Every condition describes a
+back-of-house picking-and-labelling robot inside a registered pharmacy - a
+ROWA-class machine - not a customer-facing collection unit.
+
+**Section C / Declaration (b), verbatim:**
+
+> (i) Delivers scheduled medicines to the harmacist;
+> (ii) Delivers medical devices to the pharmacist;
+> (iii) Picks the scheduled medicines
+> (iv) Labels medication (as per labeling instructions entered)
+> (v) Access is limited to only authourised pharmacist/pharmacist intern and pharmacist assistant as per phase 1, 2, 3 of dispensing);
+
+*(sic - "harmacist" and "authourised" are the form's own typos.)*
+
+**Declaration (f), verbatim:**
+
+> (i) only a pharmacist, pharmacist's assistant or pharmacist intern, under the personal supervision of a pharmacist, may have direct access to scheduled substances in the pharmacy;
+> (ii) unauthorised persons will not by lawful means obtain access to the premises outside of normal trading hours;
+
+**Corrections to earlier claims**
+
+- **SUPERSEDED SAME DAY.** On first reading the form alone, this note concluded
+  that the patient's absence from the access list was a silence rather than a bar.
+  The GPP rules, read hours later, show that is wrong: **Rule 1.9.3(b) expressly
+  provides that medicines "are not accessed and/or received directly by the
+  patient or his or her caregiver or agent"** [[src-reg-gpp-consolidated-verified]].
+  A customer-facing automated unit is prohibited today, not merely unprovided for.
+  The form is the administrative expression of that rule.
+- **It is not institutional-only.** Section B offers Sector: Private / Public and
+  Category: Community / Institutional (Hospital). A community pharmacy in the
+  private sector may apply. The separate claim that a *remote* ADU standard exists
+  and is written for institutional public pharmacy is still unconfirmed and awaits
+  the GPP rules PDF.
+- **Declaration (f)(ii) bears directly on after-hours collection.** An
+  outside-wall unit accessible to customers after closing sits squarely against an
+  undertaking that unauthorised persons will not obtain access to the premises
+  outside normal trading hours - if the unit counts as part of the premises. That
+  question is now the sharp end of #10's after-hours pickup point.
+- Other conditions of note: the responsible pharmacist must **practise full time**
+  at the premises; the unit may not be moved without Council's written approval;
+  the 2025 fee is **R3,912.00** (VAT incl).
