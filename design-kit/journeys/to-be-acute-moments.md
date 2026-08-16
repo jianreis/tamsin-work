@@ -220,6 +220,16 @@ On top of the full v3.1 rule set from #09:
 - **Concepts are referenced inline only where the reader watches them work**
   (generalised from the E-Script Token rule above, which is what eventually
   retired that concept: nothing in the journey ever watches a token).
+- **Needs match #09's shape (added 2026-08-16, feedback pass):** one arc,
+  led by "I need", roughly 15-25 words, no scene-recap opening (the phase
+  title does that job), no justification tail - the sick-person register
+  lives in the activities, not appended to every need.
+- **Activity headings are functional signposts (added 2026-08-16, feedback
+  pass, audited against #09):** 2-6 words, what-I-do first person ("I choose
+  how I pay") or the-thing-that-arrives ("The message arrives"); never a
+  claim, benefit tail, quote or teaser - especially where a moment sits
+  beneath the activity, so the heading never competes with its own memory
+  line. ∥ scenario titles are bare noun phrases ("Out of stock").
 
 **Process rules for every phase pass (encoded after the P1 retrospective,
 2026-07-26 - P2 onwards):**
@@ -284,9 +294,12 @@ infer.
 ### Need (shared)
 
 One of us is sick **today**, and I have exactly one job: **start getting
-better**. I need everything between the doctor's decision and the first dose
-to happen with **as little effort from me as possible** - I don't have much
-to spare.
+better**. I need everything else to cost me **almost nothing**.
+
+*(Needs tightened 2026-08-16, agreed: matched to #09's shape - one arc, led
+by "I need", roughly 15-25 words, no scene-recap opening, no justification
+tail. The sick-person register lives in the activities, not appended to
+every need. Applies to all phases below.)*
 
 ### Activities - insured (Aisha)
 
@@ -313,7 +326,7 @@ too. We decide together, and I choose the generic. By the time it's on the
 script I know exactly what it will cost me - and before I'm up from the
 chair, my phone buzzes: "Dis-Chem has received your script from Dr Naidoo."
 
-**A4 · It's with my pharmacist before I reach reception** - The doctor
+**A4 · The status moves while I'm paying** - The doctor
 signs, and we're done - there's no paper to take and nothing for me to send
 anywhere; Dis-Chem already has it. While I'm paying for the consult, the
 status moves: "Your pharmacist is checking your script." The only decision
@@ -350,7 +363,7 @@ Dis-Chem on WhatsApp. The reply is immediate: they have it, and someone will
 come back to me shortly. One photo, almost no data - and the job is already
 out of my hands.
 
-**A4 · The answer comes back before we reach the gate** - The reply comes
+**A4 · The price comes back** - The reply comes
 inside 15 minutes, while my boy and I are walking to the gate: they've read
 the script back to me so I can see they have it right, the price is there in
 rands - and there's a cheaper generic the doctor would approve, with the
@@ -447,13 +460,12 @@ go-ahead (legal/operational); preparation runs ahead of it.
 
 ### Need (shared)
 
-The script is already in; now the medicine has to reach us. I need Dis-Chem
-to **run ahead of me** - **ready before I get there, or arriving just after
-I do** - so my day stays about getting better.
+I need Dis-Chem to **run ahead of me** - **ready before I get there, or
+arriving just after I do**.
 
 ### Activities - insured (Aisha)
 
-**A1 · The question waits for me in the car** - By the time I'm in the car,
+**A1 · The message asks me how** - By the time I'm in the car,
 the message is there: my script is already being prepared - how would I like
 it? Collect at the Dis-Chem on my way home, ready within 30 minutes, and I
 choose how I take it: express collect, where I scan a code and the pack
@@ -474,7 +486,7 @@ suits me fine, and I take that. The confirmation shows the slot and the
 address it already knows. I can change either of them up until packing
 starts - it says so right there.
 
-**A3 · "These can help while it works"** - Under the confirmation there's a
+**A3 · I add what helps the symptoms** - Under the confirmation there's a
 short list: things that help the symptoms while the antibiotic does its job
 - a urinary alkaliniser, a probiotic for during the course, rehydration
 sachets - each with its price. I add the probiotic and the sachets; they
@@ -566,9 +578,8 @@ collect. If I say nothing, nothing is added.
 
 ### Need (shared)
 
-I need to **trust that what we get is exactly what the doctor ordered** -
-right medicine, right dose, **safe for us** - and I need to **see that it
-was checked**, not just hope it was.
+I need what's coming to be **exactly what the doctor ordered - safe for
+us** - and to **see that it was checked**, not just hope.
 
 ### Activities - insured (Aisha)
 
@@ -593,7 +604,7 @@ from removing the waiting, not the care. [/why] That is The Named Check
 (inline link): the moment that matters most in a pharmacy, carried out by a
 person with a name, one tap away.
 
-**A3 · Sealed, and I already know how to take it** - The parcel seals and
+**A3 · Sealed, with my code** - The parcel seals and
 the confirmation lands: on track for my 2-4pm slot, with my order's QR code
 attached - if my afternoon changes, that same code fetches it at the counter
 instead. The when-and-how guide is already on my app - with food, morning
@@ -678,9 +689,8 @@ labels.
 
 ### Need (shared)
 
-The medicine is ready; now it has to actually reach my hands. I need the
-**promise kept as made** - **no chasing, no wondering, no wasted trip** -
-because today I have nothing spare to absorb a let-down.
+I need the **promise kept as made** - **no chasing, no wondering, no wasted
+trip**.
 
 ### Activities - insured (Aisha - delivered route, the spine)
 
@@ -726,7 +736,7 @@ drive past anyway. So I drive home the way I always do - past the Dis-Chem I
 have stopped at a hundred times with a script in my hand and an hour to
 spare. Tonight there is nothing in my hand and nothing to hand over.
 
-**A2 · The wall hands it over** - Express collect sits on the outside wall,
+**A2 · I scan, and the pack comes out** - Express collect sits on the outside wall,
 before the doors. I hold my phone to the scanner, a door opens, and my pack
 is there with my name on it. No queue, no counter, nobody to explain myself
 to. I am back in the car in under a minute, and the dispensary is somebody
@@ -753,7 +763,7 @@ have to stand in a queue to be offered it.
 
 ### Activities - cash (Thabo)
 
-**A1 · The collections counter, not the queue** - After my shift I stop at
+**A1 · I show my code at the counter** - After my shift I stop at
 my store. The collections counter is signposted right at the front - the
 dispensary queue is somebody else's afternoon. I show my code, and the pack
 comes out with my son's name on it. No forms, no retelling the story. (If my
@@ -855,9 +865,8 @@ journey stages the check-in only.
 
 ### Need (shared)
 
-The medicine is in the house; now it has to work. I need to **give it
-right, every time, to the last day** - and I need to know **someone is
-still there** if something doesn't look right.
+I need taking it right to be the **easy part, to the last day** - and
+**someone still there** if something doesn't look right.
 
 ### Activities - insured (Aisha)
 
@@ -911,9 +920,10 @@ right required nothing from Thabo except being there. [/why] That is
 Made-for-Me Medicine (inline link) at its free floor - the can't-take-wrong
 ladder that comes with every script, no matter who is paying.
 
-**A2 · Day three: they ask about him - and my answer changes things**
+**A2 · Day three: they ask about him**
 *(amended 2026-07-26: the cash render's truth is that the boy is NOT
-better - the check-in escalates)* - A message, in my language: "He should
+better - the check-in escalates; heading tightened 2026-08-16 - the
+escalation is the body's and M6's job, not the signpost's)* - A message, in my language: "He should
 be coughing less by now - is he?" He isn't. I say so, and ask if someone
 can call me. The pharmacist phones after six - a voice, not a chatbot -
 asks about the cough, the fever, how he's sleeping. Then she says it
@@ -978,9 +988,8 @@ is service failures only.
 
 ### Need (shared)
 
-The medicine was supposed to end with me **better**. If it doesn't - **this
-week, or across the year** - I need someone to **notice, and help me find
-out why**, not just hand me another round.
+The medicine was supposed to end with me **better**. If it doesn't, I need
+someone to **notice, and help me find out why** - not just another round.
 
 ### Activities - insured (Aisha)
 
@@ -1009,7 +1018,7 @@ see, and told her like a human being, not a notification. [/why] That is
 The Pharmacy That Notices (inline link): it noticed, a person said so, and
 she decides what happens next.
 
-**A3 · What "getting ahead of it" actually means** - She's plain about the
+**A3 · I book the clinic slot** - She's plain about the
 medicine of it: recurring UTIs usually have a reason, and finding it means
 tests, not another antibiotic. It may be worth going back to my own doctor,
 she says - or, if it's easier, the Dis-Chem clinic can take the urine
@@ -1028,7 +1037,7 @@ the pharmacist. A virtual doctor joins on the screen for the decision I
 couldn't afford to chase across town: a different antibiotic, and a test to
 see what's actually going on.
 
-**A2 · The new script rides the same rails** - The new script goes from the
+**A2 · The new script goes the same way** - The new script goes from the
 clinic straight into the same journey we already know - checked, made up at
 my store, ready before the afternoon is out. Nothing starts over; everyone
 already knows us. By the weekend, he's chasing his sister again.
@@ -1077,14 +1086,12 @@ attached.
 
 ### Need (shared)
 
-Things go wrong - stock runs out, deliveries fail, weeks cost more than
-they should. I need to **hear it early, with a way through already
-attached** - **never silence, never a dead end** - because today I don't
-have the strength to fight a system.
+Things go wrong - **they always do**. I need to **hear it early, with the
+way through attached** - **never silence, never a dead end**.
 
 ### Scenarios - insured (Aisha)
 
-**S1 · Out of stock, after everything was promised** - The store filling my
+**S1 · Out of stock** - The store filling my
 order hits a gap the stock check didn't catch. The message that tells me
 carries the plan with it: another store nearby has it and my slot moves out
 by an hour - or the covered generic is on their shelf right now, same
@@ -1120,7 +1127,7 @@ clinic to confirm. If a new photo would be faster, it asks for one - my
 choice. The one thing that never happens is silence: I always know where I
 stand, even when the answer is "not yet".
 
-**S2 · Out of stock - told before the taxi, never after** - If my store's
+**S2 · Out of stock** - If my store's
 stock fails after the go-ahead, the message reaches me before I've spent a
 rand travelling: the next-nearest store with his medicine, on the same code
 and the same price - or delivery this once, with its cost shown, if the

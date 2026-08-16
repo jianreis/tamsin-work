@@ -197,7 +197,7 @@ details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #10 · SCRIPT RE-IMAGINED - THE ACUTE SCRIPT, IN MOMENTS</span>
-  <span class="gen">generated 2026-07-26 · updated 2026-08-16 (P4 gains Aisha's collected route + express collect; naming resolved - collections counter is staffed, express collect is not; regulatory position verified against the primary SAPC rules and two 🔮 flags raised; concept-set implications swept later the same day - the collections-counter rename completed through P3-cash, ∥-cash and the P2/∥ lanes, and the fork copy mirrored back into the spec; journey feedback implemented - inside-the-hour delivery surfaced in P2, the unreadable-photo scenario added to the ∥ band (cash), and the after-hours point resolved to be the express-collect unit itself, with phone-back counselling on request) · content spec: design-kit/journeys/to-be-acute-moments.md · previous acute treatment (#07) preserved</span>
+  <span class="gen">generated 2026-07-26 · updated 2026-08-16 (P4 gains Aisha's collected route + express collect; naming resolved - collections counter is staffed, express collect is not; regulatory position verified against the primary SAPC rules and two 🔮 flags raised; concept-set implications swept later the same day - the collections-counter rename completed through P3-cash, ∥-cash and the P2/∥ lanes, and the fork copy mirrored back into the spec; journey feedback implemented - inside-the-hour delivery surfaced in P2, the unreadable-photo scenario added to the ∥ band (cash), and the after-hours point resolved to be the express-collect unit itself, with phone-back counselling on request; needs tightened to #09's one-arc shape and twelve activity headings returned to functional signposts) · content spec: design-kit/journeys/to-be-acute-moments.md · previous acute treatment (#07) preserved</span>
 </div>
 
 <section class="intro">
@@ -289,7 +289,7 @@ const DATA = {
   phases: [
     {
       id:"p1", num:"P1", title:"At the doctor",
-      need:'One of us is sick <b>today</b>, and I have exactly one job: <b>start getting better</b>. I need everything between the doctor\'s decision and the first dose to happen with <b>as little effort from me as possible</b> - I don\'t have much to spare.',
+      need:'One of us is sick <b>today</b>, and I have exactly one job: <b>start getting better</b>. I need everything else to cost me <b>almost nothing</b>.',
       activities:{
         insured:[
           {t:"I see the doctor",
@@ -298,7 +298,7 @@ const DATA = {
            x:"When it's time for the script, the doctor asks if he can send it to Dis-Chem. I nod; an OTP arrives on my phone and he enters it. Now my medication record is open in front of him - what I take, what I'm allergic to - for this consult only. I've used the service before, so that's all it takes: one code, and he's prescribing with my history in view instead of my memory of it."},
           {t:"We choose the medicine together",
            x:"He wants to prescribe a particular UTI antibiotic. As he looks it up, the system shows it's in stock at my closest Dis-Chem - but my medical aid won't cover it. A generic that is covered comes up alongside, and we talk it through: same active ingredient, fully funded against a co-pay on the brand, cash prices visible too. We decide together, and I choose the generic. By the time it's on the script I know exactly what it will cost me - and before I'm up from the chair, my phone buzzes: “Dis-Chem has received your script from Dr Naidoo.”"},
-          {t:"It's with my pharmacist before I reach reception",
+          {t:"The status moves while I'm paying",
            x:"The doctor signs, and we're done - there's no paper to take and nothing for me to send anywhere; Dis-Chem already has it. While I'm paying for the consult, the status moves: “Your pharmacist is checking your script.” The only decision left is how I want to receive it, and that can wait until I'm in the car.",
            moment:{line:"My pharmacist was busy before I'd even left the doctor's", star:true,
              why:'Every doctor\'s visit Aisha has ever made ended the same way: with homework. Carry the slip, find a pharmacy, hope about stock, brace at the counter. This one ends with the work already moving - a pharmacist has her script and is checking it while she is still paying the doctor. <span class="why">She is one minute out of the consult, and getting better is already someone else\'s job.</span> That is <a href="'+C08+'#c8">The Pharmacy in the Room</a> doing what it was built for - doctor, record, price and pharmacy in one conversation.'}}
@@ -310,7 +310,7 @@ const DATA = {
            x:"The clinic isn't on Dis-Chem's system, so the doctor writes the script by hand - an antibiotic and a syrup for the cough - and explains it to me once: how much, how often, for how many days. The paper goes into my jacket pocket."},
           {t:"I send the script through while I wait to pay",
            x:"While I'm waiting to pay for the consult, I photograph the script and send it through to Dis-Chem on WhatsApp. The reply is immediate: they have it, and someone will come back to me shortly. One photo, almost no data - and the job is already out of my hands."},
-          {t:"The answer comes back before we reach the gate",
+          {t:"The price comes back",
            x:"The reply comes inside 15 minutes, while my boy and I are walking to the gate: they've read the script back to me so I can see they have it right, the price is there in rands - and there's a cheaper generic the doctor would approve, with the exact saving shown. I pick it right there. Nothing is riding on the paper in my pocket anymore, and I know the number before we've spent a cent on a taxi.",
            moment:{line:"I knew the price before I left the clinic gate", star:true,
              why:'Thabo has done this trip before, the old way: the taxi to a pharmacy with the week\'s money in his pocket and no idea if it\'s enough, the queue with a sick child, the counter where the number is finally said out loud - and the walk away, in front of everyone, if it\'s too much. This time the number came to him, standing at the clinic, before anything was spent. <span class="why">He knows the price - and that he can afford it - before his son takes another step.</span> Nobody made him ask; the price was simply offered, with the cheaper generic presented as the smart choice it is. That is <a href="'+C08+'#c3">Real-Time Transparency</a> reaching him where he actually stands - one photo from the phone he already has, read back to him before a single number was quoted.'}}
@@ -349,14 +349,14 @@ const DATA = {
     },
     {
       id:"p2", num:"P2", title:"Choosing how I get it",
-      need:'The script is already in; now the medicine has to reach us. I need Dis-Chem to <b>run ahead of me</b> - <b>ready before I get there, or arriving just after I do</b> - so my day stays about getting better.',
+      need:'I need Dis-Chem to <b>run ahead of me</b> - <b>ready before I get there, or arriving just after I do</b>.',
       activities:{
         insured:[
-          {t:"The question waits for me in the car",
+          {t:"The message asks me how",
            x:"By the time I'm in the car, the message is there: my script is already being prepared - how would I like it? Collect at the Dis-Chem on my way home, ready within 30 minutes, and I choose how I take it: express collect, where I scan a code and the pack comes out without my speaking to anyone, or the collections counter, where a pharmacist hands it over and runs me through it. Either way the notes come to me, on WhatsApp or printed. Or delivery - at my door inside the hour if I need it now, or in a slot I choose - with the instructions in the parcel and a pharmacist a message away if anything is unclear. It doesn't expire while I think, and the preparing doesn't wait for me either."},
           {t:"I choose a delivery slot",
            x:"I want my couch more than anything, so I pick delivery. I don't need it racing me home - the early-afternoon slot suits me fine, and I take that. The confirmation shows the slot and the address it already knows. I can change either of them up until packing starts - it says so right there."},
-          {t:"“These can help while it works”",
+          {t:"I add what helps the symptoms",
            x:"Under the confirmation there's a short list: things that help the symptoms while the antibiotic does its job - a urinary alkaliniser, a probiotic for during the course, rehydration sachets - each with its price. I add the probiotic and the sachets; they ride in the same parcel and go onto my saved card when it's packed. If I skip the list, nothing about my medicine changes."}
         ],
         cash:[
@@ -396,7 +396,7 @@ const DATA = {
     },
     {
       id:"p3", num:"P3", title:"Checked and filled",
-      need:'I need to <b>trust that what we get is exactly what the doctor ordered</b> - right medicine, right dose, <b>safe for us</b> - and I need to <b>see that it was checked</b>, not just hope it was.',
+      need:'I need what\'s coming to be <b>exactly what the doctor ordered - safe for us</b> - and to <b>see that it was checked</b>, not just hope.',
       activities:{
         insured:[
           {t:"Picked against my script",
@@ -405,7 +405,7 @@ const DATA = {
            x:"Then: “Checked by Naledi ✓ - dose, interactions, against your record.” A pharmacist looked at exactly what was picked, checked it against the original script, and put her name to it before anything was sealed. If I have a question, her line is one tap away in the same thread.",
            moment:{line:"Every check ran before it left the building", star:false,
              why:'The checking used to be the invisible part - a silent backstage wait, with mistakes surfacing only at home when the packet was opened. Now it runs in the time Aisha spends driving home, and it shows its work: picked, scanned against the script, and a named pharmacist\'s sign-off on the finished pack before anything sealed. <span class="why">Fast never means unchecked - the speed came from removing the waiting, not the care.</span> That is <a href="'+C08+'#c10">The Named Check</a>: the moment that matters most in a pharmacy, carried out by a person with a name, one tap away.'}},
-          {t:"Sealed, and I already know how to take it",
+          {t:"Sealed, with my code",
            x:"The parcel seals and the confirmation lands: on track for my 2-4pm slot, with my order's QR code attached - if my afternoon changes, that same code fetches it at the counter instead. The when-and-how guide is already on my app - with food, morning and evening, all seven days - and the same plain instructions are on the pack labels. By the time it reaches me, I'll already know what to do with it."}
         ],
         cash:[
@@ -447,7 +447,7 @@ const DATA = {
     },
     {
       id:"p4", num:"P4", title:"In hand",
-      need:'The medicine is ready; now it has to actually reach my hands. I need the <b>promise kept as made</b> - <b>no chasing, no wondering, no wasted trip</b> - because today I have nothing spare to absorb a let-down.',
+      need:'I need the <b>promise kept as made</b> - <b>no chasing, no wondering, no wasted trip</b>.',
       routes:{insured:[{id:"delivered", label:"Delivered"},{id:"collected", label:"Collected"}]},
       activities:{
         insured:{
@@ -464,7 +464,7 @@ const DATA = {
         collected:[
           {t:"I pull in on the way home",
            x:"The ready message came through while I was still paying the doctor: thirty minutes, express collect, at the store I drive past anyway. So I drive home the way I always do - past the Dis-Chem I have stopped at a hundred times with a script in my hand and an hour to spare. Tonight there is nothing in my hand and nothing to hand over."},
-          {t:"The wall hands it over",
+          {t:"I scan, and the pack comes out",
            x:"Express collect sits on the outside wall, before the doors. I hold my phone to the scanner, a door opens, and my pack is there with my name on it. No queue, no counter, nobody to explain myself to. I am back in the car in under a minute, and the dispensary is somebody else's evening.",
            moment:{line:"In and out, and I never spoke to anyone", star:false,
              why:'The dispensary queue is where being ill gets slowest - you stand among other unwell people, at your own worst, waiting for a counter to call your name. Aisha never went inside. <span class="why">The stop she was always going to make cost her a minute in the car park instead of an afternoon in the queue.</span> And the quiet was her choice, not the design\'s: the collections counter was right there, with a pharmacist ready to talk her through it. She chose not to speak to anyone, and nothing about her care got smaller for it. That is <a href="'+C08+'#c17">Express Collect</a> - the stop made instant rather than deleted, which is the half of <a href="'+C08+'#c11">The 30/60 Fill</a> the journey has never shown.'}},
@@ -473,7 +473,7 @@ const DATA = {
         ]
         },
         cash:[
-          {t:"The collections counter, not the queue",
+          {t:"I show my code at the counter",
            x:"After my shift I stop at my store. The collections counter is signposted right at the front - the dispensary queue is somebody else's afternoon. I show my code, and the pack comes out with my son's name on it. No forms, no retelling the story. (If my shift had run late, express collect on the outside wall takes the same code - and if I still wanted the talk-through, a pharmacist phones me at home.)",
            moment:{line:"The counter was expecting me", star:true,
              why:'Thabo knows the other version of this stop: the month-end dispensary queue, twenty-five minutes deep, after a full shift, with a sick boy waiting at home. This time the counter was expecting him - the pack made up, named, waiting - and he was through it in minutes. <span class="why">The stop still happens; it just stopped costing him an afternoon he didn\'t have.</span> That is <a href="'+C08+'#c11">The 30/60 Fill</a> shaped for collection - his son\'s whole order riding one code, handed over exactly once, to him.'}},
@@ -514,7 +514,7 @@ const DATA = {
     },
     {
       id:"p5", num:"P5", title:"Taking it",
-      need:'The medicine is in the house; now it has to work. I need to <b>give it right, every time, to the last day</b> - and I need to know <b>someone is still there</b> if something doesn\'t look right.',
+      need:'I need taking it right to be the <b>easy part, to the last day</b> - and <b>someone still there</b> if something doesn\'t look right.',
       activities:{
         insured:[
           {t:"The first dose, without the leaflet",
@@ -531,7 +531,7 @@ const DATA = {
            x:"That evening I give him the first dose - the syringe marked at his line, the label and the guide in my language, the fever syrup with its own plain line: only if the fever is up. Seven days, morning and evening, even when he seems better - it says so where I can't miss it. Nothing at my kitchen table needs decoding.",
            moment:{line:"Medication you can't take wrong", star:false,
              why:'Dosing a sick child from instructions in your second language is a quiet, common danger - and tonight it isn\'t one. The syringe is marked, the words are his father\'s own language, the pictures carry what words might miss. <span class="why">Getting it right required nothing from Thabo except being there.</span> That is <a href="'+C08+'#c15">Made-for-Me Medicine</a> at its free floor - the can\'t-take-wrong ladder that comes with every script, no matter who is paying.'}},
-          {t:"Day three: they ask about him - and my answer changes things",
+          {t:"Day three: they ask about him",
            x:"A message, in my language: “He should be coughing less by now - is he?” He isn't. I say so, and ask if someone can call me. The pharmacist phones after six - a voice, not a chatbot - asks about the cough, the fever, how he's sleeping. Then she says it straight: three days on the antibiotic without improvement means a doctor should see him, and the Dis-Chem clinic near home can do it tomorrow morning - she books it while we talk, and tells me the price before I say yes.",
            moment:{line:"The pharmacy didn't disappear after the handover", star:true,
              why:'Nobody has ever asked Thabo whether his child\'s medicine is working - day three is where every parent is alone with their judgement. This time day three brought a question in his own language, and when his answer was “no”, it didn\'t bounce off a chatbot: a pharmacist phoned, listened, and turned his worry into a booked appointment with a price he knew first. <span class="why">Someone asked if his boy was getting better - and when he wasn\'t, they did something about it.</span> That is <a href="'+C08+'#c16">The Pharmacist Who Stays</a> earning its name: the check-in that becomes a plan the moment the answer is wrong.'}}
@@ -561,7 +561,7 @@ const DATA = {
     },
     {
       id:"p6", num:"P6", title:"When I don't get better", badge:"not part of every journey",
-      need:'The medicine was supposed to end with me <b>better</b>. If it doesn\'t - <b>this week, or across the year</b> - I need someone to <b>notice, and help me find out why</b>, not just hand me another round.',
+      need:'The medicine was supposed to end with me <b>better</b>. If it doesn\'t, I need someone to <b>notice, and help me find out why</b> - not just another round.',
       activities:{
         insured:[
           {t:"It comes back",
@@ -570,13 +570,13 @@ const DATA = {
            x:"The third script is being prepared like the others - but at the final check, the pharmacist is looking at the year, not just the script. That evening my phone rings, and she introduces herself: she's the pharmacist who checked my prescription today, and she's calling to ask how I'm doing - because this is the third one this year, and that's worth more attention than a fourth script one day. Nothing about the call is trying to sell me anything; it's the kind of call you'd want and never get.",
            moment:{line:"They noticed it kept coming back - before I did", star:false,
              why:'Aisha never connected the three episodes - different months, different doctors, each just another bad week she got through. But the pharmacist checking her third script saw the year in one view, and did what a person does with a whole history in front of them: worried, and then called - courteously, at a time that suited her, about her health and nothing else. <span class="why">Someone connected the dots she was too busy living to see, and told her like a human being, not a notification.</span> That is <a href="'+C08+'#c13">The Pharmacy That Notices</a>: it noticed, a person said so, and she decides what happens next.'}},
-          {t:"What “getting ahead of it” actually means",
+          {t:"I book the clinic slot",
            x:"She's plain about the medicine of it: recurring UTIs usually have a reason, and finding it means tests, not another antibiotic. It may be worth going back to my own doctor, she says - or, if it's easier, the Dis-Chem clinic can take the urine sample and draw the bloods, and one of their virtual doctors reviews the results with me. She can book either for me while we're talking, or just leave it with me. I take the clinic slot for Saturday; with my say-so, the year's history goes along. If ongoing medicine ever comes out of it, the repeat service picks it up from there."}
         ],
         cash:[
           {t:"The clinic sees him the next morning",
            x:"No 5am queue, no lost shift - the appointment is the appointment. The clinic sister examines him with the week's story already on screen: the script, the check-in, what I told the pharmacist. A virtual doctor joins on the screen for the decision I couldn't afford to chase across town: a different antibiotic, and a test to see what's actually going on."},
-          {t:"The new script rides the same rails",
+          {t:"The new script goes the same way",
            x:"The new script goes from the clinic straight into the same journey we already know - checked, made up at my store, ready before the afternoon is out. Nothing starts over; everyone already knows us. By the weekend, he's chasing his sister again."}
         ]
       },
@@ -598,10 +598,10 @@ const DATA = {
     },
     {
       id:"pp", num:"∥", title:"When something breaks", par:true,
-      need:'Things go wrong - stock runs out, deliveries fail, weeks cost more than they should. I need to <b>hear it early, with a way through already attached</b> - <b>never silence, never a dead end</b> - because today I don\'t have the strength to fight a system.',
+      need:'Things go wrong - <b>they always do</b>. I need to <b>hear it early, with the way through attached</b> - <b>never silence, never a dead end</b>.',
       activities:{
         insured:[
-          {t:"Out of stock, after everything was promised",
+          {t:"Out of stock",
            x:"The store filling my order hits a gap the stock check didn't catch. The message that tells me carries the plan with it: another store nearby has it and my slot moves out by an hour - or the covered generic is on their shelf right now, same active ingredient, and a pharmacist has already confirmed the swap is clinically sound. I pick one, in one tap. The order never quietly dies; I was never the one who had to discover it."},
           {t:"The delivery fails",
            x:"The driver can't find the complex, or the slot collapses on their side. Before I've even noticed the window sliding, a person phones - not a status update, a voice with options: re-deliver this evening in a window they can actually keep, or I collect at the counter tonight on the same code from my phone. The failure was theirs, so the fixing is theirs; all I supply is a preference."},
@@ -611,7 +611,7 @@ const DATA = {
         cash:[
           {t:"The photo can't be read",
            x:"The clinic light was bad and the doctor's handwriting is worse. The reply still comes at once - but instead of a price it says plainly: part of the script can't be read, a pharmacist is looking at it now, and if it stays unclear they'll phone the clinic to confirm. If a new photo would be faster, it asks for one - my choice. The one thing that never happens is silence: I always know where I stand, even when the answer is “not yet”."},
-          {t:"Out of stock - told before the taxi, never after",
+          {t:"Out of stock",
            x:"If my store's stock fails after the go-ahead, the message reaches me before I've spent a rand travelling: the next-nearest store with his medicine, on the same code and the same price - or delivery this once, with its cost shown, if the distance isn't worth it. The wasted trip is the one thing they never let happen."},
           {t:"My phone is dead at the counter",
            x:"A twelve-hour shift and the battery didn't make it. At the collections counter my ID is enough - the pack is under his name, and the order is mine, not my phone's. The code was for speed, never a lock."},

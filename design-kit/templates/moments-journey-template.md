@@ -4,7 +4,7 @@ title: "Moments-journey template - phase spine + pulled-out moments"
 status: reviewed
 tags: [design-kit, template, domain/ux, journey/refill, topic/trust-safety]
 created: "2026-07-17"
-updated: "2026-07-19"
+updated: "2026-08-16"
 ---
 
 # Moments-journey template - phase spine + pulled-out moments
@@ -184,6 +184,14 @@ Register rules on top of v3.1:
 - **Pain cards: don't surface pains that don't exist** - the honest
   no-complaint note is a feature; a practice-literature pain may stand only
   clearly attributed as such (documented exception, the human lead's call).
+- **Needs are one tight arc** (2026-08-16 feedback pass): led by "I need",
+  roughly 15-25 words, no scene-recap opening (the phase title does that
+  job), no justification tail - the suffering register lives in the
+  activities.
+- **Activity headings are functional signposts** (2026-08-16 feedback pass):
+  2-6 words, what-I-do or the-thing-that-arrives; never a claim, benefit
+  tail, quote or teaser - a heading must never compete with the memory line
+  of a moment beneath it. ∥ scenario titles are bare noun phrases.
 
 Process rules for every phase pass (the P1 retrospective):
 
