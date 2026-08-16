@@ -185,7 +185,7 @@ h1,h2,h3,h4{margin:0}
 
   <div class="ribbon">
     <span>&#9888; Concept for review - not an official Dis-Chem artefact</span>
-    <span class="gen">generated 2026-07-01 · updated 2026-08-16 (concept 09 The E-Script Token archived as infrastructure, its promises redistributed to concepts 08, 11 and 12 · concept 11 reworked as The 30/60 Fill, anchored on the stop you make on the way home from the doctor) · previously 2026-08-12 (concept 02: cabinet holds medicine from anywhere, privacy mode, digital pillbox · concept 04: graded helper visibility + shared adherence · concept 05: the sync anchor + when sync is offered · concept 15: intro reworked around the kitchen-counter anchor · concept 14: the remembering line made plain) · from the Bigly ground-truth vault</span>
+    <span class="gen">generated 2026-07-01 · updated 2026-08-16 (concept 09 The E-Script Token archived as infrastructure, its promises redistributed to concepts 08, 11 and 12 · concept 11 reworked as The 30/60 Fill, anchored on the stop you make on the way home from the doctor) · concept 17 Express Collect added (self-checkout anchor, the acute P4 collected route) · concept 03 gains the read-back and the never-speed-before-accuracy caveat) · previously 2026-08-12 (concept 02: cabinet holds medicine from anywhere, privacy mode, digital pillbox · concept 04: graded helper visibility + shared adherence · concept 05: the sync anchor + when sync is offered · concept 15: intro reworked around the kitchen-counter anchor · concept 14: the remembering line made plain) · from the Bigly ground-truth vault</span>
   </div>
 
   <section class="intro">
@@ -255,6 +255,7 @@ const ICONS = {
   notice:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M6.5 12.2h2.6l1.5-3.6 2.9 6.9 1.5-3.3h2.5"/></svg>',
   basket:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 9.5h15l-1.6 9.3a2 2 0 0 1-2 1.7H8.1a2 2 0 0 1-2-1.7L4.5 9.5Z"/><path d="m8 9.5 4-6.5 4 6.5"/><path d="M9.5 13v4M12 13v4M14.5 13v4"/></svg>',
   madefor:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h5"/><path d="m9 16.5 2 2 4-4"/></svg>',
+  expresswall:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 9h18M12 15h9"/><circle cx="9.8" cy="6" r=".85"/><circle cx="9.8" cy="12" r=".85"/><circle cx="14.2" cy="12" r=".85"/><circle cx="14.2" cy="18" r=".85"/></svg>',
   stays:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-3-.4-4.2-1L3 20l1-5.3A8.5 8.5 0 1 1 21 11.5Z"/><path d="M12 8v7M8.5 11.5h7"/></svg>'
 };
 
@@ -297,10 +298,12 @@ const CONCEPTS = [
     icon:"transparency",
     title:"Real-Time Transparency",
     tagline:"Buying your medicine, as clear as buying your groceries.",
-    intro:'When you shop online for anything else, you see the price, you see what is in stock, and you can track the order to your door. Medicine is the one thing that still is not like that. <span class="why">This makes it that simple: you see the cost, the cover and where your order is - before you commit and while you wait.</span> No shock at the till, no guessing where it has got to. You can plan, and you can rely on us.',
+    intro:'When you shop online for anything else, you see the price, you see what is in stock, and you can track the order to your door. Medicine is the one thing that still is not like that. <span class="why">This makes it that simple: you see the cost, the cover and where your order is - before you commit and while you wait.</span> No shock at the till, no guessing where it has got to. You can plan, and you can rely on us - and on the day we cannot give you the answer straight away, you hear that straight away. Speed never comes before getting it right.',
     featuresLabel:"What you see, every time",
     features:[
       '<b>What you will pay, before you commit</b> - we run your medical-scheme claim in the background and show the cover and any co-pay in plain language.',
+      '<b>We read it back before we price it</b> - when your script arrives as a photograph, what we read is shown to you in plain words before any number is quoted, so a misread never becomes a wrong price.',
+      '<b>When we cannot be instant, we say so instantly</b> - a blurred photo or handwriting that defeats us is told to you at once, with what happens next and who is looking at it, so accuracy is never traded for speed and you are never left guessing either way.',
       '<b>A cheaper funded generic</b>, offered whenever one exists.',
       '<b>An itemised cash price up front</b> - the medicine plus the set dispensing fee, no store-to-store mystery.',
       '<b>A live stock check</b>, so you know it is there before you order.',
@@ -521,6 +524,22 @@ const CONCEPTS = [
       "<b>It knows when to let go</b> - the check-ins end when the course does; and if you are not better by the day you should be, it says so and helps you back to the doctor."
     ],
     pillars:["S5","U7","U4","U2"]
+  },
+  {
+    icon:"expresswall",
+    title:"Express Collect",
+    tagline:"The counter is there if you want it. Most days you won't.",
+    intro:'Nobody queues for a person to scan their milk any more. Self-checkout did not take the cashier away - it just let you choose, and most days you choose to be out of there. Collecting medicine has never offered that choice: one queue, one counter, whether you have a question or not, standing among other unwell people at your own worst. <span class="why">Express Collect gives you the other option: scan your code, a door opens, your pack is there with your name on it, and you are gone inside a minute.</span> The collections counter is a few steps away with a pharmacist behind it, so choosing not to talk is never choosing to go without.',
+    featuresLabel:"What choosing express gets you",
+    features:[
+      '<b>Your pack is waiting before you arrive</b> - staged under your name from the moment it was sealed, so the stop costs you a minute instead of an afternoon.',
+      '<b>Scan and go, no counter</b> - your code opens the door and the pack comes out, so nobody needs you to explain yourself or retell your story.',
+      '<b>Sited on the outside wall, so the doors never have to open</b> - which also means after hours, and a late shift or a Sunday stops deciding when you can have your medicine.',
+      '<b>Your counselling notes come with it</b> - sent to WhatsApp or printed at the unit, whichever you choose, so nothing about the faster route is thinner.',
+      '<b>A pharmacist is a few steps or one tap away</b> - the collections counter is right there and the pharmacist who checked your medicine is in the thread, so you are choosing speed, never less care.',
+      '<b>Someone you trust can fetch it</b> - forward the code and they collect on your behalf, without ever seeing your medicines or your history.'
+    ],
+    pillars:["U6","U5","S3","S5"]
   }
   /* CONCEPTS_APPEND_MARKER */
 ];
