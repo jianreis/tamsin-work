@@ -108,6 +108,7 @@ machinery stays behind the line in P6 (🔮 where applicable).
 | M4b | P4 | "The counter was expecting me" | ⭐ | cash | The 30/60 Fill |
 | M5 | P5 | "Medication you can't take wrong" | | both | Made-for-Me Medicine |
 | M6 | P5 | "The pharmacy didn't disappear after the handover" | ⭐ | both | The Pharmacist Who Stays |
+| M4c | P4 | "In and out, and I never spoke to anyone" | | insured, COLLECTED route | The 30/60 Fill (express-collect concept pending) |
 | M7 | P6 | "They noticed it kept coming back - before I did" | | insured only | The Pharmacy That Notices |
 
 (M6-cash absorbs the escalation, 2026-07-26: on the cash side the day-3
@@ -1066,6 +1067,38 @@ neighbour would hold something for you.
   token cross-redemption (wiki/concepts/e-prescription-token) ·
   hold-at-counter ⚠️ (punchlist 10g) · outbound-call recovery
   (wiki/dischem/dischem-social-sentiment-trust-journey).
+
+## P4 route fork - insured (added 2026-08-16, agreed with Tamsin)
+
+P4 carries a **route toggle for Aisha only**: *Delivered* (the existing spine,
+keeping ⭐ M4a) and *Collected* (new, carrying unstarred M4c). Rationale: the
+most common real-world acute path in SA - see the doctor, stop at Dis-Chem on
+the way home - was not walked by either persona, so the 30-minute half of
+[[The 30/60 Fill]] was never demonstrated. Delivery stays Aisha's main spine;
+the toggle is scoped to P4 alone, with P2 naming the fork in one line. P3 is
+identical on both routes and is not toggled.
+
+**Terminology resolved (2026-08-16).** "Express pickup zone" previously meant a
+*staffed* fast counter, which collided with the new unattended route. From now:
+
+| | Staffed handover | Unattended handover |
+|---|---|---|
+| Name | **the collections counter** | **express collect** |
+| Who | a pharmacist hands over and counsels | nobody - scan a code, the pack comes out |
+| Hours | store hours | store hours + after-hours when sited on the outside wall |
+
+Consequence: **Thabo uses the collections counter**, not express collect - his
+M4b moment is the pharmacist walking him through his son's dose, and that stays.
+Renamed through P2-cash, P4-cash and ∥-cash. The after-hours external point is
+unchanged and still 🔮 requires-reform.
+
+**Counselling on the express route.** Choosing express collect is choosing not
+to *speak* to a pharmacist, never choosing to go without counselling: the notes
+go to WhatsApp or print at the point of collection, and a named pharmacist stays
+one tap away. GPP requires counselling *access* preserved, not face-to-face
+delivered, so this is defensible - but whether a patient may decline
+face-to-face counselling on a first-time acute antibiotic is **⚠️ not sourced in
+the vault**; logged as punchlist item 10(j) and an open question.
 
 ## Open items
 
