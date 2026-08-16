@@ -185,7 +185,7 @@ h1,h2,h3,h4{margin:0}
 
   <div class="ribbon">
     <span>&#9888; Concept for review - not an official Dis-Chem artefact</span>
-    <span class="gen">generated 2026-07-01 · updated 2026-08-12 (concept 02: cabinet holds medicine from anywhere, privacy mode, digital pillbox · concept 04: graded helper visibility + shared adherence · concept 05: the sync anchor + when sync is offered · concept 15: intro reworked around the kitchen-counter anchor · concept 14: the remembering line made plain) · from the Bigly ground-truth vault</span>
+    <span class="gen">generated 2026-07-01 · updated 2026-08-16 (concept 09 The E-Script Token archived as infrastructure, its promises redistributed to concepts 08, 11 and 12) · previously 2026-08-12 (concept 02: cabinet holds medicine from anywhere, privacy mode, digital pillbox · concept 04: graded helper visibility + shared adherence · concept 05: the sync anchor + when sync is offered · concept 15: intro reworked around the kitchen-counter anchor · concept 14: the remembering line made plain) · from the Bigly ground-truth vault</span>
   </div>
 
   <section class="intro">
@@ -386,7 +386,9 @@ const CONCEPTS = [
       '<b>The price is known before you stand up</b> - your scheme\'s cover or an itemised cash price - so there is no surprise waiting at a till.',
       '<b>The cheaper generic is offered at the consult</b>, with the doctor\'s advice right there, so you choose on medical guidance rather than at a counter.',
       '<b>Stock is checked live</b> at the Dis-Chem stores near you, so the doctor prescribes what is actually on the shelf.',
-      '<b>The pharmacy already has the script</b> when you leave, so nothing depends on a piece of paper making the trip.'
+      '<b>The pharmacy already has the script</b> when you leave, so nothing depends on a piece of paper making the trip.',
+      '<b>A plain "received ✓" lands on your phone</b> as it arrives, so you never have to wonder whether it got there.',
+      '<b>There is no paper to lose, alter or fake</b> - the signed script lives in one secure central record, and it can only be filled once, so the same script can never be dispensed twice at two different stores.'
     ],
     pillars:["S6","S3","U3","U5"]
   },
@@ -404,7 +406,9 @@ const CONCEPTS = [
       '<b>A plain "received ✓" confirms the pharmacy has it</b>, so you never wonder whether it arrived.',
       '<b>SMS, USSD and a printed code work too</b>, so any phone with any data can carry it.'
     ],
-    pillars:["S6","U1","U6","U2"]
+    pillars:["S6","U1","U6","U2"],
+    archived:true,
+    archiveNote:'Archived 2026-08-16 - this was infrastructure, not a customer experience. What people actually see is a collection code; the central e-script registry underneath it is carried as a capability in the journey blueprints, where it belongs. Its promises now live in <a href="#c8">The Pharmacy in the Room</a> (the "received ✓", and one record that cannot be lost, altered or filled twice), <a href="#c11">The 60-Minute Fill</a> (send someone you trust to fetch it) and <a href="#c12">Snap-a-Script</a> (any phone, any data). Kept here for reference.'
   },
   {
     icon:"namedcheck",
@@ -429,10 +433,11 @@ const CONCEPTS = [
     featuresLabel:"What happens in the hour",
     features:[
       '<b>A robot picks the pack in seconds</b>, so speed never depends on the length of the queue.',
-      '<b>A barcode check verifies every item against the exact script</b>, so fast never means wrong or short.',
+      '<b>The script is reviewed and captured once</b>, with the automation carrying the keying, the counting and the picking - the dispenser is left holding the one job that matters, the checking, so fast never means wrong or short.',
       '<b>You watch it move</b> - picking, checked, ready, on the way - like a food order, so there is no silent wait.',
       '<b>Delivery comes with a live map and a real ETA</b>, and proof of delivery at the door, so the promise is kept and verifiable.',
-      '<b>Collection works without a street address</b> - a locker near home opens with an SMS PIN, in hours that suit a shift worker.'
+      '<b>Collection works without a street address</b> - a locker near home opens with an SMS PIN, in hours that suit a shift worker.',
+      '<b>Send someone you trust to fetch it</b> - forward the collection code and they hand it over on your behalf, without ever seeing your medicines or your history.'
     ],
     pillars:["S3","S1","U2","U6"]
   },
@@ -447,7 +452,8 @@ const CONCEPTS = [
       '<b>The script is read and captured automatically</b>, so nobody re-types what the paper already says.',
       '<b>A pharmacist verifies it against your record</b> before anything is dispensed, so the shortcut is never a safety cut.',
       '<b>It joins the same journey as an e-script</b> - price up front, live status, delivery or near-home collection.',
-      '<b>If something is out of stock</b>, you are offered a funded generic or another store nearby, in plain language.'
+      '<b>If something is out of stock</b>, you are offered a funded generic or another store nearby, in plain language.',
+      '<b>No smartphone? SMS, USSD and a printed code work too</b>, so the journey never depends on the phone you happen to have.'
     ],
     pillars:["U4","S6","U1"]
   },

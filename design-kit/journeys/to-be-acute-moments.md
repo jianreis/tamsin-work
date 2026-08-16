@@ -105,7 +105,7 @@ machinery stays behind the line in P6 (🔮 where applicable).
 | M2 | P1 | "I knew the price before I left the clinic gate" | ⭐ | cash only | Snap-a-Script |
 | M3 | P3 | "Every check ran before it left the building" | | both | The Named Check |
 | M4a | P4 | "Saw the doc. Went straight home." | ⭐ | insured | The 60-Minute Fill |
-| M4b | P4 | "The counter was expecting me" | ⭐ | cash | The 60-Minute Fill + The E-Script Token |
+| M4b | P4 | "The counter was expecting me" | ⭐ | cash | The 60-Minute Fill |
 | M5 | P5 | "Medication you can't take wrong" | | both | Made-for-Me Medicine |
 | M6 | P5 | "The pharmacy didn't disappear after the handover" | ⭐ | both | The Pharmacist Who Stays |
 | M7 | P6 | "They noticed it kept coming back - before I did" | | insured only | The Pharmacy That Notices |
@@ -123,10 +123,13 @@ moment that already happened.)
 - P1 carries **both stars, symmetrically**: each economy's price-certainty
   moment of truth, delivered the way its reality allows (Aisha's in the
   chair, Thabo's at the clinic gate). P2 carries **no moments at all**.
-- **The E-Script Token is referenced inline only where the reader watches it
-  being used** - M4b's QR scan at the express counter (agreed after Tamsin
-  caught it cited in P1 blocks whose activities never show a token). Its P1
-  surface is the received-notifications; the registry stays behind the line.
+- **The E-Script Token concept was archived 2026-08-16** (agreed with Tamsin):
+  it described infrastructure, not an experience - what the reader ever watches
+  is a collection code. Its promises moved to The Pharmacy in the Room
+  (received ✓; one record that cannot be lost, altered or filled twice), The
+  60-Minute Fill (send someone you trust) and Snap-a-Script (any phone). M4b
+  therefore cites The 60-Minute Fill alone; the registry stays behind the line
+  as a capability chip, which is where it always belonged.
 - "Every check ran before it left the building" and "Medication you can't
   take wrong" are **signature lines reused from #09 deliberately** - the
   same promise landing in a second journey.
@@ -195,11 +198,12 @@ On top of the full v3.1 rule set from #09:
   holds as: PBQ/pharmacist capture-and-first-check -> pick (scan-verified
   per item) -> pharmacist's FINAL check of the picked pack against the
   original script (the sign-off gate) -> seal, code issue, digital
-  instructions push. The collection/order QR (the e-token's redemption
-  face) is issued at sealing on BOTH sides - express-zone scan for cash,
-  driver-handover proof and switch-to-collect key for insured.
+  instructions push. The collection/order QR (the redemption face of the
+  central e-script record) is issued at sealing on BOTH sides - express-zone
+  scan for cash, driver-handover proof and switch-to-collect key for insured.
 - **Concepts are referenced inline only where the reader watches them work**
-  (the E-Script Token rule above generalised).
+  (generalised from the E-Script Token rule above, which is what eventually
+  retired that concept: nothing in the journey ever watches a token).
 
 **Process rules for every phase pass (encoded after the P1 retrospective,
 2026-07-26 - P2 onwards):**
@@ -687,9 +691,8 @@ deep, after a full shift, with a sick boy waiting at home. This time the
 counter was expecting him - the pack made up, named, waiting - and he was
 through it in minutes. [why] The stop still happens; it just stopped costing
 him an afternoon he didn't have. [/why] That is The 60-Minute Fill (inline
-link) shaped for collection - and the code he showed is The E-Script Token
-(inline link) doing its quiet work: his son's whole script riding one code,
-redeemable exactly once, by him.
+link) shaped for collection - his son's whole order riding one code, handed
+over exactly once, to him.
 
 **A2 · The pharmacist walks me through his dose** - The pharmacist at the
 counter opens the pack with me: the syringe marked at his line, the labels
