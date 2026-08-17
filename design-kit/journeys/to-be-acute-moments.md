@@ -294,12 +294,16 @@ infer.
 ### Need (shared)
 
 One of us is sick **today**, and I have exactly one job: **start getting
-better**. I need everything else to cost me **almost nothing**.
+better**. I need to leave the doctor with **nothing to carry, chase or
+organise**.
 
 *(Needs tightened 2026-08-16, agreed: matched to #09's shape - one arc, led
 by "I need", roughly 15-25 words, no scene-recap opening, no justification
 tail. The sick-person register lives in the activities, not appended to
-every need. Applies to all phases below.)*
+every need. Applies to all phases below. P1 revised again the same day,
+agreed: the need must be what the customer wants from the diagnosis phase
+itself - what has to be true by the time they leave the chair - not the
+solution's promise of low effort overall.)*
 
 ### Activities - insured (Aisha)
 
