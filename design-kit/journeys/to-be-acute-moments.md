@@ -1090,8 +1090,8 @@ attached.
 
 ### Need (shared)
 
-Things go wrong - **they always do**. I need to **hear it early, with the
-way through attached** - **never silence, never a dead end**.
+Things go wrong - **they always do**. I need to **hear it early, with a way
+through** - **never silence, never a dead end**.
 
 ### Scenarios - insured (Aisha)
 
