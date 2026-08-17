@@ -310,7 +310,7 @@ examines me and confirms it - a urinary tract infection. I'm sore, tired and
 fed up; all I want is to get home and start getting better. *(context - no
 benefit line)*
 
-**A2 · "Shall I send it to Dis-Chem?"** - When it's time for the script, the
+**A2 · The doctor asks to send it** - When it's time for the script, the
 doctor asks if he can send it to Dis-Chem. I nod; an OTP arrives on my phone
 and he enters it. Now my medication record is open in front of him - what I
 take, what I'm allergic to - for this consult only. I've used the service
