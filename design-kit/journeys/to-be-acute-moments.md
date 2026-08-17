@@ -294,8 +294,8 @@ infer.
 ### Need (shared)
 
 One of us is sick **today**, and I have exactly one job: **start getting
-better**. I need to leave the doctor with **nothing to carry, chase or
-organise**.
+better**. I need to leave with **the script already in and the price
+already known**.
 
 *(Needs tightened 2026-08-16, agreed: matched to #09's shape - one arc, led
 by "I need", roughly 15-25 words, no scene-recap opening, no justification
@@ -303,7 +303,11 @@ tail. The sick-person register lives in the activities, not appended to
 every need. Applies to all phases below. P1 revised again the same day,
 agreed: the need must be what the customer wants from the diagnosis phase
 itself - what has to be true by the time they leave the chair - not the
-solution's promise of low effort overall.)*
+solution's promise of low effort overall. And revised once more, agreed:
+"nothing to carry" was only true for Aisha - Thabo leaves with the paper in
+his pocket. The shared need is the P1 symmetry both tracks already deliver,
+each by their own means: leave with the script already in and the price
+already known - the same need for customers with means and without.)*
 
 ### Activities - insured (Aisha)
 
