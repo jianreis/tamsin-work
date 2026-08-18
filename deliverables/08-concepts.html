@@ -152,6 +152,17 @@ h1,h2,h3,h4{margin:0}
 }
 .archnote a{color:var(--brand-dark)}
 
+/* ---- live note (regulatory / status callout on a non-archived card) -------- */
+.cnote{
+  font-size:.86rem; color:var(--ink-soft); background:#fff9ec;
+  border:1px solid #f0dca8; border-left:4px solid #d9a441; border-radius:8px; padding:10px 13px;
+}
+.cnote .cnlbl{
+  display:block; font-size:.62rem; text-transform:uppercase; letter-spacing:.12em;
+  font-weight:800; color:#8a5a00; margin-bottom:5px;
+}
+.cnote a{color:var(--brand-dark); font-weight:700}
+
 /* ---- journey group headers ------------------------------------------------ */
 .grouphead{
   grid-column:1 / -1; display:flex; align-items:baseline; gap:12px; margin-top:8px;
@@ -185,7 +196,7 @@ h1,h2,h3,h4{margin:0}
 
   <div class="ribbon">
     <span>&#9888; Concept for review - not an official Dis-Chem artefact</span>
-    <span class="gen">generated 2026-07-01 · updated 2026-07-26 (concepts 15-16: made-for-me medicine, the pharmacist who stays; concept 06 archived) · from the Bigly ground-truth vault</span>
+    <span class="gen">generated 2026-07-01 · updated 2026-08-16 (concept 09 The E-Script Token archived as infrastructure, its promises redistributed to concepts 08, 11 and 12 · concept 11 reworked as The 30/60 Fill, anchored on the stop you make on the way home from the doctor) · concept 17 Express Collect added (self-checkout anchor, the acute P4 collected route) · concept 03 gains the read-back and the never-speed-before-accuracy caveat · concept 12 Snap-a-Script archived as a channel rather than a concept · concept 16 gains seamless clinic booking · concept 17 carries a regulatory note · journey feedback, later the same day: concept 11's thirty-minute promise decoupled from any one counter type - collections counter or express collect, the customer's choice; concept 17 gains after-hours phone-back counselling) · previously 2026-08-12 (concept 02: cabinet holds medicine from anywhere, privacy mode, digital pillbox · concept 04: graded helper visibility + shared adherence · concept 05: the sync anchor + when sync is offered · concept 15: intro reworked around the kitchen-counter anchor · concept 14: the remembering line made plain) · from the Bigly ground-truth vault</span>
   </div>
 
   <section class="intro">
@@ -255,6 +266,7 @@ const ICONS = {
   notice:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M6.5 12.2h2.6l1.5-3.6 2.9 6.9 1.5-3.3h2.5"/></svg>',
   basket:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 9.5h15l-1.6 9.3a2 2 0 0 1-2 1.7H8.1a2 2 0 0 1-2-1.7L4.5 9.5Z"/><path d="m8 9.5 4-6.5 4 6.5"/><path d="M9.5 13v4M12 13v4M14.5 13v4"/></svg>',
   madefor:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h5"/><path d="m9 16.5 2 2 4-4"/></svg>',
+  expresswall:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 9h18M12 15h9"/><circle cx="9.8" cy="6" r=".85"/><circle cx="9.8" cy="12" r=".85"/><circle cx="14.2" cy="12" r=".85"/><circle cx="14.2" cy="18" r=".85"/></svg>',
   stays:'<svg viewBox="0 0 24 24" fill="none" stroke="#157a3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-3-.4-4.2-1L3 20l1-5.3A8.5 8.5 0 1 1 21 11.5Z"/><path d="M12 8v7M8.5 11.5h7"/></svg>'
 };
 
@@ -286,7 +298,10 @@ const CONCEPTS = [
       '<b>What each medicine is for</b>, in plain words, not just its name - so you know what everyone is taking and why.',
       '<b>A picture of each pill</b>, so it is recognisable at a glance.',
       '<b>Covered or not covered</b>, shown against each medicine, so there is no surprise about what the scheme pays.',
-      '<b>What is due, and when</b>, per person, so a refill is never missed.'
+      '<b>What is due, and when</b>, per person, so a refill is never missed.',
+      '<b>The whole cabinet, not just the Dis-Chem shelf</b> - scan the barcode or snap a pic to add medicine from anywhere in seconds, understand it in plain words, and reorder it here when it runs out.',
+      '<b>Some medicine is nobody else\'s business</b> - mark it private and you choose exactly who sees it; to everyone else it simply isn\'t there, in any view, reminder or message. The pharmacist\'s safety check is the one place nothing hides, so the household stays private and safe at once.',
+      '<b>A digital pillbox, if you want one</b> - a reminder when a dose is due, a tick when you\'ve taken it, and your own picture of how the week is going. Yours to use, ignore - or share.'
     ],
     pillars:["U6","U5","S4","U7"]
   },
@@ -294,10 +309,12 @@ const CONCEPTS = [
     icon:"transparency",
     title:"Real-Time Transparency",
     tagline:"Buying your medicine, as clear as buying your groceries.",
-    intro:'When you shop online for anything else, you see the price, you see what is in stock, and you can track the order to your door. Medicine is the one thing that still is not like that. <span class="why">This makes it that simple: you see the cost, the cover and where your order is - before you commit and while you wait.</span> No shock at the till, no guessing where it has got to. You can plan, and you can rely on us.',
+    intro:'When you shop online for anything else, you see the price, you see what is in stock, and you can track the order to your door. Medicine is the one thing that still is not like that. <span class="why">This makes it that simple: you see the cost, the cover and where your order is - before you commit and while you wait.</span> No shock at the till, no guessing where it has got to. You can plan, and you can rely on us - and on the day we cannot give you the answer straight away, you hear that straight away. Speed never comes before getting it right.',
     featuresLabel:"What you see, every time",
     features:[
       '<b>What you will pay, before you commit</b> - we run your medical-scheme claim in the background and show the cover and any co-pay in plain language.',
+      '<b>We read it back before we price it</b> - when your script arrives as a photograph, what we read is shown to you in plain words before any number is quoted, so a misread never becomes a wrong price.',
+      '<b>When we cannot be instant, we say so instantly</b> - a blurred photo or handwriting that defeats us is told to you at once, with what happens next and who is looking at it, so accuracy is never traded for speed and you are never left guessing either way.',
       '<b>A cheaper funded generic</b>, offered whenever one exists.',
       '<b>An itemised cash price up front</b> - the medicine plus the set dispensing fee, no store-to-store mystery.',
       '<b>A live stock check</b>, so you know it is there before you order.',
@@ -314,6 +331,8 @@ const CONCEPTS = [
     features:[
       '<b>Granted once</b> by the person being cared for, recorded against their own profile.',
       '<b>They set what it covers</b> - ordering, paying, collecting - and can narrow or withdraw it at any time.',
+      '<b>They see only what you share</b> - whoever collects for you can be shown just a parcel name and a code, with your medicines, history and conditions staying yours alone.',
+      '<b>Let them worry less, on your terms</b> - you mark your doses taken in your own time; if you grant it, your carer sees how the week went, not a running commentary. Peace of mind for them, no watchtower over you.',
       '<b>You stop re-explaining</b> - from then on you act on their behalf without re-proving your authority.',
       '<b>Every action is logged</b>, so it is always clear who did what and when.',
       '<b>The pharmacist still checks</b> each person\'s prescription, so safety is never traded for convenience.'
@@ -329,6 +348,8 @@ const CONCEPTS = [
     features:[
       '<b>One shared refill date</b> - the pharmacy looks across every repeat in the family and lines them up.',
       '<b>A short top-up fill</b> brings any out-of-step medicine into line, then everything renews together from the next round.',
+      '<b>It knows what can\'t move</b> - a contraceptive\'s fixed 28-day cycle, a scheduled medicine the law only lets a pharmacy fill month by month, a clinic programme that sets its own collection dates. The plan anchors on the medicine that must stay put, shifts only what can, and a pharmacist signs it off - so lining up never bends the medicine.',
+      '<b>A new medicine earns its place first</b> - a first script runs on its own for a cycle or two while the dose settles; once it\'s steady, one message offers the family date. Renewals of what you already take fall in step on their own.',
       '<b>One order on the date</b> - the whole family\'s medicine is prepared together.',
       '<b>One reminder, one tap</b> a few days before to confirm.',
       '<b>One handover</b> - collect or receive everything at once.'
@@ -379,7 +400,9 @@ const CONCEPTS = [
       '<b>The price is known before you stand up</b> - your scheme\'s cover or an itemised cash price - so there is no surprise waiting at a till.',
       '<b>The cheaper generic is offered at the consult</b>, with the doctor\'s advice right there, so you choose on medical guidance rather than at a counter.',
       '<b>Stock is checked live</b> at the Dis-Chem stores near you, so the doctor prescribes what is actually on the shelf.',
-      '<b>The pharmacy already has the script</b> when you leave, so nothing depends on a piece of paper making the trip.'
+      '<b>The pharmacy already has the script</b> when you leave, so nothing depends on a piece of paper making the trip.',
+      '<b>A plain "received ✓" lands on your phone</b> as it arrives, so you never have to wonder whether it got there.',
+      '<b>There is no paper to lose, alter or fake</b> - the signed script lives in one secure central record, and it can only be filled once, so the same script can never be dispensed twice at two different stores.'
     ],
     pillars:["S6","S3","U3","U5"]
   },
@@ -397,7 +420,9 @@ const CONCEPTS = [
       '<b>A plain "received ✓" confirms the pharmacy has it</b>, so you never wonder whether it arrived.',
       '<b>SMS, USSD and a printed code work too</b>, so any phone with any data can carry it.'
     ],
-    pillars:["S6","U1","U6","U2"]
+    pillars:["S6","U1","U6","U2"],
+    archived:true,
+    archiveNote:'Archived 2026-08-16 - this was infrastructure, not a customer experience. What people actually see is a collection code; the central e-script registry underneath it is carried as a capability in the journey blueprints, where it belongs. Its promises now live in <a href="#c8">The Pharmacy in the Room</a> (the "received ✓", and one record that cannot be lost, altered or filled twice), <a href="#c11">The 30/60 Fill</a> (send someone you trust to fetch it) and <a href="#c12">Snap-a-Script</a> (any phone, any data). Kept here for reference.'
   },
   {
     icon:"namedcheck",
@@ -416,16 +441,18 @@ const CONCEPTS = [
   },
   {
     icon:"bolt",
-    title:"The 60-Minute Fill",
-    tagline:"Medicine, as fast as your groceries.",
-    intro:'You can order groceries on Sixty60 and watch them picked, packed and driven to your door within the hour. Medicine - the thing you need most urgently when you are ill - should be at least that fast. <span class="why">The 60-Minute Fill gets an acute script picked, safety-checked and into your hands quickly: delivered with a live driver map, or ready at a locker near home.</span> The status is honest the whole way, and the promised window is one we keep.',
-    featuresLabel:"What happens in the hour",
+    title:"The 30/60 Fill",
+    tagline:"Ready before you get there. Or home before you are.",
+    intro:'Every doctor\'s visit in this country ends the same way: you stop at Dis-Chem on the way home. It is the errand welded onto being ill - made while you feel your worst, in a dispensary queue you have to stand in when you should be in bed. <span class="why">The 30/60 Fill makes that stop instant, or unnecessary. Your script reaches the pharmacy from the consulting room, so it is being prepared while you are still paying the doctor: by the time you pull in it is ready and waiting - thirty minutes, no queue - or it comes to your door inside the hour and you never stop at all.</span> Dis-Chem has run an hour-delivery rail since 2021; today it carries shampoo, not scripts.',
+    featuresLabel:"What happens to the stop",
     features:[
+      '<b>The clock starts at the script, not at your order</b> - it reaches the pharmacy the moment the doctor signs, or the moment you photograph it, so the work is already underway before you start travelling.',
+      '<b>The stop you were making anyway, made instant</b> - ready and waiting in thirty minutes, so pulling in on the way home costs you a minute instead of an afternoon in the queue. Take it how you choose: a pharmacist at the collections counter, or express collect if you would rather scan and go. Forward the code and someone you trust can fetch it, without ever seeing your medicines or your history.',
+      '<b>Or no stop at all</b> - delivered to your door inside the hour, with a live map, a real ETA and proof of delivery, so the promise is both kept and verifiable.',
       '<b>A robot picks the pack in seconds</b>, so speed never depends on the length of the queue.',
-      '<b>A barcode check verifies every item against the exact script</b>, so fast never means wrong or short.',
+      '<b>The script is reviewed and captured once</b>, with the automation carrying the keying, the counting and the picking - the dispenser is left holding the one job that matters, the checking, so fast never means wrong or short.',
       '<b>You watch it move</b> - picking, checked, ready, on the way - like a food order, so there is no silent wait.',
-      '<b>Delivery comes with a live map and a real ETA</b>, and proof of delivery at the door, so the promise is kept and verifiable.',
-      '<b>Collection works without a street address</b> - a locker near home opens with an SMS PIN, in hours that suit a shift worker.'
+      '<b>Where the hour cannot be kept, you are told before you choose</b> - the distance, the hours and the stores it covers are stated upfront, because a realistic promise kept beats a tight one missed.'
     ],
     pillars:["S3","S1","U2","U6"]
   },
@@ -440,9 +467,12 @@ const CONCEPTS = [
       '<b>The script is read and captured automatically</b>, so nobody re-types what the paper already says.',
       '<b>A pharmacist verifies it against your record</b> before anything is dispensed, so the shortcut is never a safety cut.',
       '<b>It joins the same journey as an e-script</b> - price up front, live status, delivery or near-home collection.',
-      '<b>If something is out of stock</b>, you are offered a funded generic or another store nearby, in plain language.'
+      '<b>If something is out of stock</b>, you are offered a funded generic or another store nearby, in plain language.',
+      '<b>No smartphone? SMS, USSD and a printed code work too</b>, so the journey never depends on the phone you happen to have.'
     ],
-    pillars:["U4","S6","U1"]
+    pillars:["U4","S6","U1"],
+    archived:true,
+    archiveNote:'Archived 2026-08-16 - photographing a script and sending it already exists in the Dis-Chem app, so it reads as a submission channel rather than one of the big moves. The idea genuinely worth promising was never the reading; it was the guarantee that a fast answer is never a wrong one, and that now lives in <a href="#c3">Real-Time Transparency</a>: the script is read back to you in plain words before any number is quoted, and when it cannot be read at once you are told at once. The pharmacist\'s verification is <a href="#c10">The Named Check</a>\'s promise, and the any-phone floor is the channel-ladder pillar (U1) at work in the journeys. Kept here for reference.'
   },
   {
     icon:"notice",
@@ -469,7 +499,7 @@ const CONCEPTS = [
     featuresLabel:'What "while you\'re there" covers',
     features:[
       '<b>It opens with every repeat</b> - each cycle\'s order stays open until a clear cutoff, so there is always a window and never a special trip.',
-      '<b>It remembers what you buy</b> - specials on things from your own history surface when the window opens, so the season\'s needs find you.',
+      '<b>It remembers what you buy</b> - your usual shopping, your seasonal buys, and what\'s on special across both, offered when the window opens - so the list half-writes itself.',
       '<b>Everything rides one parcel</b> - added items travel with the medicine, so the week\'s small logistics collapse into a single handover.',
       '<b>Priced as it goes in</b> - every added item shows its price immediately, so the total is never a surprise.',
       '<b>It knows its limits</b> - locker and bank collections carry medication only, and it says so upfront, so the promise stays honest.',
@@ -482,7 +512,7 @@ const CONCEPTS = [
     icon:"madefor",
     title:"Made-for-Me Medicine",
     tagline:"Made to be taken right.",
-    intro:'A meal-kit dinner is hard to ruin: every ingredient arrives measured, every step pictured, nothing left to weigh or guess. This is your medicine, made that way. <span class="why">Made-for-Me Medicine builds the taking-it-right into the medicine itself - your doses, your language, your eyes - so there is nothing left to work out and no easy way to get it wrong.</span> The purest version is a month of dose sachets you open and take; the everyday version is free with every script: clear iconised labels, plain instructions in your own language, a simple when-and-how guide. Whichever you get, the wrong way has been designed out before the medicine reaches you.',
+    intro:'Every house that lives on chronic medicine invents some version of the same system: the cluster of pill bottles on the kitchen counter, sticky notes or spreadsheets on the fridge tracking which pill goes when, a large pill box sorted each week, a moon or sun drawn in marker on a pill-bottle cap, because the label was made for a pharmacist and not for the grandmother. That homemade system is the household finishing the pharmacy\'s job. <span class="why">Made-for-Me Medicine finishes the job before the medicine arrives.</span> The purest version is a month of daily dose sachets you open and take; the everyday version is free with every script: clear iconised labels, plain instructions in your own language, a simple when-and-how guide. Whichever you get, the wrong way has been designed out before the medicine reaches you.',
     featuresLabel:"What's in the kit",
     features:[
       '<b>Dose sachets, sorted by day and time</b> - each dose pre-grouped and labelled, open and take, so there is nothing to sort and nothing to mix up. An optional extra, done for you.',
@@ -504,9 +534,27 @@ const CONCEPTS = [
       '<b>Reminders that last exactly as long as the course</b> - through the final antibiotic dose, then they stop, so finishing is the easy path and the silence after is earned.',
       '<b>What to expect, in plain words</b> - the side effects worth knowing about, explained the way a person would say them, so a scary leaflet never becomes a scary evening.',
       '<b>A pharmacist on standby</b> - worried about a side effect? Message or phone, and a pharmacist answers, so a worry never has to wait for morning.',
+      '<b>If you need to be seen, the appointment is made while you talk</b> - a teleconsult on WhatsApp or a slot at the Dis-Chem clinic near you, booked inside the same conversation with the price said before you agree, so being told to see someone never becomes another errand to arrange.',
       "<b>It knows when to let go</b> - the check-ins end when the course does; and if you are not better by the day you should be, it says so and helps you back to the doctor."
     ],
     pillars:["S5","U7","U4","U2"]
+  },
+  {
+    icon:"expresswall",
+    title:"Express Collect",
+    tagline:"The counter is there if you want it. Most days you won't.",
+    intro:'Nobody queues for a person to scan their milk any more. Self-checkout did not take the cashier away - it just let you choose, and most days you choose to be out of there. Collecting medicine has never offered that choice: one queue, one counter, whether you have a question or not, standing among other unwell people at your own worst. <span class="why">Express Collect gives you the other option: scan your code, a door opens, your pack is there with your name on it, and you are gone inside a minute.</span> The collections counter is a few steps away with a pharmacist behind it, so choosing not to talk is never choosing to go without.',
+    featuresLabel:"What choosing express gets you",
+    features:[
+      '<b>Your pack is waiting before you arrive</b> - staged under your name from the moment it was sealed, so the stop costs you a minute instead of an afternoon.',
+      '<b>Scan and go, no counter</b> - your code opens the door and the pack comes out, so nobody needs you to explain yourself or retell your story.',
+      '<b>Sited on the outside wall, so the doors never have to open</b> - which also means after hours, and a late shift or a Sunday stops deciding when you can have your medicine.',
+      '<b>Your counselling notes come with it</b> - sent to WhatsApp or printed at the unit, whichever you choose, so nothing about the faster route is thinner.',
+      '<b>A pharmacist is a few steps or one tap away</b> - the collections counter is right there and the pharmacist who checked your medicine is in the thread; after hours, ask and one phones you to talk it through at home or in your car. You are choosing speed, never less care.',
+      '<b>Someone you trust can fetch it</b> - forward the code and they collect on your behalf, without ever seeing your medicines or your history.'
+    ],
+    pillars:["U6","U5","S3","S5"],
+    note:'<b>A collection unit nobody staffs is not permitted in a community pharmacy today.</b> The rule that would allow it already exists and already covers this exact use - SAPC\'s Remote Automated Dispensing Unit standard, written to "improve access to medicines", for chronic medicine, with a pharmacist completing the handover over an audio-visual link. It is restricted to public-sector pharmacy, so this concept asks Council to extend a standard rather than write a new one. The version shown here, with nobody on the line at all, is the further step. <a href="https://github.com/jianreis/tamsin-work/blob/main/wiki/concepts/unmanned-collection-points.md" target="_blank" rel="noopener">Read the full regulatory position</a> - the rules, the three possible designs and what to ask Council for.'
   }
   /* CONCEPTS_APPEND_MARKER */
 ];
@@ -544,6 +592,7 @@ function render(){
       '<div class="body">'+
         '<div class="tagline">'+esc(c.tagline)+'</div>'+
         (c.archiveNote?'<div class="archnote">'+c.archiveNote+'</div>':'')+
+        (c.note?'<div class="cnote"><span class="cnlbl">Where this stands</span>'+c.note+'</div>':'')+
         '<p class="lead">'+c.intro+'</p>'+
         '<div class="features"><span class="lbl">'+esc(c.featuresLabel)+'</span><ul>'+feats+'</ul></div>'+
         '<div class="pillars"><span class="plbl">Pillars</span>'+pillarPills+'</div>'+
