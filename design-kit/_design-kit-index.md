@@ -1,7 +1,7 @@
 ---
 type: index
 title: "Design Kit — index"
-updated: "2026-06-17"
+updated: "2026-08-18"
 tags: [index, design-kit]
 ---
 
@@ -22,6 +22,7 @@ Everything here must be **traceable to the wiki** (and through it, to sources).
   - [[design-kit/journeys/to-be-blueprint-chronic-insured|To-be service blueprint — the self-running repeat]] (Nomvula, insured chronic - the chronic-medicine flywheel)
   - [[design-kit/journeys/to-be-journey-cash-acute|To-be journey — fast, transparent, near home]] (Thabo, cash-pay acute - the uninsured majority)
 - _Together these demonstrate the [[wiki/concepts/dual-journey|dual journey]]: one spine, two first-class funded paths. Produce more per [[CLAUDE]] §8._
+- [[design-kit/journeys/journey-narratives|Journey narratives]] — the intent-and-story companion pieces for the moments journeys, one per persona (Aisha/Thabo for #10, Nomvula/Sipho for #09).
 
 ## Templates
 - [[design-kit/templates/service-blueprint-template|Service blueprint template]]
