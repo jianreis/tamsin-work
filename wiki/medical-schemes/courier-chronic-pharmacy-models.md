@@ -69,6 +69,24 @@ two economies and a route to serve the uninsured at scale. Documented CCMDD pain
 points (late delivery, no parcel tracking, late collection SMSes, wrong meds,
 rural gaps) are **direct UX evidence** of what to fix [[src-sch-ccmdd-public]].
 
+### What CCMDD does not give you: legal authority
+
+Researched 2026-08-16. CCMDD proves the pattern operates at national scale -
+**2.9m active patients, 64% collecting at external pick-up points**, 342 post
+offices handing over chronic medicine [[src-coldchain-ccmdd-pickup-point-model]]
+[[src-reg-post-office-chronic-medicine-collection]]. But **no statutory exemption,
+gazetted authorisation or Council determination was found.** The programme runs on
+National Department of Health policy and SOPs, on an implicit two-limb theory:
+dispensing completes at the licensed service-provider pharmacy so the pick-up
+point performs distribution rather than dispensing, and **no sale occurs because
+the State issues free** [[src-reg-ccmdd-pickup-point-handover]].
+
+**The second limb fails outright in private retail**, where medicine is sold. Cite
+CCMDD as proof of operability, never as proof of legality. The peer-reviewed
+evaluation of adherence clubs itself calls for further policy to regulate the role
+of lay healthcare workers - the gap is acknowledged in the literature. Full
+analysis in [[wiki/concepts/remote-collection-points]].
+
 ## Design implications
 
 - **The chronic refill is the flywheel.** It's predictable, recurring and

@@ -131,6 +131,13 @@ a{color:var(--brand-dark)}
 .activity p{margin:0; color:var(--ink-soft); white-space:pre-line}
 .actnote{margin-top:14px; font-size:.85rem; color:var(--muted); max-width:74ch}
 
+/* route fork (phases where the journey branches - P4 insured) */
+.routepick{display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin:2px 0 4px;
+  padding:10px 12px; background:#f2f7f3; border:1px dashed var(--mint-deep); border-radius:10px; max-width:74ch;}
+.routepick .rlabel{font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; color:var(--muted)}
+.routepick .seg button{padding:5px 15px; font-size:.83rem}
+.routepick .rnote{font-size:.78rem; color:var(--muted2)}
+
 /* key moment (embedded in activities) */
 .keymoment{margin-top:12px; border:1.5px solid var(--mint-deep); border-left:7px solid var(--brand);
   border-radius:10px; background:var(--good-bg); padding:14px 16px; max-width:74ch;
@@ -190,7 +197,7 @@ details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #10 · SCRIPT RE-IMAGINED - THE ACUTE SCRIPT, IN MOMENTS</span>
-  <span class="gen">generated 2026-07-26 · content spec: design-kit/journeys/to-be-acute-moments.md · previous acute treatment (#07) preserved</span>
+  <span class="gen">generated 2026-07-26 · updated 2026-08-16 (P4 gains Aisha's collected route + express collect; naming resolved - collections counter is staffed, express collect is not; regulatory position verified against the primary SAPC rules and two 🔮 flags raised) · content spec: design-kit/journeys/to-be-acute-moments.md · previous acute treatment (#07) preserved</span>
 </div>
 
 <section class="intro">
@@ -306,7 +313,7 @@ const DATA = {
           {t:"The answer comes back before we reach the gate",
            x:"The reply comes inside 15 minutes, while my boy and I are walking to the gate: they've read the script back to me so I can see they have it right, the price is there in rands - and there's a cheaper generic the doctor would approve, with the exact saving shown. I pick it right there. Nothing is riding on the paper in my pocket anymore, and I know the number before we've spent a cent on a taxi.",
            moment:{line:"I knew the price before I left the clinic gate", star:true,
-             why:'Thabo has done this trip before, the old way: the taxi to a pharmacy with the week\'s money in his pocket and no idea if it\'s enough, the queue with a sick child, the counter where the number is finally said out loud - and the walk away, in front of everyone, if it\'s too much. This time the number came to him, standing at the clinic, before anything was spent. <span class="why">He knows the price - and that he can afford it - before his son takes another step.</span> Nobody made him ask; the price was simply offered, with the cheaper generic presented as the smart choice it is. That is <a href="'+C08+'#c12">Snap-a-Script</a> meeting him exactly where he stands - one photo, on the phone he already has.'}}
+             why:'Thabo has done this trip before, the old way: the taxi to a pharmacy with the week\'s money in his pocket and no idea if it\'s enough, the queue with a sick child, the counter where the number is finally said out loud - and the walk away, in front of everyone, if it\'s too much. This time the number came to him, standing at the clinic, before anything was spent. <span class="why">He knows the price - and that he can afford it - before his son takes another step.</span> Nobody made him ask; the price was simply offered, with the cheaper generic presented as the smart choice it is. That is <a href="'+C08+'#c3">Real-Time Transparency</a> reaching him where he actually stands - one photo from the phone he already has, read back to him before a single number was quoted.'}}
         ]
       },
       pains:[
@@ -346,7 +353,7 @@ const DATA = {
       activities:{
         insured:[
           {t:"The question waits for me in the car",
-           x:"By the time I'm in the car, the message is there: my script is already being prepared - how would I like it? Collect at the Dis-Chem on my way home - ready within 30 minutes, handed over by a pharmacist who'll run me through it. Or delivery, in a slot I choose, with the instructions in the parcel and a pharmacist a message away if anything is unclear. It doesn't expire while I think, and the preparing doesn't wait for me either."},
+           x:"By the time I'm in the car, the message is there: my script is already being prepared - how would I like it? Collect at the Dis-Chem on my way home, ready within 30 minutes, and I choose how I take it: express collect, where I scan a code and the pack comes out without my speaking to anyone, or the collections counter, where a pharmacist hands it over and runs me through it. Either way the notes come to me, on WhatsApp or printed. Or delivery, in a slot I choose, with the instructions in the parcel and a pharmacist a message away if anything is unclear. It doesn't expire while I think, and the preparing doesn't wait for me either."},
           {t:"I choose a delivery slot",
            x:"I want my couch more than anything, so I pick delivery and take the early-afternoon slot. The confirmation shows the slot and the address it already knows. I can change either of them up until packing starts - it says so right there."},
           {t:"“These can help while it works”",
@@ -356,7 +363,7 @@ const DATA = {
           {t:"The same thread asks me how",
            x:"Right after I pick the generic, the chat asks how I'd like it. I can name my Dis-Chem, share my location to see stores close to where I'm standing, or give an address to see what delivery would cost. I name my store - the one near home - and the reply confirms they have his medicine. Collection costs nothing, and it's on my way after work. Easy."},
           {t:"I say go ahead",
-           x:"I reply “1 - go ahead”. That's the yes they need from me before medicine can be made up in my son's name, and everything was standing ready for it. The confirmation tells me: ready from this afternoon in the express pickup zone, where the pharmacist hands it over and runs me through his dose. It's held until closing - and if my shift runs late, there's an after-hours pickup point outside the store where my code still works."},
+           x:"I reply “1 - go ahead”. That's the yes they need from me before medicine can be made up in my son's name, and everything was standing ready for it. The confirmation tells me: ready from this afternoon at the collections counter, where the pharmacist hands it over and runs me through his dose. It's held until closing - and if my shift runs late, there's an after-hours pickup point outside the store where my code still works."},
           {t:"What I'll pay, and what else helps",
            x:"The chat offers a short numbered list for a chest like his - paracetamol syrup for the fever, saline drops for his nose - each with a price. I reply “2”; the syrup is added and the new total comes straight back. Everything is one amount - the price I saw at the clinic plus what I've added - paid once, at the counter, when I collect. If I say nothing, nothing is added."}
         ]
@@ -372,9 +379,10 @@ const DATA = {
       behind:{
         front:["How-would-you-like-it message (collect: named store, ready within 30 · delivery: slot picker)","Store choice by name / shared location (stores near where I stand) / address for delivery cost - stores-with-stock returned (cash)","Go-ahead reply gate","Confirmation with express-zone readiness, hold-until-close and the after-hours pickup code","Priced symptom add-on list (taps / numbered replies)","Counselling on both routes: pharmacist at handover; instructions + reachable pharmacist on delivery"],
         back:["Dispensing starts at sign-off - clinical check first, staging on the routing choice","Preparation runs ahead of the go-ahead; release (dispatch or express-zone staging) gated on the confirmed yes","Stock model: the regulated cash price is national, stock is local - the routing reply returns nearest stores with stock","Slot capacity engine keeps delivery slots honest","Add-ons attach until packing starts, never gating the medicine","Saved card charged at packing (insured); one pay-at-counter total (cash)"],
-        reg:"<b>Release & counselling:</b> dispensing in a patient's name proceeds on their confirmed instruction; couriered scheduled medicine stays under pharmacy accountability with proof of handover; counselling access preserved on every route; unattended after-hours release from an external point requires a pharmacist-oversight model - 🔮 requires reform.",
+        reg:"<b>Release & counselling:</b> dispensing in a patient's name proceeds on their confirmed instruction; couriered scheduled medicine stays under pharmacy accountability with proof of handover; counselling access preserved on every route; unattended after-hours release from an external point requires a pharmacist-oversight model - 🔮 requires reform. <b>Delivering an acute script is itself 🔮 requires-reform on the current rules:</b> SAPC rule 1.9.7(e) provides that \"medicines which are prescribed for acute ailments or conditions (i.e. immediate need, not repeatable and non-chronic conditions) shall not be delivered to patients by mail/courier\". Whether a pharmacy's own same-metro delivery is \"mail/courier\" within that rule is ⚠️ unresolved and needs a legal read - punchlist 10(k). The delivery route shown here is drawn on the assumption it is distinguishable.",
         caps:[
           {name:"Slot engine", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
+          {name:"Acute script delivered", cite:"SAPC rule 1.9.7(e) bars mail/courier delivery of acute medicines; whether a pharmacy's own delivery falls within it is unresolved - punchlist 10(k)", reform:true},
           {name:"DeliverD / last-mile TMS", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
           {name:"Express pickup zone", cite:"design assumption - see meta/punchlist.md item 10(a)", assume:true},
           {name:"After-hours external pickup", cite:"wiki/sa-regulatory/pharmacy-act-sapc-gpp - see meta/open-questions.md", reform:true},
@@ -440,22 +448,35 @@ const DATA = {
     {
       id:"p4", num:"P4", title:"In hand",
       need:'The medicine is ready; now it has to actually reach my hands. I need the <b>promise kept as made</b> - <b>no chasing, no wondering, no wasted trip</b> - because today I have nothing spare to absorb a let-down.',
+      routes:{insured:[{id:"delivered", label:"Delivered"},{id:"collected", label:"Collected"}]},
       activities:{
-        insured:[
+        insured:{
+        delivered:[
           {t:"It's on its way",
            x:"Mid-afternoon the thread moves: “On its way - arriving around 15:10”, with a live map if I feel like watching. If the time slips, I'm told early and given a new one. I never have to wonder, and I never have to chase."},
           {t:"The knock at the door",
            x:"The driver checks it against the order code on my phone, and the parcel is in my hands - everything inside already checked and signed for. If anything looks off, Naledi's line is still one tap away in the same thread.",
            moment:{line:"Saw the doc. Went straight home.", star:true,
-             why:'Every doctor\'s trip in South Africa ends with the same message home: “Saw the doc. Getting meds on the way back. See you soon.” Aisha\'s message today had no second clause - she saw the doctor, and she went straight home. <span class="why">The errand that has always been welded to being ill simply never happened</span> - the medicine made its own way to her couch, arriving inside the slot she chose, while she did the one thing a sick person should be doing: resting. That is <a href="'+C08+'#c11">The 60-Minute Fill</a> with the stop deleted - and the live map was just how she watched it come.'}},
+             why:'Every doctor\'s trip in South Africa ends with the same message home: “Saw the doc. Getting meds on the way back. See you soon.” Aisha\'s message today had no second clause - she saw the doctor, and she went straight home. <span class="why">The errand that has always been welded to being ill simply never happened</span> - the medicine made its own way to her couch, arriving inside the slot she chose, while she did the one thing a sick person should be doing: resting. That is <a href="'+C08+'#c11">The 30/60 Fill</a> with the stop deleted - and the live map was just how she watched it come.'}},
           {t:"I check it, and they check on me",
            x:"A message follows the knock: here's what should be in your parcel - the antibiotic, the probiotic, the rehydration sachets - is everything there and as you expected? One tap says yes; anything wrong or missing, and a person takes it from there in the same thread. My instructions are on the app and on the labels, and a pharmacist is on call if any of it is unclear. Handing it over wasn't the end of their job."}
         ],
+        collected:[
+          {t:"I pull in on the way home",
+           x:"The ready message came through while I was still paying the doctor: thirty minutes, express collect, at the store I drive past anyway. So I drive home the way I always do - past the Dis-Chem I have stopped at a hundred times with a script in my hand and an hour to spare. Tonight there is nothing in my hand and nothing to hand over."},
+          {t:"The wall hands it over",
+           x:"Express collect sits on the outside wall, before the doors. I hold my phone to the scanner, a door opens, and my pack is there with my name on it. No queue, no counter, nobody to explain myself to. I am back in the car in under a minute, and the dispensary is somebody else's evening.",
+           moment:{line:"In and out, and I never spoke to anyone", star:false,
+             why:'The dispensary queue is where being ill gets slowest - you stand among other unwell people, at your own worst, waiting for a counter to call your name. Aisha never went inside. <span class="why">The stop she was always going to make cost her a minute in the car park instead of an afternoon in the queue.</span> And the quiet was her choice, not the design\'s: the collections counter was right there, with a pharmacist ready to talk her through it. She chose not to speak to anyone, and nothing about her care got smaller for it. That is <a href="'+C08+'#c17">Express Collect</a> - the stop made instant rather than deleted, which is the half of <a href="'+C08+'#c11">The 30/60 Fill</a> the journey has never shown.'}},
+          {t:"The notes come with it",
+           x:"Before I have pulled out of the bay, the counselling notes land on WhatsApp: with food, morning and evening, seven days, and what to watch for. I could have had them printed at the machine instead - the choice was on the screen. And if I would rather hear it from a person, Naledi's line is one tap away in the same thread. I just did not have to stand in a queue to be offered it."}
+        ]
+        },
         cash:[
-          {t:"The express counter, not the queue",
-           x:"After my shift I stop at my store. The express pickup zone is signposted right at the front - the dispensary queue is somebody else's afternoon. I show my code, and the pack comes out with my son's name on it. No forms, no retelling the story. (If my shift had run late, the outside pickup point takes the same code.)",
+          {t:"The collections counter, not the queue",
+           x:"After my shift I stop at my store. The collections counter is signposted right at the front - the dispensary queue is somebody else's afternoon. I show my code, and the pack comes out with my son's name on it. No forms, no retelling the story. (If my shift had run late, the outside pickup point takes the same code.)",
            moment:{line:"The counter was expecting me", star:true,
-             why:'Thabo knows the other version of this stop: the month-end dispensary queue, twenty-five minutes deep, after a full shift, with a sick boy waiting at home. This time the counter was expecting him - the pack made up, named, waiting - and he was through it in minutes. <span class="why">The stop still happens; it just stopped costing him an afternoon he didn\'t have.</span> That is <a href="'+C08+'#c11">The 60-Minute Fill</a> shaped for collection - and the code he showed is <a href="'+C08+'#c9">The E-Script Token</a> doing its quiet work: his son\'s whole script riding one code, redeemable exactly once, by him.'}},
+             why:'Thabo knows the other version of this stop: the month-end dispensary queue, twenty-five minutes deep, after a full shift, with a sick boy waiting at home. This time the counter was expecting him - the pack made up, named, waiting - and he was through it in minutes. <span class="why">The stop still happens; it just stopped costing him an afternoon he didn\'t have.</span> That is <a href="'+C08+'#c11">The 30/60 Fill</a> shaped for collection - his son\'s whole order riding one code, handed over exactly once, to him.'}},
           {t:"The pharmacist walks me through his dose",
            x:"The pharmacist at the counter opens the pack with me: the syringe marked at his line, the labels in my language, finish all seven days even when he seems better. I ask what I want to ask while I'm standing there."},
           {t:"I pay what I already knew",
@@ -474,13 +495,15 @@ const DATA = {
          src:"sotf"}
       ],
       behind:{
-        front:["Dispatch status + live map + honest ETA, early re-time on slip","Driver handover verified against the order QR (proof of delivery)","Post-delivery contents confirmation with escalation to a person","Express pickup zone with code scan and named pack","Counter counselling: show-and-tell, marked syringe, in-language labels","One pay-at-counter total","After-hours pickup point on the same code"],
-        back:["Slot-run dispatch and routing","POD capture against the token","Express-zone staging under name + code, single redemption enforced","Pay-at-counter reconciliation against the quoted total","Counselling logged as given; reachable-pharmacist line stays open on the delivery route"],
-        reg:"<b>Handover:</b> scheduled-medicine delivery stays under pharmacy accountability with recorded proof of handover; counselling access preserved on both routes; unattended after-hours release 🔮 requires-reform.",
+        front:["Dispatch status + live map + honest ETA, early re-time on slip","Driver handover verified against the order QR (proof of delivery)","Post-delivery contents confirmation with escalation to a person","Two collection routes offered at P2: express collect (scan, unattended, no counter) or the collections counter (pharmacist handover)","Express-collect unit sited on the outside wall - code scan, named pack, works after hours","Counselling notes delivered on the express route: WhatsApp or printed at the unit, named pharmacist one tap away","Counter counselling on the staffed route: show-and-tell, marked syringe, in-language labels","One pay-at-counter total","After-hours pickup point on the same code"],
+        back:["Slot-run dispatch and routing","POD capture against the token","Staging under name + code for both collection routes, single redemption enforced","Route choice recorded at P2 and carried to staging - express bay vs counter","Counselling pack generated at sealing and released to the chosen channel; declining the conversation never suppresses the notes","Pay-at-counter reconciliation against the quoted total","Counselling logged as given or as offered-and-declined; reachable-pharmacist line stays open on every route"],
+        reg:"<b>Handover:</b> scheduled-medicine delivery stays under pharmacy accountability with recorded proof of handover; counselling <i>access</i> is preserved on every route, and GPP puts physical presence for counselling as <i>preferred</i> rather than required (rule 2.7.1.3.1(a)). <b>Express collect as shown here is 🔮 requires-reform, and the rule is now known exactly.</b> GPP rule 1.9.3(b) provides that medicines are \"not accessed and/or received directly by the patient\" from an in-pharmacy automated unit; patient-facing units instead live under SAPC rule 1.11, the Remote Automated Dispensing Unit standard - which already permits precisely this for <i>chronic</i> medicine but requires a pharmacist to perform the handover \"through the audio-visual interface, at the time of dispensing\" (1.11.5(a)), and is written for <b>institutional public pharmacy</b>. The silent, nobody-present version shown here therefore needs two extensions of rule 1.11: to community pharmacy, and to release without a live pharmacist. The lawful-today shape is the same unit with a pharmacist greeting you on screen. Unattended after-hours release compounds this - the ADU application also has the responsible pharmacist undertake that unauthorised persons will not access the premises outside trading hours. Whether a patient may decline face-to-face counselling remains ⚠️ unsourced (punchlist 10(j)).",
         caps:[
           {name:"DeliverD / last-mile TMS + POD", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
           {name:"Live tracking", cite:"wiki/global-benchmarks/patterns-deep-dive"},
-          {name:"Express pickup zone", cite:"design assumption - see meta/punchlist.md item 10(a)", assume:true},
+          {name:"Collections counter (staffed)", cite:"design assumption - see meta/punchlist.md item 10(a)", assume:true},
+          {name:"Express collect (unattended unit)", cite:"SAPC rule 1.9.3(b) bars patient access to an in-pharmacy ADU; rule 1.11 (RADU) permits patient-facing units but for chronic medicine, in institutional public pharmacy, with a pharmacist on the audio-visual interface at dispensing (1.11.5(a)) - see wiki/concepts/remote-collection-points", reform:true},
+          {name:"Counselling opt-out with notes", cite:"design assumption - see meta/punchlist.md item 10(j)", assume:true},
           {name:"Token single-redemption", cite:"wiki/concepts/e-prescription-token"},
           {name:"Realistic-windows principle", cite:"wiki/dischem/store-of-the-future-customer-voice"},
           {name:"Counselling at handover", cite:"wiki/dispensing-practice/counselling-and-health-literacy"},
@@ -627,8 +650,21 @@ const DATA = {
 
 /* ============================================================================= */
 let ECO = (location.hash === "#cash") ? "cash" : "insured";
+/* Per-phase route forks (P4 insured: delivered / collected). Keyed phase id -> route id. */
+const ROUTE = {};
 
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+
+/* A phase's activities are either a flat array or, where the phase forks,
+   an object of route id -> array. routesFor/actsFor normalise the two. */
+function routesFor(ph){ return (ph.routes && ph.routes[ECO]) || null; }
+function actsFor(ph){
+  const a = ph.activities[ECO];
+  if(Array.isArray(a)) return a;
+  const rs = routesFor(ph);
+  const fallback = rs ? rs[0].id : Object.keys(a)[0];
+  return a[ROUTE[ph.id] || fallback] || [];
+}
 
 function renderPersona(){
   const p = DATA.economies[ECO].persona;
@@ -641,7 +677,7 @@ function renderSpine(){
   const row = document.getElementById("spinerow");
   row.innerHTML = "";
   DATA.phases.forEach(ph=>{
-    const acts = ph.activities[ECO];
+    const acts = actsFor(ph);
     const moments = acts.filter(a=>a.moment);
     const stars = moments.filter(a=>a.moment.star).length;
     const node = document.createElement("button");
@@ -686,6 +722,16 @@ function activityHTML(a){
   return h;
 }
 
+function routepickHTML(ph){
+  const rs = routesFor(ph);
+  if(!rs) return "";
+  const cur = ROUTE[ph.id] || rs[0].id;
+  const btns = rs.map(r=>'<button data-phase="'+esc(ph.id)+'" data-route="'+esc(r.id)+'" aria-pressed="'+
+    (r.id===cur?"true":"false")+'">'+esc(r.label)+'</button>').join("");
+  return '<div class="routepick"><span class="rlabel">Route</span><div class="seg" role="group" aria-label="Choose route">'+
+    btns+'</div><span class="rnote">she chose one - both are hers to choose</span></div>';
+}
+
 function painHTML(p){
   const s = SRC[p.src];
   const q = p.q ? '<span class="q">"'+esc(p.q)+'"</span>' : "";
@@ -722,7 +768,8 @@ function renderBoard(){
         sechead("♥","Need")+
         '<div class="needline"><i>'+ph.need+'</i></div>'+
         sechead("⚙","Activities", who+"'s journey")+
-        ph.activities[ECO].map(activityHTML).join("")+
+        routepickHTML(ph)+
+        actsFor(ph).map(activityHTML).join("")+
         (ph.actnote?'<p class="actnote">'+esc(ph.actnote)+'</p>':"")+
         sechead("✕","Current-state pain points","from the research - never inferred")+
         pains+
@@ -740,6 +787,17 @@ function setEco(e){
 }
 document.getElementById("eco-insured").addEventListener("click", ()=>setEco("insured"));
 document.getElementById("eco-cash").addEventListener("click", ()=>setEco("cash"));
+
+/* Delegated: route toggles are re-rendered on every board paint. */
+document.getElementById("board").addEventListener("click", function(e){
+  const b = e.target.closest(".routepick button");
+  if(!b) return;
+  ROUTE[b.dataset.phase] = b.dataset.route;
+  renderSpine(); renderBoard();
+  document.querySelectorAll("details.behind").forEach(d=>{ d.open = behindOpen; });
+  const el = document.getElementById(b.dataset.phase);
+  if(el) el.scrollIntoView({block:"start"});
+});
 
 let behindOpen = false;
 document.getElementById("toggle-behind").addEventListener("click", function(){

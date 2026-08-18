@@ -9,7 +9,7 @@ confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, domain/consumer, topic/acute, topic/e-prescription, journey/submit, journey/validate, journey/collect, region/za]
 sources: [src-dc-complaints-jan2025, src-dc-script-journey-interviews-2025, src-con-datareportal-digital-2024, src-con-ramp-data-prices]
 created: "2026-08-07"
-updated: "2026-08-07"
+updated: "2026-08-18"
 ---
 
 # Thabo's acute script as a WhatsApp conversation - channel mock spec
@@ -32,7 +32,7 @@ now scripted and built to the same rules. Register is **annotated** - a
 phone frame per phase plus a side-rail of feature callouts - and the chat
 renders in **English for the executive audience**, with a standing
 annotation that production renders it in the customer's chosen language.
-P4 carries no phone at all: the express counter has no WhatsApp traffic,
+P4 carries no phone at all: the collections counter has no WhatsApp traffic,
 so the scene is told as page prose (ground rule 2). Previous deliverables
 (#05-#11) stay untouched.
 
@@ -44,7 +44,7 @@ so the scene is told as page prose (ground rule 2). Previous deliverables
    app fluency.
 2. **No screen without traffic.** A scene with no genuine WhatsApp traffic
    is told as page prose beside the phone, never manufactured as chat
-   (Tamsin, 2026-08-07). The clinic consult, the express-counter handover
+   (Tamsin, 2026-08-07). The clinic consult, the collections-counter handover
    and the dead-phone recovery all live off-channel; the mock shows only
    what the phone would really show.
 3. **Data frugality is visible - and the entry runs the other way.** The
@@ -68,7 +68,7 @@ so the scene is told as page prose (ground rule 2). Previous deliverables
    Business Platform feature inventory (reply buttons, max three; list
    messages; template rules for business-initiated messages) comes from
    platform documentation knowledge, not a vault source note. Logged in
-   `meta/punchlist.md` (item 11, extended by item 12); the Meta docs INGEST
+   `meta/punchlist.md` (item 11, extended by item 17); the Meta docs INGEST
    should precede any feasibility use.
 8. **Walkthrough convention (build only).** Highlighted ▶ rows and dashed
    "tap to send" pills mark the scripted path; other rows are real UI,
@@ -79,9 +79,9 @@ so the scene is told as page prose (ground rule 2). Previous deliverables
 | Phase | Journey beats (#10 cash) | WhatsApp mechanics used |
 |---|---|---|
 | P1 At the doctor | Paper script photographed in from the clinic queue; immediate "we have it"; read-back + price + generic saving inside 15 minutes; he picks the generic | **Outgoing media message** (the photo is the front door - no sign-up, no account); text ack; read-back with the weight off the script; itemised price in-bubble; **reply buttons** (max 3): use the generic / keep the branded / talk to a person |
-| P2 Choosing how I get it | The same thread asks how; store by name, shared location or delivery-cost address; the go-ahead release; symptom add-ons attach (10(c)) | **Reply buttons** for the route ask; typed store name stays first-class; confirmation with express-zone readiness + hold-until-close; **keyword reply "1 - go ahead"** as the release gate; numbered add-on picks with the total restated |
+| P2 Choosing how I get it | The same thread asks how; store by name, shared location or delivery-cost address; the go-ahead release; symptom add-ons attach (10(c)) | **Reply buttons** for the route ask; typed store name stays first-class; confirmation with collections-counter readiness + hold-until-close; **keyword reply "1 - go ahead"** as the release gate; numbered add-on picks with the total restated |
 | P3 Checked and filled | Being made up at his store; the named final check against his son's weight; ready before shift end, code + dosing guide | Two **status templates** with detail inline; "Checked by **Sindi** ✓ - the dose is right for his weight"; ready message carrying the **order code as a text line** and the in-language dosing guide; no link that costs data |
-| P4 In hand | Express pickup zone, code at handover, counselling worked in, pay what he already knew | Almost entirely **off-channel by design** - the counter scene is told as page prose beside P3's ready message (ground rule 2). Candidate for P3+P4 compression on this surface - parked in open questions |
+| P4 In hand | Collections counter, code at handover, counselling worked in, pay what he already knew | Almost entirely **off-channel by design** - the counter scene is told as page prose beside P3's ready message (ground rule 2). Candidate for P3+P4 compression on this surface - parked in open questions |
 | P5 Taking it | First dose that evening; the single day-3 check-in; "he isn't better" escalates to a pharmacist phoning and a booked clinic visit, price first | **Check-in template** (day 3, one touch, no pushed reminders anywhere); **reply buttons**: better / not better / something feels wrong; phone-back handled off-channel; the booking + price land back as text |
 | P6 When I don't get better | Badged "not part of every journey"; the clinic visit; the new script rides the same rails; no moment (cash) | A compressed echo of P1-P3's mechanics on the new script (read-back, price, ready) - no new mechanic, and the phase says so |
 | ∥ When something breaks | Out of stock told before the taxi; the dead phone at the counter (10(i)); the money isn't there today (10(g)) | **Exception template** carrying the plan as **reply buttons** (next-nearest store on the same code / delivery with its cost shown); **keyword reply "hold it for me"** with the price-lock confirmation; the dead phone has no thread presence - ID fallback noted in the rail, not mocked |
@@ -98,7 +98,7 @@ One sick day - Tuesday 8 September 2026 - then day 3, then the P6 morning.
 Clinic visit from 08:00 · script photographed 09:41, in the queue to pay ·
 ack 09:41 · read-back + price 09:53 (inside the 15-minute promise, 10(f)) ·
 generic picked 09:55 · routing + go-ahead + add-on 09:56-10:04 · being made
-up 12:10 · checked 14:26 · ready 15:05 · express counter after shift, about
+up 12:10 · checked 14:26 · ready 15:05 · collections counter after shift, about
 17:40 (off-channel) · first dose that evening · day-3 check-in Friday 11
 September 16:30, the pharmacist phones after 18:00, the clinic visit is
 booked for Saturday morning · P6 clinic + new script Saturday 12 September.
@@ -136,8 +136,10 @@ too much. This time the number came to him, standing at the clinic, before
 anything was spent. He knows the price - and that he can afford it - before
 his son takes another step. Nobody made him ask; the price was simply
 offered, with the cheaper generic presented as the smart choice it is. That
-is Snap-a-Script meeting him exactly where he stands - one photo, on the
-phone he already has.
+is Real-Time Transparency reaching him where he actually stands - one photo
+from the phone he already has, read back to him before a single number was
+quoted. (Relinked from the archived Snap-a-Script at the 2026-08-18 main
+merge, mirroring #10's current M2.)
 
 Rail callouts: the outgoing photo as the whole front door (no sign-up, no
 account - and the journey's one media message travels in the direction he
@@ -158,7 +160,7 @@ real and a person one reply away.
 | C2 | out | Typed store name | Dis-Chem Tembisa |
 | C3 | in (09:58) | Stock confirm + the gate named | Dis-Chem Tembisa has his medicine in stock, and collection costs nothing. When you're ready, reply **1 - go ahead**. That's the yes we need before anything is made up in your son's name - nothing starts without it, and nothing expires while you think. |
 | C4 | out | Keyword reply - the release | 1 - go ahead |
-| C5 | in (10:01) | Confirmation: express zone, hold, after-hours | Go-ahead received - his medicine is being made up now. Ready from this afternoon at the **express pickup zone**, Dis-Chem Tembisa, where the pharmacist hands it over and runs you through his dose. Held until closing - and if your shift runs late, the after-hours pickup point outside the store takes the same code. |
+| C5 | in (10:01) | Confirmation: collections counter, hold, after-hours | Go-ahead received - his medicine is being made up now. Ready from this afternoon at the **collections counter**, Dis-Chem Tembisa, where the pharmacist hands it over and runs you through his dose. Held until closing - and if your shift runs late, the after-hours pickup point outside the store takes the same code. |
 | C6 | in (10:03) | Numbered symptom add-ons (10(c)) | For a chest like his, these can help alongside the antibiotic - only if you want them: **1.** Saline nose drops - R24.90 · **2.** Paracetamol syrup, for the fever - R32.50. Reply with a number to add one. If you say nothing, nothing is added. |
 | C7 | out | Numbered reply | 2 |
 | C8 | in (10:04) | Total restated | Added: paracetamol syrup, R32.50. Your total is now **R208.90** - paid once, at the counter, when you collect. |
@@ -168,7 +170,7 @@ customer. Rail callouts: the route ask honours where he is standing (typed
 store name first-class; location share; address only for a delivery cost -
 the two never conflated; stores-with-stock routing ⚠️ 10(e)); the go-ahead
 gate stated in the message itself (the legal and operational release, #10 P2
-rule - the journey's one mid-flow confirmation); express zone ⚠️ 10(a),
+rule - the journey's one mid-flow confirmation); collections counter ⚠️ 10(a),
 after-hours point ⚠️ 10(b) 🔮; add-ons never gate the medicine and silence
 adds nothing ⚠️ 10(c); amounts illustrative ⚠️.
 
@@ -178,7 +180,7 @@ adds nothing ⚠️ 10(c); amounts illustrative ⚠️.
 |---|---|---|---|
 | D1 | in (12:10) | Status template, detail inline | His medicine is being made up at Dis-Chem Tembisa - the antibiotic, the cough syrup and the paracetamol syrup - each one scanned against the script the doctor wrote. Nothing for you to do - it's here when you look. |
 | D2 | in (14:26) | The named final check | **Checked by Sindi ✓** The dose is right for his weight - 21 kg, checked against the script. A pharmacist looked at your son's medicine after it was picked, and signed for it. If something worries you, ask her here - no phoning a dispensary that doesn't pick up. |
-| D3 | in (15:05) | Ready + order code as a text line | Ready - **express pickup zone**, Dis-Chem Tembisa. Show this code: **THB 4172**. The same code works at the after-hours point outside the store if you're late. Held until closing. |
+| D3 | in (15:05) | Ready + order code as a text line | Ready - **collections counter**, Dis-Chem Tembisa. Show this code: **THB 4172**. The same code works at the after-hours point outside the store if you're late. Held until closing. |
 | D4 | in (15:05) | Dosing guide ahead of the hands | His dosing guide, on your phone before it's in your hands: **Antibiotic** - 5 ml, morning, midday and night, all 7 days, even when he seems better · **Cough syrup** - 5 ml at night · **Paracetamol syrup** - only if the fever is up. The same instructions are on the labels, in your language. |
 
 Key moment (rail, #10 verbatim, cash why): "Every check ran before it left
@@ -192,10 +194,10 @@ confirms rather than introduces.
 
 ## P4 - In hand · Tue 8 Sep, about 17:40 (no phone - ground rule 2)
 
-The express counter has no WhatsApp traffic, so this phase carries no
+The collections counter has no WhatsApp traffic, so this phase carries no
 phone. The scene is told as page prose, drawn from the approved #10 P4
-cash activities: after his shift Thabo stops at his store; the express
-pickup zone is signposted right at the front, the dispensary queue is
+cash activities: after his shift Thabo stops at his store; the collections
+counter is signposted right at the front, the dispensary queue is
 somebody else's afternoon; he shows his code and the pack comes out with
 his son's name on it - no forms, no retelling the story. The pharmacist at
 the counter opens the pack with him: the syringe marked at his line, the
@@ -205,8 +207,9 @@ the script and the paracetamol syrup - the same number he's known since
 the clinic: R208.90, cash or card, at the same counter, and done.
 
 Key moment (rail, #10 verbatim): ⭐ "The counter was expecting me" - at the
-code handover. Rail callouts: the code at handover is the E-Script Token's
-redemption face, single-use, his; counselling worked into the handover (the
+code handover. Rail callouts: the code at handover carries his son's whole
+order, handed over exactly once, to him (The 30/60 Fill's collection shape -
+the E-Script Token concept is archived); counselling worked into the handover (the
 duty pharmacist at the counter; Sindi stays in the thread - the #10
 agreement); the number planned is the number paid; and the empty thread is
 the design working - nothing needed chasing, so nothing was sent.
@@ -251,7 +254,7 @@ weekend, he's chasing his sister again.
 |---|---|---|---|
 | G1 | in (09:48) | The new script arrives on the rails | We have the new script from the clinic - a different antibiotic for your son. Nothing for you to send this time; it came straight through. Here is the price: **Total: R98.40** (the generic, as before). Reply **1 - go ahead** when you're ready. |
 | G2 | out | Keyword reply - the same gate | 1 - go ahead |
-| G3 | in (12:15) | Same rails, compressed | **Checked by Sindi ✓** - the dose is right for his weight, checked against the new script. Ready - express pickup zone, show this code: **THB 4718**. Held until closing. |
+| G3 | in (12:15) | Same rails, compressed | **Checked by Sindi ✓** - the dose is right for his weight, checked against the new script. Ready - collections counter, show this code: **THB 4718**. Held until closing. |
 
 No moment on the cash side, by #10 design - the quiet aftermath of a
 moment that already happened in P5. Rail callouts: the entry is different
@@ -267,7 +270,7 @@ none, and is honoured in the rail only.
 | # | Dir | Mechanic | Copy |
 |---|---|---|---|
 | H1 | in | Exception template + reply buttons | (Out of stock) Before you spend anything on a taxi: your store's stock of his antibiotic failed after the go-ahead. Two ways through - you choose: **1.** Dis-Chem Kempton Gate has it - same code, same price, ready now · **2.** Delivery this once - R35.00 on top, to where you are. Nothing is decided without you. Buttons: **[Nearest store ▶] [Deliver it - R35.00] [☎ Call me]** |
-| H2 | in | Branch responses | Nearest store: Done - Dis-Chem Kempton Gate, express pickup zone, same code THB 4172, same total R208.90. / Deliver: Done - delivery today, R35.00 added: total R243.90. We'll message before the driver leaves. / Call me: A person will phone you back within the hour, in your language. |
+| H2 | in | Branch responses | Nearest store: Done - Dis-Chem Kempton Gate, collections counter, same code THB 4172, same total R208.90. / Deliver: Done - delivery today, R35.00 added: total R243.90. We'll message before the driver leaves. / Call me: A person will phone you back within the hour, in your language. |
 | H3 | out | Tap-to-send (the money isn't there) | Hold it for me |
 | H4 | in | Hold-at-counter, price locked | Done - held at the counter, price unchanged: **R208.90**. Come when it suits you, no questions. Nobody at that counter knows anything except that a pack is waiting for its person. |
 
@@ -300,16 +303,22 @@ is his, not his phone's ⚠️ 10(i). The code was for speed, never a lock.
   mechanism (detect from the reply? ask once, after the ack?) needs a
   decision before this page is used as feasibility evidence.
 - Do P3 and P4 compress into one phone on the WhatsApp surface? P4 is
-  nearly all off-channel at the express counter (ground rule 2), so its
+  nearly all off-channel at the collections counter (ground rule 2), so its
   honest thread content may be nothing beyond P3's ready message. Parked
   for Tamsin's read of the full set - the #11 P3+P4 precedent.
 - P5's booking confirmation: the pharmacist gives the price by phone
   before Thabo says yes; the build includes a short written confirmation
   (time, place, price) in the thread so the phone screen stays
   reconstructable. Proposed at this pass - confirm at the full-set review.
+- Merge alignment, 2026-08-18: the 2026-08-16 main-branch renames were
+  absorbed into this spec and build (collections counter for express pickup
+  zone; M2 relinked to Real-Time Transparency; M4b to The 30/60 Fill, the
+  E-Script Token archived). One leftover spotted in #10 itself: its P3-cash
+  "Ready, with my code" activity still says "express pickup zone" - flagged
+  here for Tamsin rather than edited, since #10 belongs to another pass.
 - The order code renders as a text line (THB 4172), not a QR image, to
   keep the service's downloads at zero - while #10's M4b speaks of a QR
-  scan at the express counter. The counter can key or scan a text code in
+  scan at the collections counter. The counter can key or scan a text code in
   production; if the QR is wanted visually, it costs a media download.
   Flag for the full-set review.
 

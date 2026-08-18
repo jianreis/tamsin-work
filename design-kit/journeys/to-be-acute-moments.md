@@ -102,10 +102,11 @@ machinery stays behind the line in P6 (🔮 where applicable).
 | # | Phase | Title (memory line) | ⭐ | Economies | Concept(s) inline |
 |---|---|---|---|---|---|
 | M1 | P1 | "My pharmacist was busy before I'd even left the doctor's" | ⭐ | insured only | The Pharmacy in the Room |
-| M2 | P1 | "I knew the price before I left the clinic gate" | ⭐ | cash only | Snap-a-Script |
+| M2 | P1 | "I knew the price before I left the clinic gate" | ⭐ | cash only | Real-Time Transparency (was Snap-a-Script, archived 2026-08-16) |
 | M3 | P3 | "Every check ran before it left the building" | | both | The Named Check |
-| M4a | P4 | "Saw the doc. Went straight home." | ⭐ | insured | The 60-Minute Fill |
-| M4b | P4 | "The counter was expecting me" | ⭐ | cash | The 60-Minute Fill + The E-Script Token |
+| M4a | P4 | "Saw the doc. Went straight home." | ⭐ | insured | The 30/60 Fill |
+| M4b | P4 | "The counter was expecting me" | ⭐ | cash | The 30/60 Fill |
+| M4c | P4 | "In and out, and I never spoke to anyone" | | insured, COLLECTED route | Express Collect (+ The 30/60 Fill) |
 | M5 | P5 | "Medication you can't take wrong" | | both | Made-for-Me Medicine |
 | M6 | P5 | "The pharmacy didn't disappear after the handover" | ⭐ | both | The Pharmacist Who Stays |
 | M7 | P6 | "They noticed it kept coming back - before I did" | | insured only | The Pharmacy That Notices |
@@ -123,10 +124,24 @@ moment that already happened.)
 - P1 carries **both stars, symmetrically**: each economy's price-certainty
   moment of truth, delivered the way its reality allows (Aisha's in the
   chair, Thabo's at the clinic gate). P2 carries **no moments at all**.
-- **The E-Script Token is referenced inline only where the reader watches it
-  being used** - M4b's QR scan at the express counter (agreed after Tamsin
-  caught it cited in P1 blocks whose activities never show a token). Its P1
-  surface is the received-notifications; the registry stays behind the line.
+- **The Snap-a-Script concept was archived 2026-08-16** (agreed with Tamsin):
+  photographing a script and sending it already exists in the Dis-Chem app, so it
+  described a submission channel rather than a big move. The idea worth promising
+  was the guarantee that a fast answer is never a wrong one, which moved to
+  **Real-Time Transparency** as the read-back plus Tamsin's caveat - transparency
+  is not "you always get an instant answer" but "you always know where you stand,
+  immediately", so an unreadable script expresses the promise rather than
+  excepting it. M2 therefore cites Real-Time Transparency, which fits the moment
+  better anyway: Thabo's memory is the price arriving before he travelled, and his
+  activity already shows the script being read back to him.
+- **The E-Script Token concept was archived 2026-08-16** (agreed with Tamsin):
+  it described infrastructure, not an experience - what the reader ever watches
+  is a collection code. Its promises moved to The Pharmacy in the Room
+  (received ✓; one record that cannot be lost, altered or filled twice), The
+  30/60 Fill (send someone you trust) and Snap-a-Script (any phone - itself
+  since archived, see below). M4b
+  therefore cites The 30/60 Fill alone; the registry stays behind the line
+  as a capability chip, which is where it always belonged.
 - "Every check ran before it left the building" and "Medication you can't
   take wrong" are **signature lines reused from #09 deliberately** - the
   same promise landing in a second journey.
@@ -195,11 +210,12 @@ On top of the full v3.1 rule set from #09:
   holds as: PBQ/pharmacist capture-and-first-check -> pick (scan-verified
   per item) -> pharmacist's FINAL check of the picked pack against the
   original script (the sign-off gate) -> seal, code issue, digital
-  instructions push. The collection/order QR (the e-token's redemption
-  face) is issued at sealing on BOTH sides - express-zone scan for cash,
-  driver-handover proof and switch-to-collect key for insured.
+  instructions push. The collection/order QR (the redemption face of the
+  central e-script record) is issued at sealing on BOTH sides - express-zone
+  scan for cash, driver-handover proof and switch-to-collect key for insured.
 - **Concepts are referenced inline only where the reader watches them work**
-  (the E-Script Token rule above generalised).
+  (generalised from the E-Script Token rule above, which is what eventually
+  retired that concept: nothing in the journey ever watches a token).
 
 **Process rules for every phase pass (encoded after the P1 retrospective,
 2026-07-26 - P2 onwards):**
@@ -346,7 +362,7 @@ walk away, in front of everyone, if it's too much. This time the number came
 to him, standing at the clinic, before anything was spent. [why] He knows
 the price - and that he can afford it - before his son takes another step.
 [/why] Nobody made him ask; the price was simply offered, with the cheaper
-generic presented as the smart choice it is. That is Snap-a-Script (inline
+generic presented as the smart choice it is. That is Real-Time Transparency (inline
 link) meeting him exactly where he stands - one photo, on the phone he
 already has.
 
@@ -661,7 +677,7 @@ clause - she saw the doctor, and she went straight home. [why] The errand
 that has always been welded to being ill simply never happened [/why] - the
 medicine made its own way to her couch, arriving inside the slot she chose,
 while she did the one thing a sick person should be doing: resting. That is
-The 60-Minute Fill (inline link) with the stop deleted - and the live map
+The 30/60 Fill (inline link) with the stop deleted - and the live map
 was just how she watched it come.
 
 **A3 · I check it, and they check on me** - A message follows the knock:
@@ -686,10 +702,9 @@ version of this stop: the month-end dispensary queue, twenty-five minutes
 deep, after a full shift, with a sick boy waiting at home. This time the
 counter was expecting him - the pack made up, named, waiting - and he was
 through it in minutes. [why] The stop still happens; it just stopped costing
-him an afternoon he didn't have. [/why] That is The 60-Minute Fill (inline
-link) shaped for collection - and the code he showed is The E-Script Token
-(inline link) doing its quiet work: his son's whole script riding one code,
-redeemable exactly once, by him.
+him an afternoon he didn't have. [/why] That is The 30/60 Fill (inline
+link) shaped for collection - his son's whole order riding one code, handed
+over exactly once, to him.
 
 **A2 · The pharmacist walks me through his dose** - The pharmacist at the
 counter opens the pack with me: the syringe marked at his line, the labels
@@ -1063,6 +1078,61 @@ neighbour would hold something for you.
   token cross-redemption (wiki/concepts/e-prescription-token) ·
   hold-at-counter ⚠️ (punchlist 10g) · outbound-call recovery
   (wiki/dischem/dischem-social-sentiment-trust-journey).
+
+## P4 route fork - insured (added 2026-08-16, agreed with Tamsin)
+
+P4 carries a **route toggle for Aisha only**: *Delivered* (the existing spine,
+keeping ⭐ M4a) and *Collected* (new, carrying unstarred M4c). Rationale: the
+most common real-world acute path in SA - see the doctor, stop at Dis-Chem on
+the way home - was not walked by either persona, so the 30-minute half of
+[[The 30/60 Fill]] was never demonstrated. Delivery stays Aisha's main spine;
+the toggle is scoped to P4 alone, with P2 naming the fork in one line. P3 is
+identical on both routes and is not toggled.
+
+**Terminology resolved (2026-08-16).** "Express pickup zone" previously meant a
+*staffed* fast counter, which collided with the new unattended route. From now:
+
+| | Staffed handover | Unattended handover |
+|---|---|---|
+| Name | **the collections counter** | **express collect** |
+| Who | a pharmacist hands over and counsels | nobody - scan a code, the pack comes out |
+| Hours | store hours | store hours + after-hours when sited on the outside wall |
+
+Consequence: **Thabo uses the collections counter**, not express collect - his
+M4b moment is the pharmacist walking him through his son's dose, and that stays.
+Renamed through P2-cash, P4-cash and ∥-cash. The after-hours external point is
+unchanged and still 🔮 requires-reform.
+
+**Regulatory stance on express collect (decided with Tamsin 2026-08-16, option 2).**
+The silent, nobody-present unit is **kept as drafted and flagged 🔮
+requires-reform**, rather than redesigned to the lawful-today shape. The rule is
+now known exactly: GPP 1.9.3(b) bars a patient receiving directly from an
+in-pharmacy automated unit, and patient-facing units live under **SAPC rule 1.11
+(RADU)** - which already permits this pattern, but for **chronic** medicine, in
+**institutional public pharmacy**, with a pharmacist performing phases 1 and 3
+"through the audio-visual interface, at the time of dispensing" (1.11.5(a))
+[[src-reg-sapc-rules-s35a-radu-courier]]. The version shown therefore needs two
+extensions of an existing standard - to community pharmacy, and to release
+without a live pharmacist - which is a narrower ask than it appears. The
+lawful-today alternative, recorded here and not built: the same unit, with a
+pharmacist greeting the customer on screen before the door opens. M4c's memory
+line ("In and out, and I never spoke to anyone") is the specific thing the reform
+would unlock.
+
+**A second 🔮 raised the same day, on the delivery route.** SAPC rule 1.9.7(e)
+provides that medicines prescribed for acute conditions "shall not be delivered
+to patients by mail/courier". Aisha's delivered antibiotic and The 30/60 Fill's
+whole delivery half rest on whether a pharmacy's own same-metro service is
+"mail/courier" within that rule - ⚠️ unresolved, punchlist 10(k), and it needs a
+legal read before this journey travels to a regulator.
+
+**Counselling on the express route.** Choosing express collect is choosing not
+to *speak* to a pharmacist, never choosing to go without counselling: the notes
+go to WhatsApp or print at the point of collection, and a named pharmacist stays
+one tap away. GPP requires counselling *access* preserved, not face-to-face
+delivered, so this is defensible - but whether a patient may decline
+face-to-face counselling on a first-time acute antibiotic is **⚠️ not sourced in
+the vault**; logged as punchlist item 10(j) and an open question.
 
 ## Open items
 

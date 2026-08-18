@@ -52,6 +52,35 @@ Cold-chain integrity is both a **patient-safety** and a **stock-loss** issue, an
 becomes more complex as pharmacies add vaccination services (see
 [[clinical-checks-and-mtm]]) and home delivery.
 
+### Ambient is a specification, not a default
+
+Researched 2026-08-16 for [[wiki/concepts/remote-collection-points]]. **USP
+controlled room temperature is 20-25°C with a 25°C mean-kinetic ceiling**, brief
+excursions 15-30°C, transient spikes to 40°C for no more than 24 hours
+[[src-coldchain-usp-659-storage-temperatures]]. A "shelf-stable" fulfilment rail
+is therefore a rail with a temperature ceiling, not one without a requirement -
+and Upington already averages **83 days a year above 35°C** ambient
+[[src-coldchain-sa-heat-extremes]].
+
+**SAHPRA Good Wholesaling Practice** requires that no party expose product to
+temperatures outside recommended conditions, with a validation master plan,
+defined-interval monitoring and calibrated equipment - but its **scope is
+wholesalers** and it does not reach the pharmacy-to-patient hand-off
+[[src-coldchain-sahpra-gwp]]. **SAPC GPP** requires thermolabile products to be
+identified on receipt and temperatures **monitored and recorded twice daily**
+[[src-coldchain-sapc-minimum-standards]].
+
+**The exclusion is cheap and precedented.** Cold chain is about **0.2% of
+prescription volume** though 32% of revenue [[src-coldchain-iqvia-coldchain-share]],
+and **CCMDD already excludes insulin**, so type 1 and failed type 2 diabetics
+cannot enrol [[src-coldchain-ccmdd-insulin-exclusion]]. ⚠️ The trend runs the other
+way: **43% of specialty drugs approved 2018-2023 required cold chain**, and GLP-1s
+are moving into ordinary chronic care. Insulin's in-use tolerance - below 25-30°C
+for about 28 days, clock not resetting on re-refrigeration - is the one route to
+reopening this on a monitored short-dwell rail, but brand-level excursion data is
+too thin to tell a patient whether a given excursion mattered
+[[src-coldchain-insulin-storage-stability]].
+
 ## Controlled / scheduled substances (SA)
 
 SA classifies medicines into **Schedules 0–6** by abuse potential; the schedule

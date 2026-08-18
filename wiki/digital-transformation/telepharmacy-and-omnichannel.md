@@ -120,3 +120,26 @@ app/WhatsApp/in-store.
 - [[ai-in-pharmacy]]
 - [[adherence-tech-and-digital-therapeutics]]
 - [[wiki/digital-transformation/_index]]
+
+## Fail-closed release: the pattern that makes a remote point lawful
+
+Researched 2026-08-16; synthesis in [[wiki/concepts/remote-collection-points]].
+Where a collection point has no pharmacist on site, the decisive design choice is
+to make **pharmacist availability a release condition rather than an
+after-the-fact courtesy: if no pharmacist is reachable, the unit does not open.**
+
+North Carolina's direct-to-patient delivery-system rule is the ready-made
+template - convey the offer to counsel, provide **immediate real-time** pharmacist
+consultation, allow the pharmacist to **force counselling before release**, check
+the link daily, and **close the unit if the link fails or no pharmacist is
+available** [[src-reg-us-nc-direct-to-patient-delivery-systems]]. A phone number on
+a label does not meet that bar.
+
+SA's own showcase automation already chose this posture: the Right ePharmacy
+medication ATM **keeps a live pharmacist at handover by audio-video link**
+[[src-reg-pharmacy-dispensing-unit-telepharmacy]].
+
+Note the deliberate contrast with **in-store express collection**, where the
+pharmacist must be *available and declinable* - the customer may choose not to
+speak to anyone. At a remote point the pharmacist must be *available or nothing
+opens*.
