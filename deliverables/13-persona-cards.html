@@ -1,0 +1,372 @@
+<!doctype html>
+<!--
+  DELIVERABLE #13 - PERSONA CARDS (research-informed archetypes)
+  Format modelled on the "Customer Modernisation Omnichannel Scripting Board" patient
+  card (Lisa): hero block + tag chips + first-person need + Pharmacy Needs + chip rows
+  + values paragraph. One card per persona featured in deliverables #09 and #10.
+  Self-contained per _shared/DESIGN-SPEC.md: no external requests, system fonts only.
+-->
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Four Customers</title>
+<style>
+:root{
+  --brand:#1a9b4a; --brand-dark:#157a3b; --lime:#b5d334;
+  --mint:#bfe3cf; --mint-deep:#9bcfb0;
+  --ink:#1d1d1d; --bg:#f6f8f6; --cardpage:#ffffff;
+  --muted:#5d6b62; --muted2:#8a958d; --line:#d8e2db;
+  /* the card's own dark world (single-theme by design, matching the reference board) */
+  --card-ink:#272b2c; --card-ink-2:#2e3334; --card-text:#f4f6f5; --card-muted:#c9d1cc;
+  --chip-grey:#4d5552; --chip-grey-text:#eef1ef;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --sp:8px; --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141715; --cardpage:#1b1f1d; --ink:#eef1ef; --muted:#a8b3ac; --muted2:#7d867f; --line:#2c332e;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141715; --cardpage:#1b1f1d; --ink:#eef1ef; --muted:#a8b3ac; --muted2:#7d867f; --line:#2c332e;
+}
+*{box-sizing:border-box; margin:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg); color:var(--ink); font-family:var(--font); font-size:15.5px; line-height:1.55}
+.brandband{background:var(--brand); color:#fff; padding:calc(var(--sp)*2.5) calc(var(--sp)*3);
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px}
+.wordmark{font-weight:800; font-size:1.35rem; letter-spacing:-.01em}
+.wordmark .plus{color:var(--lime); font-size:1.6rem}
+.maptag{font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; font-weight:700;
+  border:1.5px solid rgba(255,255,255,.6); border-radius:99px; padding:4px 12px}
+.ribbon{background:#fff7e6; color:#8a5a00; border-bottom:1px solid #f0dca8;
+  padding:8px calc(var(--sp)*3); font-size:.8rem; display:flex; flex-direction:column; gap:2px}
+.ribbon .gen{color:#9a7a30; font-size:.72rem}
+.intro{max-width:1080px; margin:0 auto; padding:calc(var(--sp)*4) calc(var(--sp)*3) calc(var(--sp)*2)}
+.intro h1{font-size:1.7rem; font-weight:800; letter-spacing:-.01em; text-wrap:balance}
+.intro .lede{color:var(--muted); max-width:75ch; margin-top:8px}
+.deck{max-width:1560px; margin:0 auto; padding:calc(var(--sp)*3);
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(330px,1fr)); gap:calc(var(--sp)*3); align-items:start}
+
+/* ---------- the card ---------- */
+.pcard{background:var(--card-ink); color:var(--card-text); border-radius:var(--radius);
+  overflow:hidden; box-shadow:0 6px 24px rgba(20,30,24,.18); display:flex; flex-direction:column}
+.hero{position:relative; min-height:470px; display:flex; flex-direction:column; justify-content:flex-end;
+  padding:calc(var(--sp)*2.5); padding-top:120px; isolation:isolate;
+  background:radial-gradient(130% 95% at 78% 8%, var(--pb) 0%, var(--pa) 52%, var(--pc) 100%)}
+.hero::before{content:""; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(to bottom, rgba(0,0,0,0) 34%, rgba(28,32,30,.55) 62%, rgba(28,32,30,.94) 100%)}
+.hero .mono{position:absolute; top:64px; right:22px; width:118px; height:118px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:52px;
+  color:rgba(255,255,255,.85); background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.22)}
+.hero .topline{position:absolute; top:0; left:0; right:0; padding:calc(var(--sp)*2) calc(var(--sp)*2.5);
+  display:flex; justify-content:space-between; align-items:center; gap:8px}
+.hero .eyebrow{font-family:var(--serif); font-size:1.02rem; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.45)}
+.hero .badge{font-size:.72rem; font-weight:700; color:#fff; background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.28); border-radius:8px; padding:5px 10px; letter-spacing:.02em;
+  backdrop-filter:blur(2px)}
+.hero h2{font-size:2.35rem; font-weight:800; letter-spacing:-.01em; color:#fff;
+  text-shadow:0 2px 10px rgba(0,0,0,.4); margin-bottom:6px; max-width:calc(100% - 118px); text-wrap:balance}
+.facts{display:flex; flex-direction:column; gap:2px; font-size:.9rem; color:#f0f3f1;
+  text-shadow:0 1px 5px rgba(0,0,0,.45); max-width:52ch}
+.facts b{font-weight:800}
+.tagrow{display:flex; gap:8px; flex-wrap:wrap; margin-top:calc(var(--sp)*1.75)}
+.tag{background:var(--brand); color:#fff; font-weight:700; font-size:.86rem;
+  border-radius:8px; padding:8px 18px; box-shadow:0 2px 8px rgba(0,0,0,.28)}
+.cbody{padding:calc(var(--sp)*3) calc(var(--sp)*2.5) calc(var(--sp)*2.5); display:flex; flex-direction:column; gap:calc(var(--sp)*2)}
+.slabel{font-family:var(--serif); font-size:.95rem; color:var(--card-muted)}
+.needline{font-size:1.5rem; line-height:1.28; font-weight:800; letter-spacing:-.01em; color:#fff; text-wrap:balance}
+.h3{font-size:1.05rem; font-weight:800; color:#fff; margin-top:calc(var(--sp)*.5)}
+.pneeds p{font-size:.86rem; color:var(--card-muted); max-width:62ch}
+.pneeds p + p{margin-top:8px}
+.rows{display:flex; flex-direction:column; gap:10px; margin-top:4px}
+.crow{display:grid; grid-template-columns:118px 1fr; gap:10px; align-items:start}
+.crow .rlabel{font-size:.82rem; color:var(--card-text); padding-top:4px}
+.crow .chips{display:flex; flex-wrap:wrap; gap:6px}
+.chip{background:var(--chip-grey); color:var(--chip-grey-text); font-size:.74rem;
+  border-radius:99px; padding:4px 12px}
+.chip b{font-weight:700; color:#fff}
+.values{font-size:.98rem; line-height:1.5; color:#e6eae7; margin-top:calc(var(--sp)*.5); max-width:58ch}
+.srcfoot{border-top:1px solid rgba(255,255,255,.14); margin-top:calc(var(--sp)*1.5); padding-top:10px;
+  font-size:.68rem; color:var(--muted2); line-height:1.6}
+.srcfoot .k{text-transform:uppercase; letter-spacing:.1em; font-weight:700; font-size:.62rem; display:block; color:var(--card-muted)}
+.srcfoot code{font-family:var(--mono); font-size:.66rem; color:#a9b4ad}
+footer.pagefoot{max-width:1080px; margin:0 auto; padding:calc(var(--sp)*2) calc(var(--sp)*3) calc(var(--sp)*5);
+  color:var(--muted2); font-size:.78rem}
+a{color:var(--brand)}
+@media (max-width:760px){ .deck{grid-template-columns:1fr} .crow{grid-template-columns:1fr; gap:4px} }
+@media print{
+  body{background:#fff}
+  .deck{display:block}
+  .pcard{page-break-after:always; box-shadow:none; margin-bottom:24px; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+}
+button:focus-visible,a:focus-visible{outline:3px solid var(--brand-dark); outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header class="brandband">
+  <div class="wordmark">Dis-Chem <span class="plus">+</span> <span style="font-weight:600;font-size:.95rem">Bigly Labs</span></div>
+  <div class="maptag">Persona cards · research informed archetypes</div>
+</header>
+<div class="ribbon">
+  <span>DELIVERABLE #13 · PERSONA CARDS - THE FOUR CUSTOMERS OF #09 AND #10 · ⚠ Concept for review - not an official Dis-Chem artefact</span>
+  <span class="gen">generated 2026-08-18 from the Bigly ground-truth vault · format modelled on the Customer Modernisation Omnichannel Scripting Board patient card · persona files: design-kit/personas/ · journeys: deliverables/09 + 10</span>
+</div>
+
+<section class="intro">
+  <h1>The four customers, on one card each</h1>
+  <p class="lede">One card per persona carried by the moments journeys: <b>Nomvula</b> and <b>Sipho</b> run the
+  household repeat (#09); <b>Aisha</b> and <b>Thabo</b> live the acute script (#10). Each card is the persona's
+  whole story at a glance - who they are, what they need in their own words, their pharmacy reality, and what
+  wins them over. Every fact traces to the persona file and the vault pages it cites.</p>
+</section>
+
+<main class="deck" id="deck" aria-label="Persona cards"></main>
+
+<footer class="pagefoot">
+  Personas: design-kit/personas/insured-chronic-multimorbid · low-data-whatsapp-first-peri-urban ·
+  time-poor-urban-professional · cash-pay-acute-customer. Journeys: deliverables/09-tobe-household-repeat-moments.html ·
+  deliverables/10-tobe-acute-moments.html.
+</footer>
+
+<script>
+const PERSONAS = [
+{
+  id:"nomvula", eyebrow:"Patient", badge:"Research Informed Archetype",
+  name:"Nomvula Khumalo", journey:"Deliverable #09 · the household repeat",
+  tags:["Insured","Multimorbid","Chronic"],
+  facts:[
+    {lead:"54", rest:"(married, manages three generations' medicine under one roof)"},
+    {lead:"HR manager", rest:"full-time; medical scheme member, not price-poor but allergic to co-pay surprises"},
+    {lead:"Lives in", rest:"Midrand, Gauteng - owns her home, findable street address"},
+    {lead:"Commutes daily", rest:"chronically time-pressured between work, family and her own care"},
+    {lead:"Technology preference", rest:"smartphone + Dis-Chem app, lives on WhatsApp, home fibre; English at work, isiZulu at home"}
+  ],
+  needStatement:"I don't have time to queue to be told my medicine isn't covered. Show me the cost before I pay, and keep our repeats flowing without the admin.",
+  pharmacyNeeds:[
+    "Nomvula lives with hypertension and type-2 diabetes, both on the Chronic Disease List, so her scheme must fund her medicine as a Prescribed Minimum Benefit. She takes 4 to 5 chronic medicines a month, including metformin and an ACE-inhibitor, and her diabetes makes her a monitoring patient. She is stable and well-controlled; what she needs from a pharmacy is continuity, not diagnosis - repeats that run on their own, a renewal prompt before the six-month script expiry, and any co-payment shown in plain language before she commits.",
+    "She also runs the medicine admin for the whole household from one account: her mother Grace (76, chronic hypertension, on her own scheme that covers her medicine partially - Nomvula carries the shortfall and wants it visible in one cost breakdown), her daughter Zanele (12, ADHD, on a Schedule 6 methylphenidate script with stricter repeat rules) and her son Lethabo (7, asthma, on a chronic controller inhaler). She wants the family's scripts consolidated into one prepared parcel and one delivery event - home delivery, with the morning window proposed in each month's notice rather than fixed at sign-up."
+  ],
+  chipRows:[
+    {label:"Pharmacy need", chips:[
+      {bold:null, text:"Monthly chronic & repeat scripts"},
+      {bold:null, text:"One household parcel"},
+      {bold:null, text:"Home delivery, morning window"},
+      {bold:null, text:"Renewal before script expiry"},
+      {bold:null, text:"Co-pay shown before commit"}
+    ]},
+    {label:"Medical care", chips:[
+      {bold:null, text:"Discovery, comprehensive option"},
+      {bold:null, text:"Both conditions on the CDL"},
+      {bold:null, text:"Chronic benefit funds her meds"},
+      {bold:null, text:"DSP / formulary co-pay risk"}
+    ]},
+    {label:"Personal repeats", chips:[
+      {bold:"Hypertension", text:"ACE-inhibitor"},
+      {bold:"Type-2 diabetes", text:"metformin"},
+      {bold:"In total", text:"4-5 chronic medicines"}
+    ]},
+    {label:"Household repeats", chips:[
+      {bold:"Mother Grace, 76", text:"chronic hypertension, own scheme"},
+      {bold:"Daughter Zanele, 12", text:"ADHD, Schedule 6 script"},
+      {bold:"Son Lethabo, 7", text:"asthma controller inhaler"}
+    ]}
+  ],
+  values:"Nomvula values feeling in control of her health rather than processed by a system. She benchmarks the pharmacy against Sixty60, Takealot and Discovery's own app: live status, an honest ETA, two-tap reorder over app or WhatsApp. What wins her over is predictability with money - the scheme applied automatically, the out-of-pocket shown before she pays, a generic offered with the saving visible so she chooses instead of being surprised. She has switched a script to a courier pharmacy once, purely to dodge a co-pay - trust her with the numbers up front and she stays.",
+  sources:[
+    "design-kit/personas/insured-chronic-multimorbid",
+    "wiki/medical-schemes/pmb-cdl-chronic",
+    "wiki/medical-schemes/dsp-formularies-copayments",
+    "wiki/consumer-context/adjacent-digital-expectations",
+    "wiki/consumer-context/digital-access-and-whatsapp"
+  ]
+},
+{
+  id:"sipho", eyebrow:"Patient", badge:"Research Informed Archetype",
+  name:"Sipho Ndlovu", journey:"Deliverable #09 · the household repeat",
+  tags:["Cash-pay","Chronic","Low-data"],
+  facts:[
+    {lead:"45", rest:"collects medicine for himself and his elderly mother"},
+    {lead:"Informal, part-time work", rest:"income is irregular; uninsured, pays cash at the margin"},
+    {lead:"Lives in", rest:"a peri-urban settlement outside Durban - no reliable street address"},
+    {lead:"Connectivity", rest:"intermittent signal, often a zero data balance; buys airtime in tiny increments"},
+    {lead:"Technology preference", rest:"cheap entry-level Android; WhatsApp, SMS and USSD only - he won't install an app"}
+  ],
+  needStatement:"Send me a WhatsApp or an SMS with a PIN and let me fetch it close to home - no app, no data I can't afford.",
+  pharmacyNeeds:[
+    "Sipho is a stable hypertensive on one or two repeat medicines, and he pays cash, out of pocket, at the margin: a single private script can be a meaningful share of an irregular week's income, and the dispensing fee bites hardest on cheap medicines. He needs the price in rand, generics by default, before he spends a cent on taxi fare - the trip and the queue are themselves a cost. He pays in cash or instant EFT, not a stored card, and a flow that treats the cash path as an error state loses him.",
+    "He also collects for his elderly mother, who is chronic on CCMDD: her medicine comes from the clinic's programme, on the programme's date, free to collect. The SMS-plus-PIN, near-home collection pattern is one he already trusts from that route. His risk is the silent lapse - a missed collection because of distance, data or a broken reminder - so anything that keeps two dates remembered for him, in his language (isiZulu first), on the phone he already owns, is the service working."
+  ],
+  chipRows:[
+    {label:"Pharmacy need", chips:[
+      {bold:null, text:"WhatsApp / USSD / SMS, no app"},
+      {bold:null, text:"PIN collection near home"},
+      {bold:null, text:"Cash price before the trip"},
+      {bold:null, text:"Resume after signal drops"}
+    ]},
+    {label:"Payment", chips:[
+      {bold:null, text:"Uninsured, cash out of pocket"},
+      {bold:null, text:"Cash or instant EFT"},
+      {bold:null, text:"No stored card"}
+    ]},
+    {label:"Personal repeats", chips:[
+      {bold:"Hypertension", text:"one or two repeat medicines"}
+    ]},
+    {label:"Household repeats", chips:[
+      {bold:"Mother", text:"chronic, on CCMDD, free to collect"}
+    ]}
+  ],
+  values:"Sipho values being treated with dignity, not as a second-class, can't-pay case. What wins him over is a service that fits how he lives: a clear cash price quoted up front, a known collection point near home so a missing street address never blocks him, and a whole journey that runs on WhatsApp, SMS and USSD with small payloads. If a flow demands an app, an account or a heavy download, he abandons it and goes back to the clinic queue.",
+  sources:[
+    "design-kit/personas/low-data-whatsapp-first-peri-urban",
+    "wiki/consumer-context/digital-access-and-whatsapp",
+    "wiki/consumer-context/last-mile-addressing-logistics",
+    "wiki/consumer-context/two-economy-affordability",
+    "wiki/medical-schemes/cash-uninsured-pathway"
+  ]
+},
+{
+  id:"aisha", eyebrow:"Patient", badge:"Research Informed Archetype",
+  name:"Aisha Patel", journey:"Deliverable #10 · the acute script",
+  tags:["Insured","Acute","Digital-first"],
+  facts:[
+    {lead:"33", rest:"(single, no dependents; findable apartment with a concierge)"},
+    {lead:"Consultant", rest:"comprehensive medical scheme; pays for convenience, allergic to surprise costs"},
+    {lead:"Lives in", rest:"Sandton / inner-city Cape Town"},
+    {lead:"Works long hours", rest:"time, not money, is her scarce resource"},
+    {lead:"Technology preference", rest:"app-fluent, English-first, fibre + uncapped mobile; equally happy on WhatsApp"}
+  ],
+  needStatement:"I want to start getting better with as little effort as possible - tell me the price up front, track it live, and bring it to my door.",
+  pharmacyNeeds:[
+    "Her needs are mostly acute with a light chronic layer: occasional one-off scripts like antibiotics, plus a routine repeat. Health admin stays low-salience until it's urgent - today a UTI that had been building for two days flared overnight, and after the GP confirms it she wants the script already with the pharmacy and the price already known before she's up from the chair. She'll submit a photo or take an e-script over app or WhatsApp, and expects the scheme check and the pharmacist's clinical check to run in the background while she gets on with her day.",
+    "Every pharmacy interaction is benchmarked against the best retail she already uses: Checkers Sixty60's 60-minute delivery, flat fee and live tracking; Takealot; Uber/Bolt's named provider and upfront price. Live status, an honest ETA and a transparent fee are table stakes, with any co-pay shown before she presses pay on a stored card or instant EFT. She wants fast, reliable door delivery to her findable address, a collection fallback when delivery can't be guaranteed, and discreet handling by default for privacy-sensitive items like contraception."
+  ],
+  chipRows:[
+    {label:"Pharmacy need", chips:[
+      {bold:null, text:"Acute e-scripts & advice"},
+      {bold:null, text:"Fast door delivery"},
+      {bold:null, text:"Cost before commit"}
+    ]},
+    {label:"Medical care", chips:[
+      {bold:null, text:"Comprehensive scheme option"},
+      {bold:null, text:"Scheme auto-applied"},
+      {bold:null, text:"Co-pay shown before pay"}
+    ]},
+    {label:"Today's need", chips:[
+      {bold:"UTI", text:"flared overnight"},
+      {bold:null, text:"Generic antibiotic, covered"}
+    ]},
+    {label:"Expectations set by", chips:[
+      {bold:null, text:"Sixty60"},
+      {bold:null, text:"Takealot"},
+      {bold:null, text:"Uber / Bolt"}
+    ]}
+  ],
+  values:"Aisha values speed with proof: live status, an honest ETA, a named pharmacist and a price that never moves after she's seen it. She'll happily pay a delivery fee for premium speed, but one opaque wait, surprise co-pay or reversed order and she churns to a competitor or courier pharmacy without sentiment. Win her with two-tap submit and reorder, frictionless checkout, and the complexity hidden - scheme validation and the clinical check running quietly behind a journey she can watch on a map.",
+  sources:[
+    "design-kit/personas/time-poor-urban-professional",
+    "wiki/consumer-context/adjacent-digital-expectations",
+    "wiki/consumer-context/digital-access-and-whatsapp",
+    "wiki/medical-schemes/cms-medical-schemes-overview",
+    "wiki/consumer-context/last-mile-addressing-logistics"
+  ]
+},
+{
+  id:"thabo", eyebrow:"Caregiver", badge:"Research Informed Archetype",
+  name:"Thabo Mokoena", journey:"Deliverable #10 · the acute script",
+  tags:["Cash-pay","Acute","WhatsApp-first"],
+  facts:[
+    {lead:"31", rest:"(one young child; partner sells at a market stall)"},
+    {lead:"Shift worker", rest:"logistics warehouse; uninsured - part of the ~84% majority who pay cash"},
+    {lead:"Lives in", rest:"Tembisa, peri-urban Gauteng"},
+    {lead:"Connectivity", rest:"entry-level Android on prepaid, often near a zero data balance; small daily bundles at a poverty premium"},
+    {lead:"Technology preference", rest:"WhatsApp is effectively his operating system - he won't install a new app or create an account"}
+  ],
+  needStatement:"Just tell me the price on WhatsApp. If it's too much, show me a cheaper one that works - my child is sick now, not next week.",
+  pharmacyNeeds:[
+    "Today his 6-year-old has a chest infection and a clinic GP has issued a paper script for antibiotics and a paediatric syrup. Thabo snaps the script on WhatsApp from the clinic gate, asks \"how much?\", and decides on the spot. He has already taken time off shift; every extra trip, queue or download costs him real money. His one job is to get the script filled fast and start treatment - and he needs the price before he commits, because a cash customer can't claim and see.",
+    "He pays out of pocket, at the margin: a single script is a meaningful share of the week's money. The cash price is regulated and computable (SEP plus the banded dispensing fee, which bites hardest on cheap medicines), so a one-tap generic swap that shows the saving is a real affordability lever, not a nicety. He pays with cash, instant EFT or a wallet - no stored card - and if the answer is slow, opaque or needs an app, he walks to the nearest store or a spaza for what he can afford. He reads dosage instructions in a second language, so plain, multilingual instructions for his son's medicine are a safety matter."
+  ],
+  chipRows:[
+    {label:"Pharmacy need", chips:[
+      {bold:null, text:"One-off acute scripts"},
+      {bold:null, text:"WhatsApp photo submission"},
+      {bold:null, text:"Price quoted up front"},
+      {bold:null, text:"Nearest fast collection point"}
+    ]},
+    {label:"Payment", chips:[
+      {bold:null, text:"Cash, at the margin"},
+      {bold:null, text:"Instant EFT / wallet"},
+      {bold:null, text:"No medical scheme"}
+    ]},
+    {label:"Today's need", chips:[
+      {bold:"Son (6)", text:"chest infection script"},
+      {bold:null, text:"Antibiotics + paediatric syrup"},
+      {bold:null, text:"Paper script from the clinic"}
+    ]},
+    {label:"Constraints", chips:[
+      {bold:null, text:"Prepaid data, near zero"},
+      {bold:null, text:"No new apps or accounts"},
+      {bold:null, text:"Second-language dosage reading"},
+      {bold:null, text:"Time off shift is costly"}
+    ]}
+  ],
+  values:"Thabo values a straight answer about money before anything else: the cash price up front, broken down, with a cheaper generic offered without him having to ask - and without feeling poor or judged for asking. Speed matters because his child is sick now; a text quote on WhatsApp and a nearby collection point beat any app. Win him by treating the cash path as first-class rather than an error state, keeping payloads small on his prepaid data, and giving him plain-language dosage instructions he can trust in his own language.",
+  sources:[
+    "design-kit/personas/cash-pay-acute-customer",
+    "wiki/medical-schemes/cash-uninsured-pathway",
+    "wiki/consumer-context/two-economy-affordability",
+    "wiki/consumer-context/digital-access-and-whatsapp",
+    "wiki/consumer-context/language-literacy-and-trust"
+  ]
+}
+];
+
+/* per-persona hero palette: duotone gradient field + monogram medallion */
+const SCENES = {
+  nomvula:{a:"#2f5d43",b:"#8fae62",c:"#1d3a2b"},
+  sipho:{a:"#264a56",b:"#5c9b8a",c:"#16333c"},
+  aisha:{a:"#4a3d5c",b:"#9b7bb8",c:"#2c2438"},
+  thabo:{a:"#5c4a2e",b:"#c2955a",c:"#3a2f1c"}
+};
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]))}
+function heroStyle(id){
+  const s=SCENES[id]||SCENES.nomvula;
+  return '--pa:'+s.a+';--pb:'+s.b+';--pc:'+s.c;
+}
+function monogram(name){
+  return esc(name.split(/\s+/).map(w=>w[0]).slice(0,2).join(""));
+}
+function card(p){
+  const facts=p.facts.map(f=>'<div><b>'+esc(f.lead)+'</b> '+esc(f.rest)+'</div>').join("");
+  const tags=p.tags.map(t=>'<span class="tag">'+esc(t)+'</span>').join("");
+  const paras=p.pharmacyNeeds.map(t=>'<p>'+esc(t)+'</p>').join("");
+  const rows=p.chipRows.map(r=>'<div class="crow"><div class="rlabel">'+esc(r.label)+'</div><div class="chips">'
+    +r.chips.map(c=>'<span class="chip">'+(c.bold?'<b>'+esc(c.bold)+'</b>: ':'')+esc(c.text)+'</span>').join("")
+    +'</div></div>').join("");
+  const src=p.sources.map(s=>'<code>'+esc(s)+'</code>').join(" · ");
+  return '<article class="pcard" id="'+esc(p.id)+'">'
+   +'<div class="hero" style="'+heroStyle(p.id)+'">'
+   +'<div class="topline"><span class="eyebrow">'+esc(p.eyebrow)+'</span><span class="badge">'+esc(p.badge)+'</span></div>'
+   +'<div class="mono" aria-hidden="true">'+monogram(p.name)+'</div>'
+   +'<h2>'+esc(p.name)+'</h2>'
+   +'<div class="facts">'+facts+'</div>'
+   +'<div class="tagrow">'+tags+'</div>'
+   +'</div>'
+   +'<div class="cbody">'
+   +'<div><div class="slabel">'+esc(p.eyebrow)+' needs</div><p class="needline">'+esc(p.needStatement)+'</p></div>'
+   +'<div class="pneeds"><div class="h3">Pharmacy Needs</div>'+paras+'</div>'
+   +'<div class="rows">'+rows+'</div>'
+   +'<p class="values">'+esc(p.values)+'</p>'
+   +'<div class="srcfoot"><span class="k">Appears in</span>'+esc(p.journey)
+   +'<span class="k" style="margin-top:6px">Grounded in</span>'+src+'</div>'
+   +'</div></article>';
+}
+document.getElementById("deck").innerHTML = PERSONAS.filter(Boolean).map(card).join("");
+</script>
+</body>
+</html>
