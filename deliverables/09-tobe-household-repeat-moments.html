@@ -190,7 +190,7 @@ details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #09 · SCRIPT RE-IMAGINED - THE HOUSEHOLD REPEAT, IN MOMENTS</span>
-  <span class="gen">generated 2026-07-17 · updated 2026-08-16 (v3.2: P5 reminder agency · v3.3: P0 sync anchors on Zanele's cycle, top-up moves to Nomvula + Grace · v3.4: cash sync declined for payday, journey follows his collection, CCMDD parcel honesty pass · v3.5: whole store open in P2, QR re-timed to delivery morning with how-to + backup PIN, Fulfilment flexibility into P3 · v3.6: cash origin story, counter dignity in the P1 moment, PIN re-timed to locker arrival with pay-then-PIN activation, cash Fulfilment flexibility, P4 locker moment strengthened · v3.7: the sync top-up threaded through the insured money messaging - P0 confirm read-back + first P1 breakdown · v3.8: the cash sync offer generalised to a costed date-move on his own dispensed tablets - he declines the programme date and moves his day to the 28th, after payday; payday out of all customer-facing service copy) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
+  <span class="gen">generated 2026-07-17 · updated 2026-08-16 (v3.2: P5 reminder agency · v3.3: P0 sync anchors on Zanele's cycle, top-up moves to Nomvula + Grace · v3.4: cash sync declined for payday, journey follows his collection, CCMDD parcel honesty pass · v3.5: whole store open in P2, QR re-timed to delivery morning with how-to + backup PIN, Fulfilment flexibility into P3 · v3.6: cash origin story, counter dignity in the P1 moment, PIN re-timed to locker arrival with pay-then-PIN activation, cash Fulfilment flexibility, P4 locker moment strengthened · v3.7: the sync top-up threaded through the insured money messaging - P0 confirm read-back + first P1 breakdown · v3.8: the cash sync offer generalised to a costed date-move on his own dispensed tablets - he declines the programme date and moves his day to the 28th, after payday; payday out of all customer-facing service copy · v3.9: locker credential aligned to the QR-first convention set in #10 - the in-locker message brings a QR with a short backup PIN beneath it for failed scans or SMS delivery, pay-then-activate unchanged, scan at the locker with the PIN as the typable fallback) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
 </div>
 
 <section class="intro">
@@ -479,9 +479,9 @@ const DATA = {
         ],
         cash:[
           {t:"The parcel is in the locker",
-           x:"The message comes the moment the parcel is actually in the locker, ready for payday - with my PIN and how the pickup works: pay the exact amount at the Capitec counter first, then enter the PIN at the locker. The amount is in the same message, the same number I've been planning around. Everything I need for the trip is in my hand before I leave home."},
+           x:"The message comes the moment the parcel is actually in the locker, ready for payday - with my QR code, a short backup PIN under it in case the scan won't work or the message has to come by SMS, and how the pickup works: pay the exact amount at the Capitec counter first, then scan at the locker. The amount is in the same message, the same number I've been planning around. Everything I need for the trip is in my hand before I leave home."},
           {t:"I pay, and the locker opens",
-           x:"At the Capitec counter I pay the amount from the message - the same number I saw before travelling. Then I enter my PIN at the locker - paying is what switched it on - it opens, and the parcel is mine. One stop, a plain parcel, no address needed.",
+           x:"At the Capitec counter I pay the amount from the message - the same number I saw before travelling. Then I scan my code at the locker - paying is what switched it on - it opens, and the parcel is mine. If my phone won't scan, the backup PIN types straight in. One stop, a plain parcel, no address needed.",
            moment:{line:"I could track it from Dis-Chem's door to mine", star:true,
              why:'He watched the parcel move from the dispensary shelf to the locker, so <span class="why">he travels knowing it is there - never on a hope that costs taxi fare</span>. Payment and collection in one visit, near home, no address required - and if the locker is ever down, he knows before he leaves home, not after.'}},
           {t:"I check it before I go home",
@@ -500,13 +500,13 @@ const DATA = {
          q:"Waiting is fine - being unsure isn't.", src:"sotf"}
       ],
       behind:{
-        front:["Morning-of window confirmation carrying the handover QR, the how-to and a backup PIN (insured)","In-locker message with the PIN and the retrieval steps; counter payment activates the PIN (cash)","Tracking to actual handover; QR scan at the door / pay-then-PIN at the locker","Post-handover contents list; photo escalation to an immediate human callback"],
+        front:["Morning-of window confirmation carrying the handover QR, the how-to and a backup PIN (insured)","In-locker message with the QR, a backup PIN and the retrieval steps; counter payment activates the code (cash)","Tracking to actual handover; QR scan at the door / pay-then-scan at the locker - every code QR-first with a typable backup (failed scans, SMS delivery)","Post-handover contents list; photo escalation to an immediate human callback"],
         back:["Consolidation hub routes the household parcel; driver proof-of-delivery closes the loop","Locker loaded near home; cash payment at the partner counter releases it","Reroute logic runs BEFORE the customer travels","Handover exceptions route to a person, not a bot queue"],
         reg:"<b>Courier + locker rules:</b> scheduled-medicine delivery must meet licensing and cold-chain requirements; locker release of scheduled medicines needs oversight clarity 🔮.",
         caps:[
           {name:"Consolidation -> PICCUP + POD", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
           {name:"Closed-loop QR handover", cite:"wiki/digital-transformation/dischem-scripting-tech-roadmap"},
-          {name:"Near-home locker + PIN (Pelebox pattern)", cite:"wiki/consumer-context/last-mile-addressing-logistics"},
+          {name:"Near-home locker, QR + backup PIN (Pelebox pattern)", cite:"wiki/consumer-context/last-mile-addressing-logistics"},
           {name:"Scheduled-meds locker release", cite:"wiki/sa-regulatory/courier-online-pharmacy-rules", reform:true},
           {name:"Cash-at-bank locker release", cite:"design assumption - see meta/punchlist.md", assume:true},
           {name:"Photo-triggered human callback at handover", cite:"design assumption - see meta/punchlist.md", assume:true}
