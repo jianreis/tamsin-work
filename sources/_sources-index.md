@@ -41,6 +41,9 @@ _Populated as sources are ingested. Group by domain; show reliability tier._
 - [[src-dc-social-media-research-2025]] (C) — social-media listening (1,270 coded comments, Dec 2025): 65% negative pharmacy sentiment, Patient Trust Journey, defection to local pharmacies.
 - [[src-dc-omnichannel-scripting-roadmap]] (B) — internal "Script Re-imagined" Virtual Order Operational Flow board; future-state scripting tech roadmap (ROWA picker robot, AI capture/route, BRIX auto-dispense, Dashboard E2E, VC/PICCUP delivery) — planned, not yet live.
 - [[src-vn-cape-point-11]] (B) — Jian × Tamsin voice note: the SHAPE of the future-state scripting deliverable (experience-definition journey map, aspirational ~5-yr, unconstrained by current tech; OCR + ROWA signed off). Authoritative brief for deliverable #05.
+- [[src-dc-instore-walkthrough-2026]] (B) — researcher-led observational walkthrough of the as-is in-store script journey (friction board): queue confusion, profile lookup, cross-store script visibility, sign-off delays, re-queue to pay; plus the positives (pharmacist trust, familiarity). PDF in `sources/pdfs/`.
+- [[src-dc-call-reminder-walkthrough-2026]] (B) — researcher-led observational walkthrough of the as-is repeat-reminder (call) journey (friction board): pushy/scam-feel reminder calls, call-centre↔dispensary sync failures, packages not ready, ID friction, unexplained levies. PDF in `sources/pdfs/`.
+- [[src-dc-e2e-script-journey-friction-summary]] (B) — Tamsin's nine-stage end-to-end friction synthesis ("Script Journey Blueprint"): customer friction vs operational inefficiencies per stage; no-progress-visibility and fragmented-manual-work through-lines.
 
 ### SA regulatory
 - [[src-reg-medicines-act-101-1965]] (A) — Medicines & Related Substances Act 101 of 1965; §22A/22C/22F/22G.

@@ -1,4 +1,21 @@
-# Primary regulatory documents
+# Primary source documents
+
+## Walkthrough friction boards (supplied by Tamsin, 2026-08-18)
+
+Single-page Miro exports of the researcher-led observational walkthroughs of
+the as-is journeys, from the Customer Modernisation Omnichannel Scripting
+Board V2.1.
+
+| File | What it is | Read into |
+|---|---|---|
+| `dischem-instore-friction-board.pdf` | "Current State Friction: High level overview — In Store" walkthrough board | [[src-dc-instore-walkthrough-2026]] |
+| `dischem-call-reminder-friction-board.pdf` | "Current State Friction: High level overview — Call Reminder" (repeat-reminder) walkthrough board | [[src-dc-call-reminder-walkthrough-2026]] |
+
+Tamsin's companion end-to-end summary ("Script Journey Blueprint", read into
+[[src-dc-e2e-script-journey-friction-summary]]) was shared as an image only;
+the raw file is not yet archived here.
+
+## Primary regulatory documents
 
 Source PDFs supplied by Tamsin on 2026-08-16, after the four research streams
 found every regulator host blocked by this environment's egress policy. They are
