@@ -999,15 +999,18 @@ wrong.
 
 ### Activities - cash (Thabo)
 
-**A1 · His dose, in my language** - That evening I give him the first dose
+**A1 · His dose, in my language** - We're home before midday, and I give
+him the first dose
 - the syringe marked at his line, the label and the guide in my language,
+*(re-timed 2026-08-18 with the reroute - was "that evening", which fit the
+old after-shift collection)*
 the fever syrup with its own plain line: only if the fever is up. Seven
 days, morning and evening, even when he seems better - it says so where I
 can't miss it. Nothing at my kitchen table needs decoding.
 
 **M5-cash (under A1) "Medication you can't take wrong"** - Dosing a sick
 child from instructions in your second language is a quiet, common danger -
-and tonight it isn't one. The syringe is marked, the words are his father's
+and today it isn't one. The syringe is marked, the words are his father's
 own language, the pictures carry what words might miss. [why] Getting it
 right required nothing from Thabo except being there. [/why] That is
 Made-for-Me Medicine (inline link) at its free floor - the can't-take-wrong
