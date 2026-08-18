@@ -147,6 +147,14 @@ a{color:var(--brand-dark)}
 .bubble .photo{display:block; width:180px; height:120px; border-radius:8px; margin-bottom:3px;
   background:linear-gradient(135deg,#c9d6cc,#a9bfae 55%,#8fae96); position:relative}
 .bubble .photo::after{content:"📦"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:2rem; opacity:.8}
+/* mock QR code (the locker credential, QR-first per #09 v3.9 - see E1 rail) */
+.bubble .qrimg{display:block; width:118px; height:118px; margin:6px 0 4px; border-radius:6px; border:6px solid #fff;
+  background:
+    linear-gradient(#111,#111) 0 0/28px 28px no-repeat,
+    linear-gradient(#111,#111) 100% 0/28px 28px no-repeat,
+    linear-gradient(#111,#111) 0 100%/28px 28px no-repeat,
+    repeating-conic-gradient(#111 0% 25%, #fff 0% 50%) 50%/14px 14px;
+  box-shadow:0 1px 1px rgba(0,0,0,.1)}
 /* quick-reply buttons under a bubble */
 .qrwrap{display:flex; flex-direction:column; gap:3px; max-width:82%; width:100%; margin-left:28px}
 .qr{background:#fff; border:0; border-radius:8px; color:var(--wa-link); font-weight:600; font-size:.83rem;
@@ -235,7 +243,7 @@ a{color:var(--brand-dark)}
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #11 · SIPHO'S REPEAT, AS A WHATSAPP CONVERSATION</span>
-  <span class="gen">generated 2026-08-07 · v3 2026-08-16: re-synced to #09 v3.4-v3.8 and re-cut to the sourced conversational-design canon (wiki: conversational-design-whatsapp) · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
+  <span class="gen">generated 2026-08-07 · v3 2026-08-16: re-synced to #09 v3.4-v3.8 and re-cut to the sourced conversational-design canon (wiki: conversational-design-whatsapp) · v3.1 2026-08-18: locker credential aligned to #09 v3.9 - the in-locker message carries a QR with backup PIN 4729 beneath it (failed scans, SMS delivery), pay-then-activate unchanged, scan at the locker with the PIN as the typable fallback · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
 </div>
 
 <section class="intro">
@@ -278,7 +286,7 @@ a{color:var(--brand-dark)}
     <button class="snode" data-goto="p3"><div class="snum">P3</div><div class="sttl">Checked and packed</div>
       <div class="sm">Two status templates · the named check · CHANGE demo</div><div class="stars">1 moment</div></button>
     <button class="snode" data-goto="p4"><div class="snum">P4</div><div class="sttl">In hand</div>
-      <div class="sm">PIN on locker arrival · pay-then-PIN · photo escalation</div><div class="stars">1 moment · ⭐</div></button>
+      <div class="sm">QR + backup PIN on locker arrival · pay-then-scan · photo escalation</div><div class="stars">1 moment · ⭐</div></button>
     <button class="snode" data-goto="p5"><div class="snum">P5</div><div class="sttl">Taking it</div>
       <div class="sm">Cabinet by real names · voice notes · STOP honoured</div><div class="stars">1 moment</div></button>
     <button class="snode" data-goto="ppar"><div class="snum">∥</div><div class="sttl">When something breaks</div>
@@ -525,7 +533,7 @@ a{color:var(--brand-dark)}
       </div></div>
       <div class="callout"><span class="cmark">D3</span><div class="cbody">
         <span class="feat">Nothing issued at sealing</span><br>
-        Packed-and-sealed is a pure status: no PIN. The credential belongs to the moment the parcel is physically
+        Packed-and-sealed is a pure status: no code. The credential belongs to the moment the parcel is physically
         in the locker (v3.6) - P4's message first-issues it, because a code on the phone is a promise, and this
         service only promises what already exists.
       </div></div>
@@ -568,15 +576,18 @@ a{color:var(--brand-dark)}
       <h3>What each message is doing</h3>
       <p class="railsub">markers (E1-E3) match the callouts</p>
       <div class="callout"><span class="cmark">E1</span><div class="cbody">
-        <span class="feat">PIN issued on locker arrival</span><br>
-        The message comes the moment the parcel is physically in the locker - the PIN's first issue, not a
+        <span class="feat">QR issued on locker arrival · backup PIN beneath</span><br>
+        The message comes the moment the parcel is physically in the locker - the credential's first issue, not a
         restatement (v3.6), with the two retrieval steps in order because the counter payment is what activates
-        the PIN. Amount and code travel together, loaded onto the phone before he leaves signal - the whole trip
-        in one message. The chat says "the 28th", never "payday": the day is his, and so is what it means.
+        the code. QR-first with the PIN as the typable fallback (#09 v3.9, the 2026-08-17 cross-journey
+        convention) - a failed scan or an SMS delivery never blocks the parcel. Amount and code travel together,
+        loaded onto the phone before he leaves signal - the whole trip in one message. The chat says "the 28th",
+        never "payday": the day is his, and so is what it means.
       </div></div>
       <div class="callout"><span class="cmark">E2</span><div class="cbody">
-        <span class="feat">Pay-then-PIN · off-channel by design</span><br>
-        The handover itself never touches the chat: cash at the Capitec counter releases the locker on his PIN -
+        <span class="feat">Pay-then-scan · off-channel by design</span><br>
+        The handover itself never touches the chat: cash at the Capitec counter releases the locker on his scan
+        (or the backup PIN) -
         the Pelebox pattern near home, no street address required. The partner-counter release is a design
         assumption <span class="flag" title="punchlist item 9(a) - partner-bank locker network">⚠️</span>. In-chat
         payment is deliberately absent: WhatsApp payments aren't live in South Africa, and cash needs no channel.
@@ -1084,8 +1095,8 @@ const P4 = () => [
   {sys:"🔒 Messages and calls are end-to-end encrypted."},
   {date:"FRI, 28 AUG"},
   {inm:{id:"E1", time:"06:45",
-    body:'Your parcel is in the locker at <b>Capitec, taxi rank</b> - ready now.\n\nTo collect:\n<b>1.</b> Pay <b><span class="amt">R189.00</span></b> at the counter - cash or instant EFT 💵\n<b>2.</b> Enter PIN <b><span class="amt">4729</span></b> at the locker 🔓\n\nThe same amount you saw before. Nothing has changed.'+FOOT}},
-  {sys:"At the bank: Sipho pays R189.00 at the counter and the locker opens on his PIN. Nothing happens in the chat - and nothing needs to. (E2)"},
+    body:'Your parcel is in the locker at <b>Capitec, taxi rank</b> - ready now.\n\nTo collect:\n<b>1.</b> Pay <b><span class="amt">R189.00</span></b> at the counter - cash or instant EFT 💵\n<b>2.</b> Scan this at the locker 🔓\n<span class="qrimg" role="img" aria-label="locker QR code"></span>\nIf the scan won\'t read, enter PIN <b><span class="amt">4729</span></b> instead.\n\nThe same amount you saw before. Nothing has changed.'+FOOT}},
+  {sys:"At the bank: Sipho pays R189.00 at the counter and the locker opens on his scan - the PIN is the fallback. Nothing happens in the chat - and nothing needs to. (E2)"},
   {inm:{id:"E3", time:"10:32",
     body:'In your parcel:\n• Adco-Amlodipine 5 mg, 28 tablets\n• Biogen Multivitamin 30s\n• Borstol Cough Syrup\n\nCheck it now, at the locker - before the taxi. If anything is missing or wrong, send a photo here and a person will phone you straight away, in your language.'}},
   {photoTap:{time:"10:34"}},
@@ -1137,7 +1148,7 @@ const PPAR = () => [
   ]}},
   {sys:"Scenario - the locker is down"},
   {inm:{id:"G2", time:"06:50",
-    body:'Before you travel today: the locker at Capitec is out of order. Your parcel is already at the pickup point nearby - <b>same amount, same PIN</b> - and we\'ll tell you the moment the locker is fixed.\n\nYour taxi fare is never spent on a closed door.'+FOOT}},
+    body:'Before you travel today: the locker at Capitec is out of order. Your parcel is already at the pickup point nearby - <b>same amount, same code</b> - and we\'ll tell you the moment the locker is fixed.\n\nYour taxi fare is never spent on a closed door.'+FOOT}},
   {sys:"Scenario - the script runs out"},
   {inm:{id:"G3", time:"09:20",
     body:'Your script has one repeat left after this month. We\'ve already sent the renewal request to your doctor - you\'ll see it move here, and it costs you nothing to chase.\n\nIf your ready date comes before the new script is back, we\'ll tell you before you travel - with a plan from the pharmacist, and a person on the phone if you want one.'+FOOT}}
