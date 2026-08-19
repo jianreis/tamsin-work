@@ -9,7 +9,7 @@ confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, topic/acute, topic/chronic, journey/submit, journey/dispense, journey/collect, journey/deliver, journey/adhere, region/za]
 sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026, src-dc-script-journey-interviews-2025]
 created: "2026-08-18"
-updated: "2026-08-18"
+updated: "2026-08-19"
 ---
 
 # Journey narratives - the intent and the story, per persona
@@ -24,6 +24,14 @@ journey spec - [[design-kit/journeys/to-be-acute-moments]] (#10) and
 [[design-kit/journeys/to-be-household-repeat-moments]] (#09) - which carry the
 research citations. Concepts named in passing live in the
 [concept set (#08)](../../deliverables/08-concepts.html).
+
+The golden thread across all four intents (agreed with Tamsin, 2026-08-19):
+today the system decides the treatment and then leaves the customer to make it
+happen - the finding, funding, fetching, remembering all sit on them; the
+future state is treatment orchestration, Dis-Chem partnering with the customer
+by taking every one of those jobs onto itself and leaving only the decisions
+that are genuinely the customer's. Each intent names the burden in that
+journey's terms and each inversion names what Dis-Chem takes over.
 
 Naming note: the #10 cash persona is **Thabo** (Sipho is #09's cash persona) -
 the "#10 Sipho" request of 2026-08-18 is fulfilled here as the Thabo narrative.
@@ -116,24 +124,25 @@ one is designed for a sick one.
 This is what we're striving for.
 
 Your child wakes up ill. Not grumpy ill - coughing-through-the-night, quiet-in-
-a-way-he-never-is ill. And here is the thing about being the parent that
-morning: you have exactly one goal, which is to get medicine into your boy, and
-the system is about to charge you for it in every currency you're short of. A
-shift's pay to sit at the clinic. Taxi fare gambled on a pharmacy having stock.
-A price you'll only learn at the till, with the week's money counted out in
-your pocket and a queue behind you watching you find out if it's enough. The
-less slack a household has, the truer this gets.
+a-way-he-never-is ill. You have exactly one goal, which is to get medicine into
+your boy - and here is the thing about a script in today's world: it isn't
+medicine yet. It's a list of jobs. Find a pharmacy. Spend the taxi fare before
+anyone will say whether the medicine is even on a shelf. Queue with a sick
+child on your arm. And only then hear the price, said out loud at the till,
+with the week's money counted in your pocket and a queue behind you - knowing,
+because you've done it before, what walking away looks like.
 
-Today's journey doesn't care about any of that. The clinic hands you a piece of
-paper and quietly makes you the project manager: carry the script across town,
-hope about stock, hope harder about the price, queue with a sick child on your
-arm, and rehearse - because you've done it before - the walk away from the
-counter if the number is too big. The person with the least slack carries all
-the risk.
+The doctor's part took ten minutes. Every job after those ten minutes is yours
+- the finding, the travelling, the hoping, the paying - carried at your own
+risk, with your own money, for your own child. The treatment was decided by a
+professional; making it happen was left to the parent with the least slack to
+absorb anything going wrong.
 
 The experience we're designing inverts that. The moment the doctor decides what
-your son needs, the getting-better has already started - and every rand between
-you and the first dose is named before you spend one.
+your son needs, the jobs move across the counter: Dis-Chem does the finding,
+the pricing, the checking, the holding and the carrying - and your side shrinks
+to the one thing only a father can do, which is be there. Every rand is named
+before you spend one.
 
 ### The Story (for Thabo)
 
@@ -204,20 +213,24 @@ This is what we're striving for.
 Chronic medicine has no finish line. Nobody is ever done with hypertension, or
 diabetes, or a child's asthma - and in most homes it isn't one person's
 medicine, it's everyone's: yours, your mother's, the kids'. Four conditions,
-four cycles, four sets of dates, schemes and co-pays. Today's journey charges
-rent on all of it, every month: remember the dates, redo the admin, queue for
-an identical bag, learn the price again at the till. And the work is invisible,
-because doing it well looks like nothing happening - nobody applauds when the
-medicine doesn't run out. Somebody in the house does this forever, on top of
-everything else, and the system treats her like a stranger every single month:
-prove who you are, prove you may collect for your mother, re-type what it
-already knows.
+four cycles, four sets of dates, schemes and co-pays.
+
+And here is the strange part: nothing about any of it ever changes - the same
+medicines, the same doses, the same schemes - yet the work of getting it starts
+from zero every month. Remember the dates. Redo the admin. Queue for an
+identical bag. Learn the price again at the till, and prove all over again that
+you may collect for your own mother. The system remembers nothing, so somebody
+in the house has to remember everything - forever, on top of everything else,
+and invisibly, because doing this well looks like nothing happening. Nobody
+applauds when the medicine doesn't run out.
 
 The experience we're designing inverts that. She tells the service everything
 exactly once - who's in the household, how it reaches them, how it's paid, in
-which languages - and it is believed, remembered, and run. From then on the
-measure of success is silence: the right medicine arriving on the same day each
-month, at a price known at home, with nothing asked of her.
+which languages - and from then on the remembering is Dis-Chem's: the dates,
+the schemes, the stock, the renewals. Her side of the partnership is a set of
+decisions made once; the running of them is theirs. The measure of success is
+silence: the right medicine arriving on the same day each month, at a price
+known at home, with nothing asked of her.
 
 ### The Story (for Nomvula)
 
@@ -280,20 +293,23 @@ administrator; this one gives her the job back to Dis-Chem.
 
 This is what we're striving for.
 
-The same condition, the same forever - and none of the same slack. Chronic
-medicine on a cash income is a tax paid monthly in every currency: taxi fare to
-a store that isn't near anything, a queue that costs a morning's work, a price
-learned at the till when the fare is already spent - and then the whole thing
-again on a different date, at a different place, for his mother's clinic
-parcel. Two trips a month, forever, planned around money that arrives on one
-day.
+The same condition, the same forever - and none of the same slack. Nothing
+about Sipho's tablets changes from one month to the next, but every month he
+has to earn them all over again: taxi fare to a store that isn't near anything,
+a queue that costs a morning's work, a price learned at the till when the fare
+is already spent - and then the whole exercise a second time, on a different
+date at a different place, for his mother's clinic parcel. The medicine is
+routine; getting it never gets to be. Two trips a month, forever, every step
+his to plan and his to pay for, around money that arrives on one day.
 
-Today's journey quietly assumes things Sipho doesn't have: an app worth the
-data, a street address, airtime to burn, slack in the week and slack in the
+Today's journey also quietly assumes things Sipho doesn't have: an app worth
+the data, a street address, airtime to burn, slack in the week and slack in the
 wallet. What he has is a cheap Android, WhatsApp, a payday, and a bank branch
 by the taxi rank he already visits. The experience we're designing starts from
-what he has, not from what the system wishes he had - and above all, it never
-spends his money for him.
+what he has, not from what the system wishes he had - and takes the rest onto
+itself: the remembering, the pricing, the carrying, the checking. What stays
+with Sipho is the one decision only he can make - when the money moves. It
+never spends his money for him.
 
 ### The Story (for Sipho)
 
