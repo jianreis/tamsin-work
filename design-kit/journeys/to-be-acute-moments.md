@@ -7,9 +7,9 @@ persona: "[[design-kit/personas/time-poor-urban-professional|Aisha Patel]] (insu
 status: draft
 confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, journey/submit, journey/validate, journey/dispense, journey/pay, journey/collect, journey/deliver, journey/adhere, topic/acute, topic/e-prescription, region/za]
-sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026, src-dc-script-journey-interviews-2025]
+sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026, src-dc-script-journey-interviews-2025, src-dc-instore-walkthrough-2026, src-dc-e2e-script-journey-friction-summary, src-dc-dispensary-services]
 created: "2026-07-26"
-updated: "2026-08-17"
+updated: "2026-08-19"
 ---
 
 # To-be journey - the acute script, in moments
@@ -294,6 +294,34 @@ card, anchored on [[wiki/dispensing-practice/error-prevention-and-safety]]
 (illegible/ambiguous prescriptions as a named error root cause). Cards with
 customer quotes remain the default; the exception is never a licence to
 infer.
+
+## Current-friction summary panel (agreed 2026-08-19)
+
+A static panel between the spine and the phases: the journey-wide major
+friction themes of the as-is acute experience, consolidated from the
+research. Mirrors #09's v3.10 panel (same structure and rendering); renders
+once, not per economy. Each theme carries a **lane tag** - in-store /
+digital / both - because the acute frictions split by channel (Tamsin's
+framing, 2026-08-19). Provenance: drafted from Tamsin's 2026-08-19
+walkthrough of the physical and digital acute pains, sense-checked and
+extended against the research in the same session; the turnaround claim was
+corrected in-session from "up to 1.5 days" to the published service promise
+(doorstep delivery within 24 hours, collection in ~2) versus the lived
+reports of orders not ready.
+
+| # | Theme (lane) | Grounded in |
+|---|---|---|
+| 1 | **The script is yours to carry - with no proof it arrived** (digital) - the consult ends and the hand-off becomes the patient's problem: nearly everyone leaves with paper, and a digital hand-over gives no confirmation, causing double trips and calls. | script-journey IDIs (the single strongest unmet need) · e2e friction synthesis (stages 1-2). |
+| 2 | **The unclear script stalls behind the counter** (in-store) - an ambiguous or illegible script can't legally be dispensed until the pharmacist reaches the prescriber; the sick customer waits on a call between professionals. | dispensing-practice safety literature (documented exception - no customer-voice record) · e2e friction synthesis (stage 3 ops lane). |
+| 3 | **Queues and visible manual toil, while you're ill** (in-store) - long queues worsened by peak understaffing; processing feels opaque (activity visible, cause invisible); sign-off delays with no explanation; month-end waits of 25-30 minutes felt acutely "when you're not feeling well"; profile/ID lookup friction on arrival. | in-store walkthrough · script-journey IDIs · sentiment (wait time ~89% negative). |
+| 4 | **The price is a mystery until you're committed** (both) - in-store the cost appears only after the travel and the queue, forcing a counter decision (including discovering the scheme won't pay); digitally the price arrives by SMS after the order; identical scheduled medicine reads as differently priced store to store. Honest tension, carried in the spec not the panel: the insured in-store IDI sample found co-pays small and fair - the shock concentrates in digital/scheme-exception segments. | complaints (cluster E) · in-store walkthrough (co-payments card) · e2e friction synthesis (stages 1, 3, 8). |
+| 5 | **No trust the order will come out right** (both) - the published promise is doorstep delivery within 24 hours or collection in about two; the lived reports are of orders not ready even the next day, arriving incomplete or incorrect, mistakes found at home past the point of easy return, and errors read as safety threats. | dispensary-services page (the published promise, verbatim) · in-store + repeat-reminder walkthroughs (packages not ready · incorrect items) · complaints (cluster C) · sentiment. |
+| 6 | **Inconsistent channels, and a broken digital fallback** (digital) - the experience differs by where you submit; confirmation and status messages differ or never come; where a digital route exists it fails at the basics (logins, uploads), sending people back to the queue. | e2e friction synthesis (stages 1-2) · complaints ("Dis-Chem App is dysfunctional") · sentiment (digital breakdowns as hard blockers). |
+| 7 | **When something breaks, there's no way through** (both) - an exception (stock, a claim, an unreadable script) kills the order silently; chasing it means phoning into a void; and delivery, the escape valve a sick person most needs, breaks with "out for delivery, then nothing" - while the fast ~60-minute service carries front-shop products, not scripts. | complaints (clusters B, D) · sentiment · dispensary-services + stakeholder confirmation (script delivery scope). |
+
+Synthesis line: **"Getting acute medicine feels like a project you must
+manage while sick - the system hands the coordination work to the person
+least able to carry it."**
 
 ## Concept-set changes made for this journey (done, 2026-07-26)
 

@@ -7,9 +7,9 @@ persona: "[[design-kit/personas/insured-chronic-multimorbid|Nomvula Khumalo]] (i
 status: reviewed
 confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, journey/refill, journey/submit, journey/dispense, journey/collect, journey/deliver, journey/adhere, topic/chronic, region/za]
-sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026]
+sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026, src-dc-call-reminder-walkthrough-2026, src-dc-e2e-script-journey-friction-summary]
 created: "2026-07-17"
-updated: "2026-08-17"
+updated: "2026-08-19"
 ---
 
 # To-be journey (v3) - the household repeat, in moments
@@ -80,7 +80,12 @@ a short backup PIN beneath it, covering failed scans and delivery over SMS;
 pay-then-activate is unchanged (the counter payment activates the code),
 and the pickup is a scan at the locker with the PIN as the typable
 fallback. The insured side already carried QR + backup PIN (v3.5) and needs
-nothing.
+nothing. v3.10 (2026-08-19, agreed with Tamsin): a **current-friction
+summary panel** added between the spine and the phases - the journey's
+major friction themes consolidated in one view (see "Current-friction
+summary panel" below). Themes 1-5 are Tamsin's own wording, supplied
+2026-08-19 and sense-checked against the research; themes 6-7 added by
+agreement in the same session.
 
 ## The phase structure (v3)
 
@@ -204,6 +209,31 @@ Packaging was archived in `08-concepts.html` and superseded by the broader
 **Made-for-Me Medicine** - the ladder from free in-language labels/guides up
 to paid dose sachets. This journey's P5 inline links repointed to the live
 concept; the P5 copy itself is unchanged.)
+
+## Current-friction summary panel (v3.10, agreed 2026-08-19)
+
+A static panel between the spine and the phases: the journey-wide major
+friction themes of the as-is repeat experience, consolidated from the
+research. It renders once (not per economy). Each theme carries a title, a
+short description, and a human-readable attribution with the vault paths in
+the tooltip (same convention as the per-phase pain cards). Provenance:
+**themes 1-5 are Tamsin's own summary wording** (supplied 2026-08-19,
+sense-checked against the research in-session); **themes 6-7 were added by
+agreement** in the same session, from the sense-check's gap findings. The
+closing synthesis line is Tamsin's.
+
+| # | Theme | Grounded in |
+|---|---|---|
+| 1 | **High, repetitive effort** - every month the customer re-confirms the same information (collection vs delivery, address or store, generic preferences, payment method); nothing is remembered as a standing instruction. | complaints (cluster A) · sentiment ("type essays…") · repeat-reminder walkthrough. The "generic preferences" item is observational (walkthrough), not complaint-evidenced. |
+| 2 | **Recurring counter and collection failures** - parcels not truly ready on arrival, incomplete or incorrect, rebuilt live at the counter; visible, time-consuming, confidence-eroding. | repeat-reminder walkthrough (packages not ready · incorrect items · package search) · complaints (cluster C) · sentiment (collections ~93% negative). |
+| 3 | **Low customer autonomy** - repeated calls and reminders to prompt action or re-clarify what was already provided; administrative not clinical, intrusive not supportive; control sits with the system and call centre. | repeat-reminder walkthrough (phone reminder experience) · sentiment (comms overload / harassment after opt-out) · complaints (cluster A: the self-service alternative loops and dead-ends). |
+| 4 | **Opaque order status** - no clear capture confirmation (call orders), progress between submission, preparation and readiness invisible; customers can't confidently plan collection or delivery. | e2e friction synthesis (no-progress-visibility through-line) · repeat-reminder walkthrough (unreliable communication) · SOTF ("waiting is fine - being unsure isn't"). |
+| 5 | **Inconsistent experience across channels** - confirmation and progress messages differ by channel; each repeat order can feel different even when nothing changed; customers fall back to calls and in-person checks. | e2e friction synthesis (stages 1-2) · complaints (no single owner across app/WhatsApp/store/call-centre) · repeat-reminder walkthrough (Adherence Centre vs store sync). |
+| 6 | **Money is a mystery** *(added)* - unexpected levies, co-payments discovered at collection, funds depleted without warning, scheduled-medicine pricing that reads as arbitrary between stores; nobody explains the levy even after payment. | complaints (cluster E, Priority 5) · repeat-reminder walkthrough (co-payments card + Tamsin's after-payment sticky) · e2e friction synthesis. |
+| 7 | **A failure ends the journey** *(added)* - an exception (stock, a claim, an address) kills the order silently rather than opening a resolution path; chasing it means phoning into a void; a single unrecovered failure is where customers defect. | complaints (cluster B: the returned-over-a-co-payment delivery) · sentiment ("called 4 different dispensaries… nobody is picking up"; defection at R460 more). |
+
+Synthesis line (Tamsin's): **"Getting repeat medication feels like a
+recurring task, with unreliable outputs - not a dependable service."**
 
 ## Journey metadata
 
