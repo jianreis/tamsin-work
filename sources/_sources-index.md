@@ -44,6 +44,7 @@ _Populated as sources are ingested. Group by domain; show reliability tier._
 - [[src-dc-instore-walkthrough-2026]] (B) — researcher-led observational walkthrough of the as-is in-store script journey (friction board): queue confusion, profile lookup, cross-store script visibility, sign-off delays, re-queue to pay; plus the positives (pharmacist trust, familiarity). PDF in `sources/pdfs/`.
 - [[src-dc-call-reminder-walkthrough-2026]] (B) — researcher-led observational walkthrough of the as-is repeat-reminder (call) journey (friction board): pushy/scam-feel reminder calls, call-centre↔dispensary sync failures, packages not ready, ID friction, unexplained levies. PDF in `sources/pdfs/`.
 - [[src-dc-e2e-script-journey-friction-summary]] (B) — Tamsin's nine-stage end-to-end friction synthesis ("Script Journey Blueprint"): customer friction vs operational inefficiencies per stage; no-progress-visibility and fragmented-manual-work through-lines.
+- [[src-dc-script-journey-transcripts-2025]] (B) — raw transcripts (9 of 10) behind the Oct-2025 script-journey IDIs, archived in `sources/transcripts/`: per-participant profiles, standout verbatims, persona hints. For verbatim mining and persona grounding; two transcripts partial, one outstanding.
 
 ### SA regulatory
 - [[src-reg-medicines-act-101-1965]] (A) — Medicines & Related Substances Act 101 of 1965; §22A/22C/22F/22G.
