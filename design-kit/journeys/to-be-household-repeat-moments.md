@@ -263,6 +263,20 @@ the survey note carries the caveat.
 
 ## Open questions
 
+- Friction-panel nuance candidates from the collections/deliveries IDIs
+  ([[src-dc-collections-deliveries-interviews-2026]], swept 2026-08-21 - no
+  new top-level theme needed): (a) theme 4 could carry the customer-voice
+  status-blur evidence ("processing / on the way / delivering" run together;
+  "I sent it on WhatsApp, but I still wait to see if they've actually loaded
+  it") and the delivery-window can't-plan-the-day tension; (b) a
+  post-handover support void exists on both channels (no built-in way to ask
+  a question after collection/delivery) - currently evidenced as a gap, not
+  a complaint. Tamsin to call whether either earns panel copy.
+- Theme 3 retitle ("Responsibility without control") pending with Tamsin;
+  note the new study's mental-models chapter independently supports it
+  (customers safeguard "a system they don't fully control"; "digital
+  submission shifts effort, not responsibility").
+
 - Partner-bank locker (Capitec) with cash-payment release, the order window's
   retail-attach mechanics, split delivery on stock-out, and OTC add-ons on the
   locker route (with chat-commerce free entry and price-before-travel): design

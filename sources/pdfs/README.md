@@ -15,6 +15,12 @@ Tamsin's companion end-to-end summary ("Script Journey Blueprint", read into
 [[src-dc-e2e-script-journey-friction-summary]]) was shared as an image only;
 the raw file is not yet archived here.
 
+## Research reports (supplied by Tamsin, 2026-08-21)
+
+| File | What it is | Read into |
+|---|---|---|
+| `dischem-collections-deliveries-idis-2026.pdf` | Medication Collection & Delivery Journey IDI report (n=15, Dec 2025 fieldwork; pre-packed redemption, collection vs delivery; mental-models chapter). Transcripts confirmed unavailable. | [[src-dc-collections-deliveries-interviews-2026]] |
+
 ## Primary regulatory documents
 
 Source PDFs supplied by Tamsin on 2026-08-16, after the four research streams
