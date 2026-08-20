@@ -30,10 +30,12 @@ and product names are frequently garbled ("this game"/"disc came" = Dis-Chem,
 needed. **POPIA:** participants are identified by full name with personal
 health detail; internal use only, anonymise in anything customer- or
 executive-facing. Two files are incomplete: **Rekha** captures only the
-5-minute pre-interview admin (the interview itself is in a separate recording
-— ⚠️ ask for it), and **Tshediso** cuts off at ~13 minutes when his
-connection froze (the session was rescheduled — ⚠️ the continuation, plus the
-tenth participant's transcript, are outstanding).
+5-minute pre-interview admin, and **Tshediso** cuts off at ~13 minutes when
+his connection froze (the session was rescheduled). Confirmed unavailable
+(Tamsin, 2026-08-20): these nine files are all she was sent — Rekha's main
+recording, Tshediso's continuation and the tenth participant's transcript
+will not be arriving. The report note remains the only evidence for what
+those sessions covered.
 
 **Reliability — B:** primary qualitative material, same basis as the report
 note; individual quotes are one customer's account.
@@ -178,7 +180,7 @@ segment, and live evidence for the CCMDD-to-retail bridge working as dignity.
 ### 7. Rekha Maharaj — `idi-2025-10-rekha.docx` (5m — **partial**)
 Only the pre-interview admin was captured (camera troubleshooting, consent);
 the transcript ends as the interview begins. No research-usable content.
-⚠️ Ask Tamsin for the main recording.
+The main recording is confirmed unavailable (Tamsin, 2026-08-20).
 
 ### 8. Tamsin October — `idi-2025-10-tamsin-participant.docx` (26m)
 **Profile:** Athlone (Cape Town), senior administrator in tourism, lives with

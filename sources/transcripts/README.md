@@ -16,8 +16,9 @@ itself does so).
 
 The transcripts behind [[src-dc-script-journey-interviews-2025]] (10 remote
 1-hour IDIs, fielded 20–25 Oct 2025, researcher Camilla Cicatello, Tamsin
-Madden observing). Nine transcripts supplied; one participant's transcript is
-outstanding. Catalogue with per-participant profiles and standout verbatims:
+Madden observing). Nine transcripts supplied; the tenth, Rekha's main
+recording and Tshediso's continuation are confirmed unavailable (Tamsin,
+2026-08-20). Catalogue with per-participant profiles and standout verbatims:
 [[src-dc-script-journey-transcripts-2025]].
 
 | File | Participant |
