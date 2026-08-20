@@ -208,7 +208,7 @@ details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #09 · SCRIPT RE-IMAGINED - THE HOUSEHOLD REPEAT, IN MOMENTS</span>
-  <span class="gen">generated 2026-07-17 · updated 2026-08-16 (v3.2: P5 reminder agency · v3.3: P0 sync anchors on Zanele's cycle, top-up moves to Nomvula + Grace · v3.4: cash sync declined for payday, journey follows his collection, CCMDD parcel honesty pass · v3.5: whole store open in P2, QR re-timed to delivery morning with how-to + backup PIN, Fulfilment flexibility into P3 · v3.6: cash origin story, counter dignity in the P1 moment, PIN re-timed to locker arrival with pay-then-PIN activation, cash Fulfilment flexibility, P4 locker moment strengthened · v3.7: the sync top-up threaded through the insured money messaging - P0 confirm read-back + first P1 breakdown · v3.8: the cash sync offer generalised to a costed date-move on his own dispensed tablets - he declines the programme date and moves his day to the 28th, after payday; payday out of all customer-facing service copy · v3.9: locker credential aligned to the QR-first convention set in #10 - the in-locker message brings a QR with a short backup PIN beneath it for failed scans or SMS delivery, pay-then-activate unchanged, scan at the locker with the PIN as the typable fallback) · updated 2026-08-19 (v3.10: current-friction summary panel added between the spine and the phases - Tamsin's five themes plus the two agreed additions, money-legibility and terminal failure, each attributed to its research sources) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
+  <span class="gen">generated 2026-07-17 · updated 2026-08-16 (v3.2: P5 reminder agency · v3.3: P0 sync anchors on Zanele's cycle, top-up moves to Nomvula + Grace · v3.4: cash sync declined for payday, journey follows his collection, CCMDD parcel honesty pass · v3.5: whole store open in P2, QR re-timed to delivery morning with how-to + backup PIN, Fulfilment flexibility into P3 · v3.6: cash origin story, counter dignity in the P1 moment, PIN re-timed to locker arrival with pay-then-PIN activation, cash Fulfilment flexibility, P4 locker moment strengthened · v3.7: the sync top-up threaded through the insured money messaging - P0 confirm read-back + first P1 breakdown · v3.8: the cash sync offer generalised to a costed date-move on his own dispensed tablets - he declines the programme date and moves his day to the 28th, after payday; payday out of all customer-facing service copy · v3.9: locker credential aligned to the QR-first convention set in #10 - the in-locker message brings a QR with a short backup PIN beneath it for failed scans or SMS delivery, pay-then-activate unchanged, scan at the locker with the PIN as the typable fallback) · updated 2026-08-19 (v3.10: current-friction summary panel added between the spine and the phases - Tamsin's five themes plus the two agreed additions, money-legibility and terminal failure, each attributed to its research sources) · updated 2026-08-21 (friction panel swept against the Dispensary Managers Survey, n=102 staff view: new theme 8 "The script expires before the customer expects it to"; theme 3 gains the both-directions reminder inconsistency; theme 6 gains the co-pay/benefit/PMB mechanism) · content spec: design-kit/journeys/to-be-household-repeat-moments.md</span>
 </div>
 
 <section class="intro">
@@ -271,7 +271,8 @@ const SRC = {
   sentiment:  {label:"public social-sentiment study, Dec 2025", cite:"wiki/dischem/dischem-social-sentiment-trust-journey"},
   sotf:       {label:"Store-of-the-Future customer interviews, Jan 2026", cite:"wiki/dischem/store-of-the-future-customer-voice"},
   walkrepeat: {label:"repeat-reminder journey walkthrough (observational), 2026", cite:"sources/src-dc-call-reminder-walkthrough-2026"},
-  e2e:        {label:"end-to-end friction synthesis (Script Journey Blueprint)", cite:"sources/src-dc-e2e-script-journey-friction-summary"}
+  e2e:        {label:"end-to-end friction synthesis (Script Journey Blueprint)", cite:"sources/src-dc-e2e-script-journey-friction-summary"},
+  dmsurvey:   {label:"Dispensary Managers Survey, Oct-Nov 2025 (n=102, staff view)", cite:"sources/src-dc-dispensary-managers-survey-2025"}
 };
 const C08 = '08-concepts.html';
 
@@ -285,8 +286,8 @@ const DATA = {
        d:"Each month reproduces the same operational issues. Customers arrive before parcels are truly ready. Parcels are incomplete, incorrect, or need rebuilding. Staff must resolve problems live at the counter. These failures are visible, time-consuming, and erode confidence.",
        src:["walkrepeat","complaints","sentiment"]},
       {t:"Low customer autonomy",
-       d:"Customers cannot reliably self-manage their repeats. They are contacted repeatedly via calls and reminders to prompt action or to clarify information already provided previously. These interactions are administrative, not clinical, and feel intrusive rather than supportive. Control sits with the system and call centre, not with the customer. And when customers do try to self-manage digitally, the app and WhatsApp re-order flows loop and dead-end - control defaults to the call centre because the self-service alternative is broken.",
-       src:["walkrepeat","sentiment","complaints"]},
+       d:"Customers cannot reliably self-manage their repeats. They are contacted repeatedly via calls and reminders to prompt action or to clarify information already provided previously. These interactions are administrative, not clinical, and feel intrusive rather than supportive. Control sits with the system and call centre, not with the customer. When customers do try to self-manage digitally, the app and WhatsApp re-order flows loop and dead-end - control defaults to the call centre because the self-service alternative is broken. And the contact isn't even dependable: the same estate produces complaints about being called too much and about never being called, months where the repeat silently isn't processed, and stopped-but-still-active repeats that keep triggering SMSes and dispensing - the customer ends up supervising a service that was sold as running itself.",
+       src:["walkrepeat","sentiment","complaints","dmsurvey"]},
       {t:"Opaque order status",
        d:"Customers have limited visibility and trust in what is happening after they place a repeat order. In some cases, there is no clear confirmation that the order was successfully captured (orders placed via call). Progress between submission, preparation, and readiness is not visible, and customers often do not know whether medication is being processed, delayed, or completed. As a result, customers are left uncertain and cannot confidently plan collection or delivery.",
        src:["e2e","walkrepeat","sotf"]},
@@ -294,11 +295,14 @@ const DATA = {
        d:"The experience changes depending on how the order is placed. Confirmation and progress messages differ by channel, some channels provide delivery or readiness notifications, others do not. Each repeat order can feel different, even when nothing has changed, which erodes trust in the system and leads customers to rely on calls or in-person checks instead of updates.",
        src:["e2e","complaints","walkrepeat"]},
       {t:"Money is a mystery",
-       d:"Unexpected levies, co-payments discovered at collection, medical-aid funds depleted without warning, and scheduled-medicine pricing that reads as arbitrary between stores. Cost is the one part of the order the customer can't see until the counter - and nobody explains the levy after they've paid.",
-       src:["complaints","walkrepeat","e2e"]},
+       d:"Unexpected levies, co-payments discovered at collection, medical-aid funds depleted without warning, and scheduled-medicine pricing that reads as arbitrary between stores. Cost is the one part of the order the customer can't see until the counter - and nobody explains the levy after they've paid. Behind the surprises sit co-payments never discussed by the call centre before dispensing, claims routed to the wrong benefit, and PMB (prescribed-minimum-benefit) registration customers assume is automatic when it isn't.",
+       src:["complaints","walkrepeat","e2e","dmsurvey"]},
       {t:"A failure ends the journey",
        d:"An exception - stock, a claim, an address - kills the order silently rather than opening a resolution path, and chasing it means phoning into a void. A single unrecovered failure is where customers defect to another pharmacy.",
-       src:["complaints","sentiment"]}
+       src:["complaints","sentiment"]},
+      {t:"The script expires before the customer expects it to",
+       d:"A repeat script is valid for six months from the date of writing, but customers read the repeat count as the promise - \"they want to see six repeats on the label\". The last repeat or the expiry is often not communicated until the counter, and the renewal lands as a surprise errand: \"why must they get script every 6 months\". The repeat journey ends on a wall nobody warned them about.",
+       src:["dmsurvey","complaints"]}
     ],
     synth:"Getting repeat medication feels like a recurring task, with unreliable outputs, not a dependable service."
   },

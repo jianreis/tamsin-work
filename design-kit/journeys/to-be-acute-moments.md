@@ -7,9 +7,9 @@ persona: "[[design-kit/personas/time-poor-urban-professional|Aisha Patel]] (insu
 status: draft
 confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, journey/submit, journey/validate, journey/dispense, journey/pay, journey/collect, journey/deliver, journey/adhere, topic/acute, topic/e-prescription, region/za]
-sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026, src-dc-script-journey-interviews-2025, src-dc-instore-walkthrough-2026, src-dc-e2e-script-journey-friction-summary, src-dc-dispensary-services]
+sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026, src-dc-script-journey-interviews-2025, src-dc-instore-walkthrough-2026, src-dc-e2e-script-journey-friction-summary, src-dc-dispensary-services, src-dc-dispensary-managers-survey-2025]
 created: "2026-07-26"
-updated: "2026-08-19"
+updated: "2026-08-21"
 ---
 
 # To-be journey - the acute script, in moments
@@ -318,6 +318,12 @@ reports of orders not ready.
 | 5 | **No trust the order will come out right** (both) - the published promise is doorstep delivery within 24 hours or collection in about two; the lived reports are of orders not ready even the next day, arriving incomplete or incorrect, mistakes found at home past the point of easy return, and errors read as safety threats. | dispensary-services page (the published promise, verbatim) · in-store + repeat-reminder walkthroughs (packages not ready · incorrect items) · complaints (cluster C) · sentiment. |
 | 6 | **Inconsistent channels, and a broken digital fallback** (digital) - the experience differs by where you submit; confirmation and status messages differ or never come; where a digital route exists it fails at the basics (logins, uploads), sending people back to the queue. | e2e friction synthesis (stages 1-2) · complaints ("Dis-Chem App is dysfunctional") · sentiment (digital breakdowns as hard blockers). |
 | 7 | **When something breaks, there's no way through** (both) - an exception (stock, a claim, an unreadable script) kills the order silently; chasing it means phoning into a void; and delivery, the escape valve a sick person most needs, breaks with "out for delivery, then nothing" - while the fast ~60-minute service carries front-shop products, not scripts. | complaints (clusters B, D) · sentiment · dispensary-services + stakeholder confirmation (script delivery scope). |
+| 8 | **The schedule rules land on the customer** (digital) *(added 2026-08-21, agreed - staff-survey sweep)* - doctors email Schedule 5 and 6 scripts to the patient instead of the pharmacy, and a copy can't lawfully be dispensed, so the counter must refuse and ask for the original. Enforcement differs pharmacy to pharmacy ("stores approach this differently"), so the rule reads as this store being difficult - and the refusing counter absorbs the anger of a sick customer who did exactly what the doctor told them. | dispensary-managers survey (S5/S6 copies the recurring digital-intake pain; inconsistent enforcement named by staff). |
+
+Provenance addendum (2026-08-21): theme 8 comes from the sweep against
+[[src-dc-dispensary-managers-survey-2025]] (staff view, n=102), agreed with
+Tamsin. Staff-survey claims about customer feeling are staff perception -
+the survey note carries the caveat.
 
 Synthesis line: **"Getting acute medicine feels like a project you must
 manage while sick - the system hands the coordination work to the person

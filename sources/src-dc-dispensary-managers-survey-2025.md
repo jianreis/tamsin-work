@@ -163,5 +163,8 @@ Recurring, in rough order of frequency:
 
 - [[src-dc-instore-walkthrough-2026]] — quotes this survey; citation loop
   closed.
-- Intended: friction-theme sweep for the #09/#10 current-friction panels
-  (staff-view corroboration + gap check). Not yet cited by a wiki page.
+- [[design-kit/journeys/to-be-household-repeat-moments]] — friction panel
+  theme 8 (script expiry) and the theme-3/theme-6 extensions.
+- [[design-kit/journeys/to-be-acute-moments]] — friction panel theme 8 (the
+  schedule rules land on the customer).
+- Not yet cited by a wiki page.

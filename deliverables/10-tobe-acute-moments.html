@@ -215,7 +215,7 @@ details.behind summary .sub{font-weight:600; text-transform:none; letter-spacing
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #10 · SCRIPT RE-IMAGINED - THE ACUTE SCRIPT, IN MOMENTS</span>
-  <span class="gen">generated 2026-07-26 · updated 2026-08-16 (P4 gains Aisha's collected route + express collect; naming resolved - collections counter is staffed, express collect is not; regulatory position verified against the primary SAPC rules and two 🔮 flags raised; concept-set implications swept later the same day - the collections-counter rename completed through P3-cash, ∥-cash and the P2/∥ lanes, and the fork copy mirrored back into the spec; journey feedback implemented - inside-the-hour delivery surfaced in P2, the unreadable-photo scenario added to the ∥ band (cash), and the after-hours point resolved to be the express-collect unit itself, with phone-back counselling on request; needs tightened to #09's one-arc shape and thirteen activity headings returned to functional signposts) · updated 2026-08-17 (cash journey rerouted on Tamsin's feedback: Thabo goes straight from the clinic to the store - the handover choice is his too, and he chooses the pharmacist; P3 rides the taxi with him; P4 gains the cash route fork - counter, the spine, or the working-late after-hours express collect with card-at-the-unit payment and phone-back counselling, carrying the unstarred moment "The store was closed. His medicine wasn't."; every code is now QR-first with a short typable backup) · updated 2026-08-19 (current-friction summary panel added between the spine and the phases - seven major themes with in-store/digital lane tags, agreed from Tamsin's walkthrough of the physical and digital acute pains; the turnaround claim corrected to the published 24h-delivery / ~2h-collection promise versus the lived reports) · content spec: design-kit/journeys/to-be-acute-moments.md · previous acute treatment (#07) preserved</span>
+  <span class="gen">generated 2026-07-26 · updated 2026-08-16 (P4 gains Aisha's collected route + express collect; naming resolved - collections counter is staffed, express collect is not; regulatory position verified against the primary SAPC rules and two 🔮 flags raised; concept-set implications swept later the same day - the collections-counter rename completed through P3-cash, ∥-cash and the P2/∥ lanes, and the fork copy mirrored back into the spec; journey feedback implemented - inside-the-hour delivery surfaced in P2, the unreadable-photo scenario added to the ∥ band (cash), and the after-hours point resolved to be the express-collect unit itself, with phone-back counselling on request; needs tightened to #09's one-arc shape and thirteen activity headings returned to functional signposts) · updated 2026-08-17 (cash journey rerouted on Tamsin's feedback: Thabo goes straight from the clinic to the store - the handover choice is his too, and he chooses the pharmacist; P3 rides the taxi with him; P4 gains the cash route fork - counter, the spine, or the working-late after-hours express collect with card-at-the-unit payment and phone-back counselling, carrying the unstarred moment "The store was closed. His medicine wasn't."; every code is now QR-first with a short typable backup) · updated 2026-08-19 (current-friction summary panel added between the spine and the phases - seven major themes with in-store/digital lane tags, agreed from Tamsin's walkthrough of the physical and digital acute pains; the turnaround claim corrected to the published 24h-delivery / ~2h-collection promise versus the lived reports) · updated 2026-08-21 (friction panel swept against the Dispensary Managers Survey, n=102 staff view: new digital-lane theme 8 "The schedule rules land on the customer" - S5/S6 scripts emailed to the patient, copies refused at the counter, enforcement inconsistent across pharmacies) · content spec: design-kit/journeys/to-be-acute-moments.md · previous acute treatment (#07) preserved</span>
 </div>
 
 <section class="intro">
@@ -288,7 +288,8 @@ const SRC = {
   walkstore:  {label:"in-store journey walkthrough (observational), 2026", cite:"sources/src-dc-instore-walkthrough-2026"},
   walkrepeat: {label:"repeat-reminder journey walkthrough (observational), 2026", cite:"sources/src-dc-call-reminder-walkthrough-2026"},
   e2e:        {label:"end-to-end friction synthesis (Script Journey Blueprint)", cite:"sources/src-dc-e2e-script-journey-friction-summary"},
-  services:   {label:"Dis-Chem published service promise (24h delivery / ~2h collection)", cite:"wiki/dischem/dischem-dispensary-services"}
+  services:   {label:"Dis-Chem published service promise (24h delivery / ~2h collection)", cite:"wiki/dischem/dischem-dispensary-services"},
+  dmsurvey:   {label:"Dispensary Managers Survey, Oct-Nov 2025 (n=102, staff view)", cite:"sources/src-dc-dispensary-managers-survey-2025"}
 };
 const C08 = '08-concepts.html';
 
@@ -315,7 +316,10 @@ const DATA = {
        src:["e2e","complaints","sentiment"]},
       {t:"When something breaks, there's no way through", lane:"both",
        d:"An exception - stock, a claim, an unreadable script - kills the order silently; chasing it means phoning into a void. And delivery, the escape valve a sick person most needs, breaks with \"out for delivery, then nothing\" - while the fast ~60-minute service carries front-shop products, not scripts.",
-       src:["complaints","sentiment","svc"]}
+       src:["complaints","sentiment","svc"]},
+      {t:"The schedule rules land on the customer", lane:"digital",
+       d:"Doctors email Schedule 5 and 6 scripts to the patient instead of the pharmacy, and a copy can't lawfully be dispensed - so the counter must refuse and ask for the original. Enforcement differs pharmacy to pharmacy, so the rule reads as this store being difficult, and the refusing counter absorbs the anger of a sick customer who did exactly what the doctor told them.",
+       src:["dmsurvey"]}
     ],
     synth:"Getting acute medicine feels like a project you must manage while sick - the system hands the coordination work to the person least able to carry it."
   },
