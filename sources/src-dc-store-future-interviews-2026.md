@@ -8,7 +8,7 @@ published: "2026-02-06"
 retrieved: "2026-06-14"
 source_kind: company
 reliability: B
-tags: [domain/dischem, domain/consumer, domain/ux, journey/submit, journey/collect, journey/deliver, journey/dispense, journey/adhere, journey/refill, topic/last-mile, topic/adherence, topic/trust-safety, region/za]
+tags: [domain/dischem, domain/consumer, domain/ux, project/sotf, journey/submit, journey/collect, journey/deliver, journey/dispense, journey/adhere, journey/refill, topic/last-mile, topic/adherence, topic/trust-safety, region/za]
 ---
 
 # Summary

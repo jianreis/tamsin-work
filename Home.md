@@ -1,7 +1,7 @@
 ---
 type: index
 title: "Home — Map of Content"
-updated: "2026-06-14"
+updated: "2026-09-01"
 tags: [index]
 ---
 
@@ -13,6 +13,12 @@ The single navigable index for this ground-truth vault. **New here? Read
 > **Mission:** ground-truth corpus → research-backed **service blueprints** &
 > **customer journeys** for a future-state Rx experience at a South African
 > retail pharmacy (anchored on Dis-Chem).
+
+**Two programmes share this vault** (`CLAUDE.md §1`):
+- 🔭 **Future of Scripting (FoS)** — the future-state mission above.
+- 🏬 **Store of the Future (SOTF)** — live MVP, now evolving from customer
+  feedback → [[wiki/dischem/store-of-the-future-programme|SOTF programme hub]]
+  · deliverables in `deliverables/sotf/`.
 
 ---
 

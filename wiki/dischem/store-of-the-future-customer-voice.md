@@ -4,10 +4,10 @@ title: "Store of the Future — the customer voice (SOTF interview synthesis)"
 domain: dischem
 status: draft
 confidence: medium
-tags: [domain/dischem, domain/consumer, domain/ux, journey/submit, journey/collect, journey/deliver, journey/dispense, journey/adhere, journey/refill, topic/last-mile, topic/adherence, topic/trust-safety, region/za]
+tags: [domain/dischem, domain/consumer, domain/ux, project/sotf, journey/submit, journey/collect, journey/deliver, journey/dispense, journey/adhere, journey/refill, topic/last-mile, topic/adherence, topic/trust-safety, region/za]
 sources: [src-dc-store-future-interviews-2026]
 created: "2026-06-14"
-updated: "2026-06-17"
+updated: "2026-09-01"
 ---
 
 # Store of the Future — the customer voice (SOTF interview synthesis)
@@ -177,6 +177,7 @@ All from [[src-dc-store-future-interviews-2026]].
   re-entry point) consistently across stores?
 
 ## See also
+- [[wiki/dischem/store-of-the-future-programme]] (the SOTF programme hub)
 - [[src-dc-store-future-interviews-2026]] (the source)
 - [[wiki/dischem/dischem-rx-current-journey]] (as-is journey & pain points)
 - [[design-kit/journeys/as-is-prescription-journey]]

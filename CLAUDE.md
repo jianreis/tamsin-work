@@ -17,6 +17,20 @@ designer **and an agentic fleet** produce research-backed **service design
 blueprints** and **customer journey maps** for prescription submission,
 dispensing, collection, and delivery — practical but futuristic.
 
+**Two programmes share this vault** (since 2026-09-01):
+- **Future of Scripting (FoS)** — the original mission above: future-state,
+  not yet built.
+- **Store of the Future (SOTF)** — a broader Dis-Chem store-experience
+  programme whose MVP is **already live**; current work evolves live solutions
+  from customer feedback and early results. Hub page:
+  `wiki/dischem/store-of-the-future-programme.md`.
+
+The **knowledge layer** (`sources/`, `wiki/`) stays shared and domain-organised —
+both programmes cite the same evidence base. Programme-specific notes carry a
+`project/...` tag (see §5); genuinely shared pages stay untagged. The **project
+layer** separates: SOTF deliverables live in `deliverables/sotf/`, FoS
+deliverables stay where they are. SOTF commit messages: `vault: sotf — <what changed>`.
+
 **Primary user:** Tamsin (service designer, Bigly Labs / Dis-Chem).
 **Secondary users:** AI agents that read this vault to generate blueprints,
 journeys, concepts, and copy.
@@ -140,7 +154,9 @@ See `design-kit/_design-kit-index.md` for those schemas.
 `journey/collect` `journey/deliver` `journey/adhere` `journey/refill` ·
 `topic/chronic` `topic/acute` `topic/scheduling` `topic/e-prescription`
 `topic/adherence` `topic/telehealth` `topic/last-mile` `topic/accessibility`
-`topic/trust-safety` `topic/automation` `topic/ai` · `region/za` `region/global`
+`topic/trust-safety` `topic/automation` `topic/ai` · `region/za` `region/global` ·
+`project/sotf` `project/fos` (only on programme-specific notes; shared knowledge
+stays untagged)
 
 ---
 
