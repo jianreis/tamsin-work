@@ -1,7 +1,7 @@
 ---
 type: index
 title: "Sources — index"
-updated: "2026-06-14"
+updated: "2026-09-01"
 tags: [index, sources]
 ---
 
@@ -41,6 +41,14 @@ _Populated as sources are ingested. Group by domain; show reliability tier._
 - [[src-dc-social-media-research-2025]] (C) — social-media listening (1,270 coded comments, Dec 2025): 65% negative pharmacy sentiment, Patient Trust Journey, defection to local pharmacies.
 - [[src-dc-omnichannel-scripting-roadmap]] (B) — internal "Script Re-imagined" Virtual Order Operational Flow board; future-state scripting tech roadmap (ROWA picker robot, AI capture/route, BRIX auto-dispense, Dashboard E2E, VC/PICCUP delivery) — planned, not yet live.
 - [[src-vn-cape-point-11]] (B) — Jian × Tamsin voice note: the SHAPE of the future-state scripting deliverable (experience-definition journey map, aspirational ~5-yr, unconstrained by current tech; OCR + ROWA signed off). Authoritative brief for deliverable #05.
+
+#### Store of the Future programme documents (2026-09 intake, `project/sotf`)
+- [[src-sotf-ecosystem-playback-2025]] (A) — Better Health ecosystem strategy (Aug 2025): SA healthcare problem statement, flywheel, target segments (~50% under-served), five building blocks.
+- [[src-sotf-steerco1-concept-2025]] (A) — SteerCo #1 pack (6-7 Nov 2025): the "T", per-area design choices with rationales, category captainship strategy, workshop personas; customer-evidence basis thin (C for those claims).
+- [[src-sotf-steerco-decisions-2025]] (A) — SteerCo decision log (12 Nov 2025): decisions made vs outstanding per store area.
+- [[src-sotf-melrose-workshops-2026]] (A) — 3-day Melrose workshops (20-24 Feb 2026): MVP vs target state per asset, ticketing/decoupling/adherence centralisation, 10-min late rule, staffing 47, GTM.
+- [[src-sotf-melrose-store-design-2026]] (A) — TDC&Co 3D store design for Melrose Arch (19 Feb 2026): the T built out, Healthcare Hub ring, curved pharmacy counter, clinic/cover rooms.
+- [[src-sotf-training-launch-2026]] (A) — training pack as launched (May-Jul 2026): live journey spines, Qmatic/V-Sign/Vexall stack, queue rules, interim workarounds (A-tickets, grouped scripts), Irene as second site.
 
 ### SA regulatory
 - [[src-reg-medicines-act-101-1965]] (A) — Medicines & Related Substances Act 101 of 1965; §22A/22C/22F/22G.
