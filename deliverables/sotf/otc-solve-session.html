@@ -1,0 +1,413 @@
+<title>The OTC Solve</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#f7f6f2;
+    --panel:#ffffff;
+    --ink:#1c2420;
+    --ink-soft:#4c5a52;
+    --ink-faint:#7d8a82;
+    --line:#dcdfd8;
+    --green:#0a7a44;
+    --green-deep:#0b5c36;
+    --green-tint:#e7f2ea;
+    --gold:#e3b71e;
+    --gold-tint:#faf3d9;
+    --warn:#b4552a;
+    --warn-tint:#f8ece4;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --display:'Archivo','Arial Narrow',Arial,sans-serif;
+    --body:'IBM Plex Sans',system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#161b18;
+      --panel:#1e2521;
+      --ink:#e8ece9;
+      --ink-soft:#b2bdb6;
+      --ink-faint:#84908a;
+      --line:#37403a;
+      --green:#4cc084;
+      --green-deep:#7ad3a4;
+      --green-tint:#22352b;
+      --gold:#d9b53a;
+      --gold-tint:#37311c;
+      --warn:#e08a5e;
+      --warn-tint:#3a2a20;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#161b18;
+    --panel:#1e2521;
+    --ink:#e8ece9;
+    --ink-soft:#b2bdb6;
+    --ink-faint:#84908a;
+    --line:#37403a;
+    --green:#4cc084;
+    --green-deep:#7ad3a4;
+    --green-tint:#22352b;
+    --gold:#d9b53a;
+    --gold-tint:#37311c;
+    --warn:#e08a5e;
+    --warn-tint:#3a2a20;
+  }
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    background:var(--ground);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.6;
+    margin:0;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:48px 24px 96px}
+  header.masthead{border-bottom:3px solid var(--green);padding-bottom:28px;margin-bottom:40px}
+  .kicker{
+    font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--green);margin:0 0 10px;
+  }
+  h1{
+    font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);
+    line-height:1.02;letter-spacing:-.015em;margin:0 0 14px;text-wrap:balance;
+  }
+  .standfirst{font-size:18px;color:var(--ink-soft);max-width:64ch;margin:0}
+  .meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .chip{
+    font-family:var(--mono);font-size:12px;padding:4px 10px;border:1px solid var(--line);
+    border-radius:999px;color:var(--ink-soft);background:var(--panel);
+  }
+  .chip.time{border-color:var(--gold);color:var(--ink)}
+  section{margin:56px 0 0}
+  .part-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:22px}
+  .part-tag{
+    font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ground);background:var(--green);padding:3px 9px;border-radius:3px;white-space:nowrap;
+  }
+  h2{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.01em;margin:0;text-wrap:balance}
+  h3{font-family:var(--display);font-weight:700;font-size:18px;margin:28px 0 10px}
+  p{max-width:68ch}
+  .timebox{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--ink-faint);white-space:nowrap}
+
+  .thesis{
+    background:var(--panel);border-left:4px solid var(--gold);padding:18px 22px;
+    margin:22px 0;font-size:17px;
+  }
+  .thesis strong{font-family:var(--display)}
+
+  .intent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:16px 0}
+  .intent{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:16px 18px}
+  .intent .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:8px}
+  .intent b{font-family:var(--display);font-weight:700}
+  .intent p{font-size:14.5px;color:var(--ink-soft);margin:8px 0 0}
+
+  .friction-list{list-style:none;padding:0;margin:14px 0;display:grid;gap:10px}
+  .friction-list li{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:13px 16px;font-size:15px}
+  .friction-list .who{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:4px}
+
+  table{border-collapse:collapse;width:100%;font-size:14.5px}
+  .tblwrap{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+  th{
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+    text-align:left;color:var(--ink-faint);padding:11px 14px;border-bottom:2px solid var(--line);
+    background:var(--panel);white-space:nowrap;
+  }
+  td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.tick{font-family:var(--mono);white-space:nowrap}
+  .yes{color:var(--green);font-weight:600}
+  .no{color:var(--warn);font-weight:600}
+  .part{color:var(--ink-faint)}
+
+  .evi{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:16px 0}
+  .evi .col{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:16px 18px}
+  .evi .col h4{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 10px}
+  .evi .have h4{color:var(--green)}
+  .evi .indirect h4{color:var(--gold)}
+  .evi .col.get h4{color:var(--warn)}
+  .evi ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--ink-soft)}
+  .evi li{margin-bottom:8px}
+  .evi li:last-child{margin-bottom:0}
+
+  .guardrails{background:var(--green-tint);border:1px solid var(--line);border-radius:6px;padding:18px 22px;margin:16px 0}
+  .guardrails ul{margin:8px 0 0;padding-left:20px}
+  .guardrails li{margin-bottom:6px}
+
+  .option{background:var(--panel);border:1px solid var(--line);border-radius:8px;margin:18px 0;overflow:hidden}
+  .option .head{display:flex;align-items:center;gap:14px;padding:15px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .opt-letter{
+    font-family:var(--display);font-weight:800;font-size:22px;color:var(--ground);
+    background:var(--green);width:40px;height:40px;border-radius:6px;
+    display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+  }
+  .option.d .opt-letter{background:var(--warn)}
+  .opt-name{font-family:var(--display);font-weight:700;font-size:19px}
+  .opt-sub{font-size:13.5px;color:var(--ink-faint);width:100%;margin-left:54px;margin-top:-6px}
+  .ladder{margin-left:auto;display:flex;align-items:center;gap:5px;flex:0 0 auto}
+  .ladder .dot{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--ink-faint);background:transparent}
+  .ladder .dot.on{background:var(--gold);border-color:var(--gold)}
+  .ladder .lab{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);margin-left:4px;letter-spacing:.06em;text-transform:uppercase}
+  .option .body{padding:16px 20px;display:grid;grid-template-columns:1fr 1fr;gap:6px 28px}
+  @media(max-width:640px){.option .body{grid-template-columns:1fr}}
+  .option .cell{font-size:14.5px}
+  .option .cell .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:3px}
+  .option .cell p{margin:0;color:var(--ink-soft);max-width:none}
+  .option .cell.mech{grid-column:1 / -1}
+  .option .cell.mech p{color:var(--ink)}
+
+  .overlay-box{background:var(--gold-tint);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin:22px 0}
+  .overlay-box h3{margin-top:0}
+  .overlay-box ul{margin:8px 0 0;padding-left:20px}
+  .overlay-box li{margin-bottom:8px;max-width:75ch}
+
+  .ask{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 18px;margin:10px 0;font-size:15px}
+  .ask .owner{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:3px}
+
+  .callout{background:var(--warn-tint);border-left:4px solid var(--warn);padding:14px 18px;margin:18px 0;font-size:15px}
+  .footnote{margin-top:56px;border-top:1px solid var(--line);padding-top:16px;font-size:13px;color:var(--ink-faint)}
+  .footnote code{font-family:var(--mono);font-size:12px}
+  strong{font-weight:600}
+  em{font-style:italic}
+</style>
+
+<div class="wrap">
+<header class="masthead">
+  <p class="kicker">Store of the Future · internal working session</p>
+  <h1>The OTC Solve</h1>
+  <p class="standfirst">OTC medicine was folded into the script process: submit at one counter, wait, collect at another. Scripts earn that wait. OTC does not. Irene proved it within a week. Today we shape the options we take back to business.</p>
+  <div class="meta-row">
+    <span class="chip">Internal team only</span>
+    <span class="chip">Pre-seeded options, not blank-page ideation</span>
+    <span class="chip time">~90 min</span>
+  </div>
+</header>
+
+<!-- ==================== PART 1 ==================== -->
+<section id="part1">
+  <div class="part-head">
+    <span class="part-tag">Part 1</span>
+    <h2>The problem, played back simply</h2>
+    <span class="timebox">15 min</span>
+  </div>
+
+  <h3>The issue in one paragraph</h3>
+  <p>In SOTF stores, all medicine sits behind the wall. OTC follows the same decoupled process as scripts: the customer submits at the drop-off counter, the order goes through pick and pack, and the customer collects from the collections counter, in the same queue as scripts. In every other Dis-Chem, OTC is advise, reach, hand over: stock sits behind the counter within the pharmacist's reach, and the customer walks away with it in under a minute.</p>
+
+  <h3>What the original decisions were actually solving</h3>
+  <p>Any option we pick must be scored against these intents, because they are real problems and they came from our own principles work.</p>
+  <div class="intent-grid">
+    <div class="intent">
+      <span class="lbl">Stock behind the wall</span>
+      <b>"Never turn your back on the customer"</b>
+      <p>Kills the legacy pattern where a pharmacist abandons the customer at the counter for up to 5 minutes to hunt stock. Paired with "proximity without exposure": the work happens, but out of sight.</p>
+    </div>
+    <div class="intent">
+      <span class="lbl">Decoupling</span>
+      <b>"Fulfillment like a production line"</b>
+      <p>Turns dead queue time into roaming time, consolidates pick and pack, and keeps the counter for care, not fetching. For scripts, this demonstrably works.</p>
+    </div>
+    <div class="intent">
+      <span class="lbl">One flow for OTC + scripts</span>
+      <b>Space and resourcing</b>
+      <p>The SteerCo rationale: one counter, one process, less operational complexity, less floor given to the pharmacy.</p>
+    </div>
+  </div>
+
+  <div class="thesis">
+    <strong>The assumption that failed:</strong> decoupling creates value only when there is preparation worth waiting for. A script takes minutes to dispense, so the wait converts into roaming. OTC takes seconds, so the process adds a queue and a walk where the customer's benchmark, set in every other Dis-Chem, is <em>immediate</em>.
+  </div>
+
+  <h3>Who feels it</h3>
+  <ul class="friction-list">
+    <li><span class="who">Customer</span>Can't get OTC immediately; must join a second queue, behind scripts, for medicine they used to be handed on the spot. The shared queue also creates the <em>perception</em> that their small item will take as long as a full script.</li>
+    <li><span class="who">Employee</span>No reachable or visible stock. When a customer can't remember which product they bought, or the pharmacist wants to show two options side by side, there is nothing to point at or hand over.</li>
+    <li><span class="who">Business</span>Fears falling OTC sales: if the customer never sees the product, nothing triggers or reminds the purchase. OTC is high-frequency, high-margin volume.</li>
+  </ul>
+
+  <h3>The two-store natural experiment</h3>
+  <p><strong>Melrose Arch runs the unified flow without strain.</strong> Its traffic is script-led and scheme-heavy, the mission the process was designed around. <strong>Irene broke the process within a week.</strong> Its traffic is more OTC-led, advice-led and cash-paying. Staff built two workarounds: the pharmacist walks to the back and fetches (which reinstates exactly the turn-your-back behaviour the design bans), or a picker prioritises the OTC line and runs it to the pharmacist's counter for handover.</p>
+  <div class="callout"><strong>Why business should care beyond one store:</strong> the Dis-Chem estate looks far more like Irene than like Melrose Arch. If the unified flow only holds in high-LSM, script-dominant stores, Irene is not the exception. It is the preview of the network, and this needs solving before concept-to-scale.</div>
+  <p>One reframe worth saying out loud: the picker-runs-it-forward workaround is not vandalism, it is a prototype. Staff kept the pharmacist facing the customer, kept stock behind the wall, and collapsed the second queue. Frontline workarounds are unpriced user research.</p>
+</section>
+
+<!-- ==================== EVIDENCE ==================== -->
+<section id="evidence">
+  <div class="part-head">
+    <span class="part-tag">Part 1b</span>
+    <h2>What evidence do we actually have?</h2>
+    <span class="timebox">10 min</span>
+  </div>
+  <div class="evi">
+    <div class="col have">
+      <h4>We have (weak)</h4>
+      <ul>
+        <li>Anecdotal staff reports of customer frustration, second-hand, not primary source.</li>
+        <li><strong>The Irene workaround itself</strong>: observed behaviour, one week in, converging on one pattern. Treat it as evidence, not noise.</li>
+        <li>No meaningful process data from Irene, because the process being measured is no longer the process being run.</li>
+      </ul>
+    </div>
+    <div class="col indirect">
+      <h4>We have (indirect)</h4>
+      <ul>
+        <li>Jan 2026 SOTF study (n=12): "waiting is fine, being unsure isn't"; predictability beats speed. Limit: for OTC the anchor is <em>instant</em>, so even a predictable wait is a downgrade.</li>
+        <li>No OTC time-and-motion exists anywhere in our research base, for SOTF or legacy stores.</li>
+      </ul>
+    </div>
+    <div class="col get">
+      <h4>We can get, cheaply</h4>
+      <ul>
+        <li><strong>Unisolv mission mix per store</strong>: OTC-only vs script vs script+OTC transactions. The number that proves the store-archetype argument.</li>
+        <li><strong>Qmatic timestamps at Melrose</strong> (ticket → called → ready → collected) split by order type: what the clean process actually costs an OTC customer.</li>
+        <li>C4C complaints for both stores since opening.</li>
+        <li>One observer morning in a legacy store: a stopwatch and a tally sheet gives us the time-and-motion baseline. 40 observations beats zero.</li>
+        <li>Structured chats with Irene staff: what exactly they do, when, and why.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== GUARDRAILS ==================== -->
+<section id="guardrails">
+  <div class="part-head">
+    <span class="part-tag">Part 1c</span>
+    <h2>Guardrails for every option</h2>
+    <span class="timebox">5 min</span>
+  </div>
+  <div class="guardrails">
+    <p style="margin-top:0"><strong>Whatever we propose must preserve:</strong></p>
+    <ul>
+      <li><strong>Never turn your back on the customer.</strong> The 5-minute abandonment must not come back.</li>
+      <li><strong>The counter is for care, not admin</strong> (or fetching).</li>
+      <li><strong>The script flow stays untouched.</strong> Decoupling works for scripts; we are fixing OTC only.</li>
+      <li><strong>No return of the cage.</strong></li>
+      <li><strong>Cheap and reversible.</strong> Automated pickers (ROWA-class) dissolve this problem entirely by shooting any item to the front in seconds. This is a bridge for manual-picker stores, so no heavy capex the automated store makes redundant.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== PART 2 ==================== -->
+<section id="part2">
+  <div class="part-head">
+    <span class="part-tag">Part 2</span>
+    <h2>Four options, a ladder of walk-backs</h2>
+    <span class="timebox">40 min</span>
+  </div>
+  <p>Each rung walks back one more of the original decisions. Gold dots = how much of the original design each option unwinds. We pressure-test each against the intents in Part 1, then decide what evidence would confirm or kill it.</p>
+
+  <!-- Option A -->
+  <div class="option">
+    <div class="head">
+      <div class="opt-letter">A</div>
+      <div class="opt-name">The OTC express lane</div>
+      <div class="ladder" aria-label="walks back 1 of 4"><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="lab">walk-back</span></div>
+      <div class="opt-sub">Fix the queue, keep everything else</div>
+    </div>
+    <div class="body">
+      <div class="cell mech"><span class="lbl">Mechanism</span><p>A separate Qmatic ticket class for OTC with its own SLA (2-3 min) and picker prioritisation. OTC never queues behind scripts, and the collections screen shows the faster lane, which kills the "I'm stuck behind twenty scripts" perception.</p></div>
+      <div class="cell"><span class="lbl">Walks back</span><p>Only "same queue and SLA as scripts". Nothing physical changes.</p></div>
+      <div class="cell"><span class="lbl">Preserves</span><p>Every original intent, fully.</p></div>
+      <div class="cell"><span class="lbl">Trade-offs</span><p>Still two stops and a wait where legacy had none. Consumes picker capacity at peak. Does nothing for show-and-explain. Business will like this most; customers will like it least.</p></div>
+      <div class="cell"><span class="lbl">Evidence to validate</span><p>Qmatic timing at Melrose: can a 2-3 min SLA actually be met at peak with current picker headcount?</p></div>
+    </div>
+  </div>
+
+  <!-- Option B -->
+  <div class="option">
+    <div class="head">
+      <div class="opt-letter">B</div>
+      <div class="opt-name">Counter delivery (the Irene prototype, formalised)</div>
+      <div class="ladder" aria-label="walks back 2 of 4"><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="lab">walk-back</span></div>
+      <div class="opt-sub">One stop: the runner brings OTC to the pharmacist mid-conversation</div>
+    </div>
+    <div class="body">
+      <div class="cell mech"><span class="lbl">Mechanism</span><p>OTC is picked on priority and delivered <em>to the pharmacist's counter</em> while the pharmacist stays with the customer: advise → runner delivers → hand over → done. One stop, no second queue, the pharmacist never turns their back, stock stays behind the wall. We would be instrumenting and SLA-ing what Irene staff already invented, not inventing something new.</p></div>
+      <div class="cell"><span class="lbl">Walks back</span><p>Decoupling, for OTC only: collection collapses into submission.</p></div>
+      <div class="cell"><span class="lbl">Preserves</span><p>Never-turn-your-back, proximity-without-exposure, production-line fulfilment, script flow.</p></div>
+      <div class="cell"><span class="lbl">Trade-offs</span><p>Counter dwell time rises, so the submission queue slows: it trades throughput for interaction quality. Needs a runner role and a dashboard priority lane, plus a hard rule stopping scripts leaking into the fast path.</p></div>
+      <div class="cell"><span class="lbl">Evidence to validate</span><p>Irene staff interviews (how it actually runs); measure counter dwell and queue length with vs without; runner capacity model.</p></div>
+    </div>
+  </div>
+
+  <!-- Option C -->
+  <div class="option">
+    <div class="head">
+      <div class="opt-letter">C</div>
+      <div class="opt-name">The Pareto shelf</div>
+      <div class="ladder" aria-label="walks back 3 of 4"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="lab">walk-back</span></div>
+      <div class="opt-sub">A curated fast-mover range back within the pharmacist's reach</div>
+    </div>
+    <div class="body">
+      <div class="cell mech"><span class="lbl">Mechanism</span><p>The top ~50-100 fast-mover OTC SKUs (likely most of OTC volume; Unisolv can confirm) return to within arm's reach: under-counter drawers, or a visible-but-not-grabbable display behind the counter. Everything else stays behind the wall. Reaching is not fetching: the 5-minute abandonment this rule targeted does not apply to an arm's length.</p></div>
+      <div class="cell"><span class="lbl">Walks back</span><p>"All stock behind the wall", partially.</p></div>
+      <div class="cell"><span class="lbl">Preserves</span><p>No cage, no fetching walk, script flow untouched. Restores show-and-hand for the SKUs that matter.</p></div>
+      <div class="cell"><span class="lbl">Trade-offs</span><p>Planogram and space in a fixed fit-out; inventory split across two locations (pick accuracy, stock counts); the shrinkage argument returns; visibly softens a flagship design statement. Expect this to be the contentious one.</p></div>
+      <div class="cell"><span class="lbl">Evidence to validate</span><p>Unisolv SKU-level OTC volume curve: what % of OTC transactions do the top 100 SKUs cover?</p></div>
+    </div>
+  </div>
+
+  <!-- Option D -->
+  <div class="option d">
+    <div class="head">
+      <div class="opt-letter">D</div>
+      <div class="opt-name">Split the flows</div>
+      <div class="ladder" aria-label="walks back 4 of 4"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="lab">walk-back</span></div>
+      <div class="opt-sub">A distinct OTC / advice service point, separate from script submission</div>
+    </div>
+    <div class="body">
+      <div class="cell mech"><span class="lbl">Mechanism</span><p>A dedicated "pharmacy express" counter (it could live at the digital-wall end of the counter run) that serves OTC and advice as its own flow, effectively re-admitting that OTC and scripts are different products deserving different processes.</p></div>
+      <div class="cell"><span class="lbl">Walks back</span><p>The unified OTC + script decision itself.</p></div>
+      <div class="cell"><span class="lbl">Preserves</span><p>Decoupling for scripts, where it demonstrably works.</p></div>
+      <div class="cell"><span class="lbl">Trade-offs</span><p>Exactly the space-and-resourcing cost the unification decision was taken to avoid, plus wayfinding burden. The most direct challenge to a SteerCo decision, so it must be argued with volume data, not preference. Also the most honest fit for Irene-type stores.</p></div>
+      <div class="cell"><span class="lbl">Evidence to validate</span><p>Mission mix per store; peak-hour OTC arrival rates; staffing model for a second service point.</p></div>
+    </div>
+  </div>
+
+  <div class="overlay-box">
+    <h3>The overlay: show and explain, without stock</h3>
+    <p style="margin:0 0 4px">Attaches to A or B (and weakens the case for C). Solves the employee and business frictions digitally:</p>
+    <ul>
+      <li><strong>Pull forward the dispensary digital wall's "digital OTC shelves"</strong> — already a deferred SOTF work parcel (planned H2 2026). We are not proposing something new; we are pointing something already planned at this problem.</li>
+      <li><strong>Counter tablet or product cards</strong> for "show me the options" moments: pack shots, sizes, prices, side by side.</li>
+      <li><strong>Better Rewards purchase-history lookup</strong> for "I can't remember which one I bought": the pharmacist looks it up. Arguably better than squinting at a shelf, and it is an ecosystem selling point.</li>
+      <li><strong>Display-only dummy packs</strong> (empty boxes): the visual purchase trigger business wants, at zero shrinkage risk.</li>
+    </ul>
+  </div>
+
+  <div class="callout"><strong>Cross-cutting question for the room, not a fifth option:</strong> does the answer vary by store archetype? Melrose keeps the unified decoupled flow; Irene-type stores get B or D. Concept-to-scale already plans by store format, so a per-archetype answer is legitimate, not a fudge.</div>
+
+  <h3>Options at a glance</h3>
+  <div class="tblwrap"><table>
+    <thead><tr>
+      <th>Intent / cost</th><th>A · Express lane</th><th>B · Counter delivery</th><th>C · Pareto shelf</th><th>D · Split flows</th>
+    </tr></thead>
+    <tbody>
+      <tr><td>Never turn your back</td><td class="tick yes">holds</td><td class="tick yes">holds</td><td class="tick yes">holds (reach ≠ fetch)</td><td class="tick yes">holds</td></tr>
+      <tr><td>Stock stays behind wall</td><td class="tick yes">yes</td><td class="tick yes">yes</td><td class="tick no">partly</td><td class="tick part">design choice</td></tr>
+      <tr><td>One unified flow</td><td class="tick yes">yes</td><td class="tick part">bends</td><td class="tick yes">yes</td><td class="tick no">no</td></tr>
+      <tr><td>Customer gets OTC in one stop</td><td class="tick no">no</td><td class="tick yes">yes</td><td class="tick yes">yes</td><td class="tick yes">yes</td></tr>
+      <tr><td>Show &amp; explain solved</td><td class="tick part">via overlay</td><td class="tick part">via overlay</td><td class="tick yes">physically</td><td class="tick yes">physically</td></tr>
+      <tr><td>Cost / effort</td><td class="tick yes">low (queue config)</td><td class="tick yes">low (role + SOP)</td><td class="tick part">medium (fit-out)</td><td class="tick no">high (space + staff)</td></tr>
+      <tr><td>Reversible before automation</td><td class="tick yes">fully</td><td class="tick yes">fully</td><td class="tick part">mostly</td><td class="tick no">hardest</td></tr>
+      <tr><td>Political difficulty</td><td class="tick yes">low</td><td class="tick yes">low-med</td><td class="tick part">medium</td><td class="tick no">high</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ==================== PART 3 ==================== -->
+<section id="part3">
+  <div class="part-head">
+    <span class="part-tag">Part 3</span>
+    <h2>Validation plan &amp; how we decide</h2>
+    <span class="timebox">15 min</span>
+  </div>
+  <p>We present options back to business with trade-offs, not a single answer. Each option leaves this room with a named owner for the evidence that would confirm or kill it.</p>
+  <div class="ask"><span class="owner">Data pull · owner ___</span>Unisolv mission mix per store (OTC-only / script / script+OTC), plus the SKU-level OTC volume curve for the Pareto question.</div>
+  <div class="ask"><span class="owner">Data pull · owner ___</span>Qmatic timing extract at Melrose Arch by order type: ticket → called → ready → collected. What the clean process costs an OTC customer today.</div>
+  <div class="ask"><span class="owner">Field · owner ___</span>One observer morning in a legacy store: OTC service times, counter-abandonment counts, fetch durations. Our time-and-motion baseline.</div>
+  <div class="ask"><span class="owner">Field · owner ___</span>Irene staff interviews: walk the workaround step by step, when it triggers, who runs, what breaks.</div>
+  <div class="ask"><span class="owner">Data pull · owner ___</span>C4C complaints for both stores since opening, coded for OTC / queue mentions.</div>
+  <div class="ask"><span class="owner">Session output · owner ___</span>Options pack for business: problem playback, four options, trade-off table, per-option evidence status, recommended pilot (likely at Irene, since the behaviour is already live there).</div>
+</section>
+
+<p class="footnote">Grounding: Bigly dispenser principles board (<code>src-bigly-blueprint-board-style</code>) · SteerCo #1 pack &amp; decision log, Nov 2025 (<code>src-sotf-steerco1-concept-2025</code>, <code>src-sotf-steerco-decisions-2025</code>) · Melrose MVP workshops, Feb 2026 (<code>src-sotf-melrose-workshops-2026</code>) · launched-with training pack (<code>src-sotf-training-launch-2026</code>) · SOTF customer study, Jan 2026 (<code>src-dc-store-future-interviews-2026</code>). Staff-feedback evidence is anecdotal and labelled as such.</p>
+</div>
