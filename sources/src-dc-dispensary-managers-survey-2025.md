@@ -159,6 +159,17 @@ Recurring, in rough order of frequency:
 > slow computer systems all lengthen the process." *(the line the in-store
 > walkthrough board quotes)*
 
+> "There are miscommunications between the customer, the calling agent and
+> the agent that processes the order via Unisolv and we then need to manage
+> the customer's complaint as a 3rd party in the store without any evidence"
+
+> "sometimes we miss emails and there seams to be issues with he says - she
+> says problems with call centre"
+
+> "Because the system is constantly being improved/updated it leads to
+> several errors (missing orders, wrong site ect) before the system works
+> properly again."
+
 ## Used in
 
 - [[src-dc-instore-walkthrough-2026]] — quotes this survey; citation loop
