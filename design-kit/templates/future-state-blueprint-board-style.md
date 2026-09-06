@@ -6,7 +6,7 @@ tags: [design-kit, template, domain/ux, topic/automation]
 method_ref: "[[wiki/ux-service-design/journey-mapping-method]]"
 sources: [src-bigly-blueprint-board-style]
 created: "2026-06-14"
-updated: "2026-06-17"
+updated: "2026-09-06"
 ---
 
 # Future-State Blueprint Board — style & treatment reference
@@ -234,6 +234,38 @@ controlled funnel · The system prioritises the work · Proximity without exposu
 > updates → My medication is delivered → I manage my repeat medication → I renew
 > a prescription before it runs out → I add my mother's medication → I add a
 > dependent". Same component model; different `moments[]` payload.
+
+### 5.2 Additions to the customer principle set (post-board)
+
+Principles added after the 2026-02-22 board capture. They are part of the
+working customer set but are **not on the captured PDFs** - keep §5.1 as the
+record of what was observed. Each follows the §3.4 card anatomy (badge + bold
+title + italic from→to subhead + body + "Why this matters (ops)" note).
+
+**Taking it should be as easy as getting it** *(added 2026-09-06)*
+
+*From a bag of boxes and a folded leaflet to a regimen designed to be followed.*
+
+A correctly dispensed medicine that I can't take correctly still fails me.
+Roughly half of patients on long-term therapy don't take medicines as
+prescribed, and much of that gap is design: six separate boxes with clinical
+labels, instructions in a language I don't think in, and nobody checking what I
+understood. Pack my medicines by when I take them, write the label in words I
+use, confirm I understood before I leave, and notice when my refill pattern
+says I've stopped.
+
+**Why this matters (ops):** Adherence is where the chronic flywheel holds or
+breaks: a missed dose becomes a lapsed repeat, and a lapsed repeat becomes a
+lost chronic customer and a worse outcome. The strongest evidence favours
+exactly what a pharmacy can deliver - multi-dose blister packing (lawful under
+SA unit-dose rules, and the PackMyMeds pattern) plus teach-back counselling -
+and refill timing already provides the outreach signal.
+
+Grounds: [[wiki/dispensing-practice/adherence-packaging]] ·
+[[wiki/dispensing-practice/counselling-and-health-literacy]] ·
+[[design-kit/templates/future-state-principles]] #7. Pillar mapping: this is an
+expression of **U7 Adherence-as-design** (`deliverables/_shared/pillars.md`) -
+per the brief, do not fork a new pillar id for it.
 
 ---
 
