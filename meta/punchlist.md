@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Punchlist — open decisions"
-updated: "2026-08-16"
+updated: "2026-09-06"
 tags: [meta, punchlist]
 ---
 
@@ -37,6 +37,8 @@ may want to steer. Nothing here is blocking the build.
 | 16 | **Cross-supplier OTC screening** (2026-08-16, #11 session) | The household buys OTC through Dis-Chem (the multivitamins) that may be taken alongside programme medicine Dis-Chem never dispenses. The #11 design keeps the claim honest - the pharmacist checks what Dis-Chem dispenses plus what the household has shared (told-us cabinet records under the CarerConsent see-grant), and unassigned OTC is screened against every household member it could belong to - but the safety boundary for UNSHARED medicine is real: the check cannot cover what it cannot see. Also of record: OTC purchases carry no owner (a till slip has no owner) - the service never assigns one without being told. | Feasibility + clinical-governance read on told-us-record screening; decide whether the boundary needs customer-facing copy anywhere beyond the rail. |
 | 17 | **#12 Thabo WhatsApp channel-mock basis** (2026-08-07, P1 pass) | The Thabo acute WhatsApp mock ([[thabo-whatsapp-flow]] / deliverable #12) inherits item 11 wholesale: (a) the **Meta platform feature inventory** stays unsourced (reply buttons max 3; template rules for the check-in and status messages); (b) **all rand amounts are illustrative** (branded vs generic antibiotic totals, add-on prices, the P5 clinic-booking price) - not sourced SEP maths. It also leans on the item 10 acute assumptions where the thread shows them: 10(f) the 15-minute snap-to-price reply, 10(c) the symptom add-on attach, 10(g) hold-at-counter with price lock, 10(i) ID fallback at the express counter. Nothing new and unsourced was introduced in the P1 pass. | Same as 11: ingest the Meta docs; upgrade amounts if the mock graduates beyond concept. |
 
+
+| 18 | **#11/#12 drift against the 2026-09-06 passes** (#09 v3.10 + the #10 script-origin reframe) | Deliverable #11 dramatises the #09 cash journey as of v3.8/3.9; #12 mirrors #10's pre-reframe copy. Known drift, confirmed against both specs: #11 W3 says the mother's parcel is "collected monthly" (true cadence: every 2-3 months, six-month supplies from April 2026 [[src-con-ccmdd-supply-cycle]]); W3-W21 carry no Thandi (she now joins the standing order with owner-named discreet rendering and the extra-pack date move); M1/M2, C1, H1/H2, T1/T4 and the running totals all pre-date the household order; the timeline's "her programme parcel Tue 18 Aug" implies a monthly parcel; #11 is also still PIN-first against #09 v3.9's QR-first convention. #12: "clinic" wording throughout Thabo's track (invite context, A1-A4 mirrors, any "clinic gate" copy) needs the local-doctor reframe. Re-sync agreed with Tamsin as the next session ("once the journey changes are made, we can move onto the WhatsApp flow"). | Run the #11 re-sync (Thandi, cadence, QR-first, totals), then sweep #12 for the doctor reframe. |
 
 ## Questions I'd genuinely like answered later
 - Who are the **priority customer segments** for the future-state pilot

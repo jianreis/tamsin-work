@@ -5,9 +5,9 @@ domain: medical-schemes
 status: draft
 confidence: medium
 tags: [domain/schemes, domain/consumer, journey/pay, region/za, topic/accessibility]
-sources: [src-sch-coverage-two-economy, src-sch-sep-dispensing-fee, src-sch-cash-health-insurance, src-sch-ccmdd-public, src-sch-pharmacy-direct]
+sources: [src-sch-coverage-two-economy, src-sch-sep-dispensing-fee, src-sch-cash-health-insurance, src-sch-ccmdd-public, src-sch-pharmacy-direct, src-con-private-gp-uninsured, src-con-compcom-phc-clinics]
 created: "2026-06-13"
-updated: "2026-06-17"
+updated: "2026-09-06"
 ---
 
 # Cash / uninsured pathway
@@ -35,6 +35,19 @@ So the cash price is **predictable and computable** (SEP + the lawful
 dispensing fee) and is the **same medicine the insured get**, just self-funded.
 Annual SEP increases are capped (**SEPA 1.47% for 2026**, down from 5.25% in
 2025) [[src-sch-sep-dispensing-fee]].
+
+## Where the cash script comes from
+
+The acute cash script's typical origin is the **local private GP**, not the
+public clinic: a public clinic is free at the point of care and dispenses on
+site, while up to ~28% of the population uses private primary care, including
+low-income uninsured patients paying a **mean cash consult fee of ~R311**
+(private GP clinic consults range ~R300-R750) [[src-con-private-gp-uninsured]],
+[[src-con-compcom-phc-clinics]]. Where the GP holds a §22C dispensing licence
+the fee often includes the medicine itself; the paper script travels to retail
+when the doctor doesn't dispense or the patient wants generic and price choice
+[[src-con-private-gp-uninsured]]. The consult fee therefore sits on top of the
+script price in the customer's real out-of-pocket arithmetic.
 
 ## Bridging products (not schemes)
 

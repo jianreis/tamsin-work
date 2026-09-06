@@ -48,7 +48,7 @@ one man, but the basket behind him is a family.
   neutral message wording matter inside a household as much as outside it
   [[wiki/consumer-context/language-literacy-and-trust]].
 - **Two children, 14 and 12** - generally healthy; their needs are acute and
-  unpredictable (a script after a clinic visit, cough syrup, a school-sores
+  unpredictable (a script after a doctor's visit, cough syrup, a school-sores
   ointment).
 - His **nephew Lwazi (17) lives with them** - extended family under one roof.
   Lwazi is not on chronic medicine, but when he needs anything, Sipho is the one

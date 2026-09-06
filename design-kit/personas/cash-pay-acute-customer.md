@@ -11,7 +11,7 @@ grounded_in:
   - "[[wiki/consumer-context/health-seeking-behaviour]]"
   - "[[wiki/consumer-context/language-literacy-and-trust]]"
 created: "2026-06-13"
-updated: "2026-06-17"
+updated: "2026-09-06"
 ---
 
 # Thabo Mokoena — cash-pay acute customer
@@ -31,8 +31,11 @@ updated: "2026-06-17"
   [[wiki/consumer-context/language-literacy-and-trust]].
 
 ## Health situation
-- **Acute, episodic** need: his child has a chest infection; a clinic GP issued a
-  paper script for **antibiotics + paediatric syrup**. One-off, time-sensitive,
+- **Acute, episodic** need: his child has a chest infection; a **local private
+  GP** (cash consult - the first stop for a meaningful share of uninsured
+  South Africans, mean fee ~R311 [[src-con-private-gp-uninsured]]) issued a
+  paper script for **antibiotics + paediatric syrup**. The doctor doesn't
+  dispense, so the script travels to retail. One-off, time-sensitive,
   emotionally charged ("my child is sick").
 - Otherwise healthy; he is not a chronic/repeat patient. His job-to-be-done is
   **get this filled fast and start treatment**.
@@ -80,7 +83,7 @@ See [[jtbd-library]]. His dominant jobs:
   sick child [[wiki/consumer-context/health-seeking-behaviour]].
 
 ## Behaviours & quote
-He snaps the script on WhatsApp from the clinic gate, asks "how much?", and
+He snaps the script on WhatsApp from the doctor's gate, asks "how much?", and
 decides on the spot. If the answer is slow, opaque, or needs an app, he walks to
 the nearest store or a spaza for what he can afford.
 
