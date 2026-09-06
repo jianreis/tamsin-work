@@ -242,27 +242,34 @@ working customer set but are **not on the captured PDFs** - keep §5.1 as the
 record of what was observed. Each follows the §3.4 card anatomy (badge + bold
 title + italic from→to subhead + body + "Why this matters (ops)" note).
 
-**Taking it should be as easy as getting it** *(added 2026-09-06)*
+**Adherence by design** *(added 2026-09-06)*
 
-*From a bag of boxes and a folded leaflet to a regimen designed to be followed.*
+*From handover-and-hope to a regimen designed to be followed.*
 
-A correctly dispensed medicine that I can't take correctly still fails me.
-Roughly half of patients on long-term therapy don't take medicines as
-prescribed, and much of that gap is design: six separate boxes with clinical
-labels, instructions in a language I don't think in, and nobody checking what I
-understood. Pack my medicines by when I take them, write the label in words I
-use, confirm I understood before I leave, and notice when my refill pattern
-says I've stopped.
+The whole journey exists so the medicine is actually taken: a perfectly smooth
+dispense that ends in an abandoned blister pack is still a failure. Roughly
+half of chronic medicines aren't taken as prescribed, mostly for reasons the
+service can design away - friction (running out before the repeat is sorted),
+cost (rationing against a co-pay), stigma (being seen collecting), and
+comprehension (instructions in a language I don't think in, with nobody
+checking what I understood). So pack my medicines by when I take them, label
+them in words I use, confirm I understood before I leave, protect my privacy,
+and notice when my refill pattern says I've stopped.
 
-**Why this matters (ops):** Adherence is where the chronic flywheel holds or
-breaks: a missed dose becomes a lapsed repeat, and a lapsed repeat becomes a
-lost chronic customer and a worse outcome. The strongest evidence favours
-exactly what a pharmacy can deliver - multi-dose blister packing (lawful under
-SA unit-dose rules, and the PackMyMeds pattern) plus teach-back counselling -
-and refill timing already provides the outreach signal.
+**Why this matters (ops):** Experience is the delta between a medicine's
+efficacy and its real-world effectiveness ([[src-consult-frog-pharma-experience]]):
+the system wins the science and loses the follow-through, and the pharmacy is
+the last player positioned to close that gap. It is also where the chronic
+flywheel holds or breaks - a missed dose becomes a lapsed repeat, and a lapsed
+repeat becomes a lost chronic customer and a worse outcome. The strongest
+evidence favours exactly what a pharmacy can deliver: multi-dose blister
+packing (lawful under SA unit-dose rules, the PackMyMeds pattern) plus
+teach-back counselling, with refill timing as the outreach signal.
 
-Grounds: [[wiki/dispensing-practice/adherence-packaging]] ·
+Grounds: [[wiki/concepts/medication-adherence]] ·
+[[wiki/dispensing-practice/adherence-packaging]] ·
 [[wiki/dispensing-practice/counselling-and-health-literacy]] ·
+[[src-consult-frog-pharma-experience]] (conceptual frame; reliability C) ·
 [[design-kit/templates/future-state-principles]] #7. Pillar mapping: this is an
 expression of **U7 Adherence-as-design** (`deliverables/_shared/pillars.md`) -
 per the brief, do not fork a new pillar id for it.
