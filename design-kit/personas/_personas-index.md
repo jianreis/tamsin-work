@@ -31,7 +31,8 @@ to-be journeys and blueprints (see [[CLAUDE]] §8).
    and dose-packed medicine; possibly an assisted/shared device.
 5. **[[design-kit/personas/low-data-whatsapp-first-peri-urban|Sipho Ndlovu — low-data, peri-urban, WhatsApp-first]]** -
    cheap Android / feature phone, intermittent signal, no street address, relies on
-   collection points; affordability-driven.
+   collection points; affordability-driven; the medicine runner for a household of
+   six (wife's contraceptive, two kids, a live-in nephew, his mother's parcel).
 6. **[[design-kit/personas/time-poor-urban-professional|Aisha Patel — time-poor urban professional]]** -
    insured city professional benchmarking against Sixty60/Takealot/Uber; wants
    speed, delivery, transparency, minimal friction.
@@ -50,7 +51,7 @@ to-be journeys and blueprints (see [[CLAUDE]] §8).
 | 2 | Thabo — cash-pay acute | Uninsured | Get an acute script filled fast at a clear cash price | WhatsApp + nearest collect |
 | 3 | Lerato — caregiver / proxy | Mixed (cash + scheme) | Manage care for dependents without friction | App/WhatsApp multi-profile + collect |
 | 4 | Trudie — elderly poly-pharmacy | Insured | Take it correctly; meds dose-packed and explained | In-store / phone / assisted |
-| 5 | Sipho — low-data peri-urban | Uninsured | Submit & collect with whatever I have, near home | WhatsApp / USSD / SMS + locker PIN |
+| 5 | Sipho — low-data peri-urban | Uninsured | Submit & collect for the whole household with whatever I have, near home | WhatsApp / USSD / SMS + locker PIN |
 | 6 | Aisha — time-poor professional | Insured | Get it filled fast, delivered, transparent, low-friction | App / WhatsApp + door delivery |
 | 7 | Mandla — public→retail bridge | Uninsured (CCMDD) | Reliable, discreet, affordable chronic collection near home | SMS/WhatsApp + locker PIN |
 | 8 | Naledi — frontline pharmacist | Staff | Protect safety; spend scarce time on clinical judgement | Dispensary system (frontstage + backstage) |

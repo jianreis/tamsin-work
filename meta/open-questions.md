@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Open questions — unresolved & contradictory facts"
-updated: "2026-06-14"
+updated: "2026-09-06"
 tags: [meta]
 ---
 
@@ -29,6 +29,8 @@ and update the relevant wiki page + this list.
 
 | Status | Question / claim | Where it appears | Notes |
 |---|---|---|---|
+| open | KZN isiZulu home-language share (81.8%, Census 2022 provincial profile) confirmed only via secondary reporting - statssa.gov.za blocked automated fetch 2026-09-06 | [[src-con-languages-census2022]], [[language-literacy-and-trust]], [[low-data-whatsapp-first-peri-urban]] | Verify against the Stats SA KZN provincial profile PDF (Report 03-01-74). |
+| open | SA household composition stats (share of extended/multigenerational households, esp. low-income/KZN) to ground Sipho's live-in-nephew household | [[low-data-whatsapp-first-peri-urban]] | Stats SA GHS is the likely A-tier source; persona currently states the household as archetype fact without a prevalence claim. |
 | open | CMS 2024/25 exact figures (beneficiaries, 16/55 split, ages) need confirming vs primary PDF | [[cms-medical-schemes-overview]], [[src-sch-cms-industry-report-2024]] | CMS site + PMG PDF returned HTTP 403 to automated fetch 2026-06-13; figures from CMS-sourced search extracts. |
 | open | Coverage discrepancy: "9.5m / 17.4%" vs "9.17m / 15.8%" insured | [[cms-medical-schemes-overview]], [[src-sch-coverage-two-economy]] | Different bases (CMS registered beneficiaries vs Stats SA GHS self-report) and years. Use CMS for absolute, GHS for %, state year. |
 | open | Current exact CDL 26-condition list + any 2025/26 PMB review changes | [[pmb-cdl-chronic]] | Confirm against CMS Gazette / treatment algorithms. |

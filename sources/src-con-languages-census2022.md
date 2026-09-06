@@ -29,6 +29,18 @@ Note: SA now has **12 official languages** (South African Sign Language added in
   interfaces — a literacy/comprehension gap for health information.
 - isiZulu has been the most-spoken home language continuously 1996–2022.
 
+### Addendum 2026-09-06 — provincial concentration (KwaZulu-Natal)
+
+From the same census, Stats SA's Census 2022 provincial profile for KwaZulu-Natal
+(<https://www.statssa.gov.za/publications/Report-03-01-74/Report-03-01-742022.pdf>):
+
+- **isiZulu is the home language of 81.8% of KwaZulu-Natal's population** — four
+  in five residents.
+- KZN is home to ~65.7% of all isiZulu speakers nationally.
+- Note: statssa.gov.za blocked direct fetch at capture time; figures confirmed via
+  secondary reporting of the provincial profile (retrieved 2026-09-06). Verify
+  against the PDF when network access allows.
+
 ## Verbatim excerpts
 
 > "24,4% of households speak isiZulu, which remained the most spoken language
@@ -39,3 +51,4 @@ Note: SA now has **12 official languages** (South African Sign Language added in
 
 ## Used in
 - [[wiki/consumer-context/language-literacy-and-trust]]
+- [[design-kit/personas/low-data-whatsapp-first-peri-urban]]

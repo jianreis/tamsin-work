@@ -7,7 +7,7 @@ confidence: medium
 tags: [domain/consumer, region/za, topic/trust-safety, topic/accessibility, topic/adherence]
 sources: [src-con-languages-census2022, src-con-health-seeking-traditional, src-con-adherence-stigma]
 created: "2026-06-13"
-updated: "2026-06-17"
+updated: "2026-09-06"
 ---
 
 # Language, health literacy, trust & stigma
@@ -32,6 +32,13 @@ language of apps, packaging, and dosage instructions, is a home language for onl
 ~8.7%** [[src-con-languages-census2022]]. Most people navigate health information in
 a **second or third language**, raising the cost of misunderstanding for something
 as consequential as medicine instructions.
+
+The national picture hides sharp **provincial concentration**: in KwaZulu-Natal,
+**isiZulu is the home language of 81.8% of the population** (Census 2022 provincial
+profile), and the province holds ~65.7% of all isiZulu speakers
+[[src-con-languages-census2022]]. For a KZN store or catchment, isiZulu-first
+communication is not one option among eleven - it is the default that fits four in
+five customers.
 
 ## Health literacy
 
