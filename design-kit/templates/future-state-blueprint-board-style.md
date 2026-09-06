@@ -246,25 +246,20 @@ title + italic from→to subhead + body + "Why this matters (ops)" note).
 
 *From handover-and-hope to a regimen designed to be followed.*
 
-The whole journey exists so the medicine is actually taken: a perfectly smooth
-dispense that ends in an abandoned blister pack is still a failure. Roughly
-half of chronic medicines aren't taken as prescribed, mostly for reasons the
-service can design away - friction (running out before the repeat is sorted),
-cost (rationing against a co-pay), stigma (being seen collecting), and
-comprehension (instructions in a language I don't think in, with nobody
-checking what I understood). So pack my medicines by when I take them, label
-them in words I use, confirm I understood before I leave, protect my privacy,
-and notice when my refill pattern says I've stopped.
+The medicine only works if I take it. A smooth collection that ends in an
+abandoned blister pack has still failed me.
 
-**Why this matters (ops):** Experience is the delta between a medicine's
-efficacy and its real-world effectiveness ([[src-consult-frog-pharma-experience]]):
-the system wins the science and loses the follow-through, and the pharmacy is
-the last player positioned to close that gap. It is also where the chronic
-flywheel holds or breaks - a missed dose becomes a lapsed repeat, and a lapsed
-repeat becomes a lost chronic customer and a worse outcome. The strongest
-evidence favours exactly what a pharmacy can deliver: multi-dose blister
-packing (lawful under SA unit-dose rules, the PackMyMeds pattern) plus
-teach-back counselling, with refill timing as the outreach signal.
+**Why this matters (ops):** Roughly half of chronic medicines aren't taken as
+prescribed, mostly for designable reasons: friction, cost, stigma and
+comprehension ([[wiki/concepts/medication-adherence]]). Experience is the delta
+between a medicine's efficacy and its real-world effectiveness
+([[src-consult-frog-pharma-experience]]), and the pharmacy is the last player
+positioned to close that gap - and the point where the chronic flywheel holds
+or breaks, since a missed dose becomes a lapsed repeat and a lapsed repeat a
+lost chronic customer. The proven, pharmacy-deliverable levers: multi-dose
+blister packing (lawful under SA unit-dose rules, the PackMyMeds pattern),
+teach-back counselling, in-language labels, discreet handover, and refill
+timing as the outreach signal.
 
 Grounds: [[wiki/concepts/medication-adherence]] ·
 [[wiki/dispensing-practice/adherence-packaging]] ·
