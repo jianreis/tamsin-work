@@ -247,7 +247,11 @@ title + italic from→to subhead + body + "Why this matters (ops)" note).
 *From handover-and-hope to a regimen designed to be followed.*
 
 The medicine only works if I take it. A smooth collection that ends in an
-abandoned blister pack has still failed me.
+abandoned blister pack has still failed me, so set me up to follow the
+treatment, not just to receive it. Pack my medicines by when I take them, in a
+label written in words I use. Check that I understood before I leave, and give
+me a discreet, human nudge when my refills say I've stopped. Following the
+regimen should be as little work as collecting it.
 
 **Why this matters (ops):** Roughly half of chronic medicines aren't taken as
 prescribed, mostly for designable reasons: friction, cost, stigma and
