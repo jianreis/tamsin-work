@@ -42,7 +42,7 @@ updated: "2026-09-06"
 Sipho is the household's medicine runner: the person the pharmacy actually sees is
 one man, but the basket behind him is a family.
 
-- **Married** to **Zanele (41)**, who is on a **repeat oral contraceptive**. Sipho
+- **Married** to **Thandi (41)**, who is on a **repeat oral contraceptive**. Sipho
   usually collects it together with his own tablets - one trip, one queue. It is
   routine to him, but it is still her private medicine: neutral packaging and
   neutral message wording matter inside a household as much as outside it
@@ -105,7 +105,7 @@ See [[jtbd-library]]. His dominant jobs:
   and a missing address must not be a barrier.
 - **Know it's handled** - a simple, low-data confirmation that it's ready and what
   it costs.
-- **Sort the household in one trip** - his own tablets, Zanele's repeat, whatever
+- **Sort the household in one trip** - his own tablets, Thandi's repeat, whatever
   the kids or Lwazi need this week: one thread, one collection point, one queue.
 - Emotional: **be treated with dignity**, not as a second-class, can't-pay case.
 
@@ -121,7 +121,7 @@ See [[jtbd-library]]. His dominant jobs:
 - **No price certainty before he commits**, and a cash path treated as an error
   state [[wiki/medical-schemes/cash-uninsured-pathway]].
 - **One-patient-one-account flows can't see his household** - collecting for
-  Zanele, the kids, Lwazi and Grace means separate profiles, separate proofs,
+  Thandi, the kids, Lwazi and Grace means separate profiles, separate proofs,
   separate trips; the multi-profile pain the caregiver research surfaces hits him
   in cash form [[wiki/consumer-context/voice-of-customer-script-journey]].
 
@@ -157,7 +157,7 @@ the clinic queue.
   family's dates and one PIN collect the bundled parcels (the "both dates, one
   thread" mechanic in [[to-be-household-repeat-moments]]), with proxy collection
   that doesn't demand the patient in person - while keeping each member's medicine
-  private by default, including from each other: Zanele's contraceptive is hers,
+  private by default, including from each other: Thandi's contraceptive is hers,
   named in no shared notification
   [[wiki/consumer-context/language-literacy-and-trust]].
 
