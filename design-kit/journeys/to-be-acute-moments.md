@@ -7,9 +7,9 @@ persona: "[[design-kit/personas/time-poor-urban-professional|Aisha Patel]] (insu
 status: draft
 confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, journey/submit, journey/validate, journey/dispense, journey/pay, journey/collect, journey/deliver, journey/adhere, topic/acute, topic/e-prescription, region/za]
-sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026, src-dc-script-journey-interviews-2025]
+sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026, src-dc-script-journey-interviews-2025, src-dc-instore-walkthrough-2026, src-dc-e2e-script-journey-friction-summary, src-dc-dispensary-services, src-dc-dispensary-managers-survey-2025]
 created: "2026-07-26"
-updated: "2026-08-17"
+updated: "2026-08-21"
 ---
 
 # To-be journey - the acute script, in moments
@@ -294,6 +294,48 @@ card, anchored on [[wiki/dispensing-practice/error-prevention-and-safety]]
 (illegible/ambiguous prescriptions as a named error root cause). Cards with
 customer quotes remain the default; the exception is never a licence to
 infer.
+
+## Current-friction summary panel (agreed 2026-08-19)
+
+A static panel between the spine and the phases: the journey-wide major
+friction themes of the as-is acute experience, consolidated from the
+research. Mirrors #09's v3.10 panel (same structure and rendering); renders
+once, not per economy. Each theme carries a **lane tag** - in-store /
+digital / both - because the acute frictions split by channel (Tamsin's
+framing, 2026-08-19). Provenance: drafted from Tamsin's 2026-08-19
+walkthrough of the physical and digital acute pains, sense-checked and
+extended against the research in the same session; the turnaround claim was
+corrected in-session from "up to 1.5 days" to the published service promise
+(doorstep delivery within 24 hours, collection in ~2) versus the lived
+reports of orders not ready.
+
+| # | Theme (lane) | Grounded in |
+|---|---|---|
+| 1 | **The paper script is a single point of failure** (both) *(split out 2026-09-03, Tamsin's feedback: the panel was mixing two pains)* - nearly everyone leaves the doctor with paper, and that page is the only key to the medicine: lose it, damage it, and it's back to the doctor for a rewrite. Even after it's handed in it can go missing - and the patient is the one carrying proof between doctor, pharmacy and counter. | script-journey IDIs (paper everywhere; nearly all handwritten) · collections/deliveries IDIs (scripts resent by doctors; "patients acting as proof-holders between systems") · dispensary-managers survey ("New scripts get lost when handed in"). |
+| 1b | **Sent ahead - with no proof it arrived** (digital) *(the other half of the split)* - when the doctor emails the script, or the customer sends it ahead, there is no confirmation it landed or was loaded; the only ways to find out are phoning or arriving at the counter, and the double trip is the price of guessing wrong. The doctor-to-pharmacy hand-off has no receipt. | script-journey IDIs (the single strongest unmet need: "customers can't tell if Dis-Chem received it… no confirmation system") · e2e friction synthesis (stages 1-2) · collections/deliveries IDIs (no single confirmation loop). |
+| 2 | **The unclear script stalls behind the counter** (in-store) - an ambiguous or illegible script can't legally be dispensed until the pharmacist reaches the prescriber; the sick customer waits on a call between professionals. | dispensing-practice safety literature (documented exception - no customer-voice record) · e2e friction synthesis (stage 3 ops lane). |
+| 3 | **Queues and visible manual toil, while you're ill** (in-store) - long queues worsened by peak understaffing; processing feels opaque (activity visible, cause invisible); sign-off delays with no explanation; month-end waits of 25-30 minutes felt acutely "when you're not feeling well"; profile/ID lookup friction on arrival. | in-store walkthrough · script-journey IDIs · sentiment (wait time ~89% negative). |
+| 4 | **You only find out the price at the end** (both) *(retitled 2026-09-06, was "The price is a mystery until you're committed")* - in-store the cost appears only after the travel and the queue, forcing a counter decision (including discovering the scheme won't pay); digitally the price arrives by SMS after the order; identical scheduled medicine reads as differently priced store to store. Honest tension, carried in the spec not the panel: the insured in-store IDI sample found co-pays small and fair - the shock concentrates in digital/scheme-exception segments. | complaints (cluster E) · in-store walkthrough (co-payments card) · e2e friction synthesis (stages 1, 3, 8). |
+| 5 | **No trust the order will come out right** (both) - the published promise is doorstep delivery within 24 hours or collection in about two; the lived reports are of orders not ready even the next day, arriving incomplete or incorrect, mistakes found at home past the point of easy return, and errors read as safety threats. | dispensary-services page (the published promise, verbatim) · in-store + repeat-reminder walkthroughs (packages not ready · incorrect items) · complaints (cluster C) · sentiment. |
+| 6 | **Inconsistent channels, and a broken digital fallback** (digital) - the experience differs by where you submit; confirmation and status messages differ or never come; where a digital route exists it fails at the basics (logins, uploads), sending people back to the queue. | e2e friction synthesis (stages 1-2) · complaints ("Dis-Chem App is dysfunctional") · sentiment (digital breakdowns as hard blockers). |
+| 7 | **Waiting blind, doubting the promise** (both) *(rewritten 2026-09-03 from "When something breaks, there's no way through" on Tamsin's feedback - she couldn't see the distinct friction in the old bundle; her points 8 and 9 merged here: no expectation-setting after submission, opaque status, and SLA-weariness)* - once the script is in, the customer has no idea when it will be picked up, processed, or delivered; statuses either don't come or blur together. An SLA exists on paper, but years of things not going right teach customers not to believe it. And when something does go wrong - stock, a claim, an unreadable script - they find out last: the problem surfaces only when they chase it, into phones nobody answers. And the one genuinely fast lane - the ~60-minute delivery service - carries front-shop products, not scripts: for medicine, the sick person waits on the standard promise. *(The 60-minute scope fact was dropped in the first rewrite and restored on Tamsin's instruction, 2026-09-03.)* | dispensary-services (the published SLA) · SOTF (over-precise promises distrusted; "waiting is fine - being unsure isn't") · collections/deliveries IDIs (status-blur; windows vary by store) · complaints (cluster B: "out for delivery… did not receive it") · sentiment ("called 4 different dispensaries… nobody is picking up"). |
+| 8 | **The schedule rules land on the customer** (digital) *(added 2026-08-21, agreed - staff-survey sweep)* - doctors email Schedule 5 and 6 scripts to the patient instead of the pharmacy, and a copy can't lawfully be dispensed, so the counter must refuse and ask for the original. Enforcement differs pharmacy to pharmacy ("stores approach this differently"), so the rule reads as this store being difficult - and the refusing counter absorbs the anger of a sick customer who did exactly what the doctor told them. | dispensary-managers survey (S5/S6 copies the recurring digital-intake pain; inconsistent enforcement named by staff). |
+
+Provenance addendum (2026-08-21): theme 8 comes from the sweep against
+[[src-dc-dispensary-managers-survey-2025]] (staff view, n=102), agreed with
+Tamsin. Staff-survey claims about customer feeling are staff perception -
+the survey note carries the caveat.
+
+Synthesis line (agreed with Tamsin, 2026-09-06, replacing the earlier
+project-you-must-manage line - brought back to the effort and uncertainty of
+getting a script filled): **"Getting a script filled is effort spent on an
+uncertain outcome - you do the work, and you still can't be sure it will be
+right, ready, or there."**
+
+Theme-title note (2026-09-06): theme 4's title simplified on Tamsin's
+request from "The price is a mystery until you're committed" to **"You only
+find out the price at the end"** - plain register, true for both lanes;
+description unchanged.
 
 ## Concept-set changes made for this journey (done, 2026-07-26)
 

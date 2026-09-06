@@ -196,3 +196,12 @@ qualitative**, skewed off-peak and toward in-store regulars, so it gives
 
 ## Used in
 - [[wiki/consumer-context/voice-of-customer-script-journey]]
+
+## Addendum (2026-08-20): raw transcripts supplied
+Nine of the ten interview transcripts behind this report were supplied by
+Tamsin and archived under `sources/transcripts/` — catalogued, with
+per-participant profiles and standout verbatims, in
+[[src-dc-script-journey-transcripts-2025]]. Two are incomplete (Rekha:
+pre-interview admin only; Tshediso: cut at ~13 min, rescheduled) and the
+tenth is outstanding. Use the transcripts for verbatim mining and persona
+grounding; this report note remains the citable synthesis.

@@ -41,7 +41,15 @@ reliability B (mechanics) but treat as vendor framing.
 > "You can now order your chronic medication on WhatsApp! 1.) Save 0860 347 243
 > as a contact on your phone. 2.) WhatsApp the word 'Hi' to this new number…"
 
+# Addendum (2026-08-19, stakeholder confirmation - Tamsin)
+The **monthly PackMyMeds submission form carries a field asking the customer
+to confirm whether they want generics or not** - re-asked each month rather
+than remembered as a standing preference. Confirmed by Tamsin from the form
+itself; grounds the "generic preferences" item in the #09 friction panel's
+"High, repetitive effort" theme.
+
 # Used in
 - [[wiki/dischem/dischem-dispensary-services]]
 - [[wiki/dischem/dischem-rx-current-journey]]
 - [[design-kit/journeys/as-is-prescription-journey]]
+- [[design-kit/journeys/to-be-household-repeat-moments]] (friction panel, theme 1)
