@@ -2,11 +2,22 @@
 type: meta
 title: "Seed prompt - #11 re-sync: bring Sipho's WhatsApp flow in line with #09 v3.4-v3.7"
 created: "2026-08-12"
-updated: "2026-08-12"
+updated: "2026-09-07"
 tags: [meta, seed-prompt]
 ---
 
 # Seed prompt - #11 re-sync to #09 v3.4-v3.7
+
+> **Superseded - executed 2026-08-16.** The re-sync session ran with Tamsin
+> and cleared every item below (punchlist 15 closed; #11 v3, spec
+> `design-kit/journeys/sipho-whatsapp-flow.md`, process log of that pass).
+> The session also went past this floor: the date-move exchange it designed
+> drove #09 v3.8, payday left all service copy, and the script was re-cut to
+> the conversational-design canon. On 2026-09-07 #11 v3.1 caught up to #09
+> v3.9 (QR-first locker credential with a backup PIN) - verified item by
+> item against the current script that day. Kept for the record; do not
+> re-run.
+
 
 A self-contained brief for a fresh workspace. The job: deliverable #11
 (`deliverables/11-sipho-whatsapp-flow.html`, spec
