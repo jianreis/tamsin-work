@@ -2,7 +2,7 @@
 type: index
 title: "Digital transformation — index"
 domain: digital-transformation
-updated: "2026-06-17"
+updated: "2026-09-07"
 tags: [index, domain/digital]
 status: draft
 ---
@@ -40,6 +40,12 @@ with `## Design implications` and `## Open questions`. Uncertainty is marked
   automated retrieval, QR-scan counter handover, VC consolidation + driver delivery
   (PICCUP), Dashboard as the E2E workflow manager. 24-capability table mapped to the
   journey spine + pillars - the technology layer the future-state journey integrates.
+- [[zero-waste-pharmacy-packaging]] — returnable, recyclable and cold-chain packaging
+  precedents for a no-waste Made-for-Me sachet service: Sixty60 driver bag return, Loop
+  and Algramo reuse, Boots/Superdrug/Pharmacycle blister take-back, Take AIR postal
+  returns, PillPack materials, Greenbox returnable cool box; SA rules (GPP disposal,
+  EPR) - returnable outer box is operable now, refilling a used medicine pack is
+  🔮 requires-reform.
 
 ## Sources
 14 source notes prefixed `src-dig-` in [[sources/_sources-index|sources]] (HL7,
