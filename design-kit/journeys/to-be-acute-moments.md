@@ -108,8 +108,8 @@ machinery stays behind the line in P6 (🔮 where applicable).
 | M3 | P3 | "Every check ran before it left the building" | | both | The Named Check |
 | M4a | P4 | "Saw the doc. Went straight home." | ⭐ | insured | The 30/60 Fill |
 | M4b | P4 | "The counter was expecting me" | ⭐ | cash, COUNTER route | The 30/60 Fill |
-| M4c | P4 | "In and out, and I never spoke to anyone" | | insured, COLLECTED route | Express Collect (+ The 30/60 Fill) |
-| M4d | P4 | "The store was closed. His medicine wasn't." | | cash, AFTER-HOURS route | Express Collect (+ The 30/60 Fill) |
+| M4c | P4 | "In and out, and I never spoke to anyone" | | insured, COLLECTED route | Counterless Collection, formerly Express Collect (+ The 30/60 Fill) |
+| M4d | P4 | "The store was closed. His medicine wasn't." | | cash, AFTER-HOURS route | Counterless Collection, formerly Express Collect (+ The 30/60 Fill) |
 | M5 | P5 | "Medication you can't take wrong" | | both | Made-for-Me Medicine |
 | M6 | P5 | "The pharmacy didn't disappear after the handover" | ⭐ | both | The Pharmacist Who Stays |
 | M7 | P6 | "They noticed it kept coming back - before I did" | | insured only | The Pharmacy That Notices |
@@ -908,7 +908,7 @@ short backup code under the QR types straight in.
 miss it, and the sick child waits until tomorrow. Tonight Thabo got there
 after close and it cost him a minute at the wall: card, code, door, pack.
 [why] Closing time stopped standing between a working father and his son's
-medicine. [/why] That is Express Collect (inline link) working its own
+medicine. [/why] That is Counterless Collection (inline link) working its own
 after-hours shift - the half of The 30/60 Fill (inline link) that waits for
 you.
 
