@@ -7,9 +7,9 @@ persona: "[[design-kit/personas/time-poor-urban-professional|Aisha Patel]] (insu
 status: draft
 confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, journey/submit, journey/validate, journey/dispense, journey/pay, journey/collect, journey/deliver, journey/adhere, topic/acute, topic/e-prescription, region/za]
-sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026, src-dc-script-journey-interviews-2025, src-con-private-gp-uninsured, src-con-compcom-phc-clinics]
+sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026, src-dc-script-journey-interviews-2025, src-dc-instore-walkthrough-2026, src-dc-e2e-script-journey-friction-summary, src-dc-dispensary-services, src-dc-dispensary-managers-survey-2025, src-con-private-gp-uninsured, src-con-compcom-phc-clinics]
 created: "2026-07-26"
-updated: "2026-09-06"
+updated: "2026-09-07"
 ---
 
 # To-be journey - the acute script, in moments
@@ -123,11 +123,11 @@ machinery stays behind the line in P6 (🔮 where applicable).
 |---|---|---|---|---|---|
 | M1 | P1 | "My pharmacist was busy before I'd even left the doctor's" | ⭐ | insured only | The Pharmacy in the Room |
 | M2 | P1 | "I knew the price before I left the doctor's gate" | ⭐ | cash only | Real-Time Transparency (was Snap-a-Script, archived 2026-08-16) |
-| M3 | P3 | "Every check ran before it left the building" | | both | The Named Check |
+| M3 | P3 | "Every check ran before it left the building" | | both | The Pharmacist Beyond the Counter (formerly The Named Check) |
 | M4a | P4 | "Saw the doc. Went straight home." | ⭐ | insured | The 30/60 Fill |
 | M4b | P4 | "The counter was expecting me" | ⭐ | cash, COUNTER route | The 30/60 Fill |
-| M4c | P4 | "In and out, and I never spoke to anyone" | | insured, COLLECTED route | Express Collect (+ The 30/60 Fill) |
-| M4d | P4 | "The store was closed. His medicine wasn't." | | cash, AFTER-HOURS route | Express Collect (+ The 30/60 Fill) |
+| M4c | P4 | "In and out, and I never spoke to anyone" | | insured, COLLECTED route | Counterless Collection, formerly Express Collect (+ The 30/60 Fill) |
+| M4d | P4 | "The store was closed. His medicine wasn't." | | cash, AFTER-HOURS route | Counterless Collection, formerly Express Collect (+ The 30/60 Fill) |
 | M5 | P5 | "Medication you can't take wrong" | | both | Made-for-Me Medicine |
 | M6 | P5 | "The pharmacy didn't disappear after the handover" | ⭐ | both | The Pharmacist Who Stays |
 | M7 | P6 | "They noticed it kept coming back - before I did" | | insured only | The Pharmacy That Notices |
@@ -248,7 +248,7 @@ On top of the full v3.1 rule set from #09:
   lives in the activities, not appended to every need.
 - **Every code is QR-first with a short typable backup (added 2026-08-17,
   cash-journey feedback pass):** wherever a code appears - collection,
-  handover proof, the express-collect wall - it is a QR with a short backup
+  handover proof, the counterless-collection wall - it is a QR with a short backup
   code beneath it, covering failed scans and delivery over SMS instead of
   WhatsApp. Applies to both economies. For cross-journey consistency #09's
   cash locker (PIN-only today) should adopt the same shape - logged as
@@ -312,6 +312,48 @@ card, anchored on [[wiki/dispensing-practice/error-prevention-and-safety]]
 (illegible/ambiguous prescriptions as a named error root cause). Cards with
 customer quotes remain the default; the exception is never a licence to
 infer.
+
+## Current-friction summary panel (agreed 2026-08-19)
+
+A static panel between the spine and the phases: the journey-wide major
+friction themes of the as-is acute experience, consolidated from the
+research. Mirrors #09's v3.10 panel (same structure and rendering); renders
+once, not per economy. Each theme carries a **lane tag** - in-store /
+digital / both - because the acute frictions split by channel (Tamsin's
+framing, 2026-08-19). Provenance: drafted from Tamsin's 2026-08-19
+walkthrough of the physical and digital acute pains, sense-checked and
+extended against the research in the same session; the turnaround claim was
+corrected in-session from "up to 1.5 days" to the published service promise
+(doorstep delivery within 24 hours, collection in ~2) versus the lived
+reports of orders not ready.
+
+| # | Theme (lane) | Grounded in |
+|---|---|---|
+| 1 | **The paper script is a single point of failure** (both) *(split out 2026-09-03, Tamsin's feedback: the panel was mixing two pains)* - nearly everyone leaves the doctor with paper, and that page is the only key to the medicine: lose it, damage it, and it's back to the doctor for a rewrite. Even after it's handed in it can go missing - and the patient is the one carrying proof between doctor, pharmacy and counter. | script-journey IDIs (paper everywhere; nearly all handwritten) · collections/deliveries IDIs (scripts resent by doctors; "patients acting as proof-holders between systems") · dispensary-managers survey ("New scripts get lost when handed in"). |
+| 1b | **Sent ahead - with no proof it arrived** (digital) *(the other half of the split)* - when the doctor emails the script, or the customer sends it ahead, there is no confirmation it landed or was loaded; the only ways to find out are phoning or arriving at the counter, and the double trip is the price of guessing wrong. The doctor-to-pharmacy hand-off has no receipt. | script-journey IDIs (the single strongest unmet need: "customers can't tell if Dis-Chem received it… no confirmation system") · e2e friction synthesis (stages 1-2) · collections/deliveries IDIs (no single confirmation loop). |
+| 2 | **The unclear script stalls behind the counter** (in-store) - an ambiguous or illegible script can't legally be dispensed until the pharmacist reaches the prescriber; the sick customer waits on a call between professionals. | dispensing-practice safety literature (documented exception - no customer-voice record) · e2e friction synthesis (stage 3 ops lane). |
+| 3 | **Queues and visible manual toil, while you're ill** (in-store) - long queues worsened by peak understaffing; processing feels opaque (activity visible, cause invisible); sign-off delays with no explanation; month-end waits of 25-30 minutes felt acutely "when you're not feeling well"; profile/ID lookup friction on arrival. | in-store walkthrough · script-journey IDIs · sentiment (wait time ~89% negative). |
+| 4 | **You only find out the price at the end** (both) *(retitled 2026-09-06, was "The price is a mystery until you're committed")* - in-store the cost appears only after the travel and the queue, forcing a counter decision (including discovering the scheme won't pay); digitally the price arrives by SMS after the order; identical scheduled medicine reads as differently priced store to store. Honest tension, carried in the spec not the panel: the insured in-store IDI sample found co-pays small and fair - the shock concentrates in digital/scheme-exception segments. | complaints (cluster E) · in-store walkthrough (co-payments card) · e2e friction synthesis (stages 1, 3, 8). |
+| 5 | **No trust the order will come out right** (both) - the published promise is doorstep delivery within 24 hours or collection in about two; the lived reports are of orders not ready even the next day, arriving incomplete or incorrect, mistakes found at home past the point of easy return, and errors read as safety threats. | dispensary-services page (the published promise, verbatim) · in-store + repeat-reminder walkthroughs (packages not ready · incorrect items) · complaints (cluster C) · sentiment. |
+| 6 | **Inconsistent channels, and a broken digital fallback** (digital) - the experience differs by where you submit; confirmation and status messages differ or never come; where a digital route exists it fails at the basics (logins, uploads), sending people back to the queue. | e2e friction synthesis (stages 1-2) · complaints ("Dis-Chem App is dysfunctional") · sentiment (digital breakdowns as hard blockers). |
+| 7 | **Waiting blind, doubting the promise** (both) *(rewritten 2026-09-03 from "When something breaks, there's no way through" on Tamsin's feedback - she couldn't see the distinct friction in the old bundle; her points 8 and 9 merged here: no expectation-setting after submission, opaque status, and SLA-weariness)* - once the script is in, the customer has no idea when it will be picked up, processed, or delivered; statuses either don't come or blur together. An SLA exists on paper, but years of things not going right teach customers not to believe it. And when something does go wrong - stock, a claim, an unreadable script - they find out last: the problem surfaces only when they chase it, into phones nobody answers. And the one genuinely fast lane - the ~60-minute delivery service - carries front-shop products, not scripts: for medicine, the sick person waits on the standard promise. *(The 60-minute scope fact was dropped in the first rewrite and restored on Tamsin's instruction, 2026-09-03.)* | dispensary-services (the published SLA) · SOTF (over-precise promises distrusted; "waiting is fine - being unsure isn't") · collections/deliveries IDIs (status-blur; windows vary by store) · complaints (cluster B: "out for delivery… did not receive it") · sentiment ("called 4 different dispensaries… nobody is picking up"). |
+| 8 | **The schedule rules land on the customer** (digital) *(added 2026-08-21, agreed - staff-survey sweep)* - doctors email Schedule 5 and 6 scripts to the patient instead of the pharmacy, and a copy can't lawfully be dispensed, so the counter must refuse and ask for the original. Enforcement differs pharmacy to pharmacy ("stores approach this differently"), so the rule reads as this store being difficult - and the refusing counter absorbs the anger of a sick customer who did exactly what the doctor told them. | dispensary-managers survey (S5/S6 copies the recurring digital-intake pain; inconsistent enforcement named by staff). |
+
+Provenance addendum (2026-08-21): theme 8 comes from the sweep against
+[[src-dc-dispensary-managers-survey-2025]] (staff view, n=102), agreed with
+Tamsin. Staff-survey claims about customer feeling are staff perception -
+the survey note carries the caveat.
+
+Synthesis line (agreed with Tamsin, 2026-09-06, replacing the earlier
+project-you-must-manage line - brought back to the effort and uncertainty of
+getting a script filled): **"Getting a script filled is effort spent on an
+uncertain outcome - you do the work, and you still can't be sure it will be
+right, ready, or there."**
+
+Theme-title note (2026-09-06): theme 4's title simplified on Tamsin's
+request from "The price is a mystery until you're committed" to **"You only
+find out the price at the end"** - plain register, true for both lanes;
+description unchanged.
 
 ## Concept-set changes made for this journey (done, 2026-07-26)
 
@@ -494,10 +536,10 @@ Dis-Chem: he chooses in the thread while they walk to the rank, watches the
 pick-and-pack from the taxi (P3), and his QR arrives just before the store
 (the 30 of The 30/60 Fill runs inside the taxi ride). He is offered the
 same handover choice as Aisha - pharmacist at the collections counter or
-express collect - and he chooses the pharmacist, which is what routes him to
-collections rather than the express wall. The
+counterless collection - and he chooses the pharmacist, which is what routes him to
+collections rather than the counterless collection wall. The
 back-on-shift/works-late reality survives as P4's cash route toggle (the
-after-hours express collect), not as the spine.
+after-hours counterless collection), not as the spine.
 
 **The stock/price logic (spec note):** the regulated cash price (SEP +
 capped fee) is national, so a price can be quoted from a photo before any
@@ -521,7 +563,7 @@ arriving just after I do**.
 **A1 · The message asks me how** - By the time I'm in the car,
 the message is there: my script is already being prepared - how would I like
 it? Collect at the Dis-Chem on my way home, ready within 30 minutes, and I
-choose how I take it: express collect, where I scan a code and the pack
+choose how I take it: counterless collection, where I scan a code and the pack
 comes out without my speaking to anyone, or the collections counter, where a
 pharmacist hands it over and runs me through it. Either way the notes come
 to me, on WhatsApp or printed. Or delivery - at my door inside the hour if I
@@ -556,14 +598,14 @@ and the reply confirms they have his medicine. Collection costs nothing, and
 we're going that way anyway.
 
 **A2 · I choose the counter, and say go** - One more choice: how I want the
-handover. Express collect on the outside wall - scan the code and the pack
+handover. Counterless collection on the outside wall - scan the code and the pack
 comes out, no waiting - or the collections counter, where a pharmacist hands
 it over and walks me through his dose. It's his first antibiotic; I want the
 pharmacist. Then I reply "1 - go ahead" - the yes they need before medicine
 can be made up in my son's name, and everything was standing ready for it.
 The confirmation: ready at the collections counter in 30 minutes, before
 we're even there. It's held until closing - and after that, the same code
-works at the express collect on the outside wall. *(Kept on Tamsin's note:
+works at the counterless collection unit on the outside wall. *(Kept on Tamsin's note:
 the if-the-day-runs-over line stays; the works-late reality itself lives in
 P4's route toggle.)*
 
@@ -598,10 +640,10 @@ collect. If I say nothing, nothing is added.
   choice by name / shared
   location (stores near where I stand) / address for delivery cost, with
   stores-with-stock returned (cash) · handover choice inside the routing
-  ask, both economies: collections counter (pharmacist) or express collect
+  ask, both economies: collections counter (pharmacist) or counterless collection
   (scan and go) · go-ahead reply gate · confirmation
   with collections-counter readiness, hold-until-close and the after-hours
-  express-collect code · priced symptom add-on list (taps / numbered replies) ·
+  counterless-collection code · priced symptom add-on list (taps / numbered replies) ·
   counselling on both routes (pharmacist at handover; instructions +
   reachable pharmacist on delivery).
 - Backstage: dispensing starts at sign-off - clinical check first, staging
@@ -628,7 +670,7 @@ collect. If I say nothing, nothing is added.
   (wiki/digital-transformation/dischem-scripting-tech-roadmap) · acute
   script delivered 🔮 (SAPC rule 1.9.7(e) - punchlist 10(k)) · collections
   counter ⚠️ (wiki/dischem/store-of-the-future-customer-voice; punchlist
-  10(a)) · after-hours express collect 🔮
+  10(a)) · after-hours counterless collection 🔮
   (wiki/sa-regulatory/pharmacy-act-sapc-gpp) · OTC attach ⚠️
   (wiki/concepts/omnichannel-fulfilment) · WhatsApp numbered picks
   (wiki/consumer-context/digital-access-and-whatsapp) · tokenised saved
@@ -660,7 +702,7 @@ mistakes surfacing only at home when the packet was opened. Now it runs in
 the time Aisha spends driving home, and it shows its work: picked, scanned
 against the script, and a named pharmacist's sign-off on the finished pack
 before anything sealed. [why] Fast never means unchecked - the speed came
-from removing the waiting, not the care. [/why] That is The Named Check
+from removing the waiting, not the care. [/why] That is The Pharmacist Beyond the Counter
 (inline link): the moment that matters most in a pharmacy, carried out by a
 person with a name, one tap away.
 
@@ -694,7 +736,7 @@ itself: picked at his store, scanned against the doctor's script, and a
 named pharmacist confirming the dose against his son's weight before
 signing. *(Timing reworded 2026-08-17 with the reroute - was "while Thabo
 works his shift".)* [why] Someone with a name stood behind his boy's medicine - and he
-watched it happen. [/why] That is The Named Check (inline link), made for
+watched it happen. [/why] That is The Pharmacist Beyond the Counter (inline link), made for
 the person with the most to lose from an anonymous mistake.
 
 **A3 · Ready, with my code** - Just before our stop, the ready message:
@@ -794,12 +836,12 @@ truth. The route toggle is scoped to P4 alone; P3 is identical on both
 routes.)*
 
 **A1 · I pull in on the way home** - The ready message came through while I
-was still paying the doctor: thirty minutes, express collect, at the store I
+was still paying the doctor: thirty minutes, counterless collection, at the store I
 drive past anyway. So I drive home the way I always do - past the Dis-Chem I
 have stopped at a hundred times with a script in my hand and an hour to
 spare. Tonight there is nothing in my hand and nothing to hand over.
 
-**A2 · I scan, and the pack comes out** - Express collect sits on the outside wall,
+**A2 · I scan, and the pack comes out** - Counterless collection sits on the outside wall,
 before the doors. I hold my phone to the scanner, a door opens, and my pack
 is there with my name on it. No queue, no counter, nobody to explain myself
 to. I am back in the car in under a minute, and the dispensary is somebody
@@ -813,7 +855,7 @@ her a minute in the car park instead of an afternoon in the queue. [/why]
 And the quiet was her choice, not the design's: the collections counter was
 right there, with a pharmacist ready to talk her through it. She chose not
 to speak to anyone, and nothing about her care got smaller for it. That is
-Express Collect (inline link) - the stop made instant rather than deleted,
+Counterless Collection (inline link) - the stop made instant rather than deleted,
 which is the half of The 30/60 Fill (inline link) the journey has never
 shown.
 
@@ -862,7 +904,7 @@ at the same counter, and done. The number I planned for is the number I pay.
 ### Activities - cash (Thabo - after-hours route, added 2026-08-17)
 
 *(Agreed with Tamsin: the toggle where the shift can't spare him - he works
-late, misses the store, and the after-hours express collect catches it.
+late, misses the store, and the after-hours counterless collection catches it.
 Payment resolved by decision: card tap at the unit before release, quoted
 total unchanged; a cash-payer without a card falls back to next-morning
 counter. His chosen pharmacist handover degrades honestly to the phone-back.
@@ -871,11 +913,11 @@ Moment title agreed from three proposals.)*
 **A1 · I go back on shift** - Some days the shift can't spare me. My
 neighbour takes him home from the doctor's rooms, I go back on, and the store closes
 while I'm still working. The thread already told me that's fine: the pack is
-held, and after closing the same code works at the express collect on the
+held, and after closing the same code works at the counterless collection unit on the
 outside wall.
 
 **A2 · I scan at the wall** - The doors are dark when I get there, but the
-express collect on the outside wall is lit. I tap my card - the same total
+counterless collection unit on the outside wall is lit. I tap my card - the same total
 I've known since the doctor's rooms - hold my code to the scanner, and a door opens:
 the pack is there with my son's name on it. If the scanner won't read, the
 short backup code under the QR types straight in.
@@ -885,7 +927,7 @@ short backup code under the QR types straight in.
 miss it, and the sick child waits until tomorrow. Tonight Thabo got there
 after close and it cost him a minute at the wall: card, code, door, pack.
 [why] Closing time stopped standing between a working father and his son's
-medicine. [/why] That is Express Collect (inline link) working its own
+medicine. [/why] That is Counterless Collection (inline link) working its own
 after-hours shift - the half of The 30/60 Fill (inline link) that waits for
 you.
 
@@ -919,8 +961,8 @@ handover's after-hours phone-back fallback.)*
 - Frontstage: dispatch status + live map + honest ETA, early re-time on
   slip · driver handover verified against the order QR (proof of delivery) ·
   post-delivery contents confirmation with escalation to a person · two
-  collection routes offered at P2: express collect (scan, unattended, no
-  counter) or the collections counter (pharmacist handover) · express-collect
+  collection routes offered at P2: counterless collection (scan, unattended, no
+  counter) or the collections counter (pharmacist handover) · counterless-collection
   unit sited on the outside wall - code scan (typable backup code beneath),
   named pack, works after hours · card payment at the unit before release,
   against the quoted total (after-hours cash orders) ·
@@ -943,7 +985,7 @@ handover's after-hours phone-back fallback.)*
 - Regulatory: scheduled-medicine delivery under pharmacy accountability with
   recorded proof of handover; counselling *access* preserved on every route,
   with GPP putting physical presence for counselling as *preferred* rather
-  than required (rule 2.7.1.3.1(a)). Express collect as shown is 🔮
+  than required (rule 2.7.1.3.1(a)). Counterless collection as shown is 🔮
   requires-reform, and the rule is now known exactly: GPP 1.9.3(b) bars a
   patient receiving directly from an in-pharmacy automated unit;
   patient-facing units live under SAPC rule 1.11 (RADU), which permits
@@ -956,7 +998,7 @@ handover's after-hours phone-back fallback.)*
 - Chips (cites): DeliverD / last-mile TMS + POD
   (wiki/digital-transformation/dischem-scripting-tech-roadmap) · live
   tracking (wiki/global-benchmarks/patterns-deep-dive) · collections counter
-  (staffed) ⚠️ (punchlist 10(a)) · express collect (unattended unit) 🔮
+  (staffed) ⚠️ (punchlist 10(a)) · counterless collection (unattended unit) 🔮
   (SAPC rules 1.9.3(b) + 1.11 - wiki/concepts/remote-collection-points) ·
   counselling opt-out with notes ⚠️ (punchlist 10(j)) · token
   single-redemption (wiki/concepts/e-prescription-token) ·
@@ -1316,7 +1358,7 @@ identical on both routes and is not toggled.
 
 | | Staffed handover | Unattended handover |
 |---|---|---|
-| Name | **the collections counter** | **express collect** |
+| Name | **the collections counter** | **express collect** (renamed counterless collection 2026-09-07) |
 | Who | a pharmacist hands over and counsels | nobody - scan a code, the pack comes out |
 | Hours | store hours | store hours + after-hours when sited on the outside wall |
 
@@ -1338,7 +1380,7 @@ P2-cash, P3-cash and P4-cash; the unattended after-hours release itself
 remains 🔮 requires-reform (the RADU application's trading-hours undertaking
 compounds it - see the P4 regulatory line).
 
-**Regulatory stance on express collect (decided with Tamsin 2026-08-16, option 2).**
+**Regulatory stance on express collect (decided with Tamsin 2026-08-16, option 2).** (renamed counterless collection 2026-09-07)
 The silent, nobody-present unit is **kept as drafted and flagged 🔮
 requires-reform**, rather than redesigned to the lawful-today shape. The rule is
 now known exactly: GPP 1.9.3(b) bars a patient receiving directly from an
@@ -1361,7 +1403,7 @@ whole delivery half rest on whether a pharmacy's own same-metro service is
 "mail/courier" within that rule - ⚠️ unresolved, punchlist 10(k), and it needs a
 legal read before this journey travels to a regulator.
 
-**Counselling on the express route.** Choosing express collect is choosing not
+**Counselling on the counterless route.** Choosing counterless collection is choosing not
 to *speak* to a pharmacist, never choosing to go without counselling: the notes
 go to WhatsApp or print at the point of collection, and a named pharmacist stays
 one tap away. GPP requires counselling *access* preserved, not face-to-face

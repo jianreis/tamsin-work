@@ -196,7 +196,7 @@ h1,h2,h3,h4{margin:0}
 
   <div class="ribbon">
     <span>&#9888; Concept for review - not an official Dis-Chem artefact</span>
-    <span class="gen">generated 2026-07-01 · updated 2026-08-16 (concept 09 The E-Script Token archived as infrastructure, its promises redistributed to concepts 08, 11 and 12 · concept 11 reworked as The 30/60 Fill, anchored on the stop you make on the way home from the doctor) · concept 17 Express Collect added (self-checkout anchor, the acute P4 collected route) · concept 03 gains the read-back and the never-speed-before-accuracy caveat · concept 12 Snap-a-Script archived as a channel rather than a concept · concept 16 gains seamless clinic booking · concept 17 carries a regulatory note · journey feedback, later the same day: concept 11's thirty-minute promise decoupled from any one counter type - collections counter or express collect, the customer's choice; concept 17 gains after-hours phone-back counselling) · previously 2026-08-12 (concept 02: cabinet holds medicine from anywhere, privacy mode, digital pillbox · concept 04: graded helper visibility + shared adherence · concept 05: the sync anchor + when sync is offered · concept 15: intro reworked around the kitchen-counter anchor · concept 14: the remembering line made plain) · from the Bigly ground-truth vault</span>
+    <span class="gen">generated 2026-07-01 · updated 2026-09-07 (Aliyah's run-through, via Tamsin: concept 01 renamed Auto-Repeat, gains delivery to each person's own address · concept 02 gains the first-aid kit you build, expiry dates watched for you, and a wish list for the months you can · concepts 02 and 15 now say how the cabinet and Made-for-Me connect: Made-for-Me writes the schedule, the cabinet's pillbox shows it · concept 08's price line now says what the scheme pays on your option, resting on the Dis-Chem + scheme formulary overlay that already sits in Brix, carried as a backstage capability · concept 15 gains a no-waste pharmacy breakout note, resting on new zero-waste packaging research · concept 17 Express Collect reworked as Counterless Collection, anchored on the ATM and the teller: the choice is whether you want a pharmacist in person today; the same-pharmacist wording softened to a pharmacist · concept 10 The Named Check reworked as The Pharmacist Beyond the Counter: the named check stays as the first proof point, and the pharmacist becomes part of the whole journey, visible and reachable in store, at home and on WhatsApp; concept 16's intro no longer promises the same pharmacist) · previously 2026-08-16 (concept 09 The E-Script Token archived as infrastructure, its promises redistributed to concepts 08, 11 and 12 · concept 11 reworked as The 30/60 Fill, anchored on the stop you make on the way home from the doctor) · concept 17 Express Collect added (self-checkout anchor, the acute P4 collected route) · concept 03 gains the read-back and the never-speed-before-accuracy caveat · concept 12 Snap-a-Script archived as a channel rather than a concept · concept 16 gains seamless clinic booking · concept 17 carries a regulatory note · journey feedback, later the same day: concept 11's thirty-minute promise decoupled from any one counter type - collections counter or express collect, the customer's choice; concept 17 gains after-hours phone-back counselling) · previously 2026-08-12 (concept 02: cabinet holds medicine from anywhere, privacy mode, digital pillbox · concept 04: graded helper visibility + shared adherence · concept 05: the sync anchor + when sync is offered · concept 15: intro reworked around the kitchen-counter anchor · concept 14: the remembering line made plain) · from the Bigly ground-truth vault</span>
   </div>
 
   <section class="intro">
@@ -274,16 +274,17 @@ const CONCEPTS = [
   {
     group:{title:"The household-repeat journey", sub:"the chronic flywheel - deliverable #05"},
     icon:"refill",
-    title:"Auto-Refill",
+    title:"Auto-Repeat",
     tagline:"Your repeat should just repeat.",
-    intro:'You take the same medicine every month. So why is keeping it going such a performance - the reminders, the re-ordering, the running out? A repeat should just repeat. <span class="why">Auto-Refill makes it work that way: your chronic medicine is ready before you run out, without you having to ask.</span> You stay on treatment without a gap, and the monthly admin disappears.',
+    intro:'You take the same medicine every month. So why is keeping it going such a performance - the reminders, the re-ordering, the running out? A repeat should just repeat. <span class="why">Auto-Repeat makes it work that way: your chronic medicine is ready before you run out, without you having to ask.</span> You stay on treatment without a gap, and the monthly admin disappears.',
     featuresLabel:"How the repeat repeats",
     features:[
       '<b>It works out when you are due</b> from your dispensing history, so nobody has to watch the calendar.',
       '<b>A week before you run out</b>, a low-data message: same as last month? One tap confirms.',
       '<b>Change, skip or snooze</b> any month - you stay in control.',
       '<b>It is prepared automatically</b> behind the counter, so the pharmacist checks and signs it off instead of keying and picking.',
-      '<b>Collected or delivered</b>, whichever you chose, with honest status the whole way.'
+      '<b>Collected or delivered</b>, whichever you chose, with honest status the whole way.',
+      '<b>Each person\'s medicine goes to their own door</b> - add an address for anyone in the household, and their repeat is delivered to them, not to you, so managing a parent\'s medicine never means being their courier too.'
     ],
     pillars:["S4","S5","U6","U7"]
   },
@@ -301,7 +302,11 @@ const CONCEPTS = [
       '<b>What is due, and when</b>, per person, so a refill is never missed.',
       '<b>The whole cabinet, not just the Dis-Chem shelf</b> - scan the barcode or snap a pic to add medicine from anywhere in seconds, understand it in plain words, and reorder it here when it runs out.',
       '<b>Some medicine is nobody else\'s business</b> - mark it private and you choose exactly who sees it; to everyone else it simply isn\'t there, in any view, reminder or message. The pharmacist\'s safety check is the one place nothing hides, so the household stays private and safe at once.',
-      '<b>A digital pillbox, if you want one</b> - a reminder when a dose is due, a tick when you\'ve taken it, and your own picture of how the week is going. Yours to use, ignore - or share.'
+      '<b>A digital pillbox, if you want one</b> - a reminder when a dose is due, a tick when you\'ve taken it, and your own picture of how the week is going. Yours to use, ignore - or share.',
+      '<b>Two ways to look at the same cabinet</b> - by person and medicine (the shelf), or by day and time (the pillbox); any Made-for-Me guide lands in the pillbox automatically, so the schedule on the pack and the reminder on the phone are the same schedule.',
+      '<b>A first-aid kit you build</b> - start from a ready-made list (there is one for a house that now has children in it), tick what you already own and add the rest, so the plasters and the children\'s paracetamol are on the shelf before the scraped knee.',
+      '<b>Expiry dates, watched for you</b> - every item in the kit carries its date, and when one is close the cabinet reorders it, automatically if you say so, so nothing you reach for in a hurry is out of date.',
+      '<b>A wish list for the months you can</b> - park the things you want in the cabinet but not this month, and move them into the order in one tap when there is room in the budget, so building the kit fits the household\'s cash flow rather than fighting it.'
     ],
     pillars:["U6","U5","S4","U7"]
   },
@@ -397,7 +402,7 @@ const CONCEPTS = [
     featuresLabel:"What's decided in the room",
     features:[
       '<b>Your record is on the doctor\'s screen</b>, with your consent - allergies, current medicine, cover - so the script is safe and suited to you.',
-      '<b>The price is known before you stand up</b> - your scheme\'s cover or an itemised cash price - so there is no surprise waiting at a till.',
+      '<b>The price is known before you stand up</b> - what your scheme will actually pay on your option, or an itemised cash price - so there is no surprise waiting at a counter.',
       '<b>The cheaper generic is offered at the consult</b>, with the doctor\'s advice right there, so you choose on medical guidance rather than at a counter.',
       '<b>Stock is checked live</b> at the Dis-Chem stores near you, so the doctor prescribes what is actually on the shelf.',
       '<b>The pharmacy already has the script</b> when you leave, so nothing depends on a piece of paper making the trip.',
@@ -426,16 +431,18 @@ const CONCEPTS = [
   },
   {
     icon:"namedcheck",
-    title:"The Named Check",
-    tagline:"Every script checked by a pharmacist with a name.",
-    intro:'When your Uber is on its way, you see the driver\'s name and photo, and the trip feels accountable because a person is attached to it. This is that, for the moment that matters most in a pharmacy: the clinical check. <span class="why">A registered pharmacist checks every script - the dose, the interactions, your record - and signs it with their name: "Checked by Naledi ✓".</span> Machines clear the paperwork and picking so the check is quick, and if you have a question, the person who checked your medicine is one tap away.',
-    featuresLabel:"What the check covers",
+    title:"The Pharmacist Beyond the Counter",
+    tagline:"Your pharmacist comes with you, the whole way.",
+    intro:'The best moment in a Dis-Chem is when the pharmacist comes round the counter to talk to you: they walk you to the shelf, explain the dose, phone your medical aid. People will wait longer in the queue for that pharmacist. But it only happens at the counter, and only while you are standing at it. The Pharmacist Beyond the Counter makes that person part of the whole journey. <span class="why">A registered pharmacist checks every script and signs it with their name - "Checked by Naledi ✓" - and from then on a pharmacist is one tap away, in the store, at home or on WhatsApp.</span> The counter becomes one of the places the pharmacist is, rather than the only one.',
+    featuresLabel:"Where the pharmacist is, beyond the counter",
     features:[
-      '<b>A registered pharmacist reviews every script</b> - dose, interactions, your history - before anything is dispensed, by law and by design.',
-      '<b>The check carries a name</b> - "Checked by Naledi ✓" - so you know exactly who stood behind your medicine.',
-      '<b>One tap opens a chat with the pharmacist</b>, on WhatsApp if that is all you have, so a worried question never goes unanswered.',
-      '<b>Automation clears the busywork first</b> - keying, counting, picking - so the human check is fast instead of a bottleneck.',
-      '<b>For a child, the dose is checked against their weight</b>, so a parent collects with confidence.'
+      '<b>The check carries a name</b> - "Checked by Naledi ✓" - so you know a registered pharmacist stood behind your medicine, and that a real person is on the other end of every message after it.',
+      '<b>Every script is checked by a pharmacist first</b> - dose, interactions, your history - before anything is dispensed, by law and by design.',
+      '<b>You can see who has your medicine</b> - the status says a pharmacist is checking it, not "processing", so the person is visible at every step and not only at handover.',
+      '<b>One tap opens a chat with a pharmacist</b>, on WhatsApp if that is all you have, so a worried question never goes unanswered - and it need not be the pharmacist who signed; any registered pharmacist at Dis-Chem can see the same record.',
+      '<b>At home, the pharmacist is still there</b> - the check-ins and the standby line in <a href="#c16">The Pharmacist Who Stays</a> are this same presence carrying on after handover, so being sent home is never being sent away.',
+      '<b>For a child, the dose is checked against their weight</b>, and the pharmacist says so in the message, so a parent collects with confidence.',
+      '<b>Automation clears the busywork</b> - keying, counting, picking - so the pharmacist\'s time goes to people rather than paperwork, which is what makes any of this affordable.'
     ],
     pillars:["S5","U2","U4"]
   },
@@ -517,17 +524,18 @@ const CONCEPTS = [
     features:[
       '<b>Dose sachets, sorted by day and time</b> - each dose pre-grouped and labelled, open and take, so there is nothing to sort and nothing to mix up. An optional extra, done for you.',
       '<b>Labels you can read at a glance</b> - icons plus large plain text in your own language, on every pack, free, so the label works for every pair of eyes in the house.',
-      '<b>A when-and-how guide</b> - with food or without, morning or evening, what to do if you miss one - so the questions are answered before you have them.',
+      '<b>A when-and-how guide</b> - with food or without, morning or evening, what to do if you miss one - so the questions are answered before you have them. It also lives in your <a href="#c2">Household Medicine Cabinet</a>\'s pillbox, so the schedule on the sachet and the reminder on the phone are the same schedule.',
       "<b>The scroll, translated</b> - the leaflet's need-to-knows in plain words, short enough to actually read, so what matters is never buried in fine print.",
       '<b>Paper when you want it</b> - the schedule and guide printed as easily as sent, so none of this needs a screen or data.'
     ],
-    pillars:["U7","U5","U1","S5"]
+    pillars:["U7","U5","U1","S5"],
+    note:'<b>Where the sachets could go next: a no-waste pharmacy.</b> A month of sachets arrives in a Dis-Chem box. The next month\'s delivery takes the empty one back, along with the used sachet film and the stripped blisters, so nothing from your medicine ends up in your bin. Every part of that already exists somewhere: Checkers Sixty60 drivers already take last week\'s bags back at the door, Walmart\'s specialty pharmacy sent fridge medicine in a returnable cool box that came back and went out again fifty times, and Boots recycles blister packs in eight hundred stores. Two honest limits. The box comes back and is reused; the sachets never are, because no country lets a pharmacy refill a pack that has been in a patient\'s hands, and South Africa\'s rules send returned medicine to destruction. And fridge medicine never goes in a sachet at all - it rides its own returnable cool box on the same driver visit, handed to a person, never left at a door. <a href="https://github.com/jianreis/tamsin-work/blob/main/wiki/digital-transformation/zero-waste-pharmacy-packaging.md" target="_blank" rel="noopener">Read the precedents and the regulatory position</a> - what is proven, what is a stretch, and what would need a rule change.'
   },
   {
     icon:"stays",
     title:"The Pharmacist Who Stays",
     tagline:"Your pharmacist stays until you are better.",
-    intro:'A good doctor phones the day after: "how are you feeling?" People retell that call for years, because almost nobody makes it. This is that call, built into every script - the pharmacist who checked your medicine does not disappear when it is handed over. <span class="why">Check-ins track your course, tell you what to expect and when you should start feeling better, and a pharmacist is on standby the moment something feels wrong.</span> This is probably medicine you have never taken before; you should not have to figure it out alone.',
+    intro:'A good doctor phones the day after: "how are you feeling?" People retell that call for years, because almost nobody makes it. This is that call, built into every script - the pharmacy does not disappear when your medicine is handed over. <span class="why">Check-ins track your course, tell you what to expect and when you should start feeling better, and a pharmacist is on standby the moment something feels wrong.</span> This is probably medicine you have never taken before; you should not have to figure it out alone.',
     featuresLabel:"What staying looks like",
     features:[
       '<b>A check-in that knows your course</b> - "day three: you should be starting to feel better - tell us if not" - so your recovery is watched, not assumed.',
@@ -541,16 +549,17 @@ const CONCEPTS = [
   },
   {
     icon:"expresswall",
-    title:"Express Collect",
-    tagline:"The counter is there if you want it. Most days you won't.",
-    intro:'Nobody queues for a person to scan their milk any more. Self-checkout did not take the cashier away - it just let you choose, and most days you choose to be out of there. Collecting medicine has never offered that choice: one queue, one counter, whether you have a question or not, standing among other unwell people at your own worst. <span class="why">Express Collect gives you the other option: scan your code, a door opens, your pack is there with your name on it, and you are gone inside a minute.</span> The collections counter is a few steps away with a pharmacist behind it, so choosing not to talk is never choosing to go without.',
-    featuresLabel:"What choosing express gets you",
+    title:"Counterless Collection",
+    tagline:"Talk to the pharmacist when you want to. Skip the queue when you don't.",
+    intro:'Nobody queues for a teller to draw cash any more. The teller is still there for the day you need one, and you decide which you need before you walk in. Collecting medicine has never offered that choice: one queue, one counter, whether you have a question or not, standing among other unwell people on your own worst day. <span class="why">Counterless Collection is the ATM for your medicine: scan your code, a door opens, your pack is there with your name on it, and you are out in a minute.</span> The pharmacist is a few steps away at the collections counter, so choosing not to talk today is never choosing to go without.',
+    featuresLabel:"What choosing the counterless route gets you",
     features:[
+      '<b>The choice is yours, every time</b> - the ready message asks how you want the handover: the collections counter with a pharmacist, or counterless, so the day you have a question and the day you don\'t are both catered for.',
       '<b>Your pack is waiting before you arrive</b> - staged under your name from the moment it was sealed, so the stop costs you a minute instead of an afternoon.',
       '<b>Scan and go, no counter</b> - your code opens the door and the pack comes out, so nobody needs you to explain yourself or retell your story.',
       '<b>Sited on the outside wall, so the doors never have to open</b> - which also means after hours, and a late shift or a Sunday stops deciding when you can have your medicine.',
       '<b>Your counselling notes come with it</b> - sent to WhatsApp or printed at the unit, whichever you choose, so nothing about the faster route is thinner.',
-      '<b>A pharmacist is a few steps or one tap away</b> - the collections counter is right there and the pharmacist who checked your medicine is in the thread; after hours, ask and one phones you to talk it through at home or in your car. You are choosing speed, never less care.',
+      '<b>A pharmacist is a few steps or one tap away</b> - the collections counter is right there and a pharmacist is in the thread; after hours, ask and one phones you to talk it through at home or in your car. You are choosing speed, never less care.',
       '<b>Someone you trust can fetch it</b> - forward the code and they collect on your behalf, without ever seeing your medicines or your history.'
     ],
     pillars:["U6","U5","S3","S5"],

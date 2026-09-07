@@ -16,7 +16,7 @@ updated: "2026-09-07"
 
 Content spec and build source for `deliverables/11-sipho-whatsapp-flow.html`.
 This deliverable dramatises the **cash track of the approved #09 journey**
-([[to-be-household-repeat-moments]], v3.10) as literal WhatsApp screens: every
+([[to-be-household-repeat-moments]], v3.11) as literal WhatsApp screens: every
 message Sipho sends or receives, rendered in the channel's real UI mechanics,
 with an annotation rail explaining which WhatsApp Business Platform feature
 carries each beat and which persona constraint it honours. It invents no new
@@ -33,8 +33,8 @@ process log at the end. Register is **annotated** - a phone frame per phase
 plus a side-rail of feature callouts - and the chat renders in **English for
 the executive audience**, with a standing annotation that production renders
 it in the language Sipho chose at sign-up. Previous deliverables stay
-untouched. 2026-09-07 (v4, this pass, Tamsin's instruction - punchlist 18):
-re-synced to #09 v3.9-v3.10. Thandi joins the standing order and every shared
+untouched. 2026-09-07 (v4, this pass, Tamsin's instruction - punchlist 19):
+re-synced to #09 v3.9-v3.11. Thandi joins the standing order and every shared
 surface names her medicine by owner only ("Thandi's repeat" - the product
 name lives on her phone and her pack); the sign-up sync exchange is re-cut
 around the corrected CCMDD cadence (her mother's parcel comes every two to
@@ -92,7 +92,7 @@ two-line order.
    ACC 200) are real SA products used illustratively - availability and
    pricing unverified. Flagged ⚠️ in the build. The one deliberate
    exception to real names: **Thandi's medicine is never a product name on
-   any surface both adults can see** (the v3.10 discreet rule) - the chat,
+   any surface both adults can see** (the v3.11 discreet rule) - the chat,
    the price breakdown, the contents list and the cabinet on his phone all
    say "Thandi's repeat"; the full name lives on her phone and her pack.
 7. **Platform capability claims are sourced** as of 2026-08-16:
@@ -180,7 +180,7 @@ so the hook lands before the chat is opened; the pharmacist stays unnamed);
 language list first, before anything else is asked; the Flow is the one place
 a form beats chat (his row is a dispensing record - plain handle, molecule +
 strength, monthly quantity; Thandi's row is owner-named - the product name
-lives on her phone and her pack, the cabinet's privacy mode, v3.10; the
+lives on her phone and her pack, the cabinet's privacy mode, v3.11; the
 mother's row is described by origin because Dis-Chem never opens the
 programme parcel, and states the true two-to-three-month cycle; the kids and
 nephew are absent by design - nothing of theirs repeats; consent is an
@@ -189,7 +189,7 @@ woman's medicine-list share is her own revocable grant); the date-move
 exchange runs one decision per turn with exploration labels until the single
 commitment turn (W9) - the programme parcel is excluded from the sync up
 front because an unpredictable two-to-three-month cycle can't be lined up
-with anything (v3.10), and the read-back carries the two price mechanics
+with anything (v3.11), and the read-back carries the two price mechanics
 plainly: loose tablets top up by the day, a cycle-fixed pack moves only as a
 whole extra pack, once. The rail carries what the chat never asks: he picks
 the 28th because it sits after month-end payday; his reasoning, never the
@@ -218,9 +218,9 @@ lapse. Pause lives inside the menu now (Skip this month), not on a button.
 Key moments (rail, #09 verbatim): ⭐ "My medicine ordered itself" at M1;
 ⭐ "The only thing I ever bought blind - not anymore" at M2. Rail callouts:
 the household's Dis-Chem order - his tablets and Thandi's repeat, hers
-owner-named even in the price breakdown (v3.10); the programme parcel is
+owner-named even in the price breakdown (v3.11); the programme parcel is
 tracked, never managed (v3.4), and the notice names when the next is due
-because the cycle is two to three months, never monthly (v3.10); no CCMDD
+because the cycle is two to three months, never monthly (v3.11); no CCMDD
 price line - there is nothing to pay on hers (v3.4); dates, never
 "payday" - what the 28th means is his business (v3.8); the footer is the
 ever-present change surface (rule 5); the menu's honest hierarchy - money
@@ -265,7 +265,7 @@ additions.
 Key moment (rail, #09 verbatim): "Every check ran before it left the
 building" - the same checks, the same standard, the same named signature. How
 he pays has no bearing on how carefully his family's medicine is handled - and
-for the first time, he can see that. The Named Check, identical on the cash rail.
+for the first time, he can see that. The Pharmacist Beyond the Counter (formerly The Named Check), identical on the cash rail.
 
 Rail callouts: statuses arrive without being asked and carry their detail
 inline - never "open a link to see more", because a link is a download; the
@@ -329,7 +329,7 @@ Rail callouts: the cabinet convention - dispensed medicine carries its owner
 (the script-holder), shared medicine carries its consent-giver, OTC purchases
 are (Household) unless someone assigns them - the service never guesses;
 Thandi's entry is the privacy mode at work: on his phone it carries her name,
-never the medicine's - the full entry lives on hers (v3.10); her
+never the medicine's - the full entry lives on hers (v3.11); her
 clinic medicines appear because she granted the see-dial of CarerConsent,
 and "from her clinic script" is the provenance label - a told-us record the
 pharmacist can use but never vouches for (the v3.4 boundary, kept: the
@@ -359,7 +359,7 @@ kept here). Rail callouts: bad news arrives already carrying its plan, with
 the choices as buttons - never a dead end; the Dis-Chem order only - a
 stock-out never touches the programme parcel, the split offers "the rest of
 your order", never the mother's medicine (v3.4), and anything of Thandi's
-stays owner-named even in bad news (v3.10); the script that runs out is the
+stays owner-named even in bad news (v3.11); the script that runs out is the
 household's own - his or Thandi's, handled the same way; the mother's is the
 clinic's to renew (v3.4); the taxi-fare rule - every failure that can
 be known before he travels is told before he travels; and when things truly
@@ -398,9 +398,9 @@ throughout with owners never guessed (Household for unassigned OTC); the
 cabinet expanded with her shared clinic medicines under the CarerConsent
 see-grant; X4 re-pointed at his own script.
 
-## Process log - 2026-09-07 pass (Tamsin's instruction, punchlist 18)
+## Process log - 2026-09-07 pass (Tamsin's instruction, punchlist 19)
 
-Re-sync to #09 v3.9-v3.10, all decisions carried from the journey session:
+Re-sync to #09 v3.9-v3.11, all decisions carried from the journey session:
 Thandi added to the Flow, the notice, the breakdown, the check, the parcel,
 the cabinet and the reminders - owner-named on every shared surface, the
 product name only on her phone and her pack; the sync exchange re-cut from
@@ -435,7 +435,7 @@ Chromium: every tap plays, zero console errors.
 
 ## See also
 
-- [[to-be-household-repeat-moments]] - the approved journey this dramatises (v3.10)
+- [[to-be-household-repeat-moments]] - the approved journey this dramatises (v3.11)
 - [[conversational-design-whatsapp]] - the sourced conversation-design canon
   and platform limits this script obeys
 - [[design-kit/personas/low-data-whatsapp-first-peri-urban]] - Sipho
