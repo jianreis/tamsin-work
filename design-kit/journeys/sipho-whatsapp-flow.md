@@ -7,16 +7,16 @@ persona: "[[design-kit/personas/low-data-whatsapp-first-peri-urban|Sipho]] (cash
 status: draft
 confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, domain/consumer, topic/e-prescription, journey/refill, journey/collect, region/za]
-sources: [src-dc-complaints-jan2025, src-con-datareportal-digital-2024, src-con-ramp-data-prices, src-con-pelebox, src-wa-cloud-api-interactive, src-wa-message-templates, src-wa-flows, src-wa-click-to-chat, src-wa-business-messaging-best-practices, src-ux-google-conversation-design, src-ux-nng-chatbot-ux, src-ux-hall-conversational-design, src-ux-hicks-law-choice-load]
+sources: [src-dc-complaints-jan2025, src-con-datareportal-digital-2024, src-con-ramp-data-prices, src-con-pelebox, src-wa-cloud-api-interactive, src-wa-message-templates, src-wa-flows, src-wa-click-to-chat, src-wa-business-messaging-best-practices, src-ux-google-conversation-design, src-ux-nng-chatbot-ux, src-ux-hall-conversational-design, src-ux-hicks-law-choice-load, src-con-ccmdd-supply-cycle]
 created: "2026-08-07"
-updated: "2026-08-16"
+updated: "2026-09-07"
 ---
 
 # Sipho's repeat as a WhatsApp conversation - channel mock spec
 
 Content spec and build source for `deliverables/11-sipho-whatsapp-flow.html`.
 This deliverable dramatises the **cash track of the approved #09 journey**
-([[to-be-household-repeat-moments]], v3.8) as literal WhatsApp screens: every
+([[to-be-household-repeat-moments]], v3.10) as literal WhatsApp screens: every
 message Sipho sends or receives, rendered in the channel's real UI mechanics,
 with an annotation rail explaining which WhatsApp Business Platform feature
 carries each beat and which persona constraint it honours. It invents no new
@@ -33,7 +33,18 @@ process log at the end. Register is **annotated** - a phone frame per phase
 plus a side-rail of feature callouts - and the chat renders in **English for
 the executive audience**, with a standing annotation that production renders
 it in the language Sipho chose at sign-up. Previous deliverables stay
-untouched.
+untouched. 2026-09-07 (v4, this pass, Tamsin's instruction - punchlist 18):
+re-synced to #09 v3.9-v3.10. Thandi joins the standing order and every shared
+surface names her medicine by owner only ("Thandi's repeat" - the product
+name lives on her phone and her pack); the sign-up sync exchange is re-cut
+around the corrected CCMDD cadence (her mother's parcel comes every two to
+three months on the programme's cycle [[src-con-ccmdd-supply-cycle]], so it
+is excluded from the sync up front, tracked, and mentioned only when one
+lands or is due); the costed date-move now carries two mechanics (his
+loose-tablet top-up, her unsplittable whole-pack move); the locker credential
+adopts #09 v3.9's QR-first convention (scan at the locker, short backup PIN
+for failed scans or SMS); and every running total is recomputed for the
+two-line order.
 
 ## Ground rules
 
@@ -79,7 +90,11 @@ untouched.
    the price-before-travel mechanic and are not sourced SEP calculations;
    named products (Adco-Amlodipine, Biogen, Borstol, Panado, Benylin,
    ACC 200) are real SA products used illustratively - availability and
-   pricing unverified. Flagged ⚠️ in the build.
+   pricing unverified. Flagged ⚠️ in the build. The one deliberate
+   exception to real names: **Thandi's medicine is never a product name on
+   any surface both adults can see** (the v3.10 discreet rule) - the chat,
+   the price breakdown, the contents list and the cabinet on his phone all
+   say "Thandi's repeat"; the full name lives on her phone and her pack.
 7. **Platform capability claims are sourced** as of 2026-08-16:
    [[src-wa-cloud-api-interactive]] (reply buttons max 3, 20-char titles;
    list messages max 10 rows, 24-char row titles; body 1,024 / footer 60),
@@ -99,12 +114,12 @@ untouched.
 
 | Phase | Journey beats (#09 cash, v3.8) | WhatsApp mechanics used |
 |---|---|---|
-| P0 Signing up (once) | Invited after an in-store collection; language pick; add household; two dates, one memory (sync offered and passed over, his day moved to the 28th via the costed top-up); locker choice; payment rule; confirm | Business-initiated **invite template** (VP headline, twin CTA); **list message** for language; **WhatsApp Flow** for the household + medicines; the sync / date-move exchange as four sequenced binary turns (offer -> costed sync -> own-day pick -> read-back confirm); **reply buttons** for channel; **list message** for pickup points; read-back + reply-1 confirm |
-| P1 Repeats are due | Notice a week out (his order only, after her programme parcel); price before travel; keeps going unless he says otherwise | **Utility template** with the standing CHANGE **footer**; formatted price breakdown in-bubble (rung 1); **reply buttons**: add / change / person; the one change menu as a **list message** (9 rows) |
+| P0 Signing up (once) | Invited after an in-store collection; language pick; add household (Sipho + Thandi + his mother; kids and nephew not signed up); two dates, one memory (the programme parcel excluded from sync up front - two-to-three-month cycle, tracked only; his and Thandi's medicines move together to the 28th, his via loose-tablet top-up, hers via one whole extra pack); locker choice; payment rule; confirm | Business-initiated **invite template** (VP headline, twin CTA); **list message** for language; **WhatsApp Flow** for the household + medicines (Thandi's row owner-named); the date-move exchange as three sequenced turns (offer -> cadence honesty + day pick -> costed read-back confirm); **reply buttons** for channel; **list message** for pickup points; read-back + reply-1 confirm |
+| P1 Repeats are due | Notice a week out (the household's order - his tablets + Thandi's repeat; the mother's parcel noted when one lands, next-due named, never implied monthly); price before travel (two owner-named lines + fees); keeps going unless he says otherwise | **Utility template** with the standing CHANGE **footer**; formatted price breakdown in-bubble (rung 1); **reply buttons**: add / change / person; the one change menu as a **list message** (9 rows) |
 | P2 Adding to the order | He opens the door M3 left ajar; suggest from history, specials first; browse; free-text request, clarifying question, priced options | User-pulled session (his tap opens the 24-hour window - no marketing template); catalogue **product cards** with add-to-cart (rung 2); **[Browse medicines]** into the in-WhatsApp medicine-only catalogue; free text first-class, one clarifying question as **reply buttons**; running total re-stated in-bubble |
 | P3 Checked and packed | Picked-and-checked with the checks listed plainly and the pharmacist named; packed-and-sealed (no PIN); change stays one reply away | Two **status templates** with footers; check list as rung-1 anchor lines with the concrete clash example; the CHANGE demo branch (date moved via the menu) |
-| P4 In hand | PIN issued when the parcel physically lands; pay at counter activates it; contents check at the locker; photo escalation | **Reminder template**: first issue of the PIN (monospace code line) + the two retrieval steps; off-channel handover by design; post-handover contents list in real product names; **photo reply** escalates to a person phoning back |
-| P5 Taking it | Look up any medicine by its real name; her shared clinic medicines visible under consent; ask the pharmacist; reminders that stop when told | **List message** cabinet: product-name rows, owner in parentheses, told-us provenance ("from her clinic script"); rung-1 iconised dose lines; free-text and **voice-note** Q&A; STOP honoured instantly |
+| P4 In hand | Code issued when the parcel physically lands (QR-first, short backup PIN, v3.9); pay at counter activates it, scan opens the locker; contents check at the locker; photo escalation | **Reminder template**: first issue of the QR + backup PIN + the two retrieval steps; off-channel handover by design; post-handover contents list (real product names, Thandi's line owner-named); **photo reply** escalates to a person phoning back |
+| P5 Taking it | Look up any medicine by its real name (Thandi's entry owner-named on his phone - the cabinet's privacy mode); the mother's shared clinic medicines visible under consent; ask the pharmacist; reminders that stop when told (Thandi's on her phone, hers to stop) | **List message** cabinet: product-name rows, owner in parentheses, told-us provenance ("from her clinic script"); rung-1 iconised dose lines; free-text and **voice-note** Q&A; STOP honoured instantly |
 | ∥ When something breaks | Out of stock (his order only); locker down; his script runs out; a person phones back | **Exception templates** carrying the plan and its choices as **reply buttons**; told before travelling; "call me" one reply away; nothing dead-ends in the thread |
 
 Out of scope, same as #09: script-expiry renewal (Script Renew) beyond its
@@ -117,13 +132,16 @@ the constraint and the design agree.
 
 Sign-up in July, one August 2026 cycle, and the failure band "in the months
 after". Invited + signed up Mon 13 Jul · first order (not dramatised, carries
-the once-off top-up) Mon 20 Jul · her programme parcel Tue 18 Aug · notice
-Fri 21 Aug (a week out) · add-ons Sat 22 Aug (his tap) · picked Wed 26 Aug ·
-sealed Thu 27 Aug · in the locker + collected Fri 28 Aug · taking it Sat
-29 Aug. Running cash total for August: R100.60 (tablets + fee) -> R150.50
-(+ Biogen Multivitamin 30s R49.90) -> R189.00 (+ Borstol Cough Syrup R38.50).
-The July top-up (R18.40) rode the July order, so August's arithmetic is a
-normal month. All amounts illustrative ⚠️.
+both once-off top-ups) Mon 20 Jul · her programme parcel Tue 18 Aug (the
+programme's own cycle - the previous landed in June; the next is expected
+around October) · notice Fri 21 Aug (a week out) · add-ons Sat 22 Aug (his
+tap) · picked Wed 26 Aug · sealed Thu 27 Aug · in the locker + collected Fri
+28 Aug · taking it Sat 29 Aug. Running cash total for August: R198.90 (his
+tablets R64.40 + Thandi's repeat R62.10 + dispensing fees R72.40) -> R248.80
+(+ Biogen Multivitamin 30s R49.90) -> R287.30 (+ Borstol Cough Syrup R38.50).
+The July once-offs (his date-move top-up R18.40; her one extra pack R62.10)
+rode the July order, so August's arithmetic is a normal month. All amounts
+illustrative ⚠️.
 
 ## P0 script - Signing up (once) · Mon 13 Jul, from 17:02
 
@@ -133,23 +151,21 @@ normal month. All amounts illustrative ⚠️.
 | W0 | out | Button echo | Set up my repeats |
 | W1 | in | List message (language first) | Let's set you up - a few minutes, right here. First: which language should we speak? [Choose my language] -> sheet: **isiZulu ▶** · isiXhosa · Sesotho · English · Afrikaans · Setswana |
 | W2 | out | Sheet pick echoes | isiZulu |
-| W3 | in | Text + WhatsApp Flow CTA | Who is this service for? You can add family you care for - if they've given their consent for you to manage their medicine, it covers this service too. [Set up my family] -> Flow sheet: ☑ **Sipho (you)** - Blood-pressure tablets - Amlodipine 5 mg - 28 tablets, one month at a time · ☑ **Your mother** - Chronic medicine parcel - packed by her clinic's programme (CCMDD) - collected monthly; the programme fills and labels it · *You manage her medicine - consent recorded: order, collect and manage on her behalf. Her medicine list is shared with you - her choice, and she can change it. One tap confirms.* · [Continue] |
-| W4 | in | Chunked acknowledgement | Both added. |
-| W5 | in | Sync offer, exploration buttons | Your tablets and your mother's medicine are ready at different times of the month. We could line them up - one trip instead of two. Want to see how that would work? Buttons: **[How would it work? ▶] [Keep them apart]** |
+| W3 | in | Text + WhatsApp Flow CTA | Who is this service for? You can add family you care for - if they've given their consent for you to manage their medicine, it covers this service too. [Set up my family] -> Flow sheet: ☑ **Sipho (you)** - Blood-pressure tablets - Amlodipine 5 mg - 28 tablets, one month at a time · ☑ **Thandi (your wife)** - Her repeat medicine - one month's pack at a time - *you manage her medicine - consent recorded: order, collect and manage on her behalf; the medicine is named in full on her phone and her pack only - her choice* · ☑ **Your mother** - Chronic medicine parcel - packed by her clinic's programme (CCMDD) - comes every two to three months, on the programme's cycle; the programme fills and labels it · *You manage her medicine - consent recorded: order, collect and manage on her behalf. Her medicine list is shared with you - her choice, and she can change it. One tap confirms.* · [Continue] |
+| W4 | in | Chunked acknowledgement | All three added. |
+| W5 | in | Sync offer, exploration buttons | Your tablets, Thandi's medicine and your mother's parcel are all ready at different times. Yours and Thandi's could line up - one trip instead of two. Want to see how that would work? Buttons: **[How would it work? ▶] [Keep them apart]** |
 | W6 | out | Button echo | How would it work? |
-| W7 | in | Costed sync plan, one decision | Your mother's date can't move - her parcel comes from her clinic's programme, around the 18th, at no cost to you. Yours can move to the 18th. That takes a once-off top-up of extra tablets: **R66.70**. Move your tablets to the 18th? Buttons: **[Move to the 18th] [Keep them apart ▶]** |
-| W8 | out | Button echo | Keep them apart |
-| W9 | in | Own-day offer, free-text answer | No problem - yours stays around the 20th, the day of your first fill. If another day suits you better, you can move it the same way, with a small once-off top-up. Which day should your tablets be ready? Reply with a day, like 25 - or KEEP. |
-| W10 | out | Typed reply | 28 |
-| W11 | in | Costed read-back, commitment buttons | The 28th: a once-off top-up of **R18.40**, in your first order. From August, your tablets are ready on the 28th of every month. Shall I move it? Buttons: **[Yes, the 28th ▶] [Keep the 20th]** |
-| W12 | out | Button echo | Yes, the 28th |
-| W13 | in | Two-dates confirmation | Done - two dates, one chat. Hers: around the 18th, nothing to pay. Yours: the 28th of every month. Your first order is ready **Monday 20 July**, with the once-off top-up included. We remember both dates, so you don't have to. |
+| W7 | in | Cadence honesty + day pick, one question | First, your mother's parcel: it can't be moved. It comes from her clinic's programme every two to three months, on the programme's own timing, at no cost to you - and we'll tell you here whenever one lands. Yours and Thandi's can move to any day of the month. Which day should your order be ready? Reply with a day, like 25 - or KEEP. |
+| W8 | out | Typed reply | 28 |
+| W9 | in | Costed read-back, commitment buttons | The 28th, for both of you: your tablets - a once-off top-up of extra tablets, **R18.40** · Thandi's medicine comes as a full month's pack that can't be split, so her move takes one extra pack, once - **R62.10**. Both ride your first order; after that, every month is a normal month. Shall I move you both to the 28th? Buttons: **[Yes, the 28th ▶] [Keep as they are]** |
+| W10 | out | Button echo | Yes, the 28th |
+| W11 | in | One-date confirmation | Done - one date, one chat. Yours + Thandi's: the 28th of every month. Your mother's parcel: every two to three months, on the programme's cycle - we tell you when it lands. Your first order is ready **Monday 20 July**, with both once-off top-ups included. We remember the dates, so you don't have to. |
 | W14 | in | Reply buttons (channel choice) | How should your medicine reach you each month? Buttons: **[Collect near me ▶] [Deliver to me]** ("Deliver" plays: We can deliver where couriers reach - though most people near you choose the locker: no street address needed. Tap "Collect near me" to see the points close to home.) |
 | W15 | in | List message (pickup points) | Closest collection points to home: [Choose a point] -> sheet: **Capitec branch, taxi rank - locker ▶** · Dis-Chem store, 14 km away |
 | W16 | out | Sheet pick echoes | Capitec locker, taxi rank |
-| W17 | in | Language-of-content note | Done - the locker at the Capitec branch by the taxi rank. No street address needed. You'll get everything here in isiZulu, and your mother's medicine instructions come printed in her language. |
+| W17 | in | Language-of-content note | Done - the locker at the Capitec branch by the taxi rank. No street address needed. You'll get everything here in isiZulu, and each of their medicine instructions comes printed in the language they chose. |
 | W18 | in | Payment rule | Paying: cash or instant EFT at the Capitec counter when you collect - paying is what opens the locker. And we use cheaper generics unless you tell us otherwise, so the price stays one you can plan around. |
-| W19 | in | Read-back + confirm gate | Here is everything, read back: you + your mother · two dates - her parcel around the 18th (nothing to pay), yours on the 28th · collect at the Capitec locker, taxi rank · pay cash at the counter, generics by default · isiZulu here, her instructions in her language. Reply **1** to confirm - and from here, it's remembered. |
+| W19 | in | Read-back + confirm gate | Here is everything, read back: you + Thandi + your mother · one date - your order (yours and Thandi's) on the 28th of every month · her parcel every two to three months, tracked here (nothing to pay) · collect at the Capitec locker, taxi rank · pay cash at the counter, generics by default · isiZulu here, instructions per person in their language. Reply **1** to confirm - and from here, it's remembered. |
 | W20 | out | Keyword reply | 1 |
 | W21 | in | Confirmation | Done, Sipho. It just runs from here: your first order is ready Monday 20 July, and we message you a week before every order with the price. |
 
@@ -163,22 +179,28 @@ in-store collection; the VP headline is what the notification preview shows,
 so the hook lands before the chat is opened; the pharmacist stays unnamed);
 language list first, before anything else is asked; the Flow is the one place
 a form beats chat (his row is a dispensing record - plain handle, molecule +
-strength, monthly quantity; her row is described by origin because Dis-Chem
-never opens the programme parcel; consent is an already-granted fact whose
-scope is read back, POPIA-recorded, and her medicine-list share is her own
-revocable grant); the sync / date-move exchange runs one decision per turn
-with exploration labels until the single commitment turn (W11) - and the rail
-carries what the chat never asks: he picks the 28th because it sits after
-month-end payday; his reasoning, never the service's data. Script Sync made
-visible, then repurposed - the same priced mechanic he declined for the 18th
-buys him affordability on the 28th.
+strength, monthly quantity; Thandi's row is owner-named - the product name
+lives on her phone and her pack, the cabinet's privacy mode, v3.10; the
+mother's row is described by origin because Dis-Chem never opens the
+programme parcel, and states the true two-to-three-month cycle; the kids and
+nephew are absent by design - nothing of theirs repeats; consent is an
+already-granted fact whose scope is read back, POPIA-recorded, and each
+woman's medicine-list share is her own revocable grant); the date-move
+exchange runs one decision per turn with exploration labels until the single
+commitment turn (W9) - the programme parcel is excluded from the sync up
+front because an unpredictable two-to-three-month cycle can't be lined up
+with anything (v3.10), and the read-back carries the two price mechanics
+plainly: loose tablets top up by the day, a cycle-fixed pack moves only as a
+whole extra pack, once. The rail carries what the chat never asks: he picks
+the 28th because it sits after month-end payday; his reasoning, never the
+service's data.
 
 ## P1 script - Repeats are due · Fri 21 Aug, 08:12
 
 | # | Dir | Mechanic | Copy |
 |---|---|---|---|
-| M1 | in | Utility template + standing footer | Hello Sipho. Your repeat order for August is being prepared: your blood-pressure tablets (Adco-Amlodipine 5 mg). It will be ready at the **Capitec locker at the taxi rank** on **Friday 28 August**. Your mother's parcel arrived from her programme on Tuesday - both dates, one thread. You don't need to do anything. If nothing changes, it will be waiting. *(footer: Reply CHANGE any time - date, place, anything.)* |
-| M2 | in | Formatted price breakdown (rung 1) | Here is the price, so you know before you travel 🧾 *Your tablets:* Adco-Amlodipine 5 mg, 28 tablets (generic) - R64.40 · Dispensing fee - R36.20 · **Total to pay: R100.60** 💵 Cash or instant EFT at the Capitec counter - paying is what opens the locker 🔓 *(footer)* |
+| M1 | in | Utility template + standing footer | Hello Sipho. Your repeat order for August is being prepared: your blood-pressure tablets (Adco-Amlodipine 5 mg) and Thandi's repeat. It will be ready at the **Capitec locker at the taxi rank** on **Friday 28 August**. Your mother's parcel arrived from her programme on Tuesday - the next is due around October, and we'll tell you when it lands. You don't need to do anything. If nothing changes, it will be waiting. *(footer: Reply CHANGE any time - date, place, anything.)* |
+| M2 | in | Formatted price breakdown (rung 1) | Here is the price, so you know before you travel 🧾 *Your order:* Adco-Amlodipine 5 mg, 28 tablets (generic) - R64.40 · Thandi's repeat - R62.10 · Dispensing fees - R72.40 · **Total to pay: R198.90** 💵 Cash or instant EFT at the Capitec counter - paying is what opens the locker 🔓 *(footer)* |
 | M3 | in | Reply buttons (doors, not demands) | Happy with this? Then there's nothing to do - your order carries on by itself, this month and every month. Buttons: **[Add to my order] [Change something] [Talk to a person]** *(footer)* |
 
 Branches: **Change something** (button or the CHANGE keyword, anywhere) ->
@@ -195,8 +217,11 @@ lapse. Pause lives inside the menu now (Skip this month), not on a button.
 
 Key moments (rail, #09 verbatim): ⭐ "My medicine ordered itself" at M1;
 ⭐ "The only thing I ever bought blind - not anymore" at M2. Rail callouts:
-his order only - her programme parcel is tracked, never managed (v3.4); no
-CCMDD price line - there is nothing to pay on hers (v3.4); dates, never
+the household's Dis-Chem order - his tablets and Thandi's repeat, hers
+owner-named even in the price breakdown (v3.10); the programme parcel is
+tracked, never managed (v3.4), and the notice names when the next is due
+because the cycle is two to three months, never monthly (v3.10); no CCMDD
+price line - there is nothing to pay on hers (v3.4); dates, never
 "payday" - what the 28th means is his business (v3.8); the footer is the
 ever-present change surface (rule 5); the menu's honest hierarchy - money
 moves first, destructive last, escape hatch always at the bottom.
@@ -208,12 +233,12 @@ moves first, destructive last, escape hatch always at the bottom.
 | N0 | out | Button tap from M3, next morning - his moment, not a push | Add to my order |
 | N1 | in | Product cards (rung 2) + browse + free text | What would you like to add? Anything in before **Wednesday 26 August** rides in the same parcel. This route carries medicine only - no groceries - but the everyday kind is covered 💊. From what you usually buy: [🖼 **Biogen Multivitamin 30s** · R49.90 · ON SPECIAL · Add to order] [🖼 **Panado, 24 tablets** · R24.50 · Add to order] Or browse, or just type what you need. Button: **[Browse medicines]** ("Browse medicines" plays a system pill: Opens Dis-Chem's in-WhatsApp medicine catalogue - browse, add to cart, and the cart lands back in this thread as an order.) |
 | N2 | out | Card add-to-cart echoes | 🛒 Biogen Multivitamin 30s |
-| N3 | in | Running total | Added: Biogen Multivitamin 30s - R49.90. New total to pay: **R150.50**. |
+| N3 | in | Running total | Added: Biogen Multivitamin 30s - R49.90. New total to pay: **R248.80**. |
 | N4 | out | Free text, first-class | cough mixture |
 | N5 | in | One clarifying question, reply buttons | For a child or an adult? Buttons: **[For an adult ▶] [For a child]** ("For a child" plays: For a child we ask their age and weight first - the dose is checked against their weight by a pharmacist, so you collect with confidence.) |
 | N6 | in | Priced options as product cards | Three options, all in stock - tap one to add: [🖼 **Borstol Cough Syrup**, 100 ml · R38.50 · Add to order] [🖼 **Benylin wet cough**, 100 ml · R62.95 · Add to order] [🖼 **ACC 200 sachets**, 10 · R89.00 · Add to order] |
 | N7 | out | Card add-to-cart echoes | 🛒 Borstol Cough Syrup |
-| N8 | in | Total restated + close | Added: Borstol Cough Syrup - R38.50. Your total at the Capitec counter is now **R189.00**. Everything comes in the same locker on Friday - nothing else to arrange. *(footer)* |
+| N8 | in | Total restated + close | Added: Borstol Cough Syrup - R38.50. Your total at the Capitec counter is now **R287.30**. Everything comes in the same locker on Friday - nothing else to arrange. *(footer)* |
 
 No key moment: #09 agreed the cash addition carries no moment. Rail
 callouts: P2 is user-pulled - the suggestion message is an answer, not an
@@ -232,8 +257,8 @@ additions.
 
 | # | Dir | Mechanic | Copy |
 |---|---|---|---|
-| C1 | in (Wed 11:05) | Status template 1 (rung-1 anchor lines) | ✅ **Picked and checked** A registered pharmacist checked your order today: 💊 The right medicine, at the right dose · 🔁 Nothing clashes - your cough syrup was checked against your blood-pressure tablets · 📋 Your script, and your history with us. Signed off by pharmacist **Nomsa Dlamini**. *(footer)* |
-| C2 | in (Thu 15:48) | Status template 2 - no PIN at sealing (v3.6) | 📦 **Packed and sealed** One parcel: your tablets, the multivitamins and the cough syrup - waiting for the courier run to the locker. *(footer)* |
+| C1 | in (Wed 11:05) | Status template 1 (rung-1 anchor lines) | ✅ **Picked and checked** A registered pharmacist checked your family's order today: 💊 The right medicine, at the right dose, for each of you · 🔁 Nothing clashes - your cough syrup was checked against your blood-pressure tablets · 📋 Your scripts, and your history with us. Signed off by pharmacist **Nomsa Dlamini**. *(footer)* |
+| C2 | in (Thu 15:48) | Status template 2 - no credential at sealing (v3.6) | 📦 **Packed and sealed** One parcel for the household: your tablets, Thandi's repeat, the multivitamins and the cough syrup - waiting for the courier run to the locker. *(footer)* |
 | C3 | out | Optional demo branch: the CHANGE keyword | CHANGE |
 | C4 | in | The change menu + date move (demonstrative) | [the 9-row menu opens] -> **Change the date ▶** -> Just this month, or every month? **[This month ▶] [Every month]** -> Done - your parcel will be ready **Monday 31 August** instead. Same locker, same amount. |
 
@@ -252,16 +277,17 @@ nothing is issued at sealing - the PIN belongs to P4, when the parcel is
 physically in the locker (v3.6); the CHANGE demo shows fulfilment flexibility
 being *used*, not offered - reply-shaped, until the day before (the demo
 branch resets; downstream steps keep Friday). Boundary note: the pharmacist
-checks what Dis-Chem dispenses plus what the household has shared - the
-programme parcel is the programme's check.
+checks what Dis-Chem dispenses (his and Thandi's, against each other) plus
+what the household has shared - the programme parcel is the programme's
+check.
 
 ## P4 script - In hand · Fri 28 Aug
 
 | # | Dir | Mechanic | Copy |
 |---|---|---|---|
-| H1 | in (06:45) | Reminder template - first issue of the PIN (v3.6) | Your parcel is in the locker at Capitec, taxi rank - ready now. To collect: **1.** Pay **R189.00** at the counter - cash or instant EFT 💵 · **2.** Enter PIN `4729` at the locker 🔓 The same amount you saw before. Nothing has changed. *(footer)* |
-| - | - | Off-channel note (system pill in the mock) | At the bank: Sipho pays R189.00 at the counter, the locker opens on his PIN. Nothing happens in the chat - and nothing needs to. |
-| H2 | in (10:32) | Contents list after handover, real names | In your parcel: Adco-Amlodipine 5 mg, 28 tablets · Biogen Multivitamin 30s · Borstol Cough Syrup. Check it now, at the locker - before the taxi. If anything is missing or wrong, send a photo here and a person will phone you straight away, in your language. |
+| H1 | in (06:45) | Reminder template - first issue of the code (v3.6 timing, v3.9 QR-first) | Your parcel is in the locker at Capitec, taxi rank - ready now. To collect: **1.** Pay **R287.30** at the counter - cash or instant EFT 💵 · **2.** Scan your code at the locker 🔓 [QR rendered in-bubble] Backup PIN `4729` types straight in if the scan won't work - and the code comes by SMS if data is out. The same amount you saw before. Nothing has changed. *(footer)* |
+| - | - | Off-channel note (system pill in the mock) | At the bank: Sipho pays R287.30 at the counter, scans his code at the locker, and it opens. Nothing happens in the chat - and nothing needs to. |
+| H2 | in (10:32) | Contents list after handover, real names (Thandi's line owner-named) | In your parcel: Adco-Amlodipine 5 mg, 28 tablets · Thandi's repeat · Biogen Multivitamin 30s · Borstol Cough Syrup. Check it now, at the locker - before the taxi. If anything is missing or wrong, send a photo here and a person will phone you straight away, in your language. |
 | H3 | out | Photo reply (optional branch) | [photo of the open parcel] |
 | H4 | in | Escalation confirm | Thank you - a pharmacy team member is phoning you now, while you're still there. |
 
@@ -271,9 +297,10 @@ visit, near home, with no address required - and if the locker is ever down,
 he knows before he travels, not after.
 
 Rail callouts: the message comes the moment the parcel is physically in the
-locker - the PIN's first issue, not a restatement (v3.6), with the two
-retrieval steps in order because payment is what activates the PIN;
-pay-then-PIN is the Pelebox pattern
+locker - the code's first issue, not a restatement (v3.6), QR-first with a
+short typable backup PIN for failed scans or SMS delivery (v3.9), the two
+retrieval steps in order because payment is what activates the code;
+pay-then-scan is the Pelebox pattern
 [[wiki/consumer-context/last-mile-addressing-logistics]], with the
 cash-at-the-partner-counter release a punchlist 9(a) assumption ⚠️; the
 contents list uses the same product names as the cabinet and the shelf, so
@@ -285,10 +312,10 @@ the locker so a mistake never rides the taxi home.
 
 | # | Dir | Mechanic | Copy |
 |---|---|---|---|
-| T1 | in (09:15) | List message (the cabinet) - real names, owners in parentheses | Your family's medicine, whenever you want to look something up: [My medicines] -> sheet: **Adco-Amlodipine 5 mg ▶** (Sipho) Blood pressure - 1 every morning · **Enalapril 10 mg** (Your mother) Blood pressure - from her clinic script · **Hydrochlorothiazide 12.5 mg** (Your mother) Blood pressure - from her clinic script · **Biogen Multivitamin 30s** (Household) · **Borstol Cough Syrup** (Household) Wet cough - 100 ml |
+| T1 | in (09:15) | List message (the cabinet) - real names, owners in parentheses | Your family's medicine, whenever you want to look something up: [My medicines] -> sheet: **Adco-Amlodipine 5 mg ▶** (Sipho) Blood pressure - 1 every morning · **Thandi's repeat** (Thandi) Named in full on her phone and her pack - her choice · **Enalapril 10 mg** (Your mother) Blood pressure - from her clinic script · **Hydrochlorothiazide 12.5 mg** (Your mother) Blood pressure - from her clinic script · **Biogen Multivitamin 30s** (Household) · **Borstol Cough Syrup** (Household) Wet cough - 100 ml |
 | T2 | out | Sheet pick echoes | Adco-Amlodipine 5 mg |
 | T3 | in | Plain-language entry (rung-1 dose lines) | **Adco-Amlodipine 5 mg** (amlodipine) - your blood-pressure tablets. 🌅 One tablet, every morning · 🍽 With or without food · ✔ Keep taking them when you feel fine - that's the medicine working. If reading isn't enough, just ask here - a pharmacist reads this thread. Or send a voice note; we listen to those too. |
-| T4 | in (09:16) | Reminder routing + STOP | Reminders: yours comes here at 20:00. Your mother's go to her phone - a short voice note in her language, timed to her mornings. Her printed day-by-day sheet is in the parcel, for the fridge. Reply **STOP** to any reminder and it stops. |
+| T4 | in (09:16) | Reminder routing + STOP | Reminders: yours comes here at 20:00. Thandi's go to her own phone - her medicine named there, and hers to stop. Your mother's go to hers - a short voice note in her language, timed to her mornings; her printed day-by-day sheet is in the parcel, for the fridge. Reply **STOP** to any reminder and it stops. |
 | T5 | in (20:00) | The reminder itself | Time for your tablet, Sipho. |
 | T6 | out | Keyword reply (optional branch) | STOP |
 | T7 | in | Instant opt-out honoured | Done - no more daily reminders. Everything else stays exactly the same. |
@@ -300,7 +327,9 @@ something money buys - it comes with the medicine.
 
 Rail callouts: the cabinet convention - dispensed medicine carries its owner
 (the script-holder), shared medicine carries its consent-giver, OTC purchases
-are (Household) unless someone assigns them - the service never guesses; her
+are (Household) unless someone assigns them - the service never guesses;
+Thandi's entry is the privacy mode at work: on his phone it carries her name,
+never the medicine's - the full entry lives on hers (v3.10); her
 clinic medicines appear because she granted the see-dial of CarerConsent,
 and "from her clinic script" is the provenance label - a told-us record the
 pharmacist can use but never vouches for (the v3.4 boundary, kept: the
@@ -321,16 +350,18 @@ that arrives carrying its plan:
 |---|---|---|---|
 | X1 | in | Exception template + reply buttons | (Out of stock) One of your medicines - your blood-pressure tablets - is out of stock this month. Here is the plan, you choose: **1.** A different generic of the same medicine - ready on the 28th, same price · **2.** Split the order: the rest of your order is ready on the 28th, the tablets follow a few days later, same locker. Nothing is decided without you. Buttons: **[Use the generic ▶] [Split the order] [Call me]** *(footer)* |
 | X2 | in | Branch responses | Generic: Done - the other generic will be ready on the 28th. Same medicine, same price, same locker. / Split: Done - the rest of your order is ready on the 28th; the tablets follow, and we'll message the day they land - before you travel. / Call me: A person will phone you back before 17:00 today, in your language. |
-| X3 | in | Told before travelling | (The locker is down) Before you travel today: the locker at Capitec is out of order. Your parcel is already at the pickup point nearby - same amount, same PIN, and we'll tell you the moment the locker is fixed. Your taxi fare is never spent on a closed door. *(footer)* |
+| X3 | in | Told before travelling | (The locker is down) Before you travel today: the locker at Capitec is out of order. Your parcel is already at the pickup point nearby - same amount, same code, and we'll tell you the moment the locker is fixed. Your taxi fare is never spent on a closed door. *(footer)* |
 | X4 | in | Script Renew signpost - his own script (v3.4) | (The script runs out) Your script has one repeat left after this month. We've already sent the renewal request to your doctor - you'll see it move here, and it costs you nothing to chase. If your ready date comes before the new script is back, we'll tell you before you travel - with a plan from the pharmacist, and a person on the phone if you want one. *(footer)* |
 
 No key moment: #09's ∥ moment of truth is medical-aid-specific and
 insured-only; the cash recovery paths carry no separate moment (spec'd there,
 kept here). Rail callouts: bad news arrives already carrying its plan, with
-the choices as buttons - never a dead end; his order only - a stock-out
-never touches the programme parcel, and the split offers "the rest of your
-order", not her medicine (v3.4); the script that runs out is his own - hers
-is the clinic's to renew (v3.4); the taxi-fare rule - every failure that can
+the choices as buttons - never a dead end; the Dis-Chem order only - a
+stock-out never touches the programme parcel, the split offers "the rest of
+your order", never the mother's medicine (v3.4), and anything of Thandi's
+stays owner-named even in bad news (v3.10); the script that runs out is the
+household's own - his or Thandi's, handled the same way; the mother's is the
+clinic's to renew (v3.4); the taxi-fare rule - every failure that can
 be known before he travels is told before he travels; and when things truly
 break, the human comes by phone, one reply away - the loud human-not-bot
 beat the sentiment research demands.
@@ -367,6 +398,23 @@ throughout with owners never guessed (Household for unassigned OTC); the
 cabinet expanded with her shared clinic medicines under the CarerConsent
 see-grant; X4 re-pointed at his own script.
 
+## Process log - 2026-09-07 pass (Tamsin's instruction, punchlist 18)
+
+Re-sync to #09 v3.9-v3.10, all decisions carried from the journey session:
+Thandi added to the Flow, the notice, the breakdown, the check, the parcel,
+the cabinet and the reminders - owner-named on every shared surface, the
+product name only on her phone and her pack; the sync exchange re-cut from
+four turns to three (the programme parcel excluded up front on its true
+two-to-three-month cycle [[src-con-ccmdd-supply-cycle]]; one day-pick
+question; one costed commitment turn carrying both mechanics - loose-tablet
+top-up and whole-pack move); "collected monthly" corrected everywhere; the
+locker credential swept to QR-first with the backup PIN (v3.9 - the drift
+#11 had carried since 2026-08-17); all totals recomputed for the two-line
+order (R198.90 -> R248.80 -> R287.30, once-offs R18.40 + R62.10 in July).
+Kids and Lwazi deliberately absent from the sheet - acute needs ride P2,
+which is unchanged this pass. Full P0 walkthrough re-run in headless
+Chromium: every tap plays, zero console errors.
+
 ## Open questions
 
 - On the WhatsApp surface, do P3 and P4 want to compress into one "ready and
@@ -387,7 +435,7 @@ see-grant; X4 re-pointed at his own script.
 
 ## See also
 
-- [[to-be-household-repeat-moments]] - the approved journey this dramatises (v3.8)
+- [[to-be-household-repeat-moments]] - the approved journey this dramatises (v3.10)
 - [[conversational-design-whatsapp]] - the sourced conversation-design canon
   and platform limits this script obeys
 - [[design-kit/personas/low-data-whatsapp-first-peri-urban]] - Sipho

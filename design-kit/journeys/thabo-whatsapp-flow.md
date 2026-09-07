@@ -9,7 +9,7 @@ confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, domain/consumer, topic/acute, topic/e-prescription, journey/submit, journey/validate, journey/collect, region/za]
 sources: [src-dc-complaints-jan2025, src-dc-script-journey-interviews-2025, src-con-datareportal-digital-2024, src-con-ramp-data-prices]
 created: "2026-08-07"
-updated: "2026-08-18"
+updated: "2026-09-07"
 ---
 
 # Thabo's acute script as a WhatsApp conversation - channel mock spec
@@ -44,7 +44,7 @@ so the scene is told as page prose (ground rule 2). Previous deliverables
    app fluency.
 2. **No screen without traffic.** A scene with no genuine WhatsApp traffic
    is told as page prose beside the phone, never manufactured as chat
-   (Tamsin, 2026-08-07). The clinic consult, the collections-counter handover
+   (Tamsin, 2026-08-07). The doctor's consult, the collections-counter handover
    and the dead-phone recovery all live off-channel; the mock shows only
    what the phone would really show.
 3. **Data frugality is visible - and the entry runs the other way.** The
@@ -78,7 +78,7 @@ so the scene is told as page prose (ground rule 2). Previous deliverables
 
 | Phase | Journey beats (#10 cash) | WhatsApp mechanics used |
 |---|---|---|
-| P1 At the doctor | Paper script photographed in from the clinic queue; immediate "we have it"; read-back + price + generic saving inside 15 minutes; he picks the generic | **Outgoing media message** (the photo is the front door - no sign-up, no account); text ack; read-back with the weight off the script; itemised price in-bubble; **reply buttons** (max 3): use the generic / keep the branded / talk to a person |
+| P1 At the doctor | Paper script photographed in from the queue to pay at the doctor's rooms; immediate "we have it"; read-back + price + generic saving inside 15 minutes; he picks the generic | **Outgoing media message** (the photo is the front door - no sign-up, no account); text ack; read-back with the weight off the script; itemised price in-bubble; **reply buttons** (max 3): use the generic / keep the branded / talk to a person |
 | P2 Choosing how I get it | The same thread asks how; store by name, shared location or delivery-cost address; the go-ahead release; symptom add-ons attach (10(c)) | **Reply buttons** for the route ask; typed store name stays first-class; confirmation with collections-counter readiness + hold-until-close; **keyword reply "1 - go ahead"** as the release gate; numbered add-on picks with the total restated |
 | P3 Checked and filled | Being made up at his store; the named final check against his son's weight; ready before shift end, code + dosing guide | Two **status templates** with detail inline; "Checked by **Sindi** ✓ - the dose is right for his weight"; ready message carrying the **order code as a text line** and the in-language dosing guide; no link that costs data |
 | P4 In hand | Collections counter, code at handover, counselling worked in, pay what he already knew | Almost entirely **off-channel by design** - the counter scene is told as page prose beside P3's ready message (ground rule 2). Candidate for P3+P4 compression on this surface - parked in open questions |
@@ -95,7 +95,7 @@ the design agree.
 ## The timeline
 
 One sick day - Tuesday 8 September 2026 - then day 3, then the P6 morning.
-Clinic visit from 08:00 · script photographed 09:41, in the queue to pay ·
+The local doctor sees his son from 08:00 · script photographed 09:41, in the queue to pay for the consult ·
 ack 09:41 · read-back + price 09:53 (inside the 15-minute promise, 10(f)) ·
 generic picked 09:55 · routing + go-ahead + add-on 09:56-10:04 · being made
 up 12:10 · checked 14:26 · ready 15:05 · collections counter after shift, about
@@ -107,15 +107,17 @@ R208.90 with the paracetamol syrup added. All amounts illustrative ⚠️.
 
 ## P1 script - At the doctor · Tue 8 Sep, from 09:41
 
-**Page prose above the phone (ground rule 2):** the clinic scene stays off
-the screen. From the approved #10 context activities: his son's cough went
-to his chest last night; the morning off shift; the clinic examines and
-weighs the boy, diagnoses a chest infection, and the doctor writes the
-script by hand - an antibiotic and a syrup for the cough - and explains it
+**Page prose above the phone (ground rule 2):** the doctor's-rooms scene
+stays off the screen. From the approved #10 context activities (reframed
+2026-09-06: the local private doctor, cash consult - a public clinic is free
+and dispenses on site): his son's cough went to his chest last night; the
+morning off shift; the local doctor examines and weighs the boy, diagnoses a
+chest infection, and - not being a dispensing practice - writes the script
+by hand - an antibiotic and a syrup for the cough - and explains it
 once. The paper goes into his jacket pocket. The thread starts where the
 channel genuinely enters: in the queue to pay, when Thabo photographs the
-script. The number is on the clinic's poster; no sign-up, no account, no
-app - the photo is the whole front door.
+script. The number is on the poster in the doctor's waiting room; no sign-up, no
+account, no app - the photo is the whole front door.
 
 | # | Dir | Mechanic | Copy |
 |---|---|---|---|
@@ -128,11 +130,11 @@ app - the photo is the whole front door.
 | T6 | in (09:55) | Confirmation + the gate planted | Done - the generic antibiotic and the cough syrup. **Total: R176.40.** Nothing is made up in your son's name until you say go ahead - the next message asks how you want to get it. |
 
 Key moment (rail, #10 verbatim): ⭐ "I knew the price before I left the
-clinic gate" at T3 - Thabo has done this trip before, the old way: the taxi
+doctor's gate" at T3 - Thabo has done this trip before, the old way: the taxi
 to a pharmacy with the week's money in his pocket and no idea if it's
 enough, the queue with a sick child, the counter where the number is
 finally said out loud - and the walk away, in front of everyone, if it's
-too much. This time the number came to him, standing at the clinic, before
+too much. This time the number came to him, standing at the doctor's rooms, before
 anything was spent. He knows the price - and that he can afford it - before
 his son takes another step. Nobody made him ask; the price was simply
 offered, with the cheaper generic presented as the smart choice it is. That
@@ -204,7 +206,7 @@ the counter opens the pack with him: the syringe marked at his line, the
 labels in his language, finish all seven days even when he seems better;
 he asks what he wants to ask while he's standing there. Then one total -
 the script and the paracetamol syrup - the same number he's known since
-the clinic: R208.90, cash or card, at the same counter, and done.
+the doctor's rooms: R208.90, cash or card, at the same counter, and done.
 
 Key moment (rail, #10 verbatim): ⭐ "The counter was expecting me" - at the
 code handover. Rail callouts: the code at handover carries his son's whole
