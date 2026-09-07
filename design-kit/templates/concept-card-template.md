@@ -152,7 +152,11 @@ page's update line - as Auto-Refill became Auto-Repeat on 2026-09-07 after
 Aliyah's run-through. Express Collect became Counterless Collection the same day,
 with a new anchor - the ATM and the teller replaced self-checkout, which is not
 a South African habit - because the idea itself, choosing whether you want a
-pharmacist in person today, did not change.) When a concept outgrows its card (Made-for-Me Packaging →
+pharmacist in person today, did not change. The Named Check became The
+Pharmacist Beyond the Counter, also 2026-09-07: the named check stays as the first
+proof point and the idea widens to a pharmacist who is part of the whole journey,
+visible and reachable in store, at home and on WhatsApp - a widening, not a new
+idea, so reworked in place.) When a concept outgrows its card (Made-for-Me Packaging →
 Made-for-Me Medicine), the new concept is appended as a **new card** and the
 old one stays visible with `archived: true` plus an `archiveNote` (trusted
 HTML) naming and linking its successor - the card renders dimmed with an

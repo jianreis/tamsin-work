@@ -240,7 +240,7 @@ additions.
 Key moment (rail, #09 verbatim): "Every check ran before it left the
 building" - the same checks, the same standard, the same named signature. How
 he pays has no bearing on how carefully his family's medicine is handled - and
-for the first time, he can see that. The Named Check, identical on the cash rail.
+for the first time, he can see that. The Pharmacist Beyond the Counter (formerly The Named Check), identical on the cash rail.
 
 Rail callouts: statuses arrive without being asked and carry their detail
 inline - never "open a link to see more", because a link is a download; the

@@ -202,7 +202,7 @@ governs. Summary of the approved skeleton:
 
 Concepts referenced inline in the key-moment copy: CarerConsent, Household
 Medicine Cabinet (P0); Auto-Repeat (named Auto-Refill until 2026-09-07), Script Sync, Real-Time Transparency (P1);
-The Standing Order (P2); The Named Check (P3); Real-Time Transparency (P4);
+The Standing Order (P2); The Pharmacist Beyond the Counter, formerly The Named Check (P3); Real-Time Transparency (P4);
 Made-for-Me Medicine (P5); the ∥ moment pays off the P0 payment preferences.
 (2026-07-26, agreed with Tamsin during the #10 concept pass: Made-for-Me
 Packaging was archived in `08-concepts.html` and superseded by the broader
