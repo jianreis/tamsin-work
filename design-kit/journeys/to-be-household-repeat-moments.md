@@ -201,7 +201,7 @@ governs. Summary of the approved skeleton:
 | ∥ When something breaks | Things always go wrong; hear it early, make a plan together - never a dead end | My medical aid says no ⭐ · Out of stock · The delivery fails (new scenario: re-deliver tomorrow or collect at a STORE, same QR at the counter) · My script runs out (Script Renew handoff: renewal started weeks early; pharmacist's pending-renewal options deliberately unspecified - reg ⚠️ in open-questions) · A person, before I ask (v3.1) | Out of stock (never "short" - implies a half-supply; his order only, v3.4) · The locker is down · My script runs out (his own script - hers is the clinic's, v3.4; told before travelling) · A person phones me back (call-me-back, not chat - when things break, a human phones) (v3.1) | "Medical aid said no. Dis-Chem said 'let's make a plan.'" ⭐ (insured only - the cash economy has no medical aid; its recovery paths carry no separate moment) | An exception kills the order (verbatim, complaints) · No fallback, no way through (sentiment) · A generic no one explained (sentiment) · After a failure, they leave (sentiment, R460) |
 
 Concepts referenced inline in the key-moment copy: CarerConsent, Household
-Medicine Cabinet (P0); Auto-Refill, Script Sync, Real-Time Transparency (P1);
+Medicine Cabinet (P0); Auto-Repeat (named Auto-Refill until 2026-09-07), Script Sync, Real-Time Transparency (P1);
 The Standing Order (P2); The Named Check (P3); Real-Time Transparency (P4);
 Made-for-Me Medicine (P5); the ∥ moment pays off the P0 payment preferences.
 (2026-07-26, agreed with Tamsin during the #10 concept pass: Made-for-Me

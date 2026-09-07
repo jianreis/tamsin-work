@@ -4,7 +4,7 @@ title: "Concept card template - executive concept primers"
 status: reviewed
 tags: [design-kit, template, domain/ux, topic/trust-safety]
 created: "2026-07-01"
-updated: "2026-07-01"
+updated: "2026-09-07"
 ---
 
 # Concept card template - executive concept primers
@@ -55,7 +55,7 @@ is a living document; add cards as new journeys generate new concepts.
 Every card has five parts, in this order.
 
 1. **Icon + number + title.** The title is the concept's name as a plain noun
-   phrase (*The Household Medicine Cabinet*, *Auto-Refill*). Not clever, not
+   phrase (*The Household Medicine Cabinet*, *Auto-Repeat*). Not clever, not
    teasing. No "Also:" subtitle - if the tagline works, a subtitle just repeats it.
 2. **Tagline.** One plain, idiomatic line, roughly six to ten words, that *is*
    the whole idea. Lead with the most obvious framing; no mood words ("calm",
@@ -128,7 +128,7 @@ comment at the end of the array. Each object:
 ```js
 {
   icon: "refill",              // key into the inline ICONS map (24x24 SVG, no external requests)
-  title: "Auto-Refill",        // plain noun phrase
+  title: "Auto-Repeat",        // plain noun phrase
   tagline: "Your repeat should just repeat.",
   intro: '... <span class="why">first-order why</span> ... second-order draw-through',
                                // trusted author HTML: anchor -> "digital version" -> why
@@ -145,7 +145,11 @@ highlight and bold lead-ins); the `title`, `tagline` and `featuresLabel` are
 escaped.
 
 **Superseding a concept (added 2026-07-26):** concepts are never deleted or
-renamed in place. When a concept outgrows its card (Made-for-Me Packaging →
+renamed in place *when the idea changes*. (A pure rename of the same idea, on the
+human lead's instruction, is the exception: change the title in place, repoint
+the display text in every journey that links to it, and date the rename in the
+page's update line - as Auto-Refill became Auto-Repeat on 2026-09-07 after
+Aliyah's run-through.) When a concept outgrows its card (Made-for-Me Packaging →
 Made-for-Me Medicine), the new concept is appended as a **new card** and the
 old one stays visible with `archived: true` plus an `archiveNote` (trusted
 HTML) naming and linking its successor - the card renders dimmed with an
@@ -163,7 +167,7 @@ worked exemplar of the pattern, and note how each anchor is an everyday thing:
 
 | # | Concept | Tagline | Everyday anchor |
 |---|---|---|---|
-| 1 | Auto-Refill | Your repeat should just repeat. | taking the same medicine every month, tired of the re-order dance |
+| 1 | Auto-Repeat (Auto-Refill until 2026-09-07) | Your repeat should just repeat. | taking the same medicine every month, tired of the re-order dance |
 | 2 | The Household Medicine Cabinet | The whole family's medicine, in one place. | the medicine cabinet at home everyone knows to check |
 | 3 | Real-Time Transparency | Buying your medicine, as clear as buying your groceries. | shopping online: see the price, see the stock, track it |
 | 4 | CarerConsent | You already manage their medicine. This makes it official. | already running a parent's or child's medication |
