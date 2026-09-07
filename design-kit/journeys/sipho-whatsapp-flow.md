@@ -9,14 +9,14 @@ confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, domain/consumer, topic/e-prescription, journey/refill, journey/collect, region/za]
 sources: [src-dc-complaints-jan2025, src-con-datareportal-digital-2024, src-con-ramp-data-prices, src-con-pelebox, src-wa-cloud-api-interactive, src-wa-message-templates, src-wa-flows, src-wa-click-to-chat, src-wa-business-messaging-best-practices, src-ux-google-conversation-design, src-ux-nng-chatbot-ux, src-ux-hall-conversational-design, src-ux-hicks-law-choice-load]
 created: "2026-08-07"
-updated: "2026-08-16"
+updated: "2026-09-07"
 ---
 
 # Sipho's repeat as a WhatsApp conversation - channel mock spec
 
 Content spec and build source for `deliverables/11-sipho-whatsapp-flow.html`.
 This deliverable dramatises the **cash track of the approved #09 journey**
-([[to-be-household-repeat-moments]], v3.8) as literal WhatsApp screens: every
+([[to-be-household-repeat-moments]], v3.9) as literal WhatsApp screens: every
 message Sipho sends or receives, rendered in the channel's real UI mechanics,
 with an annotation rail explaining which WhatsApp Business Platform feature
 carries each beat and which persona constraint it honours. It invents no new
@@ -29,7 +29,9 @@ full journey"); all seven phases scripted and built to the same rules.
 2026-08-16 (this pass, agreed with Tamsin message by message): re-synced to
 #09 v3.4-v3.8, and the whole script re-cut against the sourced
 conversational-design canon ([[conversational-design-whatsapp]]) - see the
-process log at the end. Register is **annotated** - a phone frame per phase
+process log at the end. 2026-09-07 (v3.1, Tamsin's instruction): brought up
+to #09 v3.9 - the locker credential is QR-first with a short backup PIN
+beneath it (see the P4 script and the second process log). Register is **annotated** - a phone frame per phase
 plus a side-rail of feature callouts - and the chat renders in **English for
 the executive audience**, with a standing annotation that production renders
 it in the language Sipho chose at sign-up. Previous deliverables stay
@@ -97,13 +99,13 @@ untouched.
 
 ## Feature mapping - all seven phases
 
-| Phase | Journey beats (#09 cash, v3.8) | WhatsApp mechanics used |
+| Phase | Journey beats (#09 cash, v3.9) | WhatsApp mechanics used |
 |---|---|---|
 | P0 Signing up (once) | Invited after an in-store collection; language pick; add household; two dates, one memory (sync offered and passed over, his day moved to the 28th via the costed top-up); locker choice; payment rule; confirm | Business-initiated **invite template** (VP headline, twin CTA); **list message** for language; **WhatsApp Flow** for the household + medicines; the sync / date-move exchange as four sequenced binary turns (offer -> costed sync -> own-day pick -> read-back confirm); **reply buttons** for channel; **list message** for pickup points; read-back + reply-1 confirm |
 | P1 Repeats are due | Notice a week out (his order only, after her programme parcel); price before travel; keeps going unless he says otherwise | **Utility template** with the standing CHANGE **footer**; formatted price breakdown in-bubble (rung 1); **reply buttons**: add / change / person; the one change menu as a **list message** (9 rows) |
 | P2 Adding to the order | He opens the door M3 left ajar; suggest from history, specials first; browse; free-text request, clarifying question, priced options | User-pulled session (his tap opens the 24-hour window - no marketing template); catalogue **product cards** with add-to-cart (rung 2); **[Browse medicines]** into the in-WhatsApp medicine-only catalogue; free text first-class, one clarifying question as **reply buttons**; running total re-stated in-bubble |
-| P3 Checked and packed | Picked-and-checked with the checks listed plainly and the pharmacist named; packed-and-sealed (no PIN); change stays one reply away | Two **status templates** with footers; check list as rung-1 anchor lines with the concrete clash example; the CHANGE demo branch (date moved via the menu) |
-| P4 In hand | PIN issued when the parcel physically lands; pay at counter activates it; contents check at the locker; photo escalation | **Reminder template**: first issue of the PIN (monospace code line) + the two retrieval steps; off-channel handover by design; post-handover contents list in real product names; **photo reply** escalates to a person phoning back |
+| P3 Checked and packed | Picked-and-checked with the checks listed plainly and the pharmacist named; packed-and-sealed (no code); change stays one reply away | Two **status templates** with footers; check list as rung-1 anchor lines with the concrete clash example; the CHANGE demo branch (date moved via the menu) |
+| P4 In hand | QR code issued when the parcel physically lands, a short backup PIN beneath it (v3.9); pay at counter activates it; scan at the locker, PIN as the typable fallback; contents check at the locker; photo escalation | **Reminder template with an image header**: first issue of the QR (the one image the service sends) + the backup PIN as a monospace code line + the two retrieval steps; off-channel handover by design; post-handover contents list in real product names; **photo reply** escalates to a person phoning back |
 | P5 Taking it | Look up any medicine by its real name; her shared clinic medicines visible under consent; ask the pharmacist; reminders that stop when told | **List message** cabinet: product-name rows, owner in parentheses, told-us provenance ("from her clinic script"); rung-1 iconised dose lines; free-text and **voice-note** Q&A; STOP honoured instantly |
 | ∥ When something breaks | Out of stock (his order only); locker down; his script runs out; a person phones back | **Exception templates** carrying the plan and its choices as **reply buttons**; told before travelling; "call me" one reply away; nothing dead-ends in the thread |
 
@@ -233,7 +235,7 @@ additions.
 | # | Dir | Mechanic | Copy |
 |---|---|---|---|
 | C1 | in (Wed 11:05) | Status template 1 (rung-1 anchor lines) | ✅ **Picked and checked** A registered pharmacist checked your order today: 💊 The right medicine, at the right dose · 🔁 Nothing clashes - your cough syrup was checked against your blood-pressure tablets · 📋 Your script, and your history with us. Signed off by pharmacist **Nomsa Dlamini**. *(footer)* |
-| C2 | in (Thu 15:48) | Status template 2 - no PIN at sealing (v3.6) | 📦 **Packed and sealed** One parcel: your tablets, the multivitamins and the cough syrup - waiting for the courier run to the locker. *(footer)* |
+| C2 | in (Thu 15:48) | Status template 2 - no code at sealing (v3.6) | 📦 **Packed and sealed** One parcel: your tablets, the multivitamins and the cough syrup - waiting for the courier run to the locker. *(footer)* |
 | C3 | out | Optional demo branch: the CHANGE keyword | CHANGE |
 | C4 | in | The change menu + date move (demonstrative) | [the 9-row menu opens] -> **Change the date ▶** -> Just this month, or every month? **[This month ▶] [Every month]** -> Done - your parcel will be ready **Monday 31 August** instead. Same locker, same amount. |
 
@@ -248,7 +250,7 @@ check list answers "checked what?" in plain lines, with the clash example
 doing the teaching (his August order really does contain the one interaction
 a pharmacist watches for: decongestant syrups against blood-pressure
 tablets); the pharmacist is named at the final check (the #10 name rule);
-nothing is issued at sealing - the PIN belongs to P4, when the parcel is
+nothing is issued at sealing - the code belongs to P4, when the parcel is
 physically in the locker (v3.6); the CHANGE demo shows fulfilment flexibility
 being *used*, not offered - reply-shaped, until the day before (the demo
 branch resets; downstream steps keep Friday). Boundary note: the pharmacist
@@ -259,8 +261,8 @@ programme parcel is the programme's check.
 
 | # | Dir | Mechanic | Copy |
 |---|---|---|---|
-| H1 | in (06:45) | Reminder template - first issue of the PIN (v3.6) | Your parcel is in the locker at Capitec, taxi rank - ready now. To collect: **1.** Pay **R189.00** at the counter - cash or instant EFT 💵 · **2.** Enter PIN `4729` at the locker 🔓 The same amount you saw before. Nothing has changed. *(footer)* |
-| - | - | Off-channel note (system pill in the mock) | At the bank: Sipho pays R189.00 at the counter, the locker opens on his PIN. Nothing happens in the chat - and nothing needs to. |
+| H1 | in (06:45) | Reminder template with image header - first issue of the QR, backup PIN beneath (v3.6 timing, v3.9 shape) | *[image header: the locker QR code · caption "Your locker code - scan at the locker after you pay. Backup PIN: `4729`"]* Your parcel is in the locker at Capitec, taxi rank - ready now. To collect: **1.** Pay **R189.00** at the counter - cash or instant EFT 💵 · **2.** Scan the code above at the locker 🔓 If the scan won't work, type the backup PIN `4729` at the locker instead. The same amount you saw before. Nothing has changed. *(footer)* |
+| - | - | Off-channel note (system pill in the mock) | At the bank: Sipho pays R189.00 at the counter, scans his code at the locker, and it opens. Nothing happens in the chat - and nothing needs to. |
 | H2 | in (10:32) | Contents list after handover, real names | In your parcel: Adco-Amlodipine 5 mg, 28 tablets · Biogen Multivitamin 30s · Borstol Cough Syrup. Check it now, at the locker - before the taxi. If anything is missing or wrong, send a photo here and a person will phone you straight away, in your language. |
 | H3 | out | Photo reply (optional branch) | [photo of the open parcel] |
 | H4 | in | Escalation confirm | Thank you - a pharmacy team member is phoning you now, while you're still there. |
@@ -271,9 +273,14 @@ visit, near home, with no address required - and if the locker is ever down,
 he knows before he travels, not after.
 
 Rail callouts: the message comes the moment the parcel is physically in the
-locker - the PIN's first issue, not a restatement (v3.6), with the two
-retrieval steps in order because payment is what activates the PIN;
-pay-then-PIN is the Pelebox pattern
+locker - the code's first issue, not a restatement (v3.6), with the two
+retrieval steps in order because payment is what activates it; QR first, the
+convention every code in #09 and #10 follows since 2026-08-17 (punchlist
+10(l)) - a scan beats typing a number with a queue behind him, and the short
+PIN beneath covers a failed scan and stands alone when the message goes out
+by SMS; the QR is the one image this service ever sends him, a few kilobytes
+once a month, spent where it saves the most fumbling (the visual ladder's
+rung-3 exception, argued not assumed); pay-then-scan is the Pelebox pattern
 [[wiki/consumer-context/last-mile-addressing-logistics]], with the
 cash-at-the-partner-counter release a punchlist 9(a) assumption ⚠️; the
 contents list uses the same product names as the cabinet and the shelf, so
@@ -321,7 +328,7 @@ that arrives carrying its plan:
 |---|---|---|---|
 | X1 | in | Exception template + reply buttons | (Out of stock) One of your medicines - your blood-pressure tablets - is out of stock this month. Here is the plan, you choose: **1.** A different generic of the same medicine - ready on the 28th, same price · **2.** Split the order: the rest of your order is ready on the 28th, the tablets follow a few days later, same locker. Nothing is decided without you. Buttons: **[Use the generic ▶] [Split the order] [Call me]** *(footer)* |
 | X2 | in | Branch responses | Generic: Done - the other generic will be ready on the 28th. Same medicine, same price, same locker. / Split: Done - the rest of your order is ready on the 28th; the tablets follow, and we'll message the day they land - before you travel. / Call me: A person will phone you back before 17:00 today, in your language. |
-| X3 | in | Told before travelling | (The locker is down) Before you travel today: the locker at Capitec is out of order. Your parcel is already at the pickup point nearby - same amount, same PIN, and we'll tell you the moment the locker is fixed. Your taxi fare is never spent on a closed door. *(footer)* |
+| X3 | in | Told before travelling | (The locker is down) Before you travel today: the locker at Capitec is out of order. Your parcel is already at the pickup point nearby - same amount, same code, and we'll tell you the moment the locker is fixed. Your taxi fare is never spent on a closed door. *(footer)* |
 | X4 | in | Script Renew signpost - his own script (v3.4) | (The script runs out) Your script has one repeat left after this month. We've already sent the renewal request to your doctor - you'll see it move here, and it costs you nothing to chase. If your ready date comes before the new script is back, we'll tell you before you travel - with a plan from the pharmacist, and a person on the phone if you want one. *(footer)* |
 
 No key moment: #09's ∥ moment of truth is medical-aid-specific and
@@ -345,7 +352,9 @@ beat the sentiment research demands.
 - New render mechanics this pass: template footers (small grey line under the
   bubble), product cards (thumbnail block + name + price + add-to-cart row),
   monospace code line for the PIN, emoji anchor lines, the 9-row change menu
-  sheet, and the Flow sheet's richer member rows.
+  sheet, and the Flow sheet's richer member rows. 2026-09-07: a QR image
+  header inside the P4 bubble (an inline stand-in pattern, no download in
+  the mock) with the backup PIN in its caption.
 - Feature chips carry their basis in tooltips; platform-capability chips cite
   the 2026-08-16 ingest ([[conversational-design-whatsapp]]); catalogue /
   cart chips stay ⚠️ pending the commerce-docs verify.
@@ -367,6 +376,19 @@ throughout with owners never guessed (Household for unassigned OTC); the
 cabinet expanded with her shared clinic medicines under the CarerConsent
 see-grant; X4 re-pointed at his own script.
 
+## Process log - 2026-09-07 pass (Tamsin's instruction)
+
+Brought up to #09 v3.9, closing the drift left when #09's cash locker moved
+to the QR-first convention on 2026-08-17 (punchlist 10(l)) while this mock
+stayed at v3.8. One shape change, everything else untouched: the P4 in-locker
+message (H1) now arrives as a template with an image header carrying the
+locker QR, the short backup PIN beneath it in the caption and again in the
+body; the retrieval steps read pay, then scan, with the PIN as the typable
+fallback for a failed scan or an SMS delivery. The off-channel note, the ∥
+locker-down message ("same amount, same code"), the P3 "nothing issued at
+sealing" callout, the spine node and the rails follow. Timing (issue on
+locker arrival, v3.6) and pay-then-activate mechanics are unchanged.
+
 ## Open questions
 
 - On the WhatsApp surface, do P3 and P4 want to compress into one "ready and
@@ -387,7 +409,7 @@ see-grant; X4 re-pointed at his own script.
 
 ## See also
 
-- [[to-be-household-repeat-moments]] - the approved journey this dramatises (v3.8)
+- [[to-be-household-repeat-moments]] - the approved journey this dramatises (v3.9)
 - [[conversational-design-whatsapp]] - the sourced conversation-design canon
   and platform limits this script obeys
 - [[design-kit/personas/low-data-whatsapp-first-peri-urban]] - Sipho
