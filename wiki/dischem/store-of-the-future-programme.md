@@ -5,9 +5,9 @@ domain: dischem
 status: draft
 confidence: medium
 tags: [domain/dischem, domain/ux, project/sotf, journey/submit, journey/dispense, journey/collect, journey/pay, topic/automation, region/za]
-sources: [src-sotf-ecosystem-playback-2025, src-sotf-steerco1-concept-2025, src-sotf-steerco-decisions-2025, src-sotf-melrose-workshops-2026, src-sotf-melrose-store-design-2026, src-sotf-training-launch-2026, src-dc-store-future-interviews-2026]
+sources: [src-sotf-ecosystem-playback-2025, src-sotf-steerco1-concept-2025, src-sotf-steerco-decisions-2025, src-sotf-melrose-workshops-2026, src-sotf-melrose-store-design-2026, src-sotf-training-launch-2026, src-sotf-otc-workshop-2026, src-dc-store-future-interviews-2026]
 created: "2026-09-01"
-updated: "2026-09-01"
+updated: "2026-09-07"
 ---
 
 # Store of the Future (SOTF) — programme overview
@@ -143,6 +143,28 @@ closure), manual suffix-linked tickets for one collector with many scripts
 (care facilities), H-ticket fallback queues for failed digital journeys, and
 long unhappy-journey catalogues across Hub, pharmacy and clinic. These, plus
 the deferred MVP items, are the natural candidate list for the evolution work.
+
+## Live evolution work: the OTC solve (Sep 2026)
+
+The first evolution project targets OTC inside the decoupled flow. The
+internal brainstorm (2 Sep 2026, [[src-sotf-otc-workshop-2026]]) sharpened
+the picture: **Irene's sales mix is 60% OTC to 40% script** (relayed from its
+dispensary manager, retrievable), the friction has been surfaced at both
+stores (quietly at Melrose Arch, loudly at Irene), and the Irene workaround
+is better read as staff skipping the script-only signature steps that OTC
+does not legally require - "the manual version of the ROWA" - though it
+fails at Saturday peak, when long scripts drown the shared queue and
+customers cluster around the four-seat Health Hub. Medirite and Clicks
+already run the hybrid the options point at: one queue, kiosk ticket types,
+back-end routing of OTC to PBQs, and **visible OTC stock behind the counter**.
+The session added three options beyond the original ladder (pre-ticket OTC
+ordering on tablets/phone, an OTC vending kiosk, and deliberate
+non-intervention with measurement), adopted guardrails around health
+authority and the urgently-sick customer, and set the way forward: run
+Melrose Arch and Irene as a ~3-month two-process experiment with an active
+data plan, then rerun the session with frontline staff (Firaz, Terrence,
+Arna) before presenting trade-off options to the Steer Group. Session
+canvas: `deliverables/sotf/otc-solve-session.html`.
 
 ## Open questions
 

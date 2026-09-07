@@ -49,6 +49,7 @@ _Populated as sources are ingested. Group by domain; show reliability tier._
 - [[src-sotf-melrose-workshops-2026]] (A) — 3-day Melrose workshops (20-24 Feb 2026): MVP vs target state per asset, ticketing/decoupling/adherence centralisation, 10-min late rule, staffing 47, GTM.
 - [[src-sotf-melrose-store-design-2026]] (A) — TDC&Co 3D store design for Melrose Arch (19 Feb 2026): the T built out, Healthcare Hub ring, curved pharmacy counter, clinic/cover rooms.
 - [[src-sotf-training-launch-2026]] (A) — training pack as launched (May-Jul 2026): live journey spines, Qmatic/V-Sign/Vexall stack, queue rules, interim workarounds (A-tickets, grouped scripts), Irene as second site.
+- [[src-sotf-otc-workshop-2026]] (A) — internal OTC brainstorm transcript (2 Sep 2026): Irene 60:40 OTC:script mix (relayed), workaround = skipping script-only signatures, peak-Saturday failure, Medirite/Clicks precedent, options evolved + 3 new, guardrails, 3-month two-store experiment plan.
 
 ### SA regulatory
 - [[src-reg-medicines-act-101-1965]] (A) — Medicines & Related Substances Act 101 of 1965; §22A/22C/22F/22G.
