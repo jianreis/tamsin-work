@@ -5,9 +5,9 @@ domain: consumer-context
 status: draft
 confidence: medium
 tags: [domain/consumer, region/za, topic/chronic, topic/adherence, journey/refill, journey/adhere]
-sources: [src-con-health-seeking-traditional, src-con-chronic-disease-burden, src-con-adherence-stigma, src-con-ccmdd-ndoh, src-con-pelebox, src-con-oop-health-spend, src-con-spaza-township]
+sources: [src-con-health-seeking-traditional, src-con-chronic-disease-burden, src-con-adherence-stigma, src-con-ccmdd-ndoh, src-con-ccmdd-supply-cycle, src-con-pelebox, src-con-oop-health-spend, src-con-spaza-township, src-con-private-gp-uninsured, src-con-compcom-phc-clinics]
 created: "2026-06-13"
-updated: "2026-06-17"
+updated: "2026-09-06"
 ---
 
 # Health-seeking behaviour, chronic burden & adherence
@@ -32,8 +32,22 @@ consult public facilities first**, ~17% private first, ~1.5% "other"
 - **CCMDD pick-up points**: for **stable chronic** public patients, collecting
   pre-packed parcels every 2–3 months at a community PUP (retail pharmacy, school,
   church, workplace); **>4.9m enrolled, ~64% at external points, >3,000 PUPs**
-  [[src-con-ccmdd-ndoh]]. **Pelebox lockers** add an SMS+PIN, no-app, sub-minute
-  self-service collection layer on top of CCMDD [[src-con-pelebox]].
+  [[src-con-ccmdd-ndoh]]. Parcels reach PUPs on a **~2-month delivery cycle**,
+  usually carrying **about three months' supply**, and **from April 2026 stable
+  patients move to six-month supplies** [[src-con-ccmdd-supply-cycle]] - the
+  parcel is never monthly, and the gaps are getting longer. **Pelebox lockers**
+  add an SMS+PIN, no-app, sub-minute self-service collection layer on top of
+  CCMDD [[src-con-pelebox]].
+- **Private GPs ("the local doctor")**: a mainstream first contact for the
+  uninsured too, not only the insured - up to ~28% of the population accesses
+  private PHC, with a meaningful low-income segment paying cash
+  [[src-con-compcom-phc-clinics]]. An uninsured adult pays a **mean cash fee of
+  ~R311 (commonly R300)** per visit, and the fee often includes the medicine
+  itself where the GP holds a **§22C dispensing licence**
+  [[src-con-private-gp-uninsured]], [[src-reg-medicines-act-101-1965]]. Design
+  consequence: a cash paper script that lands at retail comes from a
+  **non-dispensing private GP** - a public clinic is free and dispenses on
+  site, so it rarely sends a paying script to a pharmacy outside stock-outs.
 - **Retail pharmacy** (Dis-Chem, Clicks, independents): for the insured and for
   cash OTC/scripts; trusted pharmacist access without an appointment.
 - **Courier/distance pharmacy** (Pharmacy Direct, Medipost): scheme-funded chronic

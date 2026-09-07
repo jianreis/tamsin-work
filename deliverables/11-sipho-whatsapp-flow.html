@@ -182,11 +182,6 @@ a{color:var(--brand-dark)}
   border-radius:99px; padding:5px 12px; font-size:.75rem; font-weight:700;}
 /* template footer (60-char small print under the body) */
 .bubble .tfoot{display:block; border-top:1px solid #ececec; margin-top:7px; padding-top:5px; font-size:.66rem; color:var(--wa-meta)}
-/* QR image header (the one image the service sends - the locker code, v3.9) */
-.bubble .qrhead{display:flex; align-items:center; gap:10px; background:#f6f8f6; border:1px solid #e3e8e4; border-radius:8px; padding:8px; margin-bottom:7px}
-.bubble .qrhead svg{width:84px; height:84px; flex:none; background:#fff; border-radius:4px}
-.bubble .qrhead .qrcap{font-size:.72rem; color:var(--wa-meta); line-height:1.35}
-.bubble .qrhead .qrcap b{display:block; color:var(--ink); font-size:.78rem; margin-bottom:2px}
 /* catalogue product card (rung 2 of the visual ladder) */
 .prodcard{display:flex; align-items:center; gap:8px; border:1px solid #ececec; border-radius:8px; padding:6px; margin-top:6px; background:#fff}
 .prodcard .pthumb{width:44px; height:44px; border-radius:6px; background:linear-gradient(135deg,#e8f2ea,#cfe3d4);
@@ -240,7 +235,7 @@ a{color:var(--brand-dark)}
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #11 · SIPHO'S REPEAT, AS A WHATSAPP CONVERSATION</span>
-  <span class="gen">generated 2026-08-07 · v3 2026-08-16: re-synced to #09 v3.4-v3.8 and re-cut to the sourced conversational-design canon (wiki: conversational-design-whatsapp) · v3.1 2026-09-07: brought up to #09 v3.9 - the in-locker message carries a QR code with a short backup PIN beneath it (failed scans, SMS delivery); pay-then-activate unchanged, scan at the locker with the PIN as the typable fallback · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
+  <span class="gen">generated 2026-08-07 · v3 2026-08-16: re-synced to #09 v3.4-v3.8 and re-cut to the sourced conversational-design canon (wiki: conversational-design-whatsapp) · v4 2026-09-07: re-synced to #09 v3.9-v3.11 - Thandi joins the standing order (owner-named on every shared surface, whole-pack date move), the CCMDD parcel corrected to its two-to-three-month cycle, the locker credential now QR-first with the PIN as typable backup, and all totals recomputed · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
 </div>
 
 <section class="intro">
@@ -261,7 +256,7 @@ a{color:var(--brand-dark)}
     <div class="eyebrow">Patient · household medicine manager · cash</div>
     <h2>Sipho</h2>
     <p class="bio">45 · peri-urban Durban · informal income · hypertensive, on a cheap Android with intermittent
-    signal, no street address · collects for his elderly mother (chronic, CCMDD) - cash, at the margin, near home.</p>
+    signal, no street address · runs the household's medicine: his wife Thandi's repeat, his mother's programme parcel (chronic, CCMDD, every two to three months), and whatever the two kids and his nephew need - cash, at the margin, near home.</p>
   </div>
   <div class="needbox">
     <div class="nlabel">The need</div>
@@ -283,7 +278,7 @@ a{color:var(--brand-dark)}
     <button class="snode" data-goto="p3"><div class="snum">P3</div><div class="sttl">Checked and packed</div>
       <div class="sm">Two status templates · the named check · CHANGE demo</div><div class="stars">1 moment</div></button>
     <button class="snode" data-goto="p4"><div class="snum">P4</div><div class="sttl">In hand</div>
-      <div class="sm">QR on locker arrival · backup PIN · pay-then-scan · photo escalation</div><div class="stars">1 moment · ⭐</div></button>
+      <div class="sm">QR on locker arrival · pay-then-scan · photo escalation</div><div class="stars">1 moment · ⭐</div></button>
     <button class="snode" data-goto="p5"><div class="snum">P5</div><div class="sttl">Taking it</div>
       <div class="sm">Cabinet by real names · voice notes · STOP honoured</div><div class="stars">1 moment</div></button>
     <button class="snode" data-goto="ppar"><div class="snum">∥</div><div class="sttl">When something breaks</div>
@@ -313,8 +308,8 @@ a{color:var(--brand-dark)}
       <p class="railsub">markers (B1-B5) match the callouts · A0 applies to every phase on this page</p>
       <div class="callout"><span class="cmark">A0</span><div class="cbody">
         <span class="feat">Language · standing note</span><br>
-        Production renders every thread on this page in the language Sipho picks in this phase, with his mother's
-        medicine instructions in hers. English is shown here for this audience only.
+        Production renders every thread on this page in the language Sipho picks in this phase, with each family
+        member's medicine instructions in the language they chose. English is shown here for this audience only.
       </div></div>
       <div class="callout"><span class="cmark">B1</span><div class="cbody">
         <span class="feat">Invite template · the origin story</span><br>
@@ -330,16 +325,22 @@ a{color:var(--brand-dark)}
       <div class="callout"><span class="cmark">B3</span><div class="cbody">
         <span class="feat">WhatsApp Flow · native form</span><br>
         The one place a form beats chat: household and medicines on a native sheet, no webview, no data-heavy page.
-        His row is a dispensing record - plain handle, molecule and strength, monthly quantity. Her row is
-        described by origin (the programme fills and labels her parcel), because Dis-Chem never opens what it never
-        dispenses. Consent is an already-granted fact whose scope is read back - order, collect, manage - never an
-        in-flow event (POPIA: recorded once, in-language, auditable), and her medicine-list share is her own
+        His row is a dispensing record - plain handle, molecule and strength, monthly quantity. Thandi's row is
+        deliberately owner-named: the product name lives on her phone and her pack only, her choice (the cabinet's
+        privacy mode, v3.11). The mother's row is described by origin (the programme fills and labels her parcel,
+        every two to three months on its own cycle), because Dis-Chem never opens what it never dispenses. The
+        kids and the nephew are not on the sheet - nothing of theirs repeats; what they need rides a P2 addition.
+        Consent is an already-granted fact whose scope is read back - order, collect, manage - never an in-flow
+        event (POPIA: recorded once, in-language, auditable), and each woman's medicine-list share is her own
         revocable grant.
       </div></div>
       <div class="callout"><span class="cmark">B4</span><div class="cbody">
         <span class="feat">The date-move exchange · one decision per turn</span><br>
-        Script Sync made visible, then repurposed: the sync offer, its cost, the own-day pick and the read-back
-        each arrive as their own turn, exploration labels until the single commitment button. Every price lands
+        Script Sync made visible, honestly: the programme parcel is excluded up front - a two-to-three-month cycle
+        on the programme's own timing can't be lined up with anything, so it is tracked, never synced (v3.11). The
+        offer, the day pick and the costed read-back each arrive as their own turn, exploration labels until the
+        single commitment button - and the read-back carries the two price mechanics plainly: his loose tablets
+        top up by the day, her pack can't be split so her move costs one whole extra pack, once. Every price lands
         before a decision is asked for <span class="flag" title="amounts illustrative - punchlist item 11">⚠️</span>.
         And the rail carries what the chat never asks: he picks the 28th because it sits after month-end payday -
         his reasoning, never the service's data.
@@ -383,8 +384,10 @@ a{color:var(--brand-dark)}
       <p class="railsub">markers (A1-A5) match the callouts · feature chips name the WhatsApp mechanic · ⚠️ marks claims awaiting a vault source</p>
       <div class="callout"><span class="cmark">A1</span><div class="cbody">
         <span class="feat">Utility template · business-initiated</span><br>
-        The one-week-out notice: his order only - her programme parcel landed on Tuesday and is tracked, never
-        managed. No image header, no PDF - on a prepaid balance every download costs real money. It names the day
+        The one-week-out notice: the household's Dis-Chem order - his tablets and Thandi's repeat, hers owner-named
+        even here (the v3.11 discreet rule). The mother's programme parcel landed on Tuesday and is tracked, never
+        managed - and because the programme's cycle is two to three months, not monthly, the notice says when the
+        next is due instead of implying one every month. No image header, no PDF - on a prepaid balance every download costs real money. It names the day
         (never "payday" - what the 28th means is his business), and it closes on the golden path: nothing to do.
         The small grey footer under this and every service message is the standing change surface: reply CHANGE,
         anywhere, any time, until the day before.
@@ -399,8 +402,9 @@ a{color:var(--brand-dark)}
       <div class="callout"><span class="cmark">A2</span><div class="cbody">
         <span class="feat">Formatted price breakdown · in-bubble</span><br>
         The price lives in the message, not at the till - one line per item, emoji as anchors (rung 1 of the
-        visual ladder: characters, not downloads). His tablets and the fee only: there is no CCMDD line, because
-        there is nothing to pay on hers (v3.4). Amounts and product names are illustrative
+        visual ladder: characters, not downloads). Two owner-named lines and the fees: Thandi's price shows, her
+        product name doesn't (v3.11). Still no CCMDD line, because there is nothing to pay on the programme
+        parcel (v3.4). Amounts and product names are illustrative
         <span class="flag" title="illustrative pricing and product names - logged in meta/punchlist.md item 11">⚠️</span>.
       </div></div>
       <div class="keymoment">
@@ -523,14 +527,15 @@ a{color:var(--brand-dark)}
         <span class="feat">The named check · plain lines</span><br>
         Each line answers "checked what?" in words a customer can carry: right medicine and dose, nothing
         clashes, the script and his history. The clash line teaches by example - his order really does hold the
-        one interaction a pharmacist watches for (decongestant syrups against blood-pressure tablets). His order
-        only: the programme's parcel is the programme's check (v3.4) - the pharmacist checks what Dis-Chem
-        dispenses plus what the household has shared. The pharmacist is named at the final check - the #10 name
+        one interaction a pharmacist watches for (decongestant syrups against blood-pressure tablets). The
+        household's Dis-Chem order - his and Thandi's, checked against each other; the programme's parcel stays
+        the programme's check (v3.4) - the pharmacist checks what Dis-Chem dispenses plus what the household has
+        shared. The pharmacist is named at the final check - the #10 name
         rule. (Name is a placeholder - spec open questions.)
       </div></div>
       <div class="callout"><span class="cmark">D3</span><div class="cbody">
         <span class="feat">Nothing issued at sealing</span><br>
-        Packed-and-sealed is a pure status: no code. The credential belongs to the moment the parcel is physically
+        Packed-and-sealed is a pure status: no PIN. The credential belongs to the moment the parcel is physically
         in the locker (v3.6) - P4's message first-issues it, because a code on the phone is a promise, and this
         service only promises what already exists.
       </div></div>
@@ -573,21 +578,17 @@ a{color:var(--brand-dark)}
       <h3>What each message is doing</h3>
       <p class="railsub">markers (E1-E3) match the callouts</p>
       <div class="callout"><span class="cmark">E1</span><div class="cbody">
-        <span class="feat">QR issued on locker arrival · backup PIN beneath</span><br>
+        <span class="feat">QR issued on locker arrival</span><br>
         The message comes the moment the parcel is physically in the locker - the code's first issue, not a
-        restatement (v3.6), with the two retrieval steps in order because the counter payment is what activates
-        it. QR first, the convention every code in #09 and #10 now follows (v3.9): a scan at the locker beats
-        typing a number with a queue behind him, and the short PIN under it covers a failed scan - and stands on
-        its own when the message has to go out by SMS. The QR is the one image this service ever sends him: a
-        few kilobytes, once a month, spent where it saves the most fumbling. Amount and code travel together,
-        loaded onto the phone before he leaves signal - the whole trip in one message. The chat says "the 28th",
-        never "payday": the day is his, and so is what it means.
+        restatement (v3.6), QR-first with a short typable PIN beneath it for failed scans or SMS delivery (v3.9),
+        and the two retrieval steps in order because the counter payment is what activates the code. Amount and code travel together, loaded onto the phone before he leaves signal - the whole trip
+        in one message. The chat says "the 28th", never "payday": the day is his, and so is what it means.
       </div></div>
       <div class="callout"><span class="cmark">E2</span><div class="cbody">
         <span class="feat">Pay-then-scan · off-channel by design</span><br>
         The handover itself never touches the chat: cash at the Capitec counter activates his code, and the scan
-        at the locker (or the typed PIN, if the phone won't scan) releases the parcel - the Pelebox pattern near
-        home, no street address required. The partner-counter release is a design
+        opens the locker - the Pelebox pattern near home, no street address required, with the PIN as the typable
+        fallback. The partner-counter release is a design
         assumption <span class="flag" title="punchlist item 9(a) - partner-bank locker network">⚠️</span>. In-chat
         payment is deliberately absent: WhatsApp payments aren't live in South Africa, and cash needs no channel.
       </div></div>
@@ -635,7 +636,8 @@ a{color:var(--brand-dark)}
         for word. The cabinet convention: dispensed medicine carries its owner, her clinic medicines appear
         because she granted the see-dial of CarerConsent ("from her clinic script" is the provenance - a told-us
         record the pharmacist can use but never vouches for), and OTC purchases are (Household) unless someone
-        assigns them - the service never guesses. Product names illustrative
+        assigns them - the service never guesses. Thandi's entry is the privacy mode at work: on his phone it
+        carries her name, never the medicine's - the full entry lives on hers (v3.11). Product names illustrative
         <span class="flag" title="real SA products used illustratively - punchlist item 11">⚠️</span>.
       </div></div>
       <div class="callout"><span class="cmark">F2</span><div class="cbody">
@@ -691,8 +693,9 @@ a{color:var(--brand-dark)}
       <div class="callout"><span class="cmark">G1</span><div class="cbody">
         <span class="feat">Exception template · the plan attached</span><br>
         Bad news never arrives alone: the message carries the live choices as reply buttons, and nothing is
-        decided without him. An exception opens a path - it never kills the order. His order only: a stock-out
-        never touches the programme parcel, so the split offers "the rest of your order", not her medicine (v3.4).
+        decided without him. An exception opens a path - it never kills the order. The Dis-Chem order only: a
+        stock-out never touches the programme parcel, so the split offers "the rest of your order", never the
+        mother's medicine (v3.4) - and anything of Thandi's stays owner-named even in bad news (v3.11).
       </div></div>
       <div class="callout"><span class="cmark">G2</span><div class="cbody">
         <span class="feat">Told before travelling</span><br>
@@ -701,7 +704,8 @@ a{color:var(--brand-dark)}
       </div></div>
       <div class="callout"><span class="cmark">G3</span><div class="cbody">
         <span class="feat">Script Renew · his own script</span><br>
-        The script that runs out is his - his mother's belongs to the clinic and its programme (v3.4). The renewal
+        The script that runs out is the household's own - his, or Thandi's, handled the same way; his mother's
+        belongs to the clinic and its programme (v3.4). The renewal
         starts weeks before it runs dry, visibly, in the same thread, and chasing it costs him nothing. The full
         renewal flow is its own journey (the Script Renew concept), out of scope here.
       </div></div>
@@ -717,7 +721,7 @@ a{color:var(--brand-dark)}
 </section>
 
 <p class="foot">
-  <b>Scope notes.</b> Copy derives from the approved #09 cash journey at v3.9
+  <b>Scope notes.</b> Copy derives from the approved #09 cash journey at v3.11
   (<a href="09-tobe-household-repeat-moments.html#cash">deliverable #09</a>, spec:
   design-kit/journeys/to-be-household-repeat-moments.md); this page decides only what the chat literally looks
   like, phase by phase, across sign-up in July and one August 2026 cycle. Rand amounts and product names are
@@ -730,7 +734,7 @@ a{color:var(--brand-dark)}
   cards and dashed pills mark the scripted path; other rows are real UI, inert in the mock; optional branches
   (the photo, the CHANGE demo) play without rewriting the story. The threads render in English here; production
   renders them in the customer's chosen language. Script-expiry renewal (Script Renew) appears only as its ∥
-  signpost; after-hours acute belongs to #10. Deliverables #05-#10 are untouched (bar #09's own v3.8 and v3.9 passes).
+  signpost; after-hours acute belongs to #10. Deliverables #05-#10 are untouched (bar #09's own v3.8 pass).
 </p>
 
 </div>
@@ -746,23 +750,6 @@ function marker(id){ return '<span class="marker" title="see callout '+id+' in t
 function spacer(){ return '<span style="width:22px;flex:none"></span>'; }
 
 const DIMS = { p1:["co-p1-a4","co-p1-a5"], p3:["co-p3-d4"], p4:["co-p4-e3"] };
-
-/* the locker QR - a deterministic stand-in pattern drawn inline (no image download in the mock) */
-function qrSVG(seed){
-  const n=21, cells=[]; let x=seed>>>0;
-  const rnd=()=>{ x^=x<<13; x>>>=0; x^=x>>>17; x^=x<<5; x>>>=0; return x/4294967296; };
-  const inFinder=(r,c)=>(r<7&&c<7)||(r<7&&c>=n-7)||(r>=n-7&&c<7);
-  for(let r=0;r<n;r++)for(let c=0;c<n;c++){
-    let on;
-    if(inFinder(r,c)){
-      const rr=r<7?r:r-(n-7), cc=c<7?c:c-(n-7);
-      on = rr===0||rr===6||cc===0||cc===6||(rr>=2&&rr<=4&&cc>=2&&cc<=4);
-    } else on = rnd()<0.47;
-    if(on) cells.push('<rect x="'+c+'" y="'+r+'" width="1" height="1"/>');
-  }
-  return '<svg viewBox="-1 -1 '+(n+2)+' '+(n+2)+'" aria-label="Locker QR code" shape-rendering="crispEdges" fill="#111">'+cells.join("")+'</svg>';
-}
-const QRHEAD = '<span class="qrhead">'+qrSVG(4729)+'<span class="qrcap"><b>Your locker code</b>Scan at the locker after you pay.\nBackup PIN: <span class="amt">4729</span></span></span>';
 
 /* standing template footer (rule 5 in the spec: change is ever-present, never offered) */
 const FOOT = '<span class="tfoot">Reply CHANGE any time - date, place, anything.</span>';
@@ -956,11 +943,12 @@ const P0 = () => [
     body:'Who is this service for? You can add family you care for - if they\'ve given their consent for you to manage their medicine, it covers this service too.',
     sheet:{title:"Dis-Chem Repeats - your family", flow:true, cta:"Continue", rows:[
       {label:"Sipho (you)", note:"Blood-pressure tablets - Amlodipine 5 mg · 28 tablets, one month at a time"},
-      {label:"Your mother", note:"Chronic medicine parcel - packed by her clinic's programme (CCMDD) · collected monthly; the programme fills and labels it · you manage her medicine - consent recorded: order, collect and manage on her behalf · her medicine list is shared with you - her choice, and she can change it · one tap confirms"}
+      {label:"Thandi (your wife)", note:"Her repeat medicine · one month's pack at a time · you manage her medicine - consent recorded: order, collect and manage on her behalf · the medicine is named in full on her phone and her pack only - her choice"},
+      {label:"Your mother", note:"Chronic medicine parcel - packed by her clinic's programme (CCMDD) · comes every two to three months, on the programme's cycle; the programme fills and labels it · you manage her medicine - consent recorded: order, collect and manage on her behalf · her medicine list is shared with you - her choice, and she can change it · one tap confirms"}
     ]}}},
-  {inm:{time:"17:08", body:'Both added.'}},
+  {inm:{time:"17:08", body:'All three added.'}},
   {inm:{time:"17:08",
-    body:'Your tablets and your mother\'s medicine are ready at different times of the month. We could line them up - one trip instead of two.\n\nWant to see how that would work?'}},
+    body:'Your tablets, Thandi\'s medicine and your mother\'s parcel are all ready at different times. Yours and Thandi\'s could line up - one trip instead of two.\n\nWant to see how that would work?'}},
   {qr:{buttons:[
     {label:"How would it work?", time:"17:09", main:true},
     {label:"Keep them apart", time:"17:09", steps:[
@@ -968,26 +956,18 @@ const P0 = () => [
     ]}
   ]}},
   {inm:{id:"B4", time:"17:09",
-    body:'Your mother\'s date can\'t move - her parcel comes from her clinic\'s programme, around the 18th, at no cost to you.\n\nYours can move to the 18th. That takes a once-off top-up of extra tablets: <b><span class="amt">R66.70</span></b>.\n\nMove your tablets to the 18th?'}},
-  {qr:{buttons:[
-    {label:"Move to the 18th", time:"17:10", steps:[
-      {inm:{time:"17:10", body:'That would work too - the supply stretch from the 20th of July to the 18th of August is what the once-off <span class="amt">R66.70</span> buys. In Sipho\'s story the money isn\'t there before month-end: tap "Keep them apart" to continue.'}}
-    ]},
-    {label:"Keep them apart", time:"17:10", main:true}
-  ]}},
-  {inm:{time:"17:10",
-    body:'No problem - yours stays around the 20th, the day of your first fill. If another day suits you better, you can move it the same way, with a small once-off top-up.\n\nWhich day should your tablets be ready? Reply with a day, like 25 - or KEEP.'}},
-  {tap:{send:"28", time:"17:11"}},
+    body:'First, your mother\'s parcel: it can\'t be moved. It comes from her clinic\'s programme every two to three months, on the programme\'s own timing, at no cost to you - and we\'ll tell you here whenever one lands.\n\nYours and Thandi\'s can move to any day of the month.\n\nWhich day should your order be ready? Reply with a day, like 25 - or KEEP.'}},
+  {tap:{send:"28", time:"17:10"}},
   {inm:{time:"17:11",
-    body:'The 28th: a once-off top-up of <b><span class="amt">R18.40</span></b>, in your first order. From August, your tablets are ready on the 28th of every month.\n\nShall I move it?'}},
+    body:'The 28th, for both of you:\n• Your tablets: a once-off top-up of extra tablets - <b><span class="amt">R18.40</span></b>\n• Thandi\'s medicine comes as a full month\'s pack that can\'t be split, so her move takes one extra pack, once - <b><span class="amt">R62.10</span></b>\n\nBoth ride your first order; after that, every month is a normal month.\n\nShall I move you both to the 28th?'}},
   {qr:{buttons:[
     {label:"Yes, the 28th", time:"17:11", main:true},
-    {label:"Keep the 20th", time:"17:11", steps:[
+    {label:"Keep as they are", time:"17:11", steps:[
       {inm:{time:"17:11", body:'Also fine - nothing moves unless you say so. Sipho\'s story takes "Yes, the 28th": the day the money is there.'}}
     ]}
   ]}},
   {inm:{time:"17:12",
-    body:'Done - two dates, one chat.\n• Hers: around the 18th, nothing to pay\n• Yours: the 28th of every month\n\nYour first order is ready <b>Monday 20 July</b>, with the once-off top-up included. We remember both dates, so you don\'t have to.'}},
+    body:'Done - one date, one chat.\n• Yours + Thandi\'s: the 28th of every month\n• Your mother\'s parcel: every two to three months, on the programme\'s cycle - we tell you when it lands\n\nYour first order is ready <b>Monday 20 July</b>, with both once-off top-ups included. We remember the dates, so you don\'t have to.'}},
   {inm:{time:"17:12",
     body:'How should your medicine reach you each month?'}},
   {qr:{buttons:[
@@ -1003,11 +983,11 @@ const P0 = () => [
       {label:"Dis-Chem store", note:"14 km away"}
     ]}}},
   {inm:{time:"17:14",
-    body:'Done - the locker at the Capitec branch by the taxi rank. No street address needed.\n\nYou\'ll get everything here in isiZulu, and your mother\'s medicine instructions come printed in her language.'}},
+    body:'Done - the locker at the Capitec branch by the taxi rank. No street address needed.\n\nYou\'ll get everything here in isiZulu, and each of their medicine instructions comes printed in the language they chose.'}},
   {inm:{time:"17:14",
     body:'Paying: cash or instant EFT at the Capitec counter when you collect - paying is what opens the locker.\n\nAnd we use cheaper generics unless you tell us otherwise, so the price stays one you can plan around.'}},
   {inm:{id:"B5", time:"17:15",
-    body:'Here is everything, read back:\n• You + your mother\n• Two dates: her parcel around the 18th (nothing to pay) · yours on the 28th\n• Collect: Capitec locker, taxi rank\n• Pay: cash at the counter · generics by default\n• isiZulu here · her instructions in her language\n\nReply <b>1</b> to confirm - and from here, it\'s remembered.'}},
+    body:'Here is everything, read back:\n• You + Thandi + your mother\n• One date: your order - yours and Thandi\'s - on the 28th of every month\n• Her parcel: every two to three months, tracked here (nothing to pay)\n• Collect: Capitec locker, taxi rank\n• Pay: cash at the counter · generics by default\n• isiZulu here · instructions per person, in their language\n\nReply <b>1</b> to confirm - and from here, it\'s remembered.'}},
   {tap:{send:"1", time:"17:15"}},
   {inm:{time:"17:16",
     body:'Done, Sipho. It just runs from here: your first order is ready <b>Monday 20 July</b>, and we message you a week before every order with the price.'}}
@@ -1018,10 +998,10 @@ const P1 = () => [
   {sys:"🔒 Messages and calls are end-to-end encrypted."},
   {date:"FRI, 21 AUG"},
   {inm:{id:"A1", time:"08:12",
-    body:'Hello Sipho. Your repeat order for August is being prepared: your blood-pressure tablets (<b>Adco-Amlodipine 5 mg</b>).\n\nIt will be ready at the <b>Capitec locker at the taxi rank</b> on <b>Friday 28 August</b>.\n\nYour mother\'s parcel arrived from her programme on Tuesday - both dates, one thread.\n\nYou don\'t need to do anything. If nothing changes, it will be waiting.'+FOOT}},
+    body:'Hello Sipho. Your repeat order for August is being prepared: your blood-pressure tablets (<b>Adco-Amlodipine 5 mg</b>) and Thandi\'s repeat.\n\nIt will be ready at the <b>Capitec locker at the taxi rank</b> on <b>Friday 28 August</b>.\n\nYour mother\'s parcel arrived from her programme on Tuesday - the next is due around October, and we\'ll tell you when it lands.\n\nYou don\'t need to do anything. If nothing changes, it will be waiting.'+FOOT}},
   {inm:{id:"A2", time:"08:12",
     body:'Here is the price, so you know before you travel 🧾'+
-      '<span class="sect">Your tablets</span><span class="amt">Adco-Amlodipine 5 mg, 28 tablets (generic)  R64.40\nDispensing fee  R36.20</span>\n\n<b>Total to pay: <span class="amt">R100.60</span></b> 💵\nCash or instant EFT at the Capitec counter - paying is what opens the locker 🔓'+FOOT}},
+      '<span class="sect">Your order</span><span class="amt">Adco-Amlodipine 5 mg, 28 tablets (generic)  R64.40\nThandi\'s repeat  R62.10\nDispensing fees  R72.40</span>\n\n<b>Total to pay: <span class="amt">R198.90</span></b> 💵\nCash or instant EFT at the Capitec counter - paying is what opens the locker 🔓'+FOOT}},
   {inm:{id:"A3", time:"08:13",
     body:'Happy with this? Then there\'s nothing to do - your order carries on by itself, this month and every month.'+FOOT}},
   {qr:{buttons:[
@@ -1060,7 +1040,7 @@ const P2 = () => [
     tail:'\nOr browse, or just type what you need.',
     browse:"Opens Dis-Chem's in-WhatsApp medicine catalogue - browse, add to cart, and the cart lands back in this thread as an order. Scoped to what this route carries: medicine and everyday OTC only."}},
   {inm:{id:"C5", time:"09:42",
-    body:'Added: Biogen Multivitamin 30s - <span class="amt">R49.90</span>.\nNew total to pay: <b><span class="amt">R150.50</span></b>.'}},
+    body:'Added: Biogen Multivitamin 30s - <span class="amt">R49.90</span>.\nNew total to pay: <b><span class="amt">R248.80</span></b>.'}},
   {tap:{send:"cough mixture", time:"09:44"}},
   {inm:{id:"C4", time:"09:44", body:'For a child or an adult?'}},
   {qr:{buttons:[
@@ -1077,7 +1057,7 @@ const P2 = () => [
       {emoji:"📦", name:"ACC 200 sachets, 10", price:"R89.00"}
     ]}},
   {inm:{time:"09:46",
-    body:'Added: Borstol Cough Syrup - <span class="amt">R38.50</span>.\n\nYour total at the Capitec counter is now <b><span class="amt">R189.00</span></b>. Everything comes in the same locker on Friday - nothing else to arrange.'+FOOT}}
+    body:'Added: Borstol Cough Syrup - <span class="amt">R38.50</span>.\n\nYour total at the Capitec counter is now <b><span class="amt">R287.30</span></b>. Everything comes in the same locker on Friday - nothing else to arrange.'+FOOT}}
 ];
 
 /* ---------- P3 ---------- */
@@ -1085,10 +1065,10 @@ const P3 = () => [
   {sys:"🔒 Messages and calls are end-to-end encrypted."},
   {date:"WED, 26 AUG"},
   {inm:{id:"D2", time:"11:05",
-    body:'✅ <b>Picked and checked</b>\n\nA registered pharmacist checked your order today:\n💊 The right medicine, at the right dose\n🔁 Nothing clashes - your cough syrup was checked against your blood-pressure tablets\n📋 Your script, and your history with us\n\nSigned off by pharmacist <b>Nomsa Dlamini</b>.'+FOOT}},
+    body:'✅ <b>Picked and checked</b>\n\nA registered pharmacist checked your family\'s order today:\n💊 The right medicine, at the right dose, for each of you\n🔁 Nothing clashes - your cough syrup was checked against your blood-pressure tablets\n📋 Your scripts, and your history with us\n\nSigned off by pharmacist <b>Nomsa Dlamini</b>.'+FOOT}},
   {date:"THU, 27 AUG"},
   {inm:{id:"D3", time:"15:48",
-    body:'📦 <b>Packed and sealed</b>\n\nOne parcel: your tablets, the multivitamins and the cough syrup - waiting for the courier run to the locker.'+FOOT}},
+    body:'📦 <b>Packed and sealed</b>\n\nOne parcel for the household: your tablets, Thandi\'s repeat, the multivitamins and the cough syrup - waiting for the courier run to the locker.'+FOOT}},
   {tap:{send:"CHANGE", time:"16:20"}},
   {list:{time:"16:20", btn:"Choose an option", autoOpen:true,
     body:'No problem. What would you like to change?',
@@ -1111,10 +1091,10 @@ const P4 = () => [
   {sys:"🔒 Messages and calls are end-to-end encrypted."},
   {date:"FRI, 28 AUG"},
   {inm:{id:"E1", time:"06:45",
-    body:QRHEAD+'Your parcel is in the locker at <b>Capitec, taxi rank</b> - ready now.\n\nTo collect:\n<b>1.</b> Pay <b><span class="amt">R189.00</span></b> at the counter - cash or instant EFT 💵\n<b>2.</b> Scan the code above at the locker 🔓\n\nIf the scan won\'t work, type the backup PIN <b><span class="amt">4729</span></b> at the locker instead.\n\nThe same amount you saw before. Nothing has changed.'+FOOT}},
-  {sys:"At the bank: Sipho pays R189.00 at the counter, scans his code at the locker, and it opens. Nothing happens in the chat - and nothing needs to. (E2)"},
+    body:'Your parcel is in the locker at <b>Capitec, taxi rank</b> - ready now.\n\nTo collect:\n<b>1.</b> Pay <b><span class="amt">R287.30</span></b> at the counter - cash or instant EFT 💵\n<b>2.</b> Scan your code at the locker 🔓\n<div style="font-family:monospace;line-height:1.05;background:#fff;color:#111;display:inline-block;padding:7px 9px;border-radius:6px;font-size:11px;letter-spacing:1px;margin:6px 0" aria-label="QR code">▛▀▀▙▘▟▀▀▜<br>▌▟▙▖▞▖▟▙▐<br>▙▖▘▞▛▚▘▗▟<br>▌▚▟▖▙▞▖▛▐<br>▙▄▄▟▗▙▄▄▟</div>\nBackup PIN <b><span class="amt">4729</span></b> types straight in if the scan won\'t work - and the code comes by SMS if data is out.\n\nThe same amount you saw before. Nothing has changed.'+FOOT}},
+  {sys:"At the bank: Sipho pays R287.30 at the counter, scans his code at the locker, and it opens. Nothing happens in the chat - and nothing needs to. (E2)"},
   {inm:{id:"E3", time:"10:32",
-    body:'In your parcel:\n• Adco-Amlodipine 5 mg, 28 tablets\n• Biogen Multivitamin 30s\n• Borstol Cough Syrup\n\nCheck it now, at the locker - before the taxi. If anything is missing or wrong, send a photo here and a person will phone you straight away, in your language.'}},
+    body:'In your parcel:\n• Adco-Amlodipine 5 mg, 28 tablets\n• Thandi\'s repeat\n• Biogen Multivitamin 30s\n• Borstol Cough Syrup\n\nCheck it now, at the locker - before the taxi. If anything is missing or wrong, send a photo here and a person will phone you straight away, in your language.'}},
   {photoTap:{time:"10:34"}},
   {undim:"co-p4-e3"},
   {inm:{time:"10:34",
@@ -1129,6 +1109,7 @@ const P5 = () => [
     body:'Your family\'s medicine, whenever you want to look something up:',
     sheet:{title:"Your family's medicine cabinet", rows:[
       {label:"Adco-Amlodipine 5 mg", note:"(Sipho) Blood pressure - 1 every morning", walk:true, send:"Adco-Amlodipine 5 mg", echoTime:"09:15"},
+      {label:"Thandi's repeat", note:"(Thandi) Named in full on her phone and her pack - her choice"},
       {label:"Enalapril 10 mg", note:"(Your mother) Blood pressure - from her clinic script"},
       {label:"Hydrochlorothiazide 12.5 mg", note:"(Your mother) Blood pressure - from her clinic script"},
       {label:"Biogen Multivitamin 30s", note:"(Household)"},
@@ -1137,7 +1118,7 @@ const P5 = () => [
   {inm:{id:"F2", time:"09:15",
     body:'<b>Adco-Amlodipine 5 mg</b> (amlodipine) - your blood-pressure tablets.\n🌅 One tablet, every morning\n🍽 With or without food\n✔ Keep taking them when you feel fine - that\'s the medicine working\n\nIf reading isn\'t enough, just ask here - a pharmacist reads this thread. Or send a voice note; we listen to those too.'}},
   {inm:{id:"F4", time:"09:16",
-    body:'Reminders: yours comes here at 20:00. Your mother\'s go to her phone - a short voice note in her language, timed to her mornings. Her printed day-by-day sheet is in the parcel, for the fridge.\n\nReply <b>STOP</b> to any reminder and it stops.'}},
+    body:'Reminders: yours comes here at 20:00. Thandi\'s go to her own phone - her medicine named there, and hers to stop. Your mother\'s go to hers - a short voice note in her language, timed to her mornings; her printed day-by-day sheet is in the parcel, for the fridge.\n\nReply <b>STOP</b> to any reminder and it stops.'}},
   {date:"THAT EVENING"},
   {inm:{id:"F3", time:"20:00", body:'Time for your tablet, Sipho.'}},
   {tap:{send:"STOP", time:"20:02"}},

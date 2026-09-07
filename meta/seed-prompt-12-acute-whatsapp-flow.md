@@ -8,6 +8,11 @@ tags: [meta, seed-prompt]
 
 # Seed prompt - #12: Thabo's acute script as a WhatsApp conversation
 
+> **Superseded 2026-09-07.** This build ran on 2026-08-07 - #12 is live. The
+> current brief is [[seed-prompt-12-recut|the #12 re-cut]], which brings the
+> built flow up to the conversational practice the #11 re-sync set on
+> 2026-08-16. This file stays as the record of the original build scope.
+
 A self-contained brief for a fresh workspace. The job: give the **cash track
 of the approved #10 acute journey** the same channel-mock treatment #11 gave
 the #09 repeat journey - the literal WhatsApp threads on Thabo's phone, one

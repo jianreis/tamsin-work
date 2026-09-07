@@ -7,7 +7,7 @@ persona: "[[design-kit/personas/time-poor-urban-professional|Aisha Patel]] (insu
 status: draft
 confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, journey/submit, journey/validate, journey/dispense, journey/pay, journey/collect, journey/deliver, journey/adhere, topic/acute, topic/e-prescription, region/za]
-sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026, src-dc-script-journey-interviews-2025, src-dc-instore-walkthrough-2026, src-dc-e2e-script-journey-friction-summary, src-dc-dispensary-services, src-dc-dispensary-managers-survey-2025]
+sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026, src-dc-script-journey-interviews-2025, src-dc-instore-walkthrough-2026, src-dc-e2e-script-journey-friction-summary, src-dc-dispensary-services, src-dc-dispensary-managers-survey-2025, src-con-private-gp-uninsured, src-con-compcom-phc-clinics]
 created: "2026-07-26"
 updated: "2026-09-07"
 ---
@@ -66,11 +66,29 @@ for a sick one.
 - **Insured: Aisha Patel** ([[design-kit/personas/time-poor-urban-professional]]),
   her own acute illness (UTI flared overnight). Her GP is a portal partner.
 - **Cash: Thabo Mokoena** ([[design-kit/personas/cash-pay-acute-customer]]),
-  a one-off antibiotic + paediatric syrup for his sick 6-year-old, clinic
-  doctor NOT on the portal - he enters by photographing the script to the
-  WhatsApp line from the clinic gate (the snap channel; its concept card,
+  a one-off antibiotic + paediatric syrup for his sick 6-year-old, seen at
+  the local private doctor's rooms (cash consult; the doctor doesn't
+  dispense and is NOT on the portal) - he enters by photographing the paper
+  script to the WhatsApp line from the doctor's gate (the snap channel; its
+  concept card,
   Snap-a-Script, was archived 2026-08-16). A new face after Sipho carried
   #07 and #09.
+
+**Script-origin reframe (2026-09-06, agreed with Tamsin):** Thabo's paper
+script now comes from a **local private doctor** (cash consult), not "the
+clinic". A public clinic is free at the point of care and dispenses on site,
+so a paid consult ending in a paper script filled at retail was never a
+public-clinic story - the copy itself already had him "waiting to pay for
+the consult". The realistic origin is the neighbourhood private GP that a
+large share of uninsured South Africans pay cash to see (mean consult fee
+~R311; up to ~28% of the population uses private primary care)
+[[src-con-private-gp-uninsured]], [[src-con-compcom-phc-clinics]]; the
+script reaches retail when that doctor doesn't dispense (many are licensed
+dispensing doctors under §22C - [[src-reg-medicines-act-101-1965]] - and
+hand medicine over themselves). "Clinic" wording swept from Thabo's track
+(cast, A1-A4, M2's memory line "the doctor's gate", both P4 routes, the
+unreadable-photo scenario, the spine); the Dis-Chem clinic in P6 is
+Dis-Chem's own and keeps its name. Aisha's insured track is untouched.
 
 ## Phase set (agreed; P2 renamed 2026-07-26 during the P1 pass)
 
@@ -87,7 +105,7 @@ the third script's final check), Thabo on day three-to-five (the check-in
 escalating into action).)
 
 P2 was "The script lands" until the P1 pass established (Tamsin) that BOTH
-economies leave the clinic with the price known and the script already in
+economies leave the consultation with the price known and the script already in
 Dis-Chem's hands - Thabo's snap and his ⭐ moved into P1, and P2 became the
 routing phase: the how-do-you-want-it ask, the two care-shaped options
 (collect on the way home with the pharmacist explaining at handover, or
@@ -104,7 +122,7 @@ machinery stays behind the line in P6 (🔮 where applicable).
 | # | Phase | Title (memory line) | ⭐ | Economies | Concept(s) inline |
 |---|---|---|---|---|---|
 | M1 | P1 | "My pharmacist was busy before I'd even left the doctor's" | ⭐ | insured only | The Pharmacy in the Room |
-| M2 | P1 | "I knew the price before I left the clinic gate" | ⭐ | cash only | Real-Time Transparency (was Snap-a-Script, archived 2026-08-16) |
+| M2 | P1 | "I knew the price before I left the doctor's gate" | ⭐ | cash only | Real-Time Transparency (was Snap-a-Script, archived 2026-08-16) |
 | M3 | P3 | "Every check ran before it left the building" | | both | The Pharmacist Beyond the Counter (formerly The Named Check) |
 | M4a | P4 | "Saw the doc. Went straight home." | ⭐ | insured | The 30/60 Fill |
 | M4b | P4 | "The counter was expecting me" | ⭐ | cash, COUNTER route | The 30/60 Fill |
@@ -129,7 +147,7 @@ moment that already happened.)
   goes wrong in an hours-long acute fill, not #09 hand-me-downs.
 - P1 carries **both stars, symmetrically**: each economy's price-certainty
   moment of truth, delivered the way its reality allows (Aisha's in the
-  chair, Thabo's at the clinic gate). P2 carries **no moments at all**.
+  chair, Thabo's at the doctor's gate). P2 carries **no moments at all**.
 - **The Snap-a-Script concept was archived 2026-08-16** (agreed with Tamsin):
   photographing a script and sending it already exists in the Dis-Chem app, so it
   described a submission channel rather than a big move. The idea worth promising
@@ -179,7 +197,7 @@ with CCMDD backstage. #07 itself is preserved untouched.
 On top of the full v3.1 rule set from #09:
 
 - **No benefit line where Dis-Chem isn't actively adding value.** Context
-  activities (the clinic visit, the paper script) stay plain - a benefit
+  activities (the doctor's visit, the paper script) stay plain - a benefit
   line only exists where the service earns it.
 - **Where the person is suffering, the activity carries how they feel**
   (sore, tired and fed up; hot, tired and quiet, which isn't like him). The
@@ -410,17 +428,18 @@ it was built for - doctor, record, price and pharmacy in one conversation.
 
 ### Activities - cash (Thabo)
 
-**A1 · The clinic sees my son** - My son's cough went to his chest last
+**A1 · The doctor sees my son** - My son's cough went to his chest last
 night, and neither of us slept much. I take the morning off shift and we
-wait our turn at the clinic - he's hot, tired and quiet, which isn't like
-him. After examining and weighing him, the doctor diagnoses a chest
-infection and suggests an antibiotic. *(context - no benefit line)*
+wait our turn at the local doctor's rooms near the taxi rank - he's hot,
+tired and quiet, which isn't like him. After examining and weighing him,
+the doctor diagnoses a chest infection and suggests an antibiotic.
+*(context - no benefit line)*
 
-**A2 · The script is written on paper** - The clinic isn't on Dis-Chem's
-system, so the doctor writes the script by hand - an antibiotic and a syrup
-for the cough - and explains it to me once: how much, how often, for how
-many days. The paper goes into my jacket pocket. *(context - no benefit
-line)*
+**A2 · The script is written on paper** - This doctor doesn't keep medicine
+to hand out, and his rooms aren't on Dis-Chem's system, so he writes the
+script by hand - an antibiotic and a syrup for the cough - and explains it
+to me once: how much, how often, for how many days. The paper goes into my
+jacket pocket. *(context - no benefit line)*
 
 **A3 · I send the script through while I wait to pay** - While I'm waiting
 to pay for the consult, I photograph the script and send it through to
@@ -436,12 +455,12 @@ exact saving shown. I pick it right there. Nothing is riding on the paper in
 my pocket anymore, and I know the number before we've spent a cent on a
 taxi.
 
-**M2 (under A4) ⭐ "I knew the price before I left the clinic gate"** -
+**M2 (under A4) ⭐ "I knew the price before I left the doctor's gate"** -
 Thabo has done this trip before, the old way: the taxi to a pharmacy with
 the week's money in his pocket and no idea if it's enough, the queue with a
 sick child, the counter where the number is finally said out loud - and the
 walk away, in front of everyone, if it's too much. This time the number came
-to him, standing at the clinic, before anything was spent. [why] He knows
+to him, standing at the doctor's rooms, before anything was spent. [why] He knows
 the price - and that he can afford it - before his son takes another step.
 [/why] Nobody made him ask; the price was simply offered, with the cheaper
 generic presented as the smart choice it is. That is Real-Time Transparency
@@ -512,7 +531,7 @@ or arriving just after them (same-day delivery slot). No moments in
 this phase.
 
 **Cash movement decision (Tamsin, 2026-08-17):** Thabo does NOT go back to
-work - his kid is sick, this is urgent. The spine is clinic -> taxi ->
+work - his kid is sick, this is urgent. The spine is doctor -> taxi ->
 Dis-Chem: he chooses in the thread while they walk to the rank, watches the
 pick-and-pack from the taxi (P3), and his QR arrives just before the store
 (the 30 of The 30/60 Fill runs inside the taxi ride). He is offered the
@@ -594,7 +613,7 @@ P4's route toggle.)*
 numbered list for a chest like his - paracetamol syrup for the fever, saline
 drops for his nose - each with a price. I reply "2"; the syrup is added and
 the new total comes straight back. Everything is one amount - the price I
-saw at the clinic plus what I've added - paid once, at the counter, when I
+saw at the doctor's rooms plus what I've added - paid once, at the counter, when I
 collect. If I say nothing, nothing is added.
 
 ### Current-state pain points
@@ -849,8 +868,8 @@ have to stand in a queue to be offered it.
 
 ### Activities - cash (Thabo - counter route, the spine; rerouted 2026-08-17)
 
-*(Rerouted on Tamsin's feedback: straight off the taxi from the clinic, his
-son with him - never "after my shift". The route toggle mirrors Aisha's:
+*(Rerouted on Tamsin's feedback: straight off the taxi from the doctor's
+rooms, his son with him - never "after my shift". The route toggle mirrors Aisha's:
 "Counter" is the spine, "After hours" is the works-late reality that used to
 be the spine's parenthetical.)*
 
@@ -879,8 +898,8 @@ the thread; the counter handover is the duty pharmacist - agreed. The
 it's-all-in-the-thread line added 2026-08-17 on Tamsin's note.)*
 
 **A3 · I pay what I already knew** - One total - the script and the fever
-syrup - the same number I've known since the clinic. Cash or card, at the
-same counter, and done. The number I planned for is the number I pay.
+syrup - the same number I've known since the doctor's rooms. Cash or card,
+at the same counter, and done. The number I planned for is the number I pay.
 
 ### Activities - cash (Thabo - after-hours route, added 2026-08-17)
 
@@ -892,14 +911,14 @@ counter. His chosen pharmacist handover degrades honestly to the phone-back.
 Moment title agreed from three proposals.)*
 
 **A1 · I go back on shift** - Some days the shift can't spare me. My
-neighbour takes him home from the clinic, I go back on, and the store closes
+neighbour takes him home from the doctor's rooms, I go back on, and the store closes
 while I'm still working. The thread already told me that's fine: the pack is
 held, and after closing the same code works at the counterless collection unit on the
 outside wall.
 
 **A2 · I scan at the wall** - The doors are dark when I get there, but the
 counterless collection unit on the outside wall is lit. I tap my card - the same total
-I've known since the clinic - hold my code to the scanner, and a door opens:
+I've known since the doctor's rooms - hold my code to the scanner, and a door opens:
 the pack is there with my son's name on it. If the scanner won't read, the
 short backup code under the QR types straight in.
 
@@ -1254,11 +1273,11 @@ discovering it at my door.
 
 **S1 · The photo can't be read** *(added 2026-08-16, agreed - the
 future-state answer to P1's unclear-script pain, and Real-Time
-Transparency's told-at-once promise walked)* - The clinic light was bad and
-the doctor's handwriting is worse. The reply still comes at once - but
-instead of a price it says plainly: part of the script can't be read, a
+Transparency's told-at-once promise walked)* - The light in the doctor's
+rooms was bad and his handwriting is worse. The reply still comes at once -
+but instead of a price it says plainly: part of the script can't be read, a
 pharmacist is looking at it now, and if it stays unclear they'll phone the
-clinic to confirm. If a new photo would be faster, it asks for one - my
+doctor's rooms to confirm. If a new photo would be faster, it asks for one - my
 choice. The one thing that never happens is silence: I always know where I
 stand, even when the answer is "not yet".
 

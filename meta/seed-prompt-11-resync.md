@@ -13,10 +13,11 @@ tags: [meta, seed-prompt]
 > `design-kit/journeys/sipho-whatsapp-flow.md`, process log of that pass).
 > The session also went past this floor: the date-move exchange it designed
 > drove #09 v3.8, payday left all service copy, and the script was re-cut to
-> the conversational-design canon. On 2026-09-07 #11 v3.1 caught up to #09
-> v3.9 (QR-first locker credential with a backup PIN) - verified item by
-> item against the current script that day. Kept for the record; do not
-> re-run.
+> the conversational-design canon. On 2026-09-07 #11 v4 caught up to #09
+> v3.9-v3.11 (QR-first locker credential with a backup PIN, Thandi in the
+> standing order, the programme parcel on its true cycle) - the drift list
+> here was verified item by item against the current script that day. Kept
+> for the record; do not re-run.
 
 
 A self-contained brief for a fresh workspace. The job: deliverable #11
