@@ -9,7 +9,7 @@ confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, journey/submit, journey/validate, journey/dispense, journey/pay, journey/collect, journey/deliver, journey/adhere, topic/acute, topic/e-prescription, region/za]
 sources: [src-dc-complaints-jan2025, src-dc-social-media-research-2025, src-dc-store-future-interviews-2026, src-dc-script-journey-interviews-2025, src-dc-instore-walkthrough-2026, src-dc-e2e-script-journey-friction-summary, src-dc-dispensary-services, src-dc-dispensary-managers-survey-2025]
 created: "2026-07-26"
-updated: "2026-08-21"
+updated: "2026-09-07"
 ---
 
 # To-be journey - the acute script, in moments
@@ -105,7 +105,7 @@ machinery stays behind the line in P6 (🔮 where applicable).
 |---|---|---|---|---|---|
 | M1 | P1 | "My pharmacist was busy before I'd even left the doctor's" | ⭐ | insured only | The Pharmacy in the Room |
 | M2 | P1 | "I knew the price before I left the clinic gate" | ⭐ | cash only | Real-Time Transparency (was Snap-a-Script, archived 2026-08-16) |
-| M3 | P3 | "Every check ran before it left the building" | | both | The Named Check |
+| M3 | P3 | "Every check ran before it left the building" | | both | The Pharmacist Beyond the Counter (formerly The Named Check) |
 | M4a | P4 | "Saw the doc. Went straight home." | ⭐ | insured | The 30/60 Fill |
 | M4b | P4 | "The counter was expecting me" | ⭐ | cash, COUNTER route | The 30/60 Fill |
 | M4c | P4 | "In and out, and I never spoke to anyone" | | insured, COLLECTED route | Counterless Collection, formerly Express Collect (+ The 30/60 Fill) |
@@ -230,7 +230,7 @@ On top of the full v3.1 rule set from #09:
   lives in the activities, not appended to every need.
 - **Every code is QR-first with a short typable backup (added 2026-08-17,
   cash-journey feedback pass):** wherever a code appears - collection,
-  handover proof, the express-collect wall - it is a QR with a short backup
+  handover proof, the counterless-collection wall - it is a QR with a short backup
   code beneath it, covering failed scans and delivery over SMS instead of
   WhatsApp. Applies to both economies. For cross-journey consistency #09's
   cash locker (PIN-only today) should adopt the same shape - logged as
@@ -517,10 +517,10 @@ Dis-Chem: he chooses in the thread while they walk to the rank, watches the
 pick-and-pack from the taxi (P3), and his QR arrives just before the store
 (the 30 of The 30/60 Fill runs inside the taxi ride). He is offered the
 same handover choice as Aisha - pharmacist at the collections counter or
-express collect - and he chooses the pharmacist, which is what routes him to
-collections rather than the express wall. The
+counterless collection - and he chooses the pharmacist, which is what routes him to
+collections rather than the counterless collection wall. The
 back-on-shift/works-late reality survives as P4's cash route toggle (the
-after-hours express collect), not as the spine.
+after-hours counterless collection), not as the spine.
 
 **The stock/price logic (spec note):** the regulated cash price (SEP +
 capped fee) is national, so a price can be quoted from a photo before any
@@ -544,7 +544,7 @@ arriving just after I do**.
 **A1 · The message asks me how** - By the time I'm in the car,
 the message is there: my script is already being prepared - how would I like
 it? Collect at the Dis-Chem on my way home, ready within 30 minutes, and I
-choose how I take it: express collect, where I scan a code and the pack
+choose how I take it: counterless collection, where I scan a code and the pack
 comes out without my speaking to anyone, or the collections counter, where a
 pharmacist hands it over and runs me through it. Either way the notes come
 to me, on WhatsApp or printed. Or delivery - at my door inside the hour if I
@@ -579,14 +579,14 @@ and the reply confirms they have his medicine. Collection costs nothing, and
 we're going that way anyway.
 
 **A2 · I choose the counter, and say go** - One more choice: how I want the
-handover. Express collect on the outside wall - scan the code and the pack
+handover. Counterless collection on the outside wall - scan the code and the pack
 comes out, no waiting - or the collections counter, where a pharmacist hands
 it over and walks me through his dose. It's his first antibiotic; I want the
 pharmacist. Then I reply "1 - go ahead" - the yes they need before medicine
 can be made up in my son's name, and everything was standing ready for it.
 The confirmation: ready at the collections counter in 30 minutes, before
 we're even there. It's held until closing - and after that, the same code
-works at the express collect on the outside wall. *(Kept on Tamsin's note:
+works at the counterless collection unit on the outside wall. *(Kept on Tamsin's note:
 the if-the-day-runs-over line stays; the works-late reality itself lives in
 P4's route toggle.)*
 
@@ -621,10 +621,10 @@ collect. If I say nothing, nothing is added.
   choice by name / shared
   location (stores near where I stand) / address for delivery cost, with
   stores-with-stock returned (cash) · handover choice inside the routing
-  ask, both economies: collections counter (pharmacist) or express collect
+  ask, both economies: collections counter (pharmacist) or counterless collection
   (scan and go) · go-ahead reply gate · confirmation
   with collections-counter readiness, hold-until-close and the after-hours
-  express-collect code · priced symptom add-on list (taps / numbered replies) ·
+  counterless-collection code · priced symptom add-on list (taps / numbered replies) ·
   counselling on both routes (pharmacist at handover; instructions +
   reachable pharmacist on delivery).
 - Backstage: dispensing starts at sign-off - clinical check first, staging
@@ -651,7 +651,7 @@ collect. If I say nothing, nothing is added.
   (wiki/digital-transformation/dischem-scripting-tech-roadmap) · acute
   script delivered 🔮 (SAPC rule 1.9.7(e) - punchlist 10(k)) · collections
   counter ⚠️ (wiki/dischem/store-of-the-future-customer-voice; punchlist
-  10(a)) · after-hours express collect 🔮
+  10(a)) · after-hours counterless collection 🔮
   (wiki/sa-regulatory/pharmacy-act-sapc-gpp) · OTC attach ⚠️
   (wiki/concepts/omnichannel-fulfilment) · WhatsApp numbered picks
   (wiki/consumer-context/digital-access-and-whatsapp) · tokenised saved
@@ -683,7 +683,7 @@ mistakes surfacing only at home when the packet was opened. Now it runs in
 the time Aisha spends driving home, and it shows its work: picked, scanned
 against the script, and a named pharmacist's sign-off on the finished pack
 before anything sealed. [why] Fast never means unchecked - the speed came
-from removing the waiting, not the care. [/why] That is The Named Check
+from removing the waiting, not the care. [/why] That is The Pharmacist Beyond the Counter
 (inline link): the moment that matters most in a pharmacy, carried out by a
 person with a name, one tap away.
 
@@ -717,7 +717,7 @@ itself: picked at his store, scanned against the doctor's script, and a
 named pharmacist confirming the dose against his son's weight before
 signing. *(Timing reworded 2026-08-17 with the reroute - was "while Thabo
 works his shift".)* [why] Someone with a name stood behind his boy's medicine - and he
-watched it happen. [/why] That is The Named Check (inline link), made for
+watched it happen. [/why] That is The Pharmacist Beyond the Counter (inline link), made for
 the person with the most to lose from an anonymous mistake.
 
 **A3 · Ready, with my code** - Just before our stop, the ready message:
@@ -817,12 +817,12 @@ truth. The route toggle is scoped to P4 alone; P3 is identical on both
 routes.)*
 
 **A1 · I pull in on the way home** - The ready message came through while I
-was still paying the doctor: thirty minutes, express collect, at the store I
+was still paying the doctor: thirty minutes, counterless collection, at the store I
 drive past anyway. So I drive home the way I always do - past the Dis-Chem I
 have stopped at a hundred times with a script in my hand and an hour to
 spare. Tonight there is nothing in my hand and nothing to hand over.
 
-**A2 · I scan, and the pack comes out** - Express collect sits on the outside wall,
+**A2 · I scan, and the pack comes out** - Counterless collection sits on the outside wall,
 before the doors. I hold my phone to the scanner, a door opens, and my pack
 is there with my name on it. No queue, no counter, nobody to explain myself
 to. I am back in the car in under a minute, and the dispensary is somebody
@@ -836,7 +836,7 @@ her a minute in the car park instead of an afternoon in the queue. [/why]
 And the quiet was her choice, not the design's: the collections counter was
 right there, with a pharmacist ready to talk her through it. She chose not
 to speak to anyone, and nothing about her care got smaller for it. That is
-Express Collect (inline link) - the stop made instant rather than deleted,
+Counterless Collection (inline link) - the stop made instant rather than deleted,
 which is the half of The 30/60 Fill (inline link) the journey has never
 shown.
 
@@ -885,7 +885,7 @@ same counter, and done. The number I planned for is the number I pay.
 ### Activities - cash (Thabo - after-hours route, added 2026-08-17)
 
 *(Agreed with Tamsin: the toggle where the shift can't spare him - he works
-late, misses the store, and the after-hours express collect catches it.
+late, misses the store, and the after-hours counterless collection catches it.
 Payment resolved by decision: card tap at the unit before release, quoted
 total unchanged; a cash-payer without a card falls back to next-morning
 counter. His chosen pharmacist handover degrades honestly to the phone-back.
@@ -894,11 +894,11 @@ Moment title agreed from three proposals.)*
 **A1 · I go back on shift** - Some days the shift can't spare me. My
 neighbour takes him home from the clinic, I go back on, and the store closes
 while I'm still working. The thread already told me that's fine: the pack is
-held, and after closing the same code works at the express collect on the
+held, and after closing the same code works at the counterless collection unit on the
 outside wall.
 
 **A2 · I scan at the wall** - The doors are dark when I get there, but the
-express collect on the outside wall is lit. I tap my card - the same total
+counterless collection unit on the outside wall is lit. I tap my card - the same total
 I've known since the clinic - hold my code to the scanner, and a door opens:
 the pack is there with my son's name on it. If the scanner won't read, the
 short backup code under the QR types straight in.
@@ -942,8 +942,8 @@ handover's after-hours phone-back fallback.)*
 - Frontstage: dispatch status + live map + honest ETA, early re-time on
   slip · driver handover verified against the order QR (proof of delivery) ·
   post-delivery contents confirmation with escalation to a person · two
-  collection routes offered at P2: express collect (scan, unattended, no
-  counter) or the collections counter (pharmacist handover) · express-collect
+  collection routes offered at P2: counterless collection (scan, unattended, no
+  counter) or the collections counter (pharmacist handover) · counterless-collection
   unit sited on the outside wall - code scan (typable backup code beneath),
   named pack, works after hours · card payment at the unit before release,
   against the quoted total (after-hours cash orders) ·
@@ -966,7 +966,7 @@ handover's after-hours phone-back fallback.)*
 - Regulatory: scheduled-medicine delivery under pharmacy accountability with
   recorded proof of handover; counselling *access* preserved on every route,
   with GPP putting physical presence for counselling as *preferred* rather
-  than required (rule 2.7.1.3.1(a)). Express collect as shown is 🔮
+  than required (rule 2.7.1.3.1(a)). Counterless collection as shown is 🔮
   requires-reform, and the rule is now known exactly: GPP 1.9.3(b) bars a
   patient receiving directly from an in-pharmacy automated unit;
   patient-facing units live under SAPC rule 1.11 (RADU), which permits
@@ -979,7 +979,7 @@ handover's after-hours phone-back fallback.)*
 - Chips (cites): DeliverD / last-mile TMS + POD
   (wiki/digital-transformation/dischem-scripting-tech-roadmap) · live
   tracking (wiki/global-benchmarks/patterns-deep-dive) · collections counter
-  (staffed) ⚠️ (punchlist 10(a)) · express collect (unattended unit) 🔮
+  (staffed) ⚠️ (punchlist 10(a)) · counterless collection (unattended unit) 🔮
   (SAPC rules 1.9.3(b) + 1.11 - wiki/concepts/remote-collection-points) ·
   counselling opt-out with notes ⚠️ (punchlist 10(j)) · token
   single-redemption (wiki/concepts/e-prescription-token) ·
@@ -1339,7 +1339,7 @@ identical on both routes and is not toggled.
 
 | | Staffed handover | Unattended handover |
 |---|---|---|
-| Name | **the collections counter** | **express collect** |
+| Name | **the collections counter** | **express collect** (renamed counterless collection 2026-09-07) |
 | Who | a pharmacist hands over and counsels | nobody - scan a code, the pack comes out |
 | Hours | store hours | store hours + after-hours when sited on the outside wall |
 
@@ -1361,7 +1361,7 @@ P2-cash, P3-cash and P4-cash; the unattended after-hours release itself
 remains 🔮 requires-reform (the RADU application's trading-hours undertaking
 compounds it - see the P4 regulatory line).
 
-**Regulatory stance on express collect (decided with Tamsin 2026-08-16, option 2).**
+**Regulatory stance on express collect (decided with Tamsin 2026-08-16, option 2).** (renamed counterless collection 2026-09-07)
 The silent, nobody-present unit is **kept as drafted and flagged 🔮
 requires-reform**, rather than redesigned to the lawful-today shape. The rule is
 now known exactly: GPP 1.9.3(b) bars a patient receiving directly from an
@@ -1384,7 +1384,7 @@ whole delivery half rest on whether a pharmacy's own same-metro service is
 "mail/courier" within that rule - ⚠️ unresolved, punchlist 10(k), and it needs a
 legal read before this journey travels to a regulator.
 
-**Counselling on the express route.** Choosing express collect is choosing not
+**Counselling on the counterless route.** Choosing counterless collection is choosing not
 to *speak* to a pharmacist, never choosing to go without counselling: the notes
 go to WhatsApp or print at the point of collection, and a named pharmacist stays
 one tap away. GPP requires counselling *access* preserved, not face-to-face
