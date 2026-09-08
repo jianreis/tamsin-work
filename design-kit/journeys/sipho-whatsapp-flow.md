@@ -138,8 +138,9 @@ the constraint and the design agree.
 ## The timeline
 
 Sign-up in July, one August 2026 cycle, and the failure band "in the months
-after". Invited + signed up Mon 13 Jul · first order (not dramatised, carries
-both once-off top-ups) Mon 20 Jul · her programme parcel Tue 18 Aug (the
+after". Invited + signed up Mon 13 Jul · first order notice + price the same
+evening (opens the P1 phone, carries both once-off top-ups - v4.3) for Mon 20
+Jul · her programme parcel Tue 18 Aug (the
 programme's own cycle - the previous landed in June; the next is expected
 around October) · notice Fri 21 Aug (a week out) · add-ons Sat 22 Aug (his
 tap) · picked Wed 26 Aug · sealed Thu 27 Aug · in the locker + collected Fri
@@ -147,7 +148,8 @@ tap) · picked Wed 26 Aug · sealed Thu 27 Aug · in the locker + collected Fri
 tablets R64.40 + Thandi's repeat R62.10 + dispensing fees R72.40) -> R248.80
 (+ Biogen Multivitamin 30s R49.90) -> R287.30 (+ Borstol Cough Syrup R38.50).
 The July once-offs (his date-move top-up R18.40; her one extra pack R62.10)
-rode the July order, so August's arithmetic is a normal month. All amounts
+rode the July order - first-order total R279.40, shown at the top of the P1
+phone (v4.3) - so August's arithmetic is a normal month. All amounts
 illustrative ⚠️.
 
 ## P0 script - Signing up (once) · Mon 13 Jul, from 17:02
@@ -211,11 +213,14 @@ packs, one to bridge. The rail carries what the chat never asks: he picks
 the 28th because it sits after month-end payday; his reasoning, never the
 service's data.
 
-## P1 script - Repeats are due · Fri 21 Aug, 08:12
+## P1 script - Repeats are due · first order Mon 13 Jul, then Fri 21 Aug, 08:12
 
 | # | Dir | Mechanic | Copy |
 |---|---|---|---|
-| M1 | in | Utility template + standing footer | Hello Sipho. Your repeat order for August is being prepared: your blood-pressure tablets (Adco-Amlodipine 5 mg) and Thandi's repeat. It will be ready at the **Capitec locker at the taxi rank** on **Friday 28 August**. Your mother's parcel arrived from her programme on Tuesday - the next is due around October, and we'll tell you when it lands. You don't need to do anything. If nothing changes, it will be waiting. *(footer: Reply CHANGE any time - date, place, anything.)* |
+| M0 | in (Mon 13 Jul, 17:20) | First-order notice (v4.3) - the top-ups land once, visibly | Hello Sipho. Your first order is being prepared: your blood-pressure tablets (Adco-Amlodipine 5 mg) and Thandi's repeat, with the once-off top-ups you agreed to. It will be ready at the **Capitec locker at the taxi rank** on **Monday 20 July**. *(footer)* |
+| M0b | in (17:20) | First-order price - the once-offs in their own block | Here is the price, so you know before you travel 🧾 **Your order** Adco-Amlodipine 5 mg, 28 tablets (generic) R64.40 · Thandi's repeat R62.10 · Dispensing fees R72.40 **Once-off, this order only** Your top-up to reach the 28th R18.40 · Thandi's extra pack R62.10 **Total to pay: R279.40** 💵 Cash or instant EFT at the Capitec counter - paying is what opens the locker 🔓 *(footer)* |
+| - | - | Date pill | FRI, 21 AUG |
+| M1 | in | Utility template + standing footer | Hello Sipho. Your repeat order for August is being prepared: your blood-pressure tablets (Adco-Amlodipine 5 mg) and Thandi's repeat. It will be ready at the **Capitec locker at the taxi rank** on **Friday 28 August**. Your mother's parcel arrived from her programme on Tuesday - the next is due around October, and we'll tell you when it lands. No top-ups this month - that was once, in July. You don't need to do anything. If nothing changes, it will be waiting. *(footer: Reply CHANGE any time - date, place, anything.)* |
 | M2 | in | Formatted price breakdown (rung 1) | Here is the price, so you know before you travel 🧾 *Your order:* Adco-Amlodipine 5 mg, 28 tablets (generic) - R64.40 · Thandi's repeat - R62.10 · Dispensing fees - R72.40 · **Total to pay: R198.90** 💵 Cash or instant EFT at the Capitec counter - paying is what opens the locker 🔓 *(footer)* |
 | M3 | in | Reply buttons (doors, not demands) | Happy with this? Then there's nothing to do - your order carries on by itself, this month and every month. Buttons: **[Add to my order] [Change something] [Talk to a person]** *(footer)* |
 
@@ -413,6 +418,16 @@ explicit plain-lines check with the clash example; real product names
 throughout with owners never guessed (Household for unassigned OTC); the
 cabinet expanded with her shared clinic medicines under the CarerConsent
 see-grant; X4 re-pointed at his own script.
+
+## Process log - 2026-09-08 pass (v4.3, Tamsin's run-through comment 5)
+
+The P1 phone now opens with the July first order (M0 notice + M0b price,
+Mon 13 Jul) before the August month: the two once-off top-ups Sipho agreed
+to in P0 land visibly, in their own "once-off, this order only" block, total
+R279.40; the August notice then says "no top-ups this month - that was once,
+in July", proving W9's promise that every later month is a normal month.
+Proposed and approved in chat. Rails A1/A2 and the phase badge follow;
+nothing after M2 changes.
 
 ## Process log - 2026-09-08 pass (v4.2, Tamsin's run-through comment 4)
 

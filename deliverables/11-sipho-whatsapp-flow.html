@@ -235,7 +235,7 @@ a{color:var(--brand-dark)}
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #11 · SIPHO'S REPEAT, AS A WHATSAPP CONVERSATION</span>
-  <span class="gen">generated 2026-08-07 · v3 2026-08-16: re-synced to #09 v3.4-v3.8 and re-cut to the sourced conversational-design canon (wiki: conversational-design-whatsapp) · v4 2026-09-07: re-synced to #09 v3.9-v3.11 - Thandi joins the standing order (owner-named on every shared surface, whole-pack date move), the CCMDD parcel corrected to its two-to-three-month cycle, the locker credential now QR-first with the PIN as typable backup, and all totals recomputed · v4.1 2026-09-08: the P0 sync exchange re-cut to the #09 v3.12 sequence - anchor first (her parcel can't move), her expected date suggested, he declines for his own day; Thandi's two first-month packs priced in the read-back · v4.2 2026-09-08: a practical how-it-works message with the cash top-up named lands before any date is offered · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
+  <span class="gen">generated 2026-08-07 · v3 2026-08-16: re-synced to #09 v3.4-v3.8 and re-cut to the sourced conversational-design canon (wiki: conversational-design-whatsapp) · v4 2026-09-07: re-synced to #09 v3.9-v3.11 - Thandi joins the standing order (owner-named on every shared surface, whole-pack date move), the CCMDD parcel corrected to its two-to-three-month cycle, the locker credential now QR-first with the PIN as typable backup, and all totals recomputed · v4.1 2026-09-08: the P0 sync exchange re-cut to the #09 v3.12 sequence - anchor first (her parcel can't move), her expected date suggested, he declines for his own day; Thandi's two first-month packs priced in the read-back · v4.2 2026-09-08: a practical how-it-works message with the cash top-up named lands before any date is offered · v4.3 2026-09-08: the P1 phone opens with the July first order so the agreed top-ups land visibly, then the normal August month · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
 </div>
 
 <section class="intro">
@@ -365,7 +365,7 @@ a{color:var(--brand-dark)}
 <!-- ======================= P1 ======================= -->
 <section class="stage" id="p1">
   <div class="phead"><span class="pnum">P1</span><h2>Repeats are due</h2>
-    <span class="once">the monthly heartbeat · Fri 21 Aug - most months, Sipho sends nothing</span></div>
+    <span class="once">first order Mon 13 Jul · then the monthly heartbeat, Fri 21 Aug - most months, Sipho sends nothing</span></div>
   <div class="stagegrid">
     <div>
       <div class="stagecontrols"><button class="btn" data-reset="p1">Reset the thread</button>
@@ -382,14 +382,22 @@ a{color:var(--brand-dark)}
     </div>
     <div class="rail">
       <h3>What each message is doing</h3>
-      <p class="railsub">markers (A1-A5) match the callouts · feature chips name the WhatsApp mechanic · ⚠️ marks claims awaiting a vault source</p>
+      <p class="railsub">markers (A0-A5) match the callouts · feature chips name the WhatsApp mechanic · ⚠️ marks claims awaiting a vault source</p>
+      <div class="callout"><span class="cmark">A0</span><div class="cbody">
+        <span class="feat">The first order · the top-ups land once, visibly</span><br>
+        The phone opens in July so the reader sees the two once-offs he agreed to in P0 actually arrive: his
+        tablet top-up to reach the 28th and Thandi's extra pack, in their own "once-off, this order only" block
+        under the normal lines, with the first-order total (v4.3). Then August below proves the promise from
+        sign-up - after that, every month is a normal month.
+      </div></div>
       <div class="callout"><span class="cmark">A1</span><div class="cbody">
         <span class="feat">Utility template · business-initiated</span><br>
         The one-week-out notice: the household's Dis-Chem order - his tablets and Thandi's repeat, hers owner-named
         even here (the v3.11 discreet rule). The mother's programme parcel landed on Tuesday and is tracked, never
         managed - and because the programme's cycle is two to three months, not monthly, the notice says when the
         next is due instead of implying one every month. No image header, no PDF - on a prepaid balance every download costs real money. It names the day
-        (never "payday" - what the 28th means is his business), and it closes on the golden path: nothing to do.
+        (never "payday" - what the 28th means is his business), says plainly that there are no top-ups this month,
+        and closes on the golden path: nothing to do.
         The small grey footer under this and every service message is the standing change surface: reply CHANGE,
         anywhere, any time, until the day before.
       </div></div>
@@ -404,7 +412,7 @@ a{color:var(--brand-dark)}
         <span class="feat">Formatted price breakdown · in-bubble</span><br>
         The price lives in the message, not at the till - one line per item, emoji as anchors (rung 1 of the
         visual ladder: characters, not downloads). Two owner-named lines and the fees: Thandi's price shows, her
-        product name doesn't (v3.11). Still no CCMDD line, because there is nothing to pay on the programme
+        product name doesn't (v3.11). A normal month: no once-off block (see A0). Still no CCMDD line, because there is nothing to pay on the programme
         parcel (v3.4). Amounts and product names are illustrative
         <span class="flag" title="illustrative pricing and product names - logged in meta/punchlist.md item 11">⚠️</span>.
       </div></div>
@@ -1006,9 +1014,16 @@ const P0 = () => [
 /* ---------- P1 ---------- */
 const P1 = () => [
   {sys:"🔒 Messages and calls are end-to-end encrypted."},
+  {date:"MON, 13 JUL"},
+  {inm:{id:"A0", time:"17:20",
+    body:'Hello Sipho. Your first order is being prepared: your blood-pressure tablets (<b>Adco-Amlodipine 5 mg</b>) and Thandi\'s repeat, with the once-off top-ups you agreed to.\n\nIt will be ready at the <b>Capitec locker at the taxi rank</b> on <b>Monday 20 July</b>.'+FOOT}},
+  {inm:{time:"17:20",
+    body:'Here is the price, so you know before you travel 🧾'+
+      '<span class="sect">Your order</span><span class="amt">Adco-Amlodipine 5 mg, 28 tablets (generic)  R64.40\nThandi\'s repeat  R62.10\nDispensing fees  R72.40</span>'+
+      '<span class="sect">Once-off, this order only</span><span class="amt">Your top-up to reach the 28th  R18.40\nThandi\'s extra pack  R62.10</span>\n\n<b>Total to pay: <span class="amt">R279.40</span></b> 💵\nCash or instant EFT at the Capitec counter - paying is what opens the locker 🔓'+FOOT}},
   {date:"FRI, 21 AUG"},
   {inm:{id:"A1", time:"08:12",
-    body:'Hello Sipho. Your repeat order for August is being prepared: your blood-pressure tablets (<b>Adco-Amlodipine 5 mg</b>) and Thandi\'s repeat.\n\nIt will be ready at the <b>Capitec locker at the taxi rank</b> on <b>Friday 28 August</b>.\n\nYour mother\'s parcel arrived from her programme on Tuesday - the next is due around October, and we\'ll tell you when it lands.\n\nYou don\'t need to do anything. If nothing changes, it will be waiting.'+FOOT}},
+    body:'Hello Sipho. Your repeat order for August is being prepared: your blood-pressure tablets (<b>Adco-Amlodipine 5 mg</b>) and Thandi\'s repeat.\n\nIt will be ready at the <b>Capitec locker at the taxi rank</b> on <b>Friday 28 August</b>.\n\nYour mother\'s parcel arrived from her programme on Tuesday - the next is due around October, and we\'ll tell you when it lands.\n\nNo top-ups this month - that was once, in July.\n\nYou don\'t need to do anything. If nothing changes, it will be waiting.'+FOOT}},
   {inm:{id:"A2", time:"08:12",
     body:'Here is the price, so you know before you travel 🧾'+
       '<span class="sect">Your order</span><span class="amt">Adco-Amlodipine 5 mg, 28 tablets (generic)  R64.40\nThandi\'s repeat  R62.10\nDispensing fees  R72.40</span>\n\n<b>Total to pay: <span class="amt">R198.90</span></b> 💵\nCash or instant EFT at the Capitec counter - paying is what opens the locker 🔓'+FOOT}},
