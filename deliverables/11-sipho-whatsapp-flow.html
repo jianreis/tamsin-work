@@ -235,7 +235,7 @@ a{color:var(--brand-dark)}
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #11 · SIPHO'S REPEAT, AS A WHATSAPP CONVERSATION</span>
-  <span class="gen">generated 2026-08-07 · v3 2026-08-16: re-synced to #09 v3.4-v3.8 and re-cut to the sourced conversational-design canon (wiki: conversational-design-whatsapp) · v4 2026-09-07: re-synced to #09 v3.9-v3.11 - Thandi joins the standing order (owner-named on every shared surface, whole-pack date move), the CCMDD parcel corrected to its two-to-three-month cycle, the locker credential now QR-first with the PIN as typable backup, and all totals recomputed · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
+  <span class="gen">generated 2026-08-07 · v3 2026-08-16: re-synced to #09 v3.4-v3.8 and re-cut to the sourced conversational-design canon (wiki: conversational-design-whatsapp) · v4 2026-09-07: re-synced to #09 v3.9-v3.11 - Thandi joins the standing order (owner-named on every shared surface, whole-pack date move), the CCMDD parcel corrected to its two-to-three-month cycle, the locker credential now QR-first with the PIN as typable backup, and all totals recomputed · v4.1 2026-09-08: the P0 sync exchange re-cut to the #09 v3.12 sequence - anchor first (her parcel can't move), her expected date suggested, he declines for his own day; Thandi's two first-month packs priced in the read-back · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
 </div>
 
 <section class="intro">
@@ -335,13 +335,12 @@ a{color:var(--brand-dark)}
         revocable grant.
       </div></div>
       <div class="callout"><span class="cmark">B4</span><div class="cbody">
-        <span class="feat">The date-move exchange · one decision per turn</span><br>
-        Script Sync made visible, honestly: the programme parcel is excluded up front - a two-to-three-month cycle
-        on the programme's own timing can't be lined up with anything, so it is tracked, never synced (v3.11). The
-        offer, the day pick and the costed read-back each arrive as their own turn, exploration labels until the
-        single commitment button - and the read-back carries the two price mechanics plainly: his loose tablets
-        top up by the day, her pack can't be split so her move costs one whole extra pack, once. Every price lands
-        before a decision is asked for <span class="flag" title="amounts illustrative - punchlist item 11">⚠️</span>.
+        <span class="feat">The date-move exchange · anchor, suggestion, his own day</span><br>
+        Script Sync in the #09 order (v4.1): the anchor is named first - the mother's parcel can't move - and the
+        suggestion is built on it, her expected date. He declines it and names his own day; each step is its own
+        turn, exploration labels until the single commitment button. The read-back carries the two price mechanics
+        plainly: his loose tablets top up by the day, her pack can't be broken so her first order carries two
+        packs, one to bridge. Every price lands before a decision is asked for <span class="flag" title="amounts illustrative - punchlist item 11">⚠️</span>.
         And the rail carries what the chat never asks: he picks the 28th because it sits after month-end payday -
         his reasoning, never the service's data.
       </div></div>
@@ -948,7 +947,7 @@ const P0 = () => [
     ]}}},
   {inm:{time:"17:08", body:'All three added.'}},
   {inm:{time:"17:08",
-    body:'Your tablets, Thandi\'s medicine and your mother\'s parcel are all ready at different times. Yours and Thandi\'s could line up - one trip instead of two.\n\nWant to see how that would work?'}},
+    body:'Your tablets, Thandi\'s medicine and your mother\'s parcel are all ready at different times.\n\nWant to line them up - one trip instead of three?'}},
   {qr:{buttons:[
     {label:"How would it work?", time:"17:09", main:true},
     {label:"Keep them apart", time:"17:09", steps:[
@@ -956,10 +955,17 @@ const P0 = () => [
     ]}
   ]}},
   {inm:{id:"B4", time:"17:09",
-    body:'First, your mother\'s parcel: it can\'t be moved. It comes from her clinic\'s programme every two to three months, on the programme\'s own timing, at no cost to you - and we\'ll tell you here whenever one lands.\n\nYours and Thandi\'s can move to any day of the month.\n\nWhich day should your order be ready? Reply with a day, like 25 - or KEEP.'}},
+    body:'Your mother\'s parcel can\'t move - it comes on her clinic programme\'s timing, next one expected around the 18th.\n\nLine yours and Thandi\'s up with it?'}},
+  {qr:{buttons:[
+    {label:"Take the 18th", time:"17:09", steps:[
+      {inm:{time:"17:09", body:'That works too - both of you would move to the 18th, priced the same way. In Sipho\'s story the money isn\'t there before month-end: tap "Another day" to continue.'}}
+    ]},
+    {label:"Another day", time:"17:10", main:true}
+  ]}},
+  {inm:{time:"17:10", body:'Which day should your order be ready? Reply with a day, like 25.'}},
   {tap:{send:"28", time:"17:10"}},
   {inm:{time:"17:11",
-    body:'The 28th, for both of you:\n• Your tablets: a once-off top-up of extra tablets - <b><span class="amt">R18.40</span></b>\n• Thandi\'s medicine comes as a full month\'s pack that can\'t be split, so her move takes one extra pack, once - <b><span class="amt">R62.10</span></b>\n\nBoth ride your first order; after that, every month is a normal month.\n\nShall I move you both to the 28th?'}},
+    body:'The 28th for you and Thandi. Your mother\'s parcel stays on the programme\'s timing.\n\nTo get you both to the 28th:\n• Your tablets: a once-off top-up of extra tablets - <b><span class="amt">R18.40</span></b>\n• Thandi\'s medicine comes as a full month\'s pack, so her first order carries two packs, one to tide her over - <b><span class="amt">R62.10</span></b>\n\nBoth ride your first order; after that, every month is a normal month.\n\nShall I set the 28th?'}},
   {qr:{buttons:[
     {label:"Yes, the 28th", time:"17:11", main:true},
     {label:"Keep as they are", time:"17:11", steps:[

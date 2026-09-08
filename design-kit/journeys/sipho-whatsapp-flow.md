@@ -160,11 +160,13 @@ illustrative ⚠️.
 | W2 | out | Sheet pick echoes | isiZulu |
 | W3 | in | Text + WhatsApp Flow CTA | Who is this service for? You can add family you care for - if they've given their consent for you to manage their medicine, it covers this service too. [Set up my family] -> Flow sheet: ☑ **Sipho (you)** - Blood-pressure tablets - Amlodipine 5 mg - 28 tablets, one month at a time · ☑ **Thandi (your wife)** - Her repeat medicine - one month's pack at a time - *you manage her medicine - consent recorded: order, collect and manage on her behalf; the medicine is named in full on her phone and her pack only - her choice* · ☑ **Your mother** - Chronic medicine parcel - packed by her clinic's programme (CCMDD) - comes every two to three months, on the programme's cycle; the programme fills and labels it · *You manage her medicine - consent recorded: order, collect and manage on her behalf. Her medicine list is shared with you - her choice, and she can change it. One tap confirms.* · [Continue] |
 | W4 | in | Chunked acknowledgement | All three added. |
-| W5 | in | Sync offer, exploration buttons | Your tablets, Thandi's medicine and your mother's parcel are all ready at different times. Yours and Thandi's could line up - one trip instead of two. Want to see how that would work? Buttons: **[How would it work? ▶] [Keep them apart]** |
+| W5 | in | Sync offer, exploration buttons | Your tablets, Thandi's medicine and your mother's parcel are all ready at different times. Want to line them up - one trip instead of three? Buttons: **[How would it work? ▶] [Keep them apart]** |
 | W6 | out | Button echo | How would it work? |
-| W7 | in | Cadence honesty + day pick, one question | First, your mother's parcel: it can't be moved. It comes from her clinic's programme every two to three months, on the programme's own timing, at no cost to you - and we'll tell you here whenever one lands. Yours and Thandi's can move to any day of the month. Which day should your order be ready? Reply with a day, like 25 - or KEEP. |
-| W8 | out | Typed reply | 28 |
-| W9 | in | Costed read-back, commitment buttons | The 28th, for both of you: your tablets - a once-off top-up of extra tablets, **R18.40** · Thandi's medicine comes as a full month's pack that can't be split, so her move takes one extra pack, once - **R62.10**. Both ride your first order; after that, every month is a normal month. Shall I move you both to the 28th? Buttons: **[Yes, the 28th ▶] [Keep as they are]** |
+| W7 | in | Anchor + suggestion, one line, exploration buttons (v4.1) | Your mother's parcel can't move - it comes on her clinic programme's timing, next one expected around the 18th. Line yours and Thandi's up with it? Buttons: **[Take the 18th] [Another day ▶]** |
+| W8 | out | Button echo | Another day |
+| W8b | in | Day pick, one question | Which day should your order be ready? Reply with a day, like 25. |
+| W8c | out | Typed reply | 28 |
+| W9 | in | Costed read-back, commitment buttons | The 28th for you and Thandi. Your mother's parcel stays on the programme's timing. To get you both to the 28th: your tablets - a once-off top-up of extra tablets, **R18.40** · Thandi's medicine comes as a full month's pack, so her first order carries two packs, one to tide her over - **R62.10**. Both ride your first order; after that, every month is a normal month. Shall I set the 28th? Buttons: **[Yes, the 28th ▶] [Keep as they are]** |
 | W10 | out | Button echo | Yes, the 28th |
 | W11 | in | One-date confirmation | Done - one date, one chat. Yours + Thandi's: the 28th of every month. Your mother's parcel: every two to three months, on the programme's cycle - we tell you when it lands. Your first order is ready **Monday 20 July**, with both once-off top-ups included. We remember the dates, so you don't have to. |
 | W14 | in | Reply buttons (channel choice) | How should your medicine reach you each month? Buttons: **[Collect near me ▶] [Deliver to me]** ("Deliver" plays: We can deliver where couriers reach - though most people near you choose the locker: no street address needed. Tap "Collect near me" to see the points close to home.) |
@@ -194,11 +196,12 @@ nephew are absent by design - nothing of theirs repeats; consent is an
 already-granted fact whose scope is read back, POPIA-recorded, and each
 woman's medicine-list share is her own revocable grant); the date-move
 exchange runs one decision per turn with exploration labels until the single
-commitment turn (W9) - the programme parcel is excluded from the sync up
-front because an unpredictable two-to-three-month cycle can't be lined up
-with anything (v3.11), and the read-back carries the two price mechanics
-plainly: loose tablets top up by the day, a cycle-fixed pack moves only as a
-whole extra pack, once. The rail carries what the chat never asks: he picks
+commitment turn (W9), in the #09 v3.12 A-B-C order (v4.1): the anchor is
+named first - the mother's parcel can't move - and the suggestion is built
+on it (her expected date, the 18th); he declines and names his own day; the
+read-back carries the two price mechanics plainly: loose tablets top up by
+the day, a cycle-fixed pack can't be broken so her first order carries two
+packs, one to bridge. The rail carries what the chat never asks: he picks
 the 28th because it sits after month-end payday; his reasoning, never the
 service's data.
 
@@ -404,6 +407,17 @@ explicit plain-lines check with the clash example; real product names
 throughout with owners never guessed (Household for unassigned OTC); the
 cabinet expanded with her shared clinic medicines under the CarerConsent
 see-grant; X4 re-pointed at his own script.
+
+## Process log - 2026-09-08 pass (v4.1, Tamsin's run-through comment 3)
+
+The P0 sync exchange re-cut to the #09 v3.12 Script Sync sequence, wording
+agreed in chat: W5 offers to line all three up; W7 is one line - the anchor
+(her parcel can't move) and the suggestion built on it (her expected date,
+the 18th) with exploration buttons; he takes "Another day", is asked for a
+day, types 28; W9 reads back the 28th for him and Thandi with the mother's
+parcel left on the programme's timing, his tablet top-up and Thandi's two
+first-month packs priced, commitment buttons. W11 onward unchanged; totals,
+timeline and every later phase untouched. Rail B4 retitled to the A-B-C.
 
 ## Process log - 2026-09-07 pass (Tamsin's instruction, punchlist 19)
 
