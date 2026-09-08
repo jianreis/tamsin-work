@@ -9,7 +9,7 @@ confidence: medium
 tags: [design-kit, journey, to-be, domain/ux, domain/consumer, topic/e-prescription, journey/refill, journey/collect, region/za]
 sources: [src-dc-complaints-jan2025, src-con-datareportal-digital-2024, src-con-ramp-data-prices, src-con-pelebox, src-wa-cloud-api-interactive, src-wa-message-templates, src-wa-flows, src-wa-click-to-chat, src-wa-business-messaging-best-practices, src-ux-google-conversation-design, src-ux-nng-chatbot-ux, src-ux-hall-conversational-design, src-ux-hicks-law-choice-load, src-con-ccmdd-supply-cycle]
 created: "2026-08-07"
-updated: "2026-09-07"
+updated: "2026-09-08"
 ---
 
 # Sipho's repeat as a WhatsApp conversation - channel mock spec
@@ -109,6 +109,13 @@ two-line order.
    must tap are dashed pills ("tap to send: ..."). Optional demonstrative
    branches (the photo escalation, the CHANGE demo) play without rewriting
    downstream steps; each phone has its own reset.
+
+Standing rule carried from #09 v3.12 (2026-09-08): the **Script Sync
+sequence** - anchors surfaced first (plan around, or leave them out), the
+least-cost day suggested with its reason, any day the customer names priced
+on request, commitment only after the price. The B4 exchange already runs
+this order (the programme parcel named as the anchor and excluded, the 18th
+suggested, the 28th typed and priced); no script change.
 
 ## Feature mapping - all seven phases
 

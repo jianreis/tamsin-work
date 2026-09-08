@@ -52,3 +52,4 @@ may want to steer. Nothing here is blocking the build.
   testing, minor ailments, vaccinations) as part of the journey?
 
 _See also [[open-questions]] for factual/contradiction tracking._
+| 20 | **#08 Script Sync card vs the v3.12 sync sequence** (2026-09-08) | #09 v3.12 made the Script Sync sequence a standing rule: anchors surfaced first (plan around or leave out), least-cost day suggested, any day the customer names priced. The #08 concept card's third proof point still reads "the plan anchors on the medicine that must stay put" - the anchor as the rule rather than the reason for the suggestion. Reword when #08 is next open; no behaviour change. | Open - #08 out of scope for the 2026-09-08 #09/#11 session. |
