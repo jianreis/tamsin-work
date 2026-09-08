@@ -162,6 +162,7 @@ illustrative ⚠️.
 | W4 | in | Chunked acknowledgement | All three added. |
 | W5 | in | Sync offer, exploration buttons | Your tablets, Thandi's medicine and your mother's parcel are all ready at different times. Want to line them up - one trip instead of three? Buttons: **[How would it work? ▶] [Keep them apart]** |
 | W6 | out | Button echo | How would it work? |
+| W6b | in | How it works, in practice - the cost named before any date (v4.2) | Here's how it works. We pick one day of the month for your order. Anyone whose medicine runs out before that day gets a few extra tablets in the first order to reach it - a once-off top-up, paid in cash with that first order. After that, one order, one trip, every month. |
 | W7 | in | Anchor + suggestion, one line, exploration buttons (v4.1) | Your mother's parcel can't move - it comes on her clinic programme's timing, next one expected around the 18th. Line yours and Thandi's up with it? Buttons: **[Take the 18th] [Another day ▶]** |
 | W8 | out | Button echo | Another day |
 | W8b | in | Day pick, one question | Which day should your order be ready? Reply with a day, like 25. |
@@ -196,7 +197,12 @@ nephew are absent by design - nothing of theirs repeats; consent is an
 already-granted fact whose scope is read back, POPIA-recorded, and each
 woman's medicine-list share is her own revocable grant); the date-move
 exchange runs one decision per turn with exploration labels until the single
-commitment turn (W9), in the #09 v3.12 A-B-C order (v4.1): the anchor is
+commitment turn (W9), in the #09 v3.12 A-B-C order (v4.1): W6b answers
+"how would it work?" in practice before any date is offered - one day a
+month, a once-off top-up of extra tablets in the first order, paid in cash
+with it - so the cost component is understood before he is asked anything
+(v4.2; Thandi's whole-pack exception is explained where it is priced, in W9,
+not here); then the anchor is
 named first - the mother's parcel can't move - and the suggestion is built
 on it (her expected date, the 18th); he declines and names his own day; the
 read-back carries the two price mechanics plainly: loose tablets top up by
@@ -407,6 +413,13 @@ explicit plain-lines check with the clash example; real product names
 throughout with owners never guessed (Household for unassigned OTC); the
 cabinet expanded with her shared clinic medicines under the CarerConsent
 see-grant; X4 re-pointed at his own script.
+
+## Process log - 2026-09-08 pass (v4.2, Tamsin's run-through comment 4)
+
+W6b added after his "How would it work?" tap: a short practical explainer
+that names the cost component - one day a month, a once-off top-up of extra
+tablets in the first order, paid in cash with that order - before W7 offers
+any date. Wording approved by Tamsin in chat. No other change.
 
 ## Process log - 2026-09-08 pass (v4.1, Tamsin's run-through comment 3)
 
