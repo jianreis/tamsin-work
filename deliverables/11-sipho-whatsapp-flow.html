@@ -235,7 +235,7 @@ a{color:var(--brand-dark)}
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #11 · SIPHO'S REPEAT, AS A WHATSAPP CONVERSATION</span>
-  <span class="gen">generated 2026-08-07 · v3 2026-08-16: re-synced to #09 v3.4-v3.8 and re-cut to the sourced conversational-design canon (wiki: conversational-design-whatsapp) · v4 2026-09-07: re-synced to #09 v3.9-v3.11 - Thandi joins the standing order (owner-named on every shared surface, whole-pack date move), the CCMDD parcel corrected to its two-to-three-month cycle, the locker credential now QR-first with the PIN as typable backup, and all totals recomputed · v4.1 2026-09-08: the P0 sync exchange re-cut to the #09 v3.12 sequence - anchor first (her parcel can't move), her expected date suggested, he declines for his own day; Thandi's two first-month packs priced in the read-back · v4.2 2026-09-08: a practical how-it-works message with the cash top-up named lands before any date is offered · v4.3 2026-09-08: the P1 phone opens with the July first order so the agreed top-ups land visibly, then the normal August month · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
+  <span class="gen">generated 2026-08-07 · v3 2026-08-16: re-synced to #09 v3.4-v3.8 and re-cut to the sourced conversational-design canon (wiki: conversational-design-whatsapp) · v4 2026-09-07: re-synced to #09 v3.9-v3.11 - Thandi joins the standing order (owner-named on every shared surface, whole-pack date move), the CCMDD parcel corrected to its two-to-three-month cycle, the locker credential now QR-first with the PIN as typable backup, and all totals recomputed · v4.1 2026-09-08: the P0 sync exchange re-cut to the #09 v3.12 sequence - anchor first (her parcel can't move), her expected date suggested, he declines for his own day; Thandi's two first-month packs priced in the read-back · v4.2 2026-09-08: a practical how-it-works message with the cash top-up named lands before any date is offered · v4.3 2026-09-08: the P1 phone opens with the July first order so the agreed top-ups land visibly, then the normal August month · v4.4 2026-09-08: "Talk to a person" opens three doors - a pharmacist, a nurse, customer service - as reply buttons; the CALL ME keyword step removed · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
 </div>
 
 <section class="intro">
@@ -439,10 +439,13 @@ a{color:var(--brand-dark)}
         <em style="color:var(--muted2)">(tap Change something in the phone to see it)</em>
       </div></div>
       <div class="callout dim" id="co-p1-a5"><span class="cmark">A5</span><div class="cbody">
-        <span class="feat">Keyword reply + phone-back</span><br>
-        Escalation ends in a phone call, not a chat queue: one reply, and a person phones him in his language,
-        free of charge. The closing line matters most on prepaid - he can let his data lapse, because the call
-        comes to him. <em style="color:var(--muted2)">(tap Talk to a person in the phone to see it)</em>
+        <span class="feat">Three doors + phone-back</span><br>
+        Three different questions come up on a repeat, so the person is chosen first (v4.4): medicine and doses
+        to a pharmacist; "is this normal, should I worry" to a nurse, the Dis-Chem clinic sister; orders, money
+        and the locker to customer service. Three reply buttons is also the platform ceiling, so the doors fill
+        it exactly - and the tap is the reply, so no keyword to type. Escalation still ends in a phone call, not
+        a chat queue: whoever he picks phones him in his language, free of charge. The closing line matters most
+        on prepaid - he can let his data lapse, because the call comes to him. <em style="color:var(--muted2)">(tap Talk to a person in the phone to see it)</em>
       </div></div>
     </div>
   </div>
@@ -1040,12 +1043,13 @@ const P1 = () => [
       {undim:"co-p1-a4"}
     ]},
     {label:"Talk to a person", send:"Talk to a person", time:"08:15", steps:[
-      {inm:{id:"A5", time:"08:15",
-        body:'Of course. Reply <b>CALL ME</b> and a pharmacy team member will phone you back today, in your language, free of charge.\n\nOr send a voice note - we listen to those too.'}},
+      {inm:{id:"A5", time:"08:15", body:'Of course. Who would you like to speak to?'}},
       {undim:"co-p1-a5"},
-      {tap:{send:"CALL ME", time:"08:16"}},
-      {inm:{time:"08:16",
-        body:'Thank you Sipho. Someone will phone you on this number <b>before 17:00 today</b>.\n\nYou don\'t need to keep data on - the call comes to you.'}}
+      {qr:{buttons:[
+        {label:"A pharmacist", time:"08:16", steps:[{inm:{time:"08:16", body:'A pharmacist will phone you on this number <b>before 17:00 today</b>, in your language, free of charge.\n\nYou don\'t need to keep data on - the call comes to you. If it\'s easier, send a voice note now and they\'ll listen before they call.'}}]},
+        {label:"A nurse", time:"08:16", steps:[{inm:{time:"08:16", body:'A nurse from the Dis-Chem clinic will phone you on this number <b>before 17:00 today</b>, in your language, free of charge.\n\nYou don\'t need to keep data on - the call comes to you. If it\'s easier, send a voice note now and they\'ll listen before they call.'}}]},
+        {label:"Customer service", time:"08:16", steps:[{inm:{time:"08:16", body:'Someone from customer service will phone you on this number <b>before 17:00 today</b>, in your language, free of charge.\n\nYou don\'t need to keep data on - the call comes to you. If it\'s easier, send a voice note now and they\'ll listen before they call.'}}]}
+      ]}}
     ]}
   ]}}
 ];

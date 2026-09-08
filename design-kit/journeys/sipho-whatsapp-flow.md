@@ -233,8 +233,15 @@ deliver** (locker, store or delivery) · **How I pay** (at the counter, or
 other ways) · **Generic or brand** (per medicine, either way) · **Personal
 details** (language, my info, my family) · **Cancel the service** (stops
 everything; a person will confirm) · **Something else** (just type it).
-**Talk to a person** -> phoned back before 17:00, in his language, data can
-lapse. Pause lives inside the menu now (Skip this month), not on a button.
+**Talk to a person** -> three doors as reply buttons (v4.4): **A pharmacist**
+(medicine, doses, clashes) · **A nurse** (the Dis-Chem clinic sister - "is
+this normal, should I worry") · **Customer service** (orders, money, the
+locker). One decision, the question last; his tap is the reply, so the old
+CALL ME keyword step is gone. Whichever he picks is phoned back before
+17:00, in his language, free of charge; data can lapse; a voice note can go
+ahead of the call. The mock walks the pharmacist path; the other two
+buttons play the same confirmation with the person swapped. Pause lives
+inside the menu now (Skip this month), not on a button.
 
 Key moments (rail, #09 verbatim): ⭐ "My medicine ordered itself" at M1;
 ⭐ "The only thing I ever bought blind - not anymore" at M2. Rail callouts:
@@ -418,6 +425,17 @@ explicit plain-lines check with the clash example; real product names
 throughout with owners never guessed (Household for unassigned OTC); the
 cabinet expanded with her shared clinic medicines under the CarerConsent
 see-grant; X4 re-pointed at his own script.
+
+## Process log - 2026-09-08 pass (v4.4, Tamsin's run-through comment 6)
+
+P1 "Talk to a person" opens three doors instead of one: a pharmacist, a
+nurse, customer service - reply buttons, the question last, the CALL ME
+keyword step removed because the button is the reply. Confirmation names
+the person chosen, keeps the before-17:00 phone-back, the language, the
+free call, the data-can-lapse line, and offers a voice note ahead of the
+call. Proposed and approved in chat. The ∥ "Call me" on the stock-out
+scenario stays single-door by agreement - a stock-out is plainly a
+customer-service call.
 
 ## Process log - 2026-09-08 pass (v4.3, Tamsin's run-through comment 5)
 
