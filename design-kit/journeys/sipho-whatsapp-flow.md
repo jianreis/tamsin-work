@@ -123,7 +123,7 @@ suggested, the 28th typed and priced); no script change.
 |---|---|---|
 | P0 Signing up (once) | Invited after an in-store collection; language pick; add household (Sipho + Thandi + his mother; kids and nephew not signed up); two dates, one memory (the programme parcel excluded from sync up front - two-to-three-month cycle, tracked only; his and Thandi's medicines move together to the 28th, his via loose-tablet top-up, hers via one whole extra pack); locker choice; payment rule; confirm | Business-initiated **invite template** (VP headline, twin CTA); **list message** for language; **WhatsApp Flow** for the household + medicines (Thandi's row owner-named); the date-move exchange as three sequenced turns (offer -> cadence honesty + day pick -> costed read-back confirm); **reply buttons** for channel; **list message** for pickup points; read-back + reply-1 confirm |
 | P1 Repeats are due | Notice a week out (the household's order - his tablets + Thandi's repeat; the mother's parcel noted when one lands, next-due named, never implied monthly); price before travel (two owner-named lines + fees); keeps going unless he says otherwise | **Utility template** with the standing CHANGE **footer**; formatted price breakdown in-bubble (rung 1); **reply buttons**: add / change / person; the one change menu as a **list message** (9 rows) |
-| P2 Adding to the order | He opens the door M3 left ajar; suggest from history, specials first; browse; free-text request, clarifying question, priced options | User-pulled session (his tap opens the 24-hour window - no marketing template); catalogue **product cards** with add-to-cart (rung 2); **[Browse medicines]** into the in-WhatsApp medicine-only catalogue; free text first-class, one clarifying question as **reply buttons**; running total re-stated in-bubble |
+| P2 Adding to the order | He opens the door M3 left ajar; specials on what he usually buys served first; then the four ways in (type a product, snap a shopping-list photo, browse this week's specials, continue on the app or web); free-text request, clarifying question, priced options; whole store, no medicine-only restriction (v4.5) | User-pulled session (his tap opens the 24-hour window - no marketing template); catalogue **product cards** with add-to-cart (rung 2); the four ways as a **list message** (four rows - one over the reply-button ceiling); the shopping-list photo as **his outgoing media**, read back as priced cards; browse into the in-WhatsApp catalogue; app or web as the one **link out** of the thread; free text first-class, one clarifying question as **reply buttons**; running total re-stated in-bubble |
 | P3 Checked and packed | Picked-and-checked with the checks listed plainly and the pharmacist named; packed-and-sealed (no PIN); change stays one reply away | Two **status templates** with footers; check list as rung-1 anchor lines with the concrete clash example; the CHANGE demo branch (date moved via the menu) |
 | P4 In hand | Code issued when the parcel physically lands (QR-first, short backup PIN, v3.9); pay at counter activates it, scan opens the locker; contents check at the locker; photo escalation | **Reminder template**: first issue of the QR + backup PIN + the two retrieval steps; off-channel handover by design; post-handover contents list (real product names, Thandi's line owner-named); **photo reply** escalates to a person phoning back |
 | P5 Taking it | Look up any medicine by its real name (Thandi's entry owner-named on his phone - the cabinet's privacy mode); the mother's shared clinic medicines visible under consent; ask the pharmacist; reminders that stop when told (Thandi's on her phone, hers to stop) | **List message** cabinet: product-name rows, owner in parentheses, told-us provenance ("from her clinic script"); rung-1 iconised dose lines; free-text and **voice-note** Q&A; STOP honoured instantly |
@@ -259,9 +259,10 @@ moves first, destructive last, escape hatch always at the bottom.
 | # | Dir | Mechanic | Copy |
 |---|---|---|---|
 | N0 | out | Button tap from M3, next morning - his moment, not a push | Add to my order |
-| N1 | in | Product cards (rung 2) + browse + free text | What would you like to add? Anything in before **Wednesday 26 August** rides in the same parcel. This route carries medicine only - no groceries - but the everyday kind is covered 💊. From what you usually buy: [🖼 **Biogen Multivitamin 30s** · R49.90 · ON SPECIAL · Add to order] [🖼 **Panado, 24 tablets** · R24.50 · Add to order] Or browse, or just type what you need. Button: **[Browse medicines]** ("Browse medicines" plays a system pill: Opens Dis-Chem's in-WhatsApp medicine catalogue - browse, add to cart, and the cart lands back in this thread as an order.) |
+| N1 | in | Specials product cards (rung 2) - served first, from his own usual buys (v4.5) | What would you like to add? Anything in before **Wednesday 26 August** rides in the same parcel - anything from Dis-Chem's shelves, not just medicine. On special, from what you usually buy: [🖼 **Biogen Multivitamin 30s** · R49.90 · ON SPECIAL · Add to order] [🖼 **Colgate toothpaste 100 ml** · R21.99 · ON SPECIAL · Add to order] |
 | N2 | out | Card add-to-cart echoes | 🛒 Biogen Multivitamin 30s |
 | N3 | in | Running total | Added: Biogen Multivitamin 30s - R49.90. New total to pay: **R248.80**. |
+| N3b | in | List message - the four ways in (v4.5) | How would you like to add the rest? [Choose a way] -> rows: **Type a product** (just type it here) ▶ · **Snap your shopping list** (send a photo; we read it and price each item) · **Browse this week's specials** (Dis-Chem's catalogue, right here) · **Continue on the app or web** (opens dischem.co.za - uses data). Type is the walked path; the other three play as optional demos: the photo goes out as his own media and comes back as "We read 3 items off your list - tap to add" with priced cards (Sunlight soap 500 g R18.99 · Vaseline 250 ml R34.50 · Panado 24s R24.50); browse plays a system pill for the in-WhatsApp catalogue; app or web plays a link bubble and a system pill noting it is the one door that leaves the thread. |
 | N4 | out | Free text, first-class | cough mixture |
 | N5 | in | One clarifying question, reply buttons | For a child or an adult? Buttons: **[For an adult ▶] [For a child]** ("For a child" plays: For a child we ask their age and weight first - the dose is checked against their weight by a pharmacist, so you collect with confidence.) |
 | N6 | in | Priced options as product cards | Three options, all in stock - tap one to add: [🖼 **Borstol Cough Syrup**, 100 ml · R38.50 · Add to order] [🖼 **Benylin wet cough**, 100 ml · R62.95 · Add to order] [🖼 **ACC 200 sachets**, 10 · R89.00 · Add to order] |
@@ -271,15 +272,21 @@ moves first, destructive last, escape hatch always at the bottom.
 No key moment: #09 agreed the cash addition carries no moment. Rail
 callouts: P2 is user-pulled - the suggestion message is an answer, not an
 ambush, and his tap opens the 24-hour service window, so none of this needs a
-marketing template; the product card's thumbnail is the shelf photo he
-already recognises - an accessibility device at his literacy level, not
-decoration; no owner is guessed - the suggestions say "from what you usually
-buy", never whose they are (a till slip has no owner); the catalogue behind
-[Browse medicines] is the locker-route catalogue, medicine and everyday OTC
-only, so the browse view cannot un-say N1's honest constraint; free text
-stays first-class with exactly one clarifying question back; the running
-total is restated after every change, so price-before-travel survives the
-additions.
+marketing template; whole store - the medicine-only restriction is gone
+(Aliyah, v4.5), so N1 says "anything from Dis-Chem's shelves" and the browse
+view is the full catalogue; specials on his own usual buys are served first
+because they are the highest-probability add and cost him no typing; the
+product card's thumbnail is the shelf photo he already recognises - an
+accessibility device at his literacy level, not decoration; no owner is
+guessed - the suggestions say "from what you usually buy", never whose they
+are (a till slip has no owner); the four ways in are a list message because
+four rows is one over the reply-button ceiling; the shopping-list photo is
+his outgoing media, like Thabo's script photo in #12 - the data cost runs
+his way by his choice, and the reading comes back as priced cards he
+confirms, never auto-added; app or web is the one door that leaves the
+thread and the row says so ("uses data"); free text stays first-class with
+exactly one clarifying question back; the running total is restated after
+every change, so price-before-travel survives the additions.
 
 ## P3 script - Checked and packed · Wed 26 + Thu 27 Aug
 
@@ -425,6 +432,18 @@ explicit plain-lines check with the clash example; real product names
 throughout with owners never guessed (Household for unassigned OTC); the
 cabinet expanded with her shared clinic medicines under the CarerConsent
 see-grant; X4 re-pointed at his own script.
+
+## Process log - 2026-09-08 pass (v4.5, Aliyah's P2 instruction via Tamsin)
+
+Two changes in P2, both approved in chat. (1) The medicine-only restriction
+on the locker route is out: N1 now says "anything from Dis-Chem's shelves,
+not just medicine", the browse view is the full catalogue, and the rail
+loses the honest-constraint sentence. (2) Aliyah's four mechanisms: specials
+on his usual buys served first as cards, then a list message N3b with the
+four ways in - type a product (walked), snap your shopping list (photo out,
+priced cards back), browse this week's specials, continue on the app or web.
+Engine gains demo rows on list sheets and a labelled photo pill. N4-N8
+unchanged; totals unchanged (the walked path adds the same two items).
 
 ## Process log - 2026-09-08 pass (v4.4, Tamsin's run-through comment 6)
 

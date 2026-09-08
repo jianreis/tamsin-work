@@ -146,6 +146,7 @@ a{color:var(--brand-dark)}
 .bubble .amt{font-family:var(--mono); font-size:.8rem}
 .bubble .photo{display:block; width:180px; height:120px; border-radius:8px; margin-bottom:3px;
   background:linear-gradient(135deg,#c9d6cc,#a9bfae 55%,#8fae96); position:relative}
+.bubble .photo.list::after{content:"📝"}
 .bubble .photo::after{content:"📦"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:2rem; opacity:.8}
 /* quick-reply buttons under a bubble */
 .qrwrap{display:flex; flex-direction:column; gap:3px; max-width:82%; width:100%; margin-left:28px}
@@ -235,7 +236,7 @@ a{color:var(--brand-dark)}
 </header>
 <div class="ribbon">
   <span>DELIVERABLE #11 · SIPHO'S REPEAT, AS A WHATSAPP CONVERSATION</span>
-  <span class="gen">generated 2026-08-07 · v3 2026-08-16: re-synced to #09 v3.4-v3.8 and re-cut to the sourced conversational-design canon (wiki: conversational-design-whatsapp) · v4 2026-09-07: re-synced to #09 v3.9-v3.11 - Thandi joins the standing order (owner-named on every shared surface, whole-pack date move), the CCMDD parcel corrected to its two-to-three-month cycle, the locker credential now QR-first with the PIN as typable backup, and all totals recomputed · v4.1 2026-09-08: the P0 sync exchange re-cut to the #09 v3.12 sequence - anchor first (her parcel can't move), her expected date suggested, he declines for his own day; Thandi's two first-month packs priced in the read-back · v4.2 2026-09-08: a practical how-it-works message with the cash top-up named lands before any date is offered · v4.3 2026-09-08: the P1 phone opens with the July first order so the agreed top-ups land visibly, then the normal August month · v4.4 2026-09-08: "Talk to a person" opens three doors - a pharmacist, a nurse, customer service - as reply buttons; the CALL ME keyword step removed · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
+  <span class="gen">generated 2026-08-07 · v3 2026-08-16: re-synced to #09 v3.4-v3.8 and re-cut to the sourced conversational-design canon (wiki: conversational-design-whatsapp) · v4 2026-09-07: re-synced to #09 v3.9-v3.11 - Thandi joins the standing order (owner-named on every shared surface, whole-pack date move), the CCMDD parcel corrected to its two-to-three-month cycle, the locker credential now QR-first with the PIN as typable backup, and all totals recomputed · v4.1 2026-09-08: the P0 sync exchange re-cut to the #09 v3.12 sequence - anchor first (her parcel can't move), her expected date suggested, he declines for his own day; Thandi's two first-month packs priced in the read-back · v4.2 2026-09-08: a practical how-it-works message with the cash top-up named lands before any date is offered · v4.3 2026-09-08: the P1 phone opens with the July first order so the agreed top-ups land visibly, then the normal August month · v4.4 2026-09-08: "Talk to a person" opens three doors - a pharmacist, a nurse, customer service - as reply buttons; the CALL ME keyword step removed · v4.5 2026-09-08: P2 whole store (medicine-only restriction out) and Aliyah's four ways in - specials first, then type / snap a shopping list / browse specials / continue on app or web · content spec: design-kit/journeys/sipho-whatsapp-flow.md</span>
 </div>
 
 <section class="intro">
@@ -274,7 +275,7 @@ a{color:var(--brand-dark)}
     <button class="snode" data-goto="p1"><div class="snum">P1</div><div class="sttl">Repeats are due</div>
       <div class="sm">Utility template + CHANGE footer · price breakdown · three doors</div><div class="stars">2 moments · ⭐⭐</div></button>
     <button class="snode" data-goto="p2"><div class="snum">P2</div><div class="sttl">Adding to the order</div>
-      <div class="sm">User-pulled · product cards · browse · one question back</div><div class="stars">no moment (by design)</div></button>
+      <div class="sm">User-pulled · specials cards · four ways in · one question back</div><div class="stars">no moment (by design)</div></button>
     <button class="snode" data-goto="p3"><div class="snum">P3</div><div class="sttl">Checked and packed</div>
       <div class="sm">Two status templates · the named check · CHANGE demo</div><div class="stars">1 moment</div></button>
     <button class="snode" data-goto="p4"><div class="snum">P4</div><div class="sttl">In hand</div>
@@ -475,23 +476,28 @@ a{color:var(--brand-dark)}
         <span class="feat">User-pulled · an answer, not an ambush</span><br>
         Nothing here arrives unprompted: he tapped "Add to my order" in the P1 phone, on Saturday morning, when it
         suited him. The suggestions are a reply because he asked - and his tap opens the 24-hour service window,
-        so none of this needs a marketing template. The honest constraint is stated up front: medicine only, no
-        groceries - and the browse view is scoped the same way, so it cannot un-say it.
+        so none of this needs a marketing template. Whole store: the medicine-only restriction is gone (v4.5), so
+        anything on Dis-Chem's shelves can ride in the parcel - the reply says so in one clause.
       </div></div>
       <div class="callout"><span class="cmark">C2</span><div class="cbody">
         <span class="feat">Product cards · rung 2 of the visual ladder</span><br>
-        Catalogue cards carry the shelf photo, the name, the price and add-to-order in one block. At every
+        Specials on what he usually buys are served first - the highest-probability add, and it costs him no
+        typing. Catalogue cards carry the shelf photo, the name, the price and add-to-order in one block. At every
         literacy level, recognising the box beats reading its name - the thumbnail is an accessibility device, not
         decoration, and it is the one place the mock spends pixels. No owner is guessed: the suggestions say "from
         what you usually buy", never whose they are - a till slip has no owner
         <span class="flag" title="catalogue / cart / product-card mechanics await the commerce-docs verify - punchlist item 11">⚠️</span>.
       </div></div>
       <div class="callout"><span class="cmark">C3</span><div class="cbody">
-        <span class="feat">Browse medicines · the in-WhatsApp catalogue</span><br>
-        For the person who'd rather look around than type: the catalogue is WhatsApp's own browsable surface -
-        no website, no webview - and the cart lands back in this thread as an order, where the running total
-        lives. Thumbnails load as he scrolls, so browsing is data he chooses to spend.
-        <em style="color:var(--muted2)">(tap Browse medicines in the phone)</em>
+        <span class="feat">Four ways in · list message</span><br>
+        After the specials, one sheet offers the four ways to add the rest (v4.5): type a product, snap your
+        shopping list, browse this week's specials, continue on the app or web. A list message because four rows
+        is one over the reply-button ceiling. Typing is the walked path. The shopping-list photo is his outgoing
+        media, like Thabo's script photo in #12 - the data cost runs his way by his choice, and the reading comes
+        back as priced cards he confirms, never auto-added. Browse is WhatsApp's own catalogue, no webview. App or
+        web is the one door that leaves the thread, and the row says so
+        <span class="flag" title="four-ways-in mechanics are Aliyah's design constructs - punchlist item 21; catalogue / cart mechanics await the commerce-docs verify - item 11">⚠️</span>.
+        <em style="color:var(--muted2)">(tap Choose a way in the phone and try each row)</em>
       </div></div>
       <div class="callout"><span class="cmark">C4</span><div class="cbody">
         <span class="feat">Free text · one clarifying question</span><br>
@@ -505,7 +511,7 @@ a{color:var(--brand-dark)}
         restated in full <span class="flag" title="amounts and product names illustrative - punchlist item 11">⚠️</span>.
       </div></div>
       <p class="railnote">No key moment in this phase by design - #09 agreed the cash addition carries none. The
-      value is quieter: the small pharmacy trips between paydays fold into the one he already makes.</p>
+      value is quieter: the small shop trips between paydays fold into the one he already makes.</p>
     </div>
   </div>
 </section>
@@ -799,8 +805,8 @@ function makePhone(pid, steps){
     let h = '<div class="grab"></div><h4>'+cfg.title+'</h4>';
     cfg.rows.forEach((r,ix)=>{
       const lead = cfg.flow ? '<span class="check">✓</span>' : '<span class="radio"></span>';
-      h += '<div class="row'+(r.walk?" walk":"")+'" data-ix="'+ix+'">'+lead+'<span>'+r.label+
-           (r.note?'<span class="rownote">'+r.note+'</span>':'')+'</span>'+(r.walk?'<span class="go">tap ▶</span>':'')+'</div>';
+      h += '<div class="row'+(r.walk?" walk":"")+(r.demo?" walk demo":"")+'" data-ix="'+ix+'">'+lead+'<span>'+r.label+
+           (r.note?'<span class="rownote">'+r.note+'</span>':'')+'</span>'+(r.walk?'<span class="go">tap ▶</span>':(r.demo?'<span class="go">try it</span>':''))+'</div>';
     });
     h += cfg.flow
       ? '<button class="close" data-cta="1">'+(cfg.cta||"Continue")+'</button><div class="flowfoot">Managed by Dis-Chem · WhatsApp Flow</div>'
@@ -811,6 +817,10 @@ function makePhone(pid, steps){
       row.addEventListener("click", ()=>{
         const r = cfg.rows[+row.dataset.ix];
         sheet.classList.remove("open");
+        if(r.demo){ /* optional demo branch: plays, then the list button can be tapped again for the walked row */
+          if(r.send){ thread.appendChild(outMsg(r.send, r.echoTime)); scrollEnd(); }
+          play(r.demo, null); return;
+        }
         onPick && onPick(r);
       });
     });
@@ -834,11 +844,11 @@ function makePhone(pid, steps){
       return;
     }
     if(s.photoTap){
-      const hint = el('<button class="sendhint">tap to send: 📷 a photo of the parcel</button>');
+      const hint = el('<button class="sendhint">tap to send: 📷 '+(s.photoTap.label||"a photo of the parcel")+'</button>');
       thread.appendChild(hint); scrollEnd();
       hint.addEventListener("click", ()=>{
         hint.remove();
-        thread.appendChild(outMsg('<span class="photo"></span>', s.photoTap.time)); scrollEnd(); cont();
+        thread.appendChild(outMsg('<span class="photo'+(s.photoTap.list?" list":"")+'"></span>', s.photoTap.time)); scrollEnd(); cont();
       });
       return;
     }
@@ -1061,15 +1071,36 @@ const P2 = () => [
   {sys:"Saturday morning - Sipho opens the door M3 left ajar (the [Add to my order] button in the P1 phone above)."},
   {outm:{body:"Add to my order", time:"09:40"}},
   {cards:{id:"C1", time:"09:40",
-    body:'What would you like to add? Anything in before <b>Wednesday 26 August</b> rides in the same parcel. This route carries medicine only - no groceries - but the everyday kind is covered 💊\n\nFrom what you usually buy:',
+    body:'What would you like to add? Anything in before <b>Wednesday 26 August</b> rides in the same parcel - anything from Dis-Chem\'s shelves, not just medicine 🛒\n\nOn special, from what you usually buy:',
     items:[
       {emoji:"🍊", name:"Biogen Multivitamin 30s", price:'R49.90 · <em>ON SPECIAL</em>', walk:true, echoTime:"09:42"},
-      {emoji:"💊", name:"Panado, 24 tablets", price:"R24.50"}
-    ],
-    tail:'\nOr browse, or just type what you need.',
-    browse:"Opens Dis-Chem's in-WhatsApp medicine catalogue - browse, add to cart, and the cart lands back in this thread as an order. Scoped to what this route carries: medicine and everyday OTC only."}},
+      {emoji:"🪥", name:"Colgate toothpaste 100 ml", price:'R21.99 · <em>ON SPECIAL</em>'}
+    ]}},
   {inm:{id:"C5", time:"09:42",
     body:'Added: Biogen Multivitamin 30s - <span class="amt">R49.90</span>.\nNew total to pay: <b><span class="amt">R248.80</span></b>.'}},
+  {list:{id:"C3", time:"09:42", btn:"Choose a way",
+    body:'How would you like to add the rest?',
+    sheet:{title:"Add to your order", rows:[
+      {label:"Type a product", note:"just type it here", walk:true},
+      {label:"Snap your shopping list", note:"send a photo; we read it and price each item", demo:[
+        {photoTap:{time:"09:43", label:"a photo of the shopping list", list:true}},
+        {cards:{time:"09:43", body:'We read 3 items off your list - tap to add:',
+          items:[
+            {emoji:"🧼", name:"Sunlight soap 500 g", price:"R18.99"},
+            {emoji:"🫙", name:"Vaseline 250 ml", price:"R34.50"},
+            {emoji:"💊", name:"Panado, 24 tablets", price:"R24.50"}
+          ],
+          tail:'\nNothing is added until you tap it.'}},
+        {sys:"Demo branch - tap Choose a way again and pick Type a product to continue Sipho's story."}
+      ]},
+      {label:"Browse this week's specials", note:"Dis-Chem's catalogue, right here", demo:[
+        {sys:"Opens Dis-Chem's in-WhatsApp catalogue - this week's specials first, the whole store behind them. Add to cart, and the cart lands back in this thread as an order. Tap Choose a way again to continue."}
+      ]},
+      {label:"Continue on the app or web", note:"opens dischem.co.za - uses data", demo:[
+        {inm:{time:"09:43", body:'Carry on where the screen is bigger - your order is already waiting there.<span class="listbtn">🔗 Open dischem.co.za</span>'}},
+        {sys:"The one door that leaves the thread - a link out, so it costs data. His order and cart carry over. Tap Choose a way again to continue."}
+      ]}
+    ]}}},
   {tap:{send:"cough mixture", time:"09:44"}},
   {inm:{id:"C4", time:"09:44", body:'For a child or an adult?'}},
   {qr:{buttons:[
