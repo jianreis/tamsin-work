@@ -5,9 +5,9 @@ domain: dischem
 status: draft
 confidence: medium
 tags: [domain/dischem, domain/ux, project/sotf, journey/submit, journey/dispense, journey/collect, journey/pay, topic/automation, region/za]
-sources: [src-sotf-ecosystem-playback-2025, src-sotf-steerco1-concept-2025, src-sotf-steerco-decisions-2025, src-sotf-melrose-workshops-2026, src-sotf-melrose-store-design-2026, src-sotf-training-launch-2026, src-sotf-otc-workshop-2026, src-dc-store-future-interviews-2026]
+sources: [src-sotf-ecosystem-playback-2025, src-sotf-steerco1-concept-2025, src-sotf-steerco-decisions-2025, src-sotf-melrose-workshops-2026, src-sotf-melrose-store-design-2026, src-sotf-training-launch-2026, src-sotf-otc-workshop-2026, src-sotf-otc-frontline-workshop-2026, src-dc-store-future-interviews-2026]
 created: "2026-09-01"
-updated: "2026-09-07"
+updated: "2026-09-15"
 ---
 
 # Store of the Future (SOTF) — programme overview
@@ -165,6 +165,26 @@ Melrose Arch and Irene as a ~3-month two-process experiment with an active
 data plan, then rerun the session with frontline staff (Firaz, Terrence,
 Arna) before presenting trade-off options to the Steer Group. Session
 canvas: `deliverables/sotf/otc-solve-session.html`.
+
+The frontline workshop (10 Sep 2026, [[src-sotf-otc-frontline-workshop-2026]])
+then complicated the picture in useful ways. Both pharmacy managers defend
+decoupling for scripts; the friction decays as customers learn the process
+(Melrose, month four: "much less friction"); and store mixes drift toward
+scripts as stores mature (Melrose opened 72:28 OTC-heavy, now ~45:55), so
+Irene's OTC-heaviness is partly a new-store effect, not pure demography. The
+first hard revenue signal landed: Melrose OTC turnover runs R50-100k/month
+below Blueberry Square, a lower-LSM comparator, which the manager attributes
+to the missing display, not the process ("6 out of 10 one-item buyers see a
+second item they want" - though hidden prices make premium upsell easier).
+Irene's solve was specified precisely - dedicated back-of-house printer +
+counter handover, options A and B fused, zero new tech, OTC-only, "no
+complaints since" - but both managers agree it needs roughly one picker per
+dispenser, which small stores (some run 3 staff) cannot provide: **staffing
+ratios, not process design, emerged as the binding rollout constraint**.
+Solution energy converged on the digital OTC planogram on existing screens,
+reframed by the Melrose manager as sellable vendor space (the CTU model,
+digitised) - a revenue line, not a cost - plus an interactive categorised
+browse screen, with S1/2 advertising legalities to check.
 
 ## Open questions
 
