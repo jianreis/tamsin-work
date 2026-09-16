@@ -4,7 +4,7 @@ title: "OTC solve - executive pack: structure, slide plan and draft copy"
 project: sotf
 status: draft
 audience: "Dis-Chem executives / SOTF Steer Group"
-sources: [src-sotf-steerco1-concept-2025, src-sotf-steerco-decisions-2025, src-sotf-melrose-workshops-2026, src-sotf-training-launch-2026, src-bigly-blueprint-board-style, src-dc-store-future-interviews-2026, src-sotf-otc-workshop-2026, src-sotf-otc-frontline-workshop-2026]
+sources: [src-sotf-rollout-plan-q4-2026, src-sotf-steerco1-concept-2025, src-sotf-steerco-decisions-2025, src-sotf-melrose-workshops-2026, src-sotf-training-launch-2026, src-bigly-blueprint-board-style, src-dc-store-future-interviews-2026, src-sotf-otc-workshop-2026, src-sotf-otc-frontline-workshop-2026]
 created: "2026-09-16"
 updated: "2026-09-16"
 tags: [project/sotf, domain/dischem, domain/ux, journey/submit, journey/dispense, journey/collect]
@@ -50,8 +50,9 @@ Status key: `drafted` (copy below, awaiting Tamsin's read) · `needs input`
 ### 1. Where are we now?
 - 1.1 Three changes to the pharmacy, and why each was made - `drafted`.
 - 1.2 Two stores, two ways of running it - `drafted`.
-- 1.3 The stores still to open before automation arrives - `needs input`
-  (Tamsin: store roadmap for the rest of the year and the ROWA timeline).
+- 1.3 Fifteen more stores open before Christmas - `drafted` from the
+  programme rollout plan ([[src-sotf-rollout-plan-q4-2026]]). ROWA timeline
+  still the brainstorm's working figure (first store 2027, ~100-107 stores).
 
 ### 2. What have we learned?
 - 2.1 What is working - `needs data` (cost to serve vs baseline, Tamsin to
@@ -86,7 +87,7 @@ House rule: titles are proposed, then agreed, before they lock.
 |---|---|
 | 1.1 | Three changes to the pharmacy, and the problem each one solved |
 | 1.2 | Two stores are live. They run the pharmacy two different ways |
-| 1.3 | Twenty more manual stores open before the first automated one |
+| 1.3 | Fifteen more stores open before Christmas, the first in five weeks |
 | 2.1 | Scripts are cheaper to serve, and the frontline wants to keep decoupling |
 | 2.2 | The friction sits at three points in the journey, and OTC customers hit all three |
 | 2.3 | The cost to Dis-Chem: hands, congestion, and an early sales signal |
@@ -179,15 +180,48 @@ fairness complaints from script customers. Frontline report, not yet measured.
 Evidence: [[src-sotf-training-launch-2026]], [[src-sotf-melrose-workshops-2026]],
 [[src-sotf-otc-frontline-workshop-2026]], [[src-sotf-otc-workshop-2026]].
 
-### 1.3 The stores still to open before automation arrives
+### 1.3 Fifteen more stores open before Christmas, the first in five weeks
 
-Needs Tamsin's roadmap. Shape: a timeline from now to the first ROWA store,
-with each manual-picker opening marked, then the ROWA rollout (about 100-107
-stores, roughly a third of the estate) shaded beyond it. The point of the
-slide: whatever we decide about OTC applies to roughly twenty stores that
-open before an automated picker makes the question go away, so the answer
-has to be cheap, quick and reversible. Working figures from
-[[src-sotf-otc-workshop-2026]] until the roadmap replaces them.
+Standfirst: Melrose Arch and Irene are the only two stores running this
+pharmacy today. By 3 December there will be seventeen. Every one of them
+opens with manual pick-and-pack, because the first automated picker store is
+planned for next year.
+
+Visual: a simple timeline from today (16 Sep) to 3 Dec. Three blocks of
+openings, sized by store count, with the opening dates as markers. A shaded
+band beyond December labelled "automated picker stores, from 2027, about a
+third of the estate". No gates, no clusters, no crew detail.
+
+| Opens | Stores | Where |
+|---|---|---|
+| 22 Oct | 1 | Rand View |
+| 29 Oct | 5 | October cluster |
+| 1 Nov | 1 | Umhlanga Crescent |
+| 26 Nov | 5 | November cluster |
+| 3 Dec | 3 | December cluster |
+| On hold | 3 | Awaiting landlord handover |
+
+Body: each of these stores will be trained on a pharmacy process in the weeks
+before it opens. Whatever we decide about OTC, the training either carries
+the Melrose process as it stands, or it carries a change. After 22 October
+the decision stops being about two stores and starts being about a network,
+and every store that opens on the current process is one more store to
+retrain later.
+
+Callout: 15 stores in six weeks, 6 of them in October. The first opens
+22 October, five weeks from this meeting.
+
+Second point, kept short: the automated picker (ROWA) dissolves the OTC
+question, because any item reaches the front counter in seconds. It arrives
+in 2027 and covers roughly a third of the estate. Everything we do for OTC
+before then is a bridge for manual stores, so it has to be cheap, quick to
+train, and easy to undo.
+
+Footnote: store count and dates from the programme rollout plan (Sep 2026);
+the ROWA figures are the team's working numbers from the 2 Sep session and
+need confirming with the programme.
+
+Evidence: [[src-sotf-rollout-plan-q4-2026]], [[src-sotf-otc-workshop-2026]].
 
 ## Outline notes - sections 2 to 4 (to draft with Tamsin)
 

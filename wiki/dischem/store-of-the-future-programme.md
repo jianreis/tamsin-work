@@ -5,9 +5,9 @@ domain: dischem
 status: draft
 confidence: medium
 tags: [domain/dischem, domain/ux, project/sotf, journey/submit, journey/dispense, journey/collect, journey/pay, topic/automation, region/za]
-sources: [src-sotf-ecosystem-playback-2025, src-sotf-steerco1-concept-2025, src-sotf-steerco-decisions-2025, src-sotf-melrose-workshops-2026, src-sotf-melrose-store-design-2026, src-sotf-training-launch-2026, src-sotf-otc-workshop-2026, src-sotf-otc-frontline-workshop-2026, src-dc-store-future-interviews-2026]
+sources: [src-sotf-ecosystem-playback-2025, src-sotf-steerco1-concept-2025, src-sotf-steerco-decisions-2025, src-sotf-melrose-workshops-2026, src-sotf-melrose-store-design-2026, src-sotf-training-launch-2026, src-sotf-otc-workshop-2026, src-sotf-otc-frontline-workshop-2026, src-sotf-rollout-plan-q4-2026, src-dc-store-future-interviews-2026]
 created: "2026-09-01"
-updated: "2026-09-15"
+updated: "2026-09-16"
 ---
 
 # Store of the Future (SOTF) — programme overview
@@ -63,6 +63,7 @@ metrics have reached the vault yet.
 | Mar-Apr 2026 | Staff training waves; 47-headcount staffing model; new Hub Advisor / Hub Administrator roles |
 | ~May 2026 | Melrose Arch opens ("Melrose Hype" campaign from 7 May) |
 | Jun-Jul 2026 | Training guides finalised as-launched; interim workarounds documented; Irene live [[src-sotf-training-launch-2026]] |
+| 22 Oct-3 Dec 2026 (planned) | 15 further stores open in three waves (6 Oct, 6 Nov, 3 Dec), 3 more on hold; all manual pick-and-pack, ahead of the first ROWA store in 2027 [[src-sotf-rollout-plan-q4-2026]] |
 
 ## The key design decisions, and why they were made
 

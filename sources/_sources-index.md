@@ -51,6 +51,7 @@ _Populated as sources are ingested. Group by domain; show reliability tier._
 - [[src-sotf-training-launch-2026]] (A) — training pack as launched (May-Jul 2026): live journey spines, Qmatic/V-Sign/Vexall stack, queue rules, interim workarounds (A-tickets, grouped scripts), Irene as second site.
 - [[src-sotf-otc-workshop-2026]] (A) — internal OTC brainstorm transcript (2 Sep 2026): Irene 60:40 OTC:script mix (relayed), workaround = skipping script-only signatures, peak-Saturday failure, Medirite/Clicks precedent, options evolved + 3 new, guardrails, 3-month two-store experiment plan.
 - [[src-sotf-otc-frontline-workshop-2026]] (A) — frontline OTC workshop transcript (10 Sep 2026, both stores' pharmacy managers + hub advisors): friction decays with learning (44-sec pick felt like 30 min), mixes drift script-ward as stores mature (Melrose 72:28→45:55), Melrose OTC R50-100k/mo below lower-LSM comparator, Irene solve = dedicated printer + counter handover (A+B fused, "no complaints since"), 1-picker-per-dispenser ratio = the rollout constraint, digital planogram as sellable vendor space.
+- [[src-sotf-rollout-plan-q4-2026]] (A) — SOTF rollout plan by wave (Sep-Dec 2026): 15 stores open 22 Oct-3 Dec in three waves (6/6/3), 3 on hold for landlord handover; six gates per store; all manual pick-and-pack ahead of the first ROWA store in 2027.
 
 ### SA regulatory
 - [[src-reg-medicines-act-101-1965]] (A) — Medicines & Related Substances Act 101 of 1965; §22A/22C/22F/22G.
