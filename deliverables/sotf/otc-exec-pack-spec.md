@@ -6,7 +6,7 @@ status: draft
 audience: "Dis-Chem executives / SOTF Steer Group"
 sources: [src-sotf-rollout-plan-q4-2026, src-sotf-steerco1-concept-2025, src-sotf-steerco-decisions-2025, src-sotf-melrose-workshops-2026, src-sotf-training-launch-2026, src-bigly-blueprint-board-style, src-dc-store-future-interviews-2026, src-sotf-otc-workshop-2026, src-sotf-otc-frontline-workshop-2026]
 created: "2026-09-16"
-updated: "2026-09-16"
+updated: "2026-09-17"
 tags: [project/sotf, domain/dischem, domain/ux, journey/submit, journey/dispense, journey/collect]
 ---
 
@@ -29,7 +29,7 @@ in front and an evidence appendix behind.
 | 1 | Where are we now? | Playback of what SOTF changed in the pharmacy, the two live stores, the store roadmap | 3 |
 | 2 | What have we learned? | What is working (with data), where the friction sits (journey view, sourced), Irene vs Melrose Arch | 3-4 |
 | 3 | Where are we going? | Customer needs map, one future-state journey per need, design principles (the guardrails) | 3-4 |
-| 4 | How do we get there? | Three routes, the option set on impact/effort with headcount and reversibility overlays, the recommendation and its measurement plan | 3 |
+| 4 | How do we get there? | Three routes, the option set on impact/effort with headcount and small-manual-store overlays, the recommendation and its measurement plan | 3 |
 | A | Appendix | Sources and evidence tiers, outstanding data pulls, regulatory flag on S2 display | 2 |
 
 Framing rules carried from the seed prompt: no "walk-back" language; every
@@ -37,7 +37,12 @@ option scored against the original intents (never turn your back,
 production-line fulfilment, space and resourcing) so the pack shows the
 intents preserved; the script flow is untouched; manager-quoted figures are
 working numbers until pulled from reporting; "run the two-store experiment
-and measure" is a legitimate recommendation.
+and measure" is a legitimate recommendation. Correction from Tamsin
+(2026-09-17): the manual OTC process is not a bridge to ROWA. ROWA covers
+about a third of the estate; the rest keeps manual picking, so manual OTC
+needs a proper, tested process, and the Q4 stores are where it gets tested.
+"Cheap and reversible" is retired as a guardrail in favour of "designed for
+the manual store".
 
 ## Slide plan and status
 
@@ -72,7 +77,7 @@ Status key: `drafted` (copy below, awaiting Tamsin's read) · `needs input`
 ### 4. How do we get there?
 - 4.1 Three routes - `drafted` in outline.
 - 4.2 The option set on impact / effort, with headcount precondition and
-  reversibility-before-ROWA marked on each - `to build together`.
+  fit for a small manual store marked on each - `to build together`.
 - 4.3 Recommendation and measurement plan - `to build together`.
 
 ### Appendix
@@ -100,8 +105,8 @@ House rule: titles are proposed, then agreed, before they lock.
 ### 1.1 Three changes to the pharmacy, and the problem each one solved
 
 Standfirst: Store of the Future changed three things about how a customer
-gets medicine. Each change was made to fix a real problem in the legacy
-pharmacy, and those problems have not gone away.
+gets medicine. Each was made on purpose, and the reasons behind them still
+hold.
 
 Three columns, each: the change, what a customer notices, the problem it
 solved.
@@ -118,13 +123,16 @@ solved.
    prescription) go through the same ticket, the same counter and the same
    pick-and-pack. One process means less counter space given to the
    pharmacy, one set of staff to train, and no second counter to run. It also
-   means a customer buying a painkiller is asked "anything else?" by a
-   dispenser who has their full basket in front of them.
+   means the dispenser handles the whole purchase at one counter, so they can
+   ask "anything else?" and add to it on the spot.
 3. No visible stock. Every medicine sits behind the wall. Nothing is on a
-   shelf the customer can see or the pharmacist can reach. The legacy OTC
-   wall was untidy, carried slow stock for years, let the queue see what the
-   person in front was buying, and pulled the pharmacist away from the
-   counter to fetch from it. Taking it away cleared all four at once.
+   shelf the customer can see or the pharmacist can reach. This protects the
+   decoupling: if stock is within reach, the pharmacist will turn round and
+   fetch it, and the customer, seeing it there, will ask why they must wait
+   for a picker when the pharmacist could just turn round. Moving the stock
+   out of reach removes both the temptation and the complaint. It also
+   retired the legacy OTC wall, which was untidy, carried slow stock for
+   years, and let the queue see what the person in front was buying.
 
 Callout: these three came from the programme's own design principles for the
 dispenser, agreed before Melrose Arch opened: never turn your back on the
@@ -141,7 +149,7 @@ Standfirst: Melrose Arch runs the pharmacy as it was trained. Irene runs the
 same process for scripts and a faster path for OTC that its own team built in
 the first weeks. Both are worth understanding before we change anything.
 
-Left panel, Melrose Arch (opened around May 2026, the process as trained):
+Left panel, Melrose Arch (opened 7 May 2026, the process as trained):
 
 - Ticket at the Health Hub, digital or printed.
 - Roam until called to the drop-off counter. The dispenser takes the script or
@@ -166,16 +174,16 @@ Right panel, Irene (live since July 2026, the process as run):
   once, and brings it to the dispenser.
 - The dispenser hands it over. One stop, no second queue, and the pharmacist
   never turns away from the customer.
-- Built with no new technology. The team calls it the manual version of the
-  automated picker.
+- Built with no new technology.
 
 Callout: the Irene path keeps every design principle intact. Stock stays
 behind the wall, the pharmacist stays facing the customer, and scripts still
 run on the production line. What it changes is where the OTC customer waits:
 at the counter, for under a minute, instead of in a second queue.
 
-Footnote: Irene's manager reports no OTC complaints since the change and no
-fairness complaints from script customers. Frontline report, not yet measured.
+Footnote: Irene's dispensary manager reports no OTC complaints since the
+change and no fairness complaints from script customers. Complaints data for
+both stores is still to be pulled.
 
 Evidence: [[src-sotf-training-launch-2026]], [[src-sotf-melrose-workshops-2026]],
 [[src-sotf-otc-frontline-workshop-2026]], [[src-sotf-otc-workshop-2026]].
@@ -211,11 +219,13 @@ retrain later.
 Callout: 15 stores in six weeks, 6 of them in October. The first opens
 22 October, five weeks from this meeting.
 
-Second point, kept short: the automated picker (ROWA) dissolves the OTC
-question, because any item reaches the front counter in seconds. It arrives
-in 2027 and covers roughly a third of the estate. Everything we do for OTC
-before then is a bridge for manual stores, so it has to be cheap, quick to
-train, and easy to undo.
+Second point, kept short: the automated picker (ROWA) answers the OTC
+question on its own, because any item reaches the front counter in seconds.
+But it arrives in 2027 and covers roughly a third of the estate. The other
+two thirds will pick by hand for the foreseeable future, so manual OTC needs
+a proper process of its own, not a stopgap. These fifteen stores are the
+chance to test that process and get it right before it goes to the rest of
+the network.
 
 Footnote: store count and dates from the programme rollout plan (Sep 2026);
 the ROWA figures are the team's working numbers from the 2 Sep session and
@@ -281,7 +291,8 @@ store can lose); pop-in vs happy-to-shop; frequent dispensary visitors do
 not shop on every visit; "waiting is fine, being unsure isn't". Principles
 (3.3): never turn your back on the customer; never trade off the urgently
 sick customer; keep the pharmacy's health authority visible; the script flow
-stays untouched; cheap and reversible before automation.
+stays untouched; designed for the manual store, because two thirds of the
+estate will keep picking by hand after ROWA.
 
 ### 4. How we get there
 Three routes: (1) measure only, as the two-store experiment matures, with a
@@ -291,7 +302,8 @@ planogram on the existing screens (both stores back it; vendor slots can
 fund it), trial the interactive browse screen; (3) structural change - the
 curated shelf, a separate OTC service point, pre-ticket OTC ordering, an OTC
 vending unit - held for the future state. Every option carries its headcount
-precondition and whether it is reversible before ROWA. Regulatory flag on
+precondition and whether it works in a small manual store, since two thirds
+of the estate stays manual after ROWA. Regulatory flag on
 every screen option: S0 and S1 medicines may be advertised to the public,
 S2 may not, and whether an in-pharmacy digital shelf counts as advertising
 is unresolved ([[medicines-act-scheduling]]).
