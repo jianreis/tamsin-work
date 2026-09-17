@@ -84,7 +84,14 @@ Status key: `drafted` (copy below, awaiting Tamsin's read) · `needs input`
 
 ### Appendix
 - A.1 Sources and evidence tiers - drafted from the vault at build time.
-- A.2 Outstanding data pulls and the S2 display flag - drafted from the vault.
+- A.2 Outstanding data pulls and the S2 display flag. Consolidated list:
+  (A) pharmacy revenue and transaction volume for both stores, OTC vs
+  script, month by month, against original projections; (B) ticket volume
+  and time to serve for both stores, OTC vs script, month by month;
+  (C) ticketing data to confirm how the Irene OTC path actually runs (who
+  picks, who hands over); (D) Careline complaints for both stores, coded;
+  (E) time-to-serve baseline confirmed with the product manager;
+  (F) legacy-store time-and-motion observation for OTC.
 
 ## Proposed slide titles (for Tamsin to approve or change)
 
@@ -179,11 +186,28 @@ Right panel, Irene (live since July 2026, the process as run):
 - The dispenser hands it over. One stop, no second queue, and the pharmacist
   never turns away from the customer.
 - Built with no new technology.
+- Irene also changed collections: any free counter can hand over an order
+  that is ready, instead of customers waiting for the screens to point them
+  at counters 6 to 8. Fewer people pile up around the Hub waiting to be
+  called.
 
-Callout: the Irene path keeps every design principle intact. Stock stays
-behind the wall, the pharmacist stays facing the customer, and scripts still
-run on the production line. What it changes is where the OTC customer waits:
-at the counter, for under a minute, instead of in a second queue.
+Caveat for the presenter: there are reports that some Irene pharmacists walk
+to the back and pick the OTC item themselves rather than waiting for it to be
+brought forward. If that is happening, it breaks "never turn your back".
+Confirm with the business analyst's ticketing data before presenting the
+Irene path as clean.
+
+Callout: as described, the Irene path keeps every design principle intact.
+Stock stays behind the wall, the pharmacist stays facing the customer, and
+scripts still run on the production line. What it changes is where the OTC
+customer waits: at the counter, for under a minute, instead of in a second
+queue. And it takes those customers out of the two places the store
+bottlenecks, the pick-and-pack dashboard and the collections queue, rather
+than sending them into the same bottlenecks faster.
+
+Data still needed: ticket volume and time to serve at Irene by OTC vs
+script, month by month, to confirm how the path actually runs and what it
+does to the queues.
 
 Footnote: Irene's dispensary manager reports no OTC complaints since the
 change and no fairness complaints from script customers.
@@ -266,12 +290,17 @@ Right, what the stores say is working, each in one line:
   this?" has largely stopped.
 - The process is faster than it feels. A Melrose customer who complained of
   a 30-minute wait had waited 44 seconds for the pick and 10 seconds to sign.
+  Time to serve is as much a matter of perception as of the clock: a wait
+  the customer can see and understand feels shorter than one they cannot.
 - Fewer visible prices has made premium advice easier to give, and to take.
   Melrose has sold more of a R394 antihistamine than its manager ever has,
   because the cheaper anchor is not sitting beside it.
 
 Footnote: time-to-serve figures are the team's working numbers, to be
 confirmed against the product manager's data before this pack is presented.
+
+Data still needed: ticket volume and time to serve for both stores, split
+OTC vs script, month by month since opening.
 
 Evidence: time and motion baseline (Tamsin, to confirm with the product
 manager; consistent with the ~15-minute figure recalled in
@@ -314,8 +343,9 @@ OTC lane pins:
   waiting in the car after an operation, was told repeatedly to "go shop".
   Source: Careline complaint (24 points).
 - Drop-off counter: with no product to point at, the pharmacist cannot show
-  two options side by side or jog a memory. Advice becomes a description.
-  Source: both stores.
+  two options side by side or jog a memory. Advice becomes a description, and
+  every second sale now depends on the dispenser's own selling skill, which
+  varies from person to person. Source: both stores.
 - Roam, second time: the wait feels far longer than it is, because the
   customer has moved A to B to C and cannot see anyone working on their
   order. "If I can't see you, I can't put pressure on you." Source: Melrose
@@ -368,47 +398,73 @@ of similar size that opened a month earlier. Blueberry Square, in a lower
 income area where OTC sales would normally be lower, takes R50,000 to
 R100,000 a month more in OTC than Melrose. He puts the gap down to the
 missing display, not the process: "six out of every ten patients who come to
-buy one item will see a second item on the shelf". Against that, hidden
-prices have made premium advice easier to sell.
+buy one item will see a second item on the shelf". With no shelf, the whole
+job of prompting a second item, and of trading a customer up, sits with the
+dispenser, and dispensers differ in how good they are at selling. Against
+that, hidden prices have made premium advice easier to sell.
 
 Callout: R50-100k a month. The OTC turnover gap between Melrose Arch and a
 lower-income comparator store, as reported by the Melrose dispensary
 manager.
 
-Footnote: all three figures are the managers' own working numbers. The pack
-asks for two pulls to confirm them: Melrose OTC actuals against the
-programme's original projections, and visit-level reporting for both stores.
+Footnote: all three figures are the managers' own working numbers.
+
+Data still needed: pharmacy revenue and transaction volume for both stores,
+split OTC vs script, month by month since opening, against the programme's
+original projections. Visit-level reporting for both stores.
 
 Evidence: [[src-sotf-otc-frontline-workshop-2026]], [[src-sotf-otc-workshop-2026]].
 
 ### 2.4 Irene and Melrose Arch learned different things, for reasons we can name
 
-Standfirst: One store kept to the process and one changed it. Before we
-read that as two verdicts, three differences between the stores explain a
-lot of it.
+Standfirst: One store kept to the process and one changed it. That is not a
+verdict on the process. It says a lot about the two stores, and what it says
+is useful.
 
-Left, what each store learned.
+Left, why Melrose Arch holds to the process, and why it works there.
 
-Melrose Arch: the process holds if you hold to it. Friction decays as
-customers learn. The cost is in OTC sales and in customer perception of the
-wait, not in the queue itself. Its manager's verdict: keep the process, fix
-the display.
+- Exposure. Melrose is a small store in a business park. The same office
+  workers come back week after week, often several times a month, so each
+  customer meets the process many times and gets used to it. The daily "why
+  is it like this?" has largely stopped by month four. People still
+  complain, but far less than at opening and far less than at Irene.
+- Visit intent. A lunch-break customer came for something specific and
+  expected a queue. They ticket, walk a short loop, collect and go. Fewer
+  wait complaints, but also less browsing, which is where the OTC sales gap
+  shows up.
+- Size and shape. The store is small, so the walk from Hub to drop-off to
+  collections is short, and weekday traffic never builds the Saturday wall
+  that drowns Irene.
+- Leakage. There is a legacy Dis-Chem nearby. Customers who truly dislike
+  the process most likely go there, so the ones who stay are the ones who
+  can live with it. We hear the complaints of the people who stayed, not of
+  the people who left.
+- The same complaint, even here. The customers who dislike the process at
+  Melrose are the ones who came for one item, and that is most often an OTC
+  customer. Before, OTC took almost no effort. Now it takes a ticket and two
+  queues. The jump is what jars: "why all this effort for one box of
+  Adcodol?"
 
-Irene: one-item customers waiting six or seven minutes behind long new
-scripts, complaints of "queuing twice", and a Hub full of people who did not
-want to shop. The team built the OTC-only counter path in the first weeks
-and reports no OTC complaints since. Its manager's verdict: at peak the fast
-path helps, because it clears the dashboard and the Hub; the residual
-Saturday chaos is understaffing and long new scripts, not OTC.
+Right, why Irene changed, and what the change does.
 
-Right, three reasons the stores differ, before anyone concludes that
-Irene's customers are simply different.
+- Pressure. A suburban store with weekend peaks, new patients with very
+  long scripts, and about 80% of customers who do not want to shop. One-item
+  customers waited six or seven minutes behind a 24-item script and
+  complained of "queuing twice".
+- The fix removes people from the bottlenecks. Irene's OTC path takes the
+  one-item customer out of the pick-and-pack dashboard and out of the
+  collections queue, the two places the store jams at peak, instead of
+  sending them into the same jams a little faster. Its manager reports it
+  keeps the dashboard clear and the Hub emptier on a Saturday.
+- Its manager's verdict: the residual Saturday chaos is understaffing (six
+  on shift when the store needs eight) and long new scripts, not OTC.
+
+Beneath, three differences to control for before comparing the stores.
 
 1. Age of store. New stores open OTC-heavy and drift toward scripts as their
    repeat base builds. Melrose opened at about 72% OTC and is now about 45%.
    Irene is at 60-70% OTC and its manager expects the same drift. Part of
-   Irene's OTC pressure is a new-store effect that Melrose has already
-   grown through.
+   Irene's OTC pressure is a new-store effect that Melrose has grown through.
 2. Staffing. Irene ran six on Saturdays when the process needs eight.
    Melrose opened with nine.
 3. Technology. Irene has a collections call-out flow that Melrose still
@@ -418,7 +474,18 @@ Irene's customers are simply different.
 Callout: Melrose Arch opened at 72:28 OTC to scripts and is now about 45:55.
 A store's mix in its first months is not its mix at maturity.
 
-Evidence: [[src-sotf-otc-frontline-workshop-2026]], [[src-sotf-otc-workshop-2026]].
+Data still needed: ticket volume and time to serve for both stores by OTC vs
+script, month by month; revenue and transactions by OTC vs script against
+projections, month by month; Careline complaints for both stores, coded.
+
+Clarifying questions for Firaz (Tamsin to ask): weekday vs weekend ticket
+split; roughly what share of customers he recognises as regulars; the
+nearest legacy Dis-Chem and whether he sees customers switching to it; his
+busiest hour of the week; floor area of Melrose vs Irene.
+
+Evidence: [[src-sotf-otc-frontline-workshop-2026]], [[src-sotf-otc-workshop-2026]];
+the business-park reading, the leakage point and the "one box of Adcodol"
+line are Tamsin's, 2026-09-17, to be checked with Firaz.
 
 ## Outline notes - sections 3 and 4 (to draft with Tamsin)
 
