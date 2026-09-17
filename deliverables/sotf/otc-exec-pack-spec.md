@@ -122,9 +122,9 @@ solved.
    the pain, cold, allergy and stomach lines a pharmacist can sell without a
    prescription) go through the same ticket, the same counter and the same
    pick-and-pack. One process means less counter space given to the
-   pharmacy, one set of staff to train, and no second counter to run. It also
-   means the dispenser handles the whole purchase at one counter, so they can
-   ask "anything else?" and add to it on the spot.
+   pharmacy, one set of staff to train, and no second counter to run. And
+   because every customer speaks to a dispenser, every OTC sale comes with
+   advice and the chance to sell a second item.
 3. No visible stock. Every medicine sits behind the wall. Nothing is on a
    shelf the customer can see or the pharmacist can reach. This protects the
    decoupling: if stock is within reach, the pharmacist will turn round and
@@ -182,8 +182,7 @@ run on the production line. What it changes is where the OTC customer waits:
 at the counter, for under a minute, instead of in a second queue.
 
 Footnote: Irene's dispensary manager reports no OTC complaints since the
-change and no fairness complaints from script customers. Complaints data for
-both stores is still to be pulled.
+change and no fairness complaints from script customers.
 
 Evidence: [[src-sotf-training-launch-2026]], [[src-sotf-melrose-workshops-2026]],
 [[src-sotf-otc-frontline-workshop-2026]], [[src-sotf-otc-workshop-2026]].
