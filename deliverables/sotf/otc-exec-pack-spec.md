@@ -38,7 +38,7 @@ production-line fulfilment, space and resourcing) so the pack shows the
 intents preserved; the script flow is untouched; manager-quoted figures are
 working numbers until pulled from reporting; "run the two-store experiment
 and measure" is a legitimate recommendation. Correction from Tamsin
-(2026-09-17): the manual OTC process is not a bridge to ROWA. ROWA covers
+(2026-09-17): the manual OTC process outlives ROWA. ROWA covers
 about a third of the estate; the rest keeps manual picking, so manual OTC
 needs a proper, tested process, and the Q4 stores are where it gets tested.
 "Cheap and reversible" is retired as a guardrail in favour of "designed for
