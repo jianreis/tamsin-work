@@ -1,0 +1,465 @@
+<title>The OTC Solve</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#f7f6f2; --sheet:#ffffff; --ink:#1c2420; --ink-soft:#4c5a52; --ink-faint:#7d8a82;
+    --line:#dcdfd8; --green:#0a7a44; --green-deep:#0b5c36; --green-tint:#e7f2ea;
+    --gold:#e3b71e; --gold-tint:#faf3d9; --warn:#b4552a; --warn-tint:#f8ece4;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,monospace;
+    --display:'Archivo','Arial Narrow',Arial,sans-serif;
+    --body:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#161b18; --sheet:#1e2521; --ink:#e8ece9; --ink-soft:#b2bdb6; --ink-faint:#84908a;
+      --line:#37403a; --green:#4cc084; --green-deep:#7ad3a4; --green-tint:#22352b;
+      --gold:#d9b53a; --gold-tint:#37311c; --warn:#e08a5e; --warn-tint:#3a2a20;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#161b18; --sheet:#1e2521; --ink:#e8ece9; --ink-soft:#b2bdb6; --ink-faint:#84908a;
+    --line:#37403a; --green:#4cc084; --green-deep:#7ad3a4; --green-tint:#22352b;
+    --gold:#d9b53a; --gold-tint:#37311c; --warn:#e08a5e; --warn-tint:#3a2a20;
+  }
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;margin:0}
+  .wrap{max-width:1000px;margin:0 auto;padding-block:44px 96px;padding-inline:24px}
+  p{max-width:70ch;margin:0 0 12px}
+  strong{font-weight:600}
+  a{color:var(--green)}
+
+  /* masthead */
+  .masthead{border-bottom:3px solid var(--green);padding-bottom:26px;margin-bottom:28px}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin:0 0 10px}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,56px);line-height:1.02;letter-spacing:-.015em;margin:0 0 14px;text-wrap:balance}
+  .standfirst{font-size:18px;color:var(--ink-soft);max-width:66ch}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chip{font-family:var(--mono);font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);background:var(--sheet)}
+  .chip.draft{border-color:var(--gold);color:var(--ink)}
+
+  /* contents strip */
+  .contents{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:0 0 40px}
+  .contents a{display:block;text-decoration:none;color:var(--ink);background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+  .contents a .n{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:4px}
+  .contents a .q{font-family:var(--display);font-weight:700;font-size:15px;line-height:1.25}
+  .contents a.stub{color:var(--ink-faint)}
+  .contents a.stub .n{color:var(--ink-faint)}
+
+  /* section head */
+  .section-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:10px;margin:64px 0 8px;flex-wrap:wrap}
+  .section-tag{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ground);background:var(--green);padding:3px 9px;border-radius:3px;white-space:nowrap}
+  .section-head h2{font-family:var(--display);font-weight:800;font-size:28px;letter-spacing:-.01em;margin:0;text-wrap:balance}
+  .section-lede{color:var(--ink-soft);margin:0 0 20px;max-width:70ch}
+
+  /* slide sheet */
+  .slide{background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:26px 28px 24px;margin:22px 0}
+  .slide .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 8px}
+  .slide h3{font-family:var(--display);font-weight:800;font-size:clamp(21px,3vw,26px);line-height:1.15;letter-spacing:-.01em;margin:0 0 10px;text-wrap:balance}
+  .slide .sf{font-size:16.5px;color:var(--ink-soft);margin:0 0 20px;max-width:72ch}
+  .slide h4{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin:18px 0 8px}
+  .slide ul{margin:0 0 12px;padding-left:20px}
+  .slide li{margin-bottom:8px;max-width:70ch}
+  .slide ol{margin:0 0 12px;padding-left:22px}
+  .slide ol li{margin-bottom:8px}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px}
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:720px){.two,.three{grid-template-columns:1fr}}
+
+  .col-card{border:1px solid var(--line);border-radius:6px;padding:16px 18px;background:var(--ground)}
+  .col-card .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:6px}
+  .col-card b{font-family:var(--display);font-weight:700;font-size:16.5px;display:block;margin-bottom:6px}
+  .col-card p{font-size:14.5px;color:var(--ink-soft);margin:0 0 8px}
+  .col-card p:last-child{margin-bottom:0}
+
+  .callout{background:var(--gold-tint);border-left:4px solid var(--gold);padding:14px 18px;margin:18px 0 6px;font-size:15.5px;max-width:none}
+  .callout .big{font-family:var(--display);font-weight:800;font-size:28px;line-height:1.1;display:block;margin-bottom:6px;letter-spacing:-.01em}
+  .caveat{background:var(--warn-tint);border-left:4px solid var(--warn);padding:12px 16px;margin:14px 0;font-size:14.5px}
+  .caveat .lbl,.data .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:4px}
+  .caveat .lbl{color:var(--warn)}
+  .data{background:var(--green-tint);border:1px dashed var(--line);border-radius:6px;padding:12px 16px;margin:14px 0 0;font-size:14px}
+  .data .lbl{color:var(--green)}
+  .foot{font-size:13px;color:var(--ink-faint);margin:14px 0 0;border-top:1px solid var(--line);padding-top:10px;max-width:none}
+  .foot code{font-family:var(--mono);font-size:12px}
+  .quote{font-style:italic;color:var(--ink-soft)}
+
+  .steps{list-style:none;padding:0;margin:0;counter-reset:step}
+  .steps li{position:relative;padding-left:34px;margin-bottom:10px;font-size:15px}
+  .steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:50%;background:var(--green);color:var(--ground);font-family:var(--mono);font-size:12px;display:flex;align-items:center;justify-content:center}
+  .steps.alt li::before{background:var(--gold);color:var(--ink)}
+  .steps li.same{color:var(--ink-faint)}
+  .steps li.same::before{background:var(--line);color:var(--ink-soft)}
+
+  /* timeline 1.3 */
+  .tl{margin:18px 0 8px}
+  .tl-axis{position:relative;height:14px;border-bottom:2px solid var(--line);margin:34px 0 10px}
+  .tl-axis .tick{position:absolute;top:-30px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);transform:translateX(-50%);white-space:nowrap}
+  .tl-axis .today{position:absolute;top:-8px;bottom:-6px;width:2px;background:var(--warn)}
+  .tl-axis .today span{position:absolute;top:-22px;left:-18px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--warn)}
+  .tl-axis .open{position:absolute;bottom:-9px;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:var(--green);border:2px solid var(--sheet)}
+  .tl-axis .open.big{width:24px;height:24px;bottom:-13px}
+  .tl-axis .rowa{position:absolute;right:0;top:0;bottom:-2px;width:11%;background:repeating-linear-gradient(135deg,var(--green-tint),var(--green-tint) 4px,transparent 4px,transparent 8px);border-left:1px dashed var(--green)}
+  .tl-axis .rowa span{position:absolute;left:6px;top:-30px;font-family:var(--mono);font-size:10.5px;color:var(--green);white-space:nowrap}
+  .tl-labels{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;font-size:13px;color:var(--ink-soft)}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;font-variant-numeric:tabular-nums}
+  .tblwrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:6px}
+  th{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:var(--ink-faint);padding:10px 14px;border-bottom:2px solid var(--line);white-space:nowrap}
+  td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.num{font-family:var(--mono);text-align:right}
+
+  /* journey 2.2 */
+  .journey{overflow-x:auto;margin:16px 0 6px;padding-bottom:6px}
+  .jgrid{display:grid;grid-template-columns:110px repeat(6,minmax(150px,1fr));gap:6px;min-width:1020px}
+  .jgrid .stage{font-family:var(--display);font-weight:700;font-size:13.5px;text-align:center;padding:10px 6px;background:var(--green);color:var(--ground);border-radius:4px;line-height:1.2}
+  .jgrid .lane{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:12px 6px 0;line-height:1.35}
+  .jgrid .cell{background:var(--ground);border:1px solid var(--line);border-radius:4px;min-height:52px;padding:6px}
+  .jgrid .cell.dc{background:transparent;border-style:dashed;min-height:40px}
+  .pin{background:var(--sheet);border-left:3px solid var(--warn);border-radius:3px;padding:6px 8px;font-size:12.5px;line-height:1.35;margin-bottom:6px}
+  .pin:last-child{margin-bottom:0}
+  .pin.soft{border-left-color:var(--gold)}
+  .pin .src{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);margin-top:4px}
+  .jgrid .cell.dc .pin{border-left-color:var(--ink-faint);background:transparent;padding:2px 6px}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-soft);margin:8px 0 0}
+  .legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+  .legend .l-otc::before{background:var(--warn)}
+  .legend .l-scr::before{background:var(--gold)}
+  .legend .l-dc::before{background:var(--ink-faint)}
+
+  /* stubs */
+  .stub{background:var(--sheet);border:1px dashed var(--line);border-radius:8px;padding:22px 26px;margin:22px 0;color:var(--ink-soft)}
+  .stub .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 6px}
+  .stub h3{font-family:var(--display);font-weight:700;font-size:20px;margin:0 0 8px;color:var(--ink)}
+  .stub ul{margin:6px 0 0;padding-left:20px;font-size:14.5px}
+  .footnote{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:var(--ink-faint);max-width:none}
+  .footnote code{font-family:var(--mono);font-size:12px}
+</style>
+
+<div class="wrap">
+<header class="masthead">
+  <p class="kicker">Store of the Future · Steer Group pack · working draft</p>
+  <h1>The OTC Solve</h1>
+  <p class="standfirst">Two Store of the Future pharmacies are live. Scripts are served faster than before. Over-the-counter medicine, folded into the same process, is where the friction sits. This pack plays back what changed, what the two stores have taught us, where the pharmacy should go, and how we get there.</p>
+  <div class="chips">
+    <span class="chip">Sections 1 and 2 drafted</span>
+    <span class="chip draft">Sections 3 and 4 in progress</span>
+    <span class="chip">Figures marked as working numbers until pulled from reporting</span>
+  </div>
+</header>
+
+<nav class="contents" aria-label="Contents">
+  <a href="#s0" class="stub"><span class="n">0</span><span class="q">The answer</span></a>
+  <a href="#s1"><span class="n">1</span><span class="q">Where are we now?</span></a>
+  <a href="#s2"><span class="n">2</span><span class="q">What have we learned?</span></a>
+  <a href="#s3" class="stub"><span class="n">3</span><span class="q">Where are we going?</span></a>
+  <a href="#s4" class="stub"><span class="n">4</span><span class="q">How do we get there?</span></a>
+</nav>
+
+<!-- ============ 0 ============ -->
+<section id="s0">
+  <div class="stub">
+    <p class="eyebrow">Slide 0.1 · written last</p>
+    <h3>The answer on one slide</h3>
+    <p>What we found, what we recommend, and what we need from the room. Drafted once sections 3 and 4 are agreed.</p>
+  </div>
+</section>
+
+<!-- ============ 1 ============ -->
+<section id="s1">
+  <div class="section-head"><span class="section-tag">Section 1</span><h2>Where are we now?</h2></div>
+  <p class="section-lede">A playback of what Store of the Future changed in the pharmacy, how the two live stores run it, and how many stores follow before the year ends.</p>
+
+  <!-- 1.1 -->
+  <article class="slide">
+    <p class="eyebrow">Slide 1.1</p>
+    <h3>Three changes to the pharmacy, and the problem each one solved</h3>
+    <p class="sf">Store of the Future changed three things about how a customer gets medicine. Each was made on purpose, and the reasons behind them still hold.</p>
+    <div class="three">
+      <div class="col-card">
+        <span class="lbl">Change 1</span>
+        <b>Decoupled counters</b>
+        <p>The customer hands in at one counter and collects at another, with the picking done out of sight in between.</p>
+        <p>In a legacy store the pharmacist takes the script, turns round, and hunts stock for up to five minutes while the customer stands at the counter. Decoupling keeps the pharmacist facing the customer and turns the picking into a production line, so a long script no longer holds up the counter and a customer with time to wait can roam the store instead of standing in a queue.</p>
+      </div>
+      <div class="col-card">
+        <span class="lbl">Change 2</span>
+        <b>One queue for everything</b>
+        <p>Scripts and over-the-counter medicine (OTC: the pain, cold, allergy and stomach lines a pharmacist can sell without a prescription) go through the same ticket, the same counter and the same pick-and-pack.</p>
+        <p>One process means less counter space given to the pharmacy, one set of staff to train, and no second counter to run. It also changes how customers think. With one counter for everything, they stop treating scripts and OTC as two separate errands and stop forgetting to ask for the OTC item at the dispensing counter. Every visit becomes one combined script-and-OTC conversation, and one combined sale.</p>
+      </div>
+      <div class="col-card">
+        <span class="lbl">Change 3</span>
+        <b>No visible stock</b>
+        <p>Every medicine sits behind the wall. Nothing is on a shelf the customer can see or the pharmacist can reach.</p>
+        <p>This protects the decoupling: if stock is within reach, the pharmacist will turn round and fetch it, and the customer, seeing it there, will ask why they must wait for a picker when the pharmacist could just turn round. Moving the stock out of reach removes both the temptation and the complaint. It also retired the legacy OTC wall, which was untidy, carried slow stock for years, and let the queue see what the person in front was buying.</p>
+      </div>
+    </div>
+    <div class="callout">These three came from the programme's own design principles for the dispenser, agreed before Melrose Arch opened: never turn your back on the customer, fulfil like a production line, keep the counter for care. This pack scores every option against them.</div>
+  </article>
+
+  <!-- 1.2 -->
+  <article class="slide">
+    <p class="eyebrow">Slide 1.2</p>
+    <h3>Two stores are live. They run the pharmacy two different ways</h3>
+    <p class="sf">Melrose Arch runs the pharmacy as it was trained. Irene runs the same process for scripts and a faster path for OTC that its own team built in the first weeks. Both are worth understanding before we change anything.</p>
+    <div class="two">
+      <div>
+        <h4>Melrose Arch · opened 7 May 2026 · the process as trained</h4>
+        <ol class="steps">
+          <li>Ticket at the Health Hub, digital or printed.</li>
+          <li>Roam until called to the drop-off counter. The dispenser takes the script or the OTC request, captures it, and upsells there.</li>
+          <li>Roam again while the order goes through pick-and-pack. The dashboard prioritises the work.</li>
+          <li>Called to the collections counter. Sign, take the bag.</li>
+          <li>Pay at the front-shop till (payment at the pharmacy counter is planned for 2028).</li>
+        </ol>
+        <p style="font-size:14.5px;color:var(--ink-soft);margin-top:10px">The same five steps apply whether the customer has a 24-item script or a single box of antihistamine.</p>
+      </div>
+      <div>
+        <h4>Irene · live since July 2026 · the process as run</h4>
+        <ol class="steps alt">
+          <li class="same">Scripts, and scripts with OTC add-ons, follow the five steps unchanged.</li>
+          <li>An OTC-only customer stays at the drop-off counter. The dispenser captures the sale as normal, but the label prints to a dedicated printer in the back (printer 9).</li>
+          <li>Whoever is free in the back reads that print as a signal, picks the item at once, and brings it to the dispenser.</li>
+          <li>The dispenser hands it over. One stop, no second queue, and the pharmacist never turns away from the customer. Built with no new technology.</li>
+          <li>Irene also changed collections: any free counter can hand over an order that is ready, instead of customers waiting for the screens to point them at counters 6 to 8. Fewer people pile up around the Hub waiting to be called.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="callout">As described, the Irene path keeps every design principle intact. Stock stays behind the wall, the pharmacist stays facing the customer, and scripts still run on the production line. What it changes is where the OTC customer waits: at the counter, for under a minute, instead of in a second queue. And it takes those customers out of the two places the store bottlenecks, the pick-and-pack dashboard and the collections queue, rather than sending them into the same bottlenecks faster.</div>
+    <div class="caveat"><span class="lbl">Presenter caveat</span>There are reports that some Irene pharmacists walk to the back and pick the OTC item themselves rather than waiting for it to be brought forward. If that is happening, it breaks "never turn your back". Confirm with the business analyst's ticketing data before presenting the Irene path as clean.</div>
+    <div class="data"><span class="lbl">Data still needed</span>Ticket volume and time to serve at Irene by OTC vs script, month by month, to confirm how the path actually runs and what it does to the queues.</div>
+    <p class="foot">Irene's dispensary manager reports no OTC complaints since the change and no fairness complaints from script customers.</p>
+  </article>
+
+  <!-- 1.3 -->
+  <article class="slide">
+    <p class="eyebrow">Slide 1.3</p>
+    <h3>Fifteen more stores open before Christmas, the first in five weeks</h3>
+    <p class="sf">Melrose Arch and Irene are the only two stores running this pharmacy today. By 3 December there will be seventeen. Every one of them opens with manual pick-and-pack, because the first automated picker store is planned for next year.</p>
+
+    <div class="tl" aria-label="Openings from 16 September to 3 December 2026, then automated picker stores from 2027">
+      <div class="tl-axis">
+        <span class="tick" style="left:0">16 Sep</span>
+        <span class="tick" style="left:20%">Oct</span>
+        <span class="tick" style="left:53%">Nov</span>
+        <span class="tick" style="left:85%">Dec</span>
+        <span class="today" style="left:0"><span>Today</span></span>
+        <span class="open" style="left:33%" title="22 Oct · Rand View · 1 store"></span>
+        <span class="open big" style="left:39.5%" title="29 Oct · 5 stores"></span>
+        <span class="open" style="left:42%" title="1 Nov · Umhlanga Crescent · 1 store"></span>
+        <span class="open big" style="left:65%" title="26 Nov · 5 stores"></span>
+        <span class="open big" style="left:71%;width:20px;height:20px;bottom:-11px" title="3 Dec · 3 stores"></span>
+        <span class="rowa"><span>Automated picker stores, from 2027</span></span>
+      </div>
+    </div>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Opens</th><th>Stores</th><th>Where</th></tr></thead>
+      <tbody>
+        <tr><td>22 Oct</td><td class="num">1</td><td>Rand View</td></tr>
+        <tr><td>29 Oct</td><td class="num">5</td><td>October cluster</td></tr>
+        <tr><td>1 Nov</td><td class="num">1</td><td>Umhlanga Crescent</td></tr>
+        <tr><td>26 Nov</td><td class="num">5</td><td>November cluster</td></tr>
+        <tr><td>3 Dec</td><td class="num">3</td><td>December cluster</td></tr>
+        <tr><td>On hold</td><td class="num">3</td><td>Awaiting landlord handover</td></tr>
+      </tbody>
+    </table></div>
+    <div class="two">
+      <div>
+        <p>Each of these stores will be trained on a pharmacy process in the weeks before it opens. Whatever we decide about OTC, the training either carries the Melrose process as it stands, or it carries a change. After 22 October the decision stops being about two stores and starts being about a network, and every store that opens on the current process is one more store to retrain later.</p>
+        <p>The automated picker (ROWA) answers the OTC question on its own, because any item reaches the front counter in seconds. But it arrives in 2027 and covers roughly a third of the estate. The other two thirds will pick by hand for the foreseeable future, so manual OTC needs a proper process of its own, not a stopgap. These fifteen stores are the chance to test that process and get it right before it goes to the rest of the network.</p>
+      </div>
+      <div class="callout" style="margin:0"><span class="big">15 stores in six weeks</span>Six of them in October. The first opens on 22 October, five weeks from this meeting.</div>
+    </div>
+    <p class="foot">Store count and dates from the programme rollout plan (Sep 2026). The ROWA figures are the team's working numbers from the 2 September session and need confirming with the programme.</p>
+  </article>
+</section>
+
+<!-- ============ 2 ============ -->
+<section id="s2">
+  <div class="section-head"><span class="section-tag">Section 2</span><h2>What have we learned?</h2></div>
+  <p class="section-lede">What is working, where the friction sits, what it costs, and what the two stores teach us when read side by side.</p>
+
+  <!-- 2.1 -->
+  <article class="slide">
+    <p class="eyebrow">Slide 2.1</p>
+    <h3>A five-item script took fifteen minutes. It now takes about five</h3>
+    <p class="sf">The pharmacy was redesigned to serve scripts faster and better. On the evidence so far, it does, and the people running it want to keep it that way.</p>
+    <div class="two">
+      <div>
+        <div class="callout" style="margin-top:0"><span class="big">15 min &rarr; about 5 min</span>Before Store of the Future, a new script with five items took about 15 minutes to dispense at the counter, with the customer standing there for all of it. In the new pharmacy the average time to serve at the dispensary is about 5 minutes.</div>
+        <p>How the time was won: the customer hands in and walks away, the picking happens in the back as a production line, and the counter is used only for the two conversations that need a pharmacist, handing in and handing over. A long script no longer holds up everyone behind it.</p>
+      </div>
+      <div>
+        <h4 style="margin-top:0">What the stores say is working</h4>
+        <ul>
+          <li>Both pharmacy managers want to keep decoupling for scripts. Irene's manager: <span class="quote">"we'd rather keep the patients we're getting".</span></li>
+          <li>Local doctors who bring four or five scripts at once are impressed, because the first scripts are picked while the later ones are still being captured.</li>
+          <li>Friction fades as customers learn. At Melrose Arch, four months in, return customers ticket themselves without help, and the daily "why is it like this?" has largely stopped.</li>
+          <li>The process is faster than it feels. A Melrose customer who complained of a 30-minute wait had waited 44 seconds for the pick and 10 seconds to sign. Time to serve is as much a matter of perception as of the clock: a wait the customer can see and understand feels shorter than one they cannot.</li>
+          <li>Fewer visible prices has made premium advice easier to give, and to take. Melrose has sold more of a R394 antihistamine than its manager ever has, because the cheaper anchor is not sitting beside it.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="data"><span class="lbl">Data still needed</span>Ticket volume and time to serve for both stores, split OTC vs script, month by month since opening.</div>
+    <p class="foot">Time-to-serve figures are the team's working numbers, to be confirmed against the product manager's data before this pack is presented.</p>
+  </article>
+
+  <!-- 2.2 -->
+  <article class="slide">
+    <p class="eyebrow">Slide 2.2</p>
+    <h3>The friction sits at three points in the journey, and OTC customers hit all three</h3>
+    <p class="sf">Run the same five steps for a script customer and for someone buying one box of painkillers, and the friction lands in different places. For the script customer the process fits the wait. For the OTC customer the wait is the process.</p>
+
+    <div class="journey">
+      <div class="jgrid">
+        <div></div>
+        <div class="stage">Ticket at the Hub</div>
+        <div class="stage">Roam</div>
+        <div class="stage">Drop-off counter</div>
+        <div class="stage">Roam again</div>
+        <div class="stage">Collections counter</div>
+        <div class="stage">Pay at front till</div>
+
+        <div class="lane">Script customer</div>
+        <div class="cell"></div>
+        <div class="cell"><div class="pin soft">Long new scripts (one had 24 items) hold the queue at peak for everyone behind them.<span class="src">Irene dispensary manager</span></div></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"><div class="pin soft">A customer whose OTC ticket P006 is called before their script ticket P005 asks the hub advisor why.<span class="src">Melrose hub advisor</span></div></div>
+        <div class="cell"></div>
+
+        <div class="lane">OTC-only customer</div>
+        <div class="cell">
+          <div class="pin">A customer who came for one item is asked to take a ticket and wait, when every other Dis-Chem hands it over.<span class="src">Both dispensary managers · Careline</span></div>
+          <div class="pin">"I can't see it, so I don't know what it's called." With no stock on view, customers who know the box but not the name give up and leave.<span class="src">Irene hub advisor</span></div>
+        </div>
+        <div class="cell">
+          <div class="pin">About 80% of Irene's customers do not want to shop. They hover around the four-seat Hub and block the aisles.<span class="src">Irene dispensary manager</span></div>
+          <div class="pin">The customer who cannot roam. A woman collecting for her husband, waiting in the car after an operation, was told repeatedly to "go shop".<span class="src">Careline complaint, 24 points</span></div>
+        </div>
+        <div class="cell">
+          <div class="pin">With no product to point at, the pharmacist cannot show two options side by side or jog a memory. Advice becomes a description, and every second sale now depends on the dispenser's own selling skill, which varies from person to person.<span class="src">Both stores</span></div>
+        </div>
+        <div class="cell">
+          <div class="pin">The wait feels far longer than it is, because the customer has moved A to B to C and cannot see anyone working on their order. "If I can't see you, I can't put pressure on you."<span class="src">Melrose dispensary manager</span></div>
+        </div>
+        <div class="cell">
+          <div class="pin">A second queue, shared with scripts, for an item that took under a minute to pick.<span class="src">Both stores · Melrose mystery shop</span></div>
+        </div>
+        <div class="cell">
+          <div class="pin">A third stop, at a till the customer had to walk past to get here.<span class="src">Launch process · dispensary payment planned 2028</span></div>
+        </div>
+
+        <div class="lane">What Dis-Chem pays</div>
+        <div class="cell dc"><div class="pin">Hub congestion at peak.</div></div>
+        <div class="cell dc"><div class="pin">Hub advisors spend their time explaining the process.</div></div>
+        <div class="cell dc"><div class="pin">Dispenser time on a one-item order that legacy served in seconds.</div></div>
+        <div class="cell dc"><div class="pin">Picker time on the same one-item order.</div></div>
+        <div class="cell dc"><div class="pin">Collections queue shared with scripts.</div></div>
+        <div class="cell dc"><div class="pin">A missed second sale where a visible shelf would have prompted it.</div></div>
+      </div>
+    </div>
+    <div class="legend"><span class="l-otc">OTC friction</span><span class="l-scr">Script friction</span><span class="l-dc">Cost to Dis-Chem</span></div>
+
+    <div class="callout">Most of this comes from the people running the two stores, plus Careline complaints and one mystery shop. Customer measurement is still to come, and the pack says so.</div>
+    <p class="foot">Sources: pharmacy managers and hub advisors of both stores (10 Sep workshop); Careline complaints; mystery shops by the team; the Jan 2026 customer study for "waiting is fine, being unsure isn't".</p>
+  </article>
+
+  <!-- 2.3 -->
+  <article class="slide">
+    <p class="eyebrow">Slide 2.3</p>
+    <h3>The cost to Dis-Chem: FTE, congestion, and an early sales signal</h3>
+    <p class="sf">The OTC friction has a cost to the customer and a cost to the business. Three show up already, and two of them come with numbers we still need to firm up.</p>
+    <div class="three">
+      <div class="col-card">
+        <span class="lbl">FTE</span>
+        <b>One picker for every dispenser</b>
+        <p>Running submission, picking and collection as separate jobs needs roughly one picker in the back for every dispenser at the front. Both pharmacy managers arrived at that ratio independently. Overweight the front and the queue moves to pick-and-pack, where the customer cannot see it, and trust drops.</p>
+        <p>Irene needs eight on a Saturday and its takings justify six. Melrose opened with nine, twice a conventional store of its turnover, and is stress-testing at five or six. Small stores, some with three permanent staff and under R1m a month, cannot split roles at all.</p>
+      </div>
+      <div class="col-card">
+        <span class="lbl">Congestion</span>
+        <b>A four-seat Hub that fills on quiet days</b>
+        <p>The Health Hub fills even on quiet days. On a busy Saturday two long scripts are enough to fill the shared queue, and the hub advisors spend their shift steering people rather than serving them.</p>
+      </div>
+      <div class="col-card">
+        <span class="lbl">Sales</span>
+        <b>An early gap against a lower-income store</b>
+        <p>Melrose Arch's manager benchmarks his OTC turnover against two stores of similar size that opened a month earlier. Blueberry Square, in a lower income area where OTC sales would normally be lower, takes R50,000 to R100,000 a month more in OTC than Melrose.</p>
+        <p>He puts the gap down to the missing display, not the process: <span class="quote">"six out of every ten patients who come to buy one item will see a second item on the shelf"</span>. With no shelf, the whole job of prompting a second item, and of trading a customer up, sits with the dispenser, and dispensers differ in how good they are at selling. Against that, hidden prices have made premium advice easier to sell.</p>
+      </div>
+    </div>
+    <div class="callout"><span class="big">R50&ndash;100k a month</span>The OTC turnover gap between Melrose Arch and a lower-income comparator store, as reported by the Melrose dispensary manager.</div>
+    <div class="data"><span class="lbl">Data still needed</span>Pharmacy revenue and transaction volume for both stores, split OTC vs script, month by month since opening, against the programme's original projections. Visit-level reporting for both stores.</div>
+    <p class="foot">All three figures are the managers' own working numbers.</p>
+  </article>
+
+  <!-- 2.4 -->
+  <article class="slide">
+    <p class="eyebrow">Slide 2.4</p>
+    <h3>Melrose Arch vs Irene: comparative learnings</h3>
+    <p class="sf">One store kept to the process and one changed it. That is not a verdict on the process. It says a lot about the two stores, and what it says is useful.</p>
+    <div class="two">
+      <div>
+        <h4 style="margin-top:0">Why Melrose Arch holds to the process, and why it works there</h4>
+        <ul>
+          <li>Exposure. Melrose is a small store in a business park. The same office workers come back week after week, often several times a month, so each customer meets the process many times and gets used to it. The daily "why is it like this?" has largely stopped by month four. People still complain, but far less than at opening and far less than at Irene.</li>
+          <li>Visit intent. A lunch-break customer came for something specific and expected a queue. They ticket, walk a short loop, collect and go. Fewer wait complaints, but also less browsing, which is where the OTC sales gap shows up.</li>
+          <li>Size and shape. The store is small, so the walk from Hub to drop-off to collections is short, and weekday traffic never builds the Saturday wall that drowns Irene.</li>
+          <li>Leakage. There is a legacy Dis-Chem nearby. Customers who truly dislike the process most likely go there, so the ones who stay are the ones who can live with it. We hear the complaints of the people who stayed, not of the people who left.</li>
+          <li>The same complaint, even here. The customers who dislike the process at Melrose are the ones who came for one item, and that is most often an OTC customer. Before, OTC took almost no effort. Now it takes a ticket and two queues. The jump is what jars: <span class="quote">"why all this effort for one box of Adcodol?"</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin-top:0">Why Irene changed, and what the change does</h4>
+        <ul>
+          <li>Pressure. A suburban store with weekend peaks, new patients with very long scripts, and about 80% of customers who do not want to shop. One-item customers waited six or seven minutes behind a 24-item script and complained of "queuing twice".</li>
+          <li>The fix removes people from the bottlenecks. Irene's OTC path takes the one-item customer out of the pick-and-pack dashboard and out of the collections queue, the two places the store jams at peak, instead of sending them into the same jams a little faster. Its manager reports it keeps the dashboard clear and the Hub emptier on a Saturday.</li>
+          <li>Its manager's verdict: the residual Saturday chaos is understaffing (six on shift when the store needs eight) and long new scripts, not OTC.</li>
+        </ul>
+        <h4>Three differences to control for</h4>
+        <ol>
+          <li>Age of store. New stores open OTC-heavy and drift toward scripts as their repeat base builds. Melrose opened at about 72% OTC and is now about 45%. Irene is at 60-70% OTC and its manager expects the same drift. Part of Irene's OTC pressure is a new-store effect that Melrose has grown through.</li>
+          <li>Staffing. Irene ran six on Saturdays when the process needs eight. Melrose opened with nine.</li>
+          <li>Technology. Irene has a collections call-out flow that Melrose still lacks. The Melrose hub advisor's phrase: <span class="quote">"Melrose is now the forgotten child."</span> The two stores are not running identical systems.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="callout"><span class="big">72:28 &rarr; 45:55</span>Melrose Arch's OTC-to-script mix at opening and now. A store's mix in its first months is not its mix at maturity.</div>
+    <div class="data"><span class="lbl">Data still needed</span>Ticket volume and time to serve for both stores by OTC vs script, month by month; revenue and transactions by OTC vs script against projections, month by month; Careline complaints for both stores, coded.</div>
+    <div class="caveat"><span class="lbl">To check with Firaz</span>Weekday vs weekend ticket split; roughly what share of customers he recognises as regulars; the nearest legacy Dis-Chem and whether he sees customers switching to it; his busiest hour of the week; floor area of Melrose vs Irene. The business-park reading, the leakage point and the "one box of Adcodol" line are the team's, to be confirmed with him.</div>
+  </article>
+</section>
+
+<!-- ============ 3 ============ -->
+<section id="s3">
+  <div class="section-head"><span class="section-tag">Section 3</span><h2>Where are we going?</h2></div>
+  <div class="stub">
+    <p class="eyebrow">Slides 3.1 to 3.3 · in progress</p>
+    <h3>Customer needs, one future-state journey per need, and the principles the pharmacy must keep true</h3>
+    <p>To be brainstormed and drafted with Tamsin. Raw material already held: advice-seeker / prefer-the-pharmacist / self-service; meds-now vs meds-later; sick vs not-sick; pop-in vs happy-to-shop; frequent dispensary visitors do not shop on every visit; "waiting is fine, being unsure isn't".</p>
+    <ul>
+      <li>3.1 Customer needs map</li>
+      <li>3.2 One future-state journey per need, at moments level</li>
+      <li>3.3 Five things the pharmacy must keep true, whatever we change</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section id="s4">
+  <div class="section-head"><span class="section-tag">Section 4</span><h2>How do we get there?</h2></div>
+  <div class="stub">
+    <p class="eyebrow">Slides 4.1 to 4.3 · in progress</p>
+    <h3>Three routes, the option set, and a recommendation with its measurement plan</h3>
+    <ul>
+      <li>4.1 Three routes from here: measure only; measure plus tested changes in the Q4 stores; structural change held for the future state</li>
+      <li>4.2 The option set on impact and effort, each with its headcount precondition and whether it works in a small manual store</li>
+      <li>4.3 Recommendation and measurement plan</li>
+    </ul>
+  </div>
+</section>
+
+<p class="footnote">Grounding: SteerCo #1 pack and decision log, Nov 2025 · Bigly dispenser principles · Melrose MVP workshops, Feb 2026 · launched-with training pack · SOTF customer study, Jan 2026 (n=12) · internal OTC brainstorm, 2 Sep 2026 · frontline OTC workshop, 10 Sep 2026 · SOTF Q4 rollout plan. Vault source notes: <code>src-sotf-*</code>, <code>src-bigly-blueprint-board-style</code>, <code>src-dc-store-future-interviews-2026</code>. Manager-quoted figures are working numbers until pulled from reporting.</p>
+</div>

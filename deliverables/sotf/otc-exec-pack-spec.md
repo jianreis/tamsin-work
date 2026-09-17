@@ -103,9 +103,9 @@ House rule: titles are proposed, then agreed, before they lock.
 | 1.2 | Two stores are live. They run the pharmacy two different ways |
 | 1.3 | Fifteen more stores open before Christmas, the first in five weeks |
 | 2.1 | A five-item script took fifteen minutes. It now takes about five |
-| 2.2 | The friction sits at three points in the journey, and OTC customers hit all three |
-| 2.3 | The cost to Dis-Chem: hands, congestion, and an early sales signal |
-| 2.4 | Irene and Melrose Arch learned different things, for reasons we can name |
+| 2.2 | The friction sits at three points in the journey, and OTC customers hit all three (Tamsin: judge in situ) |
+| 2.3 | The cost to Dis-Chem: FTE, congestion, and an early sales signal |
+| 2.4 | Melrose Arch vs Irene: comparative learnings |
 | 3.3 | Five things the pharmacy must keep true, whatever we change |
 | 4.1 | Three routes from here |
 
@@ -372,7 +372,7 @@ Jan 2026 customer study for "waiting is fine, being unsure isn't".
 Evidence: [[src-sotf-otc-frontline-workshop-2026]], [[src-sotf-otc-workshop-2026]],
 [[src-sotf-training-launch-2026]], [[src-dc-store-future-interviews-2026]].
 
-### 2.3 The cost to Dis-Chem: hands, congestion, and an early sales signal
+### 2.3 The cost to Dis-Chem: FTE, congestion, and an early sales signal
 
 Standfirst: The OTC friction has a cost to the customer and a cost to the
 business. Three show up already, and two of them come with numbers we still
@@ -380,7 +380,7 @@ need to firm up.
 
 Three columns.
 
-Hands. Running submission, picking and collection as separate jobs needs
+FTE. Running submission, picking and collection as separate jobs needs
 roughly one picker in the back for every dispenser at the front. Both
 pharmacy managers arrived at that ratio independently. Overweight the front
 and the queue moves to pick-and-pack, where the customer cannot see it, and
@@ -415,7 +415,7 @@ original projections. Visit-level reporting for both stores.
 
 Evidence: [[src-sotf-otc-frontline-workshop-2026]], [[src-sotf-otc-workshop-2026]].
 
-### 2.4 Irene and Melrose Arch learned different things, for reasons we can name
+### 2.4 Melrose Arch vs Irene: comparative learnings
 
 Standfirst: One store kept to the process and one changed it. That is not a
 verdict on the process. It says a lot about the two stores, and what it says

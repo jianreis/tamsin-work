@@ -13,5 +13,6 @@ Contents:
 - `otc-solve-session.html` (+ `.pptx`) - the 2 Sep 2026 internal OTC solve
   workshop canvas. Preserved as run; not reworked in place.
 - `otc-exec-pack-spec.md` - structure, slide plan and draft copy for the
-  executive / Steer Group pack on the OTC solve (Sep 2026). The HTML pack
-  mirrors this spec once the copy is agreed.
+  executive / Steer Group pack on the OTC solve (Sep 2026). Spec first; the
+  HTML mirrors it once each section's copy is agreed.
+- `otc-exec-pack.html` - the pack itself (sections 1-2 built, 3-4 stubbed).
