@@ -50,7 +50,7 @@ Status key: `drafted` (copy below, awaiting Tamsin's read) · `needs input`
 (Tamsin to supply) · `needs data` (pull outstanding) · `to build together`.
 
 ### 0. The answer
-- 0.1 The answer on one slide - `to build together`, written last.
+- 0.1 The answer on one slide - `drafted`.
 
 ### 1. Where are we now?
 - 1.1 Three changes to the pharmacy, and why each was made - `drafted`.
@@ -79,10 +79,9 @@ Status key: `drafted` (copy below, awaiting Tamsin's read) · `needs input`
   paths cover every need.
 
 ### 4. How do we get there?
-- 4.1 Three routes - `drafted` in outline.
-- 4.2 The option set on impact / effort, with headcount precondition and
-  fit for a small manual store marked on each - `to build together`.
-- 4.3 Recommendation and measurement plan - `to build together`.
+- 4.1 Three routes from here - `drafted`. Tamsin's position: route two.
+- 4.2 Every option we have heard, placed - `drafted`.
+- 4.3 What we ask the Steer Group to decide - `drafted`.
 
 ### Appendix
 - A.1 Sources and evidence tiers - drafted from the vault at build time.
@@ -114,7 +113,10 @@ House rule: titles are proposed, then agreed, before they lock.
 | 3.1 | Two questions decide every pharmacy visit |
 | 3.2 | One rule, three kinds of store |
 | 3.3 | What has to be true for the rule to work |
+| 0.1 | The answer on one slide |
 | 4.1 | Three routes from here |
+| 4.2 | Every option we have heard, placed |
+| 4.3 | What we ask the Steer Group to decide |
 
 ## Draft copy - section 1
 
@@ -642,6 +644,144 @@ Evidence: [[src-sotf-otc-workshop-2026]] (Unisolv routing, kiosk basket),
 [[src-sotf-melrose-workshops-2026]] (payment at dispensary 2028, digital
 OTC shelves deferred), [[src-sotf-otc-frontline-workshop-2026]] (collections
 from any counter), [[src-bigly-blueprint-board-style]].
+
+### Appendix A.3 The customer-needs 2x2 (proof of coverage)
+
+Axes: "I want advice" vs "I know what I want"; "the pharmacy is my whole
+visit, get me out" vs "the pharmacy is one stop, I'll look around".
+
+| | No time | Time to spare |
+|---|---|---|
+| I know what I want | One-box OTC, one-item repeat, the pop-in. Kiosk order, collect, gone. Shelf items go now if they see a pharmacist | The monthly chronic run. Kiosk order, roam or leave, collect later. Decoupling as designed |
+| I want advice | The sick person, the parent with a feverish child. Pharmacist now, shelf items handed over in the conversation, never sent to roam | "What should I take for sinus?" The advice-and-discovery customer. Pharmacist, shelf as display, second item prompted |
+
+Every need lands in one of the two paths. Product class (OTC vs script)
+never appears on the axes, which is the point: it was a proxy for
+preparation time, and the shelf rule uses preparation time directly.
+
+## Draft copy - section 4
+
+### 4.1 Three routes from here
+
+Standfirst: Fifteen stores open before Christmas. Each one is trained on a
+pharmacy process in the weeks before. There are three things we can do
+about that, and we recommend the second.
+
+Three columns.
+
+Route 1. Measure first. Leave both stores as they are, pull the data, decide
+in the new year. Cost: fifteen stores open on the current process and are
+retrained later, and the OTC sales gap runs for another quarter. Value: the
+cleanest data on the unchanged process.
+
+Route 2. Put the rule into the Q4 stores, and measure. Recommended. Before
+Rand View trains, add the shelf, route-at-confirmation and the single
+collections counter to the pharmacy process. Keep Irene's fast printer
+running as the phase-two test. Pull the digital planogram forward onto the
+existing screens as display support. Run the data plan for three months
+across all stores. Cost: a planogram, a training update and a dashboard
+flag. Value: fifteen stores open on a process that already answers the
+one-item customer, and the threshold is set from measured data by the
+review.
+
+Route 3. Structural change now. A separate OTC counter, split flows, the
+kiosk basket build, an OTC vending unit. Held for the future state. Each
+depends on systems that are not yet there (Bricks, kiosk-to-dispensing
+integration) or reopens a SteerCo decision without data behind it.
+
+Callout: Route two changes three things in the stores and nothing in the
+systems. Everything it needs exists in a Dis-Chem pharmacy today.
+
+Evidence: [[src-sotf-rollout-plan-q4-2026]], [[src-sotf-otc-workshop-2026]],
+[[src-sotf-otc-frontline-workshop-2026]].
+
+### 4.2 Every option we have heard, placed
+
+Standfirst: Two workshops produced twelve options. Placed against impact
+and effort, with the staffing each one needs and whether it works in a
+small store, they sort themselves into four groups.
+
+Table, sorted by group.
+
+| Option | What it is | Impact | Effort | Needs spare hands? | Works in a small store? | Group |
+|---|---|---|---|---|---|---|
+| Curated shelf behind the pharmacist | Top OTC lines within reach, planogrammed, screened | High | Low | No | Yes | Now (route 2) |
+| Route set at confirmation | Order flagged now / collect on the label and dashboard | High | Low | No | Yes | Now (route 2) |
+| One collections counter, any counter calls | Irene's collections change | Medium | Low | No | Yes | Now (route 2) |
+| Digital OTC planogram on existing screens | Display of products, rotating slots sellable to vendors | Medium | Low | No | Yes | Now (route 2) |
+| Fast printer and bring-forward (Irene) | In-stock small orders brought to the counter | High | Low | Yes | No | Test (phase 2) |
+| Interactive categorised browse screen | Pain and fever, sinus, etc. at Hub or counter | Medium | Medium | No | Yes | Test |
+| Better Rewards purchase-history lookup | "I can't remember which one" answered from the profile | Low | Low | No | Yes | Test |
+| Invisible back-of-house OTC priority lane | Separate queue in the back, same front | Medium | Medium | Yes | No | Later (needs Bricks routing) |
+| Kiosk or phone basket before ticketing | Order built while waiting; pick starts early | High | High | No | Yes | Later (kiosk to dispensing integration) |
+| Pass-through hatch or pneumatic tube | Item delivered to the counter mechanically | Medium | High | Partly | No | Later (fit-out; ROWA retrofit) |
+| Separate OTC counter / split flows | A distinct OTC service point | Medium | High | Yes | No | Not now (reopens SteerCo decision; staffing) |
+| OTC vending unit | Self-dispensing machine | Unknown | High | No | Unknown | Not now (unresearched) |
+| Do nothing and observe | Deliberate non-intervention | Low | None | No | Yes | Superseded by route 1 |
+
+Footnote: impact and effort are the team's judgement from the two
+workshops, not measured. Regulatory flag on every screen option: Schedule 0
+and 1 medicines may be advertised to the public, Schedule 2 may not, and
+whether an in-pharmacy display of stock counts as advertising is unresolved.
+
+Evidence: [[src-sotf-otc-workshop-2026]], [[src-sotf-otc-frontline-workshop-2026]],
+[[medicines-act-scheduling]].
+
+### 4.3 What we ask the Steer Group to decide
+
+Standfirst: Four decisions, one date, and a measurement plan with owners.
+
+Left, the decisions:
+
+1. Adopt the rule and the guardrail. What is within the pharmacist's reach
+   goes now; what is not gets a time. Decoupling at the counter is
+   data-driven, with the shelf as the default.
+2. Approve the three Q4 changes for the pharmacy training: the shelf, route
+   at confirmation, one collections counter. Rand View trains first, so the
+   training update is needed before mid-October.
+3. Approve the data plan below, with the owners named.
+4. Review in January with three months of data, to set the threshold per
+   store and decide whether the fast path becomes phase two.
+
+Right, the measurement plan:
+
+| What we measure | Why | Source | Owner |
+|---|---|---|---|
+| Share of OTC-only visits served in one stop | The headline outcome | Ticketing data by order type | Business analyst |
+| Time to serve by order type, month by month, both stores and new openings | Confirms the script win, tracks OTC | Qmatic and dashboard | Product manager |
+| Pick time by line count and item type; fallback rate of the Irene fast path | Sets the threshold; tests phase two | Dashboard, Irene | Business analyst |
+| OTC revenue and transactions vs projections, month by month | The sales signal, firmed up | Reporting | Carol Mazaris |
+| Complaints coded OTC / queue / wait | The customer signal | Careline (C4C) | Tamsin's team |
+| Hub congestion and walk-outs at peak | The guardrail on the sick customer | Saturday intercepts at both stores | Lizette |
+| Shelf coverage: share of OTC-only transactions the planogram covers | Sizes the dial | Unisolv SKU volume | Business analyst |
+
+Callout: The first store trains in five weeks. Decisions one and two are the
+ones with a date on them.
+
+Footnote: owners as proposed by the team; to be confirmed with each person.
+
+### 0.1 The answer on one slide
+
+Standfirst: What we found, what we recommend, and what we need from the
+room.
+
+- Store of the Future serves scripts faster. A five-item script that took
+  fifteen minutes at the counter now takes about five, and the frontline
+  wants to keep it that way.
+- Over-the-counter medicine went into the same process, and that is where
+  the friction sits. A customer who came for one box takes a ticket, waits
+  twice and walks three times for an item every other Dis-Chem hands over
+  in under a minute. Irene's team changed it in the first weeks. Melrose's
+  OTC turnover runs R50-100k a month below a lower-income comparator.
+- The fix is one rule at the counter: what is within the pharmacist's reach
+  goes now; what is not gets a time. A shelf of the top OTC lines behind
+  the pharmacist is the default threshold. Data widens it.
+- The rule holds in every store size and needs no new systems. Fifteen
+  stores open before Christmas, the first in five weeks; they should open
+  on it.
+- We ask the Steer Group to adopt the rule, approve three changes to the Q4
+  training, approve the data plan, and review in January with three months
+  of data.
 
 ### Appendix A.3 The customer-needs 2x2 (proof of coverage)
 

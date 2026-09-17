@@ -15,4 +15,4 @@ Contents:
 - `otc-exec-pack-spec.md` - structure, slide plan and draft copy for the
   executive / Steer Group pack on the OTC solve (Sep 2026). Spec first; the
   HTML mirrors it once each section's copy is agreed.
-- `otc-exec-pack.html` - the pack itself (sections 1-3 built, 4 stubbed).
+- `otc-exec-pack.html` - the pack itself, all sections drafted; `otc-exec-pack.pptx` is the editable slide twin.
