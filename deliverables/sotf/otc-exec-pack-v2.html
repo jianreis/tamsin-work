@@ -1,0 +1,440 @@
+<title>The OTC Solve</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#f7f6f2; --sheet:#ffffff; --ink:#1c2420; --ink-soft:#4c5a52; --ink-faint:#7d8a82;
+    --line:#dcdfd8; --green:#0a7a44; --green-deep:#0b5c36; --green-tint:#e7f2ea;
+    --gold:#e3b71e; --gold-tint:#faf3d9; --warn:#b4552a; --warn-tint:#f8ece4;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,monospace;
+    --display:'Archivo','Arial Narrow',Arial,sans-serif;
+    --body:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#161b18; --sheet:#1e2521; --ink:#e8ece9; --ink-soft:#b2bdb6; --ink-faint:#84908a;
+      --line:#37403a; --green:#4cc084; --green-deep:#7ad3a4; --green-tint:#22352b;
+      --gold:#d9b53a; --gold-tint:#37311c; --warn:#e08a5e; --warn-tint:#3a2a20;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#161b18; --sheet:#1e2521; --ink:#e8ece9; --ink-soft:#b2bdb6; --ink-faint:#84908a;
+    --line:#37403a; --green:#4cc084; --green-deep:#7ad3a4; --green-tint:#22352b;
+    --gold:#d9b53a; --gold-tint:#37311c; --warn:#e08a5e; --warn-tint:#3a2a20;
+  }
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;margin:0}
+  .wrap{max-width:1000px;margin:0 auto;padding-block:44px 96px;padding-inline:24px}
+  p{max-width:70ch;margin:0 0 12px}
+  strong{font-weight:600}
+  a{color:var(--green)}
+
+  /* masthead */
+  .masthead{border-bottom:3px solid var(--green);padding-bottom:26px;margin-bottom:28px}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin:0 0 10px}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,56px);line-height:1.02;letter-spacing:-.015em;margin:0 0 14px;text-wrap:balance}
+  .standfirst{font-size:18px;color:var(--ink-soft);max-width:66ch}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chip{font-family:var(--mono);font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);background:var(--sheet)}
+  .chip.draft{border-color:var(--gold);color:var(--ink)}
+
+  /* contents strip */
+  .contents{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:0 0 40px}
+  .contents a{display:block;text-decoration:none;color:var(--ink);background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+  .contents a .n{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:4px}
+  .contents a .q{font-family:var(--display);font-weight:700;font-size:15px;line-height:1.25}
+  .contents a.stub{color:var(--ink-faint)}
+  .contents a.stub .n{color:var(--ink-faint)}
+
+  /* section head */
+  .section-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:10px;margin:64px 0 8px;flex-wrap:wrap}
+  .section-tag{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ground);background:var(--green);padding:3px 9px;border-radius:3px;white-space:nowrap}
+  .section-head h2{font-family:var(--display);font-weight:800;font-size:28px;letter-spacing:-.01em;margin:0;text-wrap:balance}
+  .section-lede{color:var(--ink-soft);margin:0 0 20px;max-width:70ch}
+
+  /* slide sheet */
+  .slide{background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:26px 28px 24px;margin:22px 0}
+  .slide .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 8px}
+  .slide h3{font-family:var(--display);font-weight:800;font-size:clamp(21px,3vw,26px);line-height:1.15;letter-spacing:-.01em;margin:0 0 10px;text-wrap:balance}
+  .slide .sf{font-size:16.5px;color:var(--ink-soft);margin:0 0 20px;max-width:72ch}
+  .slide h4{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin:18px 0 8px}
+  .slide ul{margin:0 0 12px;padding-left:20px}
+  .slide li{margin-bottom:8px;max-width:70ch}
+  .slide ol{margin:0 0 12px;padding-left:22px}
+  .slide ol li{margin-bottom:8px}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px}
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:720px){.two,.three{grid-template-columns:1fr}}
+
+  .col-card{border:1px solid var(--line);border-radius:6px;padding:16px 18px;background:var(--ground)}
+  .col-card .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:6px}
+  .col-card b{font-family:var(--display);font-weight:700;font-size:16.5px;display:block;margin-bottom:6px}
+  .col-card p{font-size:14.5px;color:var(--ink-soft);margin:0 0 8px}
+  .col-card p:last-child{margin-bottom:0}
+
+  .callout{background:var(--gold-tint);border-left:4px solid var(--gold);padding:14px 18px;margin:18px 0 6px;font-size:15.5px;max-width:none}
+  .callout .big{font-family:var(--display);font-weight:800;font-size:28px;line-height:1.1;display:block;margin-bottom:6px;letter-spacing:-.01em}
+  .caveat{background:var(--warn-tint);border-left:4px solid var(--warn);padding:12px 16px;margin:14px 0;font-size:14.5px}
+  .caveat .lbl,.data .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:4px}
+  .caveat .lbl{color:var(--warn)}
+  .data{background:var(--green-tint);border:1px dashed var(--line);border-radius:6px;padding:12px 16px;margin:14px 0 0;font-size:14px}
+  .data .lbl{color:var(--green)}
+  .foot{font-size:13px;color:var(--ink-faint);margin:14px 0 0;border-top:1px solid var(--line);padding-top:10px;max-width:none}
+  .foot code{font-family:var(--mono);font-size:12px}
+  .quote{font-style:italic;color:var(--ink-soft)}
+
+  .steps{list-style:none;padding:0;margin:0;counter-reset:step}
+  .steps li{position:relative;padding-left:34px;margin-bottom:10px;font-size:15px}
+  .steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:50%;background:var(--green);color:var(--ground);font-family:var(--mono);font-size:12px;display:flex;align-items:center;justify-content:center}
+  .steps.alt li::before{background:var(--gold);color:var(--ink)}
+  .steps li.same{color:var(--ink-faint)}
+  .steps li.same::before{background:var(--line);color:var(--ink-soft)}
+
+  /* timeline 1.3 */
+  .tl{margin:18px 0 8px}
+  .tl-axis{position:relative;height:14px;border-bottom:2px solid var(--line);margin:34px 0 10px}
+  .tl-axis .tick{position:absolute;top:-30px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);transform:translateX(-50%);white-space:nowrap}
+  .tl-axis .today{position:absolute;top:-8px;bottom:-6px;width:2px;background:var(--warn)}
+  .tl-axis .today span{position:absolute;top:-22px;left:-18px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--warn)}
+  .tl-axis .open{position:absolute;bottom:-9px;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:var(--green);border:2px solid var(--sheet)}
+  .tl-axis .open.big{width:24px;height:24px;bottom:-13px}
+  .tl-axis .rowa{position:absolute;right:0;top:0;bottom:-2px;width:11%;background:repeating-linear-gradient(135deg,var(--green-tint),var(--green-tint) 4px,transparent 4px,transparent 8px);border-left:1px dashed var(--green)}
+  .tl-axis .rowa span{position:absolute;left:6px;top:-30px;font-family:var(--mono);font-size:10.5px;color:var(--green);white-space:nowrap}
+  .tl-labels{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;font-size:13px;color:var(--ink-soft)}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;font-variant-numeric:tabular-nums}
+  .tblwrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:6px}
+  th{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:var(--ink-faint);padding:10px 14px;border-bottom:2px solid var(--line);white-space:nowrap}
+  td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.num{font-family:var(--mono);text-align:right}
+
+  /* journey 2.2 */
+  .journey{overflow-x:auto;margin:16px 0 6px;padding-bottom:6px}
+  .jgrid{display:grid;grid-template-columns:110px repeat(6,minmax(150px,1fr));gap:6px;min-width:1020px}
+  .jgrid .stage{font-family:var(--display);font-weight:700;font-size:13.5px;text-align:center;padding:10px 6px;background:var(--green);color:var(--ground);border-radius:4px;line-height:1.2}
+  .jgrid .lane{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:12px 6px 0;line-height:1.35}
+  .jgrid .cell{background:var(--ground);border:1px solid var(--line);border-radius:4px;min-height:52px;padding:6px}
+  .jgrid .cell.dc{background:transparent;border-style:dashed;min-height:40px}
+  .pin{background:var(--sheet);border-left:3px solid var(--warn);border-radius:3px;padding:6px 8px;font-size:12.5px;line-height:1.35;margin-bottom:6px}
+  .pin:last-child{margin-bottom:0}
+  .pin.soft{border-left-color:var(--gold)}
+  .pin .src{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);margin-top:4px}
+  .jgrid .cell.dc .pin{border-left-color:var(--ink-faint);background:transparent;padding:2px 6px}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-soft);margin:8px 0 0}
+  .legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+  .legend .l-otc::before{background:var(--warn)}
+  .legend .l-scr::before{background:var(--gold)}
+  .legend .l-dc::before{background:var(--ink-faint)}
+
+  /* stubs */
+  .stub{background:var(--sheet);border:1px dashed var(--line);border-radius:8px;padding:22px 26px;margin:22px 0;color:var(--ink-soft)}
+  .stub .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 6px}
+  .stub h3{font-family:var(--display);font-weight:700;font-size:20px;margin:0 0 8px;color:var(--ink)}
+  .stub ul{margin:6px 0 0;padding-left:20px;font-size:14.5px}
+  .footnote{margin-top:56px;border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:var(--ink-faint);max-width:none}
+  .footnote code{font-family:var(--mono);font-size:12px}
+</style>
+<style>
+  .pros td:first-child{font-weight:600;white-space:nowrap}
+  .opt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:720px){.opt-grid{grid-template-columns:1fr}}
+  .rec{border:2px solid var(--green)}
+</style>
+
+<div class="wrap">
+<header class="masthead">
+  <p class="kicker">Store of the Future · Steer Group pack · version 2</p>
+  <h1>The OTC Solve</h1>
+  <p class="standfirst">The business asked us to address a concern: OTC sales are dropping because the OTC process runs against how people shop for OTC. This pack says what we know, what we don't, the three things we could do, and the one we recommend.</p>
+  <div class="chips">
+    <span class="chip">Nine slides, three in the appendix</span>
+    <span class="chip draft">Store figures are working numbers until pulled from reporting</span>
+  </div>
+</header>
+
+<!-- 1 -->
+<article class="slide">
+  <p class="eyebrow">Slide 1</p>
+  <h3>The ask, and an honest answer</h3>
+  <p class="sf">Store of the Future is our responsibility. The business has asked us to do something about OTC. Here is where we stand before we propose anything.</p>
+  <div class="two">
+    <div>
+      <h4 style="margin-top:0">The ask</h4>
+      <p>Address the perception that OTC sales are dropping because the current OTC process now runs contrary to how people want to shop for OTC. Come back with a solve, or with the evidence that one is not needed.</p>
+      <h4>What we can say with confidence</h4>
+      <ul>
+        <li>Scripts work decoupled. Both pharmacy managers want to keep it that way. Scripts are not in question in this pack.</li>
+        <li>OTC is where the complaints are, at both stores, and most of them come from customers who came for one item.</li>
+        <li>Irene's team changed the OTC process in its first weeks and reports no OTC complaints since. Melrose Arch kept to the process and reports complaints fading as customers learn it.</li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="margin-top:0">What we cannot say yet</h4>
+      <ul>
+        <li>Whether OTC sales are actually down. The one number we hold is a manager's benchmark against a comparator store. No sales data by OTC versus script has been pulled for either store.</li>
+        <li>What the OTC process costs a customer in minutes. No time-to-serve data by order type has been pulled.</li>
+        <li>A like-for-like comparison. Melrose is four months older, in a business park, with a different customer. Irene has changed the process, so it no longer measures the process as designed.</li>
+      </ul>
+      <div class="callout" style="margin-top:14px">The evidence is anecdotal and it points one way. That is enough to act on carefully, and not enough to act on expensively.</div>
+    </div>
+  </div>
+</article>
+
+<!-- 2 -->
+<article class="slide">
+  <p class="eyebrow">Slide 2</p>
+  <h3>Three changes to the pharmacy, and the problem each one solved</h3>
+  <p class="sf">Store of the Future changed three things about how a customer gets medicine. Each was made on purpose, and the reasons behind them still hold.</p>
+  <div class="three">
+    <div class="col-card"><span class="lbl">Change 1</span><b>Decoupled counters</b>
+      <p>The customer hands in at one counter and collects at another, with the picking done out of sight in between.</p>
+      <p>In a legacy store the pharmacist takes the script, turns round, and hunts stock for up to five minutes while the customer stands at the counter. Decoupling keeps the pharmacist facing the customer and turns the picking into a production line, so a long script no longer holds up the counter and a customer with time to wait can roam the store instead of standing in a queue.</p></div>
+    <div class="col-card"><span class="lbl">Change 2</span><b>One queue for everything</b>
+      <p>Scripts and over-the-counter medicine (OTC: the pain, cold, allergy and stomach lines a pharmacist can sell without a prescription) go through the same ticket, the same counter and the same pick-and-pack.</p>
+      <p>One process means less counter space given to the pharmacy, one set of staff to train, and no second counter to run. It also changes how customers think. With one counter for everything, they stop treating scripts and OTC as two separate errands and stop forgetting to ask for the OTC item at the dispensing counter. Every visit becomes one combined script-and-OTC conversation, and one combined sale.</p></div>
+    <div class="col-card"><span class="lbl">Change 3</span><b>No visible stock</b>
+      <p>Every medicine sits behind the wall. Nothing is on a shelf the customer can see or the pharmacist can reach.</p>
+      <p>This protects the decoupling: if stock is within reach, the pharmacist will turn round and fetch it, and the customer, seeing it there, will ask why they must wait for a picker when the pharmacist could just turn round. Moving the stock out of reach removes both the temptation and the complaint. It also retired the legacy OTC wall, which was untidy, carried slow stock for years, and let the queue see what the person in front was buying.</p></div>
+  </div>
+  <div class="callout">These three came from the programme's own design principles for the dispenser, agreed before Melrose Arch opened: never turn your back on the customer, fulfil like a production line, keep the counter for care. The options that follow are judged against them.</div>
+</article>
+
+<!-- 3 -->
+<article class="slide">
+  <p class="eyebrow">Slide 3</p>
+  <h3>Where OTC hurts: the customer, the store, the business</h3>
+  <p class="sf">For a script customer the process fits the wait. For someone buying one box of painkillers, the wait is the process. Every line below names where it came from.</p>
+  <div class="three">
+    <div class="col-card"><span class="lbl">The customer</span><b>"Why all this effort for one box?"</b>
+      <p>Take a ticket. Wait to be called to hand in. Wait again to be called to collect. Walk to the front till to pay. Three walks and two queues for an item every other Dis-Chem hands over in under a minute.</p>
+      <p>With no stock on view, customers who know the box but not the name give up and leave. The wait feels far longer than it is, because the work is invisible: a customer who complained of 30 minutes had waited 44 seconds.</p>
+      <p>The customer who cannot roam: a woman collecting for her husband, waiting in the car after an operation, was told repeatedly to "go shop".</p>
+      <p class="foot" style="margin-top:8px">Both dispensary managers · Irene hub advisor · Careline complaint · Melrose mystery shop</p></div>
+    <div class="col-card"><span class="lbl">The store</span><b>One picker for every dispenser</b>
+      <p>Running hand-in, picking and collection as separate jobs needs roughly one picker in the back for every dispenser at the front. Both managers arrived at that ratio independently. Irene needs eight on a Saturday and its takings justify six. Small stores with three staff cannot split roles at all.</p>
+      <p>At peak, two long scripts fill the shared queue. About 80% of Irene's customers do not want to shop; they hover around the four-seat Hub and block the aisles, and hub advisors spend their shift steering people rather than serving them.</p>
+      <p class="foot" style="margin-top:8px">Both dispensary managers · Irene hub advisor</p></div>
+    <div class="col-card"><span class="lbl">The business</span><b>An early sales signal</b>
+      <p>Melrose Arch's manager benchmarks his OTC turnover against two stores of similar size that opened a month earlier. Blueberry Square, in a lower-income area where OTC would normally sell less, takes R50,000 to R100,000 a month more in OTC than Melrose. He puts it down to the missing display: "six out of every ten patients who come to buy one item will see a second item on the shelf".</p>
+      <p>Against that: hidden prices have made premium advice easier to sell.</p>
+      <p class="foot" style="margin-top:8px">Melrose dispensary manager. A working number until pulled from reporting.</p></div>
+  </div>
+</article>
+
+<!-- 4 -->
+<article class="slide">
+  <p class="eyebrow">Slide 4</p>
+  <h3>Two stores are live. They run the pharmacy two different ways</h3>
+  <p class="sf">Melrose Arch runs the pharmacy as it was trained. Irene runs the same process for scripts and a faster path for OTC that its own team built in the first weeks.</p>
+  <div class="two">
+    <div>
+      <h4 style="margin-top:0">Melrose Arch · opened 7 May 2026 · as trained</h4>
+      <ol class="steps">
+        <li>Ticket at the Health Hub.</li>
+        <li>Called to the drop-off counter. The dispenser captures the script or the OTC request.</li>
+        <li>Roam while the order goes through pick-and-pack.</li>
+        <li>Called to the collections counter. Sign, take the bag.</li>
+        <li>Pay at the front-shop till.</li>
+      </ol>
+      <p style="font-size:14.5px;color:var(--ink-soft)">Same five steps for a 24-item script and a single box of antihistamine. Complaints have faded as regulars learn it. The customers who still dislike it came for one item.</p>
+    </div>
+    <div>
+      <h4 style="margin-top:0">Irene · live since July 2026 · as run</h4>
+      <ol class="steps alt">
+        <li class="same">Scripts, and scripts with OTC add-ons, follow the five steps unchanged.</li>
+        <li>An OTC-only customer stays at the drop-off counter. The dispenser captures the sale; the label prints to a dedicated printer in the back.</li>
+        <li>Whoever is free in the back picks it at once and brings it to the dispenser, who hands it over. One stop.</li>
+        <li>Collections are called from any free counter, so fewer people pile up around the Hub.</li>
+      </ol>
+      <p style="font-size:14.5px;color:var(--ink-soft)">No new technology. The manager reports no OTC complaints since, and no fairness complaints from script customers. It needs a spare pair of hands in the back.</p>
+    </div>
+  </div>
+  <div class="caveat"><span class="lbl">To confirm before presenting</span>Reports that some Irene pharmacists walk to the back and pick the OTC item themselves. If so, it breaks "never turn your back". Check against the business analyst's ticketing data.</div>
+</article>
+
+<!-- 5 -->
+<article class="slide">
+  <p class="eyebrow">Slide 5</p>
+  <h3>Three options for OTC</h3>
+  <p class="sf">Scripts stay decoupled in all three. The choice is about OTC only.</p>
+  <div class="opt-grid">
+    <div class="col-card"><span class="lbl">Option 1</span><b>Do nothing, and get the data</b>
+      <p>Leave both stores as they are. Pull sales, ticket and time-to-serve data by OTC versus script for both, run Saturday intercepts, observe a legacy store, and decide in the new year on evidence rather than a hunch.</p>
+      <p>Irene keeps running its path as a live proof of concept, framed as an operations-led adjustment to the process rather than a breach of it.</p></div>
+    <div class="col-card"><span class="lbl">Option 2</span><b>Roll OTC back to a coupled counter</b>
+      <p>A conscious recoupling for OTC only. One or more pharmacists own the whole OTC journey at a counter: the conversation, the pick from a wall of stock behind them, the handover. Scripts stay in the decoupled flow beside it.</p>
+      <p>This is a shopfit: counter positions, an OTC wall, stock in two places. It is the legacy OTC experience placed inside the new store.</p></div>
+    <div class="col-card rec"><span class="lbl">Option 3</span><b>A hybrid: stay decoupled, bring the item to the pharmacist</b>
+      <p>What Irene does, formalised. OTC-only orders route to a dedicated printer; someone in the back brings the item to the counter while the pharmacist stays with the customer. Stock stays behind the wall, the pharmacist never turns round, scripts run as designed.</p>
+      <p>A partial recoupling of the decoupled process, for the one order type that never needed the wait.</p></div>
+  </div>
+</article>
+
+<!-- 6 -->
+<article class="slide">
+  <p class="eyebrow">Slide 6</p>
+  <h3>Pros and cons</h3>
+  <p class="sf">Judged on cost, speed, what each does for the one-item customer and the sales question, what it asks of staffing, and what it risks.</p>
+  <div class="tblwrap"><table class="pros">
+    <thead><tr><th></th><th>1 · Do nothing, get the data</th><th>2 · Roll OTC back to a coupled counter</th><th>3 · Hybrid, Irene formalised</th></tr></thead>
+    <tbody>
+      <tr><td>Cost</td><td>None now</td><td>Shopfit in every store: counter, OTC wall, split stock</td><td>A printer, a training update, a routing rule</td></tr>
+      <tr><td>Speed to act</td><td>Nothing changes for fifteen new stores</td><td>Months; too late for the Q4 openings</td><td>Before the first Q4 store trains in mid-October</td></tr>
+      <tr><td>The one-item customer</td><td>Keeps queuing twice</td><td>Served as in a legacy store</td><td>Served in one stop at the counter</td></tr>
+      <tr><td>The display and sales question</td><td>Unanswered</td><td>Answered by the wall</td><td>Not answered by itself; needs the digital planogram alongside</td></tr>
+      <tr><td>Staffing</td><td>As today</td><td>Dedicated OTC pharmacists at peak</td><td>A spare pair of hands in the back; hard for three-staff stores</td></tr>
+      <tr><td>Design principles</td><td>Held</td><td>Stock within reach, pharmacist turns round: two principles given up for OTC</td><td>All held. Stock behind the wall, pharmacist facing the customer, scripts untouched</td></tr>
+      <tr><td>Risk</td><td>Sales gap runs another quarter; fifteen stores to retrain later</td><td>Reopens a SteerCo decision on a hunch; hardest to undo</td><td>Falls back to collections at peak if the back is short; needs measuring</td></tr>
+      <tr><td>Evidence behind it</td><td>The case for it is the lack of data</td><td>Legacy stores, and no OTC standard across them</td><td>One store, ten weeks, manager-reported</td></tr>
+    </tbody>
+  </table></div>
+</article>
+
+<!-- 7 -->
+<article class="slide">
+  <p class="eyebrow">Slide 7</p>
+  <h3>Recommendation: the hybrid, Irene's version with four changes</h3>
+  <p class="sf">It captures most of the upside of a rollback without the shopfit, it keeps every design principle, and the people running the stores have already proven it works on a normal day. We formalise what they found.</p>
+  <div class="two">
+    <div>
+      <h4 style="margin-top:0">The four changes to the pharmacy process</h4>
+      <ol class="steps">
+        <li><strong>A dedicated OTC printer</strong> in the back. When the dispenser confirms an OTC-only order it prints there; anything else follows the normal flow. The rule is decided once, at confirmation, so the back always knows which orders are theirs.</li>
+        <li><strong>Counter handover for OTC-only orders.</strong> The pharmacist stays with the customer; the item is brought forward and handed over. Scripts with OTC add-ons stay in the decoupled flow.</li>
+        <li><strong>Collections called from any free counter</strong>, as Irene already does, so people stop piling up around the Hub.</li>
+        <li><strong>The digital OTC planogram on the existing screens</strong>, to answer the display question. Both stores back it; rotating slots can be sold to vendors.</li>
+      </ol>
+    </div>
+    <div>
+      <h4 style="margin-top:0">Why this one</h4>
+      <ul>
+        <li>Nothing in the systems changes. Everything it needs exists in a Dis-Chem pharmacy today.</li>
+        <li>Fifteen stores train before Christmas, the first in five weeks. They can open on this.</li>
+        <li>It keeps the option to roll back later if the data says so, and it keeps decoupling for scripts, which works.</li>
+        <li>It trusts the people working the system. They told us it was not working and found the way through. We are writing it down and measuring it.</li>
+      </ul>
+      <div class="callout"><span class="big">Ask</span>Approve the four changes for the Q4 pharmacy training, and the measurement plan on slide 9. Review in January with three months of data.</div>
+    </div>
+  </div>
+  <p class="foot">Known limit: the hybrid needs a spare pair of hands in the back. The measurement plan tracks how often it falls back to collections at peak and in smaller stores, so the January review can set where it applies.</p>
+</article>
+
+<!-- 8 -->
+<article class="slide">
+  <p class="eyebrow">Slide 8</p>
+  <h3>What is coming anyway, and the friction each piece removes</h3>
+  <p class="sf">Four pieces already on the roadmap take congestion and waiting out of the pharmacy on their own. The hybrid is the bridge to them, not a substitute for them.</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Piece</th><th>What it is</th><th>The friction it removes</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Script scan at the kiosk</strong></td><td>The customer scans their script when they take a ticket. It is captured before they are called.</td><td>The counter conversation starts with the script already open, so hand-in is shorter and the queue behind it moves. Picking can begin before the customer reaches the counter.</td></tr>
+      <tr><td><strong>OCR at the counter</strong></td><td>The script is read by the system rather than typed line by line by the dispenser.</td><td>Cuts the typing that makes a five-item hand-in slow and a one-item OTC capture slower than a repeat. Shorter counter dwell means shorter queues at the Hub.</td></tr>
+      <tr><td><strong>Drop and shop</strong></td><td>Hand in and choose: collect in ten minutes, or come back later today or tomorrow.</td><td>The customer who does not want to shop can leave instead of hovering. Fewer people around the four-seat Hub at peak, and the wait stops being a wait.</td></tr>
+      <tr><td><strong>Express collect</strong></td><td>A ready order is collected by code, without a counter conversation, with the pharmacist a few steps away if wanted.</td><td>Takes the customers who only need a handover out of the collections queue, so the counter is left for the people who need the pharmacist.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout">Each of these moves work earlier or takes a customer out of a queue. None of them changes the rule the hybrid relies on: a one-item OTC customer should not wait twice. When the automated picker arrives in 2027 it removes the need for the runner, and the same rule holds.</div>
+  <p class="foot">In-store digital script submission was deferred from the Melrose MVP to H2 2026; OCR script checkout is in the app rebuild; express collect is in the future-state scripting concept set. Dates are plans, not commitments.</p>
+</article>
+
+<!-- 9 -->
+<article class="slide">
+  <p class="eyebrow">Slide 9</p>
+  <h3>What we measure, and when we come back</h3>
+  <p class="sf">Whichever option the room chooses, these are the pulls that turn a hunch into a decision. Owners as proposed, to be confirmed.</p>
+  <div class="two">
+    <div>
+      <div class="tblwrap" style="margin-top:0"><table style="font-size:13.5px">
+        <thead><tr><th>What we measure</th><th>Source</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>OTC revenue and transactions vs projections, monthly, both stores</td><td>Reporting</td><td>Carol Mazaris</td></tr>
+          <tr><td>Ticket volume and time to serve by OTC vs script, monthly, both stores</td><td>Qmatic and dashboard</td><td>Product manager</td></tr>
+          <tr><td>Share of OTC-only visits served in one stop; how often the Irene path falls back</td><td>Ticketing data</td><td>Business analyst</td></tr>
+          <tr><td>Complaints coded OTC / queue / wait</td><td>Careline (C4C)</td><td>Tamsin's team</td></tr>
+          <tr><td>Hub congestion and walk-outs at peak</td><td>Saturday intercepts, both stores</td><td>Lizette</td></tr>
+          <tr><td>OTC time and motion in a legacy store</td><td>One observer morning</td><td>Tamsin's team</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div>
+      <h4 style="margin-top:0">Research alongside the data</h4>
+      <ul>
+        <li>Structured interviews with the Irene team: what triggers the path, who runs, what breaks at peak.</li>
+        <li>Clarifying questions for the Melrose manager on weekday versus weekend mix, regulars, and leakage to the nearby legacy store.</li>
+        <li>Confirm the time-to-serve baseline with the product manager.</li>
+      </ul>
+      <div class="callout"><span class="big">January</span>Three months of data across both stores and the first Q4 openings. Confirm, adjust or roll back on evidence.</div>
+    </div>
+  </div>
+</article>
+
+<div class="section-head"><span class="section-tag">Appendix</span><h2>For reference</h2></div>
+
+<!-- A1 -->
+<article class="slide">
+  <p class="eyebrow">Appendix 1</p>
+  <h3>Fifteen more stores open before Christmas, the first in five weeks</h3>
+  <p class="sf">Every one of them opens with manual pick-and-pack. Whatever we decide about OTC is what they are trained on.</p>
+  <div class="two">
+    <div class="tblwrap" style="margin-top:0"><table>
+      <thead><tr><th>Opens</th><th>Stores</th><th>Where</th></tr></thead>
+      <tbody>
+        <tr><td>22 Oct</td><td class="num">1</td><td>Rand View</td></tr>
+        <tr><td>29 Oct</td><td class="num">5</td><td>October cluster</td></tr>
+        <tr><td>1 Nov</td><td class="num">1</td><td>Umhlanga Crescent</td></tr>
+        <tr><td>26 Nov</td><td class="num">5</td><td>November cluster</td></tr>
+        <tr><td>3 Dec</td><td class="num">3</td><td>December cluster</td></tr>
+        <tr><td>On hold</td><td class="num">3</td><td>Awaiting landlord handover</td></tr>
+      </tbody>
+    </table></div>
+    <div>
+      <p>The automated picker (ROWA) arrives in 2027 and covers roughly a third of the estate. The other two thirds pick by hand, so the manual OTC process is a permanent process for most stores, and the Q4 openings are where it gets tested and made right.</p>
+      <div class="callout" style="margin:0"><span class="big">15 stores in six weeks</span>Six of them in October. Rand View trains first, so any change to the pharmacy process is needed before mid-October.</div>
+    </div>
+  </div>
+  <p class="foot">Programme rollout plan, Sep 2026. ROWA figures are the team's working numbers and need confirming with the programme.</p>
+</article>
+
+<!-- A2 -->
+<article class="slide">
+  <p class="eyebrow">Appendix 2</p>
+  <h3>Where this could go: the pharmacy in the simplest terms</h3>
+  <p class="sf">Design thinking from the working sessions, parked here for later. Not a decision this pack asks for.</p>
+  <div class="two">
+    <div>
+      <h4 style="margin-top:0">One question at the kiosk</h4>
+      <p>Do you want to talk to a pharmacist, or do you know what you want? Those who know build the order at the kiosk and collect. Those who want advice take a ticket and have one conversation.</p>
+      <h4>One rule at the counter</h4>
+      <p>Is everything on this order within my reach? If yes, it goes now. If not, it needs preparation time and the pharmacist says how long. Decided once, at confirmation.</p>
+    </div>
+    <div>
+      <h4 style="margin-top:0">Why it matters for the roadmap</h4>
+      <p>The rule does not change from store to store. What changes is how much sits within the pharmacist's reach: a shelf in a small store, a shelf plus a runner in a medium store, the whole wall once the automated picker arrives. The hybrid recommended in this pack is the medium-store version of that rule with the shelf still to come.</p>
+      <p>The customer-needs grid behind it (advice versus know-what-I-want; no time versus time to spare) shows every need lands in one of the two paths, and that OTC versus script was only ever a proxy for preparation time.</p>
+    </div>
+  </div>
+</article>
+
+<!-- A3 -->
+<article class="slide">
+  <p class="eyebrow">Appendix 3</p>
+  <h3>Sources, evidence tiers, data still needed</h3>
+  <div class="tblwrap" style="margin-top:0"><table>
+    <thead><tr><th>Source</th><th>Date</th><th>What it gives the pack</th><th>Tier</th></tr></thead>
+    <tbody>
+      <tr><td>SteerCo #1 pack and decision log</td><td>Nov 2025</td><td>The original decisions and their stated rationales</td><td>A · programme record</td></tr>
+      <tr><td>Bigly dispenser principles board</td><td>Feb 2026</td><td>Never turn your back; production-line fulfilment; counter for care</td><td>Design intent</td></tr>
+      <tr><td>Melrose MVP workshops</td><td>Feb 2026</td><td>What launched vs what was deferred</td><td>A · programme record</td></tr>
+      <tr><td>SOTF customer study, n=12</td><td>Jan 2026</td><td>"Waiting is fine, being unsure isn't"</td><td>B · small-n qualitative</td></tr>
+      <tr><td>Training pack as launched</td><td>May-Jul 2026</td><td>The live process spine and queue rules</td><td>A · operating procedure</td></tr>
+      <tr><td>Internal OTC brainstorm</td><td>2 Sep 2026</td><td>Irene workaround, Medirite/Clicks precedent, options</td><td>A as record; store figures relayed</td></tr>
+      <tr><td>Frontline OTC workshop</td><td>10 Sep 2026</td><td>Both stores' managers and hub advisors</td><td>A as record; figures are managers' working numbers</td></tr>
+      <tr><td>Q4 rollout plan</td><td>Sep 2026</td><td>15 stores, 22 Oct to 3 Dec</td><td>A · plan, not outcome</td></tr>
+    </tbody>
+  </table></div>
+  <div class="caveat" style="margin-top:14px"><span class="lbl">Regulatory flag on any screen showing OTC</span>Schedule 0 and 1 medicines may be advertised to the public; Schedule 2 may not, and many OTC lines are Schedule 2. Whether an in-pharmacy display of stock counts as advertising is unresolved. Check before the digital planogram goes live.</div>
+</article>
+
+<p class="footnote">Version 2 of the OTC solve pack (17 Sep 2026). Version 1, with the full future-state design work, is preserved as <code>otc-exec-pack.html</code>. Vault source notes: <code>src-sotf-*</code>, <code>src-bigly-blueprint-board-style</code>, <code>src-dc-store-future-interviews-2026</code>.</p>
+</div>
