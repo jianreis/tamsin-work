@@ -28,7 +28,7 @@ in front and an evidence appendix behind.
 | 0 | The answer | One slide: what we found, what we recommend, what we need from the room | 1 |
 | 1 | Where are we now? | Playback of what SOTF changed in the pharmacy, the two live stores, the store roadmap | 3 |
 | 2 | What have we learned? | What is working (with data), where the friction sits (journey view, sourced), Irene vs Melrose Arch | 3-4 |
-| 3 | Where are we going? | Customer needs map, one future-state journey per need, design principles (the guardrails) | 3-4 |
+| 3 | Where are we going? | The target pharmacy in the simplest terms: one question at the kiosk, one rule at the counter, read across three kinds of store so the roadmap follows from it | 3 |
 | 4 | How do we get there? | Three routes, the option set on impact/effort with headcount and small-manual-store overlays, the recommendation and its measurement plan | 3 |
 | A | Appendix | Sources and evidence tiers, outstanding data pulls, regulatory flag on S2 display | 2 |
 
@@ -72,9 +72,11 @@ Status key: `drafted` (copy below, awaiting Tamsin's read) · `needs input`
 - 2.4 Irene vs Melrose Arch, with the confounds - `drafted`.
 
 ### 3. Where are we going?
-- 3.1 Customer needs map - `to build together`.
-- 3.2 One future-state journey per need (moments level) - `to build together`.
-- 3.3 Design principles for the pharmacy (the guardrails) - `drafted` in outline.
+- 3.1 Two questions decide every pharmacy visit - `drafted`.
+- 3.2 One rule, three kinds of store - `drafted`.
+- 3.3 What has to be true for the rule to work - `drafted`.
+- The customer-needs 2x2 moves to the appendix (A.3) as proof the two
+  paths cover every need.
 
 ### 4. How do we get there?
 - 4.1 Three routes - `drafted` in outline.
@@ -84,6 +86,9 @@ Status key: `drafted` (copy below, awaiting Tamsin's read) · `needs input`
 
 ### Appendix
 - A.1 Sources and evidence tiers - drafted from the vault at build time.
+- A.3 The customer-needs 2x2 (advice vs know-what-I-want; no time vs time
+  to spare) with the four quadrants and which path serves each. Proof of
+  coverage, not a main slide.
 - A.2 Outstanding data pulls and the S2 display flag. Consolidated list:
   (A) pharmacy revenue and transaction volume for both stores, OTC vs
   script, month by month, against original projections; (B) ticket volume
@@ -106,7 +111,9 @@ House rule: titles are proposed, then agreed, before they lock.
 | 2.2 | The friction sits at three points in the journey, and OTC customers hit all three (Tamsin: judge in situ) |
 | 2.3 | The cost to Dis-Chem: FTE, congestion, and an early sales signal |
 | 2.4 | Melrose Arch vs Irene: comparative learnings |
-| 3.3 | Five things the pharmacy must keep true, whatever we change |
+| 3.1 | Two questions decide every pharmacy visit |
+| 3.2 | One rule, three kinds of store |
+| 3.3 | What has to be true for the rule to work |
 | 4.1 | Three routes from here |
 
 ## Draft copy - section 1
@@ -487,18 +494,170 @@ Evidence: [[src-sotf-otc-frontline-workshop-2026]], [[src-sotf-otc-workshop-2026
 the business-park reading, the leakage point and the "one box of Adcodol"
 line are Tamsin's, 2026-09-17, to be checked with Firaz.
 
-## Outline notes - sections 3 and 4 (to draft with Tamsin)
+## Draft copy - section 3
 
-### 3. Where we are going
-Needs raw material already in the vault: advice-seeker / prefer the
-pharmacist / pure self-service; meds-now vs meds-later; sick vs not-sick
-(the urgently sick customer will not roam or use a kiosk, and is the one the
-store can lose); pop-in vs happy-to-shop; frequent dispensary visitors do
-not shop on every visit; "waiting is fine, being unsure isn't". Principles
-(3.3): never turn your back on the customer; never trade off the urgently
-sick customer; keep the pharmacy's health authority visible; the script flow
-stays untouched; designed for the manual store, because two thirds of the
-estate will keep picking by hand after ROWA.
+Purpose of the section, agreed 2026-09-17: describe the target pharmacy so
+simply that the roadmap decisions in section 4 follow from it. The tension
+it resolves: an automated picker (ROWA) can deliver anything at the counter,
+while a manual store has to decide what "at the counter" covers. The answer
+is a rule with a dial, and the dial is set by data.
+
+Decisions carried in from the working session:
+- One question at the kiosk, one rule at the counter. Nothing else on the
+  main slides.
+- The rule is decided once, at order confirmation, from facts the dispenser
+  can see. No "wait and see" at the end of the conversation.
+- The default threshold is the shelf: what is within the pharmacist's reach
+  goes now; what is behind the wall needs preparation time and gets a time.
+  The threshold widens only when data earns it.
+- One collections counter for everything that needs preparation. No express
+  counter, no second collection point, in manual stores.
+- In a ROWA store the machine makes the wall "within reach", so the same
+  rule hands almost everything over at the counter, and a self-service kiosk
+  can release a known order directly.
+- The customer-needs 2x2 is the proof that two paths cover every need. It
+  sits in the appendix.
+
+### 3.1 Two questions decide every pharmacy visit
+
+Standfirst: The future pharmacy asks the customer one question at the kiosk
+and the pharmacist one question at the counter. Everything else is a
+mechanism for making the answers true.
+
+Left, the kiosk question: Do you want to talk to a pharmacist, or do you
+know what you want?
+
+- Talk to a pharmacist. Take a ticket. Scan your script at the kiosk if you
+  have one, so it is open in front of the pharmacist when you are called.
+  One conversation covers the script, generics, anything else you need, and
+  how to take it.
+- I know what I want. Build the order at the kiosk or on your phone: repeats
+  from your profile, over-the-counter items from a categorised list. Your
+  details are captured there, so nobody asks for them again. Collect at the
+  collections counter when it is ready. Pharmacy-only medicines are still
+  handed over by pharmacy staff, as the law requires; the conversation is
+  the part you skip, not the pharmacist.
+
+Right, the counter rule: Is everything on this order within my reach?
+
+- Yes. It goes now. The pharmacist reaches for it, explains it, hands it
+  over. One stop.
+- No. It needs preparation time. The pharmacist says how long, and the
+  customer collects it at the collections counter, or roams, or leaves and
+  comes back.
+
+The rule is decided once, when the order is confirmed, from what the
+pharmacist can see: what is on the shelf behind them, what is in stock, and
+whether anything needs a medical scheme authorisation. It never changes
+mid-conversation, so the back always knows which orders are theirs.
+
+Callout: What is behind me goes now. What is not gets a time.
+
+Second callout, smaller: the time is the promise. "Waiting is fine, being
+unsure isn't" was the clearest finding of the January customer study. A
+stated wait, kept, beats a fast wait nobody can see.
+
+Footnote: for scripts this is the pharmacy as designed. Decoupling still
+happens; it happens after the pharmacist knows what the order is, instead
+of at the ticket before anyone does.
+
+Evidence: [[src-dc-store-future-interviews-2026]], [[src-sotf-otc-frontline-workshop-2026]],
+[[src-sotf-otc-workshop-2026]], [[src-reg-consolidated-schedules-2025]]
+(pharmacy-only handover for S1/S2).
+
+### 3.2 One rule, three kinds of store
+
+Standfirst: The rule does not change from store to store. What changes is
+how much sits within the pharmacist's reach, and that is what the roadmap
+is really deciding.
+
+Table, three columns.
+
+| | Small manual store | Medium manual store (Melrose Arch, Irene, the Q4 stores) | Automated picker store (ROWA, from 2027) |
+|---|---|---|---|
+| Within reach | A curated shelf of the top OTC lines behind the pharmacist | The same shelf, plus in-stock small orders brought forward from the back when the data shows it can be done in under two minutes | Everything the machine holds: the wall itself is within reach |
+| Goes now | Shelf items only | Shelf items; then small repeats and OTC as the fast path earns it | Almost every order, delivered to the counter in seconds |
+| Gets a time | Everything behind the wall | Everything else | Only genuine waits: scheme authorisation, compounding, out of stock |
+| Collections | One collections counter | One collections counter | One collections counter; a known order built at the kiosk can also be released directly by the machine |
+| Staff it needs | No spare hands. The pharmacist is the picker | Roughly one picker per dispenser to run the fast path | Fewer pickers; the machine picks |
+
+Body, short: two thirds of the estate will pick by hand for the foreseeable
+future, so the medium manual store is the one to get right. The Q4 openings
+are fifteen chances to do that. The automated store does not need a
+different process. It needs the same rule with a much wider shelf.
+
+Callout: The shelf is the dial. The planogram decides what "now" covers.
+Data decides when to widen it.
+
+Data still needed: SKU-level OTC volume curve from Unisolv (what share of
+OTC-only transactions the top 100 lines cover); at Irene, per order: line
+count and item type against pick time and against whether the item was
+handed over at the counter or fell back to collections; how often the Irene
+fast path falls back today.
+
+Evidence: [[src-sotf-otc-frontline-workshop-2026]] (staffing ratio, small
+stores), [[src-sotf-otc-workshop-2026]] (ROWA scale, Pareto shelf history,
+kiosk basket), [[src-sotf-rollout-plan-q4-2026]].
+
+### 3.3 What has to be true for the rule to work
+
+Standfirst: Six things make the rule real. Three we can do in the Q4 stores.
+Three depend on systems that are already on the roadmap, and the rule tells
+us why they matter.
+
+Left, in the Q4 stores:
+
+1. A shelf behind the pharmacist, planogrammed from the volume data,
+   screened from the queue. It is the threshold, the display that prompts
+   the second sale, and the visible cue of a pharmacy.
+2. Route set at confirmation. The order carries "now" or "collect" from the
+   moment it is confirmed, on the label and on the dashboard, so the back
+   never receives an order the counter is also handling.
+3. One collections counter, called from any free counter when the store is
+   busy, as Irene already does.
+
+Right, on the systems roadmap:
+
+4. Orders captured at the kiosk. A known-item order built before the
+   customer is called is preparation moved earlier, so more orders are ready
+   sooner. Needs the kiosk basket to land in the dispensing system.
+5. Payment at the pharmacy counter. Until then, "one stop" is still two
+   stops. Currently planned for 2028; the rule makes the case to bring it
+   forward.
+6. Line-by-line release in Bricks. Today the whole script is dispensed as
+   one order, so picking starts only after the conversation ends. Releasing
+   each line as the pharmacist confirms it is what lets "now" grow beyond
+   the shelf.
+
+Callout, the guardrail this pack asks the Steer Group to adopt: decoupling
+at the counter is data-driven. The default is the shelf. Anything wider has
+to be earned by measured pick times, store by store.
+
+Footnote: the earlier guardrails still hold and sit beneath this one: never
+turn your back on the customer; never trade off the urgently sick customer;
+keep the pharmacy's health authority visible; the script flow for orders
+that need preparation is unchanged.
+
+Evidence: [[src-sotf-otc-workshop-2026]] (Unisolv routing, kiosk basket),
+[[src-sotf-melrose-workshops-2026]] (payment at dispensary 2028, digital
+OTC shelves deferred), [[src-sotf-otc-frontline-workshop-2026]] (collections
+from any counter), [[src-bigly-blueprint-board-style]].
+
+### Appendix A.3 The customer-needs 2x2 (proof of coverage)
+
+Axes: "I want advice" vs "I know what I want"; "the pharmacy is my whole
+visit, get me out" vs "the pharmacy is one stop, I'll look around".
+
+| | No time | Time to spare |
+|---|---|---|
+| I know what I want | One-box OTC, one-item repeat, the pop-in. Kiosk order, collect, gone. Shelf items go now if they see a pharmacist | The monthly chronic run. Kiosk order, roam or leave, collect later. Decoupling as designed |
+| I want advice | The sick person, the parent with a feverish child. Pharmacist now, shelf items handed over in the conversation, never sent to roam | "What should I take for sinus?" The advice-and-discovery customer. Pharmacist, shelf as display, second item prompted |
+
+Every need lands in one of the two paths. Product class (OTC vs script)
+never appears on the axes, which is the point: it was a proxy for
+preparation time, and the shelf rule uses preparation time directly.
+
+## Outline notes - section 4 (to draft with Tamsin)
 
 ### 4. How we get there
 Three routes: (1) measure only, as the two-store experiment matures, with a
