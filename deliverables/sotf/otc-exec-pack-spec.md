@@ -60,14 +60,16 @@ Status key: `drafted` (copy below, awaiting Tamsin's read) · `needs input`
   still the brainstorm's working figure (first store 2027, ~100-107 stores).
 
 ### 2. What have we learned?
-- 2.1 What is working - `needs data` (cost to serve vs baseline, Tamsin to
-  source; frontline wins drafted from the transcripts).
+- 2.1 What is working - `drafted`. Time-to-serve figures are Tamsin's
+  working numbers (15 min legacy, ~5 min now); **Tamsin to confirm the actual
+  numbers with the product manager before the pack goes out.**
 - 2.2 Where the friction sits: the journey, two lanes, sourced pins -
-  `needs input` (Tamsin: the non-OTC issues to include) then draft.
+  `drafted`. OTC frictions only (Tamsin, 2026-09-17: non-OTC issues left out
+  so as not to muddy the waters).
 - 2.3 What it costs Dis-Chem: staffing, congestion, early sales signal -
-  `needs data` (Melrose OTC actuals vs projections; Carol's visit-ID
-  reporting). Manager figures drafted as working numbers.
-- 2.4 Irene vs Melrose Arch, with the confounds - `drafted` in outline.
+  `drafted` with manager figures as working numbers; `needs data` to firm
+  up (Melrose OTC actuals vs projections; Carol's visit-ID reporting).
+- 2.4 Irene vs Melrose Arch, with the confounds - `drafted`.
 
 ### 3. Where are we going?
 - 3.1 Customer needs map - `to build together`.
@@ -93,7 +95,7 @@ House rule: titles are proposed, then agreed, before they lock.
 | 1.1 | Three changes to the pharmacy, and the problem each one solved |
 | 1.2 | Two stores are live. They run the pharmacy two different ways |
 | 1.3 | Fifteen more stores open before Christmas, the first in five weeks |
-| 2.1 | Scripts are cheaper to serve, and the frontline wants to keep decoupling |
+| 2.1 | A five-item script took fifteen minutes. It now takes about five |
 | 2.2 | The friction sits at three points in the journey, and OTC customers hit all three |
 | 2.3 | The cost to Dis-Chem: hands, congestion, and an early sales signal |
 | 2.4 | Irene and Melrose Arch learned different things, for reasons we can name |
@@ -234,55 +236,191 @@ need confirming with the programme.
 
 Evidence: [[src-sotf-rollout-plan-q4-2026]], [[src-sotf-otc-workshop-2026]].
 
-## Outline notes - sections 2 to 4 (to draft with Tamsin)
+## Draft copy - section 2
 
-### 2.1 What is working
-Anchor: cost to serve for scripted items, down against the pre-SOTF baseline
-(Tamsin to source the figure and the baseline definition). Frontline wins
-beside it: local doctors bringing four or five scripts are impressed because
-earlier scripts are picked while later ones are still being dispensed;
-customer friction at Melrose has fallen sharply by month four as return
-customers learn the flow; a customer who felt he waited 30 minutes had waited
-44 seconds plus 10 seconds to sign; hidden prices make premium upsell easier.
-Both pharmacy managers want to keep decoupling for scripts.
+### 2.1 A five-item script took fifteen minutes. It now takes about five
 
-### 2.2 Where the friction sits
-Two-lane journey (script customer / OTC-only customer) over the same five
-stages, friction pins at the stage where they land, each pin tagged with its
-source type: pharmacy manager, hub advisor, careline complaint, mystery shop,
-Jan 2026 customer study. A third lane carries the Dis-Chem-side cost at each
-stage. Known OTC pins: the second queue for a one-item purchase; "I can't
-see it, so I don't know its name" walk-outs; perceived wait far longer than
-measured wait because the journey is A to B to C and the work is invisible;
-queue-jump perception when an OTC ticket collects before a script ticket;
-Hub congestion when roughly 80% of Irene customers will not shop and hover
-instead; dispense-counter dwell slowing the submission queue where OTC is
-handled at the counter; the post-operative husband in the car whose wife was
-told to "go shop". Non-OTC pins already in the vault, for Tamsin to confirm:
-payment still at the front till; the ten-minute late rule; manual A-tickets
-for online collections; grouped scripts on manual suffixes; no direct
-WhatsApp number; missed digital tickets and wrong mobile numbers.
+Standfirst: The pharmacy was redesigned to serve scripts faster and better.
+On the evidence so far, it does, and the people running it want to keep it
+that way.
 
-### 2.3 What it costs Dis-Chem
-Staffing: about one picker per dispenser, stated independently by both
-managers; small stores with three staff cannot split roles; Irene needs eight
-on a Saturday and the figures justify six. Congestion: the four-seat Hub
-fills even on quiet days. Sales: Melrose OTC turnover runs R50-100k a month
-below Blueberry Square, a lower-LSM store of similar size, which its manager
-puts down to the missing display; six in ten one-item buyers used to see a
-second item they wanted. Counter-signal: no visible prices, more premium
-upsell. All three are working numbers from the frontline until Carol
-Mazaris's visit-ID reporting and the Melrose actuals against Tanya Ponter's
-projections are pulled.
+Left, the headline number (callout): before Store of the Future, a new
+script with five items took about 15 minutes to dispense at the counter, with
+the customer standing there for all of it. In the new pharmacy the average
+time to serve at the dispensary is about 5 minutes.
 
-### 2.4 Irene vs Melrose Arch
-What each learned, then the three confounds: maturity (Melrose opened at
-72:28 OTC-heavy and is now about 45:55, so Irene's 60-70% OTC is partly a
-new-store effect), staffing (Irene ran six when it needs eight at peak), and
-tech parity (Melrose lacks Irene's collection call-out flow). Peak behaviour
-at both: long new scripts drown the shared queue; Irene's fast path helps
-rather than hurts at peak according to its manager, softer than the earlier
-account.
+Body, how the time was won: the customer hands in and walks away, the
+picking happens in the back as a production line, and the counter is used
+only for the two conversations that need a pharmacist, handing in and
+handing over. A long script no longer holds up everyone behind it.
+
+Right, what the stores say is working, each in one line:
+
+- Both pharmacy managers want to keep decoupling for scripts. Irene's
+  manager: "we'd rather keep the patients we're getting".
+- Local doctors who bring four or five scripts at once are impressed,
+  because the first scripts are picked while the later ones are still being
+  captured.
+- Friction fades as customers learn. At Melrose Arch, four months in, return
+  customers ticket themselves without help, and the daily "why is it like
+  this?" has largely stopped.
+- The process is faster than it feels. A Melrose customer who complained of
+  a 30-minute wait had waited 44 seconds for the pick and 10 seconds to sign.
+- Fewer visible prices has made premium advice easier to give, and to take.
+  Melrose has sold more of a R394 antihistamine than its manager ever has,
+  because the cheaper anchor is not sitting beside it.
+
+Footnote: time-to-serve figures are the team's working numbers, to be
+confirmed against the product manager's data before this pack is presented.
+
+Evidence: time and motion baseline (Tamsin, to confirm with the product
+manager; consistent with the ~15-minute figure recalled in
+[[src-sotf-otc-workshop-2026]]); [[src-sotf-otc-frontline-workshop-2026]].
+
+### 2.2 The friction sits at three points in the journey, and OTC customers hit all three
+
+Standfirst: Run the same five steps for a script customer and for someone
+buying one box of painkillers, and the friction lands in different places.
+For the script customer the process fits the wait. For the OTC customer the
+wait is the process.
+
+Visual: two lanes over the same five stages. Top lane, a script customer;
+bottom lane, an OTC-only customer. Friction pins sit at the stage where they
+happen. Each pin carries a small source tag. A short third lane beneath
+carries what Dis-Chem pays at that stage.
+
+Stages: Ticket at the Hub -> Roam -> Drop-off counter -> Roam -> Collections
+counter -> Pay at front till.
+
+Script lane pins (few, so the contrast reads):
+
+- Roam: long new scripts (one had 24 items) hold the queue at peak for
+  everyone behind them. Source: Irene dispensary manager.
+- Collections: a customer whose OTC ticket P006 is called before their
+  script ticket P005 asks the hub advisor why. Source: Melrose hub advisor.
+
+OTC lane pins:
+
+- Ticket at the Hub: a customer who came for one item is asked to take a
+  ticket and wait, when every other Dis-Chem hands it over. Source: both
+  dispensary managers; Careline complaint.
+- Ticket at the Hub: "I can't see it, so I don't know what it's called."
+  With no stock on view, customers who know the box but not the name give
+  up and leave. Source: Irene hub advisor.
+- Roam: about 80% of Irene's customers do not want to shop. They hover
+  around the four-seat Hub and block the aisles. Source: Irene dispensary
+  manager.
+- Roam: the customer who cannot roam. A woman collecting for her husband,
+  waiting in the car after an operation, was told repeatedly to "go shop".
+  Source: Careline complaint (24 points).
+- Drop-off counter: with no product to point at, the pharmacist cannot show
+  two options side by side or jog a memory. Advice becomes a description.
+  Source: both stores.
+- Roam, second time: the wait feels far longer than it is, because the
+  customer has moved A to B to C and cannot see anyone working on their
+  order. "If I can't see you, I can't put pressure on you." Source: Melrose
+  dispensary manager.
+- Collections counter: a second queue, shared with scripts, for an item that
+  took under a minute to pick. Source: both stores; Melrose mystery shop.
+- Pay at front till: a third stop, at a till the customer had to walk past
+  to get here. Source: launch process; payment at the dispensary planned
+  for 2028.
+
+Dis-Chem lane (one line per stage): Hub congestion at peak; hub advisors
+spending their time explaining the process; dispenser and picker time on a
+one-item order that legacy served in seconds; a missed second sale where a
+visible shelf would have prompted it.
+
+Callout: most of this comes from the people running the two stores, plus
+Careline complaints and one mystery shop. Customer measurement is still to
+come, and the pack says so.
+
+Footnote on evidence: pharmacy managers and hub advisors of both stores
+(10 Sep workshop); Careline complaints; mystery shops by the team; the
+Jan 2026 customer study for "waiting is fine, being unsure isn't".
+
+Evidence: [[src-sotf-otc-frontline-workshop-2026]], [[src-sotf-otc-workshop-2026]],
+[[src-sotf-training-launch-2026]], [[src-dc-store-future-interviews-2026]].
+
+### 2.3 The cost to Dis-Chem: hands, congestion, and an early sales signal
+
+Standfirst: The OTC friction has a cost to the customer and a cost to the
+business. Three show up already, and two of them come with numbers we still
+need to firm up.
+
+Three columns.
+
+Hands. Running submission, picking and collection as separate jobs needs
+roughly one picker in the back for every dispenser at the front. Both
+pharmacy managers arrived at that ratio independently. Overweight the front
+and the queue moves to pick-and-pack, where the customer cannot see it, and
+trust drops. Irene needs eight on a Saturday and its takings justify six.
+Melrose opened with nine, twice a conventional store of its turnover, and is
+stress-testing at five or six. Small stores, some with three permanent staff
+and under R1m a month, cannot split roles at all.
+
+Congestion. The four-seat Health Hub fills even on quiet days. On a busy
+Saturday two long scripts are enough to fill the shared queue, and the hub
+advisors spend their shift steering people rather than serving them.
+
+Sales. Melrose Arch's manager benchmarks his OTC turnover against two stores
+of similar size that opened a month earlier. Blueberry Square, in a lower
+income area where OTC sales would normally be lower, takes R50,000 to
+R100,000 a month more in OTC than Melrose. He puts the gap down to the
+missing display, not the process: "six out of every ten patients who come to
+buy one item will see a second item on the shelf". Against that, hidden
+prices have made premium advice easier to sell.
+
+Callout: R50-100k a month. The OTC turnover gap between Melrose Arch and a
+lower-income comparator store, as reported by the Melrose dispensary
+manager.
+
+Footnote: all three figures are the managers' own working numbers. The pack
+asks for two pulls to confirm them: Melrose OTC actuals against the
+programme's original projections, and visit-level reporting for both stores.
+
+Evidence: [[src-sotf-otc-frontline-workshop-2026]], [[src-sotf-otc-workshop-2026]].
+
+### 2.4 Irene and Melrose Arch learned different things, for reasons we can name
+
+Standfirst: One store kept to the process and one changed it. Before we
+read that as two verdicts, three differences between the stores explain a
+lot of it.
+
+Left, what each store learned.
+
+Melrose Arch: the process holds if you hold to it. Friction decays as
+customers learn. The cost is in OTC sales and in customer perception of the
+wait, not in the queue itself. Its manager's verdict: keep the process, fix
+the display.
+
+Irene: one-item customers waiting six or seven minutes behind long new
+scripts, complaints of "queuing twice", and a Hub full of people who did not
+want to shop. The team built the OTC-only counter path in the first weeks
+and reports no OTC complaints since. Its manager's verdict: at peak the fast
+path helps, because it clears the dashboard and the Hub; the residual
+Saturday chaos is understaffing and long new scripts, not OTC.
+
+Right, three reasons the stores differ, before anyone concludes that
+Irene's customers are simply different.
+
+1. Age of store. New stores open OTC-heavy and drift toward scripts as their
+   repeat base builds. Melrose opened at about 72% OTC and is now about 45%.
+   Irene is at 60-70% OTC and its manager expects the same drift. Part of
+   Irene's OTC pressure is a new-store effect that Melrose has already
+   grown through.
+2. Staffing. Irene ran six on Saturdays when the process needs eight.
+   Melrose opened with nine.
+3. Technology. Irene has a collections call-out flow that Melrose still
+   lacks. The Melrose hub advisor's phrase: "Melrose is now the forgotten
+   child." The two stores are not running identical systems.
+
+Callout: Melrose Arch opened at 72:28 OTC to scripts and is now about 45:55.
+A store's mix in its first months is not its mix at maturity.
+
+Evidence: [[src-sotf-otc-frontline-workshop-2026]], [[src-sotf-otc-workshop-2026]].
+
+## Outline notes - sections 3 and 4 (to draft with Tamsin)
 
 ### 3. Where we are going
 Needs raw material already in the vault: advice-seeker / prefer the
