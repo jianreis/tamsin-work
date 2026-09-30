@@ -21,6 +21,7 @@ journey, and competitive landscape. Populated in Wave 1 (2026-06-13).
 
 ### Store of the Future (SOTF) programme
 - [[wiki/dischem/store-of-the-future-programme|SOTF — programme overview]] — hub for the live SOTF programme: Better Health ambitions (verified against programme docs), timeline Aug 2025 → Melrose Arch launch ~May 2026 (+ Irene), the "T" and per-area design decisions with rationales, MVP vs deferred scope, research-vs-business assessment, live workarounds as evolution targets. Six `src-sotf-*` sources ingested 2026-09-01; still missing: early results, post-launch customer feedback.
+- [[wiki/dischem/in-store-payments-and-claims|In-store payments and claims]] — SOTF payments discovery (Sep 2026): where customers pay per area, money now vs money later, till-to-recon steps, payer taxonomy with likely finance labels, friction hypotheses. Draft; backstage to confirm with retail finance.
 
 ### Voice of customer, complaints & sentiment (2025–26 intake)
 - [[wiki/dischem/pharmacy-complaints-pain-points|Complaints — segmented pain points (Jan 2025 C4C)]] — 5 pain clusters (chronic re-order, delivery failure, dispensing accuracy, service/ownership, billing transparency) mapped to the journey spine + strategic/UX pillars; built to feed the future-state journey's pain lane.

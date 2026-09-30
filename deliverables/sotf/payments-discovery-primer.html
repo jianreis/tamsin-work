@@ -1,0 +1,387 @@
+<title>Dis-Chem Payments Primer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: one reading column; the rand's journey as a stepped track with a "now / later" split; SOTF pack tokens reused. */
+  :root{
+    --ground:#f7f6f2; --sheet:#ffffff; --ink:#1c2420; --ink-soft:#4c5a52; --ink-faint:#7d8a82;
+    --line:#dcdfd8; --green:#0a7a44; --green-deep:#0b5c36; --green-tint:#e7f2ea;
+    --gold:#b8900f; --gold-tint:#faf3d9; --warn:#b4552a; --warn-tint:#f8ece4;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,monospace;
+    --display:'Archivo','Arial Narrow',Arial,sans-serif;
+    --body:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#161b18; --sheet:#1e2521; --ink:#e8ece9; --ink-soft:#b2bdb6; --ink-faint:#84908a;
+      --line:#37403a; --green:#4cc084; --green-deep:#7ad3a4; --green-tint:#22352b;
+      --gold:#d9b53a; --gold-tint:#37311c; --warn:#e08a5e; --warn-tint:#3a2a20; color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#161b18; --sheet:#1e2521; --ink:#e8ece9; --ink-soft:#b2bdb6; --ink-faint:#84908a;
+    --line:#37403a; --green:#4cc084; --green-deep:#7ad3a4; --green-tint:#22352b;
+    --gold:#d9b53a; --gold-tint:#37311c; --warn:#e08a5e; --warn-tint:#3a2a20; color-scheme:dark;
+  }
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;margin:0}
+  .wrap{max-width:960px;margin:0 auto;padding-block:40px 96px;padding-inline:20px}
+  p{max-width:68ch;margin:0 0 12px}
+  strong{font-weight:600}
+  a{color:var(--green)}
+  a:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+  .masthead{border-bottom:3px solid var(--green);padding-bottom:24px;margin-bottom:28px}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin:0 0 10px}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(32px,6vw,52px);line-height:1.03;letter-spacing:-.015em;margin:0 0 14px;text-wrap:balance}
+  .standfirst{font-size:18px;color:var(--ink-soft);max-width:64ch}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chip{font-family:var(--mono);font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);background:var(--sheet)}
+
+  nav.contents{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 36px;font-size:14px}
+  nav.contents a{text-decoration:none;color:var(--ink-soft);border-bottom:1px solid var(--line)}
+  nav.contents a:hover{color:var(--green)}
+
+  section{margin:0 0 52px}
+  h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,3.6vw,32px);line-height:1.1;margin:0 0 6px;text-wrap:balance}
+  .secnum{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 6px}
+  h3{font-family:var(--display);font-weight:700;font-size:19px;margin:0 0 6px}
+  .lede{font-size:17px;color:var(--ink-soft);margin-bottom:20px}
+
+  /* the big idea */
+  .idea{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0 8px}
+  .idea > div{background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:18px;min-width:0}
+  .idea .now{border-top:4px solid var(--green)}
+  .idea .later{border-top:4px solid var(--gold)}
+  .tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 6px}
+  .now .tag{color:var(--green)} .later .tag{color:var(--gold)}
+  .idea p{margin:0;font-size:15px}
+
+  /* where customers pay */
+  .areas{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px}
+  .area{background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:16px;min-width:0;display:flex;flex-direction:column;gap:8px}
+  .area h3{font-size:17px;margin:0}
+  .area p{font-size:14px;margin:0;color:var(--ink-soft)}
+  .area .pays{font-family:var(--mono);font-size:12px;color:var(--ink);background:var(--green-tint);border-radius:4px;padding:6px 8px;margin-top:auto}
+
+  /* the journey track */
+  ol.track{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:0;counter-reset:step}
+  ol.track > li{display:grid;grid-template-columns:44px 1fr;gap:16px;position:relative;padding-bottom:22px}
+  ol.track > li::before{counter-increment:step;content:counter(step);font-family:var(--display);font-weight:800;font-size:18px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:var(--sheet);grid-row:1 / span 2}
+  ol.track > li:not(:last-child)::after{content:"";position:absolute;left:19px;top:44px;bottom:2px;width:2px;background:var(--line)}
+  ol.track h3{margin:6px 0 4px}
+  ol.track p{font-size:15px;margin:0 0 6px}
+  .split{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .pill{font-family:var(--mono);font-size:11.5px;padding:3px 9px;border-radius:999px;border:1px solid var(--line)}
+  .pill.now{background:var(--green-tint);border-color:transparent;color:var(--green-deep)}
+  .pill.later{background:var(--gold-tint);border-color:transparent;color:var(--ink)}
+  .pill.hurt{background:var(--warn-tint);border-color:transparent;color:var(--warn)}
+
+  /* players */
+  .players{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .players > div{min-width:0}
+  .plist{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+  .plist li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .plist b{font-weight:600;display:block}
+  .plist span{color:var(--ink-soft);font-size:14px}
+  .unsure{font-family:var(--mono);font-size:11px;color:var(--gold);margin-left:4px;white-space:nowrap}
+
+  /* tables */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--sheet)}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:14.5px}
+  th,td{text-align:left;vertical-align:top;padding:11px 14px;border-bottom:1px solid var(--line)}
+  th{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;background:var(--ground)}
+  tr:last-child td{border-bottom:0}
+  td.label{font-family:var(--mono);font-size:13px;color:var(--green-deep)}
+
+  /* friction */
+  .friction{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .fr{background:var(--sheet);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:4px;padding:14px 16px;min-width:0}
+  .fr h3{font-size:16px;margin:0 0 4px}
+  .fr p{font-size:14px;margin:0;color:var(--ink-soft)}
+  .fr .who{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--warn);margin:0 0 6px}
+
+  /* glossary */
+  dl.gloss{display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:0;margin:0;border-top:1px solid var(--line)}
+  dl.gloss dt,dl.gloss dd{padding:9px 0;border-bottom:1px solid var(--line);margin:0;font-size:15px}
+  dl.gloss dt{font-weight:600;padding-right:14px}
+  dl.gloss dd{color:var(--ink-soft)}
+
+  /* questions */
+  ol.qs{margin:0;padding-left:22px;display:grid;gap:10px}
+  ol.qs li{font-size:15.5px;max-width:70ch}
+  ol.qs li span{display:block;color:var(--ink-faint);font-size:13.5px}
+  .qgroup{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin:22px 0 10px}
+
+  .note{background:var(--gold-tint);border-radius:6px;padding:14px 16px;font-size:14px}
+  .note p{margin:0 0 6px} .note p:last-child{margin:0}
+  .sources{font-size:13.5px;color:var(--ink-soft)}
+  .sources li{margin-bottom:4px}
+  code{font-family:var(--mono);font-size:.9em}
+
+  @media (max-width:820px){ .areas{grid-template-columns:1fr 1fr} }
+  @media (max-width:620px){
+    .idea,.players,.friction,.areas{grid-template-columns:1fr}
+    dl.gloss{grid-template-columns:1fr}
+    dl.gloss dt{border-bottom:0;padding-bottom:0}
+  }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="kicker">Store of the Future · Payments discovery · Prep for 1 Oct 2026</p>
+    <h1>How money moves at Dis-Chem</h1>
+    <p class="standfirst">A plain-language picture to take into the session with retail finance: how a customer pays or claims, how that money gets into the books, who is involved, and the kinds of payer the team deals with. It's a starting map built from desk research and the SOTF launch documents. The team will correct it tomorrow, and that's the point.</p>
+    <div class="chips">
+      <span class="chip">Front shop · Dispensary · Clinic · Cover</span>
+      <span class="chip">Employee lens</span>
+      <span class="chip">Hypotheses to test</span>
+    </div>
+  </header>
+
+  <nav class="contents" aria-label="Contents">
+    <a href="#idea">The one idea</a>
+    <a href="#process">1 · End to end</a>
+    <a href="#players">2 · The players</a>
+    <a href="#payers">3 · Who pays</a>
+    <a href="#friction">Where it hurts</a>
+    <a href="#words">Words you'll hear</a>
+    <a href="#questions">Questions for tomorrow</a>
+  </nav>
+
+  <section id="idea">
+    <p class="secnum">Start here</p>
+    <h2>Every sale splits into money now and money later</h2>
+    <p class="lede">If you keep one thing in your head tomorrow, keep this. It explains why finance has a whole team for medical aid and debtors, and why "recon" takes so much effort.</p>
+    <div class="idea">
+      <div class="now">
+        <p class="tag">Money now</p>
+        <p>What the customer pays at the till: card, cash, a Mobicred code, a voucher. The bank pays it into Dis-Chem's account within a day or two. It's fairly certain and easy to check.</p>
+      </div>
+      <div class="later">
+        <p class="tag">Money later</p>
+        <p>What a medical aid (or an insurer) has <em>promised</em> to pay. It comes weeks later in a batch, with a statement listing which claims it covers. Sometimes less arrives than was promised. Someone has to spot that and chase it.</p>
+      </div>
+    </div>
+    <p>A cash customer buying sunscreen is all "now". A medical aid member collecting chronic medicine is mostly "later", plus a small "now" if there's a co-payment. The clinic and the dispensary produce most of the "later".</p>
+  </section>
+
+  <section id="process">
+    <p class="secnum">Part 1</p>
+    <h2>End to end: from the customer to a reconciled book</h2>
+    <p class="lede">First, where customers pay today in a Store of the Future. Then the five steps every rand goes through after that.</p>
+
+    <div class="areas">
+      <div class="area">
+        <h3>Front shop</h3>
+        <p>Scan and pay. The Better Rewards discount comes off instantly at the till: 10%, plus extra for paying with a linked Capitec card or after a pharmacy purchase.</p>
+        <p class="pays">Pays at: front-shop till</p>
+      </div>
+      <div class="area">
+        <h3>Dispensary</h3>
+        <p>The pharmacy asks the medical aid electronically and gets an answer in seconds: paid, paid with a co-payment, or rejected. Cash patients pay the regulated medicine price.</p>
+        <p class="pays">Pays at: front-shop till (a Magna bag means "pay", a brown bag means nothing due)</p>
+      </div>
+      <div class="area">
+        <h3>Clinic</h3>
+        <p>The nurse consult and the medicine are two separate payments. The cash price is R99 for a nurse consult, R275 with a video doctor. Medical aid can be claimed instead.</p>
+        <p class="pays">Pays at: Health Hub or till, then medicine at the till</p>
+      </div>
+      <div class="area">
+        <h3>Cover</h3>
+        <p>The advisor sells Dis-Chem Health (medical insurance, gap cover) and Dis-Chem Life (life, funeral). Premiums then run by monthly debit order.</p>
+        <p class="pays">Pays at: Hub or advisor by card; then debit order</p>
+      </div>
+    </div>
+    <p style="margin-top:14px;font-size:14px;color:var(--ink-soft)">Worth knowing: SOTF originally wanted payment at the dispensary. It was pushed out to 2028, waiting on a POS system update, so today's customer finishes at the pharmacy and then queues again at the front to pay. Online is different again: Dis-Chem Online doesn't claim from medical aid, so those customers pay and claim back themselves.</p>
+
+    <ol class="track">
+      <li>
+        <h3>The customer pays or claims</h3>
+        <div>
+          <p>At the till, each sale records <strong>how</strong> it was paid: card, cash, Mobicred code, gift card, Discovery Miles voucher. For medicine, the pharmacy system has already sent the claim to the medical aid through a middleman called a <strong>switch</strong>, and the switch's answer says how much the scheme will pay and how much the member owes.</p>
+          <div class="split"><span class="pill now">member's share → paid now</span><span class="pill later">scheme's share → owed later</span></div>
+        </div>
+      </li>
+      <li>
+        <h3>The store closes the day</h3>
+        <div>
+          <p>Each till is "cashed up": what the system says was taken is checked against what's actually in the drawer and the card machine. Cash goes to the bank via a smart safe or a cash-in-transit collection. Any difference is flagged to head office.</p>
+          <div class="split"><span class="pill now">cash and card totals</span></div>
+        </div>
+      </li>
+      <li>
+        <h3>The bank pays in card money</h3>
+        <div>
+          <p>The card machine sends the day's batch to Dis-Chem's bank (the "acquirer"). It pays the money into Dis-Chem's account a day or two later, minus a small fee. Mobicred, vouchers and Discovery Miles each settle through their own route.</p>
+          <div class="split"><span class="pill now">1–2 days</span></div>
+        </div>
+      </li>
+      <li>
+        <h3>The medical aids pay in batches</h3>
+        <div>
+          <p>By law a scheme must pay within 30 days of getting a claim. It pays many claims in one go and sends a <strong>remittance</strong> listing what each payment covers. If a claim is wrong, the scheme must say why within 30 days, and Dis-Chem has 60 days to fix and resend it. Claims older than about four months can be refused.</p>
+          <div class="split"><span class="pill later">up to 30 days</span><span class="pill hurt">short payments and rejections</span></div>
+        </div>
+      </li>
+      <li>
+        <h3>Finance reconciles everything</h3>
+        <div>
+          <p>"Recon" means matching every rand received to the sale it belongs to. It covers card money against card sales, cash deposits against cash-ups, and remittances against claims, line by line. Whatever doesn't match gets chased or written off. Medical aids can also take back money they paid in error, straight out of a later payment, so a batch can arrive lower than expected.</p>
+          <div class="split"><span class="pill later">remittance vs claims</span><span class="pill hurt">clawbacks, reversals, refunds</span></div>
+        </div>
+      </li>
+    </ol>
+    <p style="font-size:14px;color:var(--ink-soft)">Two quieter money flows are probably in the mix too. <strong>Brand-funded discounts</strong>: if suppliers pay for some Better Rewards discounts, finance has to claim that back from them. <strong>Insurance commission</strong>: Dis-Chem earns fees from the insurers behind Dis-Chem Health and Life. Both are guesses to check.</p>
+  </section>
+
+  <section id="players">
+    <p class="secnum">Part 2</p>
+    <h2>The players</h2>
+    <p class="lede">Who touches the money on the way through. <span class="unsure">likely</span> marks roles I'd expect to exist but haven't confirmed.</p>
+    <div class="players">
+      <div>
+        <h3>Inside Dis-Chem</h3>
+        <ul class="plist">
+          <li><b>Cashiers at front-shop tills</b><span>Take almost every in-store payment, including for scripts in SOTF stores.</span></li>
+          <li><b>Pharmacists and dispensary staff</b><span>Capture the script and send the claim. They're first to see a rejection or co-payment.</span></li>
+          <li><b>Clinic nurses and Clinic Care Assistants</b><span>Deliver the service that gets billed as cash or to the medical aid.</span></li>
+          <li><b>Health Hub Administrator</b><span>Takes clinic and cover payments and handles queries at the Hub.</span></li>
+          <li><b>Cover advisor</b><span>Sells insurance in store; takes card payment.</span></li>
+          <li><b>Store manager</b><span>Owns the daily cash-up and till differences.</span><span class="unsure">likely</span></li>
+          <li><b>Retail finance (tomorrow's room)</b><span>Head of retail finance, the medical aid manager and the debtors managers: they get the money in, match it and chase what's missing.</span></li>
+          <li><b>Treasury / cash management</b><span>Bank relationships, cash-in-transit, card fees.</span><span class="unsure">likely</span></li>
+          <li><b>Better Rewards / loyalty team</b><span>Sets the discounts that finance then has to account for.</span></li>
+          <li><b>IT and systems</b><span>The till system (GKPOS), dispensing (Unisolv), clinic records (Healthforce), finance (SAP).</span></li>
+          <li><b>Dis-Chem Health and Dis-Chem Life</b><span>The insurance arms, run with partner insurers.</span></li>
+          <li><b>TLC and wholesale finance</b><span>Collect from franchise and independent pharmacies. Probably a separate team.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Outside Dis-Chem</h3>
+        <ul class="plist">
+          <li><b>Customers</b><span>Cash shoppers, medical aid members, policyholders.</span></li>
+          <li><b>Medical schemes</b><span>Discovery, GEMS, Bonitas, Medshield and others. Dis-Chem is a preferred ("network") pharmacy for several, including Discovery, GEMS, POLMED, Fedhealth and Medihelp.</span></li>
+          <li><b>Scheme administrators</b><span>The companies that run schemes day to day and actually pay the claims, such as Discovery Health, Medscheme and Momentum.</span></li>
+          <li><b>Claims switches</b><span>The middlemen that pass claims from the pharmacy to the scheme in seconds: MediKredit, SwitchOn and Healthbridge. Which one Dis-Chem uses isn't public.</span></li>
+          <li><b>Banks and card acquirers</b><span>Turn card taps into money in the account, for a fee.</span></li>
+          <li><b>Card schemes</b><span>Visa and Mastercard set the rules, including customer disputes (chargebacks).</span></li>
+          <li><b>Payment partners</b><span>Capitec (reward boost), Mobicred and RCS (credit), Discovery Miles, gift-card providers.</span></li>
+          <li><b>Cash-in-transit companies</b><span>Collect cash or empty the smart safes.</span><span class="unsure">likely</span></li>
+          <li><b>Insurers behind Dis-Chem's cover</b><span>Centriq (Dis-Chem Health), administered by Kaelo; Guardrisk (funeral); OneSpark (life). Dis-Chem owns stakes in Kaelo and OneSpark.</span></li>
+          <li><b>Brand suppliers</b><span>May fund part of the Better Rewards discounts.</span><span class="unsure">likely</span></li>
+          <li><b>Regulators</b><span>The Council for Medical Schemes (claims rules, and a January 2026 ruling on Dis-Chem Health's branding), the Department of Health (medicine prices), the Reserve Bank (payments).</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="payers">
+    <p class="secnum">Part 3</p>
+    <h2>Who they process payments for</h2>
+    <p class="lede">Finance usually groups customers by <strong>who ultimately pays</strong>, not by who walked in. The labels below are the ones SA retailers commonly use, and the team may use different words. Asking "what do you call these?" is a good opener.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Type of customer</th><th>Who actually pays</th><th>What finance may call it</th><th>Now or later?</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Cash customer</strong><br>Buys at the front shop, or pays for a script with no medical aid</td><td>The customer, at the till</td><td class="label">Cash sales / retail sales</td><td>Now</td></tr>
+          <tr><td><strong>Medical aid member</strong><br>Script or clinic visit claimed from their scheme</td><td>Mostly the scheme; the member pays any co-payment</td><td class="label">Medical aid debtors / scheme receivables</td><td>Later, plus a bit now</td></tr>
+          <tr><td><strong>Member whose savings have run out</strong><br>Still on medical aid but in the "self-payment gap"</td><td>The member, in full; the claim is still sent so it counts towards their limit</td><td class="label">Cash sales</td><td>Now</td></tr>
+          <tr><td><strong>Pay and claim back</strong><br>E.g. online orders, which don't claim from medical aid</td><td>The customer; their scheme refunds them later</td><td class="label">Cash sales</td><td>Now</td></tr>
+          <tr><td><strong>Health insurance policyholder</strong><br>E.g. Dis-Chem Health at a network clinic</td><td>The insurer, directly to the provider</td><td class="label">Possibly insurer debtors</td><td>Later</td></tr>
+          <tr><td><strong>Chronic and courier patients</strong><br>Dis-Chem Direct, network medicine for schemes</td><td>The scheme, under a network agreement</td><td class="label">Medical aid debtors</td><td>Later</td></tr>
+          <tr><td><strong>Account customers</strong><br>Care homes (SOTF already handles one person collecting many scripts), companies, doctors, staff</td><td>The account holder, on a monthly statement or payroll deduction</td><td class="label">Debtors / trade debtors / account customers / staff debtors</td><td>Later</td></tr>
+          <tr><td><strong>Suppliers</strong><br>Brands that fund promotions and rewards</td><td>The supplier</td><td class="label">Vendor recoverables / rebates</td><td>Later</td></tr>
+          <tr><td><strong>Franchise and wholesale</strong><br>TLC pharmacies and independents buying stock</td><td>The franchisee</td><td class="label">Trade debtors (likely a separate team)</td><td>Later</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px;font-size:14px;color:var(--ink-soft)">"Debtors" simply means anyone who owes Dis-Chem money after the customer has left. Dis-Chem reported about R3.6bn owed to it in August 2025, but the public numbers don't show how much of that sits with medical aids and how much with franchisees, suppliers or insurers.</p>
+  </section>
+
+  <section id="friction">
+    <p class="secnum">Friction to test</p>
+    <h2>Where it probably hurts</h2>
+    <p class="lede">Hypotheses from the research and the SOTF launch documents. Use them as prompts. Tomorrow will tell you which are real and which are missing.</p>
+    <div class="friction">
+      <div class="fr"><p class="who">Customer · store</p><h3>A second queue to pay</h3><p>In SOTF stores the customer collects at the pharmacy, then pays at the front till. Paying at the dispensary is on hold until 2028.</p></div>
+      <div class="fr"><p class="who">Customer · pharmacist</p><h3>Surprises at the counter</h3><p>A co-payment or rejection shows up only when the claim is sent, often at the counter with the customer waiting. "Approved" doesn't always mean "paid in full".</p></div>
+      <div class="fr"><p class="who">Customer · Hub</p><h3>Two payments for one clinic visit</h3><p>The consult and the medicine are paid separately, at different points.</p></div>
+      <div class="fr"><p class="who">Customer · finance</p><h3>Paid twice, refunded slowly</h3><p>Complaints describe paying cash while the pharmacy also claimed from medical aid, or cash items put on medical aid. Refunds then take a long time.</p></div>
+      <div class="fr"><p class="who">Finance</p><h3>Money that doesn't match</h3><p>Batches arrive short, lines get rejected, and schemes take back earlier overpayments out of later payments. Each gap needs someone to find and chase it.</p></div>
+      <div class="fr"><p class="who">Finance</p><h3>Many payment types, many trails</h3><p>Card, cash, Mobicred, vouchers, Discovery Miles, stacked reward discounts: each settles differently and needs its own matching.</p></div>
+      <div class="fr"><p class="who">Store · customer</p><h3>When systems go down</h3><p>If the switch, the till or connectivity drops (load-shedding included), claims can't go through, and customers pay cash or wait.</p></div>
+      <div class="fr"><p class="who">Customer</p><h3>Online can't claim</h3><p>Online buyers pay in full and claim back themselves. That's a gap as SOTF joins online and in-store.</p></div>
+    </div>
+  </section>
+
+  <section id="words">
+    <p class="secnum">Cheat sheet</p>
+    <h2>Words you'll hear</h2>
+    <dl class="gloss">
+      <dt>Switch</dt><dd>The electronic middleman that sends a claim from the pharmacy to the medical aid and brings the answer back in seconds.</dd>
+      <dt>Claim / adjudication</dt><dd>Asking the medical aid to pay; adjudication is the medical aid deciding how much.</dd>
+      <dt>Co-payment / levy</dt><dd>The part the member pays themselves, e.g. because the medicine isn't on the scheme's list or they didn't use a network pharmacy.</dd>
+      <dt>Remittance (ERA)</dt><dd>The statement a medical aid sends with a payment, listing which claims it covers.</dd>
+      <dt>Recon</dt><dd>Reconciliation: matching money received to the sales and claims it belongs to.</dd>
+      <dt>Short payment</dt><dd>The scheme paid less than was claimed.</dd>
+      <dt>Rejection / resubmission</dt><dd>The scheme refused a claim; fixing it and sending it again.</dd>
+      <dt>Reversal</dt><dd>Cancelling a claim that was already sent, e.g. a script that was never collected.</dd>
+      <dt>Clawback / recovery</dt><dd>The scheme taking back money it paid in error, out of a later payment.</dd>
+      <dt>Unallocated payment</dt><dd>Money that arrived but can't yet be matched to anything.</dd>
+      <dt>Ageing / debtors' book</dt><dd>How long money has been owed, usually in 30, 60, 90 and 120-day buckets. Older is worse.</dd>
+      <dt>Write-off</dt><dd>Giving up on money that won't be collected.</dd>
+      <dt>Tender</dt><dd>How a customer paid: cash, card, voucher, and so on.</dd>
+      <dt>Acquirer / settlement</dt><dd>The bank that processes card payments / the moment the money actually lands in the account.</dd>
+      <dt>Chargeback</dt><dd>A card customer disputing a payment through their bank.</dd>
+      <dt>DSP / network pharmacy</dt><dd>A pharmacy a medical aid has chosen as preferred. Members who go elsewhere may pay more.</dd>
+      <dt>SEP + dispensing fee</dt><dd>The legally controlled medicine price plus the capped fee the pharmacy may add.</dd>
+      <dt>NAPPI / ICD-10</dt><dd>The product code for the medicine and the diagnosis code. Both go on the claim, and mistakes cause rejections.</dd>
+      <dt>Practice number</dt><dd>The registration number every provider bills under, pharmacies and clinics included.</dd>
+      <dt>PMB / chronic authorisation</dt><dd>Conditions schemes must cover, and the approval a member needs before chronic medicine is paid from the right benefit.</dd>
+    </dl>
+  </section>
+
+  <section id="questions">
+    <p class="secnum">For the room</p>
+    <h2>Questions for tomorrow</h2>
+    <p class="lede">Grouped by the three things you want to leave with. Start broad: ask them to walk you through it before you test any of the above.</p>
+
+    <p class="qgroup">The process</p>
+    <ol class="qs">
+      <li>Can you walk me through what happens to one medical aid script, from the claim at the counter to the money being matched in your books?<span>Then the same for a cash front-shop sale and a clinic visit.</span></li>
+      <li>Where does the process break most often, and where do you spend the most time fixing things by hand?</li>
+      <li>What happens when a claim is rejected or short-paid after the customer has already left?</li>
+      <li>How do refunds work for something that was claimed from medical aid?</li>
+      <li>What changed for you when Better Rewards launched? Who pays for each layer of discount, and how does that get settled?</li>
+    </ol>
+
+    <p class="qgroup">The players</p>
+    <ol class="qs" start="6">
+      <li>Who's in your team and what does each person own? Who do you depend on in stores, IT and the pharmacy?</li>
+      <li>Which medical aids, administrators and switches do you deal with most, and which are hardest to work with?</li>
+      <li>How do Dis-Chem Health and Dis-Chem Life show up in your world: commission, claims paid to our clinics, or both?</li>
+    </ol>
+
+    <p class="qgroup">The customers</p>
+    <ol class="qs" start="9">
+      <li>What do you call the different types of customer you process payments for? Which are the biggest by value, and which cause the most work?</li>
+      <li>Do we have account customers (care homes, companies, doctors, staff)? How are they set up, billed and chased?</li>
+      <li>If you could change one thing about how customers pay in store, what would it be?<span>Good closer. It hands you their own future-state wish.</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="note">
+      <p><strong>How much to trust this page.</strong> The SOTF parts (where customers pay, the bag colours, the 2028 deferral, two clinic payments) come from Dis-Chem's own training and workshop documents. The legal rules come from the Medical Schemes Act and regulations. Everything else comes from public web research, read via search summaries because the source sites were blocked. Check any number before it goes on a slide. The backstage steps are how SA retailers typically work, not Dis-Chem's confirmed process.</p>
+    </div>
+    <p class="secnum" style="margin-top:24px">Sources in the vault</p>
+    <ul class="sources">
+      <li><code>wiki/dischem/in-store-payments-and-claims</code>: the synthesis behind this page</li>
+      <li><code>src-sotf-training-launch-2026</code> · <code>src-sotf-melrose-workshops-2026</code>: SOTF as launched (A)</li>
+      <li><code>src-pay-dischem-payments-desk-2026</code>: Dis-Chem payment methods, rewards, networks, insurance (desk research, C)</li>
+      <li><code>src-pay-sa-claims-payments-desk-2026</code>: claims law, switching, remittances, payment rails (desk research, C)</li>
+      <li><code>wiki/medical-schemes/realtime-claims-switching</code>: how the seconds-long claim works</li>
+    </ul>
+  </section>
+</div>

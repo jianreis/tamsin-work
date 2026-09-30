@@ -24,3 +24,8 @@ Contents:
   roadmap, the parked future-state thinking and sources. Spec:
   `otc-exec-pack-v2-spec.md`. Editable twin `otc-exec-pack-v2.pptx` from
   `otc-exec-pack-v2.build.js`; caveats and working-number notes in speaker notes.
+- `payments-discovery-primer.html` - plain-language prep for the in-store
+  payments discovery session with retail finance (1 Oct 2026): money now vs
+  money later, the end-to-end flow, the players, payer types, friction
+  hypotheses, a glossary and session questions. Synthesis in
+  `wiki/dischem/in-store-payments-and-claims.md`.

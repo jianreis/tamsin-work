@@ -209,6 +209,7 @@ browse screen, with S1/2 advertising legalities to check.
 - [[src-sotf-ecosystem-playback-2025]] · [[src-sotf-steerco1-concept-2025]] ·
   [[src-sotf-steerco-decisions-2025]] · [[src-sotf-melrose-workshops-2026]] ·
   [[src-sotf-melrose-store-design-2026]] · [[src-sotf-training-launch-2026]]
+- [[wiki/dischem/in-store-payments-and-claims]] - payments discovery (Sep 2026): how money moves across front shop, dispensary, clinic and cover
 - [[wiki/dischem/store-of-the-future-customer-voice]] - the pre-launch customer evidence
 - [[wiki/dischem/pharmacy-complaints-pain-points]] - as-is pain baseline the design answers
 - [[wiki/dischem/dischem-dispensary-services]] · [[wiki/dischem/dischem-company-overview]]
