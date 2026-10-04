@@ -1,0 +1,2357 @@
+# Text extract of 202506_E2E_fulfilment_compendium_vFinal_Share_1.pptx (supplied by Tamsin, 2026-10-04). One block per slide; text order follows the deck's shape order, so table cells and activity numbers can be interleaved.
+### slide 1
+E2E fulfilment compendium
+June 2026
+### slide 2
+Progress towards fulfilment scope – Phase 2
+E-commerce
+Script
+Closed out
+In progress
+Not started
+What has been done
+Phase
+Phase 2
+Deliverable
+Next steps
+Fulfilment target state
+Syndicate with Aliyah
+Integrated script and OTC fulfilment target state
+Bring to SteerCo
+Prioritised health and fulfillment MLP and target-state roadmap
+Bring to SteerCo
+E2E service blueprint for MLP scripting and OTC journeys
+Bring to SteerCo
+Benchmark strategic decisions for fulfilment against peers and best-in-class players
+Shared in SteerCo # 1 – 30th October
+Bring to SteerCo; set up time with Karthik from Apollo 247 to share best practices
+Benchmark strategic decisions for script & OTC against peers and best-in-class players
+Shared in Tanya Ponter working session on 2/6
+Adherence FTEs to support additional script volumes for MLP
+Syndicate with Aliyah
+FTE volumes are modeled for next 12-months and ranged based on historical overtime data
+Integrated script and OTC fulfilment MLP processes map
+Syndicate with Aliyah
+Co-created with Chaldon and Shalanie; used as basis of E2E blueprint and roadmap initiatives
+Fulfillment target and MLP state strategic design principles
+Shared in SteerCo #2 – 10th December
+Strategic integrated script and OTC fulfilment design principles for MLP and target state
+Co-created with Tanya Ponter, Chaldon, Shalanie, Nicola, Tanya Roos, Annemarie, and Tamsin
+E2E service blueprint for MLP Fulfilment journeys
+Shared in Health workshop 29th Jan
+Fulfillment MLP process map
+Syndicate with Aliyah
+Detailed MLP process flow with steps, responsible parties, and key systems - SteerCo #2 – 10th Dec
+Map of as-is current fulfillment and processes
+Co-created with Chaldon, detailed current-state processes, responsible parties, and key systems1
+System and process gap analysis across fulfillment types
+Co-created with Chaldon, Shalanie, Tanya Roos, and Nicola1
+Co-created with Chaldon, Annemarie, Tamsin, Shalanie, and Nicola
+1. Also mapped in Miro and PowerPoint pages. Syndicated with Chaldon and Eben Louw
+Co-created with Chaldon and Shalanie; shared with Nicola and Tanya Roos during working sessions
+Syndicate with Aliyah
+Bring to SteerCo
+Fulfilment target state initiatives and support team structure syndicated with Chaldon
+Held workshops during week of June 1 with Tanya Ponter, Tanya Roos, Shalanie, Chaldon, Tamsin, Willem, and Willie
+### slide 3
+Additional areas where McKinsey has further invested to optimise for a successful launch
+Additional deliverable
+Example output
+As always, McKinsey will continue to support Dis-Chem in order to make the MLP and target states successful
+What has been done
+Developed modular Adherence Centre staffing approach
+Syndicated with Shalanie and Nicola
+Outlined how Adherence Centre hours can shift in MLP
+Syndicated with Shalanie, Nicola, Chaldon, and Tanya Roos
+Outline SLA timing requirements for MLP
+Syndicated with Annemarie, Tamsin, and Cheldon to map SLAs across script process flow
+Outlined potential fulfilment org structure for interim state
+Syndicated with Chaldon
+### slide 4
+Next steps required to close out Phase 2
+Remaining action
+Owner
+Type
+Next step
+Status:
+Unknown
+Paused
+In-progress
+Completed
+Chaldon
+Owner TBD (JJ, Dino, or other)
+Status
+Packaged slides located in appendix
+Document
+Final delivery of script and fulfilment services documents
+Located in final deliverables
+Document
+E2E time to complete MLP SLAs
+Ongoing sessions held over last 3 weeks
+Meeting
+Conduct handover sessions with Tanya Roos, Chaldon, and Shalanie
+Aligned on 4/6. AC incentives will be script type based vs count based. Dedicated role will facilitate order cancellations
+Meeting
+Align on path forward for Adherence Centre incentives and order cancellations
+Pending Kartik from Apollo 247 returns from Health leave
+Meeting
+Best practice sharing with Apollo 247
+Chaldon to develop business case and rationale
+Meeting
+Determine if fulfilment will become its own BU
+Chaldon to set-up time with Yusuf, Nicola, and Annemarie to share vision and progress and to drive alignment
+Meeting
+Alignment on future state fulfilment vision (e.g., Dis-Chem vs 3rd party delivery drivers, network optimisation)
+Data is not available today; measure PBQ utilisation for Melrose Arch 3-months from opening and PBQ utilisation for new SotFs
+Model
+Determine PBQs required in Adherence Centre for SotF stores
+Data collected – Shalanie / Dino to model cost savings
+Model
+Model cost savings from outbound calls handled by Call Centre employees vs PBQs
+Data collected – Dino owns App business case going forward
+Model
+Model business case of reducing script reworks
+Data collected – Dino owns App business case going forward
+Model
+Update 12-month business case model based on script type (e.g., scheme vs non-scheme)
+Determine responsible owners and define scope of work to be done
+Meeting
+Determine which team will be responsible for customer calls: (1) calling customers when Dis-Chem does not deliver on expectations, (2) addressing customer queries for combined orders (number to call, owner)
+Nicola / Yusuf
+Model
+Determine omnichannel swim lane synergies and savings
+Annemarie to provide input
+Data collected - Shalanie / Annemarie to model SLA based on type
+Model
+Model standard deviation for script processing SLAs based on script type (e.g., scheme vs non-scheme)
+Shalanie to set up time with Nicola, Chaldon, Tanya Roos, and Tanya Ponter
+Meeting
+Determine Adherence Centre hours for weekends / holidays
+Shalanie
+Handover session TBD based on owner
+Model
+Update PBQ FTE model with overtime and cancellations; handover model
+Link located in final deliverables
+Document
+Transfer all McKinsey Miro boards to an Xbl-hosted domain
+McK
+### slide 5
+Appendix
+### slide 6
+Progress towards fulfilment scope – Phase 2
+E-commerce
+Script
+Phase
+Phase 2
+Deliverable
+Fulfillment target state
+Health journey target state
+Prioritised health and fulfillment target-state roadmap
+E2E service blueprint for MLP scripting and OTC journeys
+Benchmark strategic decisions for fulfilment against peers and best-in-class players
+Benchmark strategic decisions for script & OTC against peers and best-in-class players
+Adherence FTEs to support additional script volumes for MLP
+Health journey MLP processes map
+Fulfillment target and MLP state strategic design principles
+Strategic health design principles for MLP and target state
+E2E service blueprint for MLP Fulfilment journeys
+Fulfillment MLP process map
+Map of as-is current fulfillment and processes
+System gap analysis across fulfillment types
+Reference document
+Current state benchmarks complete, workshop benchmarks
+Future state design principles, Key design decisions for MLP vs target state
+MLP health systems service blueprints
+Miro - MLP process maps
+Miro - As-is fulfilment process map, Syndicated processes and challenges
+As-is fulfilment challenges, As-is health systems challenges, Syndicated processes and challenges
+Fulfilment benchmarks
+MLP fulfilment service blueprints
+MLP health systems service blueprints
+Adherence Centre FTE calculations, ratios, and staffing times
+Fulfilment design principles
+Future state journey
+Health services future state activities, Health services future state initiative prioritisation, Fulfilment future state initiative prioritisation
+Future state journey
+### slide 7
+Contents
+Health services: Current state processes and challenges
+Health services: benchmarks and key decisions
+Health services: MLP journey and design
+Health services: Future state journey and design
+Health services: Adherence Centre staffing
+Fulfilment: Current state processes and challenges
+Fulfilment: SteerCo #1 and #2 design decisions and benchmarks
+Fulfilment: Future state design
+### slide 8
+Current state script fulfilment offers a basis to build from, with further automation, efficiency, and integration providing the opportunity to process scripts in ~19 min
+Area
+People
+Technology
+Processes
+Internal interviews
+Duplication is reduced but still exists (Pharmacists verify in AC & Dispensary) Training program in place to scale PBQs for volume growth, but high initial expect growth requires increasing net PBQ count Current team set up allows for transition to MLP and future states
+OCRs are in use today but have low accuracy rates (~30%) Script processing requires switching across multiple dashboards adding complexity, time, and information loss (notes, pharmacist validations in AC)
+Uses central script processing (AC) and fulfilment (DC for uncommon items) GP integration in place but is not source of most scripts; GPs are skeptical to issue e-scripts Stock visibility is available but occasionally inaccurate, requiring calls to dispensaries to check
+Global benchmarks
+Pharmacist to PBQ ratios are similar across regions (~1:3 in SA, Brazil, US, etc.) and are dictated by legislation
+Higher-accuracy OCRs help process scripts quickly (Tata 1mg has <1-min prescription validation) Shorter end-to-end processing times with streamlined decisioning and use of automation (Apollo processes and delivers in 19-min)
+Central script processing is present across the board (Farmatodo, Pague Menos, Tata 1mg, Apollo) In-house GPs generate larger share of scripts (Pague Menos, Apollo) Large investments in stock accuracy to increase efficiency (Farmatodo has live inventory software)
+Summary of findings
+How this informs target state
+Global benchmarks indicate that scripts can be processed in ~19 min, therefore, a 30 min customer promise is feasible but is dependent on: High script and pick and pack automation efficiencies which can significantly reduce script processing SLAs (e.g., Apollo 247 delivers an order in 19-minutes) E2E enablers such as a singular, end-to-end dashboard, increased stock visibility and order management will streamline order processing and reduce information loss (e.g., Brix)
+Source: Dis-Chem interviews, expert interviews, press search
+Deep dive next
+### slide 9
+Current state Adherence Centre systems & stakeholders
+Dispensary PBQs/trainee & pharmacist
+High-level & not exhaustive
+Unisolv
+Note, 3rd party vendor has different tracking system, which is not fully integrated with Dis-Chem systems
+Customer
+Virtual coordinator (failed deliveries)
+Integrated with payment portal (e.g., PayGate)
+Vexall
+3rd party vendor (Picup or Uber)
+Health window (HW)
+ERP (Front Shop only)
+Pickup
+Fiori (Front Shop only)
+FMS
+SAP integration
+Fiori
+1. Customer only makes payments for medication if a co-payment is due or if they have Front Shop / OTC items in their cart; Customer makes payment via EFT link sent by SMS or via POS station
+Dispensary
+Adherence Centre
+Location:
+3rd party vendor (Picup and Uber)
+App
+3rd party delivery
+Adherence Centre (PBQ and Pharmacist)
+Customer
+Limited SLA visibility from new script to payment
+Source: Interviews with Dis-chem & store visits to Benmore, Blubird & Sandton City
+Additional details
+Dispensary pharmacist checks the full order regardless of if Adherence Centre Pharmacist has already reviewed (limited ability to communicate this review within the order) Adherence Centre processes orders after 2:30 PM, but they are packed and picked the following day
+Responsible
+Systems
+Customer selects delivery method and location is deter-mined
+Customer logs in, selects new or repeat prescription, uploads script, inputs health info & payment type
+PBQ logs into selected store dispensary system (Unisolv)
+PBQ reviews order and logs medical scheme or health insurance details
+(Optional) Pharmacist reviews high risk orders & checks against patient history
+(Optional) PBQ/ pharmacist calls doctor to confirm script items or replace-ment
+Order is finalised and sent to dispensary dash-board
+PBQ gets script allocated based on region of store location
+PBQ or trainee picks or packs meds
+Pharmacist reviews order, checks against patient history, & validates script against dispensed medication
+Order finalised
+Customer collects order and pays via POS terminal / EFT link1
+Order is collected from dispensary; Customer can pay via EFT link1
+Order is delivered; customer can pay via POS terminal1
+Returns/ failed delivery, refunds, & customer support
+### slide 10
+Current state OTC systems & stakeholders
+Source: Interviews with Dis-chem & store visits to Benmore, Blubird & Sandton City
+High-level & not exhaustive
+Dispensary
+Adherence Centre
+Location:
+3rd party vendor (Picup and Uber)
+App
+Key takeaways
+Order is processed faster and more seamlessly for customers with profiles on file Different experiences based on a profile existing or not will be resolved in the target state with Brix PBQs will be responsible for picking and packing all items that use Medical Scheme, even if these items are located in the Front Shop
+Systems
+STICKER
+[TBD]
+Fiori (picking & packing software)
+Picup system (3rd party vendor)
+DVI (Biogen, Living fit)
+Magento (Online.Co.Za, Baby City)
+SAP (global stock file, SKU prices) pushed to Magento/DVI
+Rules are calculated per channel in Magento
+Integrated with gateways (e.g., PayGate)
+In-store employee using mobile tablet/ device to pick & pack with Fiori
+3rd party vendor has different tracking system, which is not fully integrated with Dis-Chem systems
+Responsible
+Customer
+Virtual coordinator
+3rd party delivery
+Front Shop pick and packer
+Returns/ failed delivery, refunds, & customer support
+Meds picked and packed by PBQ Non-meds picked and packed by FS
+Meds land on dispensary dashboard Non-meds land on FS dashboard
+Order delivered or collected
+Couriers collects & out-for-delivery or awaiting collection
+Customer navigates to app
+Customer selects products & delivery
+(Optional) Customer uploads Medical Scheme / insurance scheme
+If profile exists: Medical Scheme savings are automatically calculated
+If profile does not exist: Order paid in full
+Order collected and flagged as ready for collection or delivery
+If profile exists: Customer determines if they will pay or cancel non-reimbursed items
+If profile does not exist: Medical Scheme savings calculated & customer reimbursed
+### slide 11
+Contents
+Health services: Current state processes and challenges
+Health services: benchmarks and key decisions
+Health services: MLP journey and design
+Health services: Future state journey and design
+Health services: Adherence Centre staffing
+Fulfilment: Current state processes and challenges
+Fulfilment: SteerCo #1 and #2 design decisions and benchmarks
+Fulfilment: Future state design
+### slide 12
+Key takeaways
+We benchmarked local and global best-in-class players to inform core experience decisions for the scripts and checkout journey
+Best-in-class
+Basic feature
+Day 0 hypothesis
+Integrated shopping and script journey and checkout are key experience unlocks vs current state
+1
+2
+Pre-authorisation for scripts and embedded medical aid during script upload/ checkout becomes table stakes in South African market
+Best-in-class players provide multiple payment options (e.g., Google Pay)
+3
+4
+Best-in-class players enable slotted and split deliveries based on cart readiness
+Epics
+Preliminary – Non exhaustive
+1. Deep dives on Appendix
+Global benchmarks
+Local competition1
+DSCM
+MVP Target State
+As-is
+One click script upload
+n/a
+Guided script capture
+n/a
+Personalised pricing (loyalty/ rewards)
+Pharmacy hub in home screen
+Core features
+Automated store allocation
+Step-by-step script processing updates
+Front shop shopping during script review
+n/a
+Accessible script processing status from cart
+n/a
+Integrated cart inc. shopping and scripts
+Medical aid embedded in flow
+n/a
+Slotted delivery with ETA commitment
+Collect option available
+Split delivery (i.e., ready items)
+n/a
+n/a
+Multiple payment methods (in app, during delivery)
+Live order tracking
+Status based order tracking
+Payment pre-authorisation of script
+n/a
+A
+Homepage
+B
+Script upload
+C
+Shopping1
+D
+Cart
+E
+Checkout
+3
+2
+1
+1
+3
+4
+### slide 13
+High-level view of integrated shopping and scripts journeys
+Best in class: Nude
+Comments & considerations
+1
+2
+3
+4
+Integrated checkout journey with both prescription and front-shop items; prescription readiness to order depends on processing and medical aid
+Allow users to shop while prescriptions are reviewed; keeping shopping cart
+Quick access to Scripts from Homepage and bottom navigation
+Secure prescription details early so availability, generics, and approvals can be handled in parallel
+Single delivery for both prescription and front shop items where possible (i.e., exc. Schedule 6 medications)
+Final UI work in progress
+Final UI work in progress
+1
+Pharmacy workflow dependency to decide the impact on SLA, generics handling and cancellation
+2
+Enable shopping continuity during script review to avoid drop-offs and basket loss
+3
+Patients are able to add their prescription to cart and checkout in a single journey
+4
+Prescription status determines journey: payment pre-authorisation to be considered for pending medical aid
+Homepage
+Script upload
+Shopping
+Cart
+Checkout
+Preliminary – Non exhaustive
+Technical validation of downstream dependencies on pharmacy systems in progress; full update next Steerco
+### slide 14
+Key health journey decisions affecting MLP and future scope
+Preliminary – Non exhaustive
+Best-in-class
+Partial feature
+Basic feature
+No present
+Target State (3-6 months post release)
+MLP (May)
+Script upload
+Shopping
+Checkout
+Cart
+Homepage
+A
+B
+C
+E
+D
+Details
+State
+State
+Details
+TBC – based on fund reservation
+TBC
+Introduction of one click xPay options (e.g., Google pay/Apple Pay)
+Multiple payment methods
+One delivery for front shop/ script with the exception of out of stock script
+Enable combined deliveries through advanced stock out projections, repeat script early orders, and auto store allocation
+Combined delivery (i.e., ready items)
+Epics
+Decision required
+Core features
+Current implementation allows for non-medical scheme dependent script upload but would have to limit product view
+Enable dependent script upload only for medical scheme dependents and handle non-scheme dependents via in app approval
+Dependent script upload and visibility
+Basic access pharmacy hub with MLP (parity) standard features
+Advanced pharmacy and SoTF capabilities in app
+Pharmacy hub in home screen
+Semi manual store allocation done by the adherence centre due to lack of stock data visibility
+Enhances stock data visibility for auto store allocation
+Automated store allocation
+Multiple steps with single script upload/ limited OCR capabilities
+Dependent on OCR technology and error handling and chatbot support
+Guided script capture
+Single script (at a time) uploads limited OCR capabilities
+Dependent on back office systems handling multiple requests for single user
+Multiple script upload
+Limited status updates – in review, approved, declined and cancelled
+Enable bidirectional data syncing and events driven architecture in dispensary processes
+Step-by-step script processing updates
+User has full control on adding front shop items
+Improved live stock validation against address management
+Front shop shopping during script review
+User empowered with the choice of both options
+Enhance through checkout of specific items on script
+Checkout optionality with or without scripts
+Limited up front cost for script Fund reservation accuracy
+Faster script processing / increased accuracy on fund reservation amount
+Self payment pre-authorisation of script
+Unable to change address after script upload due to manual store allocation
+Enable user to change address even with scripts until checkout step
+Address change management
+Longer SLA lead times due to longer script processing times
+Shorter lead time to nearest slot based on enhanced back office and automated script processing
+Slotted delivery with ETA commitment
+Key milestone updates
+End-to-end progressive status tracking with time estimates at each stage
+Status based order tracking
+Enabled for both scripts and OTC in front shop
+Increased Medical scheme integration for auto claim processing
+Medical aid embedded in flow
+No order cancellations facilitated in app –only via call in
+Enable cancellation of script in app
+Order cancellation
+No real time pharmacy boost – delays in detecting dispensary purchase
+Enhanced pharmacy boost applied to app specific pharmacy behaviours
+Personalised pricing (loyalty/ rewards)
+Limited due to bidirectional data sync and limited stock data visibility
+Item replacement selection on app, cancel remove specific items from cart and view stock availability
+Cart management (e.g., Replace item)
+### slide 15
+We benchmarked script and OTC operations vs global best-in-class players to inform target state design
+Key insights
+Present
+Not present
+Best in class
+Systems
+Processes
+Source: Press search, Expert interviews
+1. Based on fastest stated time | 2. Pharmacists are typically required to be present and have capacity, but exact ratios are undefined | 3. Note, e-scripts are legal in all countries on the page; rules and requirements vary by region
+Speed of processing: Unregulated pharmacist to PBQ ratios highly influence script processing efficiencies Pharmacist role: Increased pharmacists shouldn’t increase SLA if the tech enables swift processing GP integration: Pharmacies with GP integration tend to have lower SLAs and do so by either partnering with doctor-networks or offering in-house doctors to help diagnose patients (e.g., Apollo, Pague Menos) Central script fulfilment for refills: US-based Pharmacies tend to ship refills from a centralised DC 3-5 days in advance (to account for shipping and making the process more proactive) Automation in script processing: Apollo and Tata process scripts in minutes by shifting human review of prescriptions later in the process
+120 min pickup / 24 hour delivery
+4 hours (chronic only); 1-3 days for others
+30 min
+Same day delivery before 8PM
+120 min
+Same day delivery before 4PM
+19-30 min
+SLA for delivery1
+35-45 min
+Automated dispensing; script OCRs for typed orders
+App photo upload; call-centre processing
+AI prescription validation (<1 min) & tech-enabled dispensing hubs
+Dynamic workload sharing; central fill; barcode scanning
+Telemedicine-enabled prescriptions shorten diagnosis to-dispensing timelines
+Robotic micro-fulfilment; bottle scan; status tracking
+GP platform to directly submit scripts; digital screenings occur for prescription authenticity
+Script OCRs
+Automation in processes
+Live inventory visibility & stock predictions; operates automated fulfilment centres
+Central script processing
+GP integration3
+Central script fulfilment
+People
+1:3
+1:3
+Not regulated2
+1:2 to 1.6
+1:3 to 1:4
+1:2 to 1.6
+Not regulated2
+Legal ratio of pharmacists to non-pharmacists
+Not regulated2
+### slide 16
+Contents
+Health services: Current state processes and challenges
+Health services: benchmarks and key decisions
+Health services: MLP journey and design
+Health services: Future state journey and design
+Health services: Adherence Centre staffing
+Fulfilment: Current state processes and challenges
+Fulfilment: SteerCo #1 and #2 design decisions and benchmarks
+Fulfilment: Future state design
+### slide 17
+Activities that change from the current state to the MLP to the future state (1/6)
+Current State
+MLP
+Type
+Straight through processing
+High
+Medium
+Minimal
+Level of change
+Future state
+Owner
+Unclear Pick & pack responsibilities between FS employee & PBQ.
+2
+PBQs pick and pack all OTC and OTS items paid for through Medical Scheme and full doctor’s script.
+No change vs. MLP
+Tanya Roos
+Disaggregated and manual orders for small set of phone in / email based combined orders.
+3
+FS employee will scan a QR / Barcode to confirm they are picking correct packaged medication.
+Continuous update to follow system updates
+Tanya Roos /Chaldon
+In-store and Adherence Centre PBQs can accidentally validate app or SotF order simultaneously, leading to duplicate work.
+4
+Any script from app or SotF goes to OCR and AC validates; after, it becomes available on in-store Vexall; script from WhatsApp, call, or GP are shared for processing between store and AC.
+All orders coming from digital channels (app, calls, WA..) are centralised in the adherence centre; learning process to indicate if some processing should remain in store, leveraging idle capacity
+Shalanie/ Vexall
+5
+Pharmacist is involved but does not check every script; Pharmacist processes some in-app volume of S6 medications (pending bandwidth).
+Pharmacist to focus on new script validation and S6 as first priority (similar to current state) Start with 1 pharmacist in AC and monitor script throughput to define ideal number of pharmacist.
+Deploy pharmacist based on ideal ratio of pharmacists to PBQ
+Shalanie /
+Manual call to customers from PBQs to remind and confirm repeat order specifications (frequency, generics, etc.).
+6
+Health Window notifies a product is ready for refill; app user customers (definition of “user” TBD) receive notification 3-6 days before refill needed; if customer refills, comms from all other channels are stopped; if customer does not respond, they receive a call from AC as of 3 days before refill
+Eligible repeat orders (e.g., long-term) are auto-dispensed and sent to pharmacy without PBQ review; customer is then notified of process.
+Shalanie
+Script store selection based on customer proximity with manual Adherence Centre override
+7
+Store selection based on customer proximity, FS item availability, and previous SLA performance
+Enhanced stock availability accuracy and real-time SLA performance data improves store selection.
+Chaldon
+8
+New and repeat scripts are processed and picked and packed as two separate orders.
+New and repeat scripts from same source (based on BP and address) are processed by the same PBQ before being added to the cart; they are picked and packed and delivered as one order
+New and repeat scripts will be processed by same PBQ as determined by workflow management system (e.g., 2 scripts with same address routed to same PBQ)
+Chaldon /
+1
+E-commerce orders are held in front-shop, while script orders are held in the pharmacy.
+Script and e-commerce orders will be held together behind front-shop counter.
+Increased storage in SoTF stores to ensure adequate space if increased volumes.
+Tanya Roos /Chaldon
+PBQs in the Adherence Centre are assigned to process scripts for specific stores; process exists to re-route items pharmacist (in-store or AC) does not approve back to PBQ
+9
+No change vs. MLP
+PBQs in the Adherence Centre are store-agnostic and process scripts on prioritised basis (same order, in-store), powered by work-order management platform/BRiX.
+Shalanie
+### slide 18
+Activities that change from the current state to the MLP to the future state (2/6)
+Customer is unable to submit a script in-app
+Customer receives dynamic questions when uploading script based on script information & profile
+Customer receives the same ~5 questions when submitting a script on app, regardless of contents
+10
+Nicola
+GP integration is limited, and scripts are sent directly to stores.
+Greater integration with GPs (e.g., protected/verified email integration, GP-focused submission platform); all scripts are sent to the Central Care Centre (AC); scripts are standardised
+GP integration remains limited, but GP scripts are sent to the Adherence Centre through encrypted emails or verified accounts.
+11
+Tanya Roos
+S5 delivery is allowed, but original script must be presented; if a customer selects delivery for S6, they are notified after dispense that they need to come in-store for collection
+S6 delivery is possible if GP submits directly from their practice using the secured platform (accounted for as “original script” 2 solutions under considerations for combined orders including an S6 placed by customers Split orders in 2 between delivery items vs. S6 for collection Delivery all products incl. S6 by enabling the driver to acknowledge original script through photo, stamps...
+If customer chooses to collect S6, no change; if customer chooses to deliver S6, item is cancelled at the line-item level and AC calls customer to place the order for collection
+12
+Niola / Chaldon
+A rules engine catches OTC medicines that violate regulations regardless of channel purchased on with options for pharmacist to override
+Customers are blocked if OTC medicine violates regulation in DeliverD only (e.g., too many dosages in timeframe, dangerous interactions with other meds)
+13
+Map Deliver D rules to app “add-to-cart”; customer can place an exception through Adherence Centre
+SAP CC
+Current State
+MLP
+Type
+Patient safety and script accuracy
+High
+Medium
+Minimal
+Level of change
+Future state
+Owner
+### slide 19
+Activities that change from the current state to the MLP to the future state (3/6)
+E-commerce and script orders are purchased at separate times.
+Scripts are validated quickly (SLA TBD) and e-commerce and script orders are purchased together.
+14
+Patients have option to check out e-commerce items either while script is being validated or together with the script after validation.
+Meraj
+No stores are open beyond customer operating hours
+Continuously evolve store selection included pre-opening hours based on demand
+15
+Select stores open earlier to pick and pack scripts processed by AC the previous night to deliver against slot selected by customer.
+Chaldon / Tanya Roos
+Adherence Centre is open from 06:00 to 18:00.
+Continuously evolve AC operating hours based on demand (own customers and competitors)
+16
+Adherence Centre extends hours (e.g., 6:00 to 21:00, timing and capacity will be adjusted based on demand data)
+Shalanie
+Delivery is orchestrated through multiple 3rd party delivery networks (Piccup, Uber) and Dis-Chem drivers.
+Use of owner operated drivers vs 3rd parties to be confirmed by network optimisation and future fulfilment work to be done.
+17
+3rd parties and Dis-Chem drivers are integrated with Piccup, which is integrated into the Dis-Chem app.
+Chaldon
+Live order visibility for customers and Dis-Chem is only available for Piccup drivers; however, Piccup delivers notifications through non-app channels (e.g., WhatsApp).
+Driver orchestration and allocation tool provides full control of driver selection, rates and volumes allocated to 3rd parties, and monitors and tracks performance. Live location and delivery status are integrated directly into the app; functionality exists for customers to return orders through the driver if they arrive damaged, contain the wrong items, or have another issue.
+18
+Ensure all delivery drivers use Piccup app regardless off affiliation (e.g., Uber, Dis-Chem) to track driver location and ensure SLA adherence.
+Chaldon
+19
+No dark stores or dark pharmacies are used to handle overnight volumes.
+To be further evaluated based on omnichannel volumes and disturbance to store operations (vs. scale benefit)
+No change vs. current state
+Chaldon
+20
+App integrated orders benefiting from Fiori, however, no other script channels benefit (e.g., calls, WhatsApp); Fiori is not integrated into pharmacy dashboard
+Driver orchestration layer is included into pharmacy dashboard to create a unified fulfilment process
+Unified collection and deliveries by funneling all customer channels into pharmacy dashboard in the store for collection and deliveries
+Chaldon
+Current State
+MLP
+Type
+Fast and predictable fulfilment
+High
+Medium
+Minimal
+Level of change
+Future state
+Owner
+### slide 20
+Activities that change from the current state to the MLP to the future state (4/6)
+Items that are not paid for by the customer sit in the cart for 14-days before being removed from store dashboard by store
+Items that are not paid for (time to trigger TBD) are automatically removed from store dashboard using workflow manager or BRiX
+Items that are not paid for (time to trigger TBD) are undispensed from store dashboard by PBQ dedicated to cancelations
+21
+Nicola
+Limited in app, live one-way customer communications (e.g., order/script status)
+Customers are informed with one-way comms at each stage (e.g., real-time validation updates); two-way comms help customers with script self-resolution (e.g., replacements flagged with option to switch to generics)
+Increased one-way communication frequency (e.g., event-based customer announcements, static customer announcements).
+Nicola / Meraj
+Limited in app, live one-way customer communications (e.g., update once product is delivered)
+Customers are informed with one-way comms at each stage (e.g., real-time delivery updates); two-way comms help customers with fulfilment self-resolution (e.g., for COD orders, a payment link will be sent or customer informed how to pay or order rescheduled)
+Increased one-way communication frequency (e.g., event-based customer announcements, static customer announcements).
+Meraj
+One AC pharmacist validates select scripts (e.g., Schedule 6, overdose); in-store pharmacists validate every script (regardless if it has already been validated)
+CCC pharmacists validate all scripts from digital channels (email, WhatsApp, app); AI-tools assist validation (overdose check); in-store Pharmacists only review picked and packed meds
+AC pharmacist(s) validate as many scripts as possible to determine future state ratio; in-store pharmacists continue to validate every script
+Shalanie
+Processing and fulfilment SLAs and customer promises not communicated with customers (note, SLAs are shorter than customer promises)
+Customer promises shared with customers is based on dynamic SLAs and informed from live data based on channel, script type, etc.
+Static tracker used to share customer promises (exact communicated time TBD based on current state measurements) with customers informed by internal SLA measurements.
+Niola / HealthWindow
+No determined follow-up action to the customer exists for when fulfilment or script customer promises/SLAs are not reached
+TBD; current hypothesis is resolving customer promises are owned, managed, and funded separately for each BU
+When script customer promise is missed (TBD which promises are included), proactive communication and/or discounts should be available for the customer
+TBD
+SLAs are not shared with the customer today
+If SLAs look like they will be missed, app proactively sends a push notification with updated timing to the customer
+If SLAs look like they will be missed, customer is proactively engaged with a call to apologise and offer an update on the timing
+Shalanie
+Out of stock items are undispensed and update is shared with customer on timing or resolutions (switch to generics)
+Out of stock items are undispensed; customer updated on app, call, or WhatsApp with timing or resolutions
+No change vs. current state
+22
+23
+24
+25
+27
+26
+28
+Nicola / Vexall
+Current State
+MLP
+Type
+Positive patient experience
+High
+Medium
+Minimal
+Level of change
+Future state
+Owner
+### slide 21
+Activities that change from the current state to the MLP to the future state (5/6)
+MLP
+Type
+Continuous improvement and automation
+High
+Medium
+Minimal
+Level of change
+Future state
+Current State
+Owner
+E-commerce and script are ordered under two separate orders.
+Order management sophistication increases with multiple baskets (e.g., multiple addresses per order)
+29
+Script and e-commerce items can be ordered under one combined order.
+Meraj
+No trainees are working in-store.
+No change vs. MLP
+30
+Trainees will assist PBQs with pick and pack, dispensing, etc.
+Tanya Roos
+SLAs are shown on a dashboard that tracks app order progress, working backwards from the delivery time slot (e.g., dispensed by X and picked and packed by FS by Y).
+SLAs are tracked through a simplified, real-time dashboard that is available to stores, the CCC, and other reviewers.
+31
+SLAs start to be tracked by step (e.g., dispensing, picking and packing, FS collection and delivery); same dashboard remains in use.
+Chaldon
+Scripts are customisable in calls, WhatsApp, or in-store (e.g., split items, select generics);
+Script is “editable” (within regulation) in-app with e.g., split script, “exact” OTC suggestions, allergy / compatibility with other treatment flags...
+32
+Customer upload scripts and upfront questions can help PBQ to suggest generics / changes based on call- back
+Nicola
+All Adherence Centre PBQs are externally hired.
+CCC PBQs will be sourced through a mix of external hires, graduates from trainee programmes, and in-store PBQs relocating to the CCC; mix TBD.
+33
+Most Adherence Centre (Customer Care Centre) PBQs will be external hires, with trainee programmes beginning (number of trainees TBD).
+Shalanie
+Mixed orders are assigned to each PBQ daily to ensure PBQ have the same base from which KPIs are measured, which informs pay incentives
+Further refined based on learnings from MLP
+34
+Shift incentive from output-based to script-count-based with elements to ensure adherence (e.g., dashboard only shows 1 script at a time, etc.)
+Shalanie
+OCR has a lower efficacy rate, requiring manual checks.
+Reduce need for manual checks through OCR solution (vendor TBD) and continuous training on previous scripts.
+35
+No operation change vs. current state but with improved tracking
+HealthWindow
+3 dashboards are used to process an order in the Adherence Centre (Rubix, Vexall, Unisolv)
+All orders in Adherence Centre processed through an end-to-end workflow manager, powered by BRiX, that also extends to the pharmacy counter and delivery.
+36
+Reduce number of systems AC processes order through to 2 through better alignment across Unisolv, Rubix, Vexall; combination TBD
+Tanya Roos /Anne-marie
+Medication pick and pack is almost entirely manual.
+Automatic dispensing machines are included in SoTFs that have the space to house the machinery (ROWA); elsewhere, scanners are used to speed up dispensing process
+No change vs. current state (outside of Store of the Future stores)
+37
+Annemarie
+No unified workflow and order management system to orchestrate combined orders (scripts & e-commerce).
+No change vs. current state
+All orders will be processed through an enterprise system throughout process (workflow mgmt., mgmt orchestrator)
+38
+Chaldon / Annemarie
+Store inventory levels are updated nightly and do not count partial orders correctly (e.g., 5 pills instead of 10).
+FS and pharmacy inventory information is accurate, with real-time availability and stock-on-order transparency.
+39
+No change vs. current state
+Tanya Roos
+### slide 22
+Activities that change from the current state to the MLP to the future state (6/6)
+MLP
+Type
+Omnichannel bridges
+High
+Medium
+Minimal
+Level of change
+Future state
+Current State
+Owner
+Multichannel orders all route to Customer Care Centre (AC) (e.g., app, calls, WhatsApp)
+Multichannel orders possible for app to AC only (not through store); calls and WhatsApp linked to store, with both AC and store able to process them (note, SotF only processes through AC)
+40
+Yusuf
+App customers order medicine on behalf of anyone; AC required to authenticate and approve dispense
+Complex family structures and 3rd party patients’ script submission allowed with the right level of proxy & consent
+Chosen member can order medication on behalf of a medical scheme, financial, or minor dependent
+41
+Nicola / Vexall
+Customer receives multiple calls from an order; phone numbers wrongly associated with profile are flagged and removed
+Correct phone number is assigned and verified at patient, no profile level
+Phone number will be verified through OTP when using the app
+42
+TBD
+Customer pharmacy profile saved at store level and is pulled centrally from the store; duplicate profiles are common due to name changes or incorrect entries
+Customer profile data (Medical Aid, phone #) is cleaned up across systems and is centralised through BRiX with carry-over of profile from order to order.
+43
+No change vs. current state
+Tanya Roos
+Multiple script across multiple funders are processed as multiple orders
+Seamless submission for multiple script across multiple funders
+No change vs. current state
+44
+Nicola
+Multichannel orders with app, calls, and WhatsApp linked to store; both AC and store can process them
+Lead generation for Dis-Chem life does not exist
+Lead generation exists for Dis-Chem Life and MyHealth during customer journey (e.g. system identifies Discovery savings running out)
+No change vs. current state
+45
+TBD
+### slide 23
+Deep dive on critical health services fulfilment decisions: MLP built backwards from future state strategic direction
+MLP consideration
+Considerations
+Some store locations do not allow for extended hours (e.g., stores in mall fit mall operating hours) If dark stores are used, additional work would be required for network optimisation Additional licenses may be required to operate dark stores
+Strategic decision
+Options
+PBQ staffing
+2
+Staffing accuracy
+Script servicing hours
+1
+In-store service timing
+After-hours or dark pharmacies pick and pack scripts 24 hours
+Stores retain existing opening hours
+Pharmacy-only opens before store hours to pick and pack overnight scripts
+Fixed staffing demand curve, even during peak hours, with overtime to smooth demand spikes
+Slightly overstaff PBQS in AC to cover additional demand as it arises
+AC service timing
+Adherence Centre matches store hours
+Adherence Centre retains existing hours (6AM-6PM)
+AC extends hours beyond store hours (e.g., 6AM-11PM)
+1.1
+1.2
+Future state consideration
+Unpredictable when exactly future volume will hit Some PBQs will transition from in-store to AC; for external PBQs, add. time will be required to train
+Today, there is 1 Adherence Centre Pharmacist to review specific prescriptions (e.g., schedule 6) Automated dispensing for repeat scripts, automated picking with high accuracy rates, and AI picking monitoring could reduce the time required for pharmacists to “label and check” If dispensing shifts to AC, in-store pharmacists will have less to do – how does the role shift going forward?
+2.1
+PBQ staffing in Adherence Centre is exact fit to projected demand (live and dynamic)
+Pharmacist staffing
+3
+AC respons-ibilities
+3.1
+In-store respons-ibilities
+3.2
+Pharmacist role remains limited in Adherence Centre
+Pharmacist validates script capturing of new scripts against image of doctor’s script
+Pharmacist provides patient virtual interaction (e.g., follow-ups, guidance)
+No change to how Pharmacist spends time (validates scripts and reviews picked meds)
+Pharmacist reviews picked meds and spends time with customers
+Pharmacist reviews picked meds and interacts with customers; in-store count reduces due to efficiencies
+Source: Dis-Chem interviews and working sessions, Future State Blueprint
+Pharmacist count in AC is low while determining ratio of pharmacists to PBQs
+Pharmacist count in AC is ramped up once ratio is determined
+### slide 24
+MLP Adherence Centre overview: Systems & stakeholders
+Source: Interviews with Dis-chem
+1. Customer only makes payments for medication if a co-payment is due or if they have Front Shop / OTC items in their cart
+Dispensary
+Adherence Centre
+Location:
+3rd party vendor (Picup and Uber)
+App
+STICKER
+Customer collects order
+Order is collected from dispensary and delivered to customer
+Customer logs in, selects new or repeat prescription, uploads script, inputs health info & payment type
+Customer selects delivery method and location is deter-mined
+(Optional) PBQ/ pharmacist calls doctor to confirm script items or replace-ment
+Final payment amount deducted from customer
+Order lands on dispensary dashboard and PBQ verifies order is in stock; order labelled as “awaiting payment”
+Customer completes order and makes payment1
+(Optional)Customer adds additional items to the cart and can check out Front Shop items
+(Optional) Pharmacist reviews high-risk orders and checks against patient history
+PBQ reviews order and logs medical scheme or health insurance details
+PBQ logs into selected store dispensary system (Unisolv)
+PBQ gets script allocated based on region of store location
+If Script only: Meds are held behind the counter If Combined order: Front Shop picker selects meds and other items to place in the Front Shop
+Pharmacist validates pick and packed medications against scripted items
+PBQ or trainee picks and packs order
+Returns/ failed delivery, refunds, & customer support
+20-minute SLA from new script to payment
+High-level & not exhaustive
+Key takeaways
+There is a hold on the customer’s payment between when the medication is purchased and when the final payment is deducted, with the excess funds returned A 20-minute SLA will be introduced for script processing; full process SLA is TBD Combined and script orders that originate from the app will both be held behind the front counter
+Systems
+Fiori (Front Shop only)
+Unisolv
+3rd party vendor (Picup or Uber)
+Note, 3rd party vendor has different tracking system, which is not fully integrated with Dis-Chem systems
+Health window (HW)
+Integrated with payment portal (e.g., PayGate)
+FMS
+SAP integration
+ERP (Front Shop only)
+Vexall
+Picup
+Fiori
+Responsible
+Dispensary PBQs/trainee & pharmacist
+Front Shop pick and packer
+Virtual coordinator
+3rd party delivery
+Customer
+Adherence Centre (PBQ and Pharmacist)
+Customer
+Customer
+### slide 25
+MLP OTC: Systems & stakeholders
+Source: Interviews with Dis-chem & store visits to Benmore, Blubird & Sandton City
+High-level & not exhaustive
+Dispensary
+Adherence Centre
+Location:
+3rd party vendor (Picup and Uber)
+App
+Key takeaways
+Order is processed faster and more seamlessly for customers with profiles on file Different experiences based on a profile existing or not will be resolved in the target state with Brix PBQs will be responsible for picking and packing all items that use Medical Scheme, even if these items are located in the Front Shop
+Systems
+STICKER
+[TBD]
+Fiori (picking & packing software)
+Picup system (3rd party vendor)
+DVI (Biogen, Living fit)
+Magento (Online.Co.Za, Baby City)
+SAP (global stock file, SKU prices) pushed to Magento/DVI
+Rules are calculated per channel in Magento
+Integrated with gateways (e.g., PayGate)
+In-store employee using mobile tablet/ device to pick & pack with Fiori
+3rd party vendor has different tracking system, which is not fully integrated with Dis-Chem systems
+Responsible
+Customer
+Virtual coordinator
+3rd party delivery
+Front Shop pick and packer
+Returns/ failed delivery, refunds, & customer support
+Meds picked and packed by PBQ Non-meds picked and packed by FS
+Meds land on dispensary dashboard Non-meds land on FS dashboard
+Order delivered or collected
+Couriers collects & out-for-delivery or awaiting collection
+Customer navigates to app
+Customer selects products & delivery
+(Optional) Customer uploads Medical Scheme / insurance scheme
+If profile exists: Medical Scheme savings are automatically calculated
+If profile does not exist: Order paid in full
+Order collected and flagged as ready for collection or delivery
+If profile exists: Customer determines if they will pay or cancel non-reimbursed items
+If profile does not exist: Medical Scheme savings calculated & customer reimbursed
+### slide 26
+MLP E2E blueprint for script fulfilment: New orders in Adherence Centre (1/4)
+Customer interaction
+Systems
+Unisolv
+FMS (Determines store)
+Rubix (Health Window)
+Front of shop (Front Shop and Dispensary)
+Order lands on dispensary dashboard
+Vexall
+Back of shop (Adherence Centre)
+PBQ logs into store dispensary system
+PBQ uploads script detail, adds notes, and logs medical scheme or health insurance details
+(Optional) Pharmacist reviews high-risk orders and checks against patient history
+PBQ gets script allocated based on region of store location
+Log into app
+Check out FS items only
+If collection: Select store If delivery: Enter address
+Wait for script finalisation to pay
+Select fulfilment method
+Adds other items to cart
+Script only: Place order and receive free script delivery
+With FS items: Pay for cart and delivery
+Upload script
+Upload script
+Opt in or out of generics
+Patient confirms replacement
+Input health, medical scheme/insurance, dependent info
+If script only
+If other items are added
+(Optional) PBQ/ pharmacist calls patient to confirm replacement, generic (if not opted in), or cost (if item is not covered by Medical Scheme)
+Select payment type (e.g., Medical scheme and/or card) and submit
+Lock address
+PBQ “picks up” order; order is no longer editable by store
+PBQ dispenses medication to Dispensary, and updates status on Unisolv and Vexell
+Starts here
+Lands here
+Script is paid
+Customer called during process if order processing is delayed
+### slide 27
+MLP E2E blueprint for script fulfilment: Repeat orders in Adherence Centre (2/4)
+Health window (HW)
+Dashboards can communicate with one another
+Systems
+Patient confirms repeat order
+Patient asks AC to place order
+Patient orders repeat on app
+Patient orders repeat on Pack My Meds
+Patient places order themselves
+Patient confirms replacement
+Customer interaction
+Order lands on dispensary dashboard
+Front of shop (Front Shop and Dispensary)
+Vexell
+Unisolv
+PBQ gets script randomly allocated based on volumes
+Repeat script appears on Health Window platform
+Health Window agent calls customer to confirm
+PBQ enters repeat script info
+Health Window agent places order
+Order appears on HW dashboard for PBQs
+Order updated in Vexell
+Order is confirmed on Unisolv
+(Optional) PBQ/ pharmacist calls patient to confirm replacement, generic (if not opted in), or cost (if item is not covered by Medical Scheme)
+Order is confirmed on HW
+Back of shop (Adherence Centre)
+PBQ verifies details, makes updates to patient information (e.g., Medical Scheme), and processes order
+Customer called during process if order processing is delayed
+### slide 28
+MLP E2E blueprint for script fulfilment: New and repeat orders in Dispensary (3/4)
+Fiori (Front Shop only)
+Unisolv
+ERP (Front Shop only)
+Picup
+CC
+Customer completes order and makes payment
+Customer determines to replace or cancel items;
+Notified that orders are ready for collection or sent out for delivery
+Customer collects their order
+Customer notified of order status and/or changes to the non-medical items
+Receives internal delivery of their order
+Order is marked as delivered by third party
+Customer notified of the cost of meds
+Customer interaction
+Systems
+Order lands on dispensary dashboard
+PBQ verifies order is in stock
+Pharmacist validates pick and packed medications against scripted items
+Script only: Meds are held behind the counter
+If Combined order: Front Shop picker selects meds and other items to place in the Front Shop
+Order labelled as “awaiting payment”
+In-stock items collected and order is partially fulfilled
+Monitor order execution and delivery SLA
+Orders are ready for collection or sent out for delivery
+Order is marked as collected
+Order is marked as delivered internally
+Notify customer of order status and/or changes to the order
+PBQ or trainee picks and packs in-stock items
+Front of shop (Front Shop and Dispensary)
+Back of shop (Adherence Centre)
+PBQ/ pharmacist calls patient to confirm replacement, generic, cost, or if item is delayed
+Order is finalised
+Other store items are picked and packed
+In stock
+Out of stock
+Script only
+Combined order
+Order is marked as delivered by third party
+Customer called during process if order delivery is delayed
+### slide 29
+MLP E2E blueprint for script fulfilment: New and repeat orders in returns, cancellations, or replacements (4/4)
+Customer profile data (IAM, loyalty, location, shopping/services history, etc.)
+Used across the entire process
+Order data
+Used across the entire process
+Fulfilment process data
+Used across the entire process
+Note, there are no medication returns
+Systems
+Raises an issue with their order
+Returns products and receives a replacement
+Order is redirected/restructured
+Customer interaction
+Customer support engages with the customer
+Process refunds or credits for order changes
+Financial recon and reporting
+Process replacement
+Process order redirect/restructure
+Front of shop (Front Shop and Dispensary)
+Order not purchased after X days (timing TBD)
+Order undispensed and removed from store dashboard by PBQ
+### slide 30
+MLP E2E blueprint for OTC fulfilment: OTC processing – Auto dispense and edge cases (1/2)
+Customer interaction
+Systems
+Unisolv
+Front of shop (Front Shop and Dispensary)
+Vexall
+Customer profile automatically added to system
+Log into app
+(If applicable) Update Medical Scheme details
+Add OTC to basket
+Select delivery method (pickup or delivery)
+Select store location & timeslot
+Add non-OTC items to basket
+With an existing profile
+Receive an order summary
+Medical Scheme savings are calculated and validated by PBQ
+Starts here
+Select products to claim with Medical Scheme (up to 8)
+Without an existing profile
+Medical Scheme savings are reimbursed to customer
+Order is picked and packed by PBQ
+Non-Medical Scheme items are picked and packed by Front Shop employee
+Order is moved to front counter
+Notified that orders are ready for collection or sent out for delivery
+Customer collects their order
+Receives internal delivery of their order
+Order is marked as delivered by third party
+Monitor order execution and delivery SLA
+Orders are ready for collection or sent out for delivery
+Order is marked as collected
+Order is marked as delivered internally
+Order is marked as delivered by third party
+Customer reimbursed for of Medical Scheme coverage
+Medical Scheme savings are automatically calculated
+Customer notified of missing funds or if items are typically non-reimbursable
+Pay for cart
+(For rejected Medical Scheme claims) Determine if item will be paid out of pocket or removed
+SAP
+Ends here
+Fiori
+Order submitted
+Create a health profile
+Add Medical Scheme details
+Customer directed to pay for OTC using non-scheme /insurance payment
+Order submitted
+Items receiving Medical Scheme appears in PBQ dashboard
+Order dispensed by PBQ
+PBQ validates medical Scheme & OTC items
+(If applicable) customer notified item is out of stock and will be fulfilled in X days
+Customer called during process if order delivery is delayed
+### slide 31
+MLP E2E blueprint for OTC fulfilment: OTC refunds and replacements (2/2)
+Customer profile data (IAM, loyalty, location, shopping/services history, etc.)
+Used across the entire process
+Order data
+Used across the entire process
+Fulfilment process data
+Used across the entire process
+Note, there are no medication returns
+Systems
+Raises an issue with their order
+Returns products and receives a replacement
+Customer interaction
+Customer support engages with the customer
+Process replacement
+Front of shop (Front Shop and Dispensary)
+Order is redirected/restructured
+Process order redirect/restructure
+Process refunds or credits for order changes
+Financial recon and reporting
+Order not purchased after X days (timing TBD)
+Order undispensed and removed from store dashboard by PBQ
+### slide 32
+In MLP, after script validation, a customer will select the next delivery slot >1-2 hours in the future
+High-level & not exhaustive
+Takeaways
+Script validation SLAs are still TBD given variance in volumes and mix lead to delays before an order is picked up; a 40-minute SLA is recommended to ensure a buffer exists Only after a script is validated can a delivery slot be chosen; delivery slots are only available to start at >60-minutes from the time of selection Today, delivery slots are capped at 3 per hour per store, but this may be adjusted in the future after proving ability to reach SLAs Dis-Chem currently has the least control over the timing of the delivery step given this is primarily serviced by 3rd parties; future initiatives could include switching providers to those that more consistently hit SLAs or including incentives for reaching SLA
+Step of the process
+1. Note, this measures straight through processing time and does not include any delays in picking up and handing off the order to the next individual / step of the process Assumes a 50% buffer to the average time to account for outliers
+Type of script
+Average time (min)1
+Recommended customer SLA (min)3
+14
+40
+New digital script
+15
+40
+New physical script
+7
+40
+Repeat physical script
+5
+40
+Repeat digital script
+Source: Dis-Chem time and motion study, XBLB Slotted delivery, Dis-Chem interviews
+Pre-delivery slot selection
+Post delivery slot selection
+Slot type
+Pre-slot selection
+Dispensary picking and packing
+Order delivery
+Front shop picking and packing
+Post-slot selection
+Details
+SLA calculation
+Script validation
+Lands on dispensary dashboard
+Existing SLA from delivery time-slot (minutes until delivery time-slot)
+T-0
+Delivery window ends
+T-60
+Slot start time
+T-75
+Driver lottery begins
+T-120
+Slot selection cut-off
+T-77
+Front shop cutoff
+T-95
+Dispensary cutoff
+Considerations
+Slot starts 60 min prior to delivery window
+2-min buffer before delivery lottery Driver selected 15-minutes before slot start time Most orders are delivered before delivery slot end
+Pick and pack begins at slot selection cutoff; escalations are 5 and 2 min from PFC
+Pick and pack begins at slot selection cutoff; escalations are 18 and 10 min from PFC
+### slide 33
+Contents
+Health services: Current state processes and challenges
+Health services: benchmarks and key decisions
+Health services: MLP journey and design
+Health services: Future state journey and design
+Health services: Adherence Centre staffing
+Fulfilment: Current state processes and challenges
+Fulfilment: SteerCo #1 and #2 design decisions and benchmarks
+Fulfilment: Future state design
+### slide 34
+Principle
+Details
+From these findings we have aligned on six principles that should influence the future state journey
+Influence on future state design
+Patient safety and script accuracy
+Ensure every prescription is transcribed, reviewed, and validated accurately before fulfilment and patient trust is maintained with safe, compliant, and reliable processing
+Ensure availability of pharmacists to review every order once, with input and validation tracked end-to-end
+Fast and predictable fulfilment
+Ensure prescriptions move quickly and reliably from intake to Adherence Centres to in-store pharmacies
+Ensure Adherence Centres and in-store pharmacies have availability to process orders as they arrive
+Continuous improvement and automation
+Build systems that automate processes and allow for human engagement to “shift-right” through data, automation, and AI-enabled workflows
+Leverage AI and automation (e.g., OCR, automated medical Scheme checks, real time stock levels) to assist with human review wherever possible
+Positive patient experience
+Enhance the E2E patient experience with clear communication during and after the script is processed and allowing Pharmacists / PBQs to shift into more patient-centric roles (e.g., providing guidance, checking in on customers vs processing scripts, stating what you can and cannot do)
+Clearly communicate and meet customer SLAs throughout the process (e.g., provide insight into order timing); create care-hub to notify patients on how to better adhere to their scripts (e.g., ingest on a full vs empty stomach)
+Source: Dis-Chem interviews, Future State Blueprint
+Straight-through processing
+Design workflows where prescriptions move smoothly along the value chain and can adjust to changes in-real-time (e.g., stock out) without unnecessary human intervention
+Build around a simplified platform that is easy to use and leverages automation (e.g., stock availability) where possible
+Omnichannel bridges
+Create workflows and communication pathways that can be transferred to and picked up across all channels (in-store, in-app)
+Develop omnichannel bridges to create connected customer journeys (e.g., sharing consent for family to order scripts, GP uploaded script alerts customer) and reduce user friction
+### slide 35
+Principle
+Key changes | Embedding these principles will require shifts from the current state (1/2)
+Patient safety and script accuracy
+Fast and predictable fulfilment
+Source: Dis-Chem interviews, Future State Blueprint
+Straight-through processing
+Required shifts
+Extends AC and store hours to process, pick and pack, and deliver meds
+Positive patient experience
+Provides SLA transparency and two-way communication channels to customer
+Enables pharmacist to engage in more meaningful customer interactions
+Automates key, repeatable processes and shifts human input later in the process
+Continuous improvement and automation
+Simplifies back-end experience through E2E dashboards and workflow managers
+Ensures SLA and performance are monitored at each step of the process
+Enables GPs to become a larger part of the scripting journey
+Omnichannel bridges
+Provides a seamless and repeatable experience
+Allows script and e-commerce orders to be purchased together
+Mitigates risk for S5 and S6 meds and harmful OTC combinations
+Allows customers to engage through multiple channels and people
+Improves delivery timing and reliability
+Increases scripting accuracy with technology
+### slide 36
+Embedding these principles will require several key shifts across the principle (2/2)
+View all future state activities in MLP section
+>40 activities are required to shift to the future state and have been defined against each of the principles
+### slide 37
+OTC deep-dive | The Future state processes for OTC increases transparency for the Customer and clearer R&R internally
+Source: Interviews with Dis-chem
+High-level & not exhaustive
+Dispensary
+Location:
+Delivery
+App
+Key takeaways
+Medical Scheme is calculated in the background so the customer knows what it applies to and the associated costs before they select an item A rules engine ensures OTC med combos, volumes, etc. that violate regulations are flagged before the customer can purchase Post-purchase OTC journey is highly automated, with manual picking and packing only for non-OTC items Deliveries are increasingly handled by Dis-Chem drivers
+Systems
+STICKER
+Fiori picking & packing
+Driver orchestration & allocation rules engine
+SAP CC
+E2E workflow manager
+In-store employee using mobile tablet / device to pick & pack with Fiori
+Responsible
+Customer
+Virtual coordinator
+3rd party or in-house delivery
+Front-shop pick and packer
+Returns/ failed delivery, refunds, & customer support
+Customer navigates to app
+Medical Scheme savings are listed for each item before being added to cart
+(Optional) Customer uploads Medical Scheme / insurance scheme to a centralised profile
+Order delivered or collected
+Couriers collects & out-for-delivery or awaiting collection
+Order collected and flagged as ready for collection or delivery
+Meds are automatically dispensed
+Non-meds land on FS dashboard
+Meds are automatically picked and packed
+Non-meds picked and packed by FS
+System managed rules don’t allow purchases if they violate regulations (e.g., 2 within a 14-day period)
+Customer selects products, whether or not to use medical Scheme, & delivery method
+Customer purchases order with a combination of Medical Scheme and cash
+(Optional) Post-purchase medical Scheme claim available for items that were less expensive in cash
+Responsible
+Used for both Dis-Chem and 3rd party drivers (Piccup, Uber)
+SAP ERP
+App
+### slide 38
+Scripts deep-dive| The future Script process is leaner, more automated and faster
+Source: Interviews with Dis-chem
+Key changes from MLP to target state for App
+Unified workflow management system to automate and assist pharmaceutical employee to process, validate and dispense scripts mor efficiently One order management system for dispensary and front shop orders to ensure a single source of truth for all orders processed Automated medication picking and packing to fast track order picking and packing Increased GP integration leading to increased OCR script processing accuracy Automated repeats dispensing and processing
+High-level & not exhaustive
+Future state SoTF design principles
+Future state SoTF scripting process
+Design principles for the SoTF process reimagination are the same principles applied to the app scripting process design
+The future state app scripting process is aligned to the SoTF future state processes, leveraging the SoTF efficiency gains
+A
+B
+C
+D
+E
+### slide 39
+Scripts deep-dive | The future state systems and stakeholders for Scripts
+Key takeaways
+Source: Interviews with Dis-chem
+GPs can upload scripts with verified and encrypted emails and/or a separate GP portal OCR and script validation processes will improve to reduce the script processing time Improved stock visibility reduces number of scripts that require to be rerouted An E2E workflow manager system will help facilitate processes across the various steps and locations
+Note, 3rd party vendor has different tracking system, which is not fully integrated with Dis-Chem systems
+SAP integration
+Order management system (OMS)
+FMS
+Fiori
+Meanwhile, customer can add additional items to basket, select fulfilment method, and pay (via medical Scheme claim or card)
+SLA from new script to payment TBD
+Customer Tracks order status on the app
+Health window (HW)
+3rd party vendor (Picup or Uber)
+ERP (front-shop only)
+Pickup
+Integrated with payment portal (e.g., PayGate)
+Brix
+Integrated picking and packing software
+General Pra- ctitioner/ Customer
+Dispensary PBQs/trainee & pharmacist
+3rd party delivery
+Virtual co-ordinator (failed deliveries)
+General Practitioner / Customer
+Adherence Centre (PBQ and Pharmacist)
+Customer
+High-level & not exhaustive
+Responsible
+Systems
+OCR & AI process script and determine if manual intervention is required (Optional) PBQ resolves queries
+System validates script and completes medical scheme or health insuran-ceclaim
+Workflow manager prioritises & routes based on stock, fulfilment method, SLA, etc.
+Repeat and low-risk meds are automatically dispensed
+Customer logs into app and inputs personal info & script image
+GP forwards prescription information to CCC
+Customer alerted in-app of script sub-mission
+PBQ dispenses medications; Pharmacists reviews if required
+(If required) Customer and GP notified to confirm replacements
+Customer confirms address and makes payment (if required)
+Returns/ failed delivery, refunds, & customer support
+Pharmacist validates medications against scripted items
+Courier (3rd party or Dischem) collects & out-for-delivery
+Order delivered to patient as they arrive home
+Meds are picked automatically by ROWA
+Specific meds are prepared manually by PBQ (mixing, bottled)
+Assistant packs meds and order is stored
+Order sent to dispensary & enters process flow
+Dispensary
+Customer Care Centre (CCC)
+Location:
+Delivery
+App
+E2E workflow manager
+WIP – highly preliminary; subject to change pending continued future state work from Annemarie and Tamsin
+### slide 40
+Given feasibility of many critical enablers, it will take time to achieve transition
+Impact
+Low
+Medium
+Low
+Medium
+High
+Feasibility
+High
+High potential
+Medium potential
+Under alignment with Annemarie
+Long-term unlock
+3
+6
+2
+7
+5
+10
+11
+12
+4
+8
+9
+18
+16
+15
+1
+Strategic unlock
+Impact
+Feasibility
+Low
+Medium
+High
+2
+Separate pharmacist validation and reviews (e.g., AC vs in-store)
+Real time dispensary stock visibility
+11
+E2E workflow management tool to pass orders between dispensary and stores
+9
+Automated picking and packing (e.g., ROWA) or optimised manual picking (e.g., scanners)
+5
+8
+E2E workflow monitored with one dashboard
+6
+Automated dispensing without PBQs for select orders (e.g., repeats, OTC items)
+In consideration / in-progress with MLP
+Future state
+X
+X
+1
+<12 hour adherence centre opening time (e.g., 24-hours)
+Increased use and accuracy of OCR
+12
+7
+Increased control over last mile delivery operations
+3
+Ensure SLA adherence in pick-and-pack through order prioritisation
+4
+Select stores dispense, pick, and pack after hours (e.g., 6AM-9PM)
+Real time dispensary stock updates
+10
+Unified order management system for all orders
+13
+13
+17
+29
+Ensure packages between dispensary and FS can be tracked (e.g., barcode)
+16
+18
+E2E dependency management (incl. pets)
+Live driver tracking through app functionality
+15
+Real time order notifications
+19
+17
+Unified collections processes across all store types
+Enhancement of fulfilment routing, driver allocation and store selection rules
+29
+19
+Centralised customer profiles to ensure scripts processing is store agnostic
+14
+14
+### slide 41
+Contents
+Health services: Current state processes and challenges
+Health services: benchmarks and key decisions
+Health services: MLP journey and design
+Health services: Future state journey and design
+Health services: Adherence Centre staffing
+Fulfilment: Current state processes and challenges
+Fulfilment: SteerCo #1 and #2 design decisions and benchmarks
+Fulfilment: Future state design
+### slide 42
+The SoTF model is focused on longer term financial impact and is the basis of the near-term employee calculations
+Focus of the Store of the Future economics model
+Sessions held to align on with the model’s assumptions
+How we are using the SoTF model for MLP employee calculations
+Syndication session on 29th May, from 3-4PM Daily script processing calls with Shalanie
+In addition, we have met with operators across the organization to ensure the targets are feasible and resourced against (e.g., Shalanie, Tanya, Annemarie etc.)
+Script volume growth after the launch of the MLP is informed by the year-0 to year-1 projections FTE counts to meet volume growth are informed by SoTF Adherence Centre ratios (e.g., PBQs, pharmacists) Order process timing and script mix are informed by the current and projected year-1 mix
+Goal is to provide a 5-year business case for the Store of the Future and understand the revenue and cost impacts across the business (e.g., Adherence Centre (Customer Care Centre), in-store)
+A
+B
+C
+### slide 43
+We have developed a modular staffing approach that can scale FTEs alongside order volumes in the Adherence Centre
+Roles needed for every 1,000 scripts per day1
+<1 Team Leaders
+11-12 PBQs
+2-3 Pharmacists2
+<1 Middle Managers
+Consideration and insights
+Higher volumes are expected, but timing of when volumes will hit remains uncertain – a PBQ-to-order ratio based FTE count allows for Adherence Centre to adjust Over the next 6-12 months, Adherence Centre is transitioning to the MLP and will process increased order volumes which will require more employees Three methods to increase overall PBQ count in the workforce are: Hiring individuals from other pharmacies (quickest; will be expensive to buy out of existing contracts or pay more than current employers) Reassigning PBQs from in-store to AC (medium speed; requires order validation volume to drop enough in stores to free up PBQs to transition to AC) Graduating PBQ trainees (slowest; requires 24-36 months to complete trainings) Today, the average time-to-process per script is ~5.5 minutes (based on current script mix) and is expected to decrease in the future with increased share of repeat scripts and introduction of automation – a modular approach allows refinement as efficiencies come online PBQs should continue to work 8.5 hour shifts (with 30-minutes for lunch) – limits potential of overtime pay which increases cost-base
+Note, figures may change pending decision of Adherence Centres opening hours and order volume mix and density; the following staffing ratios were used: 1 Pharmacist to every 5 PBQs, 1 Team Leader to every 13 PBQs, 1 Middle Manager to every 20 Team Leaders Pharmacist count depends on role in Adherence Centre and how quickly this will ramp up
+Source: Historic Dis-Chem order volumes, Dis-Chem interviews
+### slide 44
+Reaching Y1 ambition of ~14k scripts per day will require an additional ~65-80 PBQs
+0
+9.000
+10.000
+11.000
+12.000
+13.000
+14.000
+June
+August
+October
+December
+February
+April
+June
+Estimated volume with spikes
+Straight-line volume increase
+Central Care Centre daily order volume modelled over the next 12 months
+Daily order volume1
+Count of role needed in each month for estimated volume2
+Total
+PBQ
+73-84
+Takeaways
+All roles should be hired in advance given training and integration lead times PBQs can be increased through: External hire (1-month to leave existing job; 3-months training) Internal move from in-store to Central Care Centre (1-month training) Graduating trainee program (24-36 month training) Repurpose existing CCC FTEs (transition to only focus on app submissions) Cancellation PBQs will require an est. 3-months of training before they begin For non-PBQ roles, it is time consuming to hire, onboard, and train only 1-role at a time; therefore, Dis-Chem should consider hiring and training multiple at the same time
+1. Based on current volume of ~8,000 scripts per day and estimated year 1 volume of ~14,000 scripts per day The following staffing ratios were used: 1 Pharmacist to every 5 PBQs, 1 Team Leader to every 13 PBQs, 1 Middle Manager to every 20 Team Leaders. Incremental hires are recommended whenever FTE count exceeds ratio. Source: Historical PBQ overtime data, Adherence Centre staffing model, SotF Economics model
+From month 3, marketing activation accelerates driving increased script growth. This provides an increased bump in script submissions
+By month 9, repeat orders originally submitted are due for resubmission
+Slower ramp up given limited marketing on the app until full environment stabilisation
+6
+3
+10
+4
+7
+11
+33
+51
+57
+62
+68
+73
+79
+84
+46
+Pharmacist
+13-15
+Exact ratio is TBD based on how many scripts pharmacists can validate during start of MLP; current assumption is a 1:5 ratio vs PBQs. Note, additional Pharmacists will need to be hired to match current number of PBQs
+3-4
+Middle manger
+Middle managers should be hired at a ratio of 1:20 vs PBQs and will be brought in as PBQs increase
+Team leader
+5-6
+Team leaders should be hired at a ratio of 8:100 vs PBQs and will be brought in as PBQs increase
+Minimum PBQs
+Maximum PBQs
+Increase in October where cancellation PBQs will be available
+### slide 45
+Increasing Adherence Centre script throughput may require expanding hours of existing operation
+Understanding the current state
+0
+04
+08
+12
+16
+20
+24
+0
+100
+200
+300
+400
+500
+600
+700
+800
+Not covered by AC hours
+Covered by AC hours
+Shift 1: 6 – 14:30
+Shift 2: 7:30 – 16
+Shift 3: 8:30 – 17
+Shift 4: 9:30 – 18
+Low order activity occurs before the 1st shift (~150 total)
+Daily peak is at 10am. All 4 shifts are available at this time to cover demand surge
+~500 orders occur during the same day, after AC closes down; in total, 650 orders occur overnight
+Takeaways
+CCC has already shifted to a 12 hour shift model to facilitate Store of the Future orders CCC typically experiences peak volumes between 10am to 13pm A 24 hours shift allows for ~700 additional scripts to be validated day-of, but needs to be paired with extended in-store pick and pack hours to improve the customer experience
+Incoming order volume to Adherence Centre per hour
+PBQ shift timing
+Script volume
+Hour
+### slide 46
+Contents
+Health services: Current state processes and challenges
+Health services: benchmarks and key decisions
+Health services: MLP journey and design
+Health services: Future state journey and design
+Health services: Adherence Centre staffing
+Fulfilment: Current state processes and challenges
+Fulfilment: SteerCo #1 and #2 design decisions and benchmarks
+Fulfilment: Future state design
+### slide 47
+eCommerce value chain is a continuously evolving process, driven by ongoing refinement to improve efficiency, accuracy, and customer experience
+Last-mile delivery and collection
+Returns, refunds, and customer support
+Order fulfilment execution
+Last-mile handover
+Assortment planning and procurement
+Inbound logistics and inventory management
+Customer order capture
+Post-fulfilment monitoring and reporting
+PRELIMINARY
+Description
+Define which products to offer, based on demand, strategy, and operational feasibility. Source and purchase stock from suppliers to meet expected customer needs
+Receive and process stock into fulfilment locations (e.g., warehouses, stores). Track and manage inventory levels to ensure availability and efficiency
+Allow customers to place orders through digital or physical channels. Capture order details, validate payment, and initiate the fulfilment process
+Pick, pack, and prepare items for delivery or collection. Coordinate internal resources and systems to ensure speed and accuracy
+Transfer the order to in-house delivery service, a delivery partner or make it available for customer pickup. Confirm readiness and trigger tracking or notifications
+Deliver the order to the customer or facilitate collection from a store, locker, or pickup point. Ensure on-time, complete, and satisfactory handover
+Process returned items, issue refunds if applicable, and resolve customer queries. Manage both operational and service aspects of post-sale issues
+Track fulfilment performance (e.g., SLA, errors, stock-outs). Generate insights to improve processes, customer experience, and profitability
+Execution
+Planning
+### slide 48
+High-level overview of the different processes
+Source: Interviews with Chaldon Venter, Shalanie Pillay Moodley, Megan Hughes & store visits to Benmore, Blubird & Sandton City
+High-level & preliminary
+Schedule 1 & 2 medication | 2. When handed off to delivery driver or when customer collects | 3. Even though delta is regularly updated, the update itself can have significant delays, because stock will only be deducted after collected or out-for-delivery | 5. E.g., dependent/family member, shipping method (click & collect, delivery), payment type, replace with generics (y/n)), repeat prescription (y/n)
+Options
+Dis-Chem
+3rd party vendor (Picup)
+Responsible:
+Routed to dispensary in-store (i.e., OTC part follows the in-store operations of dispensary)
+High-level process
+Single global stock update across total assortment (i.e., online & in-store) early morning, with deltas every hour3
+Store stock level update early morning, with deltas every hour3
+Stock update
+A
+eCommerce/ online
+B
+DeliverD
+Returns
+Failed delivery
+Front shop
+OTC1
+Returns
+Front shop
+Delivery
+Click & collect
+Failed delivery
+OTC1
+In-store operations
+Stock deducted2
+Order is routed to a store following rules (e.g., x% of order in-stock in that store)
+Pack the order
+Pick the order
+Order delivered or collected
+Returns/ failed delivery, refunds, & customer support
+Customer selects delivery method
+Flag order ready for collection or set up delivery
+Couriers collects & out-for-delivery or awaiting collection
+Customer makes payment
+Customer navigates to website or re-directed via app
+Customer selects products & places order
+Auto-assigned to store within 10 km radius
+Customer selects a delivery slot (can be adapted across process)
+Customer logs into the app & select address
+Customer selects products & places order
+Customer makes payment
+Pack the order
+Delivery set-up with courier
+Courier collects & out-for-delivery
+Order delivered
+Pick the order
+Auto-claim medical aid4
+In-store operations
+Stock deducted2
+Returns/ failed delivery, refunds, & customer support
+### slide 49
+A. eCommerce/online: Systems & stakeholders
+Returns
+Front shop
+Delivery
+Click & collect
+Failed delivery
+OTC1
+In-store operations
+Stock deducted2
+Returns/ failed delivery, refunds, & customer support
+Customer selects delivery method
+Pack the order
+Pick the order
+Flag order ready for collection or set up delivery
+Order delivered or collected
+Couriers collects & out-for-delivery or awaiting collection
+Customer makes payment
+Order is routed to a store following rules (e.g., x% of order in-stock in that store)
+Customer navigates to website or re-directed via app
+Customer selects products & places order
+Key takeaways
+Options
+Dis-chem
+3rd party vendor (Picup)
+Responsible:
+Routed to dispensary in-store (i.e., OTC part follows the in-store operations of dispensary)
+Responsible
+Back-office
+In-store staff
+3rd party vendor
+In-store staff
+Different systems for stock management, routing rules, and integration are used per digital channel (i.e., magento vs DVI) Fiori is used in-store for picking and packing Suboptimal integration with Picup system
+Magento (Online.Co.Za, Baby City)
+Fiori (picking & packing software)
+Rules are calculated per channel in Magento
+Integrated with gateways (e.g., PayGate)
+Picup system (3rd party vendor)
+[TBD]
+Systems
+DVI (Biogen, Living fit)
+In-store staff using mobile tablet/device to pick & pack with Fiori
+SAP (global stock file, SKU prices) pushed to Magento/DVI
+3rd party vendor has different tracking system, which is not fully integrated with Dis-Chem systems
+Source: Interviews with Dis-chem & store visits to Benmore, Blubird & Sandton City
+High-level & not exhaustive
+### slide 50
+D
+B
+F
+A
+A. eCommerce: Main challenges revolve around inaccurate stock data creating a domino effect across the process
+Source: Interviews with Chaldon Venter, Shalanie Pillay Moodley, Megan Hughes & store visits to Benmore, Blubird & Sandton City
+1. When handed off to delivery driver or when customer collects
+Commerce cloud could resolve some of the issues, but implementation timelines and solution effectiveness to be verified
+Preliminary
+Fiori system presents some limitations for scalability in its current form (e.g., lacking features such as auto-refresh or notifications for new orders, occasional server downtime, reference number not always pushed through to Picup), and the current set-up is not geared for on-demand support from the SAP team
+E
+Customers actively exploit loopholes in the system (e.g., abusing coupons, changing delivery address over the phone to avoid paying delivery fee) leading to revenue loss
+D
+Communication to customer is lacking, with limited tracking updates throughout the order journey (incl. refunds) & fragmented tracking experience split across two systems, with ~80% of complaints related to unclear order status (e.g., "where is my order“, “what is my tracking number”)
+C
+Lack of a governed and transparent rules engine and master data framework leads to inconsistent system behavior, unintended rule conflicts, and manual workarounds, which is driven by undocumented logic (e.g., unclear why a rule was created or how it interacts with others), limited rule maintenance (e.g., rules overriding each other or triggering stock availability for items that aren't in stock), and unreliable product master data (e.g., missing or incorrect attributes preventing rules from functioning as intended
+F
+Limited control over last mile operations due to dependency on third-party vendors for driver management, planning, and issue resolution (e.g., availability and performance of dedicated drivers), misaligned SLAs and KPIs, and operational challenges in scaling on-demand deliveries (e.g., high daily message volumes on WhatsApp, limited visibility on adherence to the dedicated driver stipend model)
+G
+Enabler: Ineffective performance steering due to the absence of a single source of truth, limited ease of data access (e.g., not available at the click of a button), low data quality (e.g., parcels marked as “undelivered” due to new order number creation), and a manually intensive approach (e.g., researching past trends to update delivery slots).
+I
+Customer care is unable to provide timely, real-time support due to fragmented systems and lack of a unified data view (e.g., different order channels, no single source of truth to track orders), resulting in delayed responses to common queries (e.g., “where is my order” answered only after delivery), high backlog volumes, and capacity constraints driven by recurring issues (e.g., order tracking, refunds, pricing).
+H
+Stock deducted1
+Customer navigates to website or redirect via app
+Customer selects products and places order
+Customer selects delivery method
+Customer makes payment
+Order is routed to a store following rules (e.g., x% of order in-stock in that store)
+Flag order ready for collection or set up delivery
+Couriers collects & out-for-delivery or awaiting collection
+Order delivered or collected
+Pack the order
+Pick the order
+B
+E
+C
+A
+B
+C
+G
+D
+A
+C
+G
+B
+C
+A
+C
+H
+B
+E
+C
+A
+B
+Inaccurate stock data, caused by flawed stock deduction logic (only triggered after collection/out-for-delivery) & infrequent stock updates (e.g., once-daily global assortment update & products on website that haven’t been in stock for ~3 years) creates a domino effect on variety of other processes: Misrepresents availability across stores and online, eroding customer trust as they can order unavailable items, leading to refunds (millions of ZAR a month), frustrations, and reputational damage, especially during promotions (“Why is it on the website, if you do not have it”) Requires significant manual effort to manage in-store stock gaps, as system discrepancies have to be investigated (e.g., system shows stock, but shelves are empty) and stock needs to be found through Inter-branch transfers (IBTs), which is a non-standardised, tedious manual process (e.g., calling different branches, setting up delivery themselves) & influenced by politics (e.g., not giving last stock to other store, “No way you are getting the stock, send the customer to me”) Causes replenishment logic to fail, as the just-in-time model and F&R system operate on inaccurate data (e.g., stock showing as available even after already picked for an order), leading to out-of-stock items not being replenished in-time
+G
+Key challenges (not prioritised)
+E2E process
+Impact
+A
+Significant manual effort required throughout the process (e.g., checking fulfilment dashboard with no new order notifications, ability to circumvent outlined failed delivery process, processing customer in-store collection, failed delivery & return process (calling customer, rescheduling appointment) impacting efficiency, data quality/trustworthiness & increasing risk of error
+Limited/unknown
+Medium
+High
+Low
+Potential impact:
+Dis-Chem
+3rd party vendor (Pickup)
+Responsible:
+Returns/ failed delivery, refunds, & customer support
+### slide 51
+B. DeliverD: Systems & stakeholders
+Returns
+Failed delivery
+Front shop
+OTC1
+Auto-assigned to store within 10 km radius
+Customer selects a delivery slot (can be adapted across process)
+Customer logs into the app & select address
+Customer selects products & places order
+Pack the order
+Courier collects & out-for-delivery
+Order delivered
+Delivery set-up with courier
+Pick the order
+Customer makes payment
+Auto-claim medical aid1
+In-store operations
+Stock deducted2
+Returns/ failed delivery, refunds, & customer support
+Options
+Dis-chem
+3rd party vendor (Picup)
+Responsible:
+Routed to dispensary in-store (i.e., OTC part follows the in-store operations of dispensary)
+Key takeaways
+Responsible
+Back-office
+In-store staff
+In-store staff
+3rd party vendor
+1. If OTC products have been selected, it can be auto-claimed on medical aid through link with Unisolv system
+Source: Interviews with Dis-chem & store visits to Benmore, Blubird & Sandton City
+Health window used as the back-end for stock management, routing rules, and integration Fiori is used in-store for picking and packing Suboptimal integration with Picup system
+High-level & not exhaustive
+Systems
+Health window (HW)
+Fiori
+[TBD]
+Unisolv
+Picup system (3rd party vendor)
+3rd party vendor has different tracking system, which is not fully integrated with Dis-Chem systems
+Integrated with payment portal (e.g., PayGate)
+Delivery API
+SAP integration
+### slide 52
+Preliminary
+Key challenges (not prioritised)
+B. DeliverD: Main challenges revolve around inaccurate stock data creating a domino effect across the process
+Source: Interviews with Chaldon Venter, Shalanie Pillay Moodley, Megan Hughes & store visits to Benmore, Blubird & Sandton City
+Stock deducted1
+1. When handed off to delivery driver or when customer collects
+Limited/unknown
+Medium
+High
+Low
+Potential impact:
+Dis-Chem
+3rd party vendor (Pickup)
+Responsible:
+E2E process
+Customer logs into the app
+Auto-assigned to store within 10 km radius
+Customer selects a delivery slot (can be adapted across process)
+Customer selects products & places order
+Auto claim medical aid 4
+Pack the order
+Delivery set-up with courier
+Courier collects & out-for-delivery
+Order delivered
+Pick the order
+Customer makes payment
+Returns/ failed delivery, refunds, & customer support
+Impact
+B
+F
+B
+E
+A
+E
+A
+D
+A
+C
+A
+C
+B
+G
+B
+G
+C
+C
+C
+F
+C
+C
+I
+H
+H
+J
+A
+Significant manual effort required throughout the process (e.g., checking fulfilment dashboard with no new order notifications, ability to circumvent outlined failed delivery process, processing customer in-store collection, failed delivery & return process (calling customer, rescheduling appointment) impacting efficiency, data quality/trustworthiness & increasing risk of error
+E
+Fiori system presents some limitations for scalability in its current form (e.g., lacking features such as auto-refresh or notifications for new orders, occasional server downtime, reference number not always pushed through to Picup), and the current set-up is not geared for on-demand support from the SAP team
+C
+Communication to customer is lacking, with limited tracking updates throughout the order journey (incl. refunds) & fragmented tracking experience split across two systems, with ~80% of complaints related to unclear order status (e.g., "where is my order“, “what is my tracking number”)
+J
+Enabler: Ineffective performance steering & customer care due to the absence of a single source of truth, limited ease of data access (e.g., not available at the click of a button), low data quality (e.g., parcels marked as “undelivered” due to new order number creation), and a manually intensive approach (e.g., researching past trends to update delivery slots)
+I
+Customer care is unable to provide timely, real-time support due to fragmented systems and lack of a unified data view (e.g., different order channels, no single source of truth to track orders), resulting in delayed responses to common queries (e.g., “where is my order” answered only after delivery), high backlog volumes, and capacity constraints driven by recurring issues (e.g., order tracking, refunds, pricing).
+H
+Limited control over last mile operations due to dependency on third-party vendors for driver management, planning, and issue resolution (e.g., availability and performance of dedicated drivers), misaligned SLAs and KPIs, and operational challenges in scaling on-demand deliveries (e.g., high daily message volumes on WhatsApp, limited visibility on adherence to the dedicated driver stipend model)
+F
+Limited delivery slot availability & misalignment with dispensary operations are creating operational inefficiencies and hindering SLA performance:
+Delivery capacity is constrained to 3 slots per hour per store and earliest slot is 10:00 – 11:00 AM due to in-store fulfilment and trading hours limitations, reducing competitiveness with competitors offering 8:00 AM slots
+Peak load in the mornings as those slots are in higher demand due to customer preference and they coincide with pharmacy fixed dispatching moments (i.e., Pack My Meds & Submit a Script at 10:00 & 14:00)
+Delivery slots can be blocked by inactive customers with no smart timeout logic (e.g., slot only released/closes 10 min prior), reducing effective availability and increasing inefficiencies
+G
+Lack of system & workflow integration between front-shop & dispensary (OTC) creating operational inefficiencies & bottlenecks:
+No parallel picking or order transparency creates operational bottleneck for front-shop staff due to a strict picking hierarchy prioritising dispensary orders (~80% of DeliverD turnover involves Schedule 1 & 2 (OTC) meds)
+Manual verification of packages (e.g., name matching instead of barcode scanning) is required due to lack of system integration, increasing the risk of critical errors and mismatches, particularly at high volumes
+B
+Inaccurate stock data, caused by flawed stock deduction logic (only triggered after collection/out-for-delivery) creates a domino effect on variety of other processes:
+Misrepresents availability across stores and online, eroding customer trust as they can order unavailable items, leading to refunds (millions of ZAR a month), frustrations, and reputational damage, especially during promotions (“Why is it on the website, if you do not have it”)
+Requires significant manual effort to manage in-store stock gaps, as system discrepancies have to be investigated (e.g., system shows stock, but shelves are empty) & order has to be manually cancelled when stock is not found
+Causes replenishment logic to fail, as the just-in-time model and F&R system operate on inaccurate data (e.g., stock showing as available even after already picked for an order), leading to out-of-stock items not being replenished in-time
+D
+Auto-claim medical aid feature is integrated with Unisolv dispensary platform; however, operational inefficiencies and limited customer friendliness exists:
+Auto-claiming process has a 2 – 3 min turnaround time, resulting in a suboptimal customer experience and increasing risk of potential connection timeouts
+Whenever customer does not complete order, staff must manually reverse the claim. Current guardrails (e.g., one auto-claim per 24 hours) are restrictive and limit the ability for customers to retry seamlessly, reducing system flexibility and user-friendliness
+### slide 53
+Contents
+Health services: Current state processes and challenges
+Health services: benchmarks and key decisions
+Health services: MLP journey and design
+Health services: Future state journey and design
+Health services: Adherence Centre staffing
+Fulfilment: Current state processes and challenges
+Fulfilment: SteerCo #1 and #2 design decisions and benchmarks
+Fulfilment: Future state design
+### slide 54
+Key decisions to set fulfilment strategy and unlock app acceleration
+Main decisions taken
+Customers must validate email and cell number on app as currently constrained by CDC
+Customers may browse as a guest but must login/register to checkout
+Single store fulfilment to prevent IBTs
+Decisions to be made today
+Auto-enroll new app registrants in the Better rewards program
+Fulfilment key decisions across delivery methods, SLA CVP and assortment
+Retain existing PSP to protect timeline and reduce delivery risk
+Additional (20+) decisions that have been taken across: Registration and login (e.g., email & cell no. login) Navigation and home (e.g., Guest browse) Activate CDC prior to app launch (i.e., Password reset for all customers across digital platforms)
+### slide 55
+Fulfilment today is complex and inefficient with manual processes, long SLAs, high inter-branch transfers – impacting customer experience and unit economics
+Description
+Status quo challenged
+2
+SLAs Multiple SLAs (3+) for fulfilment methods affecting customer perception and communication cohesion
+Limited ability to succinctly communicate an SLA promise to customers due to complex fulfilment methods and constraints associated
+Lack of communicable customer promise
+Pickers and packers prioritise DeliverD orders while Standard delivery types may not be attended to as efficiently due to differing processes
+Increased operational complexity
+Fulfilment methods Multiple (4) fulfilment methods affecting customer order completion and internal processes
+3
+Decision making overhead placed on customer by having to choose between DeliverD, Standard, Click and Collect and PackMyMeds
+Reduced CX due to complex decisions
+Each additional method adds processing and operational complexity for pickers and packers and technical overhead
+Increased operational complexity
+Dis-Chem staff (in store, HQ and tech) have split focus reducing the ability to prioritise incremental improvements
+Reduced efficiencies
+Each additional method adds additional costs either through increased courier fees, partner/licencing fees and staff productivity opportunity cost
+Increased cost base
+1
+Assortment Broad assortment impacting SLAs
+The ability for customers to select “curated” stock from stores nationwide leads to manual interbranch transfers and slippage in SLA
+Increased operational complexity
+The in-store space and processes are not designed for orders that are not being shipped, leading to high piles of orders awaiting IBTs
+Reduced efficiencies
+Increased courier fees to facilitate IBTs
+Increased cost base
+### slide 56
+Guiding principles for reimagining a future fit fulfilment process
+Key Principles
+Measurable outcomes based improvements
+Each iteration towards the reimagined fulfilment process should be tied to a measurable outcome and supported by data driven decisions across the value chain
+Define strategic initiatives and short-term wins to better service customer needs or by making it simpler for staff to service customer needs
+Customer at the centre of key decisions
+The future fulfilment process should aim to increase economic viability at scale by reduced unit economics and process complexity
+Design for operational simplicity and economic efficiency
+The fulfilment value chain should be built in a modular way such that each step in the process can be adapted in pursuit of increased customer satisfaction and better fulfilment outcomes
+Build in a modular and scalable way
+Anchored in the CVP
+Ensure the fulfilment methods are anchored in the customer promise and overall Dis-Chem app vision
+### slide 57
+Fulfilment decisions are deeply interconnected, need to be aligned and made in a holistic context
+Strategic decisions
+Key considerations
+Strategic decisions in one domain must be made in context of all 3 domains
+Fulfilment methods
+SLAs
+Assortment
+In store operational complexity increased due to 4 differing fulfilment methods and a system (Fiori) that is not set up to facilitate broad range of fulfilment methods SLAs impacted due to additional operational complexity of 4 fulfilment methods and associated SLAs Unit economics improved though increased volume driven by (1) SLA adherence and enough volume to increase operational efficiencies, and (2) IBTs
+Optimising fulfilment processes empowers instore teams to achieve operational efficiencies Better unit economics through increased throughput enabled by streamlined fulfilment methods
+Enhancing SLAs requires optimising the assortment strategy and aligning to a prioritised set fulfilment methods Improve CX by increased adherence to SLAs, enabled by curated assortment
+Enhanced CX though elimination of IBTs Curate online assortment to match in store offers to meet customer product needs
+### slide 58
+Adjustments to the status quo will be assessed against the 3 affected strategic focus areas, informed by key data points
+Strategic decision
+Options
+Key considerations
+1. Same day if ordered before 10pm and next day if ordered after 10pm due to 2x daily dispatches
+Source: Internal Dis-Chem fulfilment data
+~12% of digital orders are Delivery type ~80% of orders are derived from dispensary (telephonically, email, app and WhatsApp) ~8% order share for Click and Collect and Pargo combined
+100% of DeliverD orders are processed through a single store, therefore no IBTs 4hr - 8 day delays due to IBTs for online orders >R1m refunds per month
+~17% of order share is attributed to slot based DeliverD order ~83% of current orders are “online” order types with unclear SLA of same day/next day or 3-5 days and may require IBTs
+Top 10% of SKUs represent 75% of sales ~95% or stores stock the top 10% of SKUs ~75k products included in current curated assortment ~7k inter branch transfers per month
+PRELIMINARY & FOR DISCUSSION
+Current state
+Fulfilment methods
+3
+Fulfilment methods
+3.1
+Dispensary collection (PackMyMeds)
+Click and collect (Front shop only)
+Delivery
+Locker pick ups
+Integrated collection (front shop and dispensary)
+Fulfilment processes
+3.2
+Fulfil from stores in regional proximity to customers
+Fulfil from a single store (within a 10km radius)
+Fulfil from any store nationwide (Includes interbranch transfers)
+Delivery SLAs
+2
+SLA
+Assortment strategy
+1
+Assortment strategy
+Niche/low-velocity SKU
+Curated assortment
+Full product catalogue (all active SKUs)
+Buyer managed
+Same day (if before 10am) or next day (after 10am)
+Scheduled 60 min slots with available slots for selection are up to 48hrs
+3-5 days
+Pure 60 min delivery from time of order
+### slide 59
+Industry benchmarks across SLA, fulfilment and assortment
+Source: Dis-Chem, Clicks, Checkers and CVS applications and website
+Key insights
+Present
+Not present
+Best in class
+Ad hoc assortment strategy
+Curated assortment
+Assortment strategy
+Niche/low velocity SKU
+Full online product catalogue
+Locker-based
+Fulfilment methods
+PackMy Meds
+Delivery
+Click & collect
+SLA
+Standard delivery >1 day
+Same day/ next day delivery
+60- min slot
+Online
+DeliverD
+Hyper
+Grocery
+Clothing
+Grocery
+The best-in-class players offer 60 minute-based SLAs along with a wider assortment provided through same day/next day deliveries The market standard is to offer in store collection, however South Africa’s leading online grocer has prioritised 60 minute delivery Peers and market leaders tend towards a curated assortment of items that are operationally feasible given their SLAs and fulfilment methods
+### slide 60
+Customer needs based fulfilment
+Two broad options for fulfilment to enhance the customer experience, operational inefficiencies and current cost base
+Catch all fulfilment
+A
+B
+SLA
+2
+Multiple modes: Express: Items in stock and available nearby are fulfilled through a 60 min window, as selected by the customer Standard: items not available within express but <30km Standard: Items not in stock or >30km are fulfilled in 3-5 days
+Express: Slot based delivery where customers select a 60-min window to get their orders delivered
+Fulfilment method
+Delivery to customer
+Single in store collection point for front shop and medications
+3.1
+Delivery to customer
+Click and collect
+Dispensary collection
+Fulfilment hub
+3.2
+Status quo preserved of fulfilment through any store nationwide Enhanced operational efficiencies, tech stack improvements and clear customer communications required
+Orders only fulfilled within a 30km radius enables guaranteed deliveries within 24 hours. Orders within 10km are fulfilled through motorbike while those >10km are fulfilled through car/van Smart single store routing enabled for SLA guarantees and balancing store loas
+CVP
+0
+Reliably fast deliveries of your Dis-Chem essentials
+Extended aisle and reach for full Dis-Chem assortment
+Assortment
+1
+Full Dis-Chem assortment covering 99% of sales including large items
+Curated assortment of items available in the nearest Dis-Chem store. Covers the top 10% of products responsible for ~75-80% of sales and held in ~90% of all stores. Excludes large items
+### slide 61
+Recap | Critical fulfilment decisions
+Key considerations
+Slot availability will be calibrated to dispensary processing times to ensure the 60-min SLA is consistently met, with timing adjusted as dispensary performance improves (dependency on Enterprise Acceleration tribe) Standard specialty orders to be introduced after February MLP release For DC-fulfilled standard orders, a defined fulfilment window (e.g., 3–5 days) will be applied until slot-based 60-min fulfilment becomes feasible
+Strategic decision
+Options
+Fulfilment methods
+3
+Fulfilment methods
+3.1
+Dispensary collection
+Click and collect (Front shop only)
+Delivery
+Locker pick ups
+Integrated collection (front shop and dispensary)
+Fulfilment processes
+3.2
+Fulfil from stores in regional proximity to customers
+Fulfil from a single store (within a 10km radius)
+Fulfil from distribution centre and dark stores
+Delivery SLAs
+2
+SLA
+Assortment strategy
+1
+Pharmacy
+Curated assortment from the nearest store with the best assortment
+Full product catalogue (all active SKUs)
+Current pharmacy assortment
+Same day (if before 10am) or next day (after 10am)1
+Scheduled 60 min slots with available slots for selection are up to 48hrs
+3-5 days3
+Front shop
+Curated option of extended range/specialty products
+Curated assortment from the nearest store with the best assortment
+Full product catalogue (all active SKUs)
+Buyer managed assortment decisioning
+1.1
+1.2
+Fulfil from a single store (within a 30km radius)2
+MLP decisions
+MLP with data-led decisions
+1. Same day if ordered before 10pm and next day if ordered after 10pm due to 2x daily dispatches | 2. Assortment available at the nearest, most relevant store that can deliver within the SLA 3. In case of specialty products
+For discussion
+### slide 62
+To enable the future fulfilment model, clear ownership and responsibilities have been established
+Workstream
+Scope of work
+Owner(s)
+Key progress to date and next steps
+4+ workshops conducted over past weeks covering fulfilment, SAP Fiori, and ERP process requirements Fulfilment-related SAP Fiori and ERP changes have been prioritised with dedicated developer capacity secured 5+ additional sessions scheduled over next 2 weeks to complete requirement deep dives and validate design decisions
+62
+Retail operations
+Operationalise optimised front-shop fulfilment flows for MLP Establish KPIs to monitor performance across front-shop operations
+Craig Swanepoel Jacques Hartslief Schalk Visagie
+Dispensary operations
+Operationalise optimised dispensary fulfilment flows, including validation, safe picking, and handover Establish KPIs to monitor performance across dispensary operations
+Tanya Ponter Annemarie Barnard
+Assortment strategy
+Detail and enable fulfilment assortment strategy (incl. which stores serve which customer catchments, app-visible assortment vs. in-store assortment)
+Quinton Cronje JJ Hendriks
+SAP fulfilment tech stack
+Build an upgraded SAP ERP and Fiori capabilities to support end-to-end in-store fulfilment with continuous monitoring and support
+Eben Truter
+Dispensary tech stack
+Build an upgraded dispensary tech stack to support end-to-end dispensary fulfilment operations
+Tanya Roos Nicola Lotter
+Project governance and GTM
+Drive overall project governance and change management across fulfilment transformation Optimise fulfilment pricing structure
+Yusuf Kaka Thabiso Msimanga
+### slide 63
+Digital operations are focused on stabilising our channels and developing micro- improvements
+Product delivery and strategic foundations
+Operational resilience and ways of working
+Vendor consolidation and savings
+Rearchitected app back-end, reducing startup latency from 30s to ~1s Moved vendors (Vaimo, Palota, HealthWindow) onto Dis-Chem trackers, enabling direct developer oversight and transparency Deployed new live dashboards: detected 4 outages and 6 bugs in 1 week Designed an incident management process (L1-L3) – currently securing buy-in from stakeholders Found and resolved critical CRM security vulnerability (email overwrite risk) and delisted Schedule 3-6 medications from online to ensure regulatory compliance
+Led development and launch of Better Rewards across app and web, including enrichment of 11,000 SKUs with AI and studio photography Deployed Capitec BIN identification module on eCommerce, reducing risk of unfunded boosts Built Apple Pay and Samsung Pay (currently in testing) Piloted card pay-by-link for Cash on Delivery (currently in testing)
+Terminated unused contracts such as AppsFlyer (~R1.9m/yr), PriceCheck (~R600k/yr), iPaper (~R150k/yr), W3W (~$420/yr), and Vodapay Renegotiated SalesLayer license from $62k down to $32k Reduced payment fees for Payfast and Ozow
+### slide 64
+Links to documentation and project tracking work
+Link to source
+Document / source
+Current state, key challenges and future state service
+Miro board link
+Fulfilment ops Jira workflow
+Fulfilment ops Jira
+Commerce, payments and fulfilment app development
+Comm, pay and fulfilment
+Fulfilment confluence documentation
+Business decisions Managing delivery slots Order fulfilment and tracking OTC Auto-dispense Script upload and OTC – technical specs
+### slide 65
+Contents
+Health services: Current state processes and challenges
+Health services: benchmarks and key decisions
+Health services: MLP journey and design
+Health services: Future state journey and design
+Health services: Adherence Centre staffing
+Fulfilment: Current state processes and challenges
+Fulfilment: SteerCo #1 and #2 design decisions and benchmarks
+Fulfilment: Future state design
+### slide 66
+Strategic unlocks prioritised by impact and feasibility to identify quick wins
+Impact
+Low
+Medium
+Low
+Medium
+High
+Feasibility
+High
+High potential
+Medium potential
+Preliminary
+Long-term unlock
+1
+16
+3
+2
+4
+5
+11
+9
+15
+19
+7
+8
+13
+12
+10
+14
+18
+6
+17
+Strategic unlock
+MLtyP impact
+Feasibility
+1
+Orders prioritised by time, not delivery slot
+Low
+Medium
+High
+2
+No system notifications for new orders
+3
+Lack of order transparency for dispensary component in DeliverD
+4
+No barcode-based validation during script picking
+5
+No real-time visibility into fulfilment performance
+6
+Manual data capture for in-store collection
+7
+Incomplete logging of failed courier deliveries
+8
+Stock deducted after collection or out-for-delivery
+9
+Inconsistent order valuation logic across SAP and Magento
+10
+Manual BP replication between SAP and DeliverD
+11
+Article ID mismatches cause order failures in SAP
+Misaligned Unisolv and medical-aid data structures
+12
+13
+Limited control over last-mile operations
+No real-time customer tracking of delivery status
+14
+15
+Complex store assortment rules on which stores can fulfil specific SKUs
+Lack of a governed rules engine
+16
+Lack of a master data framework
+17
+18
+Manual capacity management for delivery and collection slots
+Unstructured IT demand and ticket management
+19
+Manual validation of prescription payments
+20
+20
+### slide 67
+We followed a 3-step approach to define the fulfillment and ops initial and potential target operating models
+Io identify potential fulfilment org archetypes for Xbl
+1
+Evaluated Xbl’s potential archetypes across 3 strategic dimensions: speed of innovation, cost and customer centricity
+2
+Developed a potential organizational structure and role progression aligned with defined pathways
+3
+### slide 68
+We identified 2 archetypes for setting up Dis-Chem’s fulfilment operating model in the interim state; Updates to op model required based on fulfilment direction
+Build, own run archetype
+A
+Independent execution squads
+B
+Reporting
+Indirect reporting
+Low
+Moderate
+High
+Hypothesis for Dis-Chem – deep dive next
+Description
+The ops and fulfilment lead oversees the ops and fulfilment teams, both a strategic planning, tactical builds/fixes and operational day to fulfilment operations with a fulfilment squad focused on innovation projects and BAU channel support
+Ringfenced fulfilment innovation squad, fulfilment SWAT team focused on customer service and BAU ops solution enhancements
+Speed of innovation
+Fulfilment squad divided into innovation projects and BAU channel support overseen through the same PM provides greater speed of execution and focus on core fulfilment challenges
+High speed of innovation and BAU channel support with direct reporting lines and less management overhead
+Ops and fulfilment lead
+Customer centricity
+High levels of customer centricity through direct oversight of operational areas and appropriate backlog prioritisation though one central PO
+Medium levels of customer centricity through high-speed execution, however, siloed technical execution may lead to fragmented customer experiences
+Digital operations lead
+Fulfilment innovation squad
+Fulfilment SWAT team
+Digital channel support team
+Fulfilment squad
+Fulfilment SWAT team
+Innovation squad
+BAU support squad
+Regional heads
+Regional heads
+DigiOps support (Andre)
+DigiOps support (Andre)
+Capability need:
+### slide 69
+Build, own run archetype structure to support fulfilment
+Ops and fulfilment lead
+BAU support squad
+Innovation squad
+Fulfilment SWAT Team Owners(S)
+Business Analysts
+Technical Lead
+Product Designers
+Fulfilment Engineer
+Business Analyst
+Engineer
+Fulfilment Success Partner (Coastal)(M)
+Fulfilment success Partner(Inland)(M)
+Provides support for back office fulfilment systems (e.g., SAP Fiori, OMS etc.)
+Responsible for improvements from feedback loop and data and insights
+Feedback, tracking, order progress, customer support and ticket resolution
+Back office fulfilment enablement
+Hot fixes, emergency fulfilment bug resolutions and BAU support
+Fulfilmentsupport
+Fulfilment squad (PM)
+Engineers
+DigiOps support

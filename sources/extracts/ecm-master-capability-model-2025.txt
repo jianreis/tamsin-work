@@ -1,0 +1,169 @@
+# Text extract of 20250106_Capability_map_Shared_NL.xlsx (supplied by Tamsin, 2026-10-04). Cells joined with ' | '.
+
+## Sheet: Capability matrix
+Dis-Chem Integrated Health — Master Capability Model
+L1 - Capability | L2 Capability | L3 Capability | Definition | Ownership | Phase
+1 | Channels | All digital and physical interaction surfaces through which customers, patients, clinicians, pharmacists, and partners interact with the Dis-Chem Integrated Health Ecosystem. | Enterprise-level capability (shared) | 1
+Digital comminication | These are the primary digital entry points for customers and patients.
+Web | Browser-based digital interaction supporting discovery, access, and ongoing engagement with Dis-Chem health services. This includes viewing and managing customer profiles, accessing clinic and pharmacy services, initiating digital journeys, and consuming health-related information and content across the ecosystem. | Enterprise-level capability (shared) | Scales as capabilities scale with phases
+Mobile | Mobile-based interaction supporting personal and ongoing engagement with the Integrated Health Ecosystem, including access to personal health information, prescriptions and repeats, adherence activities, virtual care interactions, loyalty and benefit-related services, and pharmacy and clinic journeys. | Enterprise-level capability (shared)
+AI Front | Intelligent conversational interaction layer that supports intent capture, guided journeys, service requests, and escalation across voice and messaging channels, independent of the underlying channel.
+SMS | High-reach text communication capability used to deliver time-sensitive notifications, confirmations, reminders, and proactive engagement messages to customers and patients, particularly in contexts where smartphone apps or data connectivity may be limited. | Dis-Chem Integrated Health — Master Capability Model
+Whatsapp | Primary South African secure messaging interaction supporting richer, conversational engagement with customers and patients, including service queries, care navigation, repeat prescription requests, reminders, and proactive value-based care engagement across the ecosystem.
+Email | Asynchronous digital communication supporting the delivery of structured information such as care summaries, digital receipts, appointment confirmations, reminders, laboratory updates, and benefit or programme-related communications.
+Notification | Proactive alerting capability used to surface timely prompts and updates related to care tasks, adherence activities, upcoming interactions, engagement opportunities, and general service awareness across digital touchpoints.
+Support & service | Supporting assisted interaction, coordination, and customer support across services.
+Contact centre | Assisted interaction supporting clinic, pharmacy, virtual care, funding, and coordination queries.
+Digital assistance | Human-supported interaction enabling users to complete tasks or resolve issues across digital journeys.
+Care Interaction Channels | Channels through which healthcare services are actually delivered.
+In-Person Care | Face-to-face care interactions delivered within physical care environments.
+Virtual Clinical Care | Remote clinician-led care interactions supporting assessment, diagnosis, and treatment.
+Medication fulfilment | Controlled interaction through which prescribed medication is prepared, verified, and formally released to the customer or patient.
+Virtual Pharmacy Care | Remote pharmacist-led interactions supporting medication guidance, adherence, and escalation.
+Care co-ordination channels | Supporting continuity and movement across care services.
+Referral Routing | Enables initiation, routing, tracking, and closure of referrals across internal services and approved external provider networks, supporting continuity of care.
+Access & navigation Channels | Supporting entry into, and navigation through, the ecosystem across physical and digital contexts.
+Check-In & Arrival Interaction | Identification, verification, and arrival handling for care or service interactions across physical and digital contexts.
+Self-Service Navigation | Allow users to independently navigate services, information, and next steps within digital or physical environments.
+Assisted Health Navigation | Enables staff-supported guidance to help users identify appropriate self-care, pharmacy, or clinical services.
+2 | Patient Access | Patient Access encompasses all capabilities required for a person to enter, initiate, and be authorised for care within the Dis-Chem Integrated Health Ecosystem, whether in a clinic, pharmacy, or virtual environment. It includes scheduling, walk-in handling, registration, identity verification, consent, eligibility validation, cost awareness, upfront payment, and care-episode initiation.
+Appointment & Visit Initiation | Enable customers and patients to initiate and manage planned or unplanned care interactions across clinic, pharmacy, and virtual services.
+Scheduling | Creation and management of scheduled interactions across providers, services, and resources, including single, linked, recurring, and sequential appointments.
+Queue Management & Walk‑In Handling | Support for unscheduled arrivals, walk-in visits, and dynamic queueing across clinic and pharmacy environments.
+Provider & Resource Scheduling | Allocation and management of clinical staff, rooms, and equipment required to deliver care.
+Visit / Encounter Initiation | Formal initiation of a care interaction (clinic visit, pharmacy visit, or virtual consult) once access prerequisites are met, establishing the context for downstream care delivery.
+Registration | Required to identify, register, and verify a person before care begins, ensuring the correct individual is associated with the correct profile.
+Customer Profile Information Capture | Capture, retrieval, maintenance, and update of a customer’s personal profile information—including identifying details, contact information, address, and communication preferences—used across the Dis-Chem ecosystem.
+Identity Verification | Verification that the person presenting (physically or digitally) matches an existing customer or patient profile, using appropriate verification methods without performing identity resolution.
+Digital Consent Management | Capture and management of consent for care delivery, virtual services, data use, Value Based Care participation, and insurance-linked programmes. | Managed at an enterprise level, captured on the separate systems | 2
+Eligibility, Screening & Financial Access | Confirm whether care can proceed from a clinical, financial, and operational perspective before services are delivered.
+Pre-Care Health Screening | Collection of basic, non-diagnostic health information prior to care delivery to support appropriate routing and efficient use of clinical resources.
+Prospective Eligibility Check | Validation of benefit, funding, or scheme eligibility for services prior to care or dispensing. Eligibility logic is executed as an enterprise-level function and consumed by access workflows.
+Care-episode cost estimation | Provision of an indicative cost view for a care interaction based on service type, benefit status, and applicable pricing rules.
+Upfront Payments | Collection of required payment prior to care delivery using approved tender types, including cash, card, vouchers, QR, or prepaid health products.
+3 | Care Delivery | Care Delivery encompasses all clinician-led and pharmacist-led capabilities required to assess, diagnose, treat, counsel, monitor, and support patients across in-person and virtual care journeys. It includes clinical documentation, prescribing, dispensing support, care management, and execution of care pathways, independent of the channels through which care is delivered.
+Clinical Assessment & Documentation | The management of clinical workflows and documentation, including record-keeping, coding, and compliance tracking.
+Patient Summary | Consolidated, configurable clinical view presenting key patient information (e.g. recent vitals, conditions, medications, allergies, care plans) to support informed and timely clinical decision-making.
+Records Management | Creation, storage, retrieval, retention, and secure disposal of clinical records in alignment with South African regulatory and medico-legal requirements.
+Documentation Compliance Tracking | Oversight of required clinical documentation completeness, timeliness, and adherence to organisational and regulatory standards.
+Care Plans & Protocols | Structured creation, management, and monitoring of individualised clinical and non-clinical care plans aligned to patient goals and pathways.
+Coding & Abstraction | Application of standard diagnostic and procedure codes and abstraction of quality or reporting data to support compliance, reporting, and downstream processes.
+Dictation & Transcription | Capture and conversion of clinician speech into structured clinical documentation, including review and finalisation.
+Advanced Clinical Electronic Signature | Enables clinicians to securely and legally authenticate, approve, and sign clinical documentation, orders, prescriptions, and care actions as part of care delivery.
+Patient Education | Provision and tracking of clinically relevant education materials linked to diagnoses, treatments, or care plans.
+Orders, Prescribing & Clinical Decisions | Enabling the safe ordering, prescribing, review, and management of clinical interventions, medications, and results as part of coordinated care delivery.
+Medical Order Management | Creation, review, and management of clinical orders for medications, investigations, or services.
+Prescribing & Prescription Management | Clinician authoring and management of prescriptions, including repeat logic and safety checks.
+Clinical Decision Support | Evidence-based alerts, recommendations, and guidance supporting diagnostic and treatment decisions at the point of care.
+Clinical Criteria & Protocol Management | Management and application of evidence-based clinical rules, protocols, and guidelines to support appropriate care.
+Prospective & Concurrent Review | Assessment of care appropriateness before or during delivery to support quality and resource optimisation.
+Pharmacist-Led Care & Medication Support | Supporting pharmacist-led clinical activities that extend beyond dispensing, contributing directly to patient outcomes, safety, and continuity of care.
+Medication Counselling & Guidance | Pharmacist-led counselling on medication use, side effects, interactions, and adherence.
+Adherence & Continuity Support | Monitoring and intervention to support medication adherence, repeat continuity, and chronic therapy management.
+Medication Substitution & Cost Optimisation | Management of clinically appropriate alternatives driven by availability, formulary, or cost considerations.
+Dispensing Oversight & Verification | Clinical verification and release of prescribed medication, ensuring safety, correctness, and accountability.
+Automated Dispensing Integration | Support for automated or assisted dispensing processes as part of pharmacy operations.
+Care Management & Outcomes | Coordinate, monitor, and optimise care over time to improve outcomes and continuity.
+Care Pathway Execution | Orchestration and tracking of multi-step, cross-setting care journeys (e.g. hypertension, diabetes, antenatal) spanning clinic, pharmacy, and virtual care.
+Referral Management | Clinical initiation, tracking, feedback, and closure of referrals across internal services and approved external provider networks.
+Disease & Chronic Condition Management | Structured management of patients with ongoing conditions, including monitoring, interventions, and escalation.
+Predictive Care Coordination | Use of analytics and signals to identify patients at risk and proactively coordinate interventions.
+Utilisation & Retropective Review | Evaluation of care delivery after services have been provided to assess appropriateness, efficiency, documentation completeness, and adherence to agreed clinical and operational standards.
+Quality & Clinical Governance | Define, monitor, and continuously improve clinical quality, safety, and adherence to clinical standards, protocols, and regulatory requirements across care delivery.
+Health Outcomes Management | Measure, analyse, and manage patient-level and population-level health outcomes over time in order to evaluate effectiveness of care, inform improvement initiatives, and support value-based care models.
+Virtual & Remote Care Support | Supporting the delivery and extension of care beyond physical settings through remote interaction and monitoring.
+Virtual Clinical Care | Enablement of remote clinician-led assessment, treatment, and follow-up as part of integrated care delivery.
+Provider-to-Provider Collaboration | Secure clinical communication and information exchange between clinicians and pharmacists to support coordinated care.
+4 | Ancillary Care | Supporting healthcare services that enable, extend, or operationalise care delivery across the Dis-Chem Integrated Health Ecosystem. These capabilities support diagnosis, monitoring, treatment fulfilment, and continuity of care but do not themselves constitute primary clinical assessment, prescribing, or care decision-making.
+Medical Devices & Monitoring | Support the use, integration, and management of medical devices used to capture patient health data for clinical and operational purposes.
+Vitals capture | Collection of physiological measurements (e.g. blood pressure, pulse, temperature, oxygen saturation).
+Device Data Integration | Ingestion, normalisation, and association of device-generated data with patient records and care workflows.
+Pharmacy Fulfilment & Operations Support | Support the operational preparation, dispensing, and release of prescribed medication, as well as the enablement of pharmacy operations required to safely, efficiently, and consistently fulfil prescribed therapy.
+Pharmacy Management System | Core pharmacy operational capability supporting dispensing workflows, medication records, stock handling, regulatory controls, and pharmacist-facing tasks required to fulfil prescriptions and manage pharmacy operations.
+Formulary & Substitution Management | Management of approved medication lists, substitution rules, and equivalence logic used to support availability, cost optimisation, and regulatory compliance during dispensing, without altering the original prescribing intent.
+Pharmacy Operations Enablement | Operational support for pharmacy execution, including inventory handling, preparation processes, verification controls, and dispensing safeguards required to deliver medication safely and efficiently.
+Automated Dispensing Enablement (incl. Robotics) | Enablement of automated or semi-automated dispensing mechanisms to support medication preparation, storage, retrieval, restocking, and reconciliation as part of pharmacy fulfilment operations.
+Diagnostic & Laboratory Services | Support diagnostic execution and result integration.
+Diagnostic Service Enablement | Support for execution of laboratory and diagnostic investigations.
+Results Integration | Secure receipt, presentation, and incorporation of diagnostic results into clinical workflows.
+Extended & Community Care Services | Extend care beyond traditional clinic or pharmacy settings.
+General Patient Education Assets | Provision of standardised educational materials supporting awareness and self-care.
+Home-Based Care Enablement | Support for delivery or coordination of care in home or non-facility settings.
+Outreach & Community Services | Enablement of population-level or community-based care activities.
+5 | Provider Revenue Management | Provider Revenue Management encompasses the financial capabilities required to price, bill, collect, reconcile, and report on healthcare services delivered across the Dis-Chem Integrated Health Ecosystem. It ensures accurate financial attribution of care episodes, compliant claims submission, timely payment collection, and transparent settlement with customers, schemes, and partners, independent of care delivery channels.
+Billing & Financial Transactions | Manage the creation, processing, settlement, and reconciliation of financial transactions related to care delivery, pharmacy services, and associated health services.
+Charge Capture & Billing | The capability to capture billable events arising from care delivery or pharmacy fulfilment and translate them into accurate financial charges aligned to pricing rules, benefits, and funding arrangements.
+Invoice Generation & Distribution | Generation and distribution of invoices detailing services rendered, charges applied, balances due, and payment terms for customers, schemes, or partners.
+Upfront & Point-of-Service Collection | Collect customer financial responsibility prior to or at the point of service using approved payment methods, including cash, card, vouchers, QR, or prepaid health products.
+Payments & Remittance Processing | Processing, posting, and reconciliation of payments received from customers, schemes, or partners, including remittance advice and allocation to the appropriate accounts or care episodes.
+Credit Balance Resolution & Refunds | Identification, management, and settlement of overpayments or credit balances, including refunds to customers or payers in line with regulatory and contractual requirements.
+Liability & Settlement Management | Management of financial liabilities and settlements payable to external providers, partners, or schemes, ensuring accurate accounting, timely settlement, and auditability.
+Claims & Funding Integration | Capabilities that support the submission, validation, routing, and reconciliation of funded healthcare claims across internal and external funding arrangements.
+Claims Preparation & Submission | Preparation and submission of claims for funded healthcare services in accordance with applicable benefit rules, coding standards, and contractual agreements.
+Claims Validation & Adjudication Support | Validation of claims against eligibility, benefit, and pricing rules prior to submission, supporting reduced rejections and improved settlement outcomes.
+7 | Population Health Management | Enable Dis-Chem to understand, monitor, and improve health outcomes across defined populations through insight, segmentation, prevention, and outcome measurement, supporting value-based care and proactive health management.
+Population Analysis & Insight | Analyse and group individuals across the ecosystem into meaningful cohorts based on health status, risk, utilisation patterns, behaviour, and outcomes to support targeted care strategies and performance measurement.
+Population Segmentation | Group individuals into defined cohorts based on health status, risk indicators, utilisation patterns, behavioural attributes, or outcomes to support targeted strategies and interventions.
+Risk Stratification | Assess and classify individuals or cohorts according to relative health risk to prioritise proactive engagement, monitoring, and intervention.
+Cohort Definition & Management | Define, maintain, and evolve population cohorts over time as data, health status, and engagement patterns change.
+Preventive & Proactive Health Management | Proactively identify, prioritise, and support preventive and early intervention opportunities across defined populations before the onset or escalation of illness. This includes recognising gaps in care, emerging risk signals, and preventive needs (e.g. screenings, vaccinations, routine monitoring, follow-ups) and enabling timely, appropriate actions through coordinated care pathways, engagement mechanisms, and service routing across the Dis-Chem Integrated Health Ecosystem.
+Preventive Opportunity Identification | To identify preventive care opportunities such as screenings, follow-ups, vaccinations, or early interventions across a population.
+Early Deterioration Detection | identify preventive and early intervention opportunities across a population (e.g., screenings, vaccinations, routine monitoring, scheduled follow-ups) to reduce avoidable illness and support long-term outcomes.
+Outcomes & Performance Measurement | Measure, analyse, and monitor health outcomes, service performance, and value indicators across patients, cohorts, care pathways, and services. This includes tracking clinical outcomes, utilisation patterns, cost efficiency, and quality indicators to assess effectiveness of care, inform continuous improvement, and support value-based care and funding models across the Dis-Chem Integrated Health Ecosystem.
+Health Outcomes Measurement | Track patient-level and cohort-level outcomes across clinical, pharmacy, and behavioural dimensions.
+Utilisation & Cost Insight | Analyse service utilisation and cost patterns across populations to support efficiency, sustainability, and funding model optimisation.
+Outcome Benchmarking | Compare outcomes across cohorts, regions, pathways, or time periods to inform improvement and strategic decisions.
+Population Reporting & Intelligence | Aggregate, analyse, and present population-level data across the Dis-Chem Integrated Health Ecosystem in order to monitor health trends, service utilisation, outcomes, quality indicators, and performance against defined objectives.
+Population-Level Reporting | The capability to produce aggregated and longitudinal reports across defined populations for operational, clinical, partner, or regulatory use.
+Population Insight Distribution | The capability to make population insights available to authorised stakeholders across the ecosystem to support planning, care model evolution, and partnership decisions.
+8 | Health Research & Trial Enablement | Enable the facilitation, support, and governance of research, observational studies, and partner-led trials using data and interactions from the Dis-Chem Integrated Health Ecosystem, without Dis-Chem acting as a clinical trial sponsor or operator.
+Clinical Trial Management | The management of clinical trials, including patient recruitment, study monitoring, and results reporting.
+Conduct & Monitor | System that facilitates conducting and monitoring clinical research trials.
+9 | Enterprise shared platforms | Enterprise Shared Platforms provide foundational, cross-cutting capabilities that enable identity management, data consistency, interoperability, analytics, security, and governance across the Dis-Chem Integrated Health Ecosystem. These platforms do not deliver care directly, but enable all other capabilities to operate consistently, securely, and at scale.
+Identity & Master Data | Ensure people, organisations, and reference entities are uniquely identified, consistently represented, and governed across the Dis-Chem Integrated Health Ecosystem, enabling reliable linkage and trusted use of data across all channels and services.
+Enterprise Master Patient Index (EMPI) | Establishes and maintains a single, trusted patient/customer identity across the ecosystem by resolving duplicates and linking records from multiple systems and channels.
+Master data services | Governs and synchronises shared reference and master data (e.g. NAPPI, formularies, product catalogues) to ensure consistency across systems.
+Identity governance | Manages identity lifecycle policies, consent rules, access controls, and auditability across all patient- and provider-facing systems.
+Integration & Interoperability Services | Enable secure, governed, and scalable exchange of data and transactions across internal systems, external partners, and third-party platforms, decoupling business capabilities from direct system-to-system dependencies.
+API & Integration Layer | Enables secure, governed exchange of data and transactions across internal systems, partners, and channels, decoupling capabilities from point-to-point integrations.
+Enterprise Switching Engine | Manages routing and orchestration of benefit, claim, and funding interactions with schemes and payers, insulating business capabilities from external switching dependencies.
+Remote Device Integration | Ingests, normalises, and associates device-generated data with patient identities and care pathways.
+Health Platform Enablement Services | Enable ecosystem-level functionality such as partner connectivity, pathway orchestration, and service enablement, allowing health services and care logic to operate consistently across channels without being embedded in individual applications.
+Third-Party Integration Services | Standards‑based and API‑driven data exchange with authorised external apps and partners. This includes FHIR where supported, as well as other healthcare and retail integration methods such as REST/JSON APIs, HL7 v2, batch file exchange (CSV/XML)
+Employer & Partner Health Integrations | Enables data exchange for wellness, screening, reporting, and population health programmes. | Enterprise-level capability (shared) | 3
+Automated Engagement & Nudge System | The ecosystem capability that determines when, why, and how proactive communications are triggered to support care pathways, adherence, prevention, and value-based outcomes, coordinating delivery across available customer channels.
+Care Pathway Orchestration | Engagement and nudging are outcomes of care pathways and VBC logic, not channel capabilities; channels simply deliver pathway-driven interactions.
+Data & analytics | Support the aggregation, processing, analysis, and presentation of data across the ecosystem to enable operational insight, population health analysis, outcomes measurement, and value-based care reporting.
+Enterprise Data Platform (EDP) | Provides a centralised data foundation for reporting, analytics, cohorting, and longitudinal insight.
+Real-Time Event Processing | Supports event-driven triggers such as refill alerts, pathway steps, and engagement nudges.
+Reporting & Insights | Delivers cross-ecosystem analytics for operational performance, population health, pharmacy, and care outcomes.
+Security, IAM & Governance | Protect systems and data, manage access and identity, and enforce privacy, security, and regulatory compliance across the Dis-Chem Integrated Health Ecosystem.
+Identity & Access Management | Controls authentication, authorisation, and role-based access across systems and users.
+Privacy & Regulatory Compliance | Ensures compliance with POPIA and healthcare regulations through consent enforcement, audit logging, and data protection.
+Platform Governance & Risk Management | Defines policies, controls, and oversight mechanisms to ensure platform reliability and trust.
+10 | Growth & Care Model Design | Support the design, configuration, and evolution of care models, pathways, products, and engagement strategies that drive growth, sustainability, and improved outcomes across the Dis-Chem Integrated Health Ecosystem.
+Care Model & Pathway Design | Support the design, configuration, and governance of care models, pathways, and service structures, defining how care is delivered across clinic, pharmacy, virtual care, and partner ecosystems without executing care directly.
+Care Model Configuration | Defines how services, roles, and interactions are structured across clinic, pharmacy, virtual care, and funding models.
+Pathway Design & Simulation | Designs and tests care pathways, sequencing, and dependencies to support scalable and repeatable care delivery.
+Protocol & Standard Management | Defines and maintains standardised clinical and operational protocols aligned to regulatory and organisational governance.
+Product & Offering Design | Enable the definition and configuration of health offerings, bundles, subscriptions, and funding-aligned products, ensuring they are commercially viable, operationally feasible, and aligned to care pathways.
+Health Product Configuration | Defines bundled services, subscriptions, and health offerings aligned to care pathways and funding models.
+Pricing & Cost Modelling | Supports indicative pricing, benefit-aware cost estimation, and affordability modelling (non-billing).
+Marketing & Engagement Strategy | Support the planning, execution, and optimisation of customer and patient engagement initiatives, including campaigns, lead management, and ecosystem awareness, across digital, retail, and partner touchpoints.
+Campaign Management | Plans and executes targeted campaigns across digital, retail, and partner channels.
+Lead & Opportunity Management | Manages prospective customer engagement from initial interest through onboarding and service activation.
+
+## Sheet: Glossary
+Glossary of Terms (Dis-Chem Integrated Health Ecosystem)
+This glossary standardises terminology across clinic, pharmacy, digital, insurance, and partner channels. It ensures consistent language in capability models, requirements, and Accenture collaboration.
+Clinician | Definition: A healthcare professional who provides direct clinical assessment, diagnosis, treatment, or care management. At Dis‑Chem this includes nurses, doctors, and virtual care clinicians (GPs and specialists).
+Does NOT include pharmacists, whose regulatory scope focuses on dispensing, counselling, adherence, and chronic support.
+Why it matters: Prevents ambiguity in capability ownership and clinical workflow design.
+Pharmacist | Definition: A licensed healthcare professional responsible for medication dispensing, counselling, medicine safety, adherence support, chronic medication continuity, OTC triage, and pharmacy‑driven VBC tasks.
+Not classified as a clinician in South Africa.
+Role in ecosystem: Owns pharmacy‑specific channels and contributes to care pathways.
+Provider | Definition: Any professional or organisation delivering healthcare services, including clinics, virtual doctors, specialists, pharmacists, labs, and partner providers.
+Used broadly to include both clinicians and pharmacists.
+Patient | Definition: A person receiving clinical or virtual care through Dis‑Chem Clinics, Videomed, or specialist services.
+Customer | Definition: Any person engaging with Dis‑Chem for retail, pharmacy, clinic, digital, or loyalty services.
+A customer may or may not be a patient.

@@ -5,9 +5,9 @@ domain: digital-transformation
 status: draft
 confidence: medium
 tags: [domain/dischem, domain/digital, topic/automation, topic/e-prescription, topic/ai, journey/submit, journey/validate, journey/dispense, journey/pay, journey/collect, journey/deliver, region/za]
-sources: [src-dc-omnichannel-scripting-roadmap]
+sources: [src-dc-omnichannel-scripting-roadmap, src-dc-programme-status-2026-10-04, src-mck-e2e-fulfilment-compendium-2026]
 created: "2026-06-14"
-updated: "2026-06-17"
+updated: "2026-10-04"
 ---
 
 # Dis-Chem scripting tech roadmap (Virtual Order Operational Flow)
@@ -102,11 +102,28 @@ in principle. What the board adds is that Dis-Chem **has named it as the intende
   "virtual order"), combine with [[wiki/consumer-context/_index|consumer-context]] WhatsApp-first / status / money-legible
   patterns rather than treating the board as the channel design.
 
+## Status update (2026-10-04)
+
+The board itself carries no dates. Tamsin's programme update dates three of its
+systems [[src-dc-programme-status-2026-10-04]]:
+
+| System | Status (as of 2026-10-04) |
+|---|---|
+| **BRiX** (end-to-end workflow manager) | Launching early 2027 |
+| **ROWA** (automated picking) | First unit going in mid-2027 |
+| **OCR** (reading prescription images) | Vendor in pilot now |
+
+The McKinsey fulfilment compendium describes the same direction: one BRiX-powered
+workflow replacing the Adherence Centre's three dashboards, ROWA in Store of the
+Future stores with space, and OCR accuracy as a strategic unlock
+[[src-mck-e2e-fulfilment-compendium-2026]]. These dates set the "In flight" status
+in the work-to-be-done catalogue.
+
 ## Open questions
 
 - **No timeline or sequencing.** The board shows no dates, phasing or live-status. Which
-  capabilities are live now vs. in-build vs. aspirational? ROWA in particular - deployed,
-  piloted, or planned? ⚠️ UNVERIFIED.
+  capabilities are live now vs. in-build vs. aspirational? *Partly answered 2026-10-04:
+  BRiX, ROWA and OCR are dated above; the rest remain undated.*
 - **Vendor/system identities.** What exactly are **BRIX**, **PICCUP**, **VC** and the
   **Ticketing** platform (internal names vs. vendors)? **Fiori** implies an SAP front end
   and **UiPath** confirms RPA, but the dispensing system behind "BRIX" and the WMS/TMS

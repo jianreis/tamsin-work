@@ -1,0 +1,228 @@
+# Text extract of 260713_Health_Capability_Map_WIP_NL.xlsx (supplied by Tamsin, 2026-10-04). Cells joined with ' | '.
+
+## Sheet: L0-L4 MECE model
+Dis-Chem Integrated Health — Customer-Facing Capability Model (L0-L4, MECE)
+Definitions describe what each capability is and its boundary — not how it's delivered, who owns it, or which tool implements it. Ownership/Channel/Timing columns are operational metadata, kept separate from Definition by design.
+L0 | L1 | L2 | L3 | L4 | Definition | App | Web | WhatsApp | In-store | Enterprise dependency | Ownership
+Tier 0 — Platform Spine | Capabilities that no job-based domain owns individually because every domain depends on them equally. A spine is referenced by other capabilities; it does not itself perform a customer-facing job.
+Identity, Access & Consent | The capability to establish who a customer or dependant is, what they and anyone acting on their behalf are permitted to do, and what they have agreed to share. Excludes the specific health, financial, or care content that consent and access govern — those belong to the domain that owns that content.
+Registration & Profile | Capturing and maintaining who a customer and their dependants are as identifiable individuals within the ecosystem.
+Customer Profile Management | Creating and maintaining basic identifying details for a customer and any dependants linked to their account.
+Create/edit basic profile (contact, medical aid number) | Capturing and updating a customer's own basic identifying and contact details. | Live | Live | Gap (no profile, phone number only) | Gap | Customer 360 / Master data | Squad-owned
+Dependant / family member profiles | Adding a dependant or family member as a linked, individually-identifiable profile. | Planned | Planned | Gap | Gap | EMPI | Squad-owned
+Guardian / proxy authority assignment | Establishing that one person holds legal or delegated authority to act for another. | Planned | Planned | Gap | N/A (staff-assisted only) | Identity governance | Squad-built, clinically co-owned
+Identity Verification | Confirming that the person acting in a session is who they claim to be, at a level of assurance appropriate to the action being taken.
+OTP / biometric login | Confirming a returning customer's identity at login. | Live | Live | N/A (number-verified by default) | Gap | IAM | Squad-built, platform-logic-owned
+In-context ID check at high-risk actions (script pickup, claim) | Re-confirming identity at a specific moment where the stakes of impersonation are higher than routine login. | Live | Planned | Gap | Gap (manual, staff-checked) | IAM | Squad-built, platform-logic-owned
+Consent Management | Recording what a customer has agreed to share, at what level of detail, and for how long that agreement holds.
+Digital Consent Capture | Recording agreement to share or use data, at the granularity and duration the data's sensitivity requires.
+Event-level consent (per script/booking) | Obtaining agreement to a specific data use tied to one transaction. | Live | Live | Gap | N/A | Identity governance | Squad-built, clinically co-owned
+Longitudinal, profile-level consent | Obtaining agreement to an ongoing data use that spans a customer's whole relationship with the ecosystem, not one transaction. | Planned | Planned | Gap | N/A | Identity governance / Privacy & regulatory compliance | Squad-built, clinically co-owned
+Consent withdrawal & audit trail view | Allowing a customer to see and revoke consent they have previously given. | Gap | Gap | Gap | N/A | Privacy & regulatory compliance | Squad-built, clinically co-owned
+Access Control | Governing what a session, device, or delegated person is permitted to see or do once identity is established.
+Session & Device Management | Governing how a login persists or resets depending on whether a device is personal or shared.
+Shared/public device mode — no personal login persistence | Defining how identity behaves on a device used by more than one person, where no session should persist after use. | N/A | N/A | N/A | Gap (needs building) | IAM | Squad-owned
+Cross-device session sync (App ↔ Web) | Recognising the same authenticated customer across more than one device or channel. | Planned | Planned | N/A | N/A | IAM / API gateway | Squad-built, platform-logic-owned
+Delegated Access | Establishing and carrying forward the authority for one person to act on behalf of, or view the activity of, another.
+'Acting for a dependant' mode — carries dependant context across bookings, results, and scripts once granted | Ensuring a granted delegated authority is honoured consistently wherever the delegate interacts with the dependant's information. | Gap | Gap | Gap | Gap | Identity governance — permission exists (proxy assignment) but doesn't yet propagate | Squad-built, clinically co-owned
+Consent Management | Recording what a customer has agreed to share, at what level of detail, and for how long that agreement holds.
+Sensitivity-Graded Consent
+Consent scoped by data sensitivity category (e.g. mental health, reproductive health, HIV status) rather than one blanket toggle | Requiring separate, explicit agreement for categories of data that carry a higher degree of sensitivity. | Gap | Gap | Gap | N/A | Privacy & regulatory compliance — current model is single-tier consent | Squad-built, clinically co-owned
+Access Control | Governing what a session, device, or delegated person is permitted to see or do once identity is established.
+Delegated Access | Establishing and carrying forward the authority for one person to act on behalf of, or view the activity of, another.
+Sponsor/guardian visibility into a dependant's own account activity (oversight, not just acting-on-behalf) | Allowing a sponsor or guardian to observe a dependant's own activity, distinct from the authority to act on their behalf. | Gap | Gap | N/A | N/A | Identity governance — distinct from the 'acting for' mode; this is monitoring rather than control | Squad-built, clinically co-owned
+Episode & Care Continuity | The capability to recognise that discrete interactions — a booking, a result, a script, a follow-up — belong to the same underlying course of care, and to represent that course of care as a single, itemised, ongoing plan. Excludes the individual interactions themselves, which belong to the domain that produced them; this capability only establishes and exposes the relationship between them.
+Care Pathways | Defining and rendering the itemised, cadenced plan of ongoing actions associated with an episode or chronic condition.
+Individualised Pathway | The itemised, cadenced set of ongoing actions — visits, medication, checks — associated with a specific episode or chronic condition, and the customer-facing tracking of progress against it.
+Programme home / progress tracker | A dedicated home screen showing progress within an active chronic care programme. | Gap | Gap | N/A | N/A | Care Pathway Orchestration
+Check-in reminders | Prompting a customer to complete a scheduled check-in required by their care pathway. | Gap | Gap | Gap | N/A | Nudge engine + clinical protocol
+Episode Identity | Determining that a set of interactions belongs to the same course of care.
+Episode Formation | The logic and data standard by which discrete clinical events are recognised as belonging to one course of care.
+System recognises that a booking, its results, a resulting script, and a follow-up belong to one episode of care | The underlying determination that a set of distinct clinical events forms a single course of care. | Gap | Gap | Gap | Gap | New data-model concept — no episode entity exists in any current system | Squad-built, clinically co-owned
+Customer can confirm/correct episode linkage (e.g. 'this follow-up is about my last visit, not a new issue') | Allowing the customer to correct an automated determination of which events belong together. | Gap | Gap | Gap | Gap | New data-model concept + clinical validation of the link | Squad-built, clinically co-owned
+Episode Visibility | Presenting an established episode, or the customer's history of episodes, back to the customer.
+Episode Timeline | A single connected view of everything that has happened within one active episode.
+Customer-facing episode timeline — visit, results, script, follow-up shown as one connected thread | Presenting every event within one episode as a single ordered sequence. | Gap | Gap | N/A | N/A | Depends on Episode Formation existing first; also draws on Records management | Squad-built, clinically co-owned
+Episode History | A browsable record of all of a customer's episodes, past and present, distinguished from one another.
+Cross-episode history — all past episodes, browsable and distinguishable from each other | Presenting the full set of a customer's past and current episodes as distinct, separately identifiable entries. | Gap | Gap | N/A | N/A | Records management + Episode Formation | Squad-built, clinically co-owned
+Care Team Continuity | Maintaining the same provider or care team across every touchpoint of a single episode.
+Within-Episode Continuity | Ensuring the same provider or care team is presented across every touchpoint that belongs to one episode.
+Same provider/care team carried through all touchpoints of a single episode | Ensuring one episode is associated with a consistent provider or care team rather than a different one at each touchpoint. | Gap | Gap | N/A | Gap | Provider directory + Episode Formation | Squad-built, platform-logic-owned
+Care Pathways | Defining and rendering the itemised, cadenced plan of ongoing actions associated with an episode or chronic condition.
+Individualised Pathway | The itemised, cadenced set of ongoing actions — visits, medication, checks — associated with a specific episode or chronic condition, and the customer-facing tracking of progress against it.
+Rationalised, individualised care pathway — itemised plan with cadence, generated per episode (e.g. '2x/year PHC visit, monthly meds, annual urine dipstick' for a hypertension episode) | The itemised plan of ongoing actions, with frequency, associated with a specific episode or chronic condition — encompassing both the pathway's definition and the customer-facing tracking of progress against it. | Gap | Gap | N/A | N/A | Care Pathway Orchestration, fed by Episode Grouper output — clinically authored, not squad-derived | Squad-built, clinically co-owned
+Preventive Care Tracker | A structured view of preventive care items due or completed, independent of any single chronic episode.
+Structured preventive-care checklist — 'X/Y visits complete' with per-item last-visit and next-due dates | A count-based, date-tracked view of preventive care items due or completed, not tied to a chronic episode. | Gap | Gap | N/A | N/A | Care Pathway Orchestration + Episode Grouper output — the concrete customer-facing rendering of a care pathway | Squad-built, clinically co-owned
+Tier 1 — Job-Based Domain | Capabilities organised around a distinct thing the customer is trying to accomplish. Each domain is mutually exclusive of the others in what job it serves, and each references the spines above it rather than re-solving identity or continuity independently.
+Health Records & Insight | The capability to hold, present, and receive the customer's own health information — what is known about them and what they contribute — independent of any single visit or transaction. Excludes pharmacy-specific content such as an active medication list, which sits within the domain that manages ongoing medication use.
+Personal Health Record | Presenting clinically-sourced information about the customer's health — summaries, results, and diagnostic history.
+Patient Summary | A simplified, customer-facing view of active medications, conditions, and allergies.
+Allergy & condition list | A customer-facing list of recorded allergies and known conditions. | Gap | Gap | Gap | Gap | Records management | Squad-built, clinically co-owned
+Vaccination / immunisation record (shareable QR) | A record of administered vaccinations, presented in a form the customer can share as proof. | Gap | Gap | Gap | Gap | Records management / SMART Health Card standard | Squad-built, clinically co-owned
+Results & Diagnostics | Presenting the outcome of a laboratory, imaging, or diagnostic test back to the customer.
+Lab / imaging results viewer | Presenting the result of a laboratory or imaging test to the customer. | Gap | Gap | Gap | Gap | Results Integration (undefined) | Squad-built, clinically co-owned
+At-home test kit ordering + result return | Ordering a diagnostic test kit for self-collection and receiving its result. | Gap | Gap | Gap | N/A | Diagnostic Service Enablement, logistics | Squad-built, clinically co-owned
+Record Portability | Allowing the customer to move their own record data outward, to another provider or a person they trust.
+Record Export & Sharing | Allowing a customer to export or share their own record with a party of their choosing.
+Export / share record with a new provider | Producing the customer's own record in a form suitable for handing to a different provider. | Gap | Gap | N/A | N/A | Records management, POPIA portability | Squad-built, clinically co-owned
+Share with family member / caregiver | Allowing a customer to share their record with a person they designate, distinct from a formal provider handoff. | Planned | Planned | N/A | N/A | Identity governance | Squad-owned
+Health Education | Providing informational content about health conditions and wellness, whether general or tied to a specific customer context.
+Contextual Health Content | Informational content presented either generally or tied to a specific active script, diagnosis, or condition.
+Content tied to an active script or diagnosis | Informational content selected because it relates to something specific currently active for the customer. | Gap | Gap | Gap | Gap (printed leaflet only today) | Patient Education (undefined) | Squad-built, clinically co-owned
+General condition/wellness content library | Informational content available to any customer regardless of their current activity. | Gap | Gap | N/A | Gap | General Patient Education Assets (undefined) | Squad-built, clinically co-owned
+Self-Reported Health Data | Capturing information about the customer's health that originates from the customer rather than a clinical encounter.
+Medical & Family History | Health and family history information the customer provides directly, rather than information originating from a clinical encounter.
+Self-reported medical/family history entry | Capturing medical or family history information the customer provides themselves. | Gap | Gap | Gap | Gap (paper intake form only) | Records management — no self-report intake exists today | Squad-built, clinically co-owned
+Review & update self-reported health data | Allowing the customer to revisit and amend information they previously self-reported. | Gap | Gap | Gap | Gap | Records management | Squad-built, clinically co-owned
+External Document Upload | Bringing health documentation from outside the Dis-Chem ecosystem into the customer's own record.
+Document Ingestion | Accepting health documents originating outside the Dis-Chem ecosystem into the customer's record.
+Upload external lab reports, specialist letters, or scans | Accepting a health document from a source outside the Dis-Chem ecosystem. | Gap | Gap | Gap (script-photo precedent exists informally) | N/A | Document ingestion pipeline; EHR/EMR interoperability (undecided) | Squad-built, clinically co-owned
+Care Access | The capability to discover, evaluate, and secure a point of care, including determining the appropriate destination for a health concern before a clinical interaction begins. Ends where a clinical or pharmacist interaction begins; excludes anything about what happens during or after that interaction.
+Scheduling | Securing a specific time and provider for an in-person or virtual point of care.
+Appointment Booking | Creating, changing, or cancelling a specific time-bound reservation for care.
+Book / reschedule / cancel clinic or beauty appointment | Creating, changing, or cancelling a specific in-person appointment. | Live | Planned | Gap | Live (staff-assisted at Hub) | Scheduling / PMS integration | Squad-owned
+Recurring / series bookings | Establishing a repeating booking rather than a single occurrence. | Planned | Planned | Gap | N/A | Scheduling | Squad-owned
+Waitlist / queue position display | Showing a customer their position or expected wait for an unscheduled, walk-in visit. | Gap | Gap | Gap | Gap (Qmatic exists in-store, not customer-visible) | Queue management system | Squad-built, platform-logic-owned
+Provider Discovery | Finding and evaluating a specific provider or clinic ahead of booking.
+Provider search & profile (read-only) | Finding and viewing information about an available provider. | Live | Live | N/A | N/A | Provider directory (domain-owned) | Squad-built, platform-logic-owned
+Ratings / reviews | Presenting other patients' assessments of a provider ahead of booking. | Gap | Gap | N/A | N/A | Provider directory | Squad-owned
+Virtual Care | Entering a clinical interaction that does not require physical presence.
+Synchronous Telehealth | Entering a live video or audio clinical consultation.
+Video/audio consult: book, join, waiting room | The sequence of scheduling and entering a live virtual consultation. | Planned | Planned | N/A | N/A | Video infrastructure, Scheduling | Squad-owned
+Service Availability | Determining where a specific service can be obtained and matching a booking to the right kind and duration of visit.
+Location-Service Matching | Determining which physical or virtual location offers a specific service the customer needs.
+Which branch/clinic offers a specific service (e.g. 2D ultrasound, travel vaccination) | Determining which specific locations offer a named service the customer is looking for. | Gap | Gap | N/A | Gap (known verbally by staff only) | Service catalogue by location — not centralised today | Squad-built, platform-logic-owned
+Scheduling | Securing a specific time and provider for an in-person or virtual point of care.
+Appointment Type Matching
+Consultation duration/type matched to health need (chronic check-in vs new complex complaint vs procedure) | Selecting the correct appointment type and duration for the stated health need. | Gap | Gap | N/A | Live (assessed by staff in person) | Scheduling engine — appointment slots are currently type-agnostic | Squad-built, clinically co-owned
+Provider Discovery | Finding and evaluating a specific provider or clinic ahead of booking.
+Continuity — book with the same provider as a previous visit | Allowing a customer to book again with a specific provider they have seen before. | Gap | Gap | N/A | Gap | Provider directory + booking history link | Squad-built, platform-logic-owned
+Virtual Care | Entering a clinical interaction that does not require physical presence.
+Second Opinion / Specialist Access
+Second-opinion or specialist e-consult marketplace | Obtaining a specialist or second-opinion consultation as a distinct booking type from a primary care visit. | Gap | Gap | N/A | N/A | Provider marketplace / specialist network — not scoped | Squad-owned (if single-provider) / platform-owned (if marketplace)
+Pre-Visit Preparation | Completing the administrative and informational steps a customer needs to finish before a booked visit occurs.
+Visit Checklist | The set of administrative and clinical-intake steps — consent, payment, symptom questions — a customer completes ahead of a booked visit.
+Bundled pre-visit flow — consent, payment/insurance, and symptom questions presented as one guided sequence with per-item status | Completing consent, payment or insurance verification, and symptom intake as a single guided sequence ahead of a visit. | Gap | Gap | N/A | N/A | Combines existing Consent, Eligibility Check, and Clinical Triage capabilities into one customer-facing flow — a packaging gap, not a missing underlying capability | Squad-built, clinically co-owned
+Visit Preparation Content | Informational guidance about what to bring and expect on the day of a visit.
+'What to bring' and day-of-visit instructions surfaced ahead of an appointment | Informing the customer what to bring and expect on the day of an upcoming appointment. | Gap | Gap | Gap | Gap (verbal only) | Care Plans & Protocols — needs clinically-authored content per visit type | Squad-built, clinically co-owned
+Service Availability | Determining where a specific service can be obtained and matching a booking to the right kind and duration of visit.
+Location-Service Matching | Determining which physical or virtual location offers a specific service the customer needs.
+Basic pharmacy/clinic locator — nearest location, hours (distinct from filtering by specific service offered) | Finding the nearest Dis-Chem location and its operating hours. | Live | Planned | N/A | N/A | Store locator data — simpler and likely already available than full service-to-location matching | Squad-owned
+Guided Navigation | Directing a customer to the appropriate level and type of care based on their stated concern or an urgent situation.
+Emergency Escalation | Routing a customer to appropriate emergency care when a situation demands it.
+Emergency assist — one-tap routing to appropriate emergency care | Directing a customer in an urgent situation to the appropriate emergency care option. | Gap | Gap | N/A | Gap | Not scoped anywhere — genuine white space, high-stakes so kept as its own L3 rather than folded into general triage | Squad-built, clinically co-owned
+Triage | Assessing a stated symptom or concern and determining the appropriate destination for care.
+Symptom checker — structured intake | Collecting a structured description of a customer's symptoms. | Gap | Gap | Gap | N/A | AI Front (named, no owner) + clinical decision support for the underlying logic | Squad-built, clinically co-owned
+Care routing outcome — self-care / OTC / pharmacy / clinic / virtual (the destination the symptom checker routes to) | Determining the appropriate level and type of care a stated symptom or concern should lead to. | Gap | Gap | Gap | Gap | Care navigation logic (undefined) — consolidates what was three separately-named, overlapping capabilities across three L1s | Squad-built, clinically co-owned
+Care Delivery — Customer-Facing Edge | The capability to present the customer-visible surface of an active or concluded clinical interaction — its outcome, guidance arising from it, and its downstream implications. Excludes the clinical judgement or documentation itself, which is produced and governed by clinical systems this capability only exposes a simplified view of.
+Visit Continuity | Presenting what happens immediately during, and directly following, a clinical interaction.
+Virtual Care Follow-through | Customer-facing intake and messaging associated with a virtual consultation, whether synchronous or asynchronous.
+Questionnaire-based intake | Collecting clinical information from a customer ahead of an asynchronous consultation. | Gap | Gap | Gap | N/A | Clinical decision support (review side) | Squad-built, clinically co-owned
+Secure messaging with a provider | Exchanging written messages between a customer and a provider outside of a live consultation. | Gap | Gap | Gap | N/A | Messaging platform + clinician workflow | Squad-built, clinically co-owned
+Post-Visit Guidance | Information and feedback capture presented to the customer once a visit has concluded.
+Aftercare / follow-up instructions surfaced after a visit | Presenting instructions for what a customer should do following a completed visit. | Gap | Gap | Gap | Live (verbal, in person only) | Care Plans & Protocols — clinician-authored content | Squad-built, clinically co-owned
+Post-visit summary (simplified, patient-facing) | A simplified account of what occurred during a visit, presented to the customer. | Gap | Gap | N/A | Gap (paper only) | Clinical Assessment & Documentation (simplified extract) | Squad-built, clinically co-owned
+Referral & Pathway Visibility | Showing the customer where a referral to another provider currently stands.
+Health Progress | Showing the status and required next step of a referral from one provider to another.
+Referral status tracker | Showing the current status of a referral to another provider. | Gap | Gap | N/A | N/A | Referral Management (domain-owned) | Squad-built, clinically co-owned
+NHI referral-pathway / accreditation guidance | Guiding a customer through the referral steps required by National Health Insurance rules, and whether a provider is accredited under them. | Gap | Gap | N/A | Gap | External — NHI Fund accreditation data (not owned by Dis-Chem) | Squad-built, clinically co-owned
+Outcomes | Presenting the customer's own health trajectory resulting from care received over time.
+Health Progress | A customer-facing view of health trends resulting from care received over time.
+Personal health outcomes / progress view | Presenting a customer's own health measures as they change over time. | Gap | Gap | N/A | N/A | Health Outcomes Management (undefined, speculative) | Squad-built, clinically co-owned
+Visit Continuity | Presenting what happens immediately during, and directly following, a clinical interaction.
+Post-Visit Guidance | Information and feedback capture presented to the customer once a visit has concluded.
+Post-visit experience/quality feedback capture (distinct from pre-booking provider ratings) | Collecting a customer's assessment of how a specific clinical visit went, as distinct from a pre-booking rating of the provider generally. | Gap | Gap | Gap | Gap (paper/verbal only) | Not scoped — no feedback mechanism exists post-visit today  |  PLACEMENT FLAGGED: could equally sit in Engagement & Wellbeing as general CSAT. Kept here on the reasoning that it evaluates the clinical encounter specifically — a judgment call, not a settled rule. | Squad-owned
+In-Store Guidance | Contextual, clinically-informed guidance presented to a customer while physically present at a Dis-Chem location.
+Health Hub evolving from booking-only into an active, contextual guidance surface (named future direction, not yet a capability) | An intended future state in which the in-store Health Hub actively offers guidance rather than only accepting bookings. | N/A | N/A | N/A | Gap (booking-only today) | Care Pathway Orchestration + richer health data pipeline — moved from Care Access/Service Availability since the content itself (e.g. supplement suggestions from blood results) is clinically governed, not a location/navigation concern | Squad-built, clinically co-owned
+Medicines & Pharmacy | The capability to obtain, manage, and maintain an ongoing relationship with medication — prescribing pathways, adherence, substitution, and cost. Excludes booking a pharmacist consultation as an appointment (that is Care Access) and excludes the clinical decision to prescribe (that is Care Delivery or an external clinical system).
+Prescription Management | Obtaining a valid prescription and tracking it from submission through to a dispensing outcome.
+Script Lifecycle | The stages a prescription passes through from submission to dispensing readiness.
+Script submission / upload | Providing a prescription to Dis-Chem for dispensing. | Live | Planned | Live (photo upload via chat) | Live (staff-assisted) | PMS (Unisolv/Vexall) | Squad-owned
+Script status tracking (ready for collection) | Showing the current dispensing status of a submitted script. | Live | Planned | Live | Gap (no in-store status display) | PMS / real-time event processing | Squad-built, platform-logic-owned
+Repeat script request | Requesting a further supply of a medication already on record. | Live | Planned | Live | Live (staff-assisted) | PMS | Squad-owned
+Async Prescribing | Obtaining a prescription through a written questionnaire reviewed by a clinician without a live consultation.
+Condition-specific questionnaire intake | Collecting the specific clinical information required to prescribe for a defined, well-understood condition without a live consultation. | Gap | Gap | Gap | N/A | Clinical decision support, prescriber review workflow | Squad-built, clinically co-owned
+Provider async review & issue | A clinician reviewing a submitted questionnaire and issuing a prescription without a live consultation. | Gap | Gap | Gap | N/A | Prescriber workflow tooling (clinician-facing) | Squad-built, clinically co-owned
+Medication Support | Supporting correct, ongoing use of medication once prescribed, including direct interaction with a pharmacist.
+Adherence Support | Prompting and enabling continued, correct use of an existing medication regimen.
+Medication-specific refill reminder (this specific script is running low) | Alerting a customer that a specific medication they hold is due to run out. | Live | Planned | Gap | N/A | Nudge engine
+Proactive renewal (provider-initiated, ~6 weeks ahead) | Initiating the renewal of a prescription ahead of its expiry, without requiring the customer to request it. | Gap | Gap | Gap | N/A | PMS + prescriber workflow integration | Squad-built, clinically co-owned
+Adherence packaging subscription (multi-med, dated packets) | Supplying multiple medications sorted into dated packets on an ongoing, synchronised schedule. | Gap | Gap | N/A | N/A | Pharmacy fulfilment automation, logistics | Squad-built, clinically co-owned
+Pharmacist Interaction | Direct communication between a customer and a pharmacist regarding a specific medication.
+Two-way pharmacist messaging | Exchanging messages between a customer and a pharmacist regarding their medication. | Gap | Gap | Gap | Live (in person, not digital) | Messaging platform + pharmacist workflow | Squad-built, clinically co-owned
+Medication counselling notes surfaced | Presenting guidance a pharmacist has provided about a specific medication. | Live | Planned | Gap | Live (verbal, in person) | PMS | Squad-built, clinically co-owned
+Cost & Substitution | Presenting and comparing the cost of a medication against equivalent alternatives.
+Substitution Display | Presenting an approved alternative medication at the point of dispensing.
+Approved generic substitution shown at dispense | Showing an approved generic alternative at the point a medication is dispensed. | Live | Planned | N/A | Live (verbal, in person) | Formulary & substitution management | Squad-built, clinically co-owned
+Customer Cost Tools | Allowing a customer to actively compare the cost of a medication against alternatives.
+Customer-initiated generic/price comparison | Allowing a customer to actively compare a medication's price against generic alternatives. | Gap | Gap | N/A | N/A | Formulary data exposed to customer layer | Squad-owned
+Medication Support | Supporting correct, ongoing use of medication once prescribed, including direct interaction with a pharmacist.
+Adherence Support | Prompting and enabling continued, correct use of an existing medication regimen.
+Pause / resume a medication subscription | Temporarily halting and later restarting an ongoing medication supply arrangement. | Gap | Gap | N/A | N/A | PMS subscription management | Squad-owned
+Prescription Management | Obtaining a valid prescription and tracking it from submission through to a dispensing outcome.
+Script Lifecycle | The stages a prescription passes through from submission to dispensing readiness.
+OCR-based automatic extraction of prescription details from an uploaded photo (distinct from manual upload) | Parsing an uploaded prescription photo into discrete medication line items — drug, dose, quantity, and instructions — rather than a single block of extracted text, so each item can be matched, priced, and substitution-checked independently. | Gap | Gap | Gap | N/A | OCR/document processing service — not yet built; today's upload is manual entry only | Squad-owned
+Prompt to book a clinic visit when a repeat/chronic script requires renewal | Directing a customer to book a clinic visit when a script cannot be renewed without one. | Gap | Gap | Gap | N/A | PMS renewal-eligibility logic + Scheduling — cross-sell link between Medicines & Pharmacy and Care Access, currently unmodelled | Squad-built, platform-logic-owned
+Medicine Cabinet | Presenting an ongoing view of the customer's medications as a standing collection, independent of any single order.
+Medication Overview | A standing, ongoing view of all medications associated with a customer, independent of any single order.
+Medication list view — all active and past medications in one place | An ongoing, standing view of all of a customer's active and historical medications. | Live | Planned | Gap | Gap | Records management (read-only feed) — moved from Health Records & Insight since this is pharmacy-domain content, not general record content | Squad-built, clinically co-owned
+Prescription Management | Obtaining a valid prescription and tracking it from submission through to a dispensing outcome.
+Dispensing Safety Screening | Confirming it is safe to dispense a specific medication to a specific customer at this transaction, distinct from the standing self-reported history the customer maintains and distinct from the intake used to obtain a new prescription without a doctor visit.
+Pre-dispensing safety questionnaire (pregnancy status, comorbidities, current medications, known allergies), applied before dispensing a medication for the first time | A dispensing-specific safety check, run once per new medication, to identify contraindications before it is first supplied. | Gap | Gap | Gap | Live (verbal, in person only) | Clinical decision support — contraindication/interaction checking logic | Squad-built, clinically co-owned
+Script Lifecycle | The stages a prescription passes through from submission to dispensing readiness.
+Pharmacist query resolution — a specific, dispensing-blocking question resolved via call-back request or an in-app form/prompt | Resolving a specific pharmacist question that is blocking a script from being dispensed, through either a call-back request or a structured in-app prompt. | Gap | Gap | Gap | Live (in person, informal) | PMS query workflow — not currently a customer-facing digital capability | Squad-built, clinically co-owned
+Financial & Funding | The capability to transact for, estimate the cost of, and establish funding coverage for care and medication. Excludes the clinical or care content being paid for, and excludes backend billing, claims adjudication, and settlement, which are not customer-facing.
+Payments | Completing and recording a financial transaction for care or medication.
+Transaction | Completing a payment and producing a record of it.
+In-app payment (card / wallet) | Completing payment for a care or medication cost using a card or digital wallet. | Planned | Planned | Gap | Live (in-store POS) | Payments platform | Squad-owned
+Split payment (medical aid + card) | Completing a single payment across more than one funding source. | Planned | Planned | N/A | Live (in-store POS) | Payments platform, Enterprise Switching Engine | Squad-built, platform-logic-owned
+Digital receipt / invoice | Producing a record of a completed payment. | Gap | Gap | Gap | Gap (paper only) | Finance systems | Squad-owned
+Insurance & Eligibility | Determining what a customer is covered for, what that coverage will cost them, and capturing interest in funding products.
+Eligibility Check | Determining whether and how a specific care or medication cost is covered by a customer's funding arrangement.
+Prospective eligibility check at booking/script | Determining, ahead of a transaction, whether and how it is covered by a customer's funding. | Live | Planned | Gap | Live (staff-assisted) | Enterprise Switching Engine | Squad-built, platform-logic-owned
+Lead Generation | Capturing a customer's interest in a third-party insurance or funding product.
+Insurance discovery & lead capture | Capturing a customer's interest in a third-party insurance product for follow-up. | Live | Planned | Gap | Gap | CRM / partner insurer systems | Squad-owned
+Funding Products | Presenting a health funding or subscription product that Dis-Chem itself owns and issues, as distinct from routing a customer to a third-party insurer.
+Dis-Chem-owned Funding | A health funding or subscription product issued directly by Dis-Chem, rather than a third party.
+Subscription health plan / funding product | A funding or subscription product that Dis-Chem itself issues to a customer. | Gap | Gap | N/A | N/A | Health Product Configuration (named ambition, no owner) | Squad-owned
+Insurance & Eligibility | Determining what a customer is covered for, what that coverage will cost them, and capturing interest in funding products.
+Cost Transparency | Estimating and comparing what a specific care option will cost a customer before they commit to it.
+Upfront care-episode cost estimate | Estimating what a specific care option will cost before the customer commits to it. | Gap | Gap | N/A | Gap | Pricing & cost modelling (upstream, undefined) — nested here since cost is a function of eligibility, not a separate concern | Squad-built, platform-logic-owned
+Comparative pricing across care options (in-person vs virtual) | Showing the cost of more than one way of receiving the same care side by side. | Gap | Gap | N/A | N/A | Pricing & cost modelling | Squad-built, platform-logic-owned
+Engagement & Wellbeing | The capability to prompt, reward, and support the customer's health behaviour and general wellbeing between points of care. Excludes any single transactional confirmation (that belongs to the domain generating the transaction) and excludes the analytical logic that decides what to surface, which is a dependency this domain consumes rather than owns.
+Notifications & Nudges | Delivering time-sensitive status updates and personalised prompts intended to inform or influence customer behaviour.
+Transactional Notifications | Status alerts directly tied to a specific booking, script, or payment.
+Booking/script/payment status alerts | Notifying a customer of a change in status of something they have booked, submitted, or paid for. | Live | N/A | Live | N/A | Real-time event processing | Squad-owned
+Personalised Nudges | Prompts generated from an analytical judgement about what a specific customer should be encouraged to do next.
+Preventive opportunity nudge (screening due) | Prompting a customer that a preventive screening or check is due. | Planned | N/A | Planned | N/A | Population segmentation, Nudge engine (backend-owned; customer sees only the nudge) | Squad-built, platform-logic-owned
+Chronic-programme engagement nudge (broader adherence encouragement, not tied to a single script) | Prompting ongoing engagement with a chronic care programme, independent of any single medication. | Live | N/A | Planned | N/A | Nudge engine
+Loyalty & Rewards | Recognising and rewarding customer actions, and encouraging customers to bring others into the ecosystem.
+Health-linked Loyalty | Rewards or discounts earned by completing specific health-related or medication-adherence actions.
+Points/rewards for completed health actions (screening, vaccination) | Recognising a completed health action with a reward. | Gap | Gap | N/A | N/A | Enterprise loyalty platform (Loyalty 2.0) — not Health Squad owned | Squad-built, platform-logic-owned
+Mental Health & Wellbeing | Providing access to mental health and wellbeing support distinct from physical clinical care.
+Mental Health Support | Access to counselling or mental health and addiction recovery content.
+Counselling access / addiction recovery content | Providing access to counselling or addiction recovery support. | Gap | Gap | N/A | N/A | Not scoped anywhere — genuine white space | Squad-built, clinically co-owned
+Loyalty & Rewards | Recognising and rewarding customer actions, and encouraging customers to bring others into the ecosystem.
+Health-linked Loyalty | Rewards or discounts earned by completing specific health-related or medication-adherence actions.
+Reward ('Health Boost') trigger tied to completing a specific care-pathway step (e.g. annual bloods done on schedule) | A reward specifically triggered by completing a defined step within an individualised care pathway. | Gap | Gap | N/A | N/A | Enterprise loyalty platform + Care Pathway Orchestration — needs pathway-step completion as a trigger source, which doesn't exist without Episode Formation first | Squad-built, platform-logic-owned
+Pharmacy Boost — adherence discount for staying on a chronic medication schedule | A discount earned specifically by maintaining an ongoing chronic medication schedule. | Gap | Gap | N/A | N/A | PMS adherence data + Enterprise loyalty platform — distinct mechanic from Health Boost | Squad-built, platform-logic-owned
+Notifications & Nudges | Delivering time-sensitive status updates and personalised prompts intended to inform or influence customer behaviour.
+Personalised Nudges | Prompts generated from an analytical judgement about what a specific customer should be encouraged to do next.
+Clinically-informed product/service recommendation (e.g. blood results suggest a supplement or screening) | Recommending a product or service based on a clinical result belonging to that customer. | Gap | Gap | N/A | N/A | Clinical Assessment & Documentation + Population segmentation — recommendation content must be clinically approved | Squad-built, clinically co-owned
+Loyalty & Rewards | Recognising and rewarding customer actions, and encouraging customers to bring others into the ecosystem.
+Growth Mechanics | Mechanisms that encourage an existing customer to bring a new customer into the ecosystem.
+Refer-a-friend | Enabling an existing customer to invite a new customer into the ecosystem. | Gap | Gap | N/A | N/A | Enterprise loyalty/referral platform — growth-adjacent, likely Tribe 2 territory but customer-facing so worth tracking here too | Squad-owned
+Support & Navigation | The capability to help a customer operate the digital channel itself — finding their way, adjusting how they're reached, and escalating to a person when self-service is insufficient. Excludes navigation toward a specific point of clinical care, which is Care Access's Guided Navigation and Triage.
+Self-Service Help | Enabling a customer to orient themselves within the digital channel and manage their own settings without assistance.
+Home & Orientation | A central, self-service view helping a customer understand what within the ecosystem needs their attention.
+Health Page hub — 'what needs my attention' | A central view summarising what within the ecosystem currently requires the customer's attention. | Live | Planned | N/A | N/A | N/A — squad-owned | Squad-owned
+Human Handoff | Connecting a customer to a person when self-service within the digital channel is insufficient.
+Contact Centre Deep-link | Directing a customer to a human agent with the context of their specific issue already attached.
+Context-carrying handoff to call centre (booking/script ID passed) | Connecting a customer to a call centre agent with the relevant reference already attached. | Gap | Gap | Gap | Gap | Contact centre CRM integration | Squad-owned
+Digital Assistance | Real-time guided help for a customer stuck mid-task within the digital channel.
+In-app guided help / co-browsing | Providing real-time assistance to a customer who is stuck within a digital task. | Gap | Gap | N/A | N/A | Not scoped | Squad-owned
+Self-Service Help | Enabling a customer to orient themselves within the digital channel and manage their own settings without assistance.
+Accessibility | Adjusting how content and guidance are presented to suit a customer's language or accessibility need.
+Language & accessibility preference for content and guidance | Allowing a customer to set the language or accessibility adjustments used to present content to them. | Gap | Gap | N/A | Live (informal, staff-dependent, not systematic) | Localisation/content platform — multi-language support | Squad-owned
+Preferences | Customer control over which channel is used to reach them and how often.
+Contact/communication preference settings — channel choice and frequency | Allowing a customer to control which channel is used to reach them and how often. | Gap | Gap | N/A | Gap | Enterprise loyalty/CRM platform — preference data needs to be honoured across every notification-sending system  |  PLACEMENT FLAGGED: could equally sit in Identity (account setting) or Engagement & Wellbeing (governs what nudges someone receives). Left here as the most neutral home; not a confident placement. | Squad-owned
