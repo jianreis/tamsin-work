@@ -44,6 +44,8 @@ const PRINCIPLES = {
 };
 const SHORT_TYPE = [null, 'Research', 'Decision', 'Regulatory reform', 'Internal policy', 'Customer feature', 'Staff tool',
   'Platform & data', 'Content & standards', 'Process', 'People & roles', 'Partnership'];
+const SHORT_CAP = [null, 'Customer & household', 'Prescriptions', 'Pricing & payment', 'Stock', 'Dispensing & care',
+  'Collection & delivery', 'Adherence & refills', 'Communication'];
 const PHASES = ['Signing up', 'Repeats are due', 'Adding to the order', 'Checked and packed', 'In hand', 'Taking it', 'When something breaks'];
 
 // ---- IDs: GROUP-type-NN, numbered per type in data order
@@ -97,6 +99,18 @@ function statusKey(s, x, y, gap = 2.6) {
   STATUS_ORDER.forEach((st, i) => {
     chip(s, x + i * gap, y, st);
     s.addText(STATUS[st].blurb, { x: x + i * gap + 1.08, y: y - 0.04, w: gap - 1.15, h: 0.34, fontSize: 9, color: C.slate, valign: 'middle', isTextBox: true, margin: 0 });
+  });
+}
+
+// Horizontal bars drawn as shapes (native charts don't show in every viewer)
+function hbars(s, x, y, w, h, rows, labelW) {
+  const max = Math.max(...rows.map((r) => r.value)) || 1;
+  const rh = h / rows.length, bh = Math.min(0.42, rh * 0.62), barW = w - labelW - 0.6;
+  rows.forEach((r, i) => {
+    const ry = y + i * rh, by = ry + (rh - bh) / 2, bw = Math.max(0.05, (r.value / max) * barW);
+    s.addText(r.label, { x, y: ry, w: labelW - 0.15, h: rh, fontSize: 13, color: C.ink, valign: 'middle', isTextBox: true, margin: 0 });
+    s.addShape(pres.shapes.RECTANGLE, { x: x + labelW, y: by, w: bw, h: bh, fill: { color: r.color || C.green }, line: { color: r.color || C.green } });
+    s.addText(String(r.value), { x: x + labelW + bw + 0.1, y: by, w: 0.5, h: bh, fontSize: 16, bold: true, color: C.ink, valign: 'middle', isTextBox: true, margin: 0 });
   });
 }
 
@@ -240,12 +254,7 @@ pres.addSection({ title: 'Overview' });
   const none = count((it) => !it.seen.length);
   const labels = ['HSQ: Health Squad map', 'ECM: Enterprise model', 'FUL: Fulfilment compendium', 'In no catalogue'];
   const values = [seenIn('HSQ'), seenIn('ECM'), seenIn('FUL'), none];
-  s.addChart(pres.charts.BAR, [{ name: 'Items', labels, values }], {
-    x: M, y: 1.7, w: 6.6, h: 4.6, barDir: 'bar', chartColors: [C.green, C.green, C.green, C.lime],
-    showValue: true, dataLabelPosition: 'outEnd', dataLabelFontSize: 14, dataLabelColor: C.ink, dataLabelFontFace: 'Calibri',
-    catAxisLabelFontSize: 13, catAxisLabelColor: C.ink, catAxisLabelFontFace: 'Calibri', catAxisOrientation: 'maxMin',
-    valAxisHidden: true, valGridLine: { style: 'none' }, catGridLine: { style: 'none' }, showLegend: false, barGapWidthPct: 45,
-  });
+  hbars(s, M, 1.9, 6.6, 4.2, labels.map((l, i) => ({ label: l, value: values[i], color: i === 3 ? C.lime : C.green })), 2.9);
   // notable new items
   const x = 7.6, w = W - M - x;
   s.addShape(pres.shapes.RECTANGLE, { x, y: 1.7, w, h: 4.6, fill: { color: C.card }, line: { color: C.line, width: 0.75 } });
@@ -263,12 +272,7 @@ pres.addSection({ title: 'Overview' });
   const s = content('Overview', 'A handful of foundations carry the rest',
     'How many other items in this journey depend on each one. Get these wrong and the work above them stalls.',
     'Dependency counts are within 09: Repeat only and will grow as 10, 11 and 12 are added. Stock is the thinnest row on the grid (4 items), yet live stock visibility is one of the foundations here.');
-  s.addChart(pres.charts.BAR, [{ name: 'Depended on by', labels: top.map(([k]) => `${byKey[k].title}  ${byKey[k].id}`), values: top.map(([, v]) => v) }], {
-    x: M, y: 1.7, w: 8.2, h: 4.9, barDir: 'bar', chartColors: [C.greenDk],
-    showValue: true, dataLabelPosition: 'outEnd', dataLabelFontSize: 14, dataLabelColor: C.ink, dataLabelFontFace: 'Calibri',
-    catAxisLabelFontSize: 13, catAxisLabelColor: C.ink, catAxisLabelFontFace: 'Calibri', catAxisOrientation: 'maxMin',
-    valAxisHidden: true, valGridLine: { style: 'none' }, catGridLine: { style: 'none' }, showLegend: false, barGapWidthPct: 40,
-  });
+  hbars(s, M, 1.75, 8.2, 4.8, top.map(([k, v]) => ({ label: `${byKey[k].title}  (${byKey[k].id})`, value: v, color: C.greenDk })), 4.2);
   const x = 9.2, w = W - M - x;
   s.addShape(pres.shapes.RECTANGLE, { x, y: 1.7, w, h: 4.9, fill: { color: C.card }, line: { color: C.line, width: 0.75 } });
   s.addText([{ text: 'Why this matters', options: { bold: true, fontSize: 14, breakLine: true } },
@@ -290,12 +294,12 @@ function itemNotes(it) {
     it.question ? `Open question: ${it.question}` : null,
   ].filter(Boolean).join('\n');
 }
-function card(s, it, x, y, w, h) {
+function card(s, it, x, y, w, h, byKind) {
   s.addShape(pres.shapes.RECTANGLE, { x, y, w, h, fill: { color: C.card }, line: { color: C.line, width: 0.75 } });
   const ix = x + 0.2, iw = w - 0.4;
   s.addText([{ text: it.id + '  ', options: { bold: true, color: C.green } },
-    { text: SHORT_TYPE[it.type] + (it.reform && it.type !== 3 ? ' · reform' : ''), options: { color: it.reform ? C.amber : C.slate, bold: !!it.reform } }],
-  { x: ix, y: y + 0.14, w: iw - 1.05, h: 0.26, fontSize: 10, valign: 'middle', isTextBox: true, margin: 0 });
+    { text: (byKind ? SHORT_CAP[it.cap] : SHORT_TYPE[it.type]) + (it.reform && it.type !== 3 ? ' · reform' : ''), options: { color: it.reform ? C.amber : C.slate, bold: !!it.reform } }],
+  { x: ix, y: y + 0.14, w: iw - 1.05, h: 0.26, fontSize: 9.5, valign: 'middle', isTextBox: true, margin: 0 });
   chip(s, x + w - 0.2 - 1.0, y + 0.14, it.status);
   s.addText(it.title, { x: ix, y: y + 0.46, w: iw, h: 0.32, fontSize: 14, bold: true, color: C.ink, valign: 'top', isTextBox: true, margin: 0 });
   s.addText(it.need, { x: ix, y: y + 0.84, w: iw, h: 0.72, fontSize: 10.5, color: C.ink, valign: 'top', isTextBox: true, margin: 0 });
@@ -307,6 +311,22 @@ function card(s, it, x, y, w, h) {
   foot.push({ text: it.seen.length ? it.seen.join(' · ') : 'none', options: { color: C.slate } });
   s.addText(foot, { x: ix, y: y + h - 0.58, w: iw, h: 0.48, fontSize: 9, valign: 'bottom', isTextBox: true, margin: 0 });
 }
+
+pres.addSection({ title: 'The work, by kind' });
+GROUPS.forEach((g) => {
+  const list = ITEMS.filter((it) => group(it) === g).sort((a, b) => a.type - b.type || a.cap - b.cap);
+  const pages = Math.ceil(list.length / CARDS_PER);
+  const typeCounts = TYPES.map((t, i) => ({ t, i })).filter((o) => o.t && o.t.group === g)
+    .map((o) => `${list.filter((it) => it.type === o.i).length} ${o.t.name.toLowerCase()}`).join(' · ');
+  for (let p = 0; p < pages; p++) {
+    const chunk = list.slice(p * CARDS_PER, (p + 1) * CARDS_PER);
+    const s = content('The work, by kind', `${g}: ${GROUP_BLURB[g].toLowerCase()}${pages > 1 ? `  (${p + 1} of ${pages})` : ''}`,
+      null, chunk.map(itemNotes).join('\n\n'));
+    s.addText(`${list.length} items: ${typeCounts}`, { x: M, y: 0.98, w: W - 2 * M, h: 0.24, fontSize: 11, color: C.slate, isTextBox: true, margin: 0 });
+    const gw = 0.2, cw = (W - 2 * M - (COLS - 1) * gw) / COLS, top = 1.32, ch = (H - top - 0.55 - gw) / 2;
+    chunk.forEach((it, k) => card(s, it, M + (k % COLS) * (cw + gw), top + Math.floor(k / COLS) * (ch + gw), cw, ch, true));
+  }
+});
 
 pres.addSection({ title: 'The work, by capability' });
 for (let r = 1; r <= 8; r++) {
