@@ -21,6 +21,7 @@ Everything here must be **traceable to the wiki** (and through it, to sources).
 - **To-be / future-state worked exemplars** (proof-of-concept):
   - [[design-kit/journeys/to-be-blueprint-chronic-insured|To-be service blueprint — the self-running repeat]] (Nomvula, insured chronic - the chronic-medicine flywheel)
   - [[design-kit/journeys/to-be-journey-cash-acute|To-be journey — fast, transparent, near home]] (Thabo, cash-pay acute - the uninsured majority)
+- [[design-kit/journeys/to-be-core-blueprints-repeat-acute|Core future-state service blueprints - 09: Repeat and 10: Acute]] (high-level blueprint per journey + what must be in place: capabilities, technology, processes; spec for deliverables/15-core-service-blueprints.html)
 - _Together these demonstrate the [[wiki/concepts/dual-journey|dual journey]]: one spine, two first-class funded paths. Produce more per [[CLAUDE]] §8._
 
 ## Templates

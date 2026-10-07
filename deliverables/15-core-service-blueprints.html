@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Core future-state service blueprints - 09: Repeat and 10: Acute</title>
+<!-- =============================================================================
+  15 - Core future-state service blueprints for 09: Repeat and 10: Acute.
+  Content spec: design-kit/journeys/to-be-core-blueprints-repeat-acute.md
+  Lanes are distilled from each journey's approved activities and behind-the-line
+  panels (design-kit/journeys/to-be-household-repeat-moments.md,
+  design-kit/journeys/to-be-acute-moments.md). The capability roll-up uses the
+  eight capability rows of the work-to-be-done catalogue (#14) so the two can be
+  read together. Edit DATA below; the page renders from it.
+============================================================================= -->
+<style>
+:root{
+  --brand:#1a9b4a; --brand-dark:#157a3b; --lime:#b5d334;
+  --mint:#bfe3cf; --mint-soft:#e7f4ec;
+  --ink:#1d1d1d; --bg:#f6f8f6; --card:#ffffff;
+  --muted:#5d6b62; --muted2:#8a958d; --line:#d8e2db;
+  --pain:#c0392b; --good:#1a9b4a; --good-bg:#eef7f1;
+  --warn:#b9770b; --warn-bg:#fff7e6; --reform:#7c3aed; --reform-bg:#f4effe;
+  --ins:#1d5fa8; --ins-bg:#eaf2fb; --cash:#8a5a00; --cash-bg:#fbf2df;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --sp:8px; --radius:12px; --maxw:1240px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg); color:var(--ink); font-family:var(--font); line-height:1.5; font-size:15px; -webkit-text-size-adjust:100%;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 0 72px;}
+h1,h2,h3,h4{margin:0}
+a{color:var(--brand-dark)}
+button{font:inherit; cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid var(--brand-dark); outline-offset:2px}
+
+.brandband{background:var(--brand); color:#fff; padding:20px 24px; display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; justify-content:space-between;}
+.wordmark{display:flex; align-items:baseline; gap:6px; font-weight:800; font-size:1.35rem}
+.wordmark .plus{color:var(--lime); font-size:1.6rem; line-height:0}
+.maptag{font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; font-weight:700; border:1.5px solid rgba(255,255,255,.6); border-radius:99px; padding:4px 12px;}
+.ribbon{background:var(--warn-bg); color:#8a5a00; border-bottom:1px solid #f0dca8; padding:8px 24px; font-size:.82rem; font-weight:600;}
+.ribbon .gen{color:#9a7a30; font-weight:500; margin-left:10px}
+.intro{padding:24px 24px 0}
+.intro h1{font-size:1.75rem; font-weight:800; letter-spacing:-.015em; line-height:1.15}
+.lede{color:var(--muted); max-width:86ch; margin:10px 0 0}
+
+.toolbar{position:sticky; top:0; z-index:40; background:rgba(246,248,246,.97); border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 24px; margin-top:18px;}
+.seg{display:inline-flex; border:1.5px solid var(--brand); border-radius:99px; overflow:hidden}
+.seg button{border:0; background:#fff; color:var(--brand-dark); padding:7px 16px; font-weight:700; font-size:.9rem}
+.seg button[aria-pressed="true"]{background:var(--brand); color:#fff}
+.toolbar .hint{font-size:.8rem; color:var(--muted)}
+.jump{display:flex; gap:12px; flex-wrap:wrap; font-size:.85rem}
+
+section.block{padding:28px 24px 0}
+section.block > h2{font-size:1.25rem; font-weight:800; letter-spacing:-.01em}
+.secnote{color:var(--muted); max-width:86ch; margin:6px 0 14px; font-size:.93rem}
+
+/* scenario card */
+.scenario{display:grid; gap:12px; grid-template-columns:1fr; margin-top:14px}
+@media(min-width:820px){ .scenario{grid-template-columns:1.3fr 1fr 1fr} }
+.scard{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:14px 16px}
+.scard h3{font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:6px}
+.scard p{margin:0; font-size:.92rem}
+.scard.ins{border-left:4px solid var(--ins)}
+.scard.cash{border-left:4px solid var(--cash)}
+.promise{font-size:1.05rem !important; font-weight:700}
+
+/* legend */
+.legend{display:flex; flex-wrap:wrap; gap:6px 14px; font-size:.8rem; color:var(--muted); margin:14px 0 0}
+.legend span{display:inline-flex; align-items:center; gap:5px}
+
+/* blueprint grid */
+.bpscroll{overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--card); margin-top:12px; -webkit-overflow-scrolling:touch}
+table.bp{border-collapse:separate; border-spacing:0; min-width:100%; font-size:.82rem}
+table.bp th, table.bp td{vertical-align:top; padding:10px 10px; border-bottom:1px solid var(--line); border-right:1px solid var(--line); width:208px; min-width:208px}
+table.bp th.lane, table.bp td.lane{position:sticky; left:0; z-index:2; background:#f1f5f2; width:150px; min-width:150px; font-weight:700; font-size:.78rem}
+table.bp td.lane small{display:block; font-weight:500; color:var(--muted); margin-top:3px; font-size:.72rem; line-height:1.35}
+table.bp thead th{background:var(--ink); color:#fff; text-align:left; position:sticky; top:0}
+table.bp thead th.lane{background:var(--ink); color:#fff; z-index:3}
+table.bp thead th .pn{display:block; font-family:var(--mono); font-size:.68rem; color:var(--lime); font-weight:600}
+table.bp thead th .pt{display:block; font-size:.92rem; font-weight:800}
+table.bp thead th .badge{display:inline-block; margin-top:4px; font-size:.64rem; border:1px solid rgba(255,255,255,.5); border-radius:99px; padding:1px 7px; font-weight:600}
+table.bp th.par, table.bp td.par{background-image:repeating-linear-gradient(135deg,transparent 0 10px,rgba(0,0,0,.018) 10px 20px)}
+tr.moments td{background:var(--mint-soft)}
+tr.moments td.lane{background:var(--mint)}
+.mom{font-style:italic; font-weight:600; margin:0 0 6px; line-height:1.35}
+.mom .star{font-style:normal; color:#c58a00}
+.mom .who{font-style:normal; font-weight:500; color:var(--muted); font-size:.72rem; display:block}
+.none{color:var(--muted2); font-style:italic}
+tr.divider td{padding:3px 10px; border-bottom:2px dashed var(--muted2); background:#fafcfa; font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:700}
+tr.divider td.lane{background:#fafcfa}
+ul.cell{margin:0; padding:0; list-style:none}
+ul.cell li{margin:0 0 6px; padding-left:10px; position:relative; line-height:1.38}
+ul.cell li::before{content:""; position:absolute; left:0; top:.55em; width:4px; height:4px; border-radius:50%; background:var(--muted2)}
+tr.tech td:not(.lane){background:#fbfcfb}
+tr.rules td:not(.lane){background:#fcfbff}
+.eco{display:inline-block; font-size:.62rem; font-weight:800; letter-spacing:.04em; border-radius:4px; padding:0 4px; margin-right:4px; vertical-align:1px}
+.eco.i{background:var(--ins-bg); color:var(--ins)}
+.eco.c{background:var(--cash-bg); color:var(--cash)}
+.flag-r{color:var(--reform); font-weight:700}
+.flag-a{color:var(--warn); font-weight:700}
+.cite{border-bottom:1px dotted var(--muted2); cursor:help}
+.st{display:inline-block; font-size:.64rem; font-weight:700; border-radius:99px; padding:0 6px; margin-left:4px; vertical-align:1px; white-space:nowrap}
+.st.fl{background:var(--good-bg); color:var(--brand-dark); border:1px solid #bfe0cb}
+.st.pl{background:var(--ins-bg); color:var(--ins); border:1px solid #c7dbf1}
+.st.gp{background:var(--warn-bg); color:var(--warn); border:1px solid #f0dca8}
+.st.nw{background:#f3f3f3; color:#555; border:1px solid #ddd}
+
+/* roll-up */
+.rollup{display:grid; gap:10px; margin-top:12px}
+.caprow{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); display:grid; grid-template-columns:1fr; overflow:hidden}
+@media(min-width:900px){ .caprow{grid-template-columns:1.15fr 1fr 1fr} }
+.caprow .capname{grid-column:1/-1; background:#f1f5f2; padding:8px 14px; font-weight:800; font-size:.9rem; display:flex; gap:10px; align-items:baseline}
+.caprow .capname .n{font-family:var(--mono); color:var(--brand-dark); font-size:.78rem}
+.caprow .col{padding:10px 14px 8px; border-top:1px solid var(--line)}
+@media(min-width:900px){ .caprow .col + .col{border-left:1px solid var(--line)} }
+.caprow .col h4{font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:6px}
+.caprow .col p{margin:0 0 4px; font-size:.9rem; font-weight:600}
+.caprow ul.cell{font-size:.85rem}
+.rulesbox{background:var(--card); border:1px dashed var(--reform); border-radius:var(--radius); padding:12px 16px; margin-top:12px}
+.rulesbox h3{font-size:.95rem; margin-bottom:8px}
+.rulesbox ul.cell{font-size:.86rem}
+
+/* foundation */
+.found{display:grid; gap:12px; grid-template-columns:1fr; margin-top:12px}
+@media(min-width:900px){ .found{grid-template-columns:1fr 1.6fr 1fr} }
+.fcol{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:14px 16px}
+.fcol.shared{border:2px solid var(--brand)}
+.fcol h3{font-size:.95rem; margin-bottom:4px}
+.fcol .sub{font-size:.8rem; color:var(--muted); margin:0 0 10px}
+.fcol ul.cell{font-size:.86rem}
+.fcol ul.cell li b{font-weight:700}
+
+.sources{font-size:.82rem; color:var(--muted); columns:2 320px; column-gap:28px; margin-top:10px}
+.sources div{break-inside:avoid; margin-bottom:4px}
+footer{margin:36px 24px 0; padding-top:10px; border-top:1px solid var(--line); color:var(--muted); font-size:.8rem}
+.mono{font-family:var(--mono); font-size:.85em}
+
+@media(max-width:600px){
+  .brandband,.intro,section.block,.toolbar{padding-left:16px; padding-right:16px}
+  .ribbon{padding-left:16px; padding-right:16px}
+  .intro h1{font-size:1.4rem}
+}
+@media print{
+  .toolbar{display:none}
+  body{background:#fff; font-size:11px}
+  .bpscroll{overflow:visible; border:0}
+  table.bp th.lane, table.bp td.lane{position:static}
+  section.journey{display:block !important; page-break-before:always}
+}
+@media (prefers-reduced-motion: reduce){ *{transition:none !important} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="brandband">
+  <div class="wordmark">Dis-Chem<span class="plus">+</span> <span style="font-weight:500; font-size:1rem; opacity:.9">Script Re-imagined</span></div>
+  <span class="maptag">Core future-state service blueprints</span>
+</header>
+<div class="ribbon" role="note">⚠ Concept for review - not an official Dis-Chem artefact <span class="gen">generated 2026-10-07 from the Bigly ground-truth vault</span></div>
+
+<div class="intro">
+  <h1>What has to run behind 09: Repeat and 10: Acute</h1>
+  <p class="lede">Two high-level service blueprints, one for each future-state journey. Each one shows what the customer does
+  and sees in every phase, then what has to happen behind the line for that to work: the people and processes backstage, the
+  technology and data underneath, and the rules that apply. Below each blueprint is a capability roll-up of what must be
+  in place, organised by the eight capability rows of the work-to-be-done catalogue (#14), so the two documents can be read
+  side by side. A last section separates the foundation both journeys share from what each needs alone.</p>
+  <p class="lede" style="font-size:.88rem">The blueprints sit one level above the journeys. Where the insured and cash tracks
+  differ, the cell says so with a <span class="eco i">INS</span> or <span class="eco c">CASH</span> tag. The detail behind
+  each cell lives in the journey's own behind-the-line panels: <a href="09-tobe-household-repeat-moments.html">#09</a> and
+  <a href="10-tobe-acute-moments.html">#10</a>.</p>
+</div>
+
+<nav class="toolbar" aria-label="Choose a blueprint">
+  <div class="seg" role="group" aria-label="Journey">
+    <button type="button" data-j="repeat" aria-pressed="true">09: Repeat</button>
+    <button type="button" data-j="acute" aria-pressed="false">10: Acute</button>
+  </div>
+  <div class="jump">
+    <a href="#bp">Blueprint</a><a href="#rollup">What must be in place</a><a href="#rules">Rules to change or confirm</a><a href="#foundation">Shared foundation</a>
+  </div>
+  <span class="hint">Scroll the blueprint sideways on small screens. Hover dotted terms for the vault source.</span>
+</nav>
+
+<main id="journeys"></main>
+
+<section class="block" id="foundation">
+  <h2>Build once, use twice: the shared foundation</h2>
+  <p class="secnote">Most of the heavy lifting is common to both journeys. The middle column is the platform that, once
+  built, carries both the household repeat and the acute script. The outer columns are what each journey adds on top.
+  Status chips come from Dis-Chem's own plans and catalogues where they are sourced (see the key below).</p>
+  <div class="found" id="found"></div>
+  <div class="legend" aria-label="Status key">
+    <span><span class="st fl">In flight</span> being delivered now, with a date</span>
+    <span><span class="st pl">Planned</span> marked planned or a target state in an existing catalogue</span>
+    <span><span class="st gp">Known gap</span> named as a gap, nobody solving it yet</span>
+    <span><span class="st nw">New</span> surfaced only by the journeys</span>
+  </div>
+</section>
+
+<section class="block">
+  <h2>Sources in the vault</h2>
+  <p class="secnote">Every cell traces back to the journeys' approved copy and behind-the-line panels, which cite these pages.
+  🔮 marks a step that needs a rule to change. ⚠️ marks a design assumption or an unconfirmed legal position, logged in
+  <span class="mono">meta/punchlist.md</span> or <span class="mono">meta/open-questions.md</span>.</p>
+  <div class="sources" id="sources"></div>
+</section>
+
+<footer>
+  Content spec: <span class="mono">design-kit/journeys/to-be-core-blueprints-repeat-acute.md</span> · Journeys:
+  <a href="09-tobe-household-repeat-moments.html">#09</a>, <a href="10-tobe-acute-moments.html">#10</a> · Concepts:
+  <a href="08-concepts.html">#08</a> · Work catalogue: <span class="mono">14-work-to-be-done-catalogue.data.js</span> ·
+  <a href="index.html">All deliverables</a>
+</footer>
+</div>
+
+<script>
+/* Markup conventions inside DATA strings:
+   "[I] ..." / "[C] ..." -> insured / cash tag at the start of an item
+   "{text|cite}"        -> dotted term with the vault source on hover
+   "<fl>" "<pl>" "<gp>" "<nw>" -> status chip (In flight / Planned / Known gap / New)
+   🔮 and ⚠️ are coloured automatically. */
+
+const LANES = [
+  {k:'moments',  name:'Key moments', note:'From the journey. ⭐ = moment of truth'},
+  {k:'actions',  name:'Customer actions', note:'What the customer does'},
+  {div:'line of interaction'},
+  {k:'digital',  name:'Frontstage: screens and messages', note:'What the customer sees'},
+  {k:'people',   name:'Frontstage: people', note:'Who the customer meets'},
+  {div:'line of visibility'},
+  {k:'back',     name:'Backstage: people and processes', note:'Work the customer never sees'},
+  {div:'line of internal interaction'},
+  {k:'tech',     name:'Technology and data', note:'Systems the work runs on'},
+  {k:'rules',    name:'Rules that apply', note:'🔮 needs reform · ⚠️ to confirm'}
+];
+
+const DATA = {
+repeat:{
+  code:'09: Repeat',
+  title:'09: Repeat - the household repeat',
+  promise:'Repeats should just repeat: set it up once, and everyone\'s medicine keeps arriving, priced in advance and checked by a named pharmacist.',
+  insured:'Nomvula manages chronic medicine for her mother Grace and her two children (one on a Schedule 6 script). App, home delivery, several medical schemes, a saved card.',
+  cash:'Sipho collects his own medicine and his mother\'s. WhatsApp, a locker at a partner bank branch he already visits, cash at the counter. Her medicine comes from the state CCMDD programme, so Dis-Chem never touches it.',
+  phases:[
+    {n:'P0', t:'Signing up', badge:'once, not per cycle',
+     moments:[{l:'I told them once how I want it', who:'both'}],
+     actions:['Adds the household, each person\'s medicines and the right to act for them','Accepts or declines lining everyone up on one date (Script Sync)','Chooses how it reaches them and how to pay, then confirms a plain read-back','[C] Starts on WhatsApp after a pharmacist suggests it at the counter'],
+     digital:['[I] Sign-up flow in the app','[C] Sign-up conversation on WhatsApp, in his language','Read-back of every choice, with the first month\'s cost'],
+     people:['[C] Pharmacist invites him at the counter','A person on request'],
+     back:['Household record built; consent recorded per person','Each script checked: can it repeat, and for how long?','Pharmacist sets the sync plan and prices the one-off top-up','Preferences stored: channel, collection point, language per person, payment order'],
+     tech:['{One customer record|wiki/concepts/identity-and-consent} + household profile <pl>','{Consent service with audit trail|wiki/concepts/identity-and-consent} <gp>','Preference store <gp>','Verified identity on WhatsApp <gp>','Schedule-aware repeat rules <nw>'],
+     rules:['{POPIA: carer consent recorded once, in-language, withdrawable|wiki/concepts/identity-and-consent}','{Schedule 6: no repeats, 30-day maximum|wiki/sa-regulatory/prescription-requirements-repeats} 🔮','Script Sync part-fills: scheme rules unsourced ⚠️','{CCMDD-to-retail bridge|wiki/medical-schemes/courier-chronic-pharmacy-models} 🔮']},
+    {n:'P1', t:'Repeats are due',
+     moments:[{l:'My medicine ordered itself', star:true, who:'both'},{l:'The only thing I ever bought blind - not anymore', star:true, who:'both'}],
+     actions:['Reads one notice for the whole household: what\'s coming, what each scheme covers, what she pays','Does nothing and it goes ahead, or amends or pauses a line'],
+     digital:['[I] App notice with per-person cover, shortfall and total','[C] WhatsApp message with his price before he travels','One-tap amend or pause'],
+     people:['None by default','[C] A person in his language, on request'],
+     back:['Run-out predicted for each person from dispensing history','Order created to the sign-up preferences','Scheme checked and price fixed before the notice goes out','Stock held for the predicted repeats'],
+     tech:['{Refill prediction|wiki/digital-transformation/adherence-tech-and-digital-therapeutics} <pl>','{BRiX order workflow|wiki/digital-transformation/dischem-scripting-tech-roadmap} <fl>','{Real-time claims pre-adjudication|wiki/medical-schemes/realtime-claims-switching} <gp>','{One price engine (SEP + fee)|wiki/sa-regulatory/sep-dispensing-fee} <gp>','{WhatsApp service platform|wiki/consumer-context/digital-access-and-whatsapp} <gp>'],
+     rules:['POPIA: proactive contact consented, opt-out honoured','{Single exit price plus capped dispensing fee|wiki/sa-regulatory/sep-dispensing-fee}']},
+    {n:'P2', t:'Adding to the order',
+     moments:[{l:'While we\'re here... - without going anywhere', who:'insured'}],
+     actions:['[I] Adds anything from the store to the open order','[C] Adds other medicine or OTC items in the chat','Sees a running total'],
+     digital:['[I] Open order with search, history suggestions and specials','[C] Chat ordering: numbered picks, free text, priced options','Cut-off the day before delivery'],
+     people:['None'],
+     back:['Shop items staged against the medicine order','One parcel, one route','[C] Locker route limited to medicine and OTC'],
+     tech:['Basket linked to the prescription order <nw>','Suggestions from buying history <nw>','{Chat ordering on WhatsApp|wiki/consumer-context/digital-access-and-whatsapp} <nw>'],
+     rules:['What may ride with medicine: design assumption ⚠️']},
+    {n:'P3', t:'Checked and packed',
+     moments:[{l:'Every check ran before it left the building', who:'both'}],
+     actions:['Sees the order picked and checked, with the checks listed and the pharmacist named','Can move the day, the window or switch to collection until the day before'],
+     digital:['Status 1: picked and checked (named pharmacist)','Status 2: packed and sealed','Change-the-plan controls'],
+     people:['Named pharmacist, reachable in the thread'],
+     back:['AI drafts the household-wide check; pharmacist confirms or overrides','Robot picks eligible stock; scan checks catch look-alikes','Pharmacist signs off every line','[I] Dose sachets assembled; shop items packed alongside'],
+     tech:['{BRiX workflow|wiki/digital-transformation/dischem-scripting-tech-roadmap} <fl>','{AI check assistant|wiki/digital-transformation/ai-in-pharmacy} <pl>','{ROWA automated picking|wiki/digital-transformation/dischem-scripting-tech-roadmap} <fl>','{Barcode and vision verification|wiki/digital-transformation/pharmacy-automation-and-robotics} <pl>','Named sign-off record <pl>','{Dose-pack production|wiki/dispensing-practice/adherence-packaging} <gp>'],
+     rules:['{Pharmacist sign-off remains the gate (GPP)|wiki/sa-regulatory/pharmacy-act-sapc-gpp}','AI assembles, the human authorises; autonomous dispensing 🔮']},
+    {n:'P4', t:'In hand',
+     moments:[{l:'I could track it from Dis-Chem\'s door to mine', star:true, who:'both'}],
+     actions:['[I] Gets the morning message with a QR, tracks the driver, scans at the door','[C] Gets a message when the parcel is in the locker, pays at the bank counter, scans to open','Checks the contents, with help one tap away'],
+     digital:['[I] Morning message: window, QR, backup PIN','[I] Live tracking to the door','[C] In-locker message: QR, backup PIN, steps','Contents list; photo triggers a call-back'],
+     people:['[I] Driver','[C] Bank teller takes the cash','Call-back agent if something\'s wrong'],
+     back:['Parcels consolidated and routed; proof of delivery against the QR','[C] Locker loaded; counter payment activates the code','Reroute decided before anyone travels','Problems at handover go to a person'],
+     tech:['{Consolidation, routing and POD (PICCUP)|wiki/digital-transformation/dischem-scripting-tech-roadmap}','Live tracking <pl>','{Closed-loop QR with backup PIN|wiki/digital-transformation/dischem-scripting-tech-roadmap} <pl>','{Locker network integration|wiki/consumer-context/last-mile-addressing-logistics} <nw>','Partner payment that activates the code <nw>'],
+     rules:['{Scheduled medicine delivered under pharmacy accountability|wiki/sa-regulatory/courier-online-pharmacy-rules}','{Locker release of scheduled medicine|wiki/sa-regulatory/courier-online-pharmacy-rules} 🔮','Cash-at-bank locker release: design assumption ⚠️']},
+    {n:'P5', t:'Taking it',
+     moments:[{l:'Medication you can\'t take wrong', who:'both'}],
+     actions:['[I] Unpacks a month of dose sachets (paid opt-in)','[C] Uses iconised labels and a printed fridge sheet','Asks questions whenever they come up','Sets and stops reminders; each adult controls their own'],
+     digital:['Household medicine cabinet','[C] Voice notes for his mother, in her language','Reminders sent to whoever takes the dose'],
+     people:['Pharmacist for questions, in the thread or by phone'],
+     back:['Labels and guides produced in each person\'s language','Reminder schedule set per dose-holder, stoppable by them','Renewal flagged early (see When something breaks)'],
+     tech:['{Instruction and label library in SA languages|wiki/consumer-context/language-literacy-and-trust} <gp>','{Reminder engine|wiki/digital-transformation/adherence-tech-and-digital-therapeutics} <gp>','Household medicine cabinet <gp>','Per-person label printing <nw>'],
+     rules:['{Counselling access preserved (GPP)|wiki/dispensing-practice/counselling-and-health-literacy}','Reminder contact under POPIA consent']},
+    {n:'∥', t:'When something breaks', badge:'parallel - any phase', par:true,
+     moments:[{l:'Medical aid said no. Dis-Chem said "let\'s make a plan."', star:true, who:'insured'}],
+     actions:['Gets bad news with the choices inside it: scheme decline, out of stock, failed delivery, locker down, script running out','Picks a choice in one reply','[C] Replies "call me" and a person phones'],
+     digital:['Exception message: what, why, the live options','Re-plan a failed delivery: tomorrow, or collect at a store on the same QR'],
+     people:['[I] Pharmacist in the same thread','[C] A person phones back, in his language','One named owner per problem'],
+     back:['Decline caught at pre-adjudication, before the customer is told','Order holds its place while the problem is solved','Split delivery or reroute arranged first','Renewal requested weeks ahead and tracked'],
+     tech:['{Case management and SLA oversight (Virtual Manager)|wiki/digital-transformation/dischem-scripting-tech-roadmap}','{Proactive renewal and prescriber link|wiki/sa-regulatory/prescription-requirements-repeats} <gp>','Call-back queue <gp>','Live stock and reroute <gp>'],
+     rules:['{Dispense only against a valid prescription|wiki/sa-regulatory/prescription-requirements-repeats}','Supply while a renewal is pending: unverified ⚠️','{Generic substitution with patient choice|wiki/medical-schemes/dsp-formularies-copayments}']}
+  ],
+  rollup:[
+    {cap:'Knowing the customer and their household',
+     need:'One household record links members, medicines, cover, cycles and carer consent, and works the same in the app, on WhatsApp and at the counter.',
+     tech:['One customer record, cleaned and centralised <pl>','Household profile <pl>','Consent service with audit trail <gp>','Preference store <gp>','Verified identity on WhatsApp <gp>'],
+     proc:['Carer authority policy: adult, child, Schedule 6 <nw>','Consent captured once, withdrawable by the person cared for','Counter staff invite cash customers onto WhatsApp']},
+    {cap:'Receiving and validating prescriptions',
+     need:'The system knows which scripts can join a standing service and for how long, and renews them before they run out.',
+     tech:['Schedule-aware repeat rules <nw>','Proactive renewal orchestration <gp>','Prescriber renewal link <pl>'],
+     proc:['Renewal requests sent weeks ahead and tracked until the new script is back','Pharmacist decides on bridging supply (rules to confirm ⚠️)']},
+    {cap:'Pricing, funding and payment',
+     need:'The price in the monthly notice is the price at the end, per person and per scheme, and paying never stalls the order.',
+     tech:['Real-time pre-adjudication before the notice <gp>','One price engine: SEP + dispensing fee <gp>','Several schemes on one order <pl>','Tokenised saved card with a decline rule <pl>','Partner-bank cash payment that activates the code <nw>'],
+     proc:['Decline handled with choices, not a dead end','Reconcile partner cash payments','Decide the repeat service\'s commercial model <nw>']},
+    {cap:'Knowing and managing stock',
+     need:'Stock for predicted repeats is known and held before the notice goes out.',
+     tech:['Live stock visibility <gp>','Stock reserved against predicted repeats <nw>'],
+     proc:['Stock recorded as it moves <gp>','Out-of-stock choices offered before anyone travels <gp>']},
+    {cap:'Dispensing and pharmacist care',
+     need:'Repeats prepare themselves, and a named pharmacist signs off every one.',
+     tech:['BRiX order workflow (launching early 2027) <fl>','AI check assistant <pl>','ROWA automated picking (first unit mid-2027) <fl>','Scan and vision verification <pl>','Named sign-off record <pl>'],
+     proc:['Eligible repeats auto-processed; pharmacist single sign-off <pl>','Policy for naming the pharmacist to the customer <nw>','Adherence Centre capacity <pl> and remote pharmacists <gp>','Generic switch explained, with the customer\'s choice <pl>']},
+    {cap:'Collection and delivery',
+     need:'One household parcel reaches home or a near-home locker, tracked to the handover.',
+     tech:['Open order basket linked to the prescription <nw>','One household parcel: consolidation, routing and proof of delivery (PICCUP) <pl>','Closed-loop QR with a backup PIN <pl>','Locker network integration <nw>','Live tracking <pl>'],
+     proc:['Combined pick and pack of medicine and shop items <pl>','Failed deliveries re-planned with the customer <gp>','Split delivery on stock-out <nw>','Medicine courier compliance <nw>','Locker partner agreement with a bank or retailer <nw>']},
+    {cap:'Adherence and refills',
+     need:'Refills are predicted and lined up, and taking medicine right is the easy part.',
+     tech:['Refill prediction <pl>','Script Sync engine <nw>','Dose-pack production <gp>','Reminder engine controlled by the dose-holder <gp>','Household medicine cabinet <gp>'],
+     proc:['Pharmacist sets each household\'s sync plan','Auto-refill eligibility policy <pl>','Contact and opt-out policy <gp>','Dose packs as a paid opt-in <nw>']},
+    {cap:'Communicating with customers',
+     need:'One clear message per moment, in the customer\'s language and channel, with a person one step away.',
+     tech:['WhatsApp service platform <gp>','Status at every stage <pl>','Conversation console for staff <gp>','Call-me-back <gp>'],
+     proc:['Service message library <nw> and translations <gp>','Label design system <nw>','Multilingual call-back team <nw>','One owner per problem until it\'s solved <pl>']}
+  ],
+  rulesSummary:[
+    '🔮 Repeats for stable patients on chronic Schedule 6 medicine (today: no repeats, 30-day maximum)',
+    '🔮 Locker release of scheduled medicine without a pharmacist present',
+    '🔮 A bridge that lets state CCMDD patients use retail rails',
+    '🔮 Any step where the AI or robot acts without a pharmacist\'s sign-off',
+    '⚠️ Scheme rules for the part-fills Script Sync needs to line dates up',
+    '⚠️ What a pharmacist may supply while a renewal is pending',
+    '⚠️ Cash payment at a partner bank activating a locker (design assumption, punchlist 9)',
+    '⚠️ What may ride in the same parcel or locker as medicine (punchlist 9)'
+  ]
+},
+
+acute:{
+  code:'10: Acute',
+  title:'10: Acute - the acute script',
+  promise:'You shouldn\'t have to be well to get your medicine: from the moment the doctor decides, the rest is Dis-Chem\'s job.',
+  insured:'Aisha has a UTI that flared overnight. Her GP prescribes through the Dis-Chem portal; she chooses delivery (or express collect) and is home before she\'d have reached the counter.',
+  cash:'Thabo has a sick six-year-old and a paper script from a clinic doctor who isn\'t on the portal. He photographs it to WhatsApp at the clinic gate and knows the price before he travels.',
+  phases:[
+    {n:'P1', t:'At the doctor',
+     moments:[{l:'My pharmacist was busy before I\'d even left the doctor\'s', star:true, who:'insured'},{l:'I knew the price before I left the clinic gate', star:true, who:'cash'}],
+     actions:['[I] Approves record access with a one-time PIN while the doctor prescribes','[C] Photographs the paper script to WhatsApp at the clinic gate','Sees the script received, the price, and the generic option'],
+     digital:['[I] Doctor\'s portal shows stock, cover and price','[I] One-time PIN prompt on her phone','[C] WhatsApp read-back of the script, price, generic offer','"Pharmacist checking" status'],
+     people:['Doctor (portal partner)','Pharmacist starts checking'],
+     back:['Patient matched on SA ID','Per-consult record access logged and expired','Scheme dry-run, or cash price worked out','Signed e-script lodged in the registry','[C] Photo read by OCR, then checked by a pharmacist'],
+     tech:['{Patient index matched on SA ID|wiki/digital-transformation/interoperability-identity-records}','{Consent and audit service|wiki/concepts/identity-and-consent}','Prescriber e-scripting portal','{E-script registry, single redemption|wiki/concepts/e-prescription-token}','{OCR script capture (vendor in pilot)|wiki/digital-transformation/dischem-scripting-tech-roadmap} <fl>','{Claims dry-run|wiki/medical-schemes/realtime-claims-switching} and {price engine|wiki/sa-regulatory/sep-dispensing-fee}'],
+     rules:['{POPIA consent for record access|wiki/sa-regulatory/e-prescription-telehealth-popia}','{Signed e-scripts carry legal force (ECTA + Medicines Act)|wiki/sa-regulatory/e-prescription-telehealth-popia}','{Every prescriber signing electronically|wiki/sa-regulatory/e-prescription-telehealth-popia} 🔮','{Live stock shown to the prescriber|wiki/digital-transformation/dischem-scripting-tech-roadmap} 🔮','Photographed script verified by a pharmacist before dispensing']},
+    {n:'P2', t:'Choosing how I get it', badge:'no moments, by design',
+     moments:[],
+     actions:['Chooses delivery (within the hour or a slot) or collection','Picks counter with a pharmacist, or express collect','[C] Picks a store by name or location, from stores with stock','Says go; may add symptom-relief items'],
+     digital:['How-would-you-like-it message','Stores-with-stock list','Go-ahead reply','Priced add-on list, never a gate on the medicine'],
+     people:['None'],
+     back:['Clinical check starts at sign-off; preparation runs ahead of the go-ahead','Release waits for the confirmed yes','Delivery slots kept honest','Add-ons attach until packing starts','[I] Saved card charged at packing'],
+     tech:['{Stores-with-stock routing|wiki/digital-transformation/dischem-scripting-tech-roadmap}','Slot capacity engine','{WhatsApp numbered replies|wiki/consumer-context/digital-access-and-whatsapp}','{Tokenised saved card|wiki/concepts/identity-and-consent}','{OTC basket attach|wiki/concepts/omnichannel-fulfilment} ⚠️'],
+     rules:['{Delivering an acute script: SAPC rule 1.9.7(e)|wiki/sa-regulatory/courier-online-pharmacy-rules} 🔮, legal read needed ⚠️','Counselling access preserved on every route']},
+    {n:'P3', t:'Checked and filled',
+     moments:[{l:'Every check ran before it left the building', who:'both'}],
+     actions:['Watches the status move','Can ask the named pharmacist a question','Gets the how-to guide and a QR at sealing'],
+     digital:['Being picked, then "Checked by [name]" with the checks listed, then sealed','Guide in her or his language','QR with a typable backup code'],
+     people:['Named pharmacist, one tap away'],
+     back:['Picked at the fulfilling store, by robot where fitted','Each item scan-checked against the script','[C] Child\'s dose checked against weight','Pharmacist final check; nothing leaves without it','Sealed, code issued, guide sent'],
+     tech:['{BRiX workflow, priority by SLA|wiki/digital-transformation/dischem-scripting-tech-roadmap} <fl>','{ROWA picking|wiki/digital-transformation/dischem-scripting-tech-roadmap} <fl>','{Scan verification|wiki/dispensing-practice/error-prevention-and-safety}','Label printing','{In-language guides|wiki/consumer-context/language-literacy-and-trust}'],
+     rules:['{Dispensing under a pharmacist\'s personal supervision; final sign-off gates release|wiki/sa-regulatory/pharmacy-act-sapc-gpp}','Fully autonomous dispensing 🔮']},
+    {n:'P4', t:'In hand',
+     moments:[{l:'Saw the doc. Went straight home.', star:true, who:'insured, delivered'},{l:'The counter was expecting me', star:true, who:'cash, counter'},{l:'In and out, and I never spoke to anyone', who:'insured, collected'},{l:'The store was closed. His medicine wasn\'t.', who:'cash, after hours'}],
+     actions:['[I] Tracks the driver and scans the QR at the door','[I] Or scans at the express-collect unit','[C] Scans at the collections counter, pays, hears how to use it','[C] After hours: scans at the unit, pays by card, a pharmacist phones on request'],
+     digital:['Live map with an honest arrival time','Express-collect unit on the outside wall: scan, pay, named pack','Counselling notes on WhatsApp or printed'],
+     people:['[I] Driver','[C] Pharmacist at the collections counter (marked syringe, in-language labels)','Pharmacist by phone after hours'],
+     back:['Dispatch and routing; proof of delivery against the code','Staged by name and code; each code works once','Counselling pack sent to the chosen channel','Payment reconciled to the quoted total; unpaid packs never release','Counselling logged as given, or offered and declined'],
+     tech:['{Last-mile delivery and POD (DeliverD)|wiki/digital-transformation/dischem-scripting-tech-roadmap}','{Live tracking|wiki/global-benchmarks/patterns-deep-dive}','{Express-collect units|wiki/concepts/remote-collection-points} 🔮','{Single-use code service|wiki/concepts/e-prescription-token}','Counter staging and queue tools'],
+     rules:['{Express collect: GPP 1.9.3(b) and SAPC rule 1.11 (RADU) need extending|wiki/concepts/remote-collection-points} 🔮','Unattended after-hours release 🔮','Whether a patient may decline face-to-face counselling ⚠️ (punchlist 10(j))']},
+    {n:'P5', t:'Taking it',
+     moments:[{l:'Medication you can\'t take wrong', who:'both'},{l:'The pharmacy didn\'t disappear after the handover', star:true, who:'both'}],
+     actions:['Follows in-language labels and a marked syringe','Answers one day-3 check-in: "better" or "not better"','Sets own reminders if wanted'],
+     digital:['Plain what-to-expect guide','Day-3 check-in with one-tap replies'],
+     people:['Standby pharmacist','[C] A pharmacist phones back on a worried reply'],
+     back:['Check-in timed from the course (day 3 of 7)','Replies triaged; worries go to a pharmacist with the record open','Finish-the-course message for antibiotic stewardship'],
+     tech:['{Course-profile check-in|wiki/digital-transformation/adherence-tech-and-digital-therapeutics}','{Pharmacist triage line|wiki/digital-transformation/telepharmacy-and-omnichannel}','{Pictogram and language content|wiki/consumer-context/language-literacy-and-trust}'],
+     rules:['Check-in within the consent already given (POPIA)','Counselling stays a pharmacist\'s act']},
+    {n:'P6', t:'When I don\'t get better', badge:'not part of every journey',
+     moments:[{l:'They noticed it kept coming back - before I did', who:'insured'}],
+     actions:['[I] Takes the pharmacist\'s courtesy call; books a clinic or leaves it','[C] Worried reply leads to a phone call and a clinic slot the same day or next morning'],
+     digital:['Booking for a Dis-Chem clinic or virtual doctor','[C] Prices stated before booking'],
+     people:['Pharmacist (courtesy call)','Clinic sister','Virtual doctor'],
+     back:['Recurrence flagged at the final check (e.g. third script for the same condition in a year); a pharmacist decides to call','One call per pattern, never repeated after a no','New scripts flow back into the same rails','Hand over to the repeat service if medicine becomes ongoing'],
+     tech:['{Recurrence rule at the final check|wiki/concepts/chronic-medicine-flywheel}','{Clinic booking|wiki/dischem/dischem-dispensary-services}','{Virtual doctor platform|wiki/sa-regulatory/e-prescription-telehealth-popia}'],
+     rules:['Pattern review within consented scope; suggest only','Virtual consults at face-to-face standard; nurse scope respected']},
+    {n:'∥', t:'When something breaks', badge:'parallel - any phase', par:true,
+     moments:[],
+     actions:['Hears at once if the photo can\'t be read, the stock is short, the claim changed or the delivery failed','Picks a recovery option in one reply'],
+     digital:['Failure messages that carry the options inside them','ID fallback if the code fails at the counter'],
+     people:['[I] A person phones on delivery failure','[C] A person phones on anything touching money or the child'],
+     back:['Low-confidence reads to a pharmacist, prescriber called to confirm','Stock gap found at pick; reroute worked out before telling','Claim change between dry-run and final stops dispatch','Pharmacist-confirmed generic swap','Held order keeps its price'],
+     tech:['Case management with outbound calls','{Reroute across stores|wiki/digital-transformation/dischem-scripting-tech-roadmap}','{Claim-change detection|wiki/medical-schemes/realtime-claims-switching} ⚠️','{Same code across stores and routes|wiki/concepts/e-prescription-token}'],
+     rules:['{Generic substitution: prescriber primacy and patient choice|wiki/medical-schemes/dsp-formularies-copayments}','ID verification for scheduled handover when the code fails','Hold at counter with a price lock ⚠️ (punchlist 10(g))']}
+  ],
+  rollup:[
+    {cap:'Knowing the customer and their household',
+     need:'The patient is recognised in the doctor\'s room, or from a photo sent at the clinic gate, with consent to act.',
+     tech:['Patient index matched on SA ID','Consent and audit service with per-consult one-time PIN','Verified identity on WhatsApp <gp>'],
+     proc:['Per-consult access granted, logged and expired','ID check at the counter when a code fails']},
+    {cap:'Receiving and validating prescriptions',
+     need:'The script reaches Dis-Chem before the patient leaves the doctor, either signed electronically or photographed and read.',
+     tech:['Prescriber e-scripting portal','E-script registry with electronic signatures and single redemption','OCR capture of photographed scripts (vendor in pilot) <fl>'],
+     proc:['Prescriber partners recruited and onboarded','Pharmacist verifies every photographed script','Prescriber called back on a low-confidence read']},
+    {cap:'Pricing, funding and payment',
+     need:'The price is known in the doctor\'s chair or at the clinic gate, and it doesn\'t change.',
+     tech:['Claims dry-run (pre-adjudication) <gp>','One price engine: SEP + dispensing fee <gp>','Tokenised card charged at packing','Card payment at the express-collect unit','Claim-change detection ⚠️'],
+     proc:['Price held on a held order','Payment reconciled against the quote','Generic offered as the smart choice']},
+    {cap:'Knowing and managing stock',
+     need:'Live stock decides where a script goes, before anyone travels.',
+     tech:['Live stock by store <gp>','Stores-with-stock routing','Stock shown to the prescriber 🔮'],
+     proc:['Stock gaps caught at pick, with a reroute ready before the customer hears']},
+    {cap:'Dispensing and pharmacist care',
+     need:'Filled within the drive home (The 30/60 Fill), with every check run and a pharmacist named.',
+     tech:['BRiX workflow with priority by SLA <fl>','ROWA picking where fitted <fl>','Scan verification'],
+     proc:['Clinical check starts at sign-off; preparation runs ahead of the go-ahead','Child\'s dose checked against weight','Pharmacist final sign-off on every order','Lawful generic swap, confirmed by a pharmacist']},
+    {cap:'Collection and delivery',
+     need:'Three routes that all work: delivery within the hour, a collections counter that expects you, and an express-collect unit that works after hours.',
+     tech:['Slot capacity engine','Last-mile delivery, tracking and proof of delivery','Express-collect units with card payment 🔮','Single-use QR with a typable backup code'],
+     proc:['Staging by route: express bay or counter','A staffed collections counter (design assumption ⚠️, punchlist 10(a))','After-hours counselling by phone','Legal read on acute delivery (punchlist 10(k))']},
+    {cap:'Adherence and refills',
+     need:'The pharmacy stays with the patient until they\'re better, and notices when something keeps coming back.',
+     tech:['Course-profile check-in','Reply triage to a pharmacist','Recurrence rule at the final check','Clinic and virtual-doctor booking'],
+     proc:['Pharmacists triage day-3 replies','Escalation: worried reply, phone-back, clinic slot','One courtesy call per pattern','Hand-off to the repeat service when medicine becomes ongoing']},
+    {cap:'Communicating with customers',
+     need:'Every status, guide and problem message arrives in the patient\'s language, and a person phones when it matters.',
+     tech:['WhatsApp service platform <gp>','Status at every stage <pl>','Counselling-pack generator','Content library: pictograms, marked-syringe guides, SA languages'],
+     proc:['Service message library','Outbound-call recovery, not inbound queues','Counselling logged as given, or offered and declined']}
+  ],
+  rulesSummary:[
+    '🔮 Delivering an acute script by courier (SAPC rule 1.9.7(e)); whether own-fleet same-metro delivery counts is ⚠️ unresolved (punchlist 10(k))',
+    '🔮 Express collect: GPP 1.9.3(b) bars patients collecting from an in-pharmacy unit; rule 1.11 (RADU) would need extending to community pharmacy and to release without a live pharmacist',
+    '🔮 Unattended after-hours release of scheduled medicine',
+    '🔮 Every prescriber signing scripts electronically, and live dispensary stock shown to them',
+    '🔮 Fully autonomous dispensing',
+    '⚠️ Whether a patient may decline face-to-face counselling (punchlist 10(j))',
+    '⚠️ The collections counter as a staffed express route (punchlist 10(a))',
+    '⚠️ Hold at counter with a price lock (punchlist 10(g)); detecting a claim change between dry-run and final'
+  ]
+}
+};
+
+/* Shared foundation vs journey-specific */
+const FOUNDATION = {
+  repeat:['Household profile and carer consent','Refill prediction and Script Sync','Stock reserved for predicted repeats','Open order: shop items in the same parcel','Dose-pack production','Near-home locker network with partner payment','Proactive renewal and prescriber link','Reminders controlled by the dose-holder'],
+  shared:[
+    '<b>One customer record and consent service</b>: recognised in every channel and store <pl>',
+    '<b>WhatsApp service platform with verified identity</b>: the cash economy\'s front door <gp>',
+    '<b>BRiX order workflow</b>: one queue, priorities, named sign-off <fl>',
+    '<b>ROWA picking and scan verification</b>: speed without skipped checks <fl>',
+    '<b>Pre-adjudication and one price engine</b>: the price known before anyone travels <gp>',
+    '<b>Live stock and reroute</b>: problems solved before the customer hears <gp>',
+    '<b>QR handover with a backup code</b>: one credential for door, counter and unit <pl>',
+    '<b>Last-mile delivery, tracking and proof of delivery</b> <pl>',
+    '<b>Content library in SA languages</b>: labels, guides, messages <gp>',
+    '<b>Human recovery</b>: call-back team, one owner per problem, pharmacist in the thread <gp>'
+  ],
+  acute:['Prescriber portal and e-script registry','OCR capture of photographed scripts','Slot capacity engine for within-the-hour delivery','Express-collect units, open after hours','Staffed collections counter','Day-3 check-in and reply triage','Recurrence rule and clinic booking']
+};
+
+const SOURCES = [
+ ['design-kit/journeys/to-be-household-repeat-moments','09: Repeat journey spec and approved copy'],
+ ['design-kit/journeys/to-be-acute-moments','10: Acute journey spec and approved copy'],
+ ['design-kit/templates/work-to-be-done-catalogue-template','Catalogue frame: eight capabilities, statuses'],
+ ['wiki/digital-transformation/dischem-scripting-tech-roadmap','BRiX, ROWA, OCR, PICCUP, Virtual Manager; 2026-10-04 dates'],
+ ['wiki/concepts/identity-and-consent','Customer record, carer consent, saved card'],
+ ['wiki/medical-schemes/realtime-claims-switching','Pre-adjudication and claim changes'],
+ ['wiki/sa-regulatory/sep-dispensing-fee','Single exit price and dispensing fee'],
+ ['wiki/sa-regulatory/prescription-requirements-repeats','Repeats, Schedule 6, renewal'],
+ ['wiki/sa-regulatory/pharmacy-act-sapc-gpp','Pharmacist supervision and sign-off'],
+ ['wiki/sa-regulatory/courier-online-pharmacy-rules','Courier and locker rules'],
+ ['wiki/sa-regulatory/e-prescription-telehealth-popia','E-scripts, signatures, telehealth, POPIA'],
+ ['wiki/concepts/e-prescription-token','E-script registry and single redemption'],
+ ['wiki/concepts/remote-collection-points','Express collect and SAPC rule 1.11'],
+ ['wiki/digital-transformation/ai-in-pharmacy','AI check assistant and its limits'],
+ ['wiki/digital-transformation/pharmacy-automation-and-robotics','Robotics and vision verification'],
+ ['wiki/digital-transformation/adherence-tech-and-digital-therapeutics','Refill prediction, reminders, check-ins'],
+ ['wiki/dispensing-practice/adherence-packaging','Dose packs'],
+ ['wiki/consumer-context/digital-access-and-whatsapp','WhatsApp-first'],
+ ['wiki/consumer-context/language-literacy-and-trust','Language and pictograms'],
+ ['wiki/consumer-context/last-mile-addressing-logistics','Lockers and last mile'],
+ ['wiki/medical-schemes/courier-chronic-pharmacy-models','CCMDD and courier pharmacy'],
+ ['wiki/medical-schemes/dsp-formularies-copayments','Generic substitution'],
+ ['meta/punchlist.md','Design assumptions: items 9 and 10'],
+ ['meta/open-questions.md','Unverified legal positions']
+];
+
+/* ---------- render ---------- */
+const STATUS = {fl:['fl','In flight'], pl:['pl','Planned'], gp:['gp','Known gap'], nw:['nw','New']};
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function fmt(raw){
+  let s = String(raw), pre = '';
+  const m = s.match(/^\[(I|C)\]\s*/);
+  if(m){ pre = m[1]==='I' ? '<span class="eco i">INS</span>' : '<span class="eco c">CASH</span>'; s = s.slice(m[0].length); }
+  // pull status tags out before escaping
+  const chips = [];
+  s = s.replace(/<(fl|pl|gp|nw)>/g, (x,k)=>{ chips.push(k); return ''; }).trim();
+  // keep <b> from FOUNDATION
+  s = esc(s).replace(/&lt;b&gt;/g,'<b>').replace(/&lt;\/b&gt;/g,'</b>');
+  s = s.replace(/\{([^|}]+)\|([^}]+)\}/g, (x,t,c)=>'<span class="cite" tabindex="0" title="Vault: '+c+'">'+t+'</span>');
+  s = s.replace(/🔮/g,'<span class="flag-r" title="Requires regulatory reform">🔮</span>').replace(/⚠️/g,'<span class="flag-a" title="Design assumption or unconfirmed position">⚠️</span>');
+  return pre + s + chips.map(k=>'<span class="st '+STATUS[k][0]+'">'+STATUS[k][1]+'</span>').join('');
+}
+function list(items){
+  if(!items || !items.length) return '<span class="none">none</span>';
+  return '<ul class="cell">'+items.map(i=>'<li>'+fmt(i)+'</li>').join('')+'</ul>';
+}
+
+function renderJourney(key){
+  const J = DATA[key];
+  let h = '<section class="journey" id="j-'+key+'" data-j="'+key+'">';
+  h += '<section class="block"><h2>'+esc(J.title)+'</h2>';
+  h += '<div class="scenario"><div class="scard"><h3>The promise</h3><p class="promise">'+esc(J.promise)+'</p></div>';
+  h += '<div class="scard ins"><h3>Insured track</h3><p>'+esc(J.insured)+'</p></div>';
+  h += '<div class="scard cash"><h3>Cash track</h3><p>'+esc(J.cash)+'</p></div></div></section>';
+
+  // blueprint
+  h += '<section class="block" id="bp-'+key+'"><h2 id="'+(key==='repeat'?'bp':'bp-a')+'">The blueprint</h2>';
+  h += '<p class="secnote">Read down a column for one phase, or across a row to follow one layer through the whole journey.</p>';
+  h += '<div class="legend"><span><span class="eco i">INS</span> insured track only</span><span><span class="eco c">CASH</span> cash track only</span><span>⭐ moment of truth</span><span><span class="flag-r">🔮</span> needs a rule to change</span><span><span class="flag-a">⚠️</span> assumption or unconfirmed</span><span><span class="st fl">In flight</span> <span class="st pl">Planned</span> <span class="st gp">Known gap</span> <span class="st nw">New</span> status from #14 and the roadmap</span></div>';
+  h += '<div class="bpscroll" role="region" aria-label="'+esc(J.code)+' blueprint, scrolls sideways" tabindex="0"><table class="bp"><thead><tr><th class="lane" scope="col">Phase</th>';
+  J.phases.forEach(p=>{ h += '<th scope="col" class="'+(p.par?'par':'')+'"><span class="pn">'+esc(p.n)+'</span><span class="pt">'+esc(p.t)+'</span>'+(p.badge?'<span class="badge">'+esc(p.badge)+'</span>':'')+'</th>'; });
+  h += '</tr></thead><tbody>';
+  LANES.forEach(L=>{
+    if(L.div){ h += '<tr class="divider"><td class="lane">'+esc(L.div)+'</td>'+J.phases.map(()=>'<td></td>').join('')+'</tr>'; return; }
+    h += '<tr class="'+L.k+'"><td class="lane">'+esc(L.name)+'<small>'+esc(L.note)+'</small></td>';
+    J.phases.forEach(p=>{
+      let cell;
+      if(L.k==='moments'){
+        cell = (p.moments && p.moments.length) ? p.moments.map(m=>'<p class="mom">'+(m.star?'<span class="star">⭐</span> ':'')+'"'+esc(m.l)+'"<span class="who">'+esc(m.who)+'</span></p>').join('') : '<span class="none">no moment</span>';
+      } else cell = list(p[L.k]);
+      h += '<td class="'+(p.par?'par':'')+'">'+cell+'</td>';
+    });
+    h += '</tr>';
+  });
+  h += '</tbody></table></div></section>';
+
+  // roll-up
+  h += '<section class="block"><h2 id="'+(key==='repeat'?'rollup':'rollup-a')+'">What must be in place for '+esc(J.code)+'</h2>';
+  h += '<p class="secnote">The same eight capability rows as the work-to-be-done catalogue. Each row says what must become true, the technology it runs on, and the processes and people that make it work.</p><div class="rollup">';
+  J.rollup.forEach((r,i)=>{
+    h += '<div class="caprow"><div class="capname"><span class="n">'+(i+1)+'</span>'+esc(r.cap)+'</div>';
+    h += '<div class="col"><h4>Capability: what must be true</h4><p>'+esc(r.need)+'</p></div>';
+    h += '<div class="col"><h4>Technology and data</h4>'+list(r.tech)+'</div>';
+    h += '<div class="col"><h4>Processes and people</h4>'+list(r.proc)+'</div></div>';
+  });
+  h += '</div>';
+  h += '<div class="rulesbox"><h3 id="'+(key==='repeat'?'rules':'rules-a')+'">Rules to change or confirm for '+esc(J.code)+'</h3>'+list(J.rulesSummary)+'</div></section>';
+  h += '</section>';
+  return h;
+}
+
+document.getElementById('journeys').innerHTML = renderJourney('repeat') + renderJourney('acute');
+
+function show(key){
+  document.querySelectorAll('section.journey').forEach(s=>{ s.style.display = s.dataset.j===key ? '' : 'none'; });
+  document.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed', b.dataset.j===key ? 'true':'false'));
+  // keep the jump links pointing at the visible journey
+  const ids = key==='repeat' ? ['bp','rollup','rules'] : ['bp-a','rollup-a','rules-a'];
+  document.querySelectorAll('.jump a').forEach((a,i)=>{ if(i<3) a.setAttribute('href','#'+ids[i]); });
+}
+document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>show(b.dataset.j)));
+show('repeat');
+
+document.getElementById('found').innerHTML =
+  '<div class="fcol"><h3>Only 09: Repeat</h3><p class="sub">The standing household service</p>'+list(FOUNDATION.repeat)+'</div>'+
+  '<div class="fcol shared"><h3>Both journeys: the shared foundation</h3><p class="sub">Build once. Each item carries both the repeat and the acute script.</p>'+list(FOUNDATION.shared)+'</div>'+
+  '<div class="fcol"><h3>Only 10: Acute</h3><p class="sub">Speed at the patient\'s weakest</p>'+list(FOUNDATION.acute)+'</div>';
+
+document.getElementById('sources').innerHTML = SOURCES.map(s=>'<div><span class="mono">'+esc(s[0])+'</span> - '+esc(s[1])+'</div>').join('');
+</script>
+</body>
+</html>
