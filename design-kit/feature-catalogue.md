@@ -296,6 +296,7 @@ the automated keying of scripts.
 ## See also
 
 - [deliverables/08-concepts.html](../deliverables/08-concepts.html)
+- Review deck: `deliverables/16-feature-catalogue-review.pptx`, built from this file by `deliverables/16-feature-catalogue.build.js` (edit here, then rebuild; never hand-edit the deck)
 - [[design-kit/templates/work-to-be-done-catalogue-template]]
 - [[design-kit/journeys/to-be-acute-moments]]
 - [[design-kit/journeys/to-be-household-repeat-moments]]
