@@ -33,6 +33,9 @@ Everything here must be **traceable to the wiki** (and through it, to sources).
 - [[design-kit/templates/concept-card-template|Concept card template]] — how to write and build executive concept primers (everyday anchor → plain why → scannable proof points). Pattern behind [deliverables/08-concepts.html](../deliverables/08-concepts.html); reuse for concepts on other journeys.
 - [[design-kit/templates/moments-journey-template|Moments-journey template]] — how to build a future-state journey as a phase spine with the emotionally significant moments pulled out (earn-its-keep rule, memory-line titles, today-vs-future contrast, behind-the-line blueprint panel). Pattern behind [deliverables/09-tobe-household-repeat-moments.html](../deliverables/09-tobe-household-repeat-moments.html); reuse for the acute and renewal journeys.
 
+## Catalogues
+- [[design-kit/feature-catalogue|Service feature catalogue - by concept]] - every customer-facing feature, one home concept each, for hand-over to business units (draft, 2026-10-08).
+
 ## How to use (summary)
 See [[CLAUDE]] §8 - "How to USE this vault to build blueprints & journeys".
 Ground as-is in Dis-Chem + regulatory; pull best practice + global patterns;
