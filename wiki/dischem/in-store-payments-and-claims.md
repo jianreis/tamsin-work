@@ -5,9 +5,9 @@ domain: dischem
 status: draft
 confidence: medium
 tags: [domain/dischem, domain/schemes, journey/pay, journey/validate, project/sotf, region/za]
-sources: [src-sotf-training-launch-2026, src-sotf-melrose-workshops-2026, src-sotf-steerco-decisions-2025, src-pay-dischem-payments-desk-2026, src-pay-sa-claims-payments-desk-2026, src-sch-claims-switching, src-sch-claim-rejections-gems]
+sources: [src-sotf-payments-finance-discovery-2026, src-sotf-training-launch-2026, src-sotf-melrose-workshops-2026, src-sotf-steerco-decisions-2025, src-pay-dischem-payments-desk-2026, src-pay-sa-claims-payments-desk-2026, src-sch-claims-switching, src-sch-claim-rejections-gems]
 created: "2026-09-30"
-updated: "2026-09-30"
+updated: "2026-10-09"
 ---
 
 # In-store payments and claims
@@ -108,10 +108,45 @@ collectors exist operationally [[src-sotf-training-launch-2026]].
 - Scheme-side errors and clawbacks land on finance weeks later (e.g. the 2025
   Discovery above-threshold overpayments) [[src-pay-sa-claims-payments-desk-2026]].
 
+## Confirmed by retail finance (1 Oct 2026)
+
+The discovery session [[src-sotf-payments-finance-discovery-2026]] confirmed
+the shape above and corrected several hypotheses:
+
+- **In-store reconciliation is not the main pain.** The card switch and daily
+  store workbench give finance "what we need". The pain sits in **online**
+  (never reconciled end to end), **recovering medical aid shortfalls from
+  members months later**, **master data and dispensary practice at source**,
+  and **one shared reconciliation bot**.
+- **Systems:** GK POS (tills) → a payment switch to the banks and credit
+  providers → SAP; Unisolv runs claims and all medical aid reconciliation
+  ("claim settlement", "script tracking") and feeds SAP nightly; **Bricks will
+  replace Unisolv**. Claims go through switching houses (MediKredit, MediSwitch)
+  or straight to the scheme; remittances come straight from the scheme.
+- **Per-store bank accounts are structural:** the pharmacy licence is tied to
+  one bank account, medical aids pay into Standard Bank, cash goes to Absa, and
+  dual acquiring exists for resilience. ~14 stores per bookkeeper, a 37-person
+  team, multiple legal entities (JV stores, Baby City).
+- **Payer types finance uses:** standard debtors (BP accounts for institutions,
+  corporates and legacy individuals with buying limits), medical aid, medical
+  aid debtors (shortfalls transferred to members), online debtors, cash/card,
+  and "buy aids" (non-bank credit providers settling on 30/60-day cycles).
+- **Insurance is out of scope for this team:** Dis-Chem Health and Life run
+  their own accounting.
+- **The switch does fail:** items drop from approved scripts on timeout, and a
+  whole day's claims for one scheme went missing; reprocessing can create a
+  levy the customer first hears about on a later visit.
+- **Collecting from customers is weak:** stale contact details, calls flagged
+  as spam, the debtor pop-up displaced by a Better Rewards prompt on GK POS,
+  rejections without reasons the customer can act on, no customer-signed proof
+  (scripts, PODs), and 187 fraud claims this year to date. Small medical aid
+  rejections may not be worth chasing.
+
 ## Open questions
 
-- Which switch(es) Dis-Chem uses; payment-run frequency by administrator; how
-  remittances are matched and who chases short payments.
+- ~~Which switch(es); payment runs; who chases short payments~~ answered
+  1 Oct 2026 (above). Still open: the full list of switching houses and which
+  schemes claim direct; the payment switch's real name (garbled in transcript).
 - Receivables mix (R3.57bn trade and other receivables at 31 Aug 2025) by payer
   type, and where ageing and write-offs concentrate.
 - Whether clinics bill under the pharmacy practice number or nurses' numbers.
@@ -127,3 +162,4 @@ collectors exist operationally [[src-sotf-training-launch-2026]].
   [[dsp-formularies-copayments]] · [[cash-uninsured-pathway]] ·
   [[wiki/dischem/dischem-company-overview]]
 - Discovery-session primer: `deliverables/sotf/payments-discovery-primer.html`
+- Session findings: `deliverables/sotf/payments-discovery-findings.html`

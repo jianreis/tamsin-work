@@ -1,0 +1,485 @@
+<title>Retail Finance Discovery Findings</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: one reading column; the rand's journey as a stepped track with a "now / later" split; SOTF pack tokens reused. */
+  :root{
+    --ground:#f7f6f2; --sheet:#ffffff; --ink:#1c2420; --ink-soft:#4c5a52; --ink-faint:#7d8a82;
+    --line:#dcdfd8; --green:#0a7a44; --green-deep:#0b5c36; --green-tint:#e7f2ea;
+    --gold:#b8900f; --gold-tint:#faf3d9; --warn:#b4552a; --warn-tint:#f8ece4;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,monospace;
+    --display:'Archivo','Arial Narrow',Arial,sans-serif;
+    --body:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#161b18; --sheet:#1e2521; --ink:#e8ece9; --ink-soft:#b2bdb6; --ink-faint:#84908a;
+      --line:#37403a; --green:#4cc084; --green-deep:#7ad3a4; --green-tint:#22352b;
+      --gold:#d9b53a; --gold-tint:#37311c; --warn:#e08a5e; --warn-tint:#3a2a20; color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#161b18; --sheet:#1e2521; --ink:#e8ece9; --ink-soft:#b2bdb6; --ink-faint:#84908a;
+    --line:#37403a; --green:#4cc084; --green-deep:#7ad3a4; --green-tint:#22352b;
+    --gold:#d9b53a; --gold-tint:#37311c; --warn:#e08a5e; --warn-tint:#3a2a20; color-scheme:dark;
+  }
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;margin:0}
+  .wrap{max-width:960px;margin:0 auto;padding-block:40px 96px;padding-inline:20px}
+  p{max-width:68ch;margin:0 0 12px}
+  strong{font-weight:600}
+  a{color:var(--green)}
+  a:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+  .masthead{border-bottom:3px solid var(--green);padding-bottom:24px;margin-bottom:28px}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin:0 0 10px}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(32px,6vw,52px);line-height:1.03;letter-spacing:-.015em;margin:0 0 14px;text-wrap:balance}
+  .standfirst{font-size:18px;color:var(--ink-soft);max-width:64ch}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chip{font-family:var(--mono);font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);background:var(--sheet)}
+
+  nav.contents{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 36px;font-size:14px}
+  nav.contents a{text-decoration:none;color:var(--ink-soft);border-bottom:1px solid var(--line)}
+  nav.contents a:hover{color:var(--green)}
+
+  section{margin:0 0 52px}
+  h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,3.6vw,32px);line-height:1.1;margin:0 0 6px;text-wrap:balance}
+  .secnum{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 6px}
+  h3{font-family:var(--display);font-weight:700;font-size:19px;margin:0 0 6px}
+  .lede{font-size:17px;color:var(--ink-soft);margin-bottom:20px}
+
+  /* the big idea */
+  .idea{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0 8px}
+  .idea > div{background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:18px;min-width:0}
+  .idea .now{border-top:4px solid var(--green)}
+  .idea .later{border-top:4px solid var(--gold)}
+  .tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 6px}
+  .now .tag{color:var(--green)} .later .tag{color:var(--gold)}
+  .idea p{margin:0;font-size:15px}
+
+  /* where customers pay */
+  .areas{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px}
+  .area{background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:16px;min-width:0;display:flex;flex-direction:column;gap:8px}
+  .area h3{font-size:17px;margin:0}
+  .area p{font-size:14px;margin:0;color:var(--ink-soft)}
+  .area .pays{font-family:var(--mono);font-size:12px;color:var(--ink);background:var(--green-tint);border-radius:4px;padding:6px 8px;margin-top:auto}
+
+  /* the journey track */
+  ol.track{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:0;counter-reset:step}
+  ol.track > li{display:grid;grid-template-columns:44px 1fr;gap:16px;position:relative;padding-bottom:22px}
+  ol.track > li::before{counter-increment:step;content:counter(step);font-family:var(--display);font-weight:800;font-size:18px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:var(--sheet);grid-row:1 / span 2}
+  ol.track > li:not(:last-child)::after{content:"";position:absolute;left:19px;top:44px;bottom:2px;width:2px;background:var(--line)}
+  ol.track h3{margin:6px 0 4px}
+  ol.track p{font-size:15px;margin:0 0 6px}
+  .split{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .pill{font-family:var(--mono);font-size:11.5px;padding:3px 9px;border-radius:999px;border:1px solid var(--line)}
+  .pill.now{background:var(--green-tint);border-color:transparent;color:var(--green-deep)}
+  .pill.later{background:var(--gold-tint);border-color:transparent;color:var(--ink)}
+  .pill.hurt{background:var(--warn-tint);border-color:transparent;color:var(--warn)}
+
+  /* players */
+  .players{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .players > div{min-width:0}
+  .plist{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+  .plist li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .plist b{font-weight:600;display:block}
+  .plist span{color:var(--ink-soft);font-size:14px}
+  .unsure{font-family:var(--mono);font-size:11px;color:var(--gold);margin-left:4px;white-space:nowrap}
+
+  /* tables */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--sheet)}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:14.5px}
+  th,td{text-align:left;vertical-align:top;padding:11px 14px;border-bottom:1px solid var(--line)}
+  th{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;background:var(--ground)}
+  tr:last-child td{border-bottom:0}
+  td.label{font-family:var(--mono);font-size:13px;color:var(--green-deep)}
+
+  /* friction */
+  .friction{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .fr{background:var(--sheet);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:4px;padding:14px 16px;min-width:0}
+  .fr h3{font-size:16px;margin:0 0 4px}
+  .fr p{font-size:14px;margin:0;color:var(--ink-soft)}
+  .fr .who{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--warn);margin:0 0 6px}
+
+  /* glossary */
+  dl.gloss{display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:0;margin:0;border-top:1px solid var(--line)}
+  dl.gloss dt,dl.gloss dd{padding:9px 0;border-bottom:1px solid var(--line);margin:0;font-size:15px}
+  dl.gloss dt{font-weight:600;padding-right:14px}
+  dl.gloss dd{color:var(--ink-soft)}
+
+  /* questions */
+  ol.qs{margin:0;padding-left:22px;display:grid;gap:10px}
+  ol.qs li{font-size:15.5px;max-width:70ch}
+  ol.qs li span{display:block;color:var(--ink-faint);font-size:13.5px}
+  .qgroup{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin:22px 0 10px}
+
+  .note{background:var(--gold-tint);border-radius:6px;padding:14px 16px;font-size:14px}
+  .note p{margin:0 0 6px} .note p:last-child{margin:0}
+  .sources{font-size:13.5px;color:var(--ink-soft)}
+  .sources li{margin-bottom:4px}
+  code{font-family:var(--mono);font-size:.9em}
+
+  @media (max-width:820px){ .areas{grid-template-columns:1fr 1fr} }
+  @media (max-width:620px){
+    .idea,.players,.friction,.areas{grid-template-columns:1fr}
+    dl.gloss{grid-template-columns:1fr}
+    dl.gloss dt{border-bottom:0;padding-bottom:0}
+  }
+</style>
+<style>
+  .proc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .pc{background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:16px 18px;min-width:0;display:flex;flex-direction:column;gap:8px}
+  .pc h3{font-size:17px;margin:0}
+  .pc ol{margin:0;padding-left:18px;font-size:14.5px;display:grid;gap:3px}
+  .pc .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);margin-top:auto;padding-top:6px;border-top:1px dashed var(--line)}
+  .pc .owner{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin:0}
+  .theme{margin:0 0 26px}
+  .theme > h3{font-size:20px;margin:0 0 4px}
+  .theme > p.why{font-size:15px;color:var(--ink-soft);margin:0 0 10px}
+  .fl{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+  .fl li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:start}
+  .fl li > div{min-width:0}
+  .fl b{font-weight:600}
+  .fl .feel{display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end}
+  .fl blockquote{margin:6px 0 0;padding-left:10px;border-left:2px solid var(--gold);color:var(--ink-soft);font-style:italic;font-size:14px}
+  .pill.cust{background:var(--warn-tint);color:var(--warn);border-color:transparent}
+  .pill.store{background:var(--gold-tint);color:var(--ink);border-color:transparent}
+  .pill.fin{background:var(--green-tint);color:var(--green-deep);border-color:transparent}
+  .headline{background:var(--sheet);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:4px;padding:18px 20px;margin:0 0 36px}
+  .headline h2{font-size:22px;margin:0 0 8px}
+  .headline ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15.5px;max-width:72ch}
+  @media (max-width:620px){ .proc{grid-template-columns:1fr} .fl li{grid-template-columns:1fr} .fl .feel{justify-content:flex-start} }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="kicker">Store of the Future · Payments discovery · Session 1 · 1 Oct 2026</p>
+    <h1>What retail finance told us</h1>
+    <p class="standfirst">The processes, teams and friction from the session with the medical aid, debtors and bookkeeping teams. It was framed around the Stitch payments POC and ran almost two hours. Drawn from the auto-transcript, so names of systems and people may be slightly off.</p>
+    <div class="chips">
+      <span class="chip">11 processes</span>
+      <span class="chip">8 friction themes</span>
+      <span class="chip">Employee lens</span>
+    </div>
+  </header>
+
+  <div class="headline">
+    <h2>The short version</h2>
+    <ul>
+      <li><strong>The hypothesis was wrong.</strong> We were told reconciliation is the team's biggest pain. For in-store payments it isn't: "from a store perspective, we definitely get what we need."</li>
+      <li><strong>The real pain sits in four places:</strong> online orders, recovering medical aid shortfalls from customers months after the visit, bad data and inconsistent practice at the counter, and one reconciliation bot shared by every finance team.</li>
+      <li><strong>Most of the friction starts upstream.</strong> It lands on finance but begins in the dispensary, at the switch or with the scheme. By the time debtors see a case it's about four months old.</li>
+      <li><strong>Stitch in store is a hard sell.</strong> The bar is "zero impact plus cost savings". One consolidated bank account won't work, because every store needs its own account for medical aid. Online is where Stitch helps.</li>
+    </ul>
+  </div>
+
+  <nav class="contents" aria-label="Contents">
+    <a href="#processes">1 · Processes discussed</a>
+    <a href="#areas">2 · Areas of the business</a>
+    <a href="#friction">3 · Friction areas</a>
+    <a href="#stitch">Stitch POC</a>
+    <a href="#next">Follow-ups</a>
+  </nav>
+
+  <section id="processes">
+    <p class="secnum">Part 1</p>
+    <h2>Processes discussed</h2>
+    <p class="lede">Each process in the order the team described it, with who owns it and the systems involved.</p>
+    <div class="proc">
+      <div class="pc">
+        <p class="owner">Medical aid team</p>
+        <h3>Claiming at the counter</h3>
+        <ol>
+          <li>Dispensary captures the script in Unisolv.</li>
+          <li>Claim goes via a switching house (MediKredit, MediSwitch) or straight to the scheme.</li>
+          <li>Approved → medicine dispensed.</li>
+          <li>Any levy or co-payment is posted to the till by article code; the customer pays at the till.</li>
+        </ol>
+        <p class="meta">Unisolv → switch → scheme · GK POS for the levy</p>
+      </div>
+      <div class="pc">
+        <p class="owner">Medical aid team</p>
+        <h3>Getting paid by schemes</h3>
+        <ol>
+          <li>Most schemes pay in about 30 days, some take 60–90; Discovery pays weekly, per item per script.</li>
+          <li>Scheme sends a remittance (ERA) directly, not via the switch.</li>
+          <li>A bot (UiPath) matches remittance to bank payment and updates the Remittances Register.</li>
+          <li>Any mismatch: investigate, phone the scheme, and if the member owes it, transfer to debtors.</li>
+        </ol>
+        <p class="meta">Unisolv "claim settlement" → nightly feed to SAP · Bricks will replace Unisolv</p>
+      </div>
+      <div class="pc">
+        <p class="owner">Medical aid team · Dispensary managers</p>
+        <h3>Fixing failed claims</h3>
+        <ol>
+          <li>A switch timeout drops items, or a whole day's batch never reaches the scheme.</li>
+          <li>Store can rewrite only within 7 days; after that it's head office, script by script in Unisolv.</li>
+          <li>A new levy lands on the "script tracking" report.</li>
+          <li>Dispensary manager must collect it (it's a KPI, with bonus deductions). The customer sees a pop-up on their next visit.</li>
+        </ol>
+        <p class="meta">Unisolv script tracking · store dispensary</p>
+      </div>
+      <div class="pc">
+        <p class="owner">Medical aid team → Debtors</p>
+        <h3>Rejections, short payments and clawbacks</h3>
+        <ol>
+          <li>Scheme statement shows a short payment or rejection (benefit exceeded, MMAP, membership suspended).</li>
+          <li>Some schemes (Discovery named) reverse claims 3–4 months after paying in full.</li>
+          <li>Transferred to the member's account, using the scheme's reason code.</li>
+          <li>Debtors try to recover from the customer.</li>
+        </ol>
+        <p class="meta">Unisolv → SAP business-partner (BP) account</p>
+      </div>
+      <div class="pc">
+        <p class="owner">Debtors</p>
+        <h3>Account customers ("standard debtors")</h3>
+        <ol>
+          <li>Account set up at head office: old age homes, a university, corporates, legacy individuals.</li>
+          <li>Customer swipes their loyalty card at any store and buys on account up to a limit (about R500–R10,000 for individuals).</li>
+          <li>Monthly statement by email; debtors collect.</li>
+          <li>No new individual accounts: the push is to prepaid.</li>
+        </ol>
+        <p class="meta">SAP BP number · GK POS</p>
+      </div>
+      <div class="pc">
+        <p class="owner">Debtors</p>
+        <h3>Collecting from customers</h3>
+        <ol>
+          <li>Trace the customer (contact details are often stale) and phone them.</li>
+          <li>Customer pays to a Standard Bank public beneficiary, in store, or by Zapper QR on the statement.</li>
+          <li>Structured payment plans where needed.</li>
+          <li>Delinquent accounts: 10 working days' legal notice, credit limit revoked, handed over.</li>
+        </ol>
+        <p class="meta">Call management system · bank · store till</p>
+      </div>
+      <div class="pc">
+        <p class="owner">Debtors · Online</p>
+        <h3>Online orders</h3>
+        <ol>
+          <li>Customer pays online (PayGate); the money sits as a credit on their account.</li>
+          <li>Team manually allocates sales order numbers to payments.</li>
+          <li>Goods issue at the store clears the credit, unless the online and SAP prices differ.</li>
+          <li>PayGate settles in bulk, so one large deposit has to be unpacked into orders.</li>
+        </ol>
+        <p class="meta">Magento · PayGate · SAP · Stitch being tested on smaller in-house sites</p>
+      </div>
+      <div class="pc">
+        <p class="owner">Bookkeepers</p>
+        <h3>Store reconciliation</h3>
+        <ol>
+          <li>Each store has its own bank accounts: Absa for cash, Standard Bank for cards and medical aid.</li>
+          <li>Bank statements import into SAP automatically; each one splits into 6–8 sub-accounts (cash, cards, medical aid, debtors, credit providers).</li>
+          <li>A bot exports these by tender to Excel; each bookkeeper covers about 14 stores.</li>
+          <li>Expected (sales) matched to received (bank), mostly at month end.</li>
+        </ol>
+        <p class="meta">SAP GL + sub-accounts + control accounts · BI card report</p>
+      </div>
+      <div class="pc">
+        <p class="owner">Stores · Bookkeepers</p>
+        <h3>Taking card and credit payments</h3>
+        <ol>
+          <li>GK POS calls a payment switch, which asks the bank or credit provider to approve.</li>
+          <li>Dual acquiring (Absa and Standard Bank), so a bank outage doesn't stop trading.</li>
+          <li>The switch's reports feed a daily store "workbench" of matched and unmatched transactions.</li>
+          <li>Non-bank credit providers (RCS and others) settle on 30/60-day cycles. Duplicate debits are queried through a support provider.</li>
+        </ol>
+        <p class="meta">GK POS → payment switch → banks · offline card machines post separately</p>
+      </div>
+      <div class="pc">
+        <p class="owner">Stores · Finance</p>
+        <h3>Cash</h3>
+        <ol>
+          <li>Till → safe → deposit machine → bank (Absa).</li>
+          <li>The deposit machine posts into GK, then a control account, then the store sub-account.</li>
+          <li>That last step often fails, so finance does manual journals.</li>
+          <li>Fidelity is replacing the deposit machines.</li>
+        </ol>
+        <p class="meta">Depositor → GK control account → SAP</p>
+      </div>
+      <div class="pc">
+        <p class="owner">Stores · Debtors</p>
+        <h3>Deliveries and paying on delivery</h3>
+        <ol>
+          <li>Online orders and phoned-in repeat scripts leave the store with a goods-issue note or script copy.</li>
+          <li>Payment by Ozow link, or a driver with a card machine.</li>
+          <li>The proof-of-delivery (POD) should come back so the order can be invoiced and the credit cleared.</li>
+          <li>How the driver knows the payment cleared is unclear, even to the room.</li>
+        </ol>
+        <p class="meta">Ozow · POD slips · Fiori being explored</p>
+      </div>
+      <div class="pc">
+        <p class="owner">Edges mentioned</p>
+        <h3>Smaller flows</h3>
+        <ol>
+          <li>Tax certificates: customers ask for printouts of private scripts (also logged through Unisolv) before 28 Feb.</li>
+          <li>Foreign scheme payments (e.g. Namibia): release notifications have stopped arriving.</li>
+          <li>Fraud claims are investigated with the scheme and the store.</li>
+          <li>Insurance premiums (Dis-Chem Health and Life): not this team; they run their own accounting.</li>
+        </ol>
+        <p class="meta">Unisolv · Treasury · Dis-Chem Health / Life</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="areas">
+    <p class="secnum">Part 2</p>
+    <h2>Areas of the business</h2>
+    <p class="lede">Who came up, inside and outside Dis-Chem. Names are as heard on the transcript; check spellings before you use them.</p>
+    <div class="players">
+      <div>
+        <h3>Inside Dis-Chem</h3>
+        <ul class="plist">
+          <li><b>Retail finance leadership</b><span>The head of the area (addressed as Shama); team of about 37.</span></li>
+          <li><b>Medical aid team</b><span>Lorraine (supervisor). Claim settlement, remittances, scheme queries, reprocessing, transfers to debtors.</span></li>
+          <li><b>Debtors</b><span>Limahl. Standard debtors, medical aid debtors, online debtors, collections, master-data traces. Elizma reconciles Ozow payments.</span></li>
+          <li><b>Bookkeepers</b><span>Sanja. Store-level reconciliation of sub-accounts, about 14 stores each.</span></li>
+          <li><b>Central finance</b><span>Imports bank statements and posts manual journals.</span></li>
+          <li><b>Treasury</b><span>Banks, foreign payments.</span></li>
+          <li><b>Automation (bots)</b><span>Martin (and Vicky). One UiPath bot shared across finance.</span></li>
+          <li><b>BI</b><span>Building a card report broken down by card type.</span></li>
+          <li><b>Stores: dispensary managers, dispensers, cashiers</b><span>Capture claims and profiles, collect levies (a KPI), see balance pop-ups.</span></li>
+          <li><b>Operations</b><span>Named repeatedly as the source of data and process problems. Tanya Ponter mentioned for scheme relationships.</span></li>
+          <li><b>Online / e-commerce</b><span>Magento site, Stitch testing on in-house sites.</span></li>
+          <li><b>IT systems</b><span>GK POS, Unisolv (moving to Bricks), SAP, Fiori, the payment switch.</span></li>
+          <li><b>Dis-Chem Health and Dis-Chem Life</b><span>Separate accounting; outside this team.</span></li>
+          <li><b>Other entities</b><span>About 25 JV stores and Baby City sit in separate legal entities.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Outside Dis-Chem</h3>
+        <ul class="plist">
+          <li><b>Medical schemes</b><span>Discovery (weekly payer, clawbacks), Momentum (two payments, one remittance), ProfMed (lost day's batch), Prime Cure (timeouts), foreign schemes such as Namibia's.</span></li>
+          <li><b>Switching houses</b><span>MediKredit (no outage warnings), MediSwitch (emails about timeouts). Some schemes connect directly.</span></li>
+          <li><b>Banks</b><span>Standard Bank (cards incl. Amex and Diners, medical aid), Absa (cash, cards); Nedbank phased out.</span></li>
+          <li><b>Payment switch</b><span>Sits between GK POS and the banks; name unclear on the transcript. A support company handles duplicate-debit queries.</span></li>
+          <li><b>Credit providers ("buy aids")</b><span>RCS and others; settle on 30/60-day cycles.</span></li>
+          <li><b>QR and online payments</b><span>Zapper, SnapScan, PayGate, Ozow, Stitch.</span></li>
+          <li><b>Cash handling</b><span>Deposit machines; Fidelity coming in.</span></li>
+          <li><b>Collection agents</b><span>For handed-over accounts.</span></li>
+          <li><b>SARS</b><span>Drives the annual tax-certificate rush.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="friction">
+    <p class="secnum">Part 3</p>
+    <h2>Friction areas</h2>
+    <p class="lede">Grouped into eight themes, roughly in order of how much weight the room gave them. Tags show who feels each one.</p>
+    <p style="font-size:13.5px;color:var(--ink-soft)"><span class="pill cust">customer</span> <span class="pill store">store</span> <span class="pill fin">finance</span></p>
+
+    <div class="theme">
+      <h3>1 · Recovering money from customers after the visit</h3>
+      <p class="why">The biggest pain for debtors, and the one the customer feels most.</p>
+      <ul class="fl">
+        <li><div><b>Bills arrive months later.</b> A claim approved at the counter can be reversed or short-paid 3–4 months on. The customer gets a call about something they thought was settled.<blockquote>"What is the point of us trying to collect something that happened four months ago?"</blockquote></div><div class="feel"><span class="pill cust">customer</span><span class="pill fin">finance</span></div></li>
+        <li><div><b>No reason the customer can act on.</b> Statements often give no reason, or a code. Customers want proof from their medical aid, not from Dis-Chem.<blockquote>"Tell me in human language why you're rejecting."</blockquote></div><div class="feel"><span class="pill cust">customer</span><span class="pill fin">finance</span></div></li>
+        <li><div><b>Can't reach the customer.</b> Contact details are out of date, and collection calls are flagged as spam or fraud.</div><div class="feel"><span class="pill fin">finance</span></div></li>
+        <li><div><b>The till doesn't show what's owed.</b> The GK POS debtor pop-up was effectively replaced by a Better Rewards prompt. Cashiers miss balances, and customers who come in to pay are told there's nothing owing.</div><div class="feel"><span class="pill cust">customer</span><span class="pill store">store</span></div></li>
+        <li><div><b>Recovery rates are so low the head floated writing off small medical aid rejections.</b> A "global message" on Unisolv profiles is a stop-gap and can stay up after the customer pays.</div><div class="feel"><span class="pill fin">finance</span></div></li>
+        <li><div><b>Older account holders don't use the newer payment options</b> (e.g. the QR code on the statement). They're used to sorting it out with "their" store.</div><div class="feel"><span class="pill cust">customer</span></div></li>
+      </ul>
+    </div>
+
+    <div class="theme">
+      <h3>2 · Claims that fail between the counter and the scheme</h3>
+      <p class="why">The customer sees "approved", but the money never arrives.</p>
+      <ul class="fl">
+        <li><div><b>Switch timeouts drop items.</b> One item falls off a script that showed as approved; it happens "quite often", currently with Prime Cure.</div><div class="feel"><span class="pill fin">finance</span><span class="pill cust">customer</span></div></li>
+        <li><div><b>Whole days go missing.</b> One day's claims (about 200 scripts) never reached ProfMed via MediKredit. MediKredit doesn't warn of outages; MediSwitch does.</div><div class="feel"><span class="pill fin">finance</span></div></li>
+        <li><div><b>No capacity to reprocess.</b> Stores can rewrite only for 7 days; after that it's head office, one script at a time.</div><div class="feel"><span class="pill fin">finance</span><span class="pill store">store</span></div></li>
+        <li><div><b>Surprise levies.</b> Reprocessing creates a levy the customer first hears about on their next visit, and only if the dispenser mentions the pop-up.<blockquote>"I was here yesterday and there wasn't a levy."</blockquote></div><div class="feel"><span class="pill cust">customer</span><span class="pill store">store</span></div></li>
+        <li><div><b>Slow and clawback-prone schemes.</b> Some pay in 60–90 days; some reverse full payments months later.</div><div class="feel"><span class="pill fin">finance</span></div></li>
+      </ul>
+    </div>
+
+    <div class="theme">
+      <h3>3 · Data and practice at the counter</h3>
+      <p class="why">"Operations" came up again and again: problems created at the source that finance can't fix.</p>
+      <ul class="fl">
+        <li><div><b>Wrong profile selected.</b> Dispensers pick the wrong person from a date-of-birth match; orders and savings go to the wrong member.</div><div class="feel"><span class="pill cust">customer</span><span class="pill store">store</span></div></li>
+        <li><div><b>Money posts to the wrong account.</b> A daughter's number sits on her mother's profile; an account was even created for a one-year-old.</div><div class="feel"><span class="pill fin">finance</span></div></li>
+        <li><div><b>Fraud.</b> 187 fraud claims reported this year to date, including syndicates using copied IDs and medical aid cards on WhatsApp orders just before closing.</div><div class="feel"><span class="pill store">store</span><span class="pill fin">finance</span></div></li>
+        <li><div><b>Every store does it differently.</b> Card and ID aren't consistently asked for.<blockquote>"Each Dis-Chem does things their own way."</blockquote></div><div class="feel"><span class="pill store">store</span></div></li>
+      </ul>
+    </div>
+
+    <div class="theme">
+      <h3>4 · No proof to recover against</h3>
+      <ul class="fl">
+        <li><div><b>Unsigned scripts and PODs signed by the driver or staff</b>, not the customer, leave debtors with nothing to show. Camera footage works but takes time. The team suggested a QR code at handover so the customer owns who receives.</div><div class="feel"><span class="pill fin">finance</span><span class="pill store">store</span></div></li>
+        <li><div><b>Paying on delivery is a blind spot.</b> Nobody in the room could say how the driver knows an Ozow payment cleared, given the distance and time between dispensary, dispatch and doorstep.</div><div class="feel"><span class="pill store">store</span><span class="pill cust">customer</span></div></li>
+      </ul>
+    </div>
+
+    <div class="theme">
+      <h3>5 · Online orders</h3>
+      <ul class="fl">
+        <li><div><b>Never reconciled end to end.</b> Prices differ between Magento and SAP, so balances are left over. Sales order numbers are allocated by hand. PayGate settles in bulk.<blockquote>"Reconciling the online store has been impossible."</blockquote></div><div class="feel"><span class="pill fin">finance</span></div></li>
+        <li><div><b>Online credit leaks into store.</b> An online payment shows as credit the customer can spend at the till before the order is fulfilled.</div><div class="feel"><span class="pill fin">finance</span><span class="pill store">store</span></div></li>
+      </ul>
+    </div>
+
+    <div class="theme">
+      <h3>6 · One bot for everyone</h3>
+      <ul class="fl">
+        <li><div><b>Shared capacity blocks the day.</b> On Fridays (Discovery payments) teams wait until about 11am to start. Month-end workings are delayed, small changes break the bank recon run, and each new scheme slows it. Momentum's two payments against one remittance still need adding.<blockquote>"There's one bot that is being shared amongst multiple finance [teams]."</blockquote></div><div class="feel"><span class="pill fin">finance</span></div></li>
+        <li><div><b>Improvement ideas are stuck</b> for lack of bot capacity.</div><div class="feel"><span class="pill fin">finance</span></div></li>
+      </ul>
+    </div>
+
+    <div class="theme">
+      <h3>7 · Bookkeeping gaps (smaller)</h3>
+      <ul class="fl">
+        <li><div><b>Card report shows totals only.</b> There's no Visa/Mastercard split, so differences are hard to pinpoint. BI is adding it, with SnapScan, Zapper and credit providers to follow.</div><div class="feel"><span class="pill fin">finance</span></div></li>
+        <li><div><b>Cash postings fail.</b> Deposit-machine postings often don't reach the sub-account, so journals are done by hand. Fidelity may fix this.</div><div class="feel"><span class="pill fin">finance</span></div></li>
+        <li><div><b>Bank statement imports are sometimes late</b>, and nothing can be reconciled until they land.</div><div class="feel"><span class="pill fin">finance</span></div></li>
+      </ul>
+    </div>
+
+    <div class="theme">
+      <h3>8 · Odd ones out</h3>
+      <ul class="fl">
+        <li><div><b>Foreign scheme payments stuck.</b> Namibian scheme payments aren't being released since a notification process changed.</div><div class="feel"><span class="pill fin">finance</span></div></li>
+        <li><div><b>Tax-season printouts.</b> A rush of requests for proof of private-script spend ahead of 28 Feb.</div><div class="feel"><span class="pill store">store</span><span class="pill cust">customer</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="stitch">
+    <p class="secnum">Context</p>
+    <h2>Where the room landed on Stitch</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Question</th><th>What the room said</th></tr></thead>
+        <tbody>
+          <tr><td>Is in-store payment broken?</td><td>No. The current switch gives them what they need, and replacing it "actually scares me".</td></tr>
+          <tr><td>One bank account for all stores?</td><td>Non-starter. Each store's pharmacy licence needs its own account for medical aid payments; a team of about 37 is organised around per-store recon; JV stores and Baby City are separate legal entities.</td></tr>
+          <tr><td>Risks raised</td><td>Reliability in physical stores (banks used to fall over on Mondays); Stitch settles a day later where the bank settles same day.</td></tr>
+          <tr><td>Where it helps</td><td>Online: order-to-settlement visibility was shown in testing. Going live first on smaller in-house sites.</td></tr>
+          <tr><td>Bar for an in-store POC</td><td>"Zero impact plus cost savings." Possibly faster sight of duplicate debits, but that's a very small part of their day.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="next">
+    <p class="secnum">Follow-ups</p>
+    <h2>Threads left open in the session</h2>
+    <ol class="qs">
+      <li><strong>Store visit:</strong> how a levy from a reprocessed claim is shown and collected; what happens when the cashier clicks the debtor button on GK POS.</li>
+      <li><strong>Deliveries:</strong> how the driver knows a pay-on-delivery payment has cleared, and what comes back to the store (POD, cash, slip). The in-store process lead (heard as Shalanie) may be solving this via Fiori.</li>
+      <li><strong>Medical aid deep dive:</strong> the session covered only the standard script. Special orders and other claim types are still to come ("we've only touched the iceberg").</li>
+      <li><strong>Debtors deep dive:</strong> more processes than were covered, plus the ageing on medical aid rejections.</li>
+      <li><strong>Operations and scheme relations</strong> (Tanya Ponter mentioned): can schemes be held to their real-time responses, and can rejections carry a reference the customer can use?</li>
+      <li><strong>Customer side:</strong> in-store staff are the best source on rejections at the counter.</li>
+      <li><strong>Confirm names:</strong> the payment switch, the duplicate-debit provider, the bot tool and the people's names, all garbled in the transcript.</li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="note">
+      <p><strong>Source.</strong> Auto-transcript of the Stitch POC Discovery Workshop, 1 Oct 2026 (1h55m), filed in the vault as <code>src-sotf-payments-finance-discovery-2026</code>. The transcript is noisy: system and people names, account numbers and figures need checking before reuse. Synthesis is in <code>wiki/dischem/in-store-payments-and-claims</code>.</p>
+    </div>
+  </section>
+</div>

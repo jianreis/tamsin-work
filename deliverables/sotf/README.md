@@ -29,3 +29,7 @@ Contents:
   money later, the end-to-end flow, the players, payer types, friction
   hypotheses, a glossary and session questions. Synthesis in
   `wiki/dischem/in-store-payments-and-claims.md`.
+- `payments-discovery-findings.html` - findings from session 1 with retail
+  finance (1 Oct 2026, Stitch POC framing): processes discussed, areas of the
+  business, eight friction themes, the room's view on Stitch and open threads.
+  Source: `sources/src-sotf-payments-finance-discovery-2026.md`.
